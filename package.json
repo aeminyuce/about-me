@@ -1,0 +1,28 @@
+{
+  "name": "about-me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "setup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development",
+    "update-uilab": "node ../uilab/inject-latest.js && npm i uilab",
+    "update-uilab-icons": "node ../uilab-icons/inject-latest.js && npm i uilab-icons"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aeminyuce/about-me.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aeminyuce/about-me/issues"
+  },
+  "homepage": "https://github.com/aeminyuce/about-me#readme",
+  "dependencies": {
+    "uilab": "file:../uilab/uilab-1.0.860.tgz",
+    "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.680.tgz"
+  }
+}
