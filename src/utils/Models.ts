@@ -1,16 +1,22 @@
 import { ReactNode, ElementType } from 'react';
 
-// App
+// Header
 export interface HeaderLinksProps {
     name: string;
     to: string;
-    target: any;
+    click: any;
 }
 
 export interface SocialLinksProps {
     title: string;
     url: string;
     icon: ElementType;
+}
+
+// Home
+export interface BodyLinksProps {
+    name: string;
+    to: string;
 }
 
 // Page Title
