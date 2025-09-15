@@ -83,7 +83,7 @@ module.exports = (env, argv) => {
         };
     }
     const customVars = {
-        PROJECT_NAME: JSON.stringify('A. Emin Yüce'),
+        PROJECT_NAME: JSON.stringify('A. Emin Yuce'),
         GITHUB_URL: JSON.stringify('https://github.com/aeminyuce'),
         DRIBBBLE_URL: JSON.stringify('https://dribbble.com/aeminyuce'),
         LINKEDIN_URL: JSON.stringify('https://www.linkedin.com/in/aeminyuce'),
