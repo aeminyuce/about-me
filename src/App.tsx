@@ -19,9 +19,7 @@ export default function () {
         <Footer />
 
         {/* top button */}
-        <TopButton config={{
-            stylesTarget: 'ui-round ui-ease-layout'
-        }} />
+        <TopButton />
         </>
     );
 }
