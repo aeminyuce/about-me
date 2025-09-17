@@ -35,7 +35,7 @@ export default function () {
     ];
 
     return (
-        <HeaderSticky className='ui-container ui-border-b ui-border-light'>
+        <HeaderSticky className='ui-container' dataClasses='ui-shadow'>
             <Grid.Row fluid='no'>
                 <Grid.Col size={9} md={3} sm={3} xs={3}>
                     {/* toggle header sidebar */}

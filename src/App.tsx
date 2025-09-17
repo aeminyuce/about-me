@@ -4,19 +4,24 @@ import TopButton from 'uilab/react/TopButton';
 // layouts
 import Header from './layouts/Header';
 import RoutePaths from './layouts/RoutePaths';
-
+import Footer from './layouts/Footer';
 
 export default function () {
     return (
         <>
-            {/* header */}
-            <Header />
+        {/* header */}
+        <Header />
 
-            {/* routes */}
-            <RoutePaths />
+        {/* routes */}
+        <RoutePaths />
 
-            {/* top button */}
-            <TopButton />
+        {/* footer */}
+        <Footer />
+
+        {/* top button */}
+        <TopButton config={{
+            stylesTarget: 'ui-round ui-ease-layout'
+        }} />
         </>
     );
 }

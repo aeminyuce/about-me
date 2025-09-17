@@ -6,8 +6,8 @@ import { createRoot } from 'react-dom/client';
 import StoreProvider from './layouts/StoreProvider';
 
 // shared assets
-import "uilab/less/ui.less";
-import "uilab/js/ui.js";
+import 'uilab/less/ui.less';
+import 'uilab/js/ui.js';
 
 // app
 import App from './App';
