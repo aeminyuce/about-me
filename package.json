@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/aeminyuce/about-me#readme",
   "dependencies": {
-    "uilab": "file:../uilab/uilab-1.0.331.tgz",
+    "uilab": "file:../uilab/uilab-1.0.970.tgz",
     "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.680.tgz"
   }
 }
