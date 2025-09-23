@@ -80,6 +80,7 @@ module.exports = (env, argv) => {
             open: true,
             historyApiFallback: true,
             hot: true,
+            devMiddleware: { writeToDisk: true },
         };
     }
     const customVars = {
