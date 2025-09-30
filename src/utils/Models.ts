@@ -14,7 +14,7 @@ export interface SocialLinksProps {
 }
 
 // Home
-export interface BodyLinksProps {
+export interface NavLinksProps {
     name: string;
     to: string;
 }

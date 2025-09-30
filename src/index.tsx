@@ -9,6 +9,9 @@ import StoreProvider from './layouts/StoreProvider';
 import 'uilab/less/ui.less';
 import 'uilab/js/ui.js';
 
+// styles
+import './assets/styles.less';
+
 // app
 import App from './App';
 
