@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useLocation } from 'react-router-dom';
 import Button from 'uilab/react/Button';
 import Carousel from 'uilab/react/Carousel';
 import Dropdown from 'uilab/react/Dropdown';
@@ -18,15 +19,20 @@ import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
 export default function () {
     const { theme, setTheme } = StoreActions();
+    const { pathname } = useLocation();
 
-    // body links
+    // nav links
     const navLinks = [
         { name: 'Featured', to: '/' },
-        { name: 'Dashboard', to: '/' },
-        { name: 'Data Table', to: '/' },
-        { name: 'Gallery', to: '/' },
-        { name: 'Register', to: '/' },
+        { name: 'Dashboard', to: '/dashboard' },
+        { name: 'Data Table', to: '/data-table' },
+        { name: 'Gallery', to: '/gallery' },
+        { name: 'Register', to: '/register' },
     ];
+
+    const navPosition = () => {
+        return navLinks.findIndex(item => item.to === pathname) + 1;
+    };
 
     // theme list
     const themeList = [
@@ -46,14 +52,18 @@ export default function () {
                 <Grid.Col size={44} className='ui-visible-sm' />
                 <Grid.Row hGap='no'>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-hidden-sm'>
-                        {navLinks.map((item: NavLinksProps) => (
-                            <Button key={item.name} ghost noease to={item.to} className='ui-m-2-r ui-round'>
-                                {item.name}
-                            </Button>
-                        ))}
+                        {navLinks.map((item: NavLinksProps) => {
+                            const selected = item.to === pathname;
+
+                            return (
+                                <Button key={item.name} ghost={!selected} noease to={item.to} className='ui-m-2-r ui-round'>
+                                    {item.name}
+                                </Button>
+                            )
+                        })}
                     </Grid.Col>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-visible-sm'>
-                        <Carousel half sm={3} xs={2} className='ui-set-static ui-round ui-border ui-border-light'>
+                        <Carousel half start={navPosition()} sm={3} xs={2} className='ui-set-static ui-round ui-border ui-border-light'>
                             <Carousel.Nav className='ui-no-m ui-ease-1st-btn'>
                                 <Button ghost square noease className='ui-carousel-prev ui-m-2-t ui-round ui-set-absolute ui-set-l'>
                                     <SvgIcon as='js' toggle src={IconAngleLeft} />
@@ -64,13 +74,17 @@ export default function () {
                                 </Button>
                             </Carousel.Nav>
                             <Carousel.Slider className='ui-m-2 ui-ease-2nd-btn'>
-                                {navLinks.map((item: NavLinksProps) => (
-                                    <Carousel.Content key={item.name} className='ui-p-2-r'>
-                                        <Button ghost block noease to={item.to} className='ui-round'>
-                                            {item.name}
-                                        </Button>
-                                    </Carousel.Content>
-                                ))}
+                                {navLinks.map((item: NavLinksProps) => {
+                                    const selected = item.to === pathname;
+
+                                    return (
+                                        <Carousel.Content key={item.name} className='ui-p-2-r'>
+                                            <Button ghost={!selected} block noease to={item.to} className='ui-round'>
+                                                {item.name}
+                                            </Button>
+                                        </Carousel.Content>
+                                    )
+                                })}
                             </Carousel.Slider>
                         </Carousel>
                     </Grid.Col>
