@@ -21,5 +21,10 @@ each(@static-grid-sizes, {
 
 .nav {
     .ui-carousel-next { margin-right: @nav-next-margin-r; }
-    .theme-color { width: @nav-theme-color-size; height: @nav-theme-color-size; }
+
+    .ui-dropdown {
+        & > button,& li {
+            & > span { width: @nav-theme-color-size; height: @nav-theme-color-size; }
+        }
+    }
 }

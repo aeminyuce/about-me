@@ -47,7 +47,7 @@ export default function () {
     ];
 
     return (
-        <Grid.Row className='nav ui-border-b ui-border-light'>
+        <Grid.Row className='nav ui-p-15-b ui-m-15-b ui-border-b ui-border-light'>
             <Grid.Static fluid='no' className='ui-set-relative'>
                 <Grid.Col size={44} className='ui-visible-sm' />
                 <Grid.Row hGap='no'>
@@ -94,7 +94,7 @@ export default function () {
                     <Spacer size={2} className='ui-visible-sm' />
                     <Dropdown>
                         <Button ghost className='ui-round ui-p-10-h'>
-                            <span className={`theme-color ui-inline-block ui-circle${theme ? ` ${theme}` : ' ui-border'}`} />
+                            <span className={`ui-inline-block ui-circle${theme ? ` ${theme}` : ' ui-border'}`} />
                             <SvgIcon as='js' toggle src={IconAngleDown} className='ui-m-10-l' />
                         </Button>
                         <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
@@ -103,7 +103,7 @@ export default function () {
 
                                 return (
                                     <Dropdown.Item key={item.name} onClick={() => setTheme(name)}>
-                                        <span className={`theme-color ui-m-10-r ui-circle${item.theme ? ` ${item.theme} ${item.color}` : ' ui-border'}`} />
+                                        <span className={`ui-m-10-r ui-circle${item.theme ? ` ${item.theme} ${item.color}` : ' ui-border'}`} />
                                         {item.name}
                                     </Dropdown.Item>
                                 )
