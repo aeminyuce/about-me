@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-// layouts
-import PageTitle from '../layouts/PageTitle';
+// views
+import PageTitle from './PageTitle';
 
 // utils
 import {

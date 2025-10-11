@@ -2,12 +2,12 @@ import * as React from 'react';
 import Calendar from 'uilab/react/Calendar';
 import Grid from 'uilab/react/Grid';
 
-// layouts
-import AboutMe from './layouts/AboutMe';
-import Nav from './layouts/Nav';
+// views
+import AboutMe from './views/AboutMe';
+import Nav from './views/Nav';
 
 // utils
-import { useStoreContext } from './layouts/StoreContext';
+import { useStoreContext } from './views/StoreContext';
 
 export default function () {
     const { theme } = useStoreContext();

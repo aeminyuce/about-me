@@ -5,11 +5,11 @@ import TopButton from 'uilab/react/TopButton';
 import { metaData } from './utils/MetaData';
 import { storedData } from './utils/Storages';
 
-// layouts
-import StoreProvider from './layouts/StoreContext';
-import Header from './layouts/Header';
-import RoutePaths from './layouts/RoutePaths';
-import Footer from './layouts/Footer';
+// views
+import StoreProvider from './views/StoreContext';
+import Header from './views/Header';
+import RoutePaths from './views/RoutePaths';
+import Footer from './views/Footer';
 
 export default function () {
     return (
