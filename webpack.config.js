@@ -83,7 +83,7 @@ module.exports = (env, argv) => {
             devMiddleware: { writeToDisk: true },
         };
     }
-    const customVars = {
+    const metaData = {
         PROJECT_NAME: JSON.stringify('A. Emin Yuce'),
         GITHUB_URL: JSON.stringify('https://github.com/aeminyuce'),
         DRIBBBLE_URL: JSON.stringify('https://dribbble.com/aeminyuce'),
@@ -95,7 +95,7 @@ module.exports = (env, argv) => {
             favicon: "./public/favicon.ico",
         }),
         new webpack.DefinePlugin({
-            process: { env: customVars }
+            process: { env: metaData }
         }),
         new CopyPlugin({
             patterns: [
