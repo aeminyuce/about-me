@@ -1,5 +1,44 @@
 import { ReactNode, ElementType } from 'react';
 
+// Storages
+export interface SetStorageProps {
+	name: string;
+	value: any;
+	jsonData?: boolean;
+}
+
+export interface GetStorageProps {
+	name: string;
+	jsonData?: boolean;
+	initialData?: string,
+}
+
+// Store Context
+export interface StoreContextProps {
+    metaData: any;
+    isMobile: boolean;
+    theme: string;
+    setTheme(name: string): string;
+}
+
+export interface StoreProviderProps {
+    children: ReactNode;
+    initialValue: any;
+}
+
+// Page Title
+export interface PageTitleProps {
+    title: string;
+    children: ReactNode;
+}
+
+// Theme List
+export interface ThemeListProps {
+	name: string;
+	theme: string;
+	color: string;
+}
+
 // Header
 export interface HeaderLinksProps {
     name: string;
@@ -17,48 +56,4 @@ export interface SocialLinksProps {
 export interface NavLinksProps {
     name: string;
     to: string;
-}
-
-// Page Title
-export interface PageTitleProps {
-    title: string;
-    children: ReactNode;
-}
-
-// Themes
-export interface ThemeListProps {
-	name: string;
-	theme: string;
-	color: string;
-}
-
-// Store Provider
-export interface StoreProviderProps {
-    children: ReactNode;
-}
-
-// Storages
-export interface SetStorageProps {
-	name: string;
-	value: any;
-	jsonData?: boolean;
-}
-
-export interface GetStorageProps {
-	name: string;
-	jsonData?: boolean;
-	initialData?: string,
-}
-
-// Store reducer
-export interface ReducerStateProps {
-    theme: string;
-}
-
-export interface ReducerActionProps {
-    type: string;
-    theme?: string;
-    style?: string;
-    size?: string;
-    copy?: string;
 }

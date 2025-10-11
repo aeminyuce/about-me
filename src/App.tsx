@@ -1,25 +1,30 @@
 import * as React from 'react';
 import TopButton from 'uilab/react/TopButton';
 
+// utils
+import { metaData } from './utils/MetaData';
+import { storedData } from './utils/Storages';
+
 // layouts
+import StoreProvider from './layouts/StoreContext';
 import Header from './layouts/Header';
 import RoutePaths from './layouts/RoutePaths';
 import Footer from './layouts/Footer';
 
 export default function () {
     return (
-        <>
-        {/* header */}
-        <Header />
+        <StoreProvider initialValue={{ metaData, ...storedData }}>
+            {/* header */}
+            <Header />
 
-        {/* routes */}
-        <RoutePaths />
+            {/* routes */}
+            <RoutePaths />
 
-        {/* footer */}
-        <Footer />
+            {/* footer */}
+            <Footer />
 
-        {/* top button */}
-        <TopButton />
-        </>
+            {/* top button */}
+            <TopButton />
+        </StoreProvider>
     );
 }

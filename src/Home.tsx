@@ -7,10 +7,10 @@ import AboutMe from './layouts/AboutMe';
 import Nav from './layouts/Nav';
 
 // utils
-import { StoreActions } from './utils/StoreActions';
+import { useStoreContext } from './layouts/StoreContext';
 
 export default function () {
-    const { theme } = StoreActions();
+    const { theme } = useStoreContext();
 
     return (
         <Grid.Container as='main'>

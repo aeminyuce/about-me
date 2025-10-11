@@ -1,37 +1,28 @@
-import { createContext } from 'react';
-
 // utils
-import { setStorage, getStorage } from './Storages';
+import { setStorage } from './Storages';
+import { CURRENT_THEME } from './Actions';
 
-// imports
-import type { ReducerStateProps, ReducerActionProps } from './Models';
+const updateStoreContext = (state: any, action: any) => {
+	try {
 
-export const StoreContext = createContext({
-	store: null,
-	setStore: null,
-});
+		if ([CURRENT_THEME].includes(action?.type)) {
+			const theme = () => {
+				setStorage({ name: CURRENT_THEME, value: action.theme });
 
-// actions
-export const actions = {
-	theme: 'CURRENT_THEME',
-}
+				return {
+					...state,
+					theme: action.theme,
+				};
+			}
 
-export const StoreReducer = (state: ReducerStateProps, action: ReducerActionProps) => {
-	const theme = () => {
-		setStorage({ name: actions.theme, value: action.theme });
-		return {
-            ...state,
-            theme: action.theme,
-        };
-	}
-
-	switch (action?.type) {
-		// themes
-		case actions.theme:
 			return theme();
+		}
+
+	} catch (e: any) {
+		// run error logger
 	}
 }
 
-export const StoreInitials = {
-    theme: getStorage({ name: actions.theme }),
+export const reducer = (state: any, action: any) => {
+	return updateStoreContext(state, action);
 }

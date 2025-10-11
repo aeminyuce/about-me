@@ -9,8 +9,8 @@ import SvgIcon from 'uilab/react/SvgIcon';
 
 // utils
 import type { NavLinksProps } from '../utils/Models';
-import { StoreActions } from '../utils/StoreActions';
 import type { ThemeListProps } from '../utils/Models';
+import { useStoreContext } from './StoreContext';
 
 // assets
 import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
@@ -18,7 +18,7 @@ import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
 import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
 export default function () {
-    const { theme, setTheme } = StoreActions();
+    const { theme, setTheme } = useStoreContext();
     const { pathname } = useLocation();
 
     // nav links

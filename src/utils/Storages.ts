@@ -1,5 +1,6 @@
 // utils
 import type { SetStorageProps, GetStorageProps } from './Models';
+import { CURRENT_THEME } from './Actions';
 
 export const setStorage = (props:SetStorageProps) => {
 	const { name, value, jsonData } = props;
@@ -20,4 +21,8 @@ export const getStorage = (props:GetStorageProps) => {
 		return data === 'null' ? null : data;
 
 	} else return null;
+}
+
+export const storedData = {
+	theme: getStorage({ name: CURRENT_THEME }),
 }
