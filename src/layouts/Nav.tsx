@@ -36,6 +36,7 @@ export default function () {
 
     // theme list
     const themeList = [
+        { name: 'No Theme' },
         { name: 'Gray Theme', theme: 'ui-theme-gray', color: 'ui-fill-dark-100' },
         { name: 'Jungle Theme', theme: 'ui-theme-jungle', color: 'ui-fill-dark-100' },
         { name: 'Sea Theme', theme: 'ui-theme-sea', color: 'ui-fill-dark-100' },
@@ -43,7 +44,6 @@ export default function () {
         { name: 'Ice Theme', theme: 'ui-theme-ice', color: 'ui-fill-dark-100' },
         { name: 'Orchid Theme', theme: 'ui-theme-orchid', color: 'ui-fill-dark-100' },
         { name: 'Pink Theme', theme: 'ui-theme-pink', color: 'ui-fill-dark-100' },
-        { name: 'No Theme' },
     ];
 
     return (
