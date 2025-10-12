@@ -81,6 +81,7 @@ module.exports = (env, argv) => {
             historyApiFallback: true,
             hot: true,
             devMiddleware: { writeToDisk: true },
+            allowedHosts: 'all',
         };
     }
     const metaData = {
