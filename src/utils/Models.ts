@@ -19,6 +19,7 @@ export interface StoreContextProps {
     isMobile: boolean;
     theme: string;
     setTheme(name: string): string;
+    apiResponse: any;
 }
 
 export interface StoreProviderProps {

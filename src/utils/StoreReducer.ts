@@ -1,21 +1,29 @@
 // utils
 import { setStorage } from './Storages';
-import { CURRENT_THEME } from './Actions';
+import { CURRENT_THEME, PAGE_DATA } from './Actions';
 
 const updateStoreContext = (state: any, action: any) => {
 	try {
 
+		// themes
 		if ([CURRENT_THEME].includes(action?.type)) {
-			const theme = () => {
-				setStorage({ name: CURRENT_THEME, value: action.theme });
+			setStorage({
+				name: CURRENT_THEME,
+				value: action.theme,
+			});
 
-				return {
-					...state,
-					theme: action.theme,
-				};
-			}
+			return {
+				...state,
+				theme: action.theme,
+			};
+		}
 
-			return theme();
+		// fetch page data
+		if ([PAGE_DATA].includes(action?.type)) {
+			return {
+				...state,
+				apiResponse: action.result,
+			};
 		}
 
 	} catch (e: any) {
@@ -23,6 +31,8 @@ const updateStoreContext = (state: any, action: any) => {
 	}
 }
 
-export const reducer = (state: any, action: any) => {
+const reducer = (state: any, action: any) => {
 	return updateStoreContext(state, action);
 }
+
+export default reducer;

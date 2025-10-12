@@ -10,7 +10,8 @@ import Nav from './views/Nav';
 import { useStoreContext } from './views/StoreContext';
 
 export default function () {
-    const { theme } = useStoreContext();
+    const { theme, apiResponse } = useStoreContext();
+    console.log(apiResponse);
 
     return (
         <Grid.Container as='main'>
