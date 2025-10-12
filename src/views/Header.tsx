@@ -9,6 +9,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 // utils
 import type { HeaderLinksProps, SocialLinksProps } from '../utils/Models';
 import { ShowGetInTouch } from '../utils/ShowGetInTouch';
+import { useStoreContext } from './StoreContext';
 
 // assets
 import { IconDribbble } from 'uilab-icons/react/social/dribbble';
@@ -20,19 +21,14 @@ import { IconSun } from 'uilab-icons/react/weather/sun';
 import { IconMoon } from 'uilab-icons/react/weather/moon';
 
 export default function () {
-    // header links
-    const headerLinks = [
-        { name: 'About Me', to: '/' },
-        { name: 'UI Laboratory', to: '/uilab' },
-        { name: 'Get in Touch', click: ShowGetInTouch},
-    ];
+    const { apiResponse } = useStoreContext();
+    const headerData = apiResponse?.header;
 
-    // social links
-    const socialLinks = [
-        { title: 'GitHub', url: process.env.GITHUB_URL, icon: IconGithub },
-        { title: 'Dribbble', url: process.env.DRIBBBLE_URL, icon: IconDribbble },
-        { title: 'LinkedIn', url: process.env.LINKEDIN_URL, icon: IconLinkedin },
-    ];
+    const socialIcons = {
+        github: IconGithub,
+        dribbble: IconDribbble,
+        linkedin: IconLinkedin,
+    };
 
     return (
         <HeaderSticky className='ui-container' dataClasses='ui-shadow'>
@@ -46,22 +42,30 @@ export default function () {
                     {/* header links */}
                     <span className='ui-hidden-md'>
                         <span className='ui-ease-1st-btn ui-sidebar-add-l'>
-                            {headerLinks.map((item: HeaderLinksProps) => (
-                                <Button key={item.name} ghost noease to={item.to} onClick={item.click} className='ui-m-2-r ui-round'>
-                                    {item.name}
-                                </Button>
-                            ))}
+
+                            {headerData?.headerLinks.map((item: HeaderLinksProps) => {
+                                const isModal = item.modal ? () => ShowGetInTouch() : null;
+
+                                return (
+                                    <Button key={item.name} ghost noease to={item.to} onClick={isModal} className='ui-m-2-r ui-round'>
+                                        {item.name}
+                                    </Button>
+                                )
+                            })}
+
                         </span>
                     </span>
                 </Grid.Col>
                 <Grid.Col size={3} md={9} sm={9} xs={9} className='ui-align-r ui-icons-no-opacity'>
                     {/* social links */}
                     <span className="ui-ease-1st-btn">
-                        {socialLinks.map((item: SocialLinksProps) => (
+
+                        {headerData?.socialLinks.map((item: SocialLinksProps) => (
                             <Button key={item.title} square ghost noease title={item.title} href={item.url} className='ui-round' target='_blank' rel='nofollow'>
-                                <SvgIcon as='js' src={item.icon} />
+                                <SvgIcon as='js' src={socialIcons[item.icon as string]} />
                             </Button>
                         ))}
+
                     </span>
 
                     {/* toggle dark mode */}

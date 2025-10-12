@@ -1,7 +1,37 @@
 {
   "result": {
-    "home": {
-      "title": "Home"
+    "header": {
+        "headerLinks": [
+            {
+                "name": "About Me",
+                "to": "/"
+            },
+            {
+                "name": "UI Laboratory",
+                "to": "/uilab"
+            },
+            {
+                "name": "Get in Touch",
+                "modal": true
+            }
+        ],
+        "socialLinks": [
+            {
+                "title": "GitHub",
+                "url": "https://github.com/aeminyuce",
+                "icon": "github"
+            },
+            {
+                "title": "Dribbble",
+                "url": "https://dribbble.com/aeminyuce",
+                "icon": "dribbble"
+            },
+            {
+                "title": "LinkedIn",
+                "url": "https://www.linkedin.com/in/aeminyuce",
+                "icon": "linkedin"
+            }
+        ]
     }
   }
 }

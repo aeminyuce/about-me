@@ -44,7 +44,7 @@ export interface ThemeListProps {
 export interface HeaderLinksProps {
     name: string;
     to: string;
-    click: any;
+    modal: boolean;
 }
 
 export interface SocialLinksProps {
