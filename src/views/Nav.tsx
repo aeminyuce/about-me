@@ -52,6 +52,7 @@ export default function () {
                 <Grid.Col size={44} className='ui-visible-sm' />
                 <Grid.Row hGap='no'>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-hidden-sm'>
+
                         {navLinks.map((item: NavLinksProps) => {
                             const selected = item.to === pathname;
 
@@ -61,6 +62,7 @@ export default function () {
                                 </Button>
                             )
                         })}
+
                     </Grid.Col>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-visible-sm'>
                         <Carousel half start={navPosition()} sm={3} xs={2} className='ui-set-static ui-round ui-border ui-border-light'>
@@ -74,6 +76,7 @@ export default function () {
                                 </Button>
                             </Carousel.Nav>
                             <Carousel.Slider className='ui-m-2 ui-ease-2nd-btn'>
+
                                 {navLinks.map((item: NavLinksProps) => {
                                     const selected = item.to === pathname;
 
@@ -85,6 +88,7 @@ export default function () {
                                         </Carousel.Content>
                                     )
                                 })}
+
                             </Carousel.Slider>
                         </Carousel>
                     </Grid.Col>
@@ -98,6 +102,7 @@ export default function () {
                             <SvgIcon as='js' toggle src={IconAngleDown} className='ui-m-10-l' />
                         </Button>
                         <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
+
                             {themeList.map((item: ThemeListProps) => {
                                 const name = item.name === 'No Theme' ? null : `${item.theme} ${item.color}`;
 
@@ -108,6 +113,7 @@ export default function () {
                                     </Dropdown.Item>
                                 )
                             })}
+
                         </Dropdown.Menu>
                     </Dropdown>
                 </Grid.Col>
