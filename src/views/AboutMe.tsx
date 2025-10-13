@@ -37,8 +37,12 @@ export default function () {
 
                 {/* get in touch buttons */}
                 <div className='ui-form-lg ui-ease-1st-btn'>
-                    <Button noease className='ui-bg-black ui-circle ui-visible-light' title={aboutMeData?.getInTouchText} onClick={ShowGetInTouch}>{aboutMeData?.getInTouchText}</Button>
-                    <Button noease className='ui-bg-white ui-circle ui-visible-dark' title={aboutMeData?.getInTouchText} onClick={ShowGetInTouch}>{aboutMeData?.getInTouchText}</Button>
+                    <Button noease className='ui-bg-black ui-circle ui-visible-light' title={aboutMeData?.getInTouchText} onClick={ShowGetInTouch}>
+                        {aboutMeData?.getInTouchText}
+                    </Button>
+                    <Button noease className='ui-bg-white ui-circle ui-visible-dark' title={aboutMeData?.getInTouchText} onClick={ShowGetInTouch}>
+                        {aboutMeData?.getInTouchText}
+                    </Button>
                 </div>
             </Grid.Col>
         </Grid.Row>
