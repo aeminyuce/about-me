@@ -19,7 +19,6 @@ export default function RoutePaths() {
                     <PageTitle title='About Me'><Home /></PageTitle>
                 } />
             </Routes>
-            <PageLoader />
         </Suspense>
     );
 }

@@ -1,4 +1,6 @@
 import { getParamsFromObject } from '../utils/Helpers';
+import { ui } from 'uilab/js/core/globals';
+import Loadingmask from 'uilab/react/Loadingmask';
 
 export default class Service {
     get = async (url: string, params: any) => {
@@ -21,6 +23,12 @@ export default class Service {
 
         } catch (e: any) {
             // run error logger
+
+        } finally {
+            setTimeout(() => {
+                // hide page loader
+                Loadingmask('.ui-loading-mask');
+            }, ui.globals.ease * 3);
         }
     };
 
@@ -44,6 +52,12 @@ export default class Service {
 
         } catch (e: any) {
             // run error logger
+
+        } finally {
+            setTimeout(() => {
+                // hide page loader
+                Loadingmask('.ui-loading-mask');
+            }, ui.globals.ease * 3);
         }
     };
 
