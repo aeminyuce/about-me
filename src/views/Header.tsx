@@ -85,8 +85,8 @@ export default function () {
                                 <img src='0065c7978fa.svg' className='ui-img-fluid' />
                             </Grid.Col>
                             <Grid.Col size={8}>
-                                <strong className="ui-font-24">Get in Touch!</strong>
-                                <p className='ui-font-16 ui-font-condensed ui-m-10-t'>Great to see you opening this window to connect with me. Please <strong>scan the QR code</strong> to get in touch instantly.</p>
+                                <strong className="ui-font-24">{headerData?.getInTouch?.title}</strong>
+                                <p className='ui-font-16 ui-font-condensed ui-m-10-t'>{headerData?.getInTouch?.message}</p>
                             </Grid.Col>
                         </Grid.Row>
                     </Grid.Container>
@@ -99,7 +99,7 @@ export default function () {
                     <Button square ghost title='Close' className='ui-sidebar-close ui-round'>
                         <SvgIcon as='js' src={IconAngleLeft} />
                     </Button>
-                    <h3 className='ui-h3 ui-font-bold ui-align-l ui-m-10-t'>Menu</h3>
+                    <h3 className='ui-h3 ui-font-bold ui-align-l ui-m-10-t'>{headerData?.sidebarTitle}</h3>
                 </Sidebar.Title>
                 <Sidebar.Content className='ui-scroll-v ui-align-c' />
             </Sidebar>
