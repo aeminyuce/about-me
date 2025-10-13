@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 
 // views
 import PageTitle from './PageTitle';
+import PageLoader from './PageLoader';
 
 // utils
 import {
@@ -12,12 +13,13 @@ import {
 
 export default function RoutePaths() {
     return (
-        <Suspense>
+        <Suspense fallback={<PageLoader />}>
             <Routes>
                 <Route path='/*' element={
                     <PageTitle title='About Me'><Home /></PageTitle>
                 } />
             </Routes>
+            <PageLoader />
         </Suspense>
     );
 }
