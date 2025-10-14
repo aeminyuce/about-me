@@ -1,0 +1,69 @@
+{
+    "result": {
+        "header": {
+            "sidebarTitle": "Menu",
+            "getInTouch": {
+                "title": "Get in Touch!",
+                "message": "Great to see you opening this window to connect with me. Please scan the QR code to get in touch instantly."
+            },
+            "headerLinks": [
+                {
+                    "name": "About Me",
+                    "to": "/"
+                },
+                {
+                    "name": "UI Laboratory",
+                    "to": "/uilab"
+                },
+                {
+                    "name": "Get in Touch",
+                    "modal": true
+                }
+            ],
+            "socialLinks": [
+                {
+                    "title": "GitHub",
+                    "url": "https://github.com/aeminyuce",
+                    "icon": "github"
+                },
+                {
+                    "title": "Dribbble",
+                    "url": "https://dribbble.com/aeminyuce",
+                    "icon": "dribbble"
+                },
+                {
+                    "title": "LinkedIn",
+                    "url": "https://www.linkedin.com/in/aeminyuce",
+                    "icon": "linkedin"
+                }
+            ]
+        },
+        "aboutMe": {
+            "profileImage": "fab86d4463f.png",
+            "fullName": "A. Emin Yüce",
+            "jobTitle": "Sr. Front End Developer",
+            "location": "Ankara, Turkiye",
+            "getInTouchText": "Get in Touch",
+            "personalSkills": [
+                "Html",
+                "CSS",
+                "Less",
+                "SCSS",
+                "Saas",
+                "Javascript",
+                "Ecmascript",
+                "Typescript",
+                "React",
+                "SSR",
+                "Next Js",
+                "Astro",
+                "Remix",
+                "Node Js",
+                "Webpack",
+                "Responsive",
+                "Adaptive",
+                "Mobile"
+            ]
+        }
+    }
+}

@@ -12,7 +12,7 @@ import Footer from './views/Footer';
 import { useStoreContext } from './views/StoreContext';
 
 export default function () {
-    const { theme } = useStoreContext();
+    const { theme, apiResponse } = useStoreContext();
 
     return (
         <>
@@ -30,17 +30,14 @@ export default function () {
                     <Nav />
 
                     <Grid.Row>
-                        <Grid.Col size={3}>
-                            1
+                        <Grid.Col size={4}>
+                            ...
                         </Grid.Col>
                         <Grid.Col size={3}>
-                            2
+                            ...
                         </Grid.Col>
-                        <Grid.Col size={3}>
-                            <Calendar className={`ui-round ui-shadow-sm${theme ? ` ${theme}` : ''}`} />
-                        </Grid.Col>
-                        <Grid.Col size={3}>
-                            4
+                        <Grid.Col size={5}>
+                            <Calendar className={`ui-round ui-shadow-sm${theme ? ` ${theme}` : ''}`} data={{ date: '2019,6', json: JSON.stringify(apiResponse?.calendar) }} />
                         </Grid.Col>
                     </Grid.Row>
 

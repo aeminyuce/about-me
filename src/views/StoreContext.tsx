@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { createContext, useContext, useReducer, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Service from '../services/Service';
-import { getPageData } from '../services/Repository';
+import { getPageData, getCalendarData } from '../services/Repository';
 
 // utils
 import type { StoreContextProps, StoreProviderProps } from '../utils/Models';
 import reducer from '../utils/StoreReducer';
-import { CURRENT_THEME, PAGE_DATA } from '../utils/Actions';
+import { CURRENT_THEME, PAGE_DATA, CALENDAR_DATA } from '../utils/Actions';
 
 export const StoreContext = createContext({} as StoreContextProps);
 
@@ -14,6 +15,7 @@ export default function StoreProvider(props: StoreProviderProps) {
     const { children, initialValue } = props;
 
     const service = new Service();
+    const { pathname } = useLocation();
 
     const [state, dispatch] = useReducer(reducer, initialValue);
     const [isMobile, setIsmobile] = useState(false);
@@ -21,6 +23,11 @@ export default function StoreProvider(props: StoreProviderProps) {
     useEffect(() => {
         setIsmobile(window.innerWidth < 768);
         loadPageData(); // load data from api when set your api urls
+
+        // route based data
+        if (['/'].includes(pathname)) {
+            loadCalendarData();
+        }
     }, []);
 
     // themes
@@ -41,10 +48,21 @@ export default function StoreProvider(props: StoreProviderProps) {
         });
     };
 
+    // fetch calendar data
+    const loadCalendarData = () => {
+        getCalendarData(service).then((response: any) => {
+            dispatch({
+                type: CALENDAR_DATA,
+                result: response?.result,
+            });
+        });
+    };
+
     const contextValue: StoreContextProps =  {
         ...state,
         isMobile,
         setTheme,
+        loadCalendarData,
     };
 
     return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>

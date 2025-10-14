@@ -1,6 +1,6 @@
 // utils
 import { setStorage } from './Storages';
-import { CURRENT_THEME, PAGE_DATA } from './Actions';
+import { CURRENT_THEME, PAGE_DATA, CALENDAR_DATA } from './Actions';
 
 const updateStoreContext = (state: any, action: any) => {
 	try {
@@ -23,6 +23,17 @@ const updateStoreContext = (state: any, action: any) => {
 			return {
 				...state,
 				apiResponse: action.result,
+			};
+		}
+
+		// fetch calendar data
+		if ([CALENDAR_DATA].includes(action?.type)) {
+			return {
+				...state,
+				apiResponse: {
+					...state.apiResponse,
+					calendar: action.result,
+				},
 			};
 		}
 
