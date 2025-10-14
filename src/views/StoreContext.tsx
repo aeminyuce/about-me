@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { createContext, useContext, useReducer, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import Loadingmask from 'uilab/react/Loadingmask';
 import Service from '../services/Service';
 import { getPageData, getCalendarData } from '../services/Repository';
 
@@ -21,14 +22,21 @@ export default function StoreProvider(props: StoreProviderProps) {
     const [isMobile, setIsmobile] = useState(false);
 
     useEffect(() => {
+        // load page data from api when set your api urls
+        loadPageData();
+    }, []);
+
+    useEffect(() => {
         setIsmobile(window.innerWidth < 768);
-        loadPageData(); // load data from api when set your api urls
 
         // route based data
         if (['/'].includes(pathname)) {
-            loadCalendarData();
+            if (!state?.apiResponse?.calendar) loadCalendarData();
+
+        } else {
+            Loadingmask('.ui-loading-mask');
         }
-    }, []);
+    }, [pathname]);
 
     // themes
     const setTheme = (name: string) => {
