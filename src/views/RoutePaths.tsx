@@ -9,6 +9,7 @@ import PageLoader from './PageLoader';
 // utils
 import {
     Home,
+    Dashboard,
 } from '../utils/RouteComponents';
 
 export default function RoutePaths() {
@@ -17,6 +18,9 @@ export default function RoutePaths() {
             <Routes>
                 <Route path='/*' element={
                     <PageTitle title='About Me'><Home /></PageTitle>
+                } />
+                <Route path='/dashboard' element={
+                    <PageTitle title='Dashboard'><Dashboard /></PageTitle>
                 } />
             </Routes>
         </Suspense>
