@@ -1,1 +1,5 @@
-{}
+{
+    "calendar": {
+        "stylesCaption": "ui-fill-dark-100"
+    }
+}

@@ -93,7 +93,8 @@
             ],
             "themeList": [
                 {
-                    "name": "No Theme"
+                    "name": "No Theme",
+                    "theme": ""
                 },
                 {
                     "name": "Gray Theme",
