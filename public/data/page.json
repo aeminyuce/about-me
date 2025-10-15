@@ -3,8 +3,11 @@
         "header": {
             "sidebarTitle": "Menu",
             "getInTouch": {
+                "qrCodeImage": "0065c7978fa.svg",
                 "title": "Get in Touch!",
-                "message": "Great to see you opening this window to connect with me. Please scan the QR code to get in touch instantly."
+                "messageStart": "Great to see you opening this window to connect with me. Please",
+                "messageHighlight": " scan the QR code ",
+                "messageEnd": "to get in touch instantly."
             },
             "headerLinks": [
                 {

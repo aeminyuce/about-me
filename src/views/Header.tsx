@@ -8,7 +8,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 
 // utils
 import type { HeaderLinksProps, SocialLinksProps } from '../utils/Models';
-import { ShowGetInTouch } from '../utils/ShowGetInTouch';
+import { ShowGetInTouch } from '../utils/Helpers';
 import { useStoreContext } from './StoreContext';
 
 // assets
@@ -22,7 +22,9 @@ import { IconMoon } from 'uilab-icons/react/weather/moon';
 
 export default function () {
     const { apiResponse } = useStoreContext();
+
     const headerData = apiResponse?.header;
+    const getInTouchData = headerData?.getInTouch;
 
     const socialIcons = {
         github: IconGithub,
@@ -82,11 +84,15 @@ export default function () {
                     <Grid.Container as='div'>
                         <Grid.Row fluid='no'>
                             <Grid.Col size={4}>
-                                <img src='0065c7978fa.svg' className='ui-img-fluid' />
+                                <img src={getInTouchData?.qrCodeImage} className='ui-img-fluid' />
                             </Grid.Col>
                             <Grid.Col size={8}>
-                                <strong className="ui-font-24">{headerData?.getInTouch?.title}</strong>
-                                <p className='ui-font-16 ui-font-condensed ui-m-10-t'>{headerData?.getInTouch?.message}</p>
+                                <strong className="ui-font-24">{getInTouchData?.title}</strong>
+                                <p className='ui-font-16 ui-font-condensed ui-m-10-t'>
+                                    {getInTouchData?.messageStart}
+                                    <strong>{getInTouchData?.messageHighlight}</strong>
+                                    {getInTouchData?.messageEnd}
+                                </p>
                             </Grid.Col>
                         </Grid.Row>
                     </Grid.Container>
