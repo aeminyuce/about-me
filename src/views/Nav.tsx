@@ -11,6 +11,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 import type { NavLinksProps } from '../utils/Models';
 import type { ThemeListProps } from '../utils/Models';
 import { useStoreContext } from './StoreContext';
+import { mobileNavPosition } from '../utils/Helpers';
 
 // assets
 import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
@@ -18,33 +19,10 @@ import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
 import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
 export default function () {
-    const { theme, setTheme } = useStoreContext();
+    const { theme, setTheme, apiResponse } = useStoreContext();
     const { pathname } = useLocation();
 
-    // nav links
-    const navLinks = [
-        { name: 'Featured', to: '/' },
-        { name: 'Dashboard', to: '/dashboard' },
-        { name: 'Data Table', to: '/data-table' },
-        { name: 'Gallery', to: '/gallery' },
-        { name: 'Register', to: '/register' },
-    ];
-
-    const navPosition = () => {
-        return navLinks.findIndex(item => item.to === pathname) + 1;
-    };
-
-    // theme list
-    const themeList = [
-        { name: 'No Theme', theme: null },
-        { name: 'Gray Theme', theme: 'ui-theme-gray' },
-        { name: 'Jungle Theme', theme: 'ui-theme-jungle' },
-        { name: 'Sea Theme', theme: 'ui-theme-sea' },
-        { name: 'Blue Theme', theme: 'ui-theme-blue' },
-        { name: 'Ice Theme', theme: 'ui-theme-ice' },
-        { name: 'Orchid Theme', theme: 'ui-theme-orchid' },
-        { name: 'Pink Theme', theme: 'ui-theme-pink' },
-    ];
+    const navData = apiResponse?.nav;
 
     return (
         <Grid.Row className='nav ui-p-15-b ui-m-15-b ui-border-b ui-border-light'>
@@ -53,7 +31,7 @@ export default function () {
                 <Grid.Row hGap='no'>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-hidden-sm'>
 
-                        {navLinks.map((item: NavLinksProps) => {
+                        {navData?.navLinks.map((item: NavLinksProps) => {
                             const selected = item.to === pathname;
 
                             return (
@@ -65,7 +43,7 @@ export default function () {
 
                     </Grid.Col>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-visible-sm'>
-                        <Carousel half start={navPosition()} sm={3} xs={2} className='ui-set-static ui-round ui-border ui-border-light'>
+                        <Carousel half start={mobileNavPosition(navData?.navLinks, pathname)} sm={3} xs={2} className='ui-set-static ui-round ui-border ui-border-light'>
                             <Carousel.Nav className='ui-no-m ui-ease-1st-btn'>
                                 <Button ghost square noease className='ui-carousel-prev ui-m-2-t ui-round ui-set-absolute ui-set-l'>
                                     <SvgIcon as='js' toggle src={IconAngleLeft} />
@@ -77,7 +55,7 @@ export default function () {
                             </Carousel.Nav>
                             <Carousel.Slider className='ui-m-2 ui-ease-2nd-btn'>
 
-                                {navLinks.map((item: NavLinksProps) => {
+                                {navData?.navLinks.map((item: NavLinksProps) => {
                                     const selected = item.to === pathname;
 
                                     return (
@@ -103,7 +81,7 @@ export default function () {
                         </Button>
                         <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
 
-                            {themeList.map((item: ThemeListProps) => (
+                            {navData?.themeList.map((item: ThemeListProps) => (
                                 <Dropdown.Item key={item.name} onClick={() => setTheme(item.theme)}>
                                     <span className={`ui-m-10-r ui-circle${item.theme ? ` ${item.theme} ui-fill-dark-100` : ' ui-border'}`} />
                                     {item.name}

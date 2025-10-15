@@ -67,6 +67,63 @@
                 "Adaptive",
                 "Mobile"
             ]
+        },
+        "nav": {
+            "navLinks": [
+                {
+                    "name": "Featured",
+                    "to": "/"
+                },
+                {
+                    "name": "Dashboard",
+                    "to": "/dashboard"
+                },
+                {
+                    "name": "Data Table",
+                    "to": "/data-table"
+                },
+                {
+                    "name": "Gallery",
+                    "to": "/gallery"
+                },
+                {
+                    "name": "Register",
+                    "to": "/register"
+                }
+            ],
+            "themeList": [
+                {
+                    "name": "No Theme"
+                },
+                {
+                    "name": "Gray Theme",
+                    "theme": "ui-theme-gray"
+                },
+                {
+                    "name": "Jungle Theme",
+                    "theme": "ui-theme-jungle"
+                },
+                {
+                    "name": "Sea Theme",
+                    "theme": "ui-theme-sea"
+                },
+                {
+                    "name": "Blue Theme",
+                    "theme": "ui-theme-blue"
+                },
+                {
+                    "name": "Ice Theme",
+                    "theme": "ui-theme-ice"
+                },
+                {
+                    "name": "Orchid Theme",
+                    "theme": "ui-theme-orchid"
+                },
+                {
+                    "name": "Pink Theme",
+                    "theme": "ui-theme-pink"
+                }
+            ]
         }
     }
 }

@@ -23,3 +23,8 @@ export const ShowGetInTouch = () => {
         size: 'sm',
     });
 };
+
+// get selected position for mobile navigation
+export const mobileNavPosition = (navLinks: any[], pathname: string) => {
+    return navLinks.findIndex(item => item.to === pathname) + 1;
+};
