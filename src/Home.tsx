@@ -38,7 +38,7 @@ export default function () {
                             ...
                         </Grid.Col>
                         <Grid.Col size={5}>
-                            <Calendar className={`ui-round ui-shadow-sm${theme ? ` ${theme}` : ''}`} data={{ date: calendarData?.eventsDate, json: JSON.stringify(calendarData?.events) }} />
+                            <Calendar className={`ui-round ui-shadow-sm${theme ? ` ${theme} ui-fill-dark-100` : ''}`} data={{ date: calendarData?.eventsDate, json: JSON.stringify(calendarData?.events) }} />
                         </Grid.Col>
                     </Grid.Row>
 

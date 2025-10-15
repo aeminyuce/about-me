@@ -36,14 +36,14 @@ export default function () {
 
     // theme list
     const themeList = [
-        { name: 'No Theme' },
-        { name: 'Gray Theme', theme: 'ui-theme-gray', color: 'ui-fill-dark-100' },
-        { name: 'Jungle Theme', theme: 'ui-theme-jungle', color: 'ui-fill-dark-100' },
-        { name: 'Sea Theme', theme: 'ui-theme-sea', color: 'ui-fill-dark-100' },
-        { name: 'Blue Theme', theme: 'ui-theme-blue', color: 'ui-fill-dark-100' },
-        { name: 'Ice Theme', theme: 'ui-theme-ice', color: 'ui-fill-dark-100' },
-        { name: 'Orchid Theme', theme: 'ui-theme-orchid', color: 'ui-fill-dark-100' },
-        { name: 'Pink Theme', theme: 'ui-theme-pink', color: 'ui-fill-dark-100' },
+        { name: 'No Theme', theme: null },
+        { name: 'Gray Theme', theme: 'ui-theme-gray' },
+        { name: 'Jungle Theme', theme: 'ui-theme-jungle' },
+        { name: 'Sea Theme', theme: 'ui-theme-sea' },
+        { name: 'Blue Theme', theme: 'ui-theme-blue' },
+        { name: 'Ice Theme', theme: 'ui-theme-ice' },
+        { name: 'Orchid Theme', theme: 'ui-theme-orchid' },
+        { name: 'Pink Theme', theme: 'ui-theme-pink' },
     ];
 
     return (
@@ -98,21 +98,17 @@ export default function () {
                     <Spacer size={2} className='ui-visible-sm' />
                     <Dropdown>
                         <Button ghost className='ui-round ui-p-10-h'>
-                            <span className={`ui-inline-block ui-circle${theme ? ` ${theme}` : ' ui-border'}`} />
+                            <span className={`ui-inline-block ui-circle${theme ? ` ${theme} ui-fill-dark-100` : ' ui-border'}`} />
                             <SvgIcon as='js' toggle src={IconAngleDown} className='ui-m-10-l' />
                         </Button>
                         <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
 
-                            {themeList.map((item: ThemeListProps) => {
-                                const name = item.name === 'No Theme' ? null : `${item.theme} ${item.color}`;
-
-                                return (
-                                    <Dropdown.Item key={item.name} onClick={() => setTheme(name)}>
-                                        <span className={`ui-m-10-r ui-circle${item.theme ? ` ${item.theme} ${item.color}` : ' ui-border'}`} />
-                                        {item.name}
-                                    </Dropdown.Item>
-                                )
-                            })}
+                            {themeList.map((item: ThemeListProps) => (
+                                <Dropdown.Item key={item.name} onClick={() => setTheme(item.theme)}>
+                                    <span className={`ui-m-10-r ui-circle${item.theme ? ` ${item.theme} ui-fill-dark-100` : ' ui-border'}`} />
+                                    {item.name}
+                                </Dropdown.Item>
+                            ))}
 
                         </Dropdown.Menu>
                     </Dropdown>
