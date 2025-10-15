@@ -13,6 +13,7 @@ import { useStoreContext } from './views/StoreContext';
 
 export default function () {
     const { theme, apiResponse } = useStoreContext();
+    const calendarData = apiResponse?.calendar;
 
     return (
         <>
@@ -37,7 +38,7 @@ export default function () {
                             ...
                         </Grid.Col>
                         <Grid.Col size={5}>
-                            <Calendar className={`ui-round ui-shadow-sm${theme ? ` ${theme}` : ''}`} data={{ date: '2019,6', json: JSON.stringify(apiResponse?.calendar) }} />
+                            <Calendar className={`ui-round ui-shadow-sm${theme ? ` ${theme}` : ''}`} data={{ date: calendarData?.eventsDate, json: JSON.stringify(calendarData?.events) }} />
                         </Grid.Col>
                     </Grid.Row>
 
