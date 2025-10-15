@@ -39,7 +39,7 @@ const updateStoreContext = (state: any, action: any) => {
 			};
 		}
 
-		Loadingmask('.ui-loading-mask');
+		Loadingmask();
 
 	} catch (e: any) {
 		// run error logger

@@ -7,7 +7,7 @@ import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // utils
-import { ShowGetInTouch } from '../utils/ShowGetInTouch';
+import { ShowGetInTouch } from '../utils/Helpers';
 import { useStoreContext } from './StoreContext';
 
 // assets

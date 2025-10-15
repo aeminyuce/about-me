@@ -33,9 +33,7 @@ export default function StoreProvider(props: StoreProviderProps) {
         if (['/'].includes(pathname)) {
             if (!state?.apiResponse?.calendar) loadCalendarData();
 
-        } else {
-            Loadingmask('.ui-loading-mask');
-        }
+        } else Loadingmask();
     }, [pathname]);
 
     // themes

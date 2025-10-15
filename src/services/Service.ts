@@ -12,7 +12,7 @@ const hidePageLoader = () => {
     activeFetches--;
 
     if (activeFetches === 0) setTimeout(() => {
-        Loadingmask('.ui-loading-mask');
+        Loadingmask();
     }, ui.globals.slow);
 };
 
