@@ -86,7 +86,7 @@ const SocialLinks = () => {
     };
 
     return (
-        <span className="ui-ease-1st-btn">
+        <span className='ui-ease-1st-btn'>
 
             {socialLinks.map((item: SocialLinksProps) => (
                 <Button key={item.title} square ghost noease title={item.title} href={item.url} className='ui-round' target='_blank' rel='nofollow'>
@@ -121,7 +121,7 @@ const GetInTouchModal = () => {
                             <img src={qrCodeImage} className='ui-img-fluid' />
                         </Grid.Col>
                         <Grid.Col size={8}>
-                            <strong className="ui-font-24">{title}</strong>
+                            <strong className='ui-font-24'>{title}</strong>
                             <p className='ui-font-16 ui-font-condensed ui-m-10-t'>
                                 {messageStart}
                                 <strong>{messageHighlight}</strong>
