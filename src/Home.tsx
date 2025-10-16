@@ -24,41 +24,41 @@ export default function () {
 
     return (
         <>
-            {/* header */}
-            <Header />
+        {/* header */}
+        <Header />
 
-            {/* main */}
-            <Grid.Container as='main'>
-                <Grid.Container fixed='xl' as='div' noGutter='lg'>
+        {/* main */}
+        <Grid.Container as='main'>
+            <Grid.Container fixed='xl' as='div' noGutter='lg'>
 
-                    {/* about me */}
-                    <AboutMe />
+                {/* about me */}
+                <AboutMe />
 
-                    {/* nav */}
-                    <Nav />
+                {/* nav */}
+                <Nav />
 
-                    {/* featured */}
-                    <Grid.Row className={theme ? ` ${theme}` : null}>
-                        <Grid.Col size={6}>
-                            ...
-                        </Grid.Col>
-                        <Grid.Col size={3}>
+                {/* featured */}
+                <Grid.Row className={theme ? ` ${theme}` : null}>
+                    <Grid.Col size={6}>
+                        ...
+                    </Grid.Col>
+                    <Grid.Col size={3}>
 
-                            <Reports />
+                        <Reports />
 
-                        </Grid.Col>
-                        <Grid.Col size={3}>
+                    </Grid.Col>
+                    <Grid.Col size={3}>
 
-                            <Events />
+                        <Events />
 
-                        </Grid.Col>
-                    </Grid.Row>
+                    </Grid.Col>
+                </Grid.Row>
 
-                </Grid.Container>
             </Grid.Container>
+        </Grid.Container>
 
-            {/* footer */}
-            <Footer />
+        {/* footer */}
+        <Footer />
         </>
     );
 }
