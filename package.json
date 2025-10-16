@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uilab": "file:../uilab/uilab-1.0.651.tgz",
+    "uilab": "file:../uilab/uilab-1.0.901.tgz",
     "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.680.tgz"
   }
 }
