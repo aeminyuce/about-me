@@ -24,7 +24,10 @@ const updateStoreContext = (state: any, action: any) => {
 		if ([PAGE_DATA].includes(action?.type)) {
 			return {
 				...state,
-				apiResponse: action.result,
+				apiResponse: {
+					...state.apiResponse,
+					...action.result,
+				},
 			};
 		}
 
