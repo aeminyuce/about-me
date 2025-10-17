@@ -198,7 +198,7 @@ const ReportsList = () => {
 
 const Events = () => {
     const { apiResponse } = useStoreContext();
-    const { eventsDate, events } = apiResponse?.calendar;
+    const { eventsDate, events } = apiResponse?.home?.calendar;
 
     return (
         <Card className='ui-p-15 ui-round ui-shadow-sm'>

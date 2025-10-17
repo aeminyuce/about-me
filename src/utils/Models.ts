@@ -20,7 +20,6 @@ export interface StoreContextProps {
     theme: string;
     setTheme(name: string): string;
     apiResponse: any;
-    loadCalendarData: any;
 }
 
 export interface StoreProviderProps {

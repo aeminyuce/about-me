@@ -3,12 +3,12 @@ import { createContext, useContext, useReducer, useState, useEffect } from 'reac
 import { useLocation } from 'react-router-dom';
 import Loadingmask from 'uilab/react/Loadingmask';
 import Service from '../services/Service';
-import { getPageData, getCalendarData } from '../services/Repository';
+import { getPageData, getHomeData } from '../services/Repository';
 
 // utils
 import type { StoreContextProps, StoreProviderProps } from '../utils/Models';
 import reducer from '../utils/StoreReducer';
-import { CURRENT_THEME, PAGE_DATA, CALENDAR_DATA } from '../utils/Actions';
+import { CURRENT_THEME, PAGE_DATA, HOME_DATA } from '../utils/Actions';
 
 export const StoreContext = createContext({} as StoreContextProps);
 
@@ -31,7 +31,7 @@ export default function StoreProvider(props: StoreProviderProps) {
 
         // route based data
         if (['/'].includes(pathname)) {
-            if (!state?.apiResponse?.calendar) loadCalendarData();
+            if (!state?.apiResponse?.home) loadHomeData();
 
         } else Loadingmask();
     }, [pathname]);
@@ -54,11 +54,11 @@ export default function StoreProvider(props: StoreProviderProps) {
         });
     };
 
-    // fetch calendar data
-    const loadCalendarData = () => {
-        getCalendarData(service).then((response: any) => {
+    // fetch home data
+    const loadHomeData = () => {
+        getHomeData(service).then((response: any) => {
             dispatch({
-                type: CALENDAR_DATA,
+                type: HOME_DATA,
                 result: response?.result,
             });
         });
@@ -68,7 +68,7 @@ export default function StoreProvider(props: StoreProviderProps) {
         ...state,
         isMobile,
         setTheme,
-        loadCalendarData,
+        loadHomeData,
     };
 
     return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>
