@@ -14,8 +14,8 @@ export default function () {
         <Header />
 
         {/* main */}
-        <Grid.Container as='main'>
-            <Grid.Container fixed='xl' as='div' noGutter='lg'>
+        <Grid.Container as='main' noGutter='all'>
+            <Grid.Container fixed='xl' as='div'>
 
                 {/* about me */}
                 <AboutMe />
