@@ -58,3 +58,10 @@ export interface NavLinksProps {
     name: string;
     to: string;
 }
+
+export interface ReportsListProps {
+    name: string;
+    percent: string;
+    reports: string;
+    chartPercent: number;
+}

@@ -1,7 +1,103 @@
 {
     "result": {
+        "reports": {
+            "l": {
+                "name": "Active Reports",
+                "reports": 106,
+                "percent": "58% efficiency",
+                "progressPercent": 58
+            },
+            "r": {
+                "name": "Finished Reports",
+                "reports": 19,
+                "percent": "74% efficiency",
+                "progressPercent": 74
+            }
+        },
+        "reportsList": {
+            "delayed": [
+                {
+                    "name": "AAC-2019-013:AGF",
+                    "percent": "88%",
+                    "reports": "3814 Reports",
+                    "chartPercent": 88
+                },
+                {
+                    "name": "BDA-2019-642",
+                    "percent": "76%",
+                    "reports": "2613 Reports",
+                    "chartPercent": 76
+                },
+                {
+                    "name": "DDG-2019-505:AG",
+                    "percent": "69%",
+                    "reports": "1890 Reports",
+                    "chartPercent": 69
+                },
+                {
+                    "name": "OOC-2019-781:F",
+                    "percent": "52%",
+                    "reports": "1605 Reports",
+                    "chartPercent": 52
+                },
+                {
+                    "name": "BDD-2019-047:G",
+                    "percent": "36%",
+                    "reports": "812 Reports",
+                    "chartPercent": 36
+                },
+                {
+                    "name": "RAC-2019-973",
+                    "percent": "23%",
+                    "reports": "616 Reports",
+                    "chartPercent": 23
+                }
+            ],
+            "paused": [
+                {
+                    "name": "RAC-2019-973",
+                    "percent": "23%",
+                    "reports": "616 Reports",
+                    "chartPercent": 23
+                },
+                {
+                    "name": "BDD-2019-047:G",
+                    "percent": "36%",
+                    "reports": "812 Reports",
+                    "chartPercent": 36
+                },
+                {
+                    "name": "OOC-2019-781:F",
+                    "percent": "52%",
+                    "reports": "1605 Reports",
+                    "chartPercent": 52
+                },
+                {
+                    "name": "DDG-2019-505:AG",
+                    "percent": "69%",
+                    "reports": "1890 Reports",
+                    "chartPercent": 69
+                },
+                {
+                    "name": "BDA-2019-642",
+                    "percent": "76%",
+                    "reports": "2613 Reports",
+                    "chartPercent": 76
+                },
+                {
+                    "name": "AAC-2019-013:AGF",
+                    "percent": "88%",
+                    "reports": "3814 Reports",
+                    "chartPercent": 88
+                }
+            ]
+        },
         "calendar": {
             "eventsDate": "2025,6",
+            "settings": [
+                "Add to your calendar",
+                "See all events"
+            ],
             "events": [
                 {
                     "year": "2025",
