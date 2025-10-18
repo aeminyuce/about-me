@@ -101,7 +101,7 @@ const Report = (props: any) => {
 
 const Reports = () => {
     return (
-        <Grid.Row hGap='no' vGap='no' fluid='no' className='ui-highlight'>
+        <Grid.Row hGap='xs' vGap='no' fluid='no' className='ui-highlight'>
             <Grid.Col size={6}>
                 <Report type='l' />
             </Grid.Col>
@@ -122,7 +122,7 @@ const ReportsListGroup = (props: any) => {
                 {list.map((item: ReportsListProps) => (
                     <ListGroup.Item key={item.name} className='ui-no-border'>
                         <DonutChart.Holder msg={item.percent} className='ui-float-r'>
-                            <DonutChart.Item percent={item.chartPercent} stroke='hsl(188, 89%, 40%)' />
+                            <DonutChart.Item percent={item.chartPercent} className="ui-stroke" />
                         </DonutChart.Holder>
 
                         <b className='ui-m-5-t ui-block'>{item.name}</b>
