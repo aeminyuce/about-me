@@ -69,11 +69,11 @@ const MobileNavLinks = () => {
     return (
         <Carousel half start={mobileNavPosition(navLinks, pathname)} sm={3} xs={2} className='ui-set-static ui-round ui-border ui-border-light'>
             <Carousel.Nav className='ui-no-m ui-ease-1st-btn'>
-                <Button square noease className='ui-carousel-prev ui-round ui-set-absolute ui-set-l'>
+                <Button ghost square noease className='ui-carousel-prev ui-m-2-t ui-round ui-set-absolute ui-set-l'>
                     <SvgIcon as='js' toggle src={IconAngleLeft} />
                 </Button>
                 <Carousel.Dots className='ui-hidden' />
-                <Button square noease className='ui-carousel-next ui-round ui-set-absolute ui-set-r'>
+                <Button ghost square noease className='ui-carousel-next ui-m-2-t ui-round ui-set-absolute ui-set-r'>
                     <SvgIcon as='js' toggle src={IconAngleRight} />
                 </Button>
             </Carousel.Nav>
@@ -103,8 +103,8 @@ const ThemeChanger = () => {
     return (
         <>
         <Spacer size={3} className='ui-visible-sm' />
-        <Dropdown>
-            <Button className='ui-round ui-p-10-h'>
+        <Dropdown align='l'>
+            <Button ghost className='ui-round ui-p-10-h'>
                 <span className={`ui-inline-block ui-circle ${theme} ui-fill-dark-100`} />
                 <SvgIcon as='js' toggle src={IconAngleDown} className='ui-m-10-l' />
             </Button>
