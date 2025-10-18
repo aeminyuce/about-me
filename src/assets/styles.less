@@ -34,7 +34,10 @@ each(@static-grid-sizes, {
 }
 
 /* home */
+@home-reports-max-height:                 175px;
+@home-reports-sonut-size:                 48px;
+
 .home-reports-list {
-    .ui-listgroup { max-height: 175px; }
-    .ui-donut-chart { width: 48px; height: 48px; }
+    .ui-listgroup { max-height: @home-reports-max-height; }
+    .ui-donut-chart { width: @home-reports-sonut-size; height: @home-reports-sonut-size; }
 }
