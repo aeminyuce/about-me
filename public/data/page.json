@@ -93,28 +93,52 @@
             ],
             "themeList": [
                 {
-                    "name": "Jungle Theme",
-                    "theme": "ui-theme-jungle"
+                    "name": "Yellow Theme",
+                    "theme": "ui-theme-yellow"
                 },
                 {
-                    "name": "Sea Theme",
-                    "theme": "ui-theme-sea"
+                    "name": "Yellow-Orange Theme",
+                    "theme": "ui-theme-yellowOrange"
+                },
+                {
+                    "name": "Orange Theme",
+                    "theme": "ui-theme-orange"
+                },
+                {
+                    "name": "Orange-Red Theme",
+                    "theme": "ui-theme-orengeRed"
+                },
+                {
+                    "name": "Red Theme",
+                    "theme": "ui-theme-red"
+                },
+                {
+                    "name": "Red-Purple Theme",
+                    "theme": "ui-theme-redPurple"
+                },
+                {
+                    "name": "Purple Theme",
+                    "theme": "ui-theme-purple"
+                },
+                {
+                    "name": "Purple-Blue Theme",
+                    "theme": "ui-theme-purpleBlue"
                 },
                 {
                     "name": "Blue Theme",
                     "theme": "ui-theme-blue"
                 },
                 {
-                    "name": "Ice Theme",
-                    "theme": "ui-theme-ice"
+                    "name": "Blue-Green Theme",
+                    "theme": "ui-theme-blueGreen"
                 },
                 {
-                    "name": "Orchid Theme",
-                    "theme": "ui-theme-orchid"
+                    "name": "Green Theme",
+                    "theme": "ui-theme-green"
                 },
                 {
-                    "name": "Pink Theme",
-                    "theme": "ui-theme-pink"
+                    "name": "Green-Yellow Theme",
+                    "theme": "ui-theme-greenYellow"
                 }
             ]
         }
