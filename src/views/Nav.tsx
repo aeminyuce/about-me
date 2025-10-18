@@ -8,8 +8,7 @@ import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // utils
-import type { NavLinksProps } from '../utils/Models';
-import type { ThemeListProps } from '../utils/Models';
+import type { NavLinksProps, ThemeListProps } from '../utils/Models';
 import { useStoreContext } from './StoreContext';
 import { mobileNavPosition } from '../utils/Helpers';
 
@@ -22,8 +21,8 @@ export default function () {
     return (
         <Grid.Row className='nav ui-p-15-b ui-m-15-b ui-border-b ui-border-light'>
             <Grid.Static fluid='no' className='ui-set-relative'>
-                <Grid.Col size={44} className='ui-visible-sm' />
-                <Grid.Row hGap='no'>
+                <Grid.Col size={47} className='ui-visible-sm' />
+                <Grid.Row>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-hidden-sm'>
                         <DesktopNavLinks />
                     </Grid.Col>
@@ -31,8 +30,8 @@ export default function () {
                         <MobileNavLinks />
                     </Grid.Col>
                 </Grid.Row>
-                <Grid.Col size={44} className='ui-visible-sm' />
-                <Grid.Col size={61} className='ui-align-r ui-p-10-v'>
+                <Grid.Col size={42} className='ui-visible-sm' />
+                <Grid.Col size={69} className='ui-p-10-v'>
                     <ThemeChanger />
                 </Grid.Col>
             </Grid.Static>
@@ -70,11 +69,11 @@ const MobileNavLinks = () => {
     return (
         <Carousel half start={mobileNavPosition(navLinks, pathname)} sm={3} xs={2} className='ui-set-static ui-round ui-border ui-border-light'>
             <Carousel.Nav className='ui-no-m ui-ease-1st-btn'>
-                <Button ghost square noease className='ui-carousel-prev ui-m-2-t ui-round ui-set-absolute ui-set-l'>
+                <Button square noease className='ui-carousel-prev ui-round ui-set-absolute ui-set-l'>
                     <SvgIcon as='js' toggle src={IconAngleLeft} />
                 </Button>
                 <Carousel.Dots className='ui-hidden' />
-                <Button ghost square noease className='ui-carousel-next ui-m-2-t ui-round ui-set-absolute ui-set-r'>
+                <Button square noease className='ui-carousel-next ui-round ui-set-absolute ui-set-r'>
                     <SvgIcon as='js' toggle src={IconAngleRight} />
                 </Button>
             </Carousel.Nav>
@@ -103,9 +102,9 @@ const ThemeChanger = () => {
 
     return (
         <>
-        <Spacer size={2} className='ui-visible-sm' />
+        <Spacer size={3} className='ui-visible-sm' />
         <Dropdown>
-            <Button ghost className='ui-round ui-p-10-h'>
+            <Button className='ui-round ui-p-10-h'>
                 <span className={`ui-inline-block ui-circle ${theme} ui-fill-dark-100`} />
                 <SvgIcon as='js' toggle src={IconAngleDown} className='ui-m-10-l' />
             </Button>

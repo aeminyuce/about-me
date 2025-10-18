@@ -4,7 +4,7 @@
 @import (reference) 'uilab/less/core/mixins.less';
 
 /* grid sizes */
-@static-grid-sizes:                     44px 61px;
+@static-grid-sizes:                     47px 69px;
 
 ._create-static-cols(@name; @value) {
     @number: unit(@value);
@@ -16,15 +16,25 @@ each(@static-grid-sizes, {
 });
 
 /* nav */
-@nav-next-margin-r:                       61px;
+@nav-prev-margin:                         2px 0 0 10px;
+@nav-next-margin:                         2px 74px 0 0;
 @nav-theme-color-size:                    17px;
 
 .nav {
-    .ui-carousel-next { margin-right: @nav-next-margin-r; }
+    .ui-carousel {
+        &-prev { margin: @nav-prev-margin; }
+        &-next { margin: @nav-next-margin; }
+    }
 
     .ui-dropdown {
         & > button,& li {
             & > span { width: @nav-theme-color-size; height: @nav-theme-color-size; }
         }
     }
+}
+
+/* home */
+.home-reports-list {
+    .ui-listgroup { max-height: 175px; }
+    .ui-donut-chart { width: 48px; height: 48px; }
 }
