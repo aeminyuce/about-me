@@ -106,14 +106,14 @@ const ThemeChanger = () => {
         <Spacer size={2} className='ui-visible-sm' />
         <Dropdown>
             <Button ghost className='ui-round ui-p-10-h'>
-                <span className={`ui-inline-block ui-circle${theme ? ` ${theme} ui-fill-dark-100` : ' ui-border'}`} />
+                <span className={`ui-inline-block ui-circle ${theme} ui-fill-dark-100`} />
                 <SvgIcon as='js' toggle src={IconAngleDown} className='ui-m-10-l' />
             </Button>
             <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
 
                 {themeList.map((item: ThemeListProps) => (
                     <Dropdown.Item key={item.name} onClick={() => setTheme(item.theme)}>
-                        <span className={`ui-m-10-r ui-circle${item.theme ? ` ${item.theme} ui-fill-dark-100` : ' ui-border'}`} />
+                        <span className={`ui-m-10-r ui-circle ${item.theme} ui-fill-dark-100`} />
                         {item.name}
                     </Dropdown.Item>
                 ))}

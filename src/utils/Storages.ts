@@ -24,5 +24,5 @@ export const getStorage = (props:GetStorageProps) => {
 }
 
 export const storedData = {
-	theme: getStorage({ name: CURRENT_THEME }),
+	theme: getStorage({ name: CURRENT_THEME }) ?? 'ui-theme-blue', // default theme
 }

@@ -93,14 +93,6 @@
             ],
             "themeList": [
                 {
-                    "name": "No Theme",
-                    "theme": ""
-                },
-                {
-                    "name": "Gray Theme",
-                    "theme": "ui-theme-gray"
-                },
-                {
                     "name": "Jungle Theme",
                     "theme": "ui-theme-jungle"
                 },
