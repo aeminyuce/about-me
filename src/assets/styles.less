@@ -33,8 +33,15 @@ each(@static-grid-sizes, {
     }
 }
 
-/* home */
-@home-reports-max-height:                 175px;
+/* home: people */
+@home-people-max-height:                  214px;
+
+.home-people-list {
+    .ui-listgroup { max-height: @home-people-max-height; }
+}
+
+/* home: reports */
+@home-reports-max-height:                 174px;
 @home-reports-sonut-size:                 48px;
 
 .home-reports-list {

@@ -1,5 +1,66 @@
 {
     "result": {
+        "people": {
+            "cardTitle": "People",
+            "addPeople": {
+                "icon": "user-plus",
+                "title": "Add people"
+            },
+            "list": [
+                {
+                    "avatarText": "AEY",
+                    "jobTitle": "Front-end Developer",
+                    "description": "Css, JS, React",
+                    "url": "#people-fed"
+                },
+                {
+                    "avatar": "assets/profile-image1.jpg",
+                    "jobTitle": "Back-end Developer",
+                    "description": "Phyton, SQL, Oracle",
+                    "url": "#people-bed"
+                },
+                {
+                    "avatar": "assets/profile-image2.jpg",
+                    "jobTitle": "UI-UX Designer",
+                    "description": "Figma, Illustratiron",
+                    "url": "#people-ui"
+                },
+                {
+                    "avatarText": "EKY",
+                    "jobTitle": "Game Developer",
+                    "description": "Unity, Unreal Engine",
+                    "url": "#people-gdv"
+                },
+                {
+                    "avatarText": "HY",
+                    "jobTitle": "Game Designer",
+                    "description": "Blender, Photoshop, DS Max",
+                    "url": "#people-gde"
+                }
+            ]
+        },
+        "peopleMore": {
+            "more": 13,
+            "moreUrl": "#people-more",
+            "list": [
+                {
+                    "avatarText": "BS",
+                    "jobTitle": "Front-end Developer"
+                },
+                {
+                    "avatar": "assets/profile-image2.jpg",
+                    "jobTitle": "Back-end Developer"
+                },
+                {
+                    "avatar": "assets/profile-image3.jpg",
+                    "jobTitle": "UI-UX Designer"
+                },
+                {
+                    "avatarText": "CM",
+                    "jobTitle": "Game Developer"
+                }
+            ]
+        },
         "reports": {
             "l": {
                 "name": "Active Reports",
@@ -93,7 +154,9 @@
             ]
         },
         "calendar": {
+            "cardTitle": "Events",
             "eventsDate": "2025,6",
+            "title": "Customize events",
             "settings": [
                 "Add to your calendar",
                 "See all events"
