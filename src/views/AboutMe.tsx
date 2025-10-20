@@ -6,9 +6,9 @@ import Grid from 'uilab/react/Grid';
 import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
-// utils
+// misc
 import { ShowGetInTouch } from '../utils/Helpers';
-import { useStoreContext } from './StoreContext';
+import { useStoreContext } from '../states/StoreContext';
 
 // assets
 import { IconMarker } from 'uilab-icons/react/general/marker';

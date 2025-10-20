@@ -11,15 +11,13 @@ import ProgressBar from 'uilab/react/ProgressBar';
 import Tab from 'uilab/react/Tab';
 import SvgIcon from 'uilab/react/SvgIcon';
 
-// views
-import AboutMe from './views/AboutMe';
-import Header from './views/Header';
-import Nav from './views/Nav';
-import Footer from './views/Footer';
-
-// utils
-import type { PeopleListProps, PeopleMoreListProps, ReportsListProps } from './utils/Models';
-import { useStoreContext } from './views/StoreContext';
+// misc
+import AboutMe from '../views/AboutMe';
+import Header from '../views/Header';
+import Nav from '../views/Nav';
+import Footer from '../views/Footer';
+import { useStoreContext } from '../states/StoreContext';
+import type { PeopleListProps, PeopleMoreListProps, ReportsListProps } from '../utils/Models';
 
 // assets
 import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';

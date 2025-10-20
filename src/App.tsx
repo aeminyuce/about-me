@@ -1,20 +1,18 @@
 import * as React from 'react';
 import TopButton from 'uilab/react/TopButton';
 
-// utils
+// misc
 import { metaData } from './utils/MetaData';
-import { storedData } from './utils/Storages';
-
-// views
-import StoreProvider from './views/StoreContext';
-import RoutePaths from './views/RoutePaths';
+import { storedData } from './states/Storages';
+import StoreProvider from './states/StoreContext';
+import Router from './pages/Router';
 
 export default function () {
     return (
         <StoreProvider initialValue={{ metaData, ...storedData }}>
 
-            {/* routes */}
-            <RoutePaths />
+            {/* pages */}
+            <Router />
 
             {/* top button */}
             <TopButton />

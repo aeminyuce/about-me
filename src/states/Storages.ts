@@ -1,6 +1,6 @@
-// utils
-import type { SetStorageProps, GetStorageProps } from './Models';
+// misc
 import { CURRENT_THEME } from './Actions';
+import type { SetStorageProps, GetStorageProps } from '../utils/Models';
 
 export const setStorage = (props:SetStorageProps) => {
 	const { name, value, jsonData } = props;

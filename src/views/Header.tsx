@@ -6,10 +6,10 @@ import Modal from 'uilab/react/Modal';
 import Sidebar from 'uilab/react/Sidebar';
 import SvgIcon from 'uilab/react/SvgIcon';
 
-// utils
+// misc
 import type { HeaderLinksProps, SocialLinksProps } from '../utils/Models';
 import { ShowGetInTouch } from '../utils/Helpers';
-import { useStoreContext } from './StoreContext';
+import { useStoreContext } from '../states/StoreContext';
 
 // assets
 import { IconDribbble } from 'uilab-icons/react/social/dribbble';

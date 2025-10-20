@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-// views
-import PageTitle from './PageTitle';
-import PageLoader from './PageLoader';
+// misc
+import PageTitle from '../views/PageTitle';
+import PageLoader from '../views/PageLoader';
 
-// utils
-import {
-    Home,
-    Dashboard,
-} from '../utils/RouteComponents';
+// routes
+const Home = lazy(() => import( /* webpackChunkName: "Home" */ "./Home" ));
+const Dashboard = lazy(() => import( /* webpackChunkName: "Dashboard" */ "./Dashboard" ));
 
-export default function RoutePaths() {
+export default function Router() {
     return (
         <Suspense fallback={<PageLoader />}>
             <Routes>

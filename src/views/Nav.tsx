@@ -7,9 +7,9 @@ import Grid from 'uilab/react/Grid';
 import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
-// utils
+// misc
 import type { NavLinksProps, ThemeListProps } from '../utils/Models';
-import { useStoreContext } from './StoreContext';
+import { useStoreContext } from '../states/StoreContext';
 import { mobileNavPosition } from '../utils/Helpers';
 
 // assets

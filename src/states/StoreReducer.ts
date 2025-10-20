@@ -1,6 +1,6 @@
 import Loadingmask from 'uilab/react/Loadingmask';
 
-// utils
+// misc
 import { setStorage } from './Storages';
 import { CURRENT_THEME, PAGE_DATA, HOME_DATA } from './Actions';
 

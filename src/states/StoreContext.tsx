@@ -5,10 +5,10 @@ import Loadingmask from 'uilab/react/Loadingmask';
 import Service from '../services/Service';
 import { getPageData, getHomeData } from '../services/Repository';
 
-// utils
+// misc
 import type { StoreContextProps, StoreProviderProps } from '../utils/Models';
-import reducer from '../utils/StoreReducer';
-import { CURRENT_THEME, PAGE_DATA, HOME_DATA } from '../utils/Actions';
+import reducer from './StoreReducer';
+import { CURRENT_THEME, PAGE_DATA, HOME_DATA } from './Actions';
 
 export const StoreContext = createContext({} as StoreContextProps);
 

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Grid from 'uilab/react/Grid';
 
-// views
-import AboutMe from './views/AboutMe';
-import Header from './views/Header';
-import Nav from './views/Nav';
-import Footer from './views/Footer';
+// misc
+import AboutMe from '../views/AboutMe';
+import Header from '../views/Header';
+import Nav from '../views/Nav';
+import Footer from '../views/Footer';
 
 export default function () {
     return (
