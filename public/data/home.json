@@ -40,7 +40,7 @@
             ]
         },
         "peopleMore": {
-            "more": 13,
+            "moreCount": 13,
             "moreUrl": "#people-more",
             "list": [
                 {
