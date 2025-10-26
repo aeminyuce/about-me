@@ -40,8 +40,9 @@
             ]
         },
         "peopleMore": {
-            "moreCount": 13,
+            "moreBtnText": "See full list",
             "moreUrl": "#people-more",
+            "moreCount": 13,
             "list": [
                 {
                     "avatarText": "BS",
@@ -54,10 +55,6 @@
                 {
                     "avatar": "assets/profile-image3.jpg",
                     "jobTitle": "UI-UX Designer"
-                },
-                {
-                    "avatarText": "CM",
-                    "jobTitle": "Game Developer"
                 }
             ]
         },

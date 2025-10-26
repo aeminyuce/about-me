@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Fragment } from 'react';
 import Avatar from 'uilab/react/Avatar';
 import Button from 'uilab/react/Button';
 import Calendar from 'uilab/react/Calendar';
@@ -44,22 +45,22 @@ export default function () {
                 {/* featured */}
                 {apiResponse?.home &&
                     <Grid.Row className={theme ? ` ${theme}` : null}>
-                        <Grid.Col size={4}>
+                        <Grid.Col lg={2} size={4} md={6}>
                             ...
                         </Grid.Col>
-                        <Grid.Col size={3}>
+                        <Grid.Col lg={3} size={4} md={6}>
 
                             {(apiResponse?.home?.reports?.l || apiResponse?.home?.reports?.r) && <Reports />}
                             {(apiResponse?.home?.reportsList?.delayed || apiResponse?.home?.reportsList?.paused) && <ReportsList />}
 
                         </Grid.Col>
-                        <Grid.Col size={2}>
+                        <Grid.Col lg={3} size={4} md={6}>
 
                             {apiResponse?.home?.people?.list && <People />}
-                            {apiResponse?.home?.PeopleMore?.list && <PeopleMore />}
+                            {apiResponse?.home?.peopleMore?.list && <PeopleMore />}
 
                         </Grid.Col>
-                        <Grid.Col size={3}>
+                        <Grid.Col lg={4} size={4} md={6}>
 
                             {apiResponse?.home?.calendar && <Events />}
 
@@ -216,10 +217,13 @@ const People = () => {
                     {peopleList.map((item: PeopleListProps) => (
                         <ListGroup.Item key={item.jobTitle}>
                             <a href={item.url}>
-                                <Avatar size='xs' className='ui-circle ui-fill-dark-100 ui-hover-scale-more'>
-                                    {item.avatar && <img src={item.avatar} />}
-                                    {item.avatarText && <span>{item.avatarText}</span>}
-                                </Avatar>
+                                {(item.avatar || item.avatarText) &&
+                                    <Avatar size='xs' className='ui-circle ui-fill-dark-100 ui-hover-scale-more'>
+                                        {item.avatar && <img src={item.avatar} />}
+                                        {item.avatarText && <span>{item.avatarText}</span>}
+                                    </Avatar>
+                                }
+
                                 <span className="ui-font-ellipsis ui-block">{item.jobTitle}</span>
                                 <span className="ui-color-black-25">{item.description}</span>
                             </a>
@@ -236,19 +240,34 @@ const PeopleMore = () => {
     const { apiResponse } = useStoreContext();
     const peopleMore = apiResponse?.home?.peopleMore;
 
+    const moreBtnText = peopleMore?.moreBtnText;
+    const moreCount = peopleMore?.moreCount;
+
     return (
         <Card className='ui-p-15 ui-round'>
-            <Avatar.Holder className=' ui-p-5 ui-border ui-circle ui-ease-1st-layout'>
+            {moreBtnText &&
+                <Button to={peopleMore?.moreUrl} className='ui-m-4-v ui-float-r ui-circle ui-fill-dark-100'>
+                    {moreBtnText}
+                </Button>
+            }
+
+            <Avatar.Holder className='ui-m-auto ui-ease-1st-layout'>
 
                 {peopleMore?.list.map((item: PeopleMoreListProps) => (
-                     <Avatar key={item.jobTitle} noease className='ui-circle ui-fill-dark-100 ui-hover-scale-more'>
-                        {item.avatar && <img src={item.avatar} />}
-                        {item.avatarText && <span>{item.avatarText}</span>}
-                    </Avatar>
+                    <Fragment key={item.jobTitle}>
+                        {(item.avatar || item.avatarText) &&
+                            <Avatar noease className='ui-circle ui-hover-scale-more'>
+                                {item.avatar && <img src={item.avatar} />}
+                                {item.avatarText && <span>{item.avatarText}</span>}
+                            </Avatar>
+                        }
+                    </Fragment>
                 ))}
 
-                {peopleMore?.moreCount &&
-                    <Button ghost square to={peopleMore?.moreUrl} className='ui-m-10-h ui-circle'>+{peopleMore?.moreCount}</Button>
+                {moreCount &&
+                    <span className='ui-m-10-h ui-inline-block'>
+                        +{moreCount}
+                    </span>
                 }
             </Avatar.Holder>
         </Card>
