@@ -24,7 +24,7 @@ import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
 import { IconUserPlus } from 'uilab-icons/react/general/user-plus';
 
 export default function () {
-    const { theme } = useStoreContext();
+    const { theme, apiResponse } = useStoreContext();
 
     return (
         <>
@@ -42,28 +42,30 @@ export default function () {
                 <Nav />
 
                 {/* featured */}
-                <Grid.Row className={theme ? ` ${theme}` : null}>
-                    <Grid.Col size={4}>
-                        ...
-                    </Grid.Col>
-                    <Grid.Col size={3}>
+                {apiResponse?.home &&
+                    <Grid.Row className={theme ? ` ${theme}` : null}>
+                        <Grid.Col size={4}>
+                            ...
+                        </Grid.Col>
+                        <Grid.Col size={3}>
 
-                        <Reports />
-                        <ReportsList />
+                            {(apiResponse?.home?.reports?.l || apiResponse?.home?.reports?.r) && <Reports />}
+                            {(apiResponse?.home?.reportsList?.delayed || apiResponse?.home?.reportsList?.paused) && <ReportsList />}
 
-                    </Grid.Col>
-                    <Grid.Col size={2}>
+                        </Grid.Col>
+                        <Grid.Col size={2}>
 
-                        <People />
-                        <PeopleMore />
+                            {apiResponse?.home?.people?.list && <People />}
+                            {apiResponse?.home?.PeopleMore?.list && <PeopleMore />}
 
-                    </Grid.Col>
-                    <Grid.Col size={3}>
+                        </Grid.Col>
+                        <Grid.Col size={3}>
 
-                        <Events />
+                            {apiResponse?.home?.calendar && <Events />}
 
-                    </Grid.Col>
-                </Grid.Row>
+                        </Grid.Col>
+                    </Grid.Row>
+                }
 
             </Grid.Container>
         </Grid.Container>
@@ -74,94 +76,39 @@ export default function () {
     );
 }
 
-const People = () => {
-    const { apiResponse } = useStoreContext();
-
-    const { cardTitle, addPeople, list } = apiResponse?.home?.people;
-    const { icon, title } = addPeople;
-
-    const peopleIcons = {
-        "user-plus": IconUserPlus,
-    };
-
-    const setScrollOuter = list.length > 3 ? ' ui-scrollbar-outer' : '';
-
-    return (
-        <Card className='home-people-list ui-p-15 ui-round'>
-            <Button ghost square title={title} className='ui-round ui-float-r' data={{ 'tooltip': '', 'only': 'desktop' }}>
-                <SvgIcon as='js' src={peopleIcons[icon]} />
-            </Button>
-            <h3 className='ui-h3 ui-align-l ui-m-10-t'>{cardTitle}</h3>
-            <ListGroup className={`ui-round ui-scroll-v ui-scrollbar-faded${setScrollOuter}`}>
-                <ListGroup.List avatarSize='xs'>
-
-                    {list.map((item: PeopleListProps) => (
-                        <ListGroup.Item key={item.jobTitle}>
-                            <a href={item.url}>
-                                <Avatar size='xs' className='ui-circle ui-fill-dark-100 ui-hover-scale-more'>
-                                    {item.avatar && <img src={item.avatar} />}
-                                    {item.avatarText && <span>{item.avatarText}</span>}
-                                </Avatar>
-                                <span className="ui-font-ellipsis ui-block">{item.jobTitle}</span>
-                                <span className="ui-color-black-25">{item.description}</span>
-                            </a>
-                        </ListGroup.Item>
-                    ))}
-
-                </ListGroup.List>
-            </ListGroup>
-        </Card>
-    )
-}
-
-const PeopleMore = () => {
-    const { apiResponse } = useStoreContext();
-    const { list, more, moreUrl } = apiResponse?.home?.peopleMore;
-
-    return (
-        <Card className='ui-p-15 ui-round'>
-            <Avatar.Holder className=' ui-p-5 ui-border ui-circle ui-ease-1st-layout'>
-
-                {list.map((item: PeopleMoreListProps) => (
-                     <Avatar key={item.jobTitle} noease className='ui-circle ui-fill-dark-100 ui-hover-scale-more'>
-                        {item.avatar && <img src={item.avatar} />}
-                        {item.avatarText && <span>{item.avatarText}</span>}
-                    </Avatar>
-                ))}
-
-                <Button ghost square to={moreUrl} className='ui-m-10-h ui-circle'>+{more}</Button>
-            </Avatar.Holder>
-        </Card>
-    )
-}
-
 const Report = (props: any) => {
     const { apiResponse } = useStoreContext();
-    const { reports } = apiResponse?.home;
-
     const { type } = props;
-    const getData = reports[type];
+
+    const reportsData = apiResponse?.home?.reports;
+    const getData = reportsData[type];
 
     return (
         <Card className={`ui-p-15 ui-shadow-sm ui-round-${type}`}>
-            <Grid.Static fluid='no' className='ui-font-condensed'>
-                <Grid.Row hGap='no' vGap='md'>
-                    <Grid.Col size={12} className='ui-font-16 ui-m-10-b'>
-                        {getData.name}
+            {(getData?.name || getData?.reports) &&
+                <Grid.Static fluid='no' className='ui-font-condensed'>
+                    <Grid.Row hGap='no' vGap='md'>
+                        <Grid.Col size={12} className='ui-font-16 ui-m-10-b'>
+                            {getData?.name || ''}
+                        </Grid.Col>
+                    </Grid.Row>
+                    <Grid.Col size={100} className='ui-font-38 ui-align-r ui-p-15-t'>
+                        {getData?.reports || 0}
                     </Grid.Col>
-                </Grid.Row>
-                <Grid.Col size={100} className='ui-font-38 ui-align-r ui-p-15-t'>
-                    {getData.reports}
-                </Grid.Col>
-            </Grid.Static>
+                </Grid.Static>
+            }
 
-            <div className='ui-color-black-25 ui-m-10-b'>
-                {getData.percent}
-            </div>
+            {getData?.percent &&
+                <div className='ui-color-black-25 ui-m-10-b'>
+                    {getData?.percent}
+                </div>
+            }
 
-            <ProgressBar className='ui-round'>
-                <ProgressBar.Item percent={getData.progressPercent} className='ui-fill-dark-100'/>
-            </ProgressBar>
+            {getData?.progressPercent &&
+                <ProgressBar className='ui-round'>
+                    <ProgressBar.Item percent={getData?.progressPercent} className='ui-fill-dark-100'/>
+                </ProgressBar>
+            }
         </Card>
     )
 }
@@ -181,7 +128,7 @@ const Reports = () => {
 
 const ReportsListGroup = (props: any) => {
     const { list } = props;
-    const setScrollOuter = list.length > 2 ? ' ui-scrollbar-outer' : '';
+    const setScrollOuter = list?.length > 2 ? ' ui-scrollbar-outer' : '';
 
     return (
         <ListGroup className={`ui-round ui-scroll-v ui-scrollbar-faded${setScrollOuter}`}>
@@ -205,9 +152,7 @@ const ReportsListGroup = (props: any) => {
 
 const ReportsList = () => {
     const { apiResponse } = useStoreContext();
-
-    const { reportsList } = apiResponse?.home;
-    const { delayed, paused } = reportsList;
+    const reportsList = apiResponse?.home?.reportsList;
 
     return (
         <Card className='home-reports-list ui-p-15 ui-shadow-sm ui-round'>
@@ -227,40 +172,120 @@ const ReportsList = () => {
 
                 </Button.Wrapper>
                 <Tab.Content open>
-                    <ReportsListGroup list={delayed} />
+                    {reportsList?.delayed && <ReportsListGroup list={reportsList?.delayed} />}
                 </Tab.Content>
                 <Tab.Content>
-                    <ReportsListGroup list={paused} />
+                    {reportsList?.paused && <ReportsListGroup list={reportsList?.paused} />}
                 </Tab.Content>
             </Tab.Holder>
         </Card>
     )
 }
 
+const People = () => {
+    const { apiResponse } = useStoreContext();
+    const people = apiResponse?.home?.people;
+
+    const peopleList = people?.list;
+    const addPeople = people?.addPeople;
+    const cardTitle = people?.cardTitle;
+
+    const peopleIcons = {
+        "user-plus": IconUserPlus,
+    };
+
+    const setScrollOuter = peopleList?.length > 3 ? ' ui-scrollbar-outer' : '';
+
+    return (
+        <Card className='home-people-list ui-p-15 ui-round'>
+            {addPeople &&
+                <Button ghost square title={addPeople?.title} className='ui-round ui-float-r' data={{ 'tooltip': '', 'only': 'desktop' }}>
+                    {addPeople?.icon &&
+                        <SvgIcon as='js' src={peopleIcons[addPeople?.icon]} />
+                    }
+                </Button>
+            }
+
+            {cardTitle &&
+                <h3 className='ui-h3 ui-align-l ui-m-10-t'>{cardTitle}</h3>
+            }
+
+            <ListGroup className={`ui-round ui-scroll-v ui-scrollbar-faded${setScrollOuter}`}>
+                <ListGroup.List avatarSize='xs'>
+
+                    {peopleList.map((item: PeopleListProps) => (
+                        <ListGroup.Item key={item.jobTitle}>
+                            <a href={item.url}>
+                                <Avatar size='xs' className='ui-circle ui-fill-dark-100 ui-hover-scale-more'>
+                                    {item.avatar && <img src={item.avatar} />}
+                                    {item.avatarText && <span>{item.avatarText}</span>}
+                                </Avatar>
+                                <span className="ui-font-ellipsis ui-block">{item.jobTitle}</span>
+                                <span className="ui-color-black-25">{item.description}</span>
+                            </a>
+                        </ListGroup.Item>
+                    ))}
+
+                </ListGroup.List>
+            </ListGroup>
+        </Card>
+    )
+}
+
+const PeopleMore = () => {
+    const { apiResponse } = useStoreContext();
+    const peopleMore = apiResponse?.home?.peopleMore;
+
+    return (
+        <Card className='ui-p-15 ui-round'>
+            <Avatar.Holder className=' ui-p-5 ui-border ui-circle ui-ease-1st-layout'>
+
+                {peopleMore?.list.map((item: PeopleMoreListProps) => (
+                     <Avatar key={item.jobTitle} noease className='ui-circle ui-fill-dark-100 ui-hover-scale-more'>
+                        {item.avatar && <img src={item.avatar} />}
+                        {item.avatarText && <span>{item.avatarText}</span>}
+                    </Avatar>
+                ))}
+
+                {peopleMore?.moreCount &&
+                    <Button ghost square to={peopleMore?.moreUrl} className='ui-m-10-h ui-circle'>+{peopleMore?.moreCount}</Button>
+                }
+            </Avatar.Holder>
+        </Card>
+    )
+}
+
 const Events = () => {
     const { apiResponse } = useStoreContext();
-    const { cardTitle, eventsDate, title, settings, events } = apiResponse?.home?.calendar;
+    const calendar = apiResponse?.home?.calendar;
 
     return (
         <Card className='ui-p-15 ui-round ui-shadow-sm'>
-            <Dropdown align='l' className='ui-float-r'>
-                <Button square ghost title={title} className='ui-round' data={{ 'tooltip': '', 'only': 'desktop' }}>
-                    <SvgIcon as='js' src={IconEllipsisH} />
-                </Button>
-                <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
+            {calendar?.settings &&
+                <Dropdown align='l' className='ui-float-r'>
+                    <Button square ghost title={calendar?.title} className='ui-round' data={{ 'tooltip': '', 'only': 'desktop' }}>
+                        <SvgIcon as='js' src={IconEllipsisH} />
+                    </Button>
+                    <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
 
-                    {settings.map((name: string) => (
-                        <Dropdown.Item key={name}>{name}</Dropdown.Item>
-                    ))}
+                        {calendar?.settings.map((name: string) => (
+                            <Dropdown.Item key={name}>{name}</Dropdown.Item>
+                        ))}
 
-                </Dropdown.Menu>
-            </Dropdown>
+                    </Dropdown.Menu>
+                </Dropdown>
+            }
 
-            <h3 className='ui-h3 ui-align-l ui-m-10-t'>{cardTitle}</h3>
-            <Calendar
-                className='ui-no-p ui-round'
-                data={{ date: eventsDate, json: JSON.stringify(events) }}
-            />
+            {calendar?.cardTitle &&
+                <h3 className='ui-h3 ui-align-l ui-m-10-t'>{calendar?.cardTitle}</h3>
+            }
+
+            {calendar?.eventsDate && calendar?.events &&
+                <Calendar
+                    className='ui-no-p ui-round'
+                    data={{ date: calendar?.eventsDate, json: JSON.stringify(calendar?.events) }}
+                />
+            }
         </Card>
     )
 }
