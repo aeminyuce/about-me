@@ -21,25 +21,28 @@ import { IconSun } from 'uilab-icons/react/weather/sun';
 import { IconMoon } from 'uilab-icons/react/weather/moon';
 
 export default function () {
-    return (
+    const { apiResponse } = useStoreContext();
+    const headerData = apiResponse?.header;
+
+    return headerData && (
         <HeaderSticky className='ui-container' dataClasses='ui-shadow'>
             <Grid.Row fluid='no'>
                 <Grid.Col size={9} md={3} sm={3} xs={3}>
 
                     <ToggleHeaderSidebar />
-                    <HeaderLinks />
+                    {headerData?.headerLinks && <HeaderLinks />}
 
                 </Grid.Col>
                 <Grid.Col size={3} md={9} sm={9} xs={9} className='ui-align-r ui-icons-no-opacity'>
 
-                    <SocialLinks />
+                    {headerData?.socialLinks && <SocialLinks />}
                     <ToggleDarkMode />
 
                 </Grid.Col>
             </Grid.Row>
 
-            <GetInTouchModal />
-            <HeaderSidebar />
+            {headerData?.getInTouch && <GetInTouchModal />}
+            {headerData?.sidebarTitle && <HeaderSidebar />}
         </HeaderSticky>
     );
 }
@@ -54,13 +57,12 @@ const ToggleHeaderSidebar = () => {
 
 const HeaderLinks = () => {
     const { apiResponse } = useStoreContext();
-    const { headerLinks } = apiResponse?.header;
 
     return (
         <span className='ui-hidden-md'>
             <span className='ui-ease-1st-btn ui-sidebar-add-l'>
 
-                {headerLinks.map((item: HeaderLinksProps) => {
+                {apiResponse?.header?.headerLinks.map((item: HeaderLinksProps) => {
                     const isModal = item.modal ? () => ShowGetInTouch() : null;
 
                     return (
@@ -77,7 +79,6 @@ const HeaderLinks = () => {
 
 const SocialLinks = () => {
     const { apiResponse } = useStoreContext();
-    const { socialLinks } = apiResponse?.header;
 
     const socialIcons = {
         github: IconGithub,
@@ -88,7 +89,7 @@ const SocialLinks = () => {
     return (
         <span className='ui-ease-1st-btn'>
 
-            {socialLinks.map((item: SocialLinksProps) => (
+            {apiResponse?.header?.socialLinks.map((item: SocialLinksProps) => (
                 <Button key={item.title} square ghost noease title={item.title} href={item.url} className='ui-round' target='_blank' rel='nofollow'>
                     <SvgIcon as='js' src={socialIcons[item.icon as string]} />
                 </Button>
@@ -110,7 +111,14 @@ const ToggleDarkMode = () => {
 
 const GetInTouchModal = () => {
     const { apiResponse } = useStoreContext();
-    const { qrCodeImage, title, messageStart, messageHighlight, messageEnd } = apiResponse?.header?.getInTouch;
+    const getInTouch = apiResponse?.header?.getInTouch;
+
+    const qrCodeImage = getInTouch?.qrCodeImage;
+    const title = getInTouch?.title;
+
+    const messageStart = getInTouch?.messageStart;
+    const messageHighlight = getInTouch?.messageHighlight;
+    const messageEnd = getInTouch?.messageEnd;
 
     return (
         <Modal as='div' className='getInTouchModal'>
@@ -118,15 +126,22 @@ const GetInTouchModal = () => {
                 <Grid.Container as='div'>
                     <Grid.Row fluid='no'>
                         <Grid.Col size={4}>
-                            <img src={qrCodeImage} className='ui-img-fluid' />
+                            {qrCodeImage &&
+                                <img src={qrCodeImage} className='ui-img-fluid' />
+                            }
                         </Grid.Col>
                         <Grid.Col size={8}>
-                            <strong className='ui-font-24'>{title}</strong>
-                            <p className='ui-font-16 ui-font-condensed ui-m-10-t'>
-                                {messageStart}
-                                <strong>{messageHighlight}</strong>
-                                {messageEnd}
-                            </p>
+                            {title &&
+                                <strong className='ui-font-24'>{title}</strong>
+                            }
+
+                            {(messageStart || messageHighlight || messageEnd) &&
+                                <p className='ui-font-16 ui-font-condensed ui-m-10-t'>
+                                    {messageStart}
+                                    <strong>{messageHighlight}</strong>
+                                    {messageEnd}
+                                </p>
+                            }
                         </Grid.Col>
                     </Grid.Row>
                 </Grid.Container>
@@ -137,7 +152,7 @@ const GetInTouchModal = () => {
 
 const HeaderSidebar = () => {
     const { apiResponse } = useStoreContext();
-    const { sidebarTitle } = apiResponse?.header;
+    const sidebarTitle = apiResponse?.header?.sidebarTitle;
 
     return (
         <Sidebar pos='l' className='ui-round'>
@@ -145,7 +160,9 @@ const HeaderSidebar = () => {
                 <Button square ghost title='Close' className='ui-sidebar-close ui-round'>
                     <SvgIcon as='js' src={IconAngleLeft} />
                 </Button>
-                <h3 className='ui-h3 ui-font-bold ui-align-l ui-m-10-t'>{sidebarTitle}</h3>
+                {sidebarTitle &&
+                    <h3 className='ui-h3 ui-font-bold ui-align-l ui-m-10-t'>{sidebarTitle}</h3>
+                }
             </Sidebar.Title>
             <Sidebar.Content className='ui-scroll-v ui-align-c' />
         </Sidebar>
