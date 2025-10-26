@@ -18,21 +18,24 @@ import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
 import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
 export default function () {
-    return (
+    const { apiResponse } = useStoreContext();
+    const navData = apiResponse?.nav;
+
+    return navData && (
         <Grid.Row className='nav ui-p-15-b ui-m-15-b ui-border-b ui-border-light'>
             <Grid.Static fluid='no' className='ui-set-relative'>
                 <Grid.Col size={47} className='ui-visible-sm' />
                 <Grid.Row>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-hidden-sm'>
-                        <DesktopNavLinks />
+                        {navData?.navLinks && <DesktopNavLinks />}
                     </Grid.Col>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-visible-sm'>
-                        <MobileNavLinks />
+                        {navData?.navLinks && <MobileNavLinks />}
                     </Grid.Col>
                 </Grid.Row>
                 <Grid.Col size={42} className='ui-visible-sm' />
                 <Grid.Col size={69} className='ui-p-10-v'>
-                    <ThemeChanger />
+                    {navData?.themeList && <ThemeChanger />}
                 </Grid.Col>
             </Grid.Static>
         </Grid.Row>
@@ -41,13 +44,11 @@ export default function () {
 
 const DesktopNavLinks = () => {
     const { pathname } = useLocation();
-
     const { apiResponse } = useStoreContext();
-    const { navLinks } = apiResponse?.nav;
 
     return (
         <>
-        {navLinks.map((item: NavLinksProps) => {
+        {apiResponse?.nav?.navLinks.map((item: NavLinksProps) => {
             const selected = item.to === pathname;
 
             return (
@@ -64,10 +65,12 @@ const MobileNavLinks = () => {
     const { pathname } = useLocation();
 
     const { apiResponse } = useStoreContext();
-    const { navLinks } = apiResponse?.nav;
+    const navLinks = apiResponse?.nav?.navLinks;
+
+    const start = mobileNavPosition(navLinks, pathname);
 
     return (
-        <Carousel half start={mobileNavPosition(navLinks, pathname)} sm={3} xs={2} className='ui-set-static ui-round ui-border ui-border-light'>
+        <Carousel half start={start} sm={3} xs={2} className='ui-set-static ui-round ui-border ui-border-light'>
             <Carousel.Nav className='ui-no-m ui-ease-1st-btn'>
                 <Button ghost square noease className='ui-carousel-prev ui-m-2-t ui-round ui-set-absolute ui-set-l'>
                     <SvgIcon as='js' toggle src={IconAngleLeft} />
@@ -98,7 +101,6 @@ const MobileNavLinks = () => {
 
 const ThemeChanger = () => {
     const { theme, setTheme, apiResponse } = useStoreContext();
-    const { themeList } = apiResponse?.nav;
 
     return (
         <>
@@ -110,7 +112,7 @@ const ThemeChanger = () => {
             </Button>
             <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
 
-                {themeList.map((item: ThemeListProps) => (
+                {apiResponse?.nav?.themeList.map((item: ThemeListProps) => (
                     <Dropdown.Item key={item.name} onClick={() => setTheme(item.theme)}>
                         <span className={`ui-m-10-r ui-circle ${item.theme} ui-fill-dark-100`} />
                         {item.name}
