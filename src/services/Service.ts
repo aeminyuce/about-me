@@ -60,7 +60,7 @@ export default class Service {
             response = await fetch(url, {
                 method: 'POST',
                 headers: serviceHeaders,
-                body: body ?? JSON.stringify(body),
+                body: body ? JSON.stringify(body) : undefined,
             });
 
             errorHandler(response.status);
