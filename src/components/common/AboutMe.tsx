@@ -7,8 +7,8 @@ import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { ShowGetInTouch } from '../utils/Helpers';
-import { useStoreContext } from '../states/StoreContext';
+import { ShowGetInTouch } from '../../utils/Helpers';
+import { useStoreContext } from '../../states/StoreContext';
 
 // assets
 import { IconMarker } from 'uilab-icons/react/general/marker';

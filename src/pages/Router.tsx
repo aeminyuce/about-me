@@ -3,8 +3,8 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 // misc
-import PageTitle from '../views/PageTitle';
-import PageLoader from '../views/PageLoader';
+import PageTitle from '../components/common/PageTitle';
+import PageLoader from '../components/common/PageLoader';
 import Page500 from '../pages/500';
 import Page404 from '../pages/404';
 

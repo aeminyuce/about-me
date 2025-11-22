@@ -1,6 +1,6 @@
 // misc
-import type { PageTitleProps } from '../utils/Models';
-import { useStoreContext } from '../states/StoreContext';
+import type { PageTitleProps } from '../../utils/Models';
+import { useStoreContext } from '../../states/StoreContext';
 
 export default function PageTitle(props:PageTitleProps) {
     const { title, children } = props;

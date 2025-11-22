@@ -7,9 +7,9 @@ import Sidebar from 'uilab/react/Sidebar';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import type { HeaderLinksProps, SocialLinksProps } from '../utils/Models';
-import { ShowGetInTouch } from '../utils/Helpers';
-import { useStoreContext } from '../states/StoreContext';
+import type { HeaderLinksProps, SocialLinksProps } from '../../utils/Models';
+import { ShowGetInTouch } from '../../utils/Helpers';
+import { useStoreContext } from '../../states/StoreContext';
 
 // assets
 import { IconDribbble } from 'uilab-icons/react/social/dribbble';

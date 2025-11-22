@@ -2,10 +2,10 @@ import * as React from 'react';
 import Grid from 'uilab/react/Grid';
 
 // misc
-import AboutMe from '../views/AboutMe';
-import Header from '../views/Header';
-import Nav from '../views/Nav';
-import Footer from '../views/Footer';
+import AboutMe from '../components/common/AboutMe';
+import Header from '../components/common/Header';
+import Nav from '../components/common/Nav';
+import Footer from '../components/common/Footer';
 
 export default function () {
     return (

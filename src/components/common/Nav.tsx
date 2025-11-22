@@ -8,9 +8,9 @@ import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import type { NavLinksProps, ThemeListProps } from '../utils/Models';
-import { useStoreContext } from '../states/StoreContext';
-import { mobileNavPosition } from '../utils/Helpers';
+import type { NavLinksProps, ThemeListProps } from '../../utils/Models';
+import { useStoreContext } from '../../states/StoreContext';
+import { mobileNavPosition } from '../../utils/Helpers';
 
 // assets
 import { IconAngleDown } from 'uilab-icons/react/general/angle-down';

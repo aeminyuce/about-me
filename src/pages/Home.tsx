@@ -13,10 +13,10 @@ import Tab from 'uilab/react/Tab';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import AboutMe from '../views/AboutMe';
-import Header from '../views/Header';
-import Nav from '../views/Nav';
-import Footer from '../views/Footer';
+import AboutMe from '../components/common/AboutMe';
+import Header from '../components/common/Header';
+import Nav from '../components/common/Nav';
+import Footer from '../components/common/Footer';
 import { useStoreContext } from '../states/StoreContext';
 import type { PeopleListProps, PeopleMoreListProps, ReportsListProps } from '../utils/Models';
 
