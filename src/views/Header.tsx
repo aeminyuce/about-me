@@ -122,15 +122,15 @@ const GetInTouchModal = () => {
 
     return (
         <Modal as='div' className='getInTouchModal'>
-            <Modal.Container className='ui-p-10'>
-                <Grid.Container as='div'>
-                    <Grid.Row fluid='no'>
-                        <Grid.Col size={4}>
-                            {qrCodeImage &&
-                                <img src={qrCodeImage} className='ui-img-fluid' />
-                            }
-                        </Grid.Col>
-                        <Grid.Col size={8}>
+            <Modal.Container>
+                <Grid.Static fluid='no'>
+                    <Grid.Col size={133} className='ui-p-10'>
+                        {qrCodeImage &&
+                            <img src={qrCodeImage} className='ui-img-fluid' />
+                        }
+                    </Grid.Col>
+                    <Grid.Row>
+                        <Grid.Col size={12}>
                             {title &&
                                 <strong className='ui-font-24'>{title}</strong>
                             }
@@ -144,7 +144,7 @@ const GetInTouchModal = () => {
                             }
                         </Grid.Col>
                     </Grid.Row>
-                </Grid.Container>
+                </Grid.Static>
             </Modal.Container>
         </Modal>
     )
