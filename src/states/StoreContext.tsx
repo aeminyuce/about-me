@@ -12,7 +12,7 @@ import { CURRENT_THEME, PAGE_DATA, HOME_DATA } from './Actions';
 
 export const StoreContext = createContext({} as StoreContextProps);
 
-export default function StoreProvider(props: StoreProviderProps) {
+export default function (props: StoreProviderProps) {
     const { children, initialValue } = props;
 
     const service = new Service();

@@ -1,5 +1,3 @@
-import { modalOpen } from 'uilab/react/Modal';
-
 // convert object to url params
 export const getParamsFromObject = (url: string, obj: any) => {
     let params = '';
@@ -15,14 +13,6 @@ export const getParamsFromObject = (url: string, obj: any) => {
 
     return url;
 }
-
-// get in touch modal
-export const ShowGetInTouch = () => {
-    modalOpen({
-        source: '.getInTouchModal',
-        size: 'sm',
-    });
-};
 
 // get selected position for mobile navigation
 export const mobileNavPosition = (navLinks: any[], pathname: string) => {

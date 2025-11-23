@@ -2,7 +2,7 @@
 import type { PageTitleProps } from '../../utils/Models';
 import { useStoreContext } from '../../states/StoreContext';
 
-export default function PageTitle(props:PageTitleProps) {
+export default function (props: PageTitleProps) {
     const { title, children } = props;
     const { metaData } = useStoreContext();
 

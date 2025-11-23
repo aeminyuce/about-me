@@ -12,7 +12,7 @@ import Page404 from '../pages/404';
 const Home = lazy(() => import( /* webpackChunkName: "Home" */ "./Home" ));
 const Dashboard = lazy(() => import( /* webpackChunkName: "Dashboard" */ "./Dashboard" ));
 
-export default function Router() {
+export default function () {
     return (
         <Suspense fallback={<PageLoader />}>
             <Routes>
