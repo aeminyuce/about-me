@@ -1,0 +1,53 @@
+/* styles */
+
+@import (reference) 'uilab/less/core/globals.less';
+@import (reference) 'uilab/less/core/mixins.less';
+
+/* home nav */
+@home-nav-prev-margin:                    2px 0 0 10px;
+@home-nav-next-margin:                    2px 74px 0 0;
+@home-nav-theme-color-size:               17px;
+
+.home-nav {
+    .ui-carousel {
+        &-prev { margin: @home-nav-prev-margin; }
+        &-next { margin: @home-nav-next-margin; }
+    }
+
+    .ui-dropdown {
+        & > button,& li {
+            & > span { width: @home-nav-theme-color-size; height: @home-nav-theme-color-size; }
+        }
+    }
+}
+
+/* profile */
+@home-profile-cover-size:                 80px;
+@home-profile-cover-margin-bottom:        10px;
+@home-profile-activity-max-height:        196px;
+
+.home-profile {
+    & > div:first-child {
+        height: @home-profile-cover-size; margin-bottom: (@home-profile-cover-size / 2 + @home-profile-cover-margin-bottom);
+
+        .ui-notifier { margin-top: (@home-profile-cover-size / 2); }
+    }
+
+    .ui-listgroup { max-height: @home-profile-activity-max-height; }
+}
+
+/* reports */
+@home-reports-max-height:                 174px;
+@home-reports-donut-size:                 48px;
+
+.home-reports-list {
+    .ui-listgroup { max-height: @home-reports-max-height; }
+    .ui-donut-chart { width: @home-reports-donut-size; height: @home-reports-donut-size; }
+}
+
+/* people */
+@home-people-max-height:                  226px;
+
+.home-people-list {
+    .ui-listgroup { max-height: @home-people-max-height; }
+}

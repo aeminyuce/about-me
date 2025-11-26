@@ -53,13 +53,17 @@ export interface SocialLinksProps {
     icon: ElementType;
 }
 
-// Nav
-export interface NavLinksProps {
+// Home
+export interface HomeNavLinksProps {
     name: string;
     to: string;
 }
-
-// Home
+export interface UserActivityProps {
+    id: string;
+    time: string;
+    activity: string;
+    url: string;
+}
 export interface PeopleListProps {
     avatar?: string;
     avatarText?: string;

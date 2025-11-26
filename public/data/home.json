@@ -1,60 +1,37 @@
 {
     "result": {
-        "people": {
-            "cardTitle": "People",
-            "addPeople": {
-                "icon": "user-plus",
-                "title": "Add people"
+        "profile": {
+            "info": {
+                "avatar": "UPT",
+                "name": "User Pine Tree",
+                "email": "upt@yourdomain.com",
+                "type": "Licensed User"
             },
-            "list": [
+            "userActivity": [
                 {
-                    "avatarText": "AEY",
-                    "jobTitle": "Front-end Developer",
-                    "description": "Css, JS, React",
-                    "url": "#people-fed"
+                    "id": "usr-act-01",
+                    "time": "2h",
+                    "activity": "User logged into the dashboard."
                 },
                 {
-                    "avatar": "assets/profile-image1.jpg",
-                    "jobTitle": "Back-end Developer",
-                    "description": "Phyton, SQL, Oracle",
-                    "url": "#people-bed"
+                    "id": "usr-act-02",
+                    "time": "3d",
+                    "activity": "Generated monthly report summary by types."
                 },
                 {
-                    "avatar": "assets/profile-image2.jpg",
-                    "jobTitle": "UI-UX Designer",
-                    "description": "Figma, Illustratiron",
-                    "url": "#people-ui"
+                    "id": "usr-act-03",
+                    "time": "7d",
+                    "activity": "Downloaded account data file as json format."
                 },
                 {
-                    "avatarText": "EKY",
-                    "jobTitle": "Game Developer",
-                    "description": "Unity, Unreal Engine",
-                    "url": "#people-gdv"
+                    "id": "usr-act-04",
+                    "time": "3w",
+                    "activity": "Updated user billing information settings."
                 },
                 {
-                    "avatarText": "HY",
-                    "jobTitle": "Game Designer",
-                    "description": "Blender, Photoshop, DS Max",
-                    "url": "#people-gde"
-                }
-            ]
-        },
-        "peopleMore": {
-            "moreBtnText": "See full list",
-            "moreUrl": "#people-more",
-            "moreCount": 13,
-            "list": [
-                {
-                    "avatarText": "BS",
-                    "jobTitle": "Front-end Developer"
-                },
-                {
-                    "avatar": "assets/profile-image2.jpg",
-                    "jobTitle": "Back-end Developer"
-                },
-                {
-                    "avatar": "assets/profile-image3.jpg",
-                    "jobTitle": "UI-UX Designer"
+                    "id": "usr-act-05",
+                    "time": "2m",
+                    "activity": "Invited a new team member to the board."
                 }
             ]
         },
@@ -147,6 +124,64 @@
                     "percent": "88%",
                     "reports": "3814 Reports",
                     "chartPercent": 88
+                }
+            ]
+        },
+        "people": {
+            "cardTitle": "People",
+            "addPeople": {
+                "icon": "user-plus",
+                "title": "Add people"
+            },
+            "list": [
+                {
+                    "avatarText": "AEY",
+                    "jobTitle": "Front-end Developer",
+                    "description": "Css, JS, React",
+                    "url": "#people-fed"
+                },
+                {
+                    "avatar": "images/profile-image1.jpg",
+                    "jobTitle": "Back-end Developer",
+                    "description": "Phyton, SQL, Oracle",
+                    "url": "#people-bed"
+                },
+                {
+                    "avatar": "images/profile-image2.jpg",
+                    "jobTitle": "UI-UX Designer",
+                    "description": "Figma, Illustratiron",
+                    "url": "#people-ui"
+                },
+                {
+                    "avatarText": "EKY",
+                    "jobTitle": "Game Developer",
+                    "description": "Unity, Unreal Engine",
+                    "url": "#people-gdv"
+                },
+                {
+                    "avatarText": "HY",
+                    "jobTitle": "Game Designer",
+                    "description": "Blender, Photoshop, DS Max",
+                    "url": "#people-gde"
+                }
+            ]
+        },
+        "peopleMore": {
+            "moreBtnText": "See all",
+            "moreUrl": "#people-more",
+            "moreCount": 13,
+            "list": [
+                {
+                    "avatarText": "BS",
+                    "jobTitle": "Front-end Developer"
+                },
+                {
+                    "avatar": "images/profile-image2.jpg",
+                    "jobTitle": "Back-end Developer"
+                },
+                {
+                    "avatar": "images/profile-image3.jpg",
+                    "jobTitle": "UI-UX Designer"
                 }
             ]
         },

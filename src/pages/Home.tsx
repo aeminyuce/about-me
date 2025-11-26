@@ -4,12 +4,16 @@ import Grid from 'uilab/react/Grid';
 // misc
 import AboutMe from '../components/common/AboutMe';
 import Header from '../components/common/Header';
-import Nav from '../components/common/Nav';
+import HomeNav from '../components/home/HomeNav';
 import Footer from '../components/common/Footer';
 import { useStoreContext } from '../states/StoreContext';
+import { Profile } from '../components/home/Profile';
 import { Reports, ReportsList } from '../components/home/Reports';
 import { People, PeopleMore } from '../components/home/People';
 import { Events } from '../components/home/Events';
+
+// styles
+import '../assets/home.less';
 
 export default function () {
     const { theme, apiResponse } = useStoreContext();
@@ -27,13 +31,15 @@ export default function () {
                 <AboutMe />
 
                 {/* nav */}
-                <Nav />
+                <HomeNav />
 
                 {/* featured */}
                 {apiResponse?.home &&
                     <Grid.Row className={theme ? ` ${theme}` : null}>
                         <Grid.Col lg={2} size={4} md={6}>
-                            ...
+
+                            {apiResponse?.home?.profile && <Profile />}
+
                         </Grid.Col>
                         <Grid.Col lg={3} size={4} md={6}>
 

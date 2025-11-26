@@ -3,7 +3,7 @@
         "header": {
             "sidebarTitle": "Menu",
             "getInTouch": {
-                "qrCodeImage": "0065c7978fa.svg",
+                "qrCodeImage": "images/get-in-touch.svg",
                 "title": "Get in Touch!",
                 "messageStart": "Great to see you opening this window to connect with me. Please",
                 "messageHighlight": " scan the QR code ",
@@ -42,7 +42,7 @@
             ]
         },
         "aboutMe": {
-            "profileImage": "fab86d4463f.png",
+            "profileImage": "images/aeminyuce.png",
             "fullName": "A. Emin Yüce",
             "jobTitle": "Sr. Front End Developer",
             "location": "Ankara, Turkiye",

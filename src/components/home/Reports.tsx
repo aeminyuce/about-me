@@ -69,10 +69,10 @@ const ReportsListGroup = (props: any) => {
         <ListGroup className={`ui-round ui-scroll-v ui-scrollbar-faded${setScrollOuter}`}>
             <ListGroup.List>
 
-                {list.map((item: ReportsListProps) => (
+                {list?.map((item: ReportsListProps) => (
                     <ListGroup.Item key={item.name}>
                         <DonutChart.Holder as='span' msg={item.percent} className='ui-float-r'>
-                            <DonutChart.Item percent={item.chartPercent} className="ui-stroke" />
+                            <DonutChart.Item percent={item.chartPercent} className='ui-stroke' />
                         </DonutChart.Holder>
 
                         <span className='ui-m-5-t ui-block'>{item.name}</span>
@@ -94,7 +94,7 @@ export const ReportsList = () => {
             <Tab.Holder dataClasses="ui-fill-dark-100">
                 <Button.Wrapper as='holder' ease='1st' className='ui-m-15-b'>
 
-                    {Object.keys(reportsList).map((name: string, index: number) => {
+                    {reportsList && Object.keys(reportsList).map((name: string, index: number) => {
                         const isActive = index === 0 ? ' ui-fill-dark-100 ui-active' : '';
                         const text = name.charAt(0).toUpperCase() + name.slice(1);
 

@@ -12,6 +12,7 @@ import type { PeopleListProps, PeopleMoreListProps } from '../../utils/Models';
 
 // assets
 import { IconUserPlus } from 'uilab-icons/react/general/user-plus';
+import { IconAngleRight} from 'uilab-icons/react/general/angle-right';
 
 export const People = () => {
     const { apiResponse } = useStoreContext();
@@ -44,9 +45,10 @@ export const People = () => {
             <ListGroup className={`ui-round ui-scroll-v ui-scrollbar-faded${setScrollOuter}`}>
                 <ListGroup.List avatarSize='xs'>
 
-                    {peopleList.map((item: PeopleListProps) => (
+                    {peopleList?.map((item: PeopleListProps) => (
                         <ListGroup.Item key={item.jobTitle}>
                             <a href={item.url}>
+                                <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
                                 {(item.avatar || item.avatarText) &&
                                     <Avatar size='xs' className='ui-circle ui-fill-dark-100 ui-hover-scale-more'>
                                         {item.avatar && <img src={item.avatar} />}
@@ -54,8 +56,8 @@ export const People = () => {
                                     </Avatar>
                                 }
 
-                                <span className="ui-font-ellipsis ui-block">{item.jobTitle}</span>
-                                <span className="ui-color-black-25">{item.description}</span>
+                                <span className='ui-font-ellipsis ui-block'>{item.jobTitle}</span>
+                                <span className='ui-color-black-25'>{item.description}</span>
                             </a>
                         </ListGroup.Item>
                     ))}
@@ -76,7 +78,7 @@ export const PeopleMore = () => {
     return (
         <Card className='ui-p-15 ui-round'>
             {moreBtnText &&
-                <Button to={peopleMore?.moreUrl} className='ui-m-4-v ui-float-r ui-circle ui-fill-dark-100'>
+                <Button to={peopleMore?.moreUrl} className='ui-p-20-h ui-m-4-v ui-float-r ui-circle ui-fill-dark-100'>
                     {moreBtnText}
                 </Button>
             }

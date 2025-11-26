@@ -4,8 +4,11 @@ import Grid from 'uilab/react/Grid';
 // misc
 import AboutMe from '../components/common/AboutMe';
 import Header from '../components/common/Header';
-import Nav from '../components/common/Nav';
+import Nav from '../components/home/HomeNav';
 import Footer from '../components/common/Footer';
+
+// styles
+import '../assets/dashboard.less';
 
 export default function () {
     return (

@@ -14,37 +14,3 @@
 each(@static-grid-sizes, {
     ._create-static-cols(~'-'; @value);
 });
-
-/* nav */
-@nav-prev-margin:                         2px 0 0 10px;
-@nav-next-margin:                         2px 74px 0 0;
-@nav-theme-color-size:                    17px;
-
-.nav {
-    .ui-carousel {
-        &-prev { margin: @nav-prev-margin; }
-        &-next { margin: @nav-next-margin; }
-    }
-
-    .ui-dropdown {
-        & > button,& li {
-            & > span { width: @nav-theme-color-size; height: @nav-theme-color-size; }
-        }
-    }
-}
-
-/* home: people */
-@home-people-max-height:                  226px;
-
-.home-people-list {
-    .ui-listgroup { max-height: @home-people-max-height; }
-}
-
-/* home: reports */
-@home-reports-max-height:                 174px;
-@home-reports-sonut-size:                 48px;
-
-.home-reports-list {
-    .ui-listgroup { max-height: @home-reports-max-height; }
-    .ui-donut-chart { width: @home-reports-sonut-size; height: @home-reports-sonut-size; }
-}
