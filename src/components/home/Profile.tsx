@@ -47,7 +47,7 @@ export const Profile = () => {
                 <ListGroup.List avatarSize='xs'>
 
                     {userActivity?.map((item: UserActivityProps) => (
-                        <ListGroup.Item key={item.id}>
+                        <ListGroup.Item key={`uac-${item.id}`}>
                             <a href={item.url}>
                                 <Avatar size='xs' className='ui-round'>
                                     <span>{item.time}</span>
