@@ -1,0 +1,1 @@
+INSERT INTO "page"."header" ("id", "sidebartitle") VALUES ('1', 'Menu');

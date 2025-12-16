@@ -1,0 +1,146 @@
+{
+    "result": {
+        "nav": {
+            "navLinks": [
+                {
+                    "to": "/",
+                    "name": "Featured"
+                },
+                {
+                    "to": "/dashboard",
+                    "name": "Dashboard"
+                },
+                {
+                    "to": "/data-table",
+                    "name": "Data Table"
+                },
+                {
+                    "to": "/gallery",
+                    "name": "Gallery"
+                },
+                {
+                    "to": "/register",
+                    "name": "Register"
+                }
+            ],
+            "themeList": [
+                {
+                    "name": "Yellow Theme",
+                    "theme": "ui-theme-yellow"
+                },
+                {
+                    "name": "Yellow-Orange Theme",
+                    "theme": "ui-theme-yellowOrange"
+                },
+                {
+                    "name": "Orange Theme",
+                    "theme": "ui-theme-orange"
+                },
+                {
+                    "name": "Orange-Red Theme",
+                    "theme": "ui-theme-orengeRed"
+                },
+                {
+                    "name": "Red Theme",
+                    "theme": "ui-theme-red"
+                },
+                {
+                    "name": "Red-Purple Theme",
+                    "theme": "ui-theme-redPurple"
+                },
+                {
+                    "name": "Purple Theme",
+                    "theme": "ui-theme-purple"
+                },
+                {
+                    "name": "Purple-Blue Theme",
+                    "theme": "ui-theme-purpleBlue"
+                },
+                {
+                    "name": "Blue Theme",
+                    "theme": "ui-theme-blue"
+                },
+                {
+                    "name": "Blue-Green Theme",
+                    "theme": "ui-theme-blueGreen"
+                },
+                {
+                    "name": "Green Theme",
+                    "theme": "ui-theme-green"
+                },
+                {
+                    "name": "Green-Yellow Theme",
+                    "theme": "ui-theme-greenYellow"
+                }
+            ]
+        },
+        "header": {
+            "getInTouch": {
+                "title": "Get in Touch!",
+                "messageEnd": "to get in touch instantly.",
+                "qrCodeImage": "images/get-in-touch.svg",
+                "messageStart": "Great to see you opening this window to connect with me. Please",
+                "messageHighlight": " scan the QR code "
+            },
+            "headerLinks": [
+                {
+                    "to": "/",
+                    "name": "About Me"
+                },
+                {
+                    "to": "/uilab",
+                    "name": "UI Laboratory"
+                },
+                {
+                    "name": "Get in Touch",
+                    "modal": true
+                }
+            ],
+            "socialLinks": [
+                {
+                    "url": "https://github.com/aeminyuce",
+                    "icon": "github",
+                    "title": "GitHub"
+                },
+                {
+                    "url": "https://dribbble.com/aeminyuce",
+                    "icon": "dribbble",
+                    "title": "Dribbble"
+                },
+                {
+                    "url": "https://www.linkedin.com/in/aeminyuce",
+                    "icon": "linkedin",
+                    "title": "LinkedIn"
+                }
+            ],
+            "sidebarTitle": "Menu"
+        },
+        "aboutMe": {
+            "fullName": "A. Emin Yüce",
+            "jobTitle": "Sr. Front End Developer",
+            "location": "Ankara, Turkiye",
+            "profileImage": "images/aeminyuce.png",
+            "getInTouchText": "Get in Touch",
+            "personalSkills": [
+                "Html",
+                "CSS",
+                "Less",
+                "SCSS",
+                "Saas",
+                "Javascript",
+                "Ecmascript",
+                "Typescript",
+                "React",
+                "SSR",
+                "Next Js",
+                "Astro",
+                "Remix",
+                "Node Js",
+                "Webpack",
+                "Responsive",
+                "Adaptive",
+                "Mobile"
+            ]
+        }
+    }
+}

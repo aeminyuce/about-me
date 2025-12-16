@@ -1,0 +1,91 @@
+CREATE OR REPLACE FUNCTION get_home()
+RETURNS jsonb
+LANGUAGE sql
+SECURITY DEFINER
+SET search_path = home
+AS $$
+SELECT json_build_object(
+  'result', json_build_object(
+    'profile', json_build_object(
+      'info', (
+        SELECT to_jsonb(pin) - 'id'
+        FROM home.profile_info pin
+        LIMIT 1
+      ),
+      'userActivity', (
+        SELECT json_agg(to_jsonb(pua))
+        FROM home.profile_useractivity pua
+      )
+    ),
+    'reports', json_build_object(
+      'l', (
+        SELECT to_jsonb(rel) - 'id'
+        FROM home.reports_l rel
+        LIMIT 1
+      ),
+      'r', (
+        SELECT to_jsonb(rer) - 'id'
+        FROM home.reports_r rer
+        LIMIT 1
+      )
+    ),
+    'reportsList', json_build_object(
+      'delayed', (
+        SELECT json_agg(to_jsonb(rld) - 'id')
+        FROM home.reportslist_delayed rld
+      ),
+      'paused', (
+        SELECT json_agg(to_jsonb(rlp) - 'id')
+        FROM home.reportslist_paused rlp
+      )
+    ),
+    'people', json_strip_nulls(
+      json_build_object(
+        'cardTitle', (
+          SELECT cardtitle
+          FROM home.people
+          LIMIT 1
+        ),
+        'addPeople', (
+          SELECT to_jsonb(pap) - 'id'
+          FROM home.people_addpeople pap
+          LIMIT 1
+        ),
+        'list', (
+          SELECT json_agg(to_jsonb(pli) - 'id')
+          FROM home.people_list pli
+        )
+      )
+    ),
+    'peopleMore', (
+      SELECT jsonb_strip_nulls(
+        jsonb_build_object(
+          'moreBtnText', pmr.morebtntext,
+          'moreUrl', pmr.moreurl,
+          'moreCount', pmr.morecount,
+          'list', (
+            SELECT jsonb_agg(to_jsonb(pml) - 'id') 
+            FROM home.peoplemore_list pml
+          )
+        )
+      )
+      FROM home.peoplemore pmr
+      LIMIT 1
+    ),
+    'calendar', (
+      SELECT jsonb_build_object(
+        'cardTitle', cln.cardtitle,
+        'eventsDate', cln.eventsdate,
+        'title', cln.title,
+        'settings', cln.settings,
+        'events', (
+          SELECT jsonb_agg(to_jsonb(cle) - 'id')
+          FROM home.calendar_events cle
+        )
+      )
+      FROM home.calendar cln
+      LIMIT 1
+    )
+  )
+);
+$$;

@@ -1,0 +1,1 @@
+INSERT INTO "home"."peoplemore" ("id", "morebtntext", "moreurl", "morecount") VALUES ('1', 'See all', '#people-more', '13');

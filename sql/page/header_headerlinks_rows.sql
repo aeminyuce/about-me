@@ -1,0 +1,1 @@
+INSERT INTO "page"."header_headerlinks" ("id", "name", "to", "modal") VALUES ('1', 'About Me', '/', null), ('2', 'UI Laboratory', '/uilab', null), ('3', 'Get in Touch', null, 'true');

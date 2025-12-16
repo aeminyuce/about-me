@@ -1,0 +1,1 @@
+INSERT INTO "page"."header_getintouch" ("id", "qrCodeImage", "title", "messageStart", "messageHighlight", "messageEnd") VALUES ('1', 'images/get-in-touch.svg', 'Get in Touch!', 'Great to see you opening this window to connect with me. Please', ' scan the QR code ', 'to get in touch instantly.');
