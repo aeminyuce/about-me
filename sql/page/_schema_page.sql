@@ -3,12 +3,12 @@
 
 CREATE TABLE page.aboutme (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
-  profileimage text,
-  fullname text,
-  jobtitle text,
+  profileImage text,
+  fullName text,
+  jobTitle text,
   location text,
-  getintouchtext text,
-  personalskills ARRAY,
+  getInTouchText text,
+  personalSkills ARRAY,
   CONSTRAINT aboutme_pkey PRIMARY KEY (id)
 );
 CREATE TABLE page.header (
