@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development",
+    "update": "npm update",
     "update-uilab": "node ../uilab/inject-latest.js && npm i uilab",
     "update-uilab-icons": "node ../uilab-icons/inject-latest.js && npm i uilab-icons"
   },
@@ -14,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uilab": "file:../uilab/uilab-1.0.914.tgz",
+    "uilab": "file:../uilab/uilab-1.0.629.tgz",
     "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.47.tgz"
   }
 }

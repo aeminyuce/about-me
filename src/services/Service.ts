@@ -5,6 +5,7 @@ import { getParamsFromObject } from '../utils/Helpers';
 let activeFetches = 0;
 
 const serviceHeaders = {
+    'apikey': process.env.API_KEY,
     'Content-Type': 'application/json',
 };
 

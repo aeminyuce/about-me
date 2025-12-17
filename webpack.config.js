@@ -1,5 +1,5 @@
 const path = require("path");
-const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const config = {
@@ -84,16 +84,17 @@ module.exports = (env, argv) => {
             allowedHosts: 'all',
         };
     }
-    const metaData = {
-        PROJECT_NAME: JSON.stringify('A. Emin Yuce'),
-    };
     config.plugins = [
         new HtmlWebPackPlugin({
             template: "./src/index.html",
             favicon: "./public/favicon.ico",
         }),
-        new webpack.DefinePlugin({
-            process: { env: metaData }
+        new Dotenv({
+            path: './.env',
+        }),
+        argv.mode === 'development' && new Dotenv({
+            path: './.env.local',
+            systemvars: true,
         }),
         new CopyPlugin({
             patterns: [
