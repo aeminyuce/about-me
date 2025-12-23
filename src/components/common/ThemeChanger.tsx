@@ -5,7 +5,7 @@ import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import type { ThemeListProps } from '../../utils/Models';
+import type { ThemeListProps } from '../../models/Page';
 import { useStoreContext } from '../../states/StoreContext';
 
 // assets

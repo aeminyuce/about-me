@@ -6,7 +6,7 @@ import Service from '../services/Service';
 import { getPageData, getHomeData } from '../services/Repository';
 
 // misc
-import type { StoreContextProps, StoreProviderProps } from '../utils/Models';
+import type { StoreContextProps, StoreProviderProps } from '../models/Page';
 import reducer from './StoreReducer';
 import { CURRENT_THEME, PAGE_DATA, HOME_DATA } from './Actions';
 

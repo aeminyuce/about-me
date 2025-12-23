@@ -6,7 +6,7 @@ import Notifier from 'uilab/react/Notifier';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
-import type { UserActivityProps } from '../../utils/Models';
+import type { UserActivityProps } from '../../models/Home';
 
 export const Profile = () => {
     const { apiResponse } = useStoreContext();

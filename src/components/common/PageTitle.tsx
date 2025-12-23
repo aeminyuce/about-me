@@ -1,5 +1,5 @@
 // misc
-import type { PageTitleProps } from '../../utils/Models';
+import type { PageTitleProps } from '../../models/Page';
 import { useStoreContext } from '../../states/StoreContext';
 
 export default function (props: PageTitleProps) {

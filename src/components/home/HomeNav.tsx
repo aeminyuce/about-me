@@ -6,7 +6,7 @@ import Grid from 'uilab/react/Grid';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import type { HomeNavLinksProps } from '../../utils/Models';
+import type { HomeNavLinksProps } from '../../models/Home';
 import ThemeChanger from '../common/ThemeChanger';
 import { useStoreContext } from '../../states/StoreContext';
 import { mobileNavPosition } from '../../helpers/Home';

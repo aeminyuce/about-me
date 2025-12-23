@@ -9,7 +9,7 @@ import Tab from 'uilab/react/Tab';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
-import type { ReportsListProps } from '../../utils/Models';
+import type { ReportsListProps } from '../../models/Home';
 
 const Report = (props: any) => {
     const { apiResponse } = useStoreContext();

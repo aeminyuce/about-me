@@ -8,7 +8,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
-import type { PeopleListProps, PeopleMoreListProps } from '../../utils/Models';
+import type { PeopleListProps, PeopleMoreListProps } from '../../models/Home';
 
 // assets
 import { IconUserPlus } from 'uilab-icons/react/general/user-plus';

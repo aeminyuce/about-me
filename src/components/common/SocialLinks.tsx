@@ -3,7 +3,7 @@ import Button from 'uilab/react/Button';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import type { SocialLinksProps } from '../../utils/Models';
+import type { SocialLinksProps } from '../../models/Header';
 import { useStoreContext } from '../../states/StoreContext';
 
 // assets
