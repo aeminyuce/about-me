@@ -1,6 +1,6 @@
 import { ui } from 'uilab/js/core/globals';
 import Loadingmask from 'uilab/react/Loadingmask';
-import { getParamsFromObject } from '../utils/Helpers';
+import { getParamsFromObject } from '../helpers/General';
 
 let activeFetches = 0;
 

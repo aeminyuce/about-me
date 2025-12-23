@@ -9,7 +9,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 import type { HomeNavLinksProps } from '../../utils/Models';
 import ThemeChanger from '../common/ThemeChanger';
 import { useStoreContext } from '../../states/StoreContext';
-import { mobileNavPosition } from '../../utils/Helpers';
+import { mobileNavPosition } from '../../helpers/Home';
 
 // assets
 import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
