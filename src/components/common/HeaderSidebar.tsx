@@ -16,7 +16,7 @@ export const HeaderSidebar = () => {
 
     return (
         <Sidebar pos='l' className='ui-round'>
-            <Sidebar.Title className='ui-sidebar-title ui-border-b ui-border-light'>
+            <Sidebar.Title className='ui-border-b ui-border-light'>
                 <Button square ghost title='Close' className='ui-sidebar-close ui-round'>
                     <SvgIcon as='js' src={IconAngleLeft} />
                 </Button>
