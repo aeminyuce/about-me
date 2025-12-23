@@ -15,7 +15,6 @@ export interface GetStorageProps {
 
 // Store Context
 export interface StoreContextProps {
-    metaData: any;
     isMobile: boolean;
     theme: string;
     setTheme(name: string): string;

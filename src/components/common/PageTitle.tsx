@@ -4,10 +4,9 @@ import { useStoreContext } from '../../states/StoreContext';
 
 export default function (props: PageTitleProps) {
     const { title, children } = props;
-    const { metaData } = useStoreContext();
 
     const setTitle = title ? title + ' | ' : '';
-    document.title = setTitle + metaData?.PROJECT_NAME;
+    document.title = setTitle + process.env.PROJECT_NAME;
 
     return children;
 }
