@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from 'uilab/react/Button';
 
 // misc
-import type { HeaderLinksProps } from '../../models/Header';
+import type { HeaderLinksProps } from '../../models/Page';
 import { ShowGetInTouch } from './GetInTouchModal';
 import { useStoreContext } from '../../states/StoreContext';
 

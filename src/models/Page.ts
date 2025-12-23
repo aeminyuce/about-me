@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, ElementType } from 'react';
 
 // Storages
 export interface SetStorageProps {
@@ -37,4 +37,16 @@ export interface ThemeListProps {
 	name: string;
 	theme: string;
 	color: string;
+}
+
+export interface HeaderLinksProps {
+    name: string;
+    to: string;
+    modal: boolean;
+}
+
+export interface SocialLinksProps {
+    title: string;
+    url: string;
+    icon: ElementType;
 }
