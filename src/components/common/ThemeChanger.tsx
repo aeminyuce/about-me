@@ -22,11 +22,11 @@ export default function () {
                 <span className={`ui-inline-block ui-circle ${theme} ui-fill-dark-100`} />
                 <SvgIcon as='js' toggle src={IconAngleDown} className='ui-m-10-l' />
             </Button>
-            <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
+            <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-circle-2nd ui-shadow-lg ui-cursor-pointer'>
 
                 {apiResponse?.nav?.themeList.map((item: ThemeListProps) => (
                     <Dropdown.Item key={item.name} onClick={() => setTheme(item.theme)}>
-                        <span className={`ui-m-10-r ui-circle ${item.theme} ui-fill-dark-100`} />
+                        <span className={`ui-m-10-r ${item.theme} ui-fill-dark-100`} />
                         {item.name}
                     </Dropdown.Item>
                 ))}

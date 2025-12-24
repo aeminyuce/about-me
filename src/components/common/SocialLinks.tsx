@@ -21,10 +21,10 @@ export default function () {
     };
 
     return (
-        <span className='ui-ease-1st-btn'>
+        <span className='ui-ease-1st-btn ui-round-1st'>
 
             {apiResponse?.header?.socialLinks.map((item: SocialLinksProps) => (
-                <Button key={item.title} square ghost noease title={item.title} href={item.url} className='ui-round' target='_blank' rel='nofollow'>
+                <Button key={item.title} square ghost noease title={item.title} href={item.url} target='_blank' rel='nofollow'>
                     <SvgIcon as='js' src={socialIcons[item.icon as string]} />
                 </Button>
             ))}

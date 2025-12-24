@@ -24,7 +24,7 @@ export default function () {
             <Grid.Static fluid='no' className='ui-set-relative'>
                 <Grid.Col size={47} className='ui-visible-sm' />
                 <Grid.Row>
-                    <Grid.Col size={12} className='ui-ease-1st-btn ui-hidden-sm'>
+                    <Grid.Col size={12} className='ui-ease-1st-btn ui-round-1st ui-hidden-sm'>
                         {navData?.navLinks && <NavDesktopLinks />}
                     </Grid.Col>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-visible-sm'>
@@ -50,7 +50,7 @@ const NavDesktopLinks = () => {
             const selected = item.to === pathname;
 
             return (
-                <Button key={item.name} ghost={!selected} noease to={item.to} className='ui-m-2-r ui-round'>
+                <Button key={item.name} ghost={!selected} noease to={item.to} className='ui-m-2-r'>
                     {item.name}
                 </Button>
             )
@@ -69,7 +69,7 @@ const NavMobileLinks = () => {
 
     return (
         <Carousel half start={start} sm={3} xs={2} className='ui-set-static ui-round ui-border ui-border-light'>
-            <Carousel.Nav className='ui-no-m ui-ease-1st-btn'>
+            <Carousel.Nav className='ui-no-m'>
                 <Button ghost square noease className='ui-carousel-prev ui-m-2-t ui-round ui-set-absolute ui-set-l'>
                     <SvgIcon as='js' toggle src={IconAngleLeft} />
                 </Button>
@@ -78,14 +78,14 @@ const NavMobileLinks = () => {
                     <SvgIcon as='js' toggle src={IconAngleRight} />
                 </Button>
             </Carousel.Nav>
-            <Carousel.Slider className='ui-m-2 ui-ease-2nd-btn'>
+            <Carousel.Slider className='ui-m-2 ui-ease-2nd-btn ui-round-2nd'>
 
                 {navLinks?.map((item: HomeNavLinksProps) => {
                     const selected = item.to === pathname;
 
                     return (
                         <Carousel.Content key={item.name} className='ui-p-2-r'>
-                            <Button ghost={!selected} block noease to={item.to} className='ui-round'>
+                            <Button ghost={!selected} block noease to={item.to}>
                                 {item.name}
                             </Button>
                         </Carousel.Content>

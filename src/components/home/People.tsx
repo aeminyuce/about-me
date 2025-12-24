@@ -83,12 +83,12 @@ export const PeopleMore = () => {
                 </Button>
             }
 
-            <Avatar.Holder className='ui-m-auto ui-ease-1st-layout'>
+            <Avatar.Holder className='ui-m-auto ui-circle-1st ui-ease-1st-layout'>
 
                 {peopleMore?.list.map((item: PeopleMoreListProps) => (
                     <Fragment key={item.jobTitle}>
                         {(item.avatar || item.avatarText) &&
-                            <Avatar noease className='ui-circle ui-hover-scale-more'>
+                            <Avatar noease className='ui-hover-scale-more'>
                                 {item.avatar && <img src={item.avatar} />}
                                 {item.avatarText && <span>{item.avatarText}</span>}
                             </Avatar>

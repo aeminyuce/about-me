@@ -91,15 +91,15 @@ export const ReportsList = () => {
 
     return (
         <Card className='home-reports-list ui-p-15 ui-shadow-sm ui-round'>
-            <Tab.Holder dataClasses="ui-fill-dark-100">
-                <Button.Wrapper as='holder' ease='1st' className='ui-m-15-b'>
+            <Tab.Holder dataClasses='ui-fill-dark-100'>
+                <Button.Wrapper as='holder' ease='1st' className='ui-m-15-b ui-round-1st'>
 
                     {reportsList && Object.keys(reportsList).map((name: string, index: number) => {
                         const isActive = index === 0 ? ' ui-fill-dark-100 ui-active' : '';
                         const text = name.charAt(0).toUpperCase() + name.slice(1);
 
                         return (
-                            <Button key={name} square className={`ui-tab ui-round${isActive}`}>
+                            <Button key={name} square className={`ui-tab${isActive}`}>
                                 {text}
                             </Button>
                         )

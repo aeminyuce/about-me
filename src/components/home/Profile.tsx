@@ -19,8 +19,8 @@ export const Profile = () => {
         <Card className='home-profile ui-round ui-shadow-sm'>
             {info?.avatar &&
                 <div className='ui-align-c ui-round-t ui-fill-dark-100'>
-                    <Notifier className='ui-circle' dataVal={'Idle'}>
-                        <Avatar size='lg' className='ui-circle'>
+                    <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
+                        <Avatar size='lg'>
                             <span>{info?.avatar}</span>
                         </Avatar>
                     </Notifier>
@@ -52,7 +52,7 @@ export const Profile = () => {
                                 <Avatar size='xs' className='ui-round'>
                                     <span>{item.time}</span>
                                 </Avatar>
-                                <span className="ui-color-black-50 ui-font-13 ui-font-condensed ui-p-5-t ui-block">
+                                <span className='ui-color-black-50 ui-font-13 ui-font-condensed ui-p-5-t ui-block'>
                                     {item.activity}
                                 </span>
                             </a>
