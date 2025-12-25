@@ -11,7 +11,7 @@ import Page404 from '../pages/404';
 // routes
 const Home = lazy(() => import( /* webpackChunkName: "Home" */ "./Home" ));
 const Dashboard = lazy(() => import( /* webpackChunkName: "Dashboard" */ "./Dashboard" ));
-const UiLab = lazy(() => import( /* webpackChunkName: "UiLab" */ "./UiLab" ));
+const Lab = lazy(() => import( /* webpackChunkName: "Lab" */ "./Lab" ));
 
 export default function () {
     return (
@@ -24,12 +24,12 @@ export default function () {
                     <PageTitle title='Dashboard'><Dashboard /></PageTitle>
                 } />
 
-                <Route path='/uilab' element={
-                    <PageTitle title='UiLab'><UiLab /></PageTitle>
+                <Route path='/lab' element={
+                    <PageTitle title='Ui Laboratory'><Lab /></PageTitle>
                 } />
 
-                <Route path="/500" element={
-                    <PageTitle title="Server Error"><Page500 /></PageTitle>
+                <Route path='/500' element={
+                    <PageTitle title='Server Error'><Page500 /></PageTitle>
                 } />
                 <Route path='*' element={
                     <PageTitle title='Page Not Found'><Page404 /></PageTitle>
