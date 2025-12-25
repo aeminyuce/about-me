@@ -1,0 +1,134 @@
+{
+    "result": {
+        "menu": [
+            {
+                "to": "/alerts",
+                "name": "Alerts"
+            },
+            {
+                "to": "/avatars",
+                "name": "Avatars"
+            },
+            {
+                "to": "/breadcrumbs",
+                "name": "Breadcrumbs"
+            },
+            {
+                "to": "/buttons",
+                "name": "Buttons"
+            },
+            {
+                "to": "/calendar",
+                "name": "Calendar"
+            },
+            {
+                "to": "/card",
+                "name": "Card"
+            },
+            {
+                "to": "/carousel",
+                "name": "Carousel"
+            },
+            {
+                "to": "/charts",
+                "name": "Charts"
+            },
+            {
+                "to": "/countdown",
+                "name": "Countdown"
+            },
+            {
+                "to": "/datatable",
+                "name": "Datatable"
+            },
+            {
+                "to": "/dropdown",
+                "name": "Dropdown"
+            },
+            {
+                "to": "/error-pages",
+                "name": "Error Pages"
+            },
+            {
+                "to": "/forms",
+                "name": "Forms"
+            },
+            {
+                "to": "/gallery",
+                "name": "Gallery"
+            },
+            {
+                "to": "/grid",
+                "name": "Grid"
+            },
+            {
+                "to": "/list-group",
+                "name": "List Group"
+            },
+            {
+                "to": "/listings",
+                "name": "Listings"
+            },
+            {
+                "to": "/loading-mask",
+                "name": "Loading Mask"
+            },
+            {
+                "to": "/map",
+                "name": "Map"
+            },
+            {
+                "to": "/modal",
+                "name": "Modal"
+            },
+            {
+                "to": "/notifier",
+                "name": "Notifier"
+            },
+            {
+                "to": "/photoslide",
+                "name": "Photoslide"
+            },
+            {
+                "to": "/pricing-tables",
+                "name": "Pricing Tables"
+            },
+            {
+                "to": "/progress-bar",
+                "name": "Progress Bar"
+            },
+            {
+                "to": "/steps",
+                "name": "Steps"
+            },
+            {
+                "to": "/stripes",
+                "name": "Stripes"
+            },
+            {
+                "to": "/tables",
+                "name": "Tables"
+            },
+            {
+                "to": "/tab",
+                "name": "Tab"
+            },
+            {
+                "to": "/themes",
+                "name": "Themes"
+            },
+            {
+                "to": "/timeline",
+                "name": "Timeline"
+            },
+            {
+                "to": "/tooltip",
+                "name": "Tooltip"
+            },
+            {
+                "to": "/typography",
+                "name": "Typography"
+            }
+        ]
+    }
+}
