@@ -1,4 +1,3 @@
-// Home
 export interface HomeNavLinksProps {
     name: string;
     to: string;
