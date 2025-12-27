@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useLocation } from 'react-router-dom';
 import Grid from 'uilab/react/Grid';
 import HeaderSticky from 'uilab/react/HeaderSticky';
 
@@ -8,18 +9,24 @@ import GetInTouchModal from './GetInTouchModal';
 import HeaderLinks from './HeaderLinks';
 import SocialLinks from './SocialLinks';
 import ToggleDarkMode from './ToggleDarkMode';
-import { HeaderSidebar, ToggleHeaderSidebar } from './HeaderSidebar';
+import { HeaderLeftSidebar, ToggleHeaderLeftSidebar, HeaderRightSidebar, ToggleHeaderRightSidebar } from './HeaderSidebars';
 
 export default function () {
+    const { pathname } = useLocation();
     const { apiResponse } = useStoreContext();
+
     const headerData = apiResponse?.header;
+    const sidebarTitle = apiResponse?.lab?.sidebarTitle;
+
+    const showRightSidebar = ['/lab'].includes(pathname);
 
     return headerData && (
+        <>
         <HeaderSticky className='ui-container' dataClasses='ui-shadow'>
             <Grid.Row fluid='no'>
                 <Grid.Col size={9} md={3} sm={3} xs={3}>
 
-                    <ToggleHeaderSidebar />
+                    <ToggleHeaderLeftSidebar />
                     {headerData?.headerLinks && <HeaderLinks />}
 
                 </Grid.Col>
@@ -27,12 +34,15 @@ export default function () {
 
                     {headerData?.socialLinks && <SocialLinks />}
                     <ToggleDarkMode />
+                    {showRightSidebar && <ToggleHeaderRightSidebar />}
 
                 </Grid.Col>
             </Grid.Row>
 
             {headerData?.getInTouch && <GetInTouchModal />}
-            {headerData?.sidebarTitle && <HeaderSidebar />}
         </HeaderSticky>
+        <HeaderLeftSidebar />
+        <HeaderRightSidebar sidebarTitle={sidebarTitle} />
+        </>
     );
 }
