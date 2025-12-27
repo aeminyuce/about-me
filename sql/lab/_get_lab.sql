@@ -9,6 +9,11 @@ SELECT json_build_object(
       'menu', (
         SELECT json_agg(to_jsonb(lme) - 'id')
         FROM lab.menu lme
+      ),
+      'sidebarTitle', (
+        SELECT sidebartitle
+        FROM lab.sidebar
+        LIMIT 1
       )
     )
 );

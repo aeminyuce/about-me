@@ -1,1 +1,1 @@
-INSERT INTO "page"."header" ("id", "sidebartitle") VALUES ('1', 'Menu');
+INSERT INTO "page"."header" ("id", "sidebartitle") VALUES ('1', 'A. Emin Yüce');
