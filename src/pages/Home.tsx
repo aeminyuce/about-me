@@ -7,10 +7,10 @@ import Header from '../components/common/Header';
 import HomeNav from '../components/home/HomeNav';
 import Footer from '../components/common/Footer';
 import { useStoreContext } from '../states/StoreContext';
-import { Profile } from '../components/home/Profile';
+import Profile from '../components/home/Profile';
 import { Reports, ReportsList } from '../components/home/Reports';
 import { People, PeopleMore } from '../components/home/People';
-import { Events } from '../components/home/Events';
+import Events from '../components/home/Events';
 
 // styles
 import '../assets/home.less';
