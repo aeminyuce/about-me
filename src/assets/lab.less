@@ -5,7 +5,14 @@
 
 /* menu */
 @lab-menu-top:                          92px;
+@lab-content-height:                    1200px;
 
 .lab- {
     &menu { top: @lab-menu-top; }
+}
+
+@media (@default-start) {
+    .lab- {
+        &content { min-height: @lab-content-height; }
+    }
 }
