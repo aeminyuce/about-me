@@ -3,12 +3,12 @@ import { createContext, useContext, useReducer, useState, useEffect } from 'reac
 import { useLocation } from 'react-router-dom';
 import Loadingmask from 'uilab/react/Loadingmask';
 import Service from '../services/Service';
-import { getPageData, getHomeData } from '../services/Repository';
+import { getPageData, getHomeData, getLabData } from '../services/Repository';
 
 // misc
 import type { StoreContextProps, StoreProviderProps } from '../models/Page';
 import reducer from './StoreReducer';
-import { CURRENT_THEME, PAGE_DATA, HOME_DATA } from './Actions';
+import { CURRENT_THEME, PAGE_DATA, HOME_DATA, LAB_DATA } from './Actions';
 
 export const StoreContext = createContext({} as StoreContextProps);
 
@@ -32,6 +32,9 @@ export default function (props: StoreProviderProps) {
         // route based data
         if (['/'].includes(pathname)) {
             if (!state?.apiResponse?.home) loadHomeData();
+
+        } else if (['/lab'].includes(pathname)) {
+            if (!state?.apiResponse?.lab) loadLabData();
 
         } else Loadingmask();
     }, [pathname]);
@@ -64,11 +67,22 @@ export default function (props: StoreProviderProps) {
         });
     };
 
+    // fetch lab data
+    const loadLabData = () => {
+        getLabData(service).then((response: any) => {
+            dispatch({
+                type: LAB_DATA,
+                result: response?.result,
+            });
+        });
+    };
+
     const contextValue: StoreContextProps =  {
         ...state,
         isMobile,
         setTheme,
         loadHomeData,
+        loadLabData,
     };
 
     return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>

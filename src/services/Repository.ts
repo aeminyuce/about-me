@@ -8,3 +8,7 @@ export const getPageData = async (service: Service, params?: any) => {
 export const getHomeData = async (service: Service, params?: any) => {
     return service.get(`${process.env.API_URL}/get_home`, params);
 };
+
+export const getLabData = async (service: Service, params?: any) => {
+    return service.get(`${process.env.API_URL}/get_lab`, params);
+};

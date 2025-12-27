@@ -2,7 +2,7 @@ import Loadingmask from 'uilab/react/Loadingmask';
 
 // misc
 import { setStorage } from './Storages';
-import { CURRENT_THEME, PAGE_DATA, HOME_DATA } from './Actions';
+import { CURRENT_THEME, PAGE_DATA, HOME_DATA, LAB_DATA } from './Actions';
 
 const updateStoreContext = (state: any, action: any) => {
 	try {
@@ -38,6 +38,17 @@ const updateStoreContext = (state: any, action: any) => {
 				apiResponse: {
 					...state.apiResponse,
 					home: action.result,
+				},
+			};
+		}
+
+		// fetch lab data
+		if ([LAB_DATA].includes(action?.type)) {
+			return {
+				...state,
+				apiResponse: {
+					...state.apiResponse,
+					lab: action.result,
 				},
 			};
 		}
