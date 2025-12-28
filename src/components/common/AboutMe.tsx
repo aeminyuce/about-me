@@ -3,7 +3,7 @@ import * as React from 'react';
 // misc
 import { useStoreContext } from '../../states/StoreContext';
 import Profile from './Profile';
-import PersonalSkills from './PersonalSkills';
+import MyFocus from './MyFocus';
 
 export default function () {
     const { apiResponse } = useStoreContext();
@@ -11,7 +11,7 @@ export default function () {
     return apiResponse?.aboutMe && (
         <>
         <Profile />
-        {apiResponse?.aboutMe?.personalSkills && <PersonalSkills />}
+        {apiResponse?.aboutMe?.myFocus && <MyFocus />}
         </>
     )
 }
