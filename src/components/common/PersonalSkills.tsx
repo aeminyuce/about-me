@@ -9,7 +9,7 @@ export default function () {
     const { apiResponse } = useStoreContext();
 
     return (
-        <Grid.Row fluid='sm' className='ui-m-15-b'>
+        <Grid.Row fluid='sm' className='ui-m-15-b ui-m-10-t'>
             <Grid.Col xl={8} lg={8} size={10}>
 
                 {apiResponse?.aboutMe?.personalSkills.map((name: string) => (

@@ -37,7 +37,7 @@ export default function () {
                 {location &&
                     <>
                     <SvgIcon as='js' src={IconMarker} size='sm' className='ui-m-5-r' />
-                    <span className='ui-font-16 ui-m-15-b ui-inline-block'>{location}</span>
+                    <span className='ui-font-16 ui-inline-block'>{location}</span>
                     </>
                 }
 
