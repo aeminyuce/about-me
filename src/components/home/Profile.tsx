@@ -7,6 +7,7 @@ import Notifier from 'uilab/react/Notifier';
 // misc
 import { useStoreContext } from '../../states/StoreContext';
 import type { UserActivityProps } from '../../models/Home';
+import Button from 'uilab/react/Button';
 
 export default function() {
     const { apiResponse } = useStoreContext();
@@ -16,7 +17,7 @@ export default function() {
     const userActivity = profile?.userActivity;
 
     return (
-        <Card className='home-profile ui-round ui-shadow-sm'>
+        <Card className='home-profile ui-round ui-shadow'>
             {info?.avatar &&
                 <div className='ui-align-c ui-round-t ui-fill-dark-100'>
                     <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
@@ -35,10 +36,10 @@ export default function() {
                     </div>
                 }
                 {info?.type &&
-                    <div className='ui-font-11 ui-m-15-b ui-1st-inline-block'>
-                        <span className='ui-p-5-h ui-p-2-h ui-round-inner ui-fill-dark-100'>
+                    <div className='ui-font-11 ui-m-10-b ui-1st-inline-block'>
+                        <Button as='span' size='xs' className='ui-p-10-h ui-circle ui-fill-dark-100'>
                             {info?.type}
-                        </span>
+                        </Button>
                     </div>
                 }
             </div>

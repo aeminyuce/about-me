@@ -19,7 +19,7 @@ const Report = (props: any) => {
     const getData = reportsData[type];
 
     return (
-        <Card className={`ui-p-15 ui-shadow-sm ui-round-${type}`}>
+        <Card className={`ui-p-15 ui-shadow ui-round-${type}`}>
             {(getData?.name || getData?.reports) &&
                 <Grid.Static fluid='no' className='ui-font-condensed'>
                     <Grid.Row hGap='no' vGap='md'>
@@ -90,7 +90,7 @@ export const ReportsList = () => {
     const reportsList = apiResponse?.home?.reportsList;
 
     return (
-        <Card className='home-reports-list ui-p-15 ui-shadow-sm ui-round'>
+        <Card className='home-reports-list ui-p-15 ui-shadow ui-round'>
             <Tab.Holder dataClasses='ui-fill-dark-100'>
                 <Button.Wrapper as='holder' ease='1st' className='ui-m-15-b ui-round-1st'>
 

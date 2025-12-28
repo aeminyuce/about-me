@@ -16,7 +16,7 @@ export default function() {
     const calendar = apiResponse?.home?.calendar;
 
     return (
-        <Card className='ui-p-15 ui-round ui-shadow-sm'>
+        <Card className='ui-p-15 ui-round ui-shadow'>
             {calendar?.settings &&
                 <Dropdown align='l' className='ui-float-r'>
                     <Button square ghost title={calendar?.title} className='ui-round' data={{ 'tooltip': '', 'only': 'desktop' }}>

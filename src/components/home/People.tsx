@@ -29,7 +29,7 @@ export const People = () => {
     const setScrollOuter = peopleList?.length > 3 ? ' ui-scrollbar-outer' : '';
 
     return (
-        <Card className='home-people-list ui-p-15 ui-round'>
+        <Card className='home-people-list ui-p-15 ui-round ui-shadow'>
             {addPeople &&
                 <Button ghost square title={addPeople?.title} className='ui-round ui-float-r' data={{ 'tooltip': '', 'only': 'desktop' }}>
                     {addPeople?.icon &&
@@ -76,7 +76,7 @@ export const PeopleMore = () => {
     const moreCount = peopleMore?.moreCount;
 
     return (
-        <Card className='ui-p-15 ui-round'>
+        <Card className='ui-p-15 ui-round ui-shadow'>
             {moreBtnText &&
                 <Button to={peopleMore?.moreUrl} className='ui-p-20-h ui-m-4-v ui-float-r ui-circle ui-fill-dark-100'>
                     {moreBtnText}
