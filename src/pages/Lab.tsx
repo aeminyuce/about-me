@@ -12,7 +12,7 @@ import { useStoreContext } from '../states/StoreContext';
 import '../assets/lab.less';
 
 export default function () {
-    const { theme, apiResponse } = useStoreContext();
+    const { apiResponse } = useStoreContext();
 
     return (
         <>
@@ -25,12 +25,11 @@ export default function () {
 
                 {/* lab */}
                 {apiResponse?.lab &&
-                    <Grid.Static className={theme ? ` ${theme}` : null}>
+                    <Grid.Static>
                         <Grid.Row>
                             <Grid.Col size={12} className='ui-p-30-v'>
 
                                 {apiResponse?.lab?.intro && <LabIntro />}
-                                <LabIntro />
 
                             </Grid.Col>
                         </Grid.Row>

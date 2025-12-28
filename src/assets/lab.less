@@ -6,9 +6,13 @@
 /* menu */
 @lab-menu-top:                          92px;
 @lab-content-height:                    1200px;
+@lab-content-images-max-width:          860px;
 
 .lab- {
     &menu { top: @lab-menu-top; }
+    &content {
+        .images { max-width: @lab-content-images-max-width; }
+    }
 }
 
 @media (@default-start) {

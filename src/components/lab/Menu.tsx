@@ -14,12 +14,12 @@ export default function() {
     const menu = apiResponse?.lab?.menu;
 
     return (
-        <Card className='lab-menu ui-p-15 ui-round ui-border ui-border-light ui-set-sticky ui-hidden-md'>
+        <Card className='lab-menu ui-p-15 ui-round ui-shadow-sm ui-set-sticky ui-hidden-md'>
             <ul className='ui-list-unstyled ui-list-sp-10 ui-font-hoverline-2nd ui-sidebar-add-r'>
 
                 {menu.map((item: LabMenuProps) => {
                     const selected = item.to === pathname;
-                    const classes = `ui-link${selected ? ' ui-font-bold ui-text' : ''}`;
+                    const classes = `ui-link${selected ? ' ui-font-bold' : ''}`;
 
                     return (
                         <li key={item.name}>
