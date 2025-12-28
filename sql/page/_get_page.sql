@@ -8,11 +8,6 @@ SELECT json_build_object(
   'result', json_build_object(
     'header', json_strip_nulls(
       json_build_object(
-        'sidebarTitle', (
-          SELECT sidebartitle
-          FROM page.header
-          LIMIT 1
-        ),
         'getInTouch', (
           SELECT to_jsonb(hgi) - 'id'
           FROM page.header_getintouch hgi

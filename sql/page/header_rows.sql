@@ -1,1 +1,0 @@
-INSERT INTO "page"."header" ("id", "sidebartitle") VALUES ('1', 'A. Emin Yüce');

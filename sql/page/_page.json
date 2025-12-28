@@ -88,12 +88,12 @@
                     "name": "About Me"
                 },
                 {
-                    "to": "/uilab",
-                    "name": "UI Laboratory"
-                },
-                {
                     "name": "Get in Touch",
                     "modal": true
+                },
+                {
+                    "to": "/lab",
+                    "name": "Lab"
                 }
             ],
             "socialLinks": [
@@ -112,11 +112,11 @@
                     "icon": "linkedin",
                     "title": "LinkedIn"
                 }
-            ],
-            "sidebarTitle": "Menu"
+            ]
         },
         "aboutMe": {
-            "fullName": "A. Emin Yüce",
+            "myFocus": "My focus is building custom design systems that help teams move fast without sacrificing originality. I develop every CSS, JavaScript, and React component myself, giving you a unique, scalable interface built just for your product.",
+            "fullName": "A. Emin Yuce",
             "jobTitle": "Sr. Front End Developer",
             "location": "Ankara, Turkiye",
             "profileImage": "images/aeminyuce.png",
@@ -125,21 +125,18 @@
                 "Html",
                 "CSS",
                 "Less",
-                "SCSS",
-                "Saas",
                 "Javascript",
-                "Ecmascript",
                 "Typescript",
                 "React",
+                "CSR",
                 "SSR",
-                "Next Js",
                 "Astro",
                 "Remix",
                 "Node Js",
                 "Webpack",
+                "Rest API",
                 "Responsive",
-                "Adaptive",
-                "Mobile"
+                "Adaptive"
             ]
         }
     }

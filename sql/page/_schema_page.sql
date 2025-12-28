@@ -9,12 +9,8 @@ CREATE TABLE page.aboutme (
   location text,
   getInTouchText text,
   personalSkills ARRAY,
+  myFocus text,
   CONSTRAINT aboutme_pkey PRIMARY KEY (id)
-);
-CREATE TABLE page.header (
-  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
-  sidebartitle text,
-  CONSTRAINT header_pkey PRIMARY KEY (id)
 );
 CREATE TABLE page.header_getintouch (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
