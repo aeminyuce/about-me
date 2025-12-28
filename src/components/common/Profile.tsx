@@ -6,6 +6,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 // misc
 import { GetInTouchButtons } from './GetInTouchModal';
 import { useStoreContext } from '../../states/StoreContext';
+import MyAvatar from './MyAvatar';
 import PersonalSkills from './PersonalSkills';
 
 // assets
@@ -15,7 +16,6 @@ export default function () {
     const { apiResponse } = useStoreContext();
     const aboutMe = apiResponse?.aboutMe;
 
-    const profileImage = aboutMe?.profileImage;
     const fullName = aboutMe?.fullName;
     const jobTitle = aboutMe?.jobTitle;
     const location = aboutMe?.location;
@@ -23,11 +23,7 @@ export default function () {
     return (
         <Grid.Row fluid='sm' hGap='lg' className='ui-m-15-v'>
             <Grid.Col size={5} md={2} className='ui-align-r ui-sm-align-c'>
-                {profileImage &&
-                    <Avatar size='lg' className='ui-circle'>
-                        <img src={profileImage} alt={`${fullName || ''}${jobTitle ? ` | ${jobTitle}` : ''}`} />
-                    </Avatar>
-                }
+                <MyAvatar />
             </Grid.Col>
             <Grid.Col size={7} md={10} className='ui-sm-align-c'>
                 {fullName &&
