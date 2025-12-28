@@ -14,6 +14,10 @@ SELECT json_build_object(
         SELECT sidebartitle
         FROM lab.sidebar
         LIMIT 1
+      ),
+      'intro', (
+        SELECT to_jsonb(lin) - 'id'
+        FROM lab.intro lin
       )
     )
 );
