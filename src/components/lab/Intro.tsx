@@ -20,7 +20,7 @@ export default function() {
     const textPart3 = intro?.textPart3;
 
     return (
-        <div className='lab-content ui-align-c ui-p-30-v ui-md-no-p'>
+        <div className='ui-align-c ui-p-30-v ui-md-no-p'>
             <MyAvatar />
             {title &&
                 <h1 className='ui-h1 ui-font-light ui-m-30-v'>{title}</h1>

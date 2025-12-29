@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useOutlet, Outlet } from "react-router-dom";
 import Grid from 'uilab/react/Grid';
 
 // misc
@@ -13,6 +14,7 @@ import '../assets/lab.less';
 
 export default function () {
     const { apiResponse } = useStoreContext();
+    const outlet = useOutlet();
 
     return (
         <>
@@ -27,9 +29,10 @@ export default function () {
                 {apiResponse?.lab &&
                     <Grid.Static>
                         <Grid.Row>
-                            <Grid.Col size={12} className='ui-p-30-v'>
+                            <Grid.Col size={12} className='lab-content ui-p-30-v'>
 
-                                {apiResponse?.lab?.intro && <LabIntro />}
+                                {outlet}
+                                {!outlet && apiResponse?.lab?.intro && <LabIntro />}
 
                             </Grid.Col>
                         </Grid.Row>
