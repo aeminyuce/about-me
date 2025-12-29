@@ -30,10 +30,10 @@ export default function (props: StoreProviderProps) {
         setIsmobile(window.innerWidth < 768);
 
         // route based data
-        if (['/'].includes(pathname)) {
+        if (pathname === '/') {
             if (!state?.apiResponse?.home) loadHomeData();
 
-        } else if (['/lab'].includes(pathname)) {
+        } else if (pathname.includes('lab')) {
             if (!state?.apiResponse?.lab) loadLabData();
 
         } else Loadingmask();

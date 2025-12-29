@@ -12,6 +12,7 @@ import Page404 from '../pages/404';
 const Home = lazy(() => import( /* webpackChunkName: "Home" */ "./Home" ));
 const Dashboard = lazy(() => import( /* webpackChunkName: "Dashboard" */ "./Dashboard" ));
 const Lab = lazy(() => import( /* webpackChunkName: "Lab" */ "./Lab" ));
+const LabAlerts = lazy(() => import( /* webpackChunkName: "lab/Alerts" */ "./lab/Alerts" ));
 
 export default function () {
     return (
@@ -20,15 +21,17 @@ export default function () {
                 <Route path='/' element={
                     <PageTitle title='About Me'><Home /></PageTitle>
                 } />
-                <Route path='/dashboard' element={
+                <Route path='dashboard' element={
                     <PageTitle title='Dashboard'><Dashboard /></PageTitle>
                 } />
 
-                <Route path='/lab' element={
-                    <PageTitle title='Ui Laboratory'><Lab /></PageTitle>
-                } />
+                <Route path='lab' element={<PageTitle title='Lab'><Lab /></PageTitle>}>
+                    <Route path='alerts' element={
+                        <PageTitle title='Lab | Alerts'><LabAlerts /></PageTitle>
+                    } />
+                </Route>
 
-                <Route path='/500' element={
+                <Route path='500' element={
                     <PageTitle title='Server Error'><Page500 /></PageTitle>
                 } />
                 <Route path='*' element={
