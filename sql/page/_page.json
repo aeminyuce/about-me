@@ -78,7 +78,7 @@
             "getInTouch": {
                 "title": "Get in Touch!",
                 "messageEnd": "to get in touch instantly.",
-                "qrCodeImage": "images/get-in-touch.svg",
+                "qrCodeImage": "/images/get-in-touch.svg",
                 "messageStart": "Great to see you opening this window to connect with me. Please",
                 "messageHighlight": " scan the QR code "
             },
@@ -119,7 +119,7 @@
             "fullName": "A. Emin Yuce",
             "jobTitle": "Sr. Front End Developer",
             "location": "Ankara, Turkiye",
-            "profileImage": "images/aeminyuce.png",
+            "profileImage": "/images/aeminyuce.png",
             "getInTouchText": "Get in Touch",
             "personalSkills": [
                 "Html",
