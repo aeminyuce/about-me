@@ -6,7 +6,7 @@ const config = {
     output: {
         filename: 'js/[name].[contenthash].js',
         chunkFilename: 'js/[name].[contenthash].js',
-        publicPath: 'auto',
+        publicPath: '/',
         clean: true,
     },
     optimization: {
