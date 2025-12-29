@@ -2,165 +2,165 @@
     "result": {
         "menu": [
             {
-                "to": "/alerts",
+                "to": "/lab/alerts",
                 "name": "Alerts"
             },
             {
-                "to": "/avatars",
+                "to": "/lab/avatars",
                 "name": "Avatars"
             },
             {
-                "to": "/breadcrumbs",
+                "to": "/lab/breadcrumbs",
                 "name": "Breadcrumbs"
             },
             {
-                "to": "/buttons",
+                "to": "/lab/buttons",
                 "name": "Buttons"
             },
             {
-                "to": "/calendar",
+                "to": "/lab/calendar",
                 "name": "Calendar"
             },
             {
-                "to": "/card",
+                "to": "/lab/card",
                 "name": "Card"
             },
             {
-                "to": "/carousel",
+                "to": "/lab/carousel",
                 "name": "Carousel"
             },
             {
-                "to": "/charts",
+                "to": "/lab/charts",
                 "name": "Charts"
             },
             {
-                "to": "/countdown",
+                "to": "/lab/countdown",
                 "name": "Countdown"
             },
             {
-                "to": "/datatable",
+                "to": "/lab/datatable",
                 "name": "Datatable"
             },
             {
-                "to": "/dropdown",
+                "to": "/lab/dropdown",
                 "name": "Dropdown"
             },
             {
-                "to": "/error-pages",
+                "to": "/lab/error-pages",
                 "name": "Error Pages"
             },
             {
-                "to": "/forms",
+                "to": "/lab/forms",
                 "name": "Forms"
             },
             {
-                "to": "/gallery",
+                "to": "/lab/gallery",
                 "name": "Gallery"
             },
             {
-                "to": "/grid",
+                "to": "/lab/grid",
                 "name": "Grid"
             },
             {
-                "to": "/list-group",
+                "to": "/lab/list-group",
                 "name": "List Group"
             },
             {
-                "to": "/listings",
+                "to": "/lab/listings",
                 "name": "Listings"
             },
             {
-                "to": "/loading-mask",
+                "to": "/lab/loading-mask",
                 "name": "Loading Mask"
             },
             {
-                "to": "/map",
+                "to": "/lab/map",
                 "name": "Map"
             },
             {
-                "to": "/modal",
+                "to": "/lab/modal",
                 "name": "Modal"
             },
             {
-                "to": "/notifier",
+                "to": "/lab/notifier",
                 "name": "Notifier"
             },
             {
-                "to": "/photoslide",
+                "to": "/lab/photoslide",
                 "name": "Photoslide"
             },
             {
-                "to": "/pricing-tables",
+                "to": "/lab/pricing-tables",
                 "name": "Pricing Tables"
             },
             {
-                "to": "/progress-bar",
+                "to": "/lab/progress-bar",
                 "name": "Progress Bar"
             },
             {
-                "to": "/steps",
+                "to": "/lab/steps",
                 "name": "Steps"
             },
             {
-                "to": "/stripes",
+                "to": "/lab/stripes",
                 "name": "Stripes"
             },
             {
-                "to": "/tables",
+                "to": "/lab/tables",
                 "name": "Tables"
             },
             {
-                "to": "/tab",
+                "to": "/lab/tab",
                 "name": "Tab"
             },
             {
-                "to": "/themes",
+                "to": "/lab/themes",
                 "name": "Themes"
             },
             {
-                "to": "/timeline",
+                "to": "/lab/timeline",
                 "name": "Timeline"
             },
             {
-                "to": "/tooltip",
+                "to": "/lab/tooltip",
                 "name": "Tooltip"
             },
             {
-                "to": "/typography",
+                "to": "/lab/typography",
                 "name": "Typography"
             }
         ],
         "intro": {
             "title": "Hi! I am building modular design systems for you.",
             "images": [
-                "images/lab/aeminyuce-business-dashboard-tablet-version.png",
-                "images/lab/aeminyuce-change-location-tool-for-mobile.png",
-                "images/lab/aeminyuce-business-dashboard-dark-mode.png",
-                "images/lab/aeminyuce-business-dashboard.png",
-                "images/lab/aeminyuce-mobile-signature-app.png",
-                "images/lab/aeminyuce-photo-editing-tool-for-mobile.png",
-                "images/lab/aeminyuce-outline-icons-set-part2.png",
-                "images/lab/aeminyuce-daily-planning-app.png",
-                "images/lab/aeminyuce-daily-golas-app.png",
-                "images/lab/aeminyuce-last-transactions-app.png",
-                "images/lab/aeminyuce-personal-dashboard.png",
-                "images/lab/aeminyuce-weather-widgets.png",
-                "images/lab/aeminyuce-reports-app.png",
-                "images/lab/aeminyuce-outline-icons-set.png",
-                "images/lab/aeminyuce-real-estate-landing-page.png",
-                "images/lab/aeminyuce-dashboard.png",
-                "images/lab/aeminyuce-sign-up-page.png",
-                "images/lab/aeminyuce-dark-mode-app.png",
-                "images/lab/aeminyuce-landing-page-agriculture.png",
-                "images/lab/aeminyuce-login-page.png",
-                "images/lab/aeminyuce-messaging-app.png",
-                "images/lab/aeminyuce-dashboard-app.png",
-                "images/lab/aeminyuce-movie-app.png",
-                "images/lab/aeminyuce-weather-app.png",
-                "images/lab/aeminyuce-admin-panel.png",
-                "images/lab/aeminyuce-product-listing.png",
-                "images/lab/aeminyuce-real-estate-details.png",
-                "images/lab/aeminyuce-photo-albums.png"
+                "/images/lab/aeminyuce-business-dashboard-tablet-version.png",
+                "/images/lab/aeminyuce-change-location-tool-for-mobile.png",
+                "/images/lab/aeminyuce-business-dashboard-dark-mode.png",
+                "/images/lab/aeminyuce-business-dashboard.png",
+                "/images/lab/aeminyuce-mobile-signature-app.png",
+                "/images/lab/aeminyuce-photo-editing-tool-for-mobile.png",
+                "/images/lab/aeminyuce-outline-icons-set-part2.png",
+                "/images/lab/aeminyuce-daily-planning-app.png",
+                "/images/lab/aeminyuce-daily-golas-app.png",
+                "/images/lab/aeminyuce-last-transactions-app.png",
+                "/images/lab/aeminyuce-personal-dashboard.png",
+                "/images/lab/aeminyuce-weather-widgets.png",
+                "/images/lab/aeminyuce-reports-app.png",
+                "/images/lab/aeminyuce-outline-icons-set.png",
+                "/images/lab/aeminyuce-real-estate-landing-page.png",
+                "/images/lab/aeminyuce-dashboard.png",
+                "/images/lab/aeminyuce-sign-up-page.png",
+                "/images/lab/aeminyuce-dark-mode-app.png",
+                "/images/lab/aeminyuce-landing-page-agriculture.png",
+                "/images/lab/aeminyuce-login-page.png",
+                "/images/lab/aeminyuce-messaging-app.png",
+                "/images/lab/aeminyuce-dashboard-app.png",
+                "/images/lab/aeminyuce-movie-app.png",
+                "/images/lab/aeminyuce-weather-app.png",
+                "/images/lab/aeminyuce-admin-panel.png",
+                "/images/lab/aeminyuce-product-listing.png",
+                "/images/lab/aeminyuce-real-estate-details.png",
+                "/images/lab/aeminyuce-photo-albums.png"
             ],
             "leadText": "I build fast, scalable, and fully modular front‑end systems designed from the ground up for each project. Instead of relying on third‑party CSS frameworks or JavaScript plugins, I craft every component myself—from grid layouts and UI patterns like buttons, accordions, dialogs, and interactive galleries.",
             "subtitle": "For developing web interfaces fastly!",
