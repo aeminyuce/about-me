@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useOutlet, Outlet } from "react-router-dom";
+import { useOutlet } from "react-router-dom";
 import Grid from 'uilab/react/Grid';
 
 // misc
