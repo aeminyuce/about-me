@@ -94,6 +94,14 @@
                 {
                     "to": "/lab",
                     "name": "Lab"
+                },
+                {
+                    "to": "/icons",
+                    "name": "Icons"
+                },
+                {
+                    "to": "/blog",
+                    "name": "Blog"
                 }
             ],
             "socialLinks": [
