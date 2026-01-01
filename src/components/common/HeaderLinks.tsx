@@ -11,13 +11,13 @@ export default function () {
 
     return (
         <span className='ui-hidden-md'>
-            <span className='ui-ease-1st-btn ui-sidebar-add-l ui-round-1st'>
+            <span className='ui-ease-1st-btn ui-sidebar-add-l ui-md-align-l ui-round-1st'>
 
                 {apiResponse?.header?.headerLinks.map((item: HeaderLinksProps) => {
                     const isModal = item.modal ? () => ShowGetInTouch() : null;
 
                     return (
-                        <Button key={item.name} ghost noease to={item.to} onClick={isModal} className='ui-m-2-r'>
+                        <Button key={item.name} ghost noease block='md' to={item.to} onClick={isModal} className='ui-m-2-r'>
                             {item.name}
                         </Button>
                     )
