@@ -135,16 +135,16 @@
                 "Less",
                 "Javascript",
                 "Typescript",
-                "React",
+                "React JS",
                 "CSR",
                 "SSR",
                 "Astro",
                 "Remix",
-                "Node Js",
+                "Node JS",
                 "Webpack",
                 "Rest API",
-                "Responsive",
-                "Adaptive"
+                "Responsive Web",
+                "Adaptive Web"
             ]
         }
     }
