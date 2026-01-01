@@ -31,11 +31,11 @@ export default function() {
 
             <Spacer size={30} />
 
-            <Grid.Row fluid='no' gap='sm' className='images ui-m-auto ui-m-30-b ui-round-2nd'>
+            <Grid.Row fluid='no' gap='sm' className='images ui-m-auto ui-m-30-b ui-round-2nd ui-shadow-2nd'>
 
                 {images.map((path: string) => (
                     <Grid.Col key={path} size={'7x'}>
-                        <img className='ui-img-fluid ui-shadow' src={path} />
+                        <img className='ui-img-fluid' src={path} />
                     </Grid.Col>
                 ))}
 
