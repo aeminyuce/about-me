@@ -2,16 +2,16 @@ import * as React from 'react';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
-import Profile from './Profile';
+import HomeProfile from './HomeProfile';
 import MyFocus from './MyFocus';
 
 export default function () {
     const { apiResponse } = useStoreContext();
 
-    return apiResponse?.aboutMe && (
+    return apiResponse?.home?.aboutMe && (
         <>
-        <Profile />
-        {apiResponse?.aboutMe?.myFocus && <MyFocus />}
+        <HomeProfile />
+        {apiResponse?.home?.aboutMe?.myFocus && <MyFocus />}
         </>
     )
 }

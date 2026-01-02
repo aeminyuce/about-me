@@ -6,14 +6,14 @@ import Dropdown from 'uilab/react/Dropdown';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../../states/StoreContext';
 
 // assets
 import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
 
 export default function() {
     const { apiResponse } = useStoreContext();
-    const calendar = apiResponse?.home?.calendar;
+    const calendar = apiResponse?.home_featured?.calendar;
 
     return (
         <Card className='ui-p-15 ui-round ui-shadow'>

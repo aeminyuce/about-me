@@ -7,8 +7,8 @@ import ListGroup from 'uilab/react/ListGroup';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
-import type { PeopleListProps, PeopleMoreListProps } from '../../models/Home';
+import { useStoreContext } from '../../../states/StoreContext';
+import type { PeopleListProps, PeopleMoreListProps } from '../../../models/Home_Featured';
 
 // assets
 import { IconUserPlus } from 'uilab-icons/react/general/user-plus';
@@ -16,7 +16,7 @@ import { IconAngleRight} from 'uilab-icons/react/general/angle-right';
 
 export const People = () => {
     const { apiResponse } = useStoreContext();
-    const people = apiResponse?.home?.people;
+    const people = apiResponse?.home_featured?.people;
 
     const peopleList = people?.list;
     const addPeople = people?.addPeople;
@@ -70,7 +70,7 @@ export const People = () => {
 
 export const PeopleMore = () => {
     const { apiResponse } = useStoreContext();
-    const peopleMore = apiResponse?.home?.peopleMore;
+    const peopleMore = apiResponse?.home_featured?.peopleMore;
 
     const moreBtnText = peopleMore?.moreBtnText;
     const moreCount = peopleMore?.moreCount;

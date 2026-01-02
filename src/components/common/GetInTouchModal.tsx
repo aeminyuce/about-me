@@ -16,7 +16,7 @@ export const ShowGetInTouch = () => {
 
 export const GetInTouchButtons = () => {
     const { apiResponse } = useStoreContext();
-    const getInTouchText = apiResponse?.aboutMe?.getInTouchText;
+    const getInTouchText = apiResponse?.home?.aboutMe?.getInTouchText;
 
     return (
         <div className='ui-form-lg ui-ease-1st-btn ui-circle-1st'>

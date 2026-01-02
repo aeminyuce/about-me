@@ -7,7 +7,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import type { HomeNavLinksProps } from '../../models/Home';
-import ThemeChanger from '../common/ThemeChanger';
+import ThemeChanger from './ThemeChanger';
 import { useStoreContext } from '../../states/StoreContext';
 import { mobileNavPosition } from '../../helpers/Home';
 
@@ -17,7 +17,7 @@ import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
 export default function () {
     const { apiResponse } = useStoreContext();
-    const navData = apiResponse?.nav;
+    const navData = apiResponse?.home?.nav;
 
     return navData && (
         <Grid.Row className='home-nav ui-p-15-b ui-m-15-b ui-border-b ui-border-light'>
@@ -46,7 +46,7 @@ const NavDesktopLinks = () => {
 
     return (
         <>
-        {apiResponse?.nav?.navLinks.map((item: HomeNavLinksProps) => {
+        {apiResponse?.home?.nav?.navLinks.map((item: HomeNavLinksProps) => {
             const selected = item.to === pathname;
 
             return (
@@ -63,7 +63,7 @@ const NavMobileLinks = () => {
     const { pathname } = useLocation();
 
     const { apiResponse } = useStoreContext();
-    const navLinks = apiResponse?.nav?.navLinks;
+    const navLinks = apiResponse?.home?.nav?.navLinks;
 
     const start = mobileNavPosition(navLinks, pathname);
 

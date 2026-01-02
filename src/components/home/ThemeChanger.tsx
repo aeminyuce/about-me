@@ -5,7 +5,7 @@ import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import type { ThemeListProps } from '../../models/Page';
+import type { ThemeListProps } from '../../models/Home';
 import { useStoreContext } from '../../states/StoreContext';
 
 // assets
@@ -24,7 +24,7 @@ export default function () {
             </Button>
             <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-circle-2nd ui-shadow-lg ui-cursor-pointer'>
 
-                {apiResponse?.nav?.themeList.map((item: ThemeListProps) => (
+                {apiResponse?.home?.nav?.themeList.map((item: ThemeListProps) => (
                     <Dropdown.Item key={item.name} onClick={() => setTheme(item.theme)}>
                         <span className={`ui-m-10-r ${item.theme} ui-fill-dark-100`} />
                         {item.name}

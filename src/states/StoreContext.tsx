@@ -3,12 +3,12 @@ import { createContext, useContext, useReducer, useState, useEffect } from 'reac
 import { useLocation } from 'react-router-dom';
 import Loadingmask from 'uilab/react/Loadingmask';
 import Service from '../services/Service';
-import { getPageData, getHomeData, getLabData } from '../services/Repository';
+import { getPageData, getHomeData, getHomeFeaturedData, getLabData } from '../services/Repository';
 
 // misc
 import type { StoreContextProps, StoreProviderProps } from '../models/Page';
 import reducer from './StoreReducer';
-import { CURRENT_THEME, PAGE_DATA, HOME_DATA, LAB_DATA } from './Actions';
+import { CURRENT_THEME, PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA } from './Actions';
 
 export const StoreContext = createContext({} as StoreContextProps);
 
@@ -30,8 +30,12 @@ export default function (props: StoreProviderProps) {
         setIsmobile(window.innerWidth < 768);
 
         // route based data
-        if (pathname === '/' && !state?.apiResponse?.home) {
+        if (['/', '/dashboard'].includes(pathname) && !state?.apiResponse?.home) {
             loadHomeData();
+        }
+
+        if (pathname === '/' && !state?.apiResponse?.home_featured) {
+            loadHomeFeaturedData();
 
         } else if (pathname.startsWith('/lab') && !state?.apiResponse?.lab) {
             loadLabData();
@@ -66,6 +70,14 @@ export default function (props: StoreProviderProps) {
             });
         });
     };
+    const loadHomeFeaturedData = () => {
+        getHomeFeaturedData(service).then((response: any) => {
+            dispatch({
+                type: HOME_FEATURED_DATA,
+                result: response?.result,
+            });
+        });
+    };
 
     // fetch lab data
     const loadLabData = () => {
@@ -82,6 +94,7 @@ export default function (props: StoreProviderProps) {
         isMobile,
         setTheme,
         loadHomeData,
+        loadHomeFeaturedData,
         loadLabData,
     };
 

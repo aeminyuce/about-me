@@ -6,7 +6,7 @@ import { useStoreContext } from '../../states/StoreContext';
 
 export default function () {
     const { apiResponse } = useStoreContext();
-    const aboutMe = apiResponse?.aboutMe;
+    const aboutMe = apiResponse?.home?.aboutMe;
 
     const profileImage = aboutMe?.profileImage;
     const fullName = aboutMe?.fullName;

@@ -1,12 +1,11 @@
 import * as React from 'react';
-import Avatar from 'uilab/react/Avatar';
 import Grid from 'uilab/react/Grid';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { GetInTouchButtons } from './GetInTouchModal';
+import { GetInTouchButtons } from '../common/GetInTouchModal';
 import { useStoreContext } from '../../states/StoreContext';
-import MyAvatar from './MyAvatar';
+import MyAvatar from '../common/MyAvatar';
 import PersonalSkills from './PersonalSkills';
 
 // assets
@@ -14,7 +13,7 @@ import { IconMarker } from 'uilab-icons/react/general/marker';
 
 export default function () {
     const { apiResponse } = useStoreContext();
-    const aboutMe = apiResponse?.aboutMe;
+    const aboutMe = apiResponse?.home?.aboutMe;
 
     const fullName = aboutMe?.fullName;
     const jobTitle = aboutMe?.jobTitle;
@@ -43,7 +42,7 @@ export default function () {
 
                 {aboutMe?.getInTouchText &&
                     <>
-                    {apiResponse?.aboutMe?.personalSkills && <PersonalSkills />}
+                    {apiResponse?.home?.aboutMe?.personalSkills && <PersonalSkills />}
                     <GetInTouchButtons />
                     </>
                 }

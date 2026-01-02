@@ -49,7 +49,7 @@ export default class Service {
         } catch (e: any) {
             // run error logger
 
-        } finally { hidePageLoader(); }
+        } finally { console.log(1);hidePageLoader(); }
     };
 
     post = async (url: string, body: any) => {

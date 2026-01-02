@@ -5,13 +5,13 @@ import ListGroup from 'uilab/react/ListGroup';
 import Notifier from 'uilab/react/Notifier';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
-import type { UserActivityProps } from '../../models/Home';
+import { useStoreContext } from '../../../states/StoreContext';
+import type { UserActivityProps } from '../../../models/Home_Featured';
 import Button from 'uilab/react/Button';
 
 export default function() {
     const { apiResponse } = useStoreContext();
-    const profile = apiResponse?.home?.profile;
+    const profile = apiResponse?.home_featured?.profile;
 
     const info = profile?.info;
     const userActivity = profile?.userActivity;

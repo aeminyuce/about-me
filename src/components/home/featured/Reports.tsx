@@ -8,14 +8,14 @@ import ProgressBar from 'uilab/react/ProgressBar';
 import Tab from 'uilab/react/Tab';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
-import type { ReportsListProps } from '../../models/Home';
+import { useStoreContext } from '../../../states/StoreContext';
+import type { ReportsListProps } from '../../../models/Home_Featured';
 
 const Report = (props: any) => {
     const { apiResponse } = useStoreContext();
     const { type } = props;
 
-    const reportsData = apiResponse?.home?.reports;
+    const reportsData = apiResponse?.home_featured?.reports;
     const getData = reportsData[type];
 
     return (
@@ -87,7 +87,7 @@ const ReportsListGroup = (props: any) => {
 
 export const ReportsList = () => {
     const { apiResponse } = useStoreContext();
-    const reportsList = apiResponse?.home?.reportsList;
+    const reportsList = apiResponse?.home_featured?.reportsList;
 
     return (
         <Card className='home-reports-list ui-p-15 ui-shadow ui-round'>

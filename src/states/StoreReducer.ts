@@ -1,6 +1,6 @@
 // misc
 import { setStorage } from './Storages';
-import { CURRENT_THEME, PAGE_DATA, HOME_DATA, LAB_DATA } from './Actions';
+import { CURRENT_THEME, PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA } from './Actions';
 
 const updateStoreContext = (state: any, action: any) => {
 	try {
@@ -30,12 +30,13 @@ const updateStoreContext = (state: any, action: any) => {
 		}
 
 		// fetch home data
-		if ([HOME_DATA].includes(action?.type)) {
+		if ([HOME_DATA, HOME_FEATURED_DATA].includes(action?.type)) {
 			return {
 				...state,
 				apiResponse: {
 					...state.apiResponse,
-					home: action.result,
+					...(action.type === HOME_DATA && { home: action.result }),
+					...(action.type === HOME_FEATURED_DATA && { home_featured: action.result }),
 				},
 			};
 		}

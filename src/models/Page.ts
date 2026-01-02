@@ -32,13 +32,7 @@ export interface PageTitleProps {
     children: ReactNode;
 }
 
-// Theme List
-export interface ThemeListProps {
-	name: string;
-	theme: string;
-	color: string;
-}
-
+// Header
 export interface HeaderLinksProps {
     name: string;
     to: string;

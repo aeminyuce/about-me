@@ -1,16 +1,11 @@
 import * as React from 'react';
 import { useOutlet } from "react-router-dom";
-import Grid from 'uilab/react/Grid';
 
 // misc
-import AboutMe from '../components/common/AboutMe';
+import AboutMe from '../components/home/AboutMe';
 import HomeNav from '../components/home/HomeNav';
 import { useStoreContext } from '../states/StoreContext';
-import Featured from '../components/home/Featured';
-import Profile from '../components/home/Profile';
-import { Reports, ReportsList } from '../components/home/Reports';
-import { People, PeopleMore } from '../components/home/People';
-import Events from '../components/home/Events';
+import Featured from './home/Featured';
 
 // styles
 import '../assets/home.less';
@@ -22,16 +17,16 @@ export default function () {
     return (
         <>
         {/* about me */}
-        <AboutMe />
+        {apiResponse?.home?.aboutMe && <AboutMe />}
 
         {/* nav */}
-        <HomeNav />
+        {apiResponse?.home?.nav && <HomeNav />}
 
         {/* contents */}
         {outlet}
 
         {/* featured */}
-        {!outlet && apiResponse?.home && <Featured /> }
+        {!outlet && apiResponse?.home_featured && <Featured /> }
         </>
     );
 }
