@@ -1,0 +1,1 @@
+INSERT INTO "home_featured"."profile_useractivity" ("id", "time", "activity") VALUES ('1', '2h', 'User logged into the dashboard.'), ('2', '3d', 'Generated monthly report summary by types.'), ('3', '7d', 'Downloaded account data file as json format.'), ('4', '3w', 'Updated user billing information settings.'), ('5', '2m', 'Invited a new team member to the board.');

@@ -22,21 +22,6 @@ SELECT json_build_object(
           FROM page.header_sociallinks hsl
         )
       )
-    ),
-    'aboutMe', (
-      SELECT to_jsonb(abm) - 'id'
-      FROM page.aboutme abm
-      LIMIT 1
-    ),
-    'nav', json_build_object(
-      'navLinks', (
-        SELECT json_agg(to_jsonb(nsl) - 'id')
-        FROM page.nav_navlinks nsl
-      ),
-      'themeList', (
-        SELECT json_agg(to_jsonb(ntl) - 'id')
-        FROM page.nav_themelist ntl
-      )
     )
   )
 );

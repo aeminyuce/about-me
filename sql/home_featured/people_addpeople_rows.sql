@@ -1,0 +1,1 @@
+INSERT INTO "home_featured"."people_addpeople" ("id", "icon", "title") VALUES ('1', 'user-plus', 'Add People');

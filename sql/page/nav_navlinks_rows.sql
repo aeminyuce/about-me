@@ -1,1 +1,0 @@
-INSERT INTO "page"."nav_navlinks" ("id", "name", "to") VALUES ('1', 'Featured', '/'), ('2', 'Dashboard', '/dashboard'), ('3', 'Data Table', '/data-table'), ('4', 'Gallery', '/gallery'), ('5', 'Register', '/register');

@@ -1,1 +1,0 @@
-INSERT INTO "home"."profile_info" ("id", "avatar", "name", "email", "type") VALUES ('1', 'UPT', 'User Pine Tree', 'upt@yourdomain.com', 'Licensed User');

@@ -1,1 +1,0 @@
-INSERT INTO "home"."calendar" ("id", "cardtitle", "eventsdate", "title", "settings") VALUES ('1', 'Events', '2025,6', 'Customize events', ARRAY["Add to your calendar","See all events"]);

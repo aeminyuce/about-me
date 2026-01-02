@@ -1,0 +1,275 @@
+{
+    "result": {
+        "people": {
+            "list": [
+                {
+                    "url": "#people-fed",
+                    "jobTitle": "Front-end Developer",
+                    "avatarText": "AEY",
+                    "description": "Css, JS, React"
+                },
+                {
+                    "url": "#people-bed",
+                    "avatar": "images/profile-image1.jpg",
+                    "jobTitle": "Back-end Developer",
+                    "description": "Phyton, SQL, Oracle"
+                },
+                {
+                    "url": "#people-gdv",
+                    "jobTitle": "Game Developer",
+                    "avatarText": "EKY",
+                    "description": "Unity, Unreal Engine"
+                },
+                {
+                    "url": "#people-ui",
+                    "avatar": "images/profile-image2.jpg",
+                    "jobTitle": "UI-UX Designer",
+                    "description": "Figma, Illustratiron"
+                },
+                {
+                    "url": "#people-gde",
+                    "jobTitle": "Game Designer",
+                    "avatarText": "HY",
+                    "description": "Blender, Photoshop, DS Max"
+                }
+            ],
+            "addPeople": {
+                "icon": "user-plus",
+                "title": "Add People"
+            },
+            "cardTitle": "People"
+        },
+        "profile": {
+            "info": {
+                "name": "User Pine Tree",
+                "type": "Licensed User",
+                "email": "upt@yourdomain.com",
+                "avatar": "UPT"
+            },
+            "userActivity": [
+                {
+                    "id": 1,
+                    "time": "2h",
+                    "activity": "User logged into the dashboard."
+                },
+                {
+                    "id": 2,
+                    "time": "3d",
+                    "activity": "Generated monthly report summary by types."
+                },
+                {
+                    "id": 3,
+                    "time": "7d",
+                    "activity": "Downloaded account data file as json format."
+                },
+                {
+                    "id": 4,
+                    "time": "3w",
+                    "activity": "Updated user billing information settings."
+                },
+                {
+                    "id": 5,
+                    "time": "2m",
+                    "activity": "Invited a new team member to the board."
+                }
+            ]
+        },
+        "reports": {
+            "l": {
+                "name": "Active Reports",
+                "percent": "58% efficiency",
+                "reports": 106,
+                "progressPercent": 58
+            },
+            "r": {
+                "name": "Finished Reports",
+                "percent": "74% efficiency",
+                "reports": 19,
+                "progressPercent": 74
+            }
+        },
+        "calendar": {
+            "title": "Customize events",
+            "events": [
+                {
+                    "day": 12,
+                    "year": 2025,
+                    "month": 6,
+                    "dayName": "Wednesday",
+                    "details": {
+                        "11:00": "<a href=\"#\" target=\"_blank\">Team Strategy Meeting</a>",
+                        "13:30": "<a href=\"#\" target=\"_blank\">Design Review Session</a>",
+                        "14:00": "<a href=\"#\" target=\"_blank\">Product Launch Briefing</a>",
+                        "15:00": "<a href=\"#\" target=\"_blank\">Client Call: Project X</a>",
+                        "17:00": "<a href=\"#\" target=\"_blank\">Marketing Sync-Up</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">Evening Code Sprint</a>"
+                    }
+                },
+                {
+                    "day": 14,
+                    "year": 2025,
+                    "month": 6,
+                    "dayName": "Friday",
+                    "details": {
+                        "11:00": "<a href=\"#\" target=\"_blank\">Weekly Stand-Up</a>",
+                        "14:00": "<a href=\"#\" target=\"_blank\">Sales Pipeline Review</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">UX Feedback Roundtable</a>"
+                    }
+                },
+                {
+                    "day": 18,
+                    "year": 2025,
+                    "month": 6,
+                    "dayName": "Wednesday",
+                    "details": {
+                        "11:00": "<a href=\"#\" target=\"_blank\">Sprint Planning</a>",
+                        "13:30": "<a href=\"#\" target=\"_blank\">Bug Triage Session</a>",
+                        "14:00": "<a href=\"#\" target=\"_blank\">Investor Update Call</a>",
+                        "15:00": "<a href=\"#\" target=\"_blank\">Feature Demo Prep</a>",
+                        "17:00": "<a href=\"#\" target=\"_blank\">Content Strategy Workshop</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">DevOps Sync</a>"
+                    }
+                },
+                {
+                    "day": 19,
+                    "year": 2025,
+                    "month": 6,
+                    "dayName": "Friday",
+                    "details": {
+                        "14:00": "<a href=\"#\" target=\"_blank\">Customer Journey Mapping</a>",
+                        "15:00": "<a href=\"#\" target=\"_blank\">Security Audit Review</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">Frontend Refactor Session</a>"
+                    }
+                },
+                {
+                    "day": 2,
+                    "year": 2025,
+                    "month": 7,
+                    "dayName": "Wednesday",
+                    "details": {
+                        "11:00": "<a href=\"#\" target=\"_blank\">Quarterly Goals Kickoff</a>",
+                        "13:30": "<a href=\"#\" target=\"_blank\">Accessibility Review</a>",
+                        "14:00": "<a href=\"#\" target=\"_blank\">Cross-Team Collaboration Talk</a>",
+                        "15:00": "<a href=\"#\" target=\"_blank\">API Integration Planning</a>",
+                        "17:00": "<a href=\"#\" target=\"_blank\">Brand Refresh Discussion</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">Late Night Debugging</a>"
+                    }
+                },
+                {
+                    "day": 9,
+                    "year": 2025,
+                    "month": 7,
+                    "dayName": "Friday",
+                    "details": {
+                        "14:00": "<a href=\"#\" target=\"_blank\">Performance Review Prep</a>",
+                        "15:00": "<a href=\"#\" target=\"_blank\">Infrastructure Planning</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">Code Review Marathon</a>"
+                    }
+                }
+            ],
+            "settings": [
+                "Add to your calendar",
+                "See all events"
+            ],
+            "cardTitle": "Events",
+            "eventsDate": "2025,6"
+        },
+        "peopleMore": {
+            "list": [
+                {
+                    "jobTitle": "Front-end Developer",
+                    "avatarText": "BS"
+                },
+                {
+                    "avatar": "images/profile-image2.jpg",
+                    "jobTitle": "Back-end Developer"
+                },
+                {
+                    "avatar": "images/profile-image3.jpg",
+                    "jobTitle": "UI-UX Designer"
+                }
+            ],
+            "moreUrl": "#people-more",
+            "moreCount": 13,
+            "moreBtnText": "See all"
+        },
+        "reportsList": {
+            "paused": [
+                {
+                    "name": "RAC-2019-973",
+                    "percent": "23%",
+                    "reports": "616 Reports",
+                    "chartPercent": 23
+                },
+                {
+                    "name": "BDD-2019-047",
+                    "percent": "36%",
+                    "reports": "812 Reports",
+                    "chartPercent": 36
+                },
+                {
+                    "name": "OOC-2019-781",
+                    "percent": "52%",
+                    "reports": "1605 Reports",
+                    "chartPercent": 52
+                },
+                {
+                    "name": "DDG-2019-505",
+                    "percent": "69%",
+                    "reports": "1890 Reports",
+                    "chartPercent": 69
+                },
+                {
+                    "name": "BDA-2019-642",
+                    "percent": "76%",
+                    "reports": "2613 Reports",
+                    "chartPercent": 76
+                },
+                {
+                    "name": "AAC-2019-013",
+                    "percent": "88%",
+                    "reports": "3814 Reports",
+                    "chartPercent": 88
+                }
+            ],
+            "delayed": [
+                {
+                    "name": "AAC-2019-013",
+                    "percent": "88%",
+                    "reports": "3814 Reports",
+                    "chartPercent": 88
+                },
+                {
+                    "name": "BDA-2019-642",
+                    "percent": "76%",
+                    "reports": "2613 Reports",
+                    "chartPercent": 76
+                },
+                {
+                    "name": "DDG-2019-505",
+                    "percent": "69%",
+                    "reports": "1890 Reports",
+                    "chartPercent": 69
+                },
+                {
+                    "name": "OOC-2019-781",
+                    "percent": "52%",
+                    "reports": "1605 Reports",
+                    "chartPercent": 52
+                },
+                {
+                    "name": "BDD-2019-047",
+                    "percent": "36%",
+                    "reports": "812 Reports",
+                    "chartPercent": 36
+                },
+                {
+                    "name": "RAC-2019-973",
+                    "percent": "23%",
+                    "reports": "616 Reports",
+                    "chartPercent": 23
+                }
+            ]
+        }
+    }
+}

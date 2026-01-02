@@ -1,79 +1,5 @@
 {
     "result": {
-        "nav": {
-            "navLinks": [
-                {
-                    "to": "/",
-                    "name": "Featured"
-                },
-                {
-                    "to": "/dashboard",
-                    "name": "Dashboard"
-                },
-                {
-                    "to": "/data-table",
-                    "name": "Data Table"
-                },
-                {
-                    "to": "/gallery",
-                    "name": "Gallery"
-                },
-                {
-                    "to": "/register",
-                    "name": "Register"
-                }
-            ],
-            "themeList": [
-                {
-                    "name": "Yellow Theme",
-                    "theme": "ui-theme-yellow"
-                },
-                {
-                    "name": "Yellow-Orange Theme",
-                    "theme": "ui-theme-yellowOrange"
-                },
-                {
-                    "name": "Orange Theme",
-                    "theme": "ui-theme-orange"
-                },
-                {
-                    "name": "Orange-Red Theme",
-                    "theme": "ui-theme-orengeRed"
-                },
-                {
-                    "name": "Red Theme",
-                    "theme": "ui-theme-red"
-                },
-                {
-                    "name": "Red-Purple Theme",
-                    "theme": "ui-theme-redPurple"
-                },
-                {
-                    "name": "Purple Theme",
-                    "theme": "ui-theme-purple"
-                },
-                {
-                    "name": "Purple-Blue Theme",
-                    "theme": "ui-theme-purpleBlue"
-                },
-                {
-                    "name": "Blue Theme",
-                    "theme": "ui-theme-blue"
-                },
-                {
-                    "name": "Blue-Green Theme",
-                    "theme": "ui-theme-blueGreen"
-                },
-                {
-                    "name": "Green Theme",
-                    "theme": "ui-theme-green"
-                },
-                {
-                    "name": "Green-Yellow Theme",
-                    "theme": "ui-theme-greenYellow"
-                }
-            ]
-        },
         "header": {
             "getInTouch": {
                 "title": "Get in Touch!",
@@ -120,31 +46,6 @@
                     "icon": "linkedin",
                     "title": "LinkedIn"
                 }
-            ]
-        },
-        "aboutMe": {
-            "myFocus": "My focus is building custom design systems that help teams move fast without sacrificing originality. I develop every CSS, JavaScript, and React component myself, giving you a unique, scalable interface built just for your product.",
-            "fullName": "A. Emin Yuce",
-            "jobTitle": "Sr. Front End Developer",
-            "location": "Ankara, Turkiye",
-            "profileImage": "/images/aeminyuce.png",
-            "getInTouchText": "Get in Touch",
-            "personalSkills": [
-                "Html",
-                "CSS",
-                "Less",
-                "Javascript",
-                "Typescript",
-                "React JS",
-                "CSR",
-                "SSR",
-                "Astro",
-                "Remix",
-                "Node JS",
-                "Webpack",
-                "Rest API",
-                "Responsive Web",
-                "Adaptive Web"
             ]
         }
     }
