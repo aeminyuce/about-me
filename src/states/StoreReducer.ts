@@ -1,5 +1,3 @@
-import Loadingmask from 'uilab/react/Loadingmask';
-
 // misc
 import { setStorage } from './Storages';
 import { CURRENT_THEME, PAGE_DATA, HOME_DATA, LAB_DATA } from './Actions';
@@ -52,8 +50,6 @@ const updateStoreContext = (state: any, action: any) => {
 				},
 			};
 		}
-
-		Loadingmask();
 
 	} catch (e: any) {
 		// run error logger

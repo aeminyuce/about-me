@@ -24,13 +24,14 @@ export default function () {
                         {/* contents */}
                         {outlet}
 
-                        {/* Intro */}
+                        {/* intro */}
                         {!outlet && apiResponse?.lab?.intro && <LabIntro />}
 
                     </Grid.Col>
                 </Grid.Row>
                 <Grid.Col size={272} order={{ when: 'md', position: 'first'}}>
 
+                    {/* menu */}
                     {apiResponse?.lab?.menu && <LabMenu />}
 
                 </Grid.Col>
