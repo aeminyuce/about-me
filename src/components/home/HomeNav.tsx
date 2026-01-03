@@ -25,15 +25,21 @@ export default function () {
                 <Grid.Col size={47} className='ui-visible-sm' />
                 <Grid.Row>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-round-1st ui-hidden-sm'>
+
                         {navData?.navLinks && <NavDesktopLinks />}
+
                     </Grid.Col>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-visible-sm'>
+
                         {navData?.navLinks && <NavMobileLinks />}
+
                     </Grid.Col>
                 </Grid.Row>
                 <Grid.Col size={42} className='ui-visible-sm' />
                 <Grid.Col size={69} className='ui-p-10-v'>
+
                     {navData?.themeList && <ThemeChanger />}
+
                 </Grid.Col>
             </Grid.Static>
         </Grid.Row>

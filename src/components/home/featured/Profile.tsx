@@ -19,7 +19,7 @@ export default function() {
     return (
         <Card className='home-profile ui-round ui-shadow'>
             {info?.avatar &&
-                <div className='ui-align-c ui-round-t ui-fill-dark-100'>
+                <div className='ui-align-c ui-round-t ui-border-b ui-stroke ui-fill-light-100'>
                     <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
                         <Avatar size='lg'>
                             <span>{info?.avatar}</span>
@@ -36,7 +36,7 @@ export default function() {
                     </div>
                 }
                 {info?.type &&
-                    <div className='ui-font-11 ui-m-10-b ui-1st-inline-block'>
+                    <div className='ui-font-11 ui-m-10-b'>
                         <Button as='span' size='xs' className='ui-p-10-h ui-circle ui-fill-dark-100'>
                             {info?.type}
                         </Button>
@@ -44,7 +44,7 @@ export default function() {
                 }
             </div>
 
-            <ListGroup className={`ui-round ui-scroll-v ui-scrollbar-faded`}>
+            <ListGroup className={`ui-scrollbar-round ui-scroll-v ui-scrollbar-faded`}>
                 <ListGroup.List avatarSize='xs'>
 
                     {userActivity?.map((item: UserActivityProps) => (

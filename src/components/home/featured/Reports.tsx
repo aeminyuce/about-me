@@ -107,10 +107,14 @@ export const ReportsList = () => {
 
                 </Button.Wrapper>
                 <Tab.Content open>
+
                     {reportsList?.delayed && <ReportsListGroup list={reportsList?.delayed} />}
+
                 </Tab.Content>
                 <Tab.Content>
+
                     {reportsList?.paused && <ReportsListGroup list={reportsList?.paused} />}
+
                 </Tab.Content>
             </Tab.Holder>
         </Card>
