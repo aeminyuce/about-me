@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Grid from 'uilab/react/Grid';
+import Heading from 'uilab/react/Heading';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
@@ -26,11 +27,15 @@ export default function () {
             </Grid.Col>
             <Grid.Col size={7} md={10} className='ui-sm-align-c'>
                 {fullName &&
-                    <h1 className='ui-h1 ui-font-30 ui-font-bold ui-m-15-t'>{fullName}</h1>
+                    <Heading as='h1' className='ui-font-30 ui-font-bold ui-m-15-t'>
+                        {fullName}
+                    </Heading>
                 }
 
                 {jobTitle &&
-                    <h2 className='ui-font-16 ui-font-regular ui-m-5-b ui-block'>{jobTitle}</h2>
+                    <Heading as='h2' className='ui-font-16 ui-font-regular ui-m-5-b ui-block'>
+                        {jobTitle}
+                    </Heading>
                 }
 
                 {location &&

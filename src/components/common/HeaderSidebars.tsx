@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from 'uilab/react/Button';
+import Heading from 'uilab/react/Heading';
 import Sidebar from 'uilab/react/Sidebar';
 import SvgIcon from 'uilab/react/SvgIcon';
 
@@ -23,7 +24,9 @@ export const HeaderLeftSidebar = () => {
                     <SvgIcon as='js' src={IconAngleLeft} />
                 </Button>
                 {sidebarTitle &&
-                    <h3 className='ui-h3 ui-font-bold ui-align-l ui-m-10-t'>{sidebarTitle}</h3>
+                    <Heading as='h3' className='ui-font-bold ui-align-l ui-m-10-t'>
+                        {sidebarTitle}
+                    </Heading>
                 }
             </Sidebar.Title>
             <Sidebar.Content className='ui-scroll-v ui-align-c' />
@@ -47,7 +50,9 @@ export const HeaderRightSidebar = (props: any) => {
                     <SvgIcon as='js' src={IconAngleRight} />
                 </Button>
                 {props.sidebarTitle &&
-                    <h3 className='ui-h3 ui-font-bold ui-align-l ui-m-10-t'>{props.sidebarTitle}</h3>
+                    <Heading as='h3' className='ui-font-bold ui-align-l ui-m-10-t'>
+                        {props.sidebarTitle}
+                    </Heading>
                 }
             </Sidebar.Title>
             <Sidebar.Content className='ui-scroll-v' />

@@ -1,10 +1,13 @@
 import * as React from 'react';
 import Button from 'uilab/react/Button';
+import Heading from 'uilab/react/Heading';
 
 export default function () {
     return (
         <div className='ui-align-c ui-set-absolute ui-set-c'>
-            <h1 className='ui-h1 ui-font-72'>404</h1>
+            <Heading as='h1' className='ui-font-72'>
+                404
+            </Heading>
             <p className='ui-m-30-b'>Page not found</p>
             <Button className='ui-circle' to='/'>Go to Home</Button>
         </div>

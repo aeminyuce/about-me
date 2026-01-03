@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import Avatar from 'uilab/react/Avatar';
 import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
+import Heading from 'uilab/react/Heading';
 import ListGroup from 'uilab/react/ListGroup';
 import SvgIcon from 'uilab/react/SvgIcon';
 
@@ -39,7 +40,9 @@ export const People = () => {
             }
 
             {cardTitle &&
-                <h3 className='ui-h3 ui-align-l ui-m-10-t'>{cardTitle}</h3>
+                <Heading as='h3' className='ui-align-l ui-m-10-t'>
+                    {cardTitle}
+                </Heading>
             }
 
             <ListGroup className={`ui-round ui-scroll-v ui-scrollbar-faded${setScrollOuter}`}>

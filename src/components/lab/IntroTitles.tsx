@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Heading from 'uilab/react/Heading';
 import Spacer from 'uilab/react/Spacer';
 
 // misc
@@ -8,9 +9,9 @@ export const Title = () => {
     const { apiResponse } = useStoreContext();
 
     return (
-        <h1 className='ui-h1 ui-font-light ui-m-30-v'>
+        <Heading as='h1' className='ui-font-light ui-m-30-v'>
             {apiResponse?.lab?.intro?.title}
-        </h1>
+        </Heading>
     )
 }
 
@@ -19,9 +20,9 @@ export const SubTitle = () => {
 
     return (
         <>
-        <h3 className='ui-h3 ui-font-bold ui-m-30-b ui-theme-greenYellow ui-text'>
+        <Heading as='h3' className='ui-font-bold ui-m-30-b ui-theme-greenYellow ui-text'>
             {apiResponse?.lab?.intro?.subTitle}
-        </h3>
+        </Heading>
         <Spacer size={30} />
         </>
     )

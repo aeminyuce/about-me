@@ -3,6 +3,7 @@ import Button from 'uilab/react/Button';
 import Calendar from 'uilab/react/Calendar';
 import Card from 'uilab/react/Card';
 import Dropdown from 'uilab/react/Dropdown';
+import Heading from 'uilab/react/Heading';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
@@ -33,7 +34,9 @@ export default function() {
             }
 
             {calendar?.cardTitle &&
-                <h3 className='ui-h3 ui-align-l ui-m-10-t'>{calendar?.cardTitle}</h3>
+                <Heading as='h3' className='ui-align-l ui-m-10-t'>
+                    {calendar?.cardTitle}
+                </Heading>
             }
 
             {calendar?.eventsDate && calendar?.events &&
