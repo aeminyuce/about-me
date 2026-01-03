@@ -8,7 +8,7 @@ export default function IntroImages() {
     const { apiResponse } = useStoreContext();
 
     return (
-        <Grid.Row fluid='no' gap='sm' className='images ui-m-auto ui-m-30-b ui-round-2nd ui-shadow-2nd'>
+        <Grid.Row fluid='no' gap='sm' className='images ui-m-auto ui-p-30-t ui-m-30-v ui-round-2nd ui-shadow-2nd'>
 
             {apiResponse?.lab?.intro?.images.map((path: string) => (
                 <Grid.Col key={path} size={'7x'}>
