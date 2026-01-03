@@ -23,24 +23,22 @@ export default function () {
         <Grid.Container as='main' noGutter='all'>
             <Grid.Container fixed='xl' as='div'>
 
-                {apiResponse?.lab &&
-                    <Grid.Static>
-                        <Grid.Row>
-                            <Grid.Col size={12} className='lab-content ui-p-30-v'>
+                <Grid.Static>
+                    <Grid.Row>
+                        <Grid.Col size={12} className='lab-content ui-p-30-v'>
 
-                                {/* contents */}
-                                <Outlet />
-
-                            </Grid.Col>
-                        </Grid.Row>
-                        <Grid.Col size={272} order={{ when: 'md', position: 'first'}}>
-
-                            {/* menu */}
-                            {apiResponse?.lab?.menu && <LabMenu />}
+                            {/* contents */}
+                            <Outlet />
 
                         </Grid.Col>
-                    </Grid.Static>
-                }
+                    </Grid.Row>
+                    <Grid.Col size={272} order={{ when: 'md', position: 'first'}}>
+
+                        {/* menu */}
+                        {apiResponse?.lab?.menu && <LabMenu />}
+
+                    </Grid.Col>
+                </Grid.Static>
 
             </Grid.Container>
         </Grid.Container>
