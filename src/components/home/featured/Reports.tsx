@@ -92,7 +92,7 @@ export const ReportsList = () => {
     return (
         <Card className='home-reports-list ui-p-15 ui-shadow ui-round'>
             <Tab.Holder dataClasses='ui-fill-dark-100'>
-                <Button.Wrapper as='holder' ease='1st' className='ui-m-15-b ui-round-1st'>
+                <Button.Wrapper as='div' type='holder' ease='1st' className='ui-m-15-b ui-round-1st'>
 
                     {reportsList && Object.keys(reportsList).map((name: string, index: number) => {
                         const isActive = index === 0 ? ' ui-fill-dark-100 ui-active' : '';

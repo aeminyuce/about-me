@@ -21,7 +21,7 @@ export default function () {
     };
 
     return (
-        <span className='ui-ease-1st-btn ui-round-1st'>
+        <Button.Wrapper as='span' ease='1st' className='ui-round-1st'>
 
             {apiResponse?.header?.socialLinks.map((item: SocialLinksProps) => (
                 <Button key={item.title} square ghost noease title={item.title} href={item.url} target='_blank' rel='nofollow'>
@@ -29,6 +29,6 @@ export default function () {
                 </Button>
             ))}
 
-        </span>
+        </Button.Wrapper>
     )
 }

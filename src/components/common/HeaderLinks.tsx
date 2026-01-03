@@ -11,7 +11,7 @@ export default function () {
 
     return (
         <span className='ui-hidden-md'>
-            <span className='ui-ease-1st-btn ui-sidebar-add-l ui-md-align-l ui-round-1st'>
+            <Button.Wrapper as='span' ease='1st' className='ui-sidebar-add-l ui-md-align-l ui-round-1st'>
 
                 {apiResponse?.header?.headerLinks.map((item: HeaderLinksProps) => {
                     const isModal = item.modal ? () => ShowGetInTouch() : null;
@@ -23,7 +23,7 @@ export default function () {
                     )
                 })}
 
-            </span>
+            </Button.Wrapper>
         </span>
     )
 }

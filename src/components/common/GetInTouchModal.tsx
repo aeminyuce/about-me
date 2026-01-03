@@ -19,14 +19,14 @@ export const GetInTouchButtons = () => {
     const getInTouchText = apiResponse?.home?.aboutMe?.getInTouchText;
 
     return (
-        <div className='ui-form-lg ui-ease-1st-btn ui-circle-1st'>
+        <Button.Wrapper as='div' largeButtons ease='1st' className='ui-circle-1st'>
             <Button noease className='ui-bg-black ui-visible-light' title={getInTouchText} onClick={ShowGetInTouch}>
                 {getInTouchText}
             </Button>
             <Button noease className='ui-bg-white ui-visible-dark' title={getInTouchText} onClick={ShowGetInTouch}>
                 {getInTouchText}
             </Button>
-        </div>
+        </Button.Wrapper>
     )
 }
 
