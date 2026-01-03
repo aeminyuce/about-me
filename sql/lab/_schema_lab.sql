@@ -4,7 +4,7 @@
 CREATE TABLE lab.intro (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
   title text,
-  subtitle text,
+  subTitle text,
   leadText text,
   textPart1 text,
   textPart2 text,
