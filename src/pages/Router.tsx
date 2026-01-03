@@ -24,9 +24,9 @@ export default function () {
         <Suspense fallback={<PageLoader />}>
             <Routes>
                 {/* home pages */}
-                <Route element={<Home />}>
+                <Route path='/' element={<Home />}>
 
-                    <Route index element={ // use index when '/'
+                    <Route index element={
                         <PageTitle title='About Me'><Featured /></PageTitle>
                     } />
                     <Route path='dashboard' element={
@@ -36,12 +36,12 @@ export default function () {
                 </Route>
 
                 {/* lab pages */}
-                <Route element={<Lab />}>
+                <Route path='/lab' element={<Lab />}>
 
-                    <Route path='lab' element={
+                    <Route index element={
                         <PageTitle title='Lab'><LabIntro /></PageTitle>}
                     />
-                    <Route path='lab/alerts' element={
+                    <Route path='alerts' element={
                         <PageTitle title='Lab | Alerts'><LabAlerts /></PageTitle>
                     } />
 
