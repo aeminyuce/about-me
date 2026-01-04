@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Card from 'uilab/react/Card';
-import ListGroup from 'uilab/react/ListGroup';
+import Listing from 'uilab/react/Listing';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
@@ -16,20 +16,20 @@ export default function() {
 
     return (
         <Card className='lab-menu ui-p-15 ui-round ui-shadow-sm ui-set-sticky ui-hidden-md'>
-            <ul className='ui-list-unstyled ui-list-sp-15 ui-font-hoverline-2nd ui-sidebar-add-r'>
+            <Listing type='unstyled' space={5} className='ui-font-hoverline-2nd ui-sidebar-add-r'>
 
                 {menu.map((item: LabMenuProps) => {
                     const selected = item.to === pathname;
                     const classes = `ui-link${selected ? ' ui-font-bold' : ''}`;
 
                     return (
-                        <li key={item.name}>
+                        <Listing.Item key={item.name}>
                             <Link to={item.to} className={classes}>{item.name}</Link>
-                        </li>
+                        </Listing.Item>
                     )
                 })}
 
-            </ul>
+            </Listing>
         </Card>
     )
 }
