@@ -16,7 +16,7 @@ export default function() {
 
     return (
         <Card className='lab-menu ui-p-15 ui-round ui-shadow-sm ui-set-sticky ui-hidden-md'>
-            <Listing type='unstyled' space={5} className='ui-font-hoverline-2nd ui-sidebar-add-r'>
+            <Listing type='unstyled' space={15} className='ui-font-hoverline-2nd ui-sidebar-add-r'>
 
                 {menu.map((item: LabMenuProps) => {
                     const selected = item.to === pathname;
