@@ -12,8 +12,10 @@ export default function () {
 
         <Heading as='h3'>Showing Dialogues</Heading>
         <Code className='ui-round'>
-            <Code.Line type='comment' str="Usage" />
-            <Code.Line str="ui.alerts.dialog({ msg: '', success: '', error: '', custom: { value: 'button text', value: 'button text' }, callback });" />
+            <Code.Comment>Usage</Code.Comment>
+            <Code.Lines>
+                {`ui.alerts.dialog({ msg: '', success: '', error: '', custom: { value: 'button text', value: 'button text' }, callback });`}
+            </Code.Lines>
         </Code>
 
         <div className='ui-highlight ui-p-15 ui-round ui-border ui-border-light'>
@@ -25,7 +27,7 @@ export default function () {
                     Required. Your dialog example...<br />
                     success<br />
                     Optional. Set success button text.<br />
-                    Success button returns a value: <Code.Mini str="'success'" />
+                    Success button returns a value: <Code.Mini str={`'success'`} />
                 </Grid.Col>
 
                 <Grid.Col as='dt' size={3}>
@@ -33,7 +35,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col as='dd' size={9}>
                     Optional. Set error button text.<br />
-                    Error button returns a value: <Code.Mini str="'error'" />
+                    Error button returns a value: <Code.Mini str={`'error'`} />
                 </Grid.Col>
 
                 <Grid.Col as='dt' size={3}>
@@ -42,7 +44,7 @@ export default function () {
                 <Grid.Col as='dd' size={9}>
                     Optional. Set custom buttons.<br />
                     Custom buttons returns defined own value.<br />
-                    Example usage: <Code.Mini str="{value: 'button text', value: 'button text'}" />
+                    Example usage: <Code.Mini str={`{value: 'button text', value: 'button text'}`} />
                 </Grid.Col>
 
                 <Grid.Col as='dt' size={3}>
@@ -50,34 +52,42 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col as='dd' size={9}>
                     Optional. Set a callback function when dialog returns a value.<br />
-                    Example usage: <Code.Mini str="function (value) {}" />
+                    Example usage: <Code.Mini str={`function (value) {}`} />
                 </Grid.Col>
             </Grid.Row>
         </div>
 
         <Heading as='h4'>Submit form example:</Heading>
         <Code clipboard className='ui-round'>
-            <Code.Line type='comment' str="JS" />
-            <Code.Line str="return ui.alerts.dialog({" />
-            <Code.Line inset={1} str="msg: 'Submit this form?'," />
-            <Code.Line inset={1} str="success: 'Yes'," />
-            <Code.Line inset={1} str="error: 'No'," />
-            <Code.Line inset={1} str="callback: function (value) {" />
-            <Code.Line inset={2} str="if (value === 'success') {" />
-            <Code.Line inset={3} str="document.getElementById('exampleForm').submit();" />
-            <Code.Line inset={2} str="}" />
-            <Code.Line inset={1} str="}" />
-            <Code.Line str="});" />
+            <Code.Comment>JS</Code.Comment>
+            <Code.Lines>
+{`onSubmit={(e) => {
+    e.preventDefault();
+    return ui.alerts.dialog({
+        msg: 'Submit this form?',
+        success: 'Yes',
+        error: 'No',
+        callback: function(value: string) {
+            if (value === 'success') {
+                const form = e.target as HTMLFormElement;
+                form?.submit();
+            }
+        }
+    });
+}}`}
+            </Code.Lines>
         </Code>
-        <form id='exampleForm' action='#succesful'
-            onSubmit={() => {
+        <form action='#succesful'
+            onSubmit={(e) => {
+                e.preventDefault();
                 return ui.alerts.dialog({
                     msg: 'Submit this form?',
                     success: 'Yes',
                     error: 'No',
-                    callback: function(value) {
+                    callback: function(value: string) {
                         if (value === 'success') {
-                            //document.getElementById('exampleForm').submit();
+                            const form = e.target as HTMLFormElement;
+                            form?.submit();
                         }
                     }
                 });
