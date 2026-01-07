@@ -1,14 +1,2 @@
 @import (reference) 'uilab/less/core/globals.less';
 @import (reference) 'uilab/less/core/mixins.less';
-
-/* grid sizes */
-@static-grid-sizes:                     47px 69px 133px 272px;
-
-._create-static-cols(@name; @value) {
-    @number: unit(@value);
-    .ui-col@{name}@{number} { width: @value; }
-};
-
-each(@static-grid-sizes, {
-    ._create-static-cols(~'-'; @value);
-});
