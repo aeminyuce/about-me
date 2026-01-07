@@ -15,7 +15,8 @@ import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
 export const HeaderLeftSidebar = () => {
     const { apiResponse } = useStoreContext();
-    const sidebarTitle = apiResponse?.home?.aboutMe?.fullName;
+    const sidebarTitle = apiResponse?.header?.sidebarTitle;
+    console.log(apiResponse);
 
     return (
         <Sidebar pos='l' className='ui-round'>
@@ -42,16 +43,19 @@ export const ToggleHeaderLeftSidebar = () => {
     )
 }
 
-export const HeaderRightSidebar = (props: any) => {
+export const HeaderRightSidebar = () => {
+    const { apiResponse } = useStoreContext();
+    const sidebarTitle = apiResponse?.lab?.sidebarTitle;
+
     return (
         <Sidebar pos='r' className='ui-round'>
             <Sidebar.Title className='ui-border-b ui-border-light'>
                 <Button square ghost title='Close' className='ui-sidebar-close ui-round'>
                     <SvgIcon as='js' src={IconAngleRight} />
                 </Button>
-                {props.sidebarTitle &&
+                {sidebarTitle &&
                     <Heading as='h3' className='ui-font-bold ui-align-l ui-m-10-t'>
-                        {props.sidebarTitle}
+                        {sidebarTitle}
                     </Heading>
                 }
             </Sidebar.Title>

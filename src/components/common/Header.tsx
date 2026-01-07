@@ -13,12 +13,11 @@ import { HeaderLeftSidebar, ToggleHeaderLeftSidebar, HeaderRightSidebar, ToggleH
 
 export default function () {
     const { pathname } = useLocation();
+
     const { apiResponse } = useStoreContext();
-
     const headerData = apiResponse?.header;
-    const sidebarTitle = apiResponse?.lab?.sidebarTitle;
 
-    const showRightSidebar = ['/lab'].includes(pathname);
+    const showRightSidebar = pathname.startsWith('/lab');
 
     return headerData && (
         <>
@@ -42,7 +41,7 @@ export default function () {
             {headerData?.getInTouch && <GetInTouchModal />}
         </HeaderSticky>
         <HeaderLeftSidebar />
-        <HeaderRightSidebar sidebarTitle={sidebarTitle} />
+        <HeaderRightSidebar />
         </>
     );
 }
