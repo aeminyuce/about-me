@@ -1,6 +1,11 @@
 -- WARNING: This schema is for context only and is not meant to be run.
 -- Table order and constraints may not be valid for execution.
 
+CREATE TABLE page.header (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  sidebarTitle text,
+  CONSTRAINT header_pkey PRIMARY KEY (id)
+);
 CREATE TABLE page.header_getintouch (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
   qrCodeImage text,
