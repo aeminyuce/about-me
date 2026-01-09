@@ -1,2 +1,10 @@
 @import (reference) 'uilab/less/core/globals.less';
 @import (reference) 'uilab/less/core/mixins.less';
+
+/* preview */
+@preview-children-bg:                     hsla(220, 4%, 36%, 0.1);
+@preview-children-padding:                120px 0;
+
+.preview {
+    & > div:first-child { background-color: @preview-children-bg; padding: @preview-children-padding; }
+}

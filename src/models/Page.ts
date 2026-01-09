@@ -1,4 +1,4 @@
-import { ReactNode, ElementType } from 'react';
+import { ReactNode, ReactEventHandler, ElementType } from 'react';
 
 // Storages
 export interface SetStorageProps {
@@ -43,4 +43,11 @@ export interface SocialLinksProps {
     title: string;
     url: string;
     icon: ElementType;
+}
+
+// Preview
+export interface PreviewProps {
+    children: ReactNode;
+    code?: string;
+    onClick?: ReactEventHandler;
 }
