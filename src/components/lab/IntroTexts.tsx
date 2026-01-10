@@ -1,15 +1,22 @@
 import * as React from 'react';
+import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
+
+// assets
+import { IconSoundwave } from 'uilab-icons/react/media/soundwave';
 
 export const LeadText = () => {
     const { apiResponse } = useStoreContext();
 
     return (
-        <p className='ui-font-22 ui-font-readable ui-p-30 ui-sm-no-p ui-theme-yellowOrange ui-text'>
+        <div className='ui-p-30 ui-sm-no-p ui-theme-yellowOrange ui-text'>
+        <p className='ui-font-22 ui-font-readable ui-m-15-b'>
             {apiResponse?.lab?.intro?.leadText}
         </p>
+        <SvgIcon as='js' src={IconSoundwave} size='xxl' className='ui-m-30-t' />
+        </div>
     )
 }
 
