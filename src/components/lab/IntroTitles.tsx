@@ -8,7 +8,7 @@ export const Title = () => {
     const { apiResponse } = useStoreContext();
 
     return (
-        <Heading as='h1' className='ui-font-light ui-m-30-v'>
+        <Heading as='h1' className='ui-font-light ui-font-48 ui-m-30-v'>
             {apiResponse?.lab?.intro?.title}
         </Heading>
     )
@@ -18,7 +18,7 @@ export const SubTitle = () => {
     const { apiResponse } = useStoreContext();
 
     return (
-        <Heading as='h3' className='ui-font-bold ui-m-30-b ui-theme-greenYellow ui-text'>
+        <Heading as='h3' className='ui-font-36 ui-m-30-b ui-theme-greenYellow ui-text'>
             {apiResponse?.lab?.intro?.subTitle}
         </Heading>
     )
