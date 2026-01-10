@@ -15,12 +15,12 @@ export default function() {
     const menu = apiResponse?.lab?.menu;
 
     return (
-        <Card className='lab-menu ui-p-15 ui-round ui-shadow-sm ui-set-sticky ui-hidden-md'>
+        <Card className='lab-menu ui-p-15 ui-round ui-shadow ui-set-sticky ui-hidden-md'>
             <Listing type='unstyled' space={15} className='ui-font-hoverline-2nd ui-sidebar-add-r'>
 
                 {menu.map((item: LabMenuProps) => {
                     const selected = item.to === pathname;
-                    const classes = `ui-link${selected ? ' ui-font-bold' : ''}`;
+                    const classes = `ui-link${selected ? ' ui-theme-yellowOrange ui-text' : ''}`;
 
                     return (
                         <Listing.Item key={item.name}>
