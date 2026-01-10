@@ -7,7 +7,7 @@ export const LeadText = () => {
     const { apiResponse } = useStoreContext();
 
     return (
-        <p className='ui-font-22 ui-font-readable ui-p-30 ui-sm-no-p ui-theme-yellow ui-text'>
+        <p className='ui-font-22 ui-font-readable ui-p-30 ui-sm-no-p ui-theme-yellowOrange ui-text'>
             {apiResponse?.lab?.intro?.leadText}
         </p>
     )
