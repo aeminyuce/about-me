@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Alerts from 'uilab/react/Alerts';
+import Breadcrumbs from 'uilab/react/Breadcrumbs';
 import Grid from 'uilab/react/Grid';
 import Heading from 'uilab/react/Heading';
 import SvgIcon from 'uilab/react/SvgIcon';
@@ -7,13 +8,17 @@ import SvgIcon from 'uilab/react/SvgIcon';
 // misc
 import Preview from '../../components/common/Preview';
 
-
 // assets
 import { IconRemove } from 'uilab-icons/react/general/remove';
 
 export default function () {
     return (
         <>
+        <Breadcrumbs className='ui-p-10-b ui-m-30-b ui-border-b ui-border-light ui-hover-opacity-2nd'>
+            <Breadcrumbs.Item to='/'>Home</Breadcrumbs.Item>
+            <Breadcrumbs.Item to='/lab'>Lab</Breadcrumbs.Item>
+        </Breadcrumbs>
+
         <Heading as='h1'>Alerts</Heading>
         <Heading as='h3'>Dialog Messages</Heading>
 
@@ -63,7 +68,7 @@ export default function () {
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
                 <p className='ui-font-16 ui-color-black-50 ui-font-readable'>
-                    Dialogs include success and error buttons with custom text. This dialog can be closed by clicking outside the dialog window, and it also includes a close button in the top‑right corner. Additionally, all dialogs can be closed using the ESC key on the keyboard. When a dialog contains an error button, the error button is focused first when the dialog opens..
+                    A dialog include success and error buttons with custom text. This dialog can be closed by clicking outside the dialog window, and it also includes a close button in the top‑right corner. Additionally, this dialog can be closed using the ESC key on the keyboard. When a dialog contains an error button, the error button is focused first when the dialog opens.
                 </p>
             </Grid.Col>
         </Grid.Row>
@@ -90,7 +95,7 @@ export default function () {
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
                 <p className='ui-font-16 ui-color-black-50 ui-font-readable'>
-                    Dialogs include success, error, and optional buttons along with custom text. The dialog is closable and supports closing with the ESC key. All button types are placed in the footer, and when the dialog opens, the error button is focused first.
+                    A dialog include success, error, and optional buttons along with custom text. The dialog is closable and supports closing with the ESC key. All button types are placed in the footer, and when the dialog opens, the error button is focused first.
                 </p>
             </Grid.Col>
         </Grid.Row>
