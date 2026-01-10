@@ -48,6 +48,5 @@ export interface SocialLinksProps {
 // Preview
 export interface PreviewProps {
     children: ReactNode;
-    code?: string;
     onClick?: ReactEventHandler;
 }
