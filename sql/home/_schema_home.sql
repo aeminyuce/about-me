@@ -3,9 +3,6 @@
 
 CREATE TABLE home.aboutme (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
-  profileImage text,
-  fullName text,
-  jobTitle text,
   location text,
   getInTouchText text,
   personalSkills ARRAY,

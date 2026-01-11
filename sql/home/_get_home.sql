@@ -13,11 +13,11 @@ SELECT json_build_object(
     ),
     'nav', json_build_object(
       'navLinks', (
-        SELECT json_agg(to_jsonb(nsl) - 'id')
+        SELECT json_agg(to_jsonb(nsl) - 'id' ORDER BY nsl.id)
         FROM home.nav_navlinks nsl
       ),
       'themeList', (
-        SELECT json_agg(to_jsonb(ntl) - 'id')
+        SELECT json_agg(to_jsonb(ntl) - 'id' ORDER BY ntl.id)
         FROM home.nav_themelist ntl
       )
     )

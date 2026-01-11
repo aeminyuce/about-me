@@ -10,21 +10,21 @@
                 },
                 {
                     "url": "#people-bed",
-                    "avatar": "images/profile-image1.jpg",
+                    "avatar": "profile-image1.jpg",
                     "jobTitle": "Back-end Developer",
                     "description": "Phyton, SQL, Oracle"
+                },
+                {
+                    "url": "#people-ui",
+                    "avatar": "profile-image2.jpg",
+                    "jobTitle": "UI-UX Designer",
+                    "description": "Figma, Illustratiron"
                 },
                 {
                     "url": "#people-gdv",
                     "jobTitle": "Game Developer",
                     "avatarText": "EKY",
                     "description": "Unity, Unreal Engine"
-                },
-                {
-                    "url": "#people-ui",
-                    "avatar": "images/profile-image2.jpg",
-                    "jobTitle": "UI-UX Designer",
-                    "description": "Figma, Illustratiron"
                 },
                 {
                     "url": "#people-gde",
@@ -48,27 +48,22 @@
             },
             "userActivity": [
                 {
-                    "id": 1,
                     "time": "2h",
                     "activity": "User logged into the dashboard."
                 },
                 {
-                    "id": 2,
                     "time": "3d",
                     "activity": "Generated monthly report summary by types."
                 },
                 {
-                    "id": 3,
                     "time": "7d",
                     "activity": "Downloaded account data file as json format."
                 },
                 {
-                    "id": 4,
                     "time": "3w",
                     "activity": "Updated user billing information settings."
                 },
                 {
-                    "id": 5,
                     "time": "2m",
                     "activity": "Invited a new team member to the board."
                 }
@@ -181,11 +176,11 @@
                     "avatarText": "BS"
                 },
                 {
-                    "avatar": "images/profile-image2.jpg",
+                    "avatar": "profile-image2.jpg",
                     "jobTitle": "Back-end Developer"
                 },
                 {
-                    "avatar": "images/profile-image3.jpg",
+                    "avatar": "profile-image3.jpg",
                     "jobTitle": "UI-UX Designer"
                 }
             ],

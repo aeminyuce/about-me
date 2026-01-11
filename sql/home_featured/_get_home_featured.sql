@@ -13,7 +13,7 @@ SELECT json_build_object(
         LIMIT 1
       ),
       'userActivity', (
-        SELECT json_agg(to_jsonb(pua))
+        SELECT json_agg(to_jsonb(pua) - 'id' ORDER BY pua.id)
         FROM home_featured.profile_useractivity pua
       )
     ),
@@ -31,7 +31,7 @@ SELECT json_build_object(
     ),
     'reportsList', json_build_object(
       'delayed', (
-        SELECT json_agg(to_jsonb(rld) - 'id')
+        SELECT json_agg(to_jsonb(rld) - 'id' ORDER BY rld.id)
         FROM home_featured.reportslist_delayed rld
       ),
       'paused', (
@@ -52,7 +52,7 @@ SELECT json_build_object(
           LIMIT 1
         ),
         'list', (
-          SELECT json_agg(to_jsonb(pli) - 'id')
+          SELECT json_agg(to_jsonb(pli) - 'id' ORDER BY pli.id)
           FROM home_featured.people_list pli
         )
       )
@@ -64,7 +64,7 @@ SELECT json_build_object(
           'moreUrl', pmr.moreurl,
           'moreCount', pmr.morecount,
           'list', (
-            SELECT jsonb_agg(to_jsonb(pml) - 'id') 
+            SELECT jsonb_agg(to_jsonb(pml) - 'id' ORDER BY pml.id)
             FROM home_featured.peoplemore_list pml
           )
         )
@@ -79,7 +79,7 @@ SELECT json_build_object(
         'title', cln.title,
         'settings', cln.settings,
         'events', (
-          SELECT jsonb_agg(to_jsonb(cle) - 'id')
+          SELECT jsonb_agg(to_jsonb(cle) - 'id' ORDER BY cle.id)
           FROM home_featured.calendar_events cle
         )
       )

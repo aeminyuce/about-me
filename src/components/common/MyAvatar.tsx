@@ -6,17 +6,17 @@ import { useStoreContext } from '../../states/StoreContext';
 
 export default function () {
     const { apiResponse } = useStoreContext();
-    const aboutMe = apiResponse?.home?.aboutMe;
+    const general = apiResponse?.general;
 
-    const profileImage = aboutMe?.profileImage;
-    const fullName = aboutMe?.fullName;
-    const jobTitle = aboutMe?.jobTitle;
+    const profileImage = general?.profileImage;
+    const fullName = general?.fullName;
+    const jobTitle = general?.jobTitle;
 
     return (
         <>
         {profileImage &&
             <Avatar size='lg' className='ui-circle'>
-                <img src={profileImage} alt={`${fullName || ''}${jobTitle ? ` | ${jobTitle}` : ''}`} />
+                <img src={`/images/${profileImage}`} alt={`${fullName || ''}${jobTitle ? ` | ${jobTitle}` : ''}`} />
             </Avatar>
         }
         </>

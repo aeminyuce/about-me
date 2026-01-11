@@ -54,7 +54,7 @@ export const People = () => {
                                 <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
                                 {(item.avatar || item.avatarText) &&
                                     <Avatar size='xs' className='ui-circle ui-fill-dark-100 ui-hover-scale-more'>
-                                        {item.avatar && <img src={item.avatar} />}
+                                        {item.avatar && <img src={`/images/${item.avatar}`} />}
                                         {item.avatarText && <span>{item.avatarText}</span>}
                                     </Avatar>
                                 }
@@ -92,7 +92,7 @@ export const PeopleMore = () => {
                     <Fragment key={item.jobTitle}>
                         {(item.avatar || item.avatarText) &&
                             <Avatar noease className='ui-hover-scale-more'>
-                                {item.avatar && <img src={item.avatar} />}
+                                {item.avatar && <img src={`/images/${item.avatar}`} />}
                                 {item.avatarText && <span>{item.avatarText}</span>}
                             </Avatar>
                         }

@@ -47,8 +47,8 @@ export default function() {
             <ListGroup className={`ui-scrollbar-round ui-scroll-v ui-scrollbar-faded`}>
                 <ListGroup.List avatarSize='xs'>
 
-                    {userActivity?.map((item: UserActivityProps) => (
-                        <ListGroup.Item key={`uac-${item.id}`}>
+                    {userActivity?.map((item: UserActivityProps, index: number) => (
+                        <ListGroup.Item key={`uac-${index}`}>
                             <a href={item.url}>
                                 <Avatar size='xs' className='ui-round'>
                                     <span>{item.time}</span>

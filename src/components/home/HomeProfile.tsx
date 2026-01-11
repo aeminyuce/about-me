@@ -14,10 +14,12 @@ import { IconMarker } from 'uilab-icons/react/general/marker';
 
 export default function () {
     const { apiResponse } = useStoreContext();
-    const aboutMe = apiResponse?.home?.aboutMe;
 
-    const fullName = aboutMe?.fullName;
-    const jobTitle = aboutMe?.jobTitle;
+    const general = apiResponse?.general;
+    const fullName = general?.fullName;
+    const jobTitle = general?.jobTitle;
+
+    const aboutMe = apiResponse?.home?.aboutMe;
     const location = aboutMe?.location;
 
     return (

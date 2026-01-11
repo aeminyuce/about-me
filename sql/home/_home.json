@@ -76,10 +76,7 @@
         },
         "aboutMe": {
             "myFocus": "My focus is building custom design systems that help teams move fast without sacrificing originality. I develop every CSS, JavaScript, and React component myself, giving you a unique, scalable interface built just for your product.",
-            "fullName": "A. Emin Yuce",
-            "jobTitle": "Sr. Front End Developer",
             "location": "Ankara, Turkiye",
-            "profileImage": "/images/aeminyuce.png",
             "getInTouchText": "Get in Touch",
             "personalSkills": [
                 "Html",

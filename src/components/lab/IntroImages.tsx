@@ -14,8 +14,8 @@ export default function IntroImages() {
 
             {apiResponse?.lab?.intro?.images.map((item: IntroImagesProps) => (
                 <Grid.Col key={item.img} size={'7x'}>
-                    <Button noease nostyle href={item.url} target='_blank'>
-                        <img className='ui-img-fluid' src={item.img} />
+                    <Button noease nostyle href={`https://dribbble.com/shots/${item.url}`} target='_blank'>
+                        <img className='ui-img-fluid' src={`/images/lab/aeminyuce-${item.img}`} />
                     </Button>
                 </Grid.Col>
             ))}

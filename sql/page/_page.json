@@ -4,7 +4,7 @@
             "getInTouch": {
                 "title": "Get in Touch!",
                 "messageEnd": "to get in touch instantly.",
-                "qrCodeImage": "/images/get-in-touch.svg",
+                "qrCodeImage": "get-in-touch.svg",
                 "messageStart": "Great to see you opening this window to connect with me. Please",
                 "messageHighlight": " scan the QR code "
             },
@@ -12,10 +12,6 @@
                 {
                     "to": "/",
                     "name": "About Me"
-                },
-                {
-                    "name": "Get in Touch",
-                    "modal": true
                 },
                 {
                     "to": "/lab",
@@ -28,6 +24,10 @@
                 {
                     "to": "/blog",
                     "name": "Blog"
+                },
+                {
+                    "name": "Get in Touch",
+                    "modal": true
                 }
             ],
             "socialLinks": [
@@ -46,8 +46,12 @@
                     "icon": "linkedin",
                     "title": "LinkedIn"
                 }
-            ],
-            "sidebarTitle": "A. Emin Yuce"
+            ]
+        },
+        "general": {
+            "fullName": "A. Emin Yuce",
+            "jobTitle": "UI Architect, Front End Developer",
+            "profileImage": "aeminyuce.png"
         }
     }
 }

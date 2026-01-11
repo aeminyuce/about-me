@@ -15,7 +15,7 @@ import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
 export const HeaderLeftSidebar = () => {
     const { apiResponse } = useStoreContext();
-    const sidebarTitle = apiResponse?.header?.sidebarTitle;
+    const sidebarTitle = apiResponse?.general?.fullName;
 
     return (
         <Sidebar pos='l' className='ui-round'>

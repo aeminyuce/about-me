@@ -4,13 +4,18 @@
 CREATE TABLE lab.intro (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
   title text,
-  subTitle text,
-  leadText text,
-  textPart1 text,
-  textPart2 text,
-  textPart3 text,
-  images ARRAY,
+  subtitle text,
+  leadtext text,
+  textpart1 text,
+  textpart2 text,
+  textpart3 text,
   CONSTRAINT intro_pkey PRIMARY KEY (id)
+);
+CREATE TABLE lab.intro_images (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  img text,
+  url text,
+  CONSTRAINT intro_images_pkey PRIMARY KEY (id)
 );
 CREATE TABLE lab.menu (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,

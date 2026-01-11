@@ -102,8 +102,8 @@ export default function () {
         <Preview onClick={() => {
             Alerts.Dialog({
                 msg: 'Are you sure you want to donwload your backup files?',
-                success: 'Yes, please.',
-                error: 'Forget it!',
+                success: 'Yes',
+                error: 'No',
                 custom: {
                     first: 'Maybe', second: 'Later'
                 }
@@ -118,8 +118,8 @@ export default function () {
                 <div className='ui-dialog-buttons ui-ease-1st-btn'>
                     <button className='ui-dialog-custom' value='0'>Maybe</button>
                     <button className='ui-dialog-custom' value='1'>Later</button>
-                    <button className='ui-dialog-success' value='success'>Yes, please.</button>
-                    <button className='ui-dialog-error' value='error'>Forget it!</button>
+                    <button className='ui-dialog-success' value='success'>Yes</button>
+                    <button className='ui-dialog-error' value='error'>No</button>
                 </div>
             </div>
         </Preview>

@@ -24,7 +24,7 @@ export default function() {
 
                     return (
                         <Listing.Item key={item.name}>
-                            <Link to={item.to} className={classes}>{item.name}</Link>
+                            <Link to={`/lab/${item.to}`} className={classes}>{item.name}</Link>
                         </Listing.Item>
                     )
                 })}

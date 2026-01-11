@@ -1,1 +1,1 @@
-INSERT INTO "page"."header_headerlinks" ("id", "name", "to", "modal") VALUES ('1', 'About Me', '/', null), ('2', 'Lab', '/lab', null), ('3', 'Get in Touch', null, 'true'), ('4', 'Icons', '/icons', null), ('5', 'Blog', '/blog', null);
+INSERT INTO "page"."header_headerlinks" ("id", "name", "to", "modal") VALUES ('1', 'About Me', '/', null), ('2', 'Lab', '/lab', null), ('3', 'Icons', '/icons', null), ('4', 'Blog', '/blog', null), ('5', 'Get in Touch', null, 'true');
