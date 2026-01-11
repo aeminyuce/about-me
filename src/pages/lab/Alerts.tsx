@@ -24,7 +24,7 @@ export default function () {
 
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
-                <p className='ui-font-16 ui-color-black-50 ui-font-readable'>
+                <p className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
                     A simple dialog with a success button in a gray footer. This dialog cannot be closed by clicking outside the window; it can only be closed by clicking the success button. When the dialog opens, the success button is focused by default.
                 </p>
             </Grid.Col>
@@ -45,7 +45,7 @@ export default function () {
 
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
-                <p className='ui-font-16 ui-color-black-50 ui-font-readable'>
+                <p className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
                     A simple dialog with a success button and custom text can only be closed by clicking the success button. When the dialog opens, the success button is focused by default.
                 </p>
             </Grid.Col>
@@ -67,7 +67,7 @@ export default function () {
 
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
-                <p className='ui-font-16 ui-color-black-50 ui-font-readable'>
+                <p className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
                     A dialog include success and error buttons with custom text. This dialog can be closed by clicking outside the dialog window, and it also includes a close button in the top‑right corner. Additionally, this dialog can be closed using the ESC key on the keyboard. When a dialog contains an error button, the error button is focused first when the dialog opens.
                 </p>
             </Grid.Col>
@@ -94,7 +94,7 @@ export default function () {
 
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
-                <p className='ui-font-16 ui-color-black-50 ui-font-readable'>
+                <p className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
                     A dialog include success, error, and optional buttons along with custom text. The dialog is closable and supports closing with the ESC key. All button types are placed in the footer, and when the dialog opens, the error button is focused first.
                 </p>
             </Grid.Col>
