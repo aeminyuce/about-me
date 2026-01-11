@@ -15,7 +15,7 @@ export const LeadText = () => {
         <p className='ui-font-22 ui-font-readable ui-m-15-b'>
             {apiResponse?.lab?.intro?.leadText}
         </p>
-        <SvgIcon as='js' src={IconSoundwave} size='xxl' className='ui-m-30-t' />
+        <SvgIcon as='js' src={IconSoundwave} size='xxl' className='ui-m-30-v' />
         </div>
     )
 }
@@ -29,7 +29,7 @@ export const Paragraphs = () => {
     const textPart3 = intro?.textPart3;
 
     return (
-        <p className='ui-font-18 ui-font-readable ui-p-30 ui-sm-no-p ui-m-30-h'>
+        <p className='ui-font-18 ui-font-readable ui-p-30 ui-sm-no-p-h ui-m-30-h'>
             {textPart1 && textPart1}
             <br /><br />
             {textPart2 && textPart2}

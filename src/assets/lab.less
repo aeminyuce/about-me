@@ -9,7 +9,11 @@
 .lab- {
     &menu { top: @lab-menu-top; }
     &content {
-        .images { max-width: @lab-content-images-max-width; }
+        .images {
+            max-width: @lab-content-images-max-width;
+
+            .ui-btn-no-style { overflow: hidden; }
+        }
     }
 }
 
