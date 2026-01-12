@@ -48,5 +48,5 @@ export interface SocialLinksProps {
 // Preview
 export interface PreviewProps {
     children: ReactNode;
-    onClick?: ReactEventHandler;
+    play?: ReactEventHandler;
 }

@@ -9,16 +9,16 @@ import type { PreviewProps } from '../../models/Page';
 import { IconPlay } from 'uilab-icons/react/media/play';
 
 export default function (props:PreviewProps) {
-    const { children, onClick } = props;
+    const { children, play } = props;
 
     return (
-        <div className='preview ui-m-30-b ui-border ui-round ui-shadow-in-sm ui-set-relative'>
+        <div className='preview ui-m-30-b ui-border ui-border-dual ui-round ui-shadow-in-sm ui-set-relative'>
+            {children}
             <Button size='sm' className='ui-m-15 ui-round-inner ui-set-absolute ui-set-t ui-set-r ui-theme-blue ui-fill-dark-100'
-                onClick={onClick}>
+                onClick={play}>
                 <SvgIcon as='js' src={IconPlay} size='xs' />
                 <span className="ui-m-5-l ui-inline-block">Play</span>
             </Button>
-            {children}
         </div>
     );
 }
