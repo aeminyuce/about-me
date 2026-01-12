@@ -25,7 +25,7 @@ export default function () {
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
                 <p className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
-                    A simple dialog with a success button in a gray footer. This dialog cannot be closed by clicking outside the window; it can only be closed by clicking the success button. When the dialog opens, the success button is focused by default.
+                    A simple dialog includes a single button in a gray footer. It cannot be closed by clicking outside the window, it can only be closed by clicking the button. When the dialog opens, the button is focused by default.
                 </p>
             </Grid.Col>
         </Grid.Row>
@@ -38,7 +38,9 @@ export default function () {
                 style={{ width: 'clamp(280px, 50%, 320px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <div className='ui-dialog-msg'>I am simple.</div>
                 <div className='ui-dialog-buttons ui-ease-1st-btn'>
-                    <button className='ui-dialog-success' value='success'>OK</button>
+                    <div>
+                        <button className='ui-dialog-success' value='success'>Okay</button>
+                    </div>
                 </div>
             </div>
         </Preview>
@@ -46,7 +48,7 @@ export default function () {
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
                 <p className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
-                    A simple dialog with a success button and custom text can only be closed by clicking the success button. When the dialog opens, the success button is focused by default.
+                    This dialog includes single button along with custom text.
                 </p>
             </Grid.Col>
         </Grid.Row>
@@ -60,7 +62,9 @@ export default function () {
                 style={{ width: 'clamp(280px, 50%, 320px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <div className='ui-dialog-msg'>Everything will be OK.</div>
                 <div className='ui-dialog-buttons ui-ease-1st-btn'>
-                    <button className='ui-dialog-success' value='success'>Got it!</button>
+                    <div>
+                        <button className='ui-dialog-success' value='success'>Got it!</button>
+                    </div>
                 </div>
             </div>
         </Preview>
@@ -68,7 +72,7 @@ export default function () {
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
                 <p className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
-                    A dialog include success and error buttons with custom text. This dialog can be closed by clicking outside the dialog window, and it also includes a close button in the top‑right corner. Additionally, this dialog can be closed using the ESC key on the keyboard. When a dialog contains an error button, the error button is focused first when the dialog opens.
+                    This dialog includes success and error buttons with custom text. This dialog can be closed by clicking outside the dialog window, and it also includes a close button in the top‑right corner. Additionally, this dialog can be closed using the ESC key on the keyboard. When a dialog contains an error button, the error button is focused first when the dialog opens.
                 </p>
             </Grid.Col>
         </Grid.Row>
@@ -86,8 +90,10 @@ export default function () {
                 </button>
                 <div className='ui-dialog-msg'>Are you sure you want to remove from your list?</div>
                 <div className='ui-dialog-buttons ui-ease-1st-btn'>
-                    <button className='ui-dialog-success' value='success'>Yes, delete.</button>
-                    <button className='ui-dialog-error' value='error'>Noooo!</button>
+                    <div>
+                        <button className='ui-dialog-success' value='success'>Yes, delete.</button>
+                        <button className='ui-dialog-error' value='error'>Noooo!</button>
+                    </div>
                 </div>
             </div>
         </Preview>
@@ -95,7 +101,7 @@ export default function () {
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
                 <p className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
-                    A dialog include success, error, and optional buttons along with custom text. The dialog is closable and supports closing with the ESC key. All button types are placed in the footer, and when the dialog opens, the error button is focused first.
+                    This dialog includes success, error, and custom buttons along with custom text.  Custom buttons are displayed separately at the top. When all button types are placed in the footer, and when the dialog opens, the error button is focused first.
                 </p>
             </Grid.Col>
         </Grid.Row>
@@ -105,7 +111,8 @@ export default function () {
                 success: 'Yes',
                 error: 'No',
                 custom: {
-                    first: 'Maybe', second: 'Later'
+                    first: 'I don\'t care.',
+                    second: 'Remind me later.',
                 }
             });
         }}>
@@ -116,10 +123,44 @@ export default function () {
                 </button>
                 <div className='ui-dialog-msg'>Are you sure you want to donwload your backup files?</div>
                 <div className='ui-dialog-buttons ui-ease-1st-btn'>
-                    <button className='ui-dialog-custom' value='0'>Maybe</button>
-                    <button className='ui-dialog-custom' value='1'>Later</button>
-                    <button className='ui-dialog-success' value='success'>Yes</button>
-                    <button className='ui-dialog-error' value='error'>No</button>
+                    <button className='ui-dialog-custom' value='0'>I don't care.</button>
+                    <button className='ui-dialog-custom' value='1'>Remin me later!</button>
+                    <div>
+                        <button className='ui-dialog-success' value='success'>Yes</button>
+                        <button className='ui-dialog-error' value='error'>No</button>
+                    </div>
+                </div>
+            </div>
+        </Preview>
+
+        <Grid.Row>
+            <Grid.Col xl={10} lg={10} size={12}>
+                <p className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
+                    This dialog runs a callback function when the success or error button is clicked. In this example, it displays an alert showing which option you selected.
+                </p>
+            </Grid.Col>
+        </Grid.Row>
+        <Preview onClick={() => {
+            Alerts.Dialog({
+                msg: 'Can you alert my response?',
+                success: 'Yes',
+                error: 'No',
+                callback: function (value) {
+                    alert(value);
+                }
+            });
+        }}>
+            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative'
+                style={{ width: 'clamp(280px, 50%, 280px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
+                <button className='ui-dialog-close ui-ease-layout'>
+                    <SvgIcon as='js' src={IconRemove} />
+                </button>
+                <div className='ui-dialog-msg'>Can you alert my response?</div>
+                <div className='ui-dialog-buttons ui-ease-1st-btn'>
+                    <div>
+                        <button className='ui-dialog-success' value='success'>Yes</button>
+                        <button className='ui-dialog-error' value='error'>No</button>
+                    </div>
                 </div>
             </div>
         </Preview>
