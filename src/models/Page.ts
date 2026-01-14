@@ -45,8 +45,14 @@ export interface SocialLinksProps {
     icon: ElementType;
 }
 
+// Description
+export interface DescriptionProps {
+    children: ReactNode;
+}
+
 // Preview
 export interface PreviewProps {
     children: ReactNode;
+    playPos?: 'tl' | 'tr' | 'br' | 'bl';
     play?: ReactEventHandler;
 }
