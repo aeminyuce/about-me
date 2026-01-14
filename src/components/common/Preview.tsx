@@ -9,13 +9,22 @@ import type { PreviewProps } from '../../models/Page';
 import { IconPlay } from 'uilab-icons/react/media/play';
 
 export default function (props:PreviewProps) {
-    const { children, play } = props;
+    const { children, play, playPos } = props;
+
+    const positions = {
+        'tl': 'ui-set-t ui-set-l',
+        'tr': 'ui-set-t ui-set-r',
+        'br': 'ui-set-b ui-set-r',
+        'bl': 'ui-set-b ui-set-l',
+    };
+
+    let classes = 'ui-m-15 ui-round-inner ui-set-absolute ui-theme-blue ui-fill-dark-100';
+    classes += ` ${positions[playPos]}`;
 
     return (
         <div className='preview ui-m-30-b ui-border ui-border-dual ui-round ui-shadow-in-sm ui-set-relative'>
             {children}
-            <Button size='sm' className='ui-m-15 ui-round-inner ui-set-absolute ui-set-t ui-set-r ui-theme-blue ui-fill-dark-100'
-                onClick={play}>
+            <Button size='sm' className={classes} onClick={play}>
                 <SvgIcon as='js' src={IconPlay} size='xs' />
                 <span className="ui-m-5-l ui-inline-block">Play</span>
             </Button>
