@@ -25,8 +25,8 @@ export default function() {
                     </Button>
                     <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
 
-                        {calendar?.settings.map((name: string) => (
-                            <Dropdown.Item key={name}>{name}</Dropdown.Item>
+                        {calendar?.settings.map((name: string, index: number) => (
+                            <Dropdown.Item key={name + index}>{name}</Dropdown.Item>
                         ))}
 
                     </Dropdown.Menu>
