@@ -27,7 +27,7 @@ export default function () {
         </BreadcrumbsWrapper>
 
         <Heading as='h1'>Alerts</Heading>
-        <Heading as='h3'>Dialogs</Heading>
+        <Heading as='h3' id='Dialogs'>Dialogs</Heading>
 
         <Description>
             A simple dialog includes a single button in a gray footer. It cannot be closed by clicking outside the window, it can only be closed by clicking the button. When the dialog opens, the button is focused by default.
@@ -147,13 +147,13 @@ export default function () {
             </div>
         </Preview>
 
-        <Heading as='h3'>Messages</Heading>
+        <Heading as='h3' id='Messages'>Messages</Heading>
         <Description>
             A message appears at the top of the screen in one of three colors: success, warning, or danger. When the message is clicked, it dismisses by sliding upward. If not clicked, it automatically dismisses after a short delay.
         </Description>
         <Preview playPos={'br'} play={() => {
             Alerts.Message({
-                msg: 'Default toast message.',
+                msg: 'Default message.',
                 theme: themeRandomizer(),
             });
         }}>
@@ -173,7 +173,7 @@ export default function () {
         </Description>
         <Preview playPos={'br'} play={() => {
             Alerts.Message({
-                msg: 'Default toast message.',
+                msg: 'Default message.',
                 theme: themeRandomizer(),
                 pos: 'tl',
             });
@@ -194,7 +194,7 @@ export default function () {
         </Description>
         <Preview playPos={'br'} play={() => {
             Alerts.Message({
-                msg: 'Default toast message.',
+                msg: 'Default message.',
                 theme: themeRandomizer(),
                 pos: 'tr',
             });
@@ -215,7 +215,7 @@ export default function () {
         </Description>
         <Preview playPos={'tr'} play={() => {
             Alerts.Message({
-                msg: 'Default toast message.',
+                msg: 'Default message.',
                 theme: themeRandomizer(),
                 pos: 'br',
             });
@@ -236,7 +236,7 @@ export default function () {
         </Description>
         <Preview playPos={'tr'} play={() => {
             Alerts.Message({
-                msg: 'Default toast message.',
+                msg: 'Default message.',
                 theme: themeRandomizer(),
                 pos: 'bl',
             });

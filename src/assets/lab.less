@@ -3,11 +3,22 @@
 
 /* menu */
 @lab-menu-top:                          92px;
+@lab-menu-titles-padding:               16px;
+
 @lab-content-height:                    1350px;
 @lab-content-images-max-width:          860px;
 
 .lab- {
-    &menu { top: @lab-menu-top; }
+    &menu {
+        top: @lab-menu-top;
+
+        li {
+            a {
+                &:not(:first-child) { padding: (@lab-menu-titles-padding / 2) 0 0 @lab-menu-titles-padding; display: inline-block; }
+            }
+        }
+    }
+
     &content {
         .images {
             max-width: @lab-content-images-max-width;

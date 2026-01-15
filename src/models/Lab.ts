@@ -12,4 +12,5 @@ export interface IntroImagesProps {
 export interface LabMenuProps {
     name: string;
     to: string;
+    titles?: string[];
 }
