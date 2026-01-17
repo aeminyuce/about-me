@@ -13,7 +13,7 @@ export default function IntroImages() {
         <Grid.Row fluid='no' gap='sm' className='images ui-m-auto ui-p-30-t ui-m-30-v ui-block-2nd ui-round-2nd ui-shadow-2nd ui-hover-shadow-2nd ui-hover-scale-more-2nd ui-ease-2nd-layout'>
 
             {apiResponse?.lab?.intro?.images.map((item: IntroImagesProps) => (
-                <Grid.Col key={item.img} size={'7x'}>
+                <Grid.Col key={item.img} size={'7x'} xs={3}>
                     <Button noease nostyle href={`https://dribbble.com/shots/${item.url}`} target='_blank'>
                         <img className='ui-img-fluid' src={`/images/lab/aeminyuce-${item.img}`} />
                     </Button>

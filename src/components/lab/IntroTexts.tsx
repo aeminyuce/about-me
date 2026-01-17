@@ -12,7 +12,7 @@ export const LeadText = () => {
 
     return (
         <div className='ui-p-30 ui-sm-no-p ui-theme-yellowOrange ui-text'>
-        <p className='ui-font-22 ui-font-readable ui-m-15-b'>
+        <p className='ui-font-22 ui-font-readable ui-m-25-b'>
             {apiResponse?.lab?.intro?.leadText}
         </p>
         <SvgIcon as='js' src={IconSoundwave} size='xxl' className='ui-m-30-v' />

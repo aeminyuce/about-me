@@ -12,8 +12,8 @@ import { scrollToHash } from '../../helpers/Lab';
 
 export default function() {
     const { pathname } = useLocation();
-    const { apiResponse } = useStoreContext();
 
+    const { apiResponse } = useStoreContext();
     const menu = apiResponse?.lab?.menu;
 
     return (
