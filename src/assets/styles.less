@@ -3,7 +3,16 @@
 
 /* preview */
 @preview-text-align:                      center;
-@preview-bg:                             hsla(220, 4%, 36%, 0.1);
 @preview-padding:                         150px 0;
 
-.preview { text-align: @preview-text-align; background-color: @preview-bg; padding: @preview-padding; }
+@preview-bg:                            hsla(220, 4%, 36%, 0.1);
+@preview-bg-dark:                       hsla(220, 10%, 100%, 0.015);
+
+._global-vars () {
+    --ui-preview-bg: @preview-bg;
+}
+._global-vars-dark () {
+    --ui-preview-bg: @preview-bg-dark;
+}
+
+.preview { text-align: @preview-text-align; ._bg-var(preview-bg); padding: @preview-padding; }

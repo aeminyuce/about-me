@@ -218,7 +218,7 @@ export default function () {
         <Preview>
             <Avatar.Holder className={`${countHolderClasses} ${themeClasses}purpleBlue`}>
                 <Avatar className={selfAnimatedClasses}>
-                    <span>AEY</span>
+                    <span className='ui-color-black'>AEY</span>
                 </Avatar>
                 <Avatar className={selfAnimatedClasses}>
                     <img src={profileImage2} />
@@ -227,7 +227,7 @@ export default function () {
                     <img src={profileImage4} />
                 </Avatar>
                 <Avatar className={selfAnimatedClasses}>
-                    <span>HY</span>
+                    <span className='ui-color-black'>HY</span>
                 </Avatar>
                 <Avatar className={selfAnimatedClasses}>
                     <img src={profileImage5} />
