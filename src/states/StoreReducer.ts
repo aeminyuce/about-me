@@ -7,6 +7,7 @@ const updateStoreContext = (state: any, action: any) => {
 
 		// themes
 		if ([CURRENT_THEME].includes(action?.type)) {
+
 			setStorage({
 				name: CURRENT_THEME,
 				value: action.theme,
@@ -16,10 +17,10 @@ const updateStoreContext = (state: any, action: any) => {
 				...state,
 				theme: action.theme,
 			};
-		}
 
-		// fetch page data
-		if ([PAGE_DATA].includes(action?.type)) {
+		} else if ([PAGE_DATA].includes(action?.type)) {
+
+			// fetch page data
 			return {
 				...state,
 				apiResponse: {
@@ -27,29 +28,24 @@ const updateStoreContext = (state: any, action: any) => {
 					...action.result,
 				},
 			};
-		}
 
-		// fetch home data
-		if ([HOME_DATA, HOME_FEATURED_DATA].includes(action?.type)) {
+		} else {
+
+			// fetch data from other pages
 			return {
 				...state,
 				apiResponse: {
 					...state.apiResponse,
+
+					// home
 					...(action.type === HOME_DATA && { home: action.result }),
 					...(action.type === HOME_FEATURED_DATA && { home_featured: action.result }),
-				},
-			};
-		}
 
-		// fetch lab data
-		if ([LAB_DATA].includes(action?.type)) {
-			return {
-				...state,
-				apiResponse: {
-					...state.apiResponse,
-					lab: action.result,
+					// lab
+					...(action.type === LAB_DATA && { lab: action.result }),
 				},
 			};
+
 		}
 
 	} catch (e: any) {
