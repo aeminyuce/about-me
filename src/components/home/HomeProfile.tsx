@@ -29,7 +29,7 @@ export default function () {
             </Grid.Col>
             <Grid.Col size={7} md={10} className='ui-sm-align-c'>
                 {fullName &&
-                    <Heading as='h1' className='ui-font-30 ui-font-bold ui-m-15-t'>
+                    <Heading as='h1' className='ui-font-30 ui-font-bold'>
                         {fullName}
                     </Heading>
                 }

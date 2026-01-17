@@ -81,7 +81,7 @@ export const PeopleMore = () => {
     return (
         <Card className='ui-p-15 ui-round ui-shadow'>
             {moreBtnText &&
-                <Button to={peopleMore?.moreUrl} className='ui-p-20-h ui-m-4-v ui-float-r ui-circle ui-fill-dark-100'>
+                <Button to={peopleMore?.moreUrl} className='ui-p-20-h ui-float-r ui-circle ui-fill-dark-100'>
                     {moreBtnText}
                 </Button>
             }
@@ -91,7 +91,7 @@ export const PeopleMore = () => {
                 {peopleMore?.list.map((item: PeopleMoreListProps) => (
                     <Fragment key={item.jobTitle}>
                         {(item.avatar || item.avatarText) &&
-                            <Avatar noease className='ui-hover-scale-more'>
+                            <Avatar size='xs' noease className='ui-hover-scale-more'>
                                 {item.avatar && <img src={`/images/${item.avatar}`} />}
                                 {item.avatarText && <span>{item.avatarText}</span>}
                             </Avatar>
