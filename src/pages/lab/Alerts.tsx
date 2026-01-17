@@ -14,11 +14,19 @@ import { themeRandomizer } from '../../helpers/Lab';
 import { IconRemove } from 'uilab-icons/react/general/remove';
 
 export default function () {
+    // dialogs
     const dialogClasses = 'ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative';
     const dialogStyles = { top: '0', left: '0', transform: 'none', zIndex: 'unset' };
 
+    // messages
     const messageClasses = 'ui-alerts-msg ui-alerts-demo ui-round ui-shadow-lg ui-ease-layout ui-show ui-show-ease ui-set-absolute';
     const messageStyles = { zIndex: 'unset' };
+
+    const messages = {
+        danger: 'Oh no! Houston, we have a problem.',
+        warning: 'Hey, we have a message again.',
+        success: 'Here is the first default message.',
+    };
 
     return (
         <>
@@ -152,103 +160,108 @@ export default function () {
             A message appears at the top of the screen in one of three colors: success, warning, or danger. When the message is clicked, it dismisses by sliding upward. If not clicked, it automatically dismisses after a short delay.
         </Description>
         <Preview playPos={'br'} play={() => {
+            const type = themeRandomizer();
             Alerts.Message({
-                msg: 'Default message.',
-                theme: themeRandomizer(),
+                msg: messages[type],
+                theme: type,
             });
         }}>
             <div className={`${messageClasses} ui-msg-danger ui-c`} style={messageStyles}>
-                Oh no! Houston, we have a problem.
+                {messages.success}
             </div>
             <div className={`${messageClasses} ui-msg-warning ui-c`} style={{ top: '83px', ...messageStyles }}>
-                Hey, swe have a message again.
+                {messages.warning}
             </div>
             <div className={`${messageClasses} ui-msg-success ui-c`} style={{ top: '146px', ...messageStyles }}>
-                Here is the first default message.
+                {messages.danger}
             </div>
         </Preview>
 
         <Description>
-            A message appears at the top-left of the screen
+            A message appears at the top-left of the screen.
         </Description>
         <Preview playPos={'br'} play={() => {
+            const type = themeRandomizer();
             Alerts.Message({
-                msg: 'Default message.',
-                theme: themeRandomizer(),
+                msg: messages[type],
+                theme: type,
                 pos: 'tl',
             });
         }}>
             <div className={`${messageClasses} ui-msg-danger ui-tl`} style={messageStyles}>
-                Oh no! Houston, we have a problem.
+                {messages.success}
             </div>
             <div className={`${messageClasses} ui-msg-warning ui-tl`} style={{ top: '83px', ...messageStyles }}>
-                Hey, swe have a message again.
+                {messages.warning}
             </div>
             <div className={`${messageClasses} ui-msg-success ui-tl`} style={{ top: '146px', ...messageStyles }}>
-                Here is the first default message.
+                {messages.danger}
             </div>
         </Preview>
 
         <Description>
-            A message appears at the top-right of the screen
+            A message appears at the top-right of the screen.
         </Description>
         <Preview playPos={'br'} play={() => {
+            const type = themeRandomizer();
             Alerts.Message({
-                msg: 'Default message.',
-                theme: themeRandomizer(),
+                msg: messages[type],
+                theme: type,
                 pos: 'tr',
             });
         }}>
             <div className={`${messageClasses} ui-msg-danger ui-tr`} style={messageStyles}>
-                Oh no! Houston, we have a problem.
+                {messages.success}
             </div>
             <div className={`${messageClasses} ui-msg-warning ui-tr`} style={{ top: '83px', ...messageStyles }}>
-                Hey, swe have a message again.
+                {messages.warning}
             </div>
             <div className={`${messageClasses} ui-msg-success ui-tr`} style={{ top: '146px', ...messageStyles }}>
-                Here is the first default message.
+                {messages.danger}
             </div>
         </Preview>
 
         <Description>
-            A message appears at the bottom-left of the screen
+            A message appears at the bottom-left of the screen.
         </Description>
         <Preview playPos={'tr'} play={() => {
+            const type = themeRandomizer();
             Alerts.Message({
-                msg: 'Default message.',
-                theme: themeRandomizer(),
+                msg: messages[type],
+                theme: type,
                 pos: 'br',
             });
         }}>
             <div className={`${messageClasses} ui-msg-danger ui-br`} style={{ bottom: '146px', ...messageStyles }}>
-                Oh no! Houston, we have a problem.
+                {messages.success}
             </div>
             <div className={`${messageClasses} ui-msg-warning ui-br`} style={{ bottom: '83px', ...messageStyles }}>
-                Hey, swe have a message again.
+                {messages.warning}
             </div>
             <div className={`${messageClasses} ui-msg-success ui-br`} style={messageStyles}>
-                Here is the first default message.
+                {messages.danger}
             </div>
         </Preview>
 
         <Description>
-            A message appears at the top-left of the screen
+            A message appears at the top-left of the screen.
         </Description>
         <Preview playPos={'tr'} play={() => {
+            const type = themeRandomizer();
             Alerts.Message({
-                msg: 'Default message.',
-                theme: themeRandomizer(),
+                msg: messages[type],
+                theme: type,
                 pos: 'bl',
-            });
+            })
         }}>
             <div className={`${messageClasses} ui-msg-danger ui-bl`} style={{ bottom: '146px', ...messageStyles }}>
-                Oh no! Houston, we have a problem.
+                {messages.success}
             </div>
             <div className={`${messageClasses} ui-msg-warning ui-bl`} style={{ bottom: '83px', ...messageStyles }}>
-                Hey, swe have a message again.
+                {messages.warning}
             </div>
             <div className={`${messageClasses} ui-msg-success ui-bl`} style={messageStyles}>
-                Here is the first default message.
+                {messages.danger}
             </div>
         </Preview>
         </>
