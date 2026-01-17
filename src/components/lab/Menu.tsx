@@ -11,37 +11,42 @@ import type { LabMenuProps } from '../../models/Lab';
 import { scrollToHash } from '../../helpers/Lab';
 
 export default function() {
-    const { pathname } = useLocation();
+    const { pathname, hash } = useLocation();
 
     const { apiResponse } = useStoreContext();
     const menu = apiResponse?.lab?.menu;
 
     return (
-        <Card className='lab-menu ui-color-black-50 ui-p-15 ui-round ui-shadow ui-set-sticky ui-hidden-md ui-theme-yellowOrange'>
-            <Listing type='unstyled' space={15} className='ui-font-hoverline-2nd ui-sidebar-add-r'>
+        <Card className='ui-color-black-50 ui-p-15 ui-round ui-shadow ui-set-sticky ui-hidden-md'>
+            <Listing type='unstyled' space={15} className='lab-menu ui-font-hoverline-2nd ui-theme-yellowOrange ui-sidebar-add-r'>
 
                 {menu.map((item: LabMenuProps) => {
-                    const url = `/lab/${item.to}`;
-                    const selected = pathname.startsWith(url);
+                    const classes = 'ui-link';
 
-                    const classes = `$ui-link ${selected ? ' ui-text' : ''}`;
-                    const titleClasses = 'ui-link ui-color-white';
+                    const url = `/lab/${item.to}`;
+                    const selected = `${pathname.startsWith(url) ? ' ui-text' : ''}`;
 
                     return (
                         <Listing.Item key={item.to}>
-                            <Link to={url} className={classes}>{item.name}</Link><br />
-                            {item?.titles?.map((title: string) => (
-                                <Fragment key={title}>
-                                    {selected &&
-                                        <>
-                                        <Link to={`${url}#${title}`} className={titleClasses} onClick={() => scrollToHash(title)}>
-                                            {title}
-                                        </Link>
-                                        <br />
-                                        </>
-                                    }
-                                </Fragment>
-                            ))}
+                            <Link to={url} data-ui-close className={classes + selected}>{item.name}</Link><br />
+
+                            {item?.titles?.map((title: string) => {
+                                const titleSelected = `${hash === '#' + title ? ' ui-text' : ' ui-color-white'}`;
+
+                                return (
+                                    <Fragment key={title}>
+                                        {selected &&
+                                            <>
+                                            <Link to={`${url}#${title}`} data-ui-close className={classes + titleSelected} onClick={() => scrollToHash(title)}>
+                                                {title}
+                                            </Link>
+                                            <br />
+                                            </>
+                                        }
+                                    </Fragment>
+                                )
+                            })}
+
                         </Listing.Item>
                     )
                 })}

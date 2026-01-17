@@ -3,131 +3,166 @@
         "menu": [
             {
                 "to": "alerts",
-                "name": "Alerts"
+                "name": "Alerts",
+                "titles": [
+                    "Dialogs",
+                    "Messages"
+                ]
             },
             {
                 "to": "avatars",
-                "name": "Avatars"
+                "name": "Avatars",
+                "titles": null
             },
             {
                 "to": "breadcrumbs",
-                "name": "Breadcrumbs"
+                "name": "Breadcrumbs",
+                "titles": null
             },
             {
                 "to": "buttons",
-                "name": "Buttons"
+                "name": "Buttons",
+                "titles": null
             },
             {
                 "to": "calendar",
-                "name": "Calendar"
+                "name": "Calendar",
+                "titles": null
             },
             {
                 "to": "card",
-                "name": "Card"
+                "name": "Card",
+                "titles": null
             },
             {
                 "to": "carousel",
-                "name": "Carousel"
+                "name": "Carousel",
+                "titles": null
             },
             {
                 "to": "charts",
-                "name": "Charts"
+                "name": "Charts",
+                "titles": null
             },
             {
                 "to": "countdown",
-                "name": "Countdown"
+                "name": "Countdown",
+                "titles": null
             },
             {
                 "to": "datatable",
-                "name": "Datatable"
+                "name": "Datatable",
+                "titles": null
             },
             {
                 "to": "dropdown",
-                "name": "Dropdown"
+                "name": "Dropdown",
+                "titles": null
             },
             {
                 "to": "error-pages",
-                "name": "Error Pages"
+                "name": "Error Pages",
+                "titles": null
             },
             {
                 "to": "forms",
-                "name": "Forms"
+                "name": "Forms",
+                "titles": null
             },
             {
                 "to": "gallery",
-                "name": "Gallery"
+                "name": "Gallery",
+                "titles": null
             },
             {
                 "to": "grid",
-                "name": "Grid"
+                "name": "Grid",
+                "titles": null
             },
             {
                 "to": "list-group",
-                "name": "List Group"
+                "name": "List Group",
+                "titles": null
             },
             {
                 "to": "listings",
-                "name": "Listings"
+                "name": "Listings",
+                "titles": null
             },
             {
                 "to": "loading-mask",
-                "name": "Loading Mask"
+                "name": "Loading Mask",
+                "titles": null
             },
             {
                 "to": "map",
-                "name": "Map"
+                "name": "Map",
+                "titles": null
             },
             {
                 "to": "modal",
-                "name": "Modal"
+                "name": "Modal",
+                "titles": null
             },
             {
                 "to": "notifier",
-                "name": "Notifier"
+                "name": "Notifier",
+                "titles": null
             },
             {
                 "to": "photoslide",
-                "name": "Photoslide"
+                "name": "Photoslide",
+                "titles": null
             },
             {
                 "to": "pricing-tables",
-                "name": "Pricing Tables"
+                "name": "Pricing Tables",
+                "titles": null
             },
             {
                 "to": "progress-bar",
-                "name": "Progress Bar"
+                "name": "Progress Bar",
+                "titles": null
             },
             {
                 "to": "steps",
-                "name": "Steps"
+                "name": "Steps",
+                "titles": null
             },
             {
                 "to": "stripes",
-                "name": "Stripes"
+                "name": "Stripes",
+                "titles": null
             },
             {
                 "to": "tables",
-                "name": "Tables"
+                "name": "Tables",
+                "titles": null
             },
             {
                 "to": "tab",
-                "name": "Tab"
+                "name": "Tab",
+                "titles": null
             },
             {
                 "to": "themes",
-                "name": "Themes"
+                "name": "Themes",
+                "titles": null
             },
             {
                 "to": "timeline",
-                "name": "Timeline"
+                "name": "Timeline",
+                "titles": null
             },
             {
                 "to": "tooltip",
-                "name": "Tooltip"
+                "name": "Tooltip",
+                "titles": null
             },
             {
                 "to": "typography",
-                "name": "Typography"
+                "name": "Typography",
+                "titles": null
             }
         ],
         "intro": {
