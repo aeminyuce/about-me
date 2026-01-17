@@ -19,15 +19,20 @@ export default function (props:PreviewProps) {
     };
 
     let classes = 'ui-m-15 ui-round-inner ui-set-absolute ui-theme-blue ui-fill-dark-100';
-    classes += ` ${positions[playPos]}`;
+
+    if (play) {
+        classes += ` ${positions[playPos]}`;
+    }
 
     return (
         <div className='preview ui-m-30-b ui-border ui-border-dual ui-round ui-shadow-in-sm ui-set-relative'>
             {children}
-            <Button size='sm' className={classes} onClick={play}>
-                <SvgIcon as='js' src={IconPlay} size='xs' />
-                <span className="ui-m-5-l ui-inline-block">Play</span>
-            </Button>
+            {play &&
+                <Button size='sm' className={classes} onClick={play}>
+                    <SvgIcon as='js' src={IconPlay} size='xs' />
+                    <span className='ui-m-5-l ui-inline-block'>Play</span>
+                </Button>
+            }
         </div>
     );
 }
