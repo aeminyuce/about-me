@@ -17,7 +17,7 @@ export default function () {
                     const isModal = item.modal ? () => ShowGetInTouch() : null;
 
                     return (
-                        <Button key={item.name} ghost noease block='md' to={item.to} onClick={isModal} className='ui-m-2-r'>
+                        <Button key={item.name} ghost noease block='md' to={item.to} data={{ 'close': item.modal }} onClick={isModal} className='ui-m-2-r'>
                             {item.name}
                         </Button>
                     )
