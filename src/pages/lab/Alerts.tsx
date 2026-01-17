@@ -31,7 +31,7 @@ export default function () {
     return (
         <>
         <BreadcrumbsWrapper>
-            <Breadcrumbs.Item to='/lab'>Lab</Breadcrumbs.Item>
+            <Breadcrumbs.Item>Alerts</Breadcrumbs.Item>
         </BreadcrumbsWrapper>
 
         <Heading as='h1'>Alerts</Heading>
@@ -167,13 +167,13 @@ export default function () {
             });
         }}>
             <div className={`${messageClasses} ui-msg-danger ui-c`} style={messageStyles}>
-                {messages.success}
+                {messages.danger}
             </div>
             <div className={`${messageClasses} ui-msg-warning ui-c`} style={{ top: '83px', ...messageStyles }}>
                 {messages.warning}
             </div>
             <div className={`${messageClasses} ui-msg-success ui-c`} style={{ top: '146px', ...messageStyles }}>
-                {messages.danger}
+                {messages.success}
             </div>
         </Preview>
 
@@ -189,13 +189,13 @@ export default function () {
             });
         }}>
             <div className={`${messageClasses} ui-msg-danger ui-tl`} style={messageStyles}>
-                {messages.success}
+                {messages.danger}
             </div>
             <div className={`${messageClasses} ui-msg-warning ui-tl`} style={{ top: '83px', ...messageStyles }}>
                 {messages.warning}
             </div>
             <div className={`${messageClasses} ui-msg-success ui-tl`} style={{ top: '146px', ...messageStyles }}>
-                {messages.danger}
+                {messages.success}
             </div>
         </Preview>
 
@@ -211,13 +211,13 @@ export default function () {
             });
         }}>
             <div className={`${messageClasses} ui-msg-danger ui-tr`} style={messageStyles}>
-                {messages.success}
+                {messages.danger}
             </div>
             <div className={`${messageClasses} ui-msg-warning ui-tr`} style={{ top: '83px', ...messageStyles }}>
                 {messages.warning}
             </div>
             <div className={`${messageClasses} ui-msg-success ui-tr`} style={{ top: '146px', ...messageStyles }}>
-                {messages.danger}
+                {messages.success}
             </div>
         </Preview>
 
@@ -233,13 +233,13 @@ export default function () {
             });
         }}>
             <div className={`${messageClasses} ui-msg-danger ui-br`} style={{ bottom: '146px', ...messageStyles }}>
-                {messages.success}
+                {messages.danger}
             </div>
             <div className={`${messageClasses} ui-msg-warning ui-br`} style={{ bottom: '83px', ...messageStyles }}>
                 {messages.warning}
             </div>
             <div className={`${messageClasses} ui-msg-success ui-br`} style={messageStyles}>
-                {messages.danger}
+                {messages.success}
             </div>
         </Preview>
 
@@ -255,13 +255,13 @@ export default function () {
             })
         }}>
             <div className={`${messageClasses} ui-msg-danger ui-bl`} style={{ bottom: '146px', ...messageStyles }}>
-                {messages.success}
+                {messages.danger}
             </div>
             <div className={`${messageClasses} ui-msg-warning ui-bl`} style={{ bottom: '83px', ...messageStyles }}>
                 {messages.warning}
             </div>
             <div className={`${messageClasses} ui-msg-success ui-bl`} style={messageStyles}>
-                {messages.danger}
+                {messages.success}
             </div>
         </Preview>
         </>
