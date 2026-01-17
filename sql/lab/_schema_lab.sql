@@ -21,6 +21,7 @@ CREATE TABLE lab.menu (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
   name text,
   to text,
+  titles ARRAY,
   CONSTRAINT menu_pkey PRIMARY KEY (id)
 );
 CREATE TABLE lab.sidebar (
