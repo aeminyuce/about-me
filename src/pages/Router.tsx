@@ -18,6 +18,7 @@ const Dashboard = lazy(() => import( /* webpackChunkName: "Dashboard" */ "./home
 
 const LabIntro = lazy(() => import( /* webpackChunkName: "lab/Intro" */ "./lab/Intro" ));
 const LabAlerts = lazy(() => import( /* webpackChunkName: "lab/Alerts" */ "./lab/Alerts" ));
+const LabAvatars = lazy(() => import( /* webpackChunkName: "lab/AleAvatarsrts" */ "./lab/Avatars" ));
 
 export default function () {
     return (
@@ -28,10 +29,10 @@ export default function () {
 
                     <Route index element={
                         <PageTitle title='About Me'><Featured /></PageTitle>
-                    } />
+                    }/>
                     <Route path='dashboard' element={
                         <PageTitle title='Dashboard'><Dashboard /></PageTitle>
-                    } />
+                    }/>
 
                 </Route>
 
@@ -43,17 +44,20 @@ export default function () {
                     />
                     <Route path='alerts' element={
                         <PageTitle title='Lab | Alerts'><LabAlerts /></PageTitle>
-                    } />
+                    }/>
+                    <Route path='avatars' element={
+                        <PageTitle title='Lab | Avatars'><LabAvatars /></PageTitle>
+                    }/>
 
                 </Route>
 
                 {/* error pages */}
                 <Route path='500' element={
                     <PageTitle title='Server Error'><Page500 /></PageTitle>
-                } />
+                }/>
                 <Route path='*' element={
                     <PageTitle title='Page Not Found'><Page404 /></PageTitle>
-                } />
+                }/>
             </Routes>
         </Suspense>
     );
