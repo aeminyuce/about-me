@@ -5,14 +5,16 @@
 @preview-text-align:                      center;
 @preview-padding:                         150px 0;
 
-@preview-bg:                            hsla(220, 4%, 36%, 0.1);
-@preview-bg-dark:                       hsla(220, 10%, 100%, 0.015);
+@preview-bg:                            hsla(220, 10%, 100%, 0.015);
+@preview-bg-dark:                       hsla(220, 4%, 36%, 0.1);
 
-._global-vars () {
+._page-vars () {
     --ui-preview-bg: @preview-bg;
 }
-._global-vars-dark () {
+._page-vars-dark () {
     --ui-preview-bg: @preview-bg-dark;
 }
+
+._mode-vars(._page-vars(), ._page-vars-dark());
 
 .preview { text-align: @preview-text-align; ._bg-var(preview-bg); padding: @preview-padding; }
