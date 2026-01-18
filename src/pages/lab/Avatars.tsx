@@ -26,7 +26,7 @@ export default function () {
     const profileImage6 = '/images/profile-image6.jpg';
 
     // classes
-    const wrapperClasses = 'ui-hover-scale-more-1st ui-ease-1st-layout';
+    const wrapperClasses = 'ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout';
     const circleClasses = `${wrapperClasses} ui-circle-1st`;
     const roundClasses = `${wrapperClasses} ui-round-1st`;
 
@@ -34,7 +34,7 @@ export default function () {
     const countHolderBorderClasses = `${countHolderClasses} ui-border`;
 
     const avatarClasses = 'ui-m-5-h';
-    const selfAnimatedClasses = 'ui-hover-scale-more';
+    const selfAnimatedClasses = 'ui-hover-scale-more ui-hover-shadow';
     const themeClasses = 'ui-fill-dark-100 ui-theme-';
 
     return (
@@ -133,19 +133,19 @@ export default function () {
                 <Avatar noease size='xs' className={`${avatarClasses} ${themeClasses}yellow`}>
                     <span>L</span>
                 </Avatar>
-                <Avatar noease size='sm' className={`${avatarClasses} ${themeClasses}yellowOrange`}>
+                <Avatar noease size='sm' className={`${avatarClasses} ${themeClasses}yellow`}>
                     <span>EKY</span>
                 </Avatar>
-                <Avatar noease className={`${avatarClasses} ${themeClasses}orangeRed`}>
+                <Avatar noease className={`${avatarClasses} ${themeClasses}redPurple`}>
                     <span>HY</span>
                 </Avatar>
-                <Avatar noease size='lg' className={`${avatarClasses} ${themeClasses}red`}>
+                <Avatar noease size='lg' className={`${avatarClasses} ${themeClasses}redPurple`}>
                     <span>AEY</span>
                 </Avatar>
 
                 <Spacer size={10} />
 
-                <Avatar noease size='xs' className={`${avatarClasses} ${themeClasses}redPurple`}>
+                <Avatar noease size='xs' className={`${avatarClasses} ${themeClasses}purple`}>
                     <SvgIcon as='js' src={IconUser} />
                 </Avatar>
                 <Avatar noease size='sm' className={`${avatarClasses} ${themeClasses}purple`}>
@@ -154,7 +154,7 @@ export default function () {
                 <Avatar noease className={`${avatarClasses} ${themeClasses}purpleBlue`}>
                     <SvgIcon as='js' src={IconTrees} />
                 </Avatar>
-                <Avatar noease size='lg' className={`${avatarClasses} ${themeClasses}blue`}>
+                <Avatar noease size='lg' className={`${avatarClasses} ${themeClasses}purpleBlue`}>
                     <SvgIcon as='js' src={IconStore} />
                 </Avatar>
             </div>
@@ -226,7 +226,7 @@ export default function () {
                 <Avatar className={selfAnimatedClasses}>
                     <img src={profileImage4} />
                 </Avatar>
-                <Avatar className={selfAnimatedClasses}>
+                <Avatar className={`${selfAnimatedClasses} ${themeClasses}redPurple`}>
                     <span>HY</span>
                 </Avatar>
                 <Avatar className={selfAnimatedClasses}>
