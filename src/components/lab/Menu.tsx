@@ -28,7 +28,7 @@ export default function() {
 
                     return (
                         <Listing.Item key={item.to}>
-                            <Link to={url} data-ui-close className={classes + selected}>{item.name}</Link><br />
+                            <Link to={url} className={classes + selected}>{item.name}</Link><br />
 
                             {item?.titles?.map((title: string) => {
                                 const titleSelected = `${hash === '#' + title ? ' ui-text' : ' ui-color-white'}`;
@@ -37,7 +37,7 @@ export default function() {
                                     <Fragment key={title}>
                                         {selected &&
                                             <>
-                                            <Link to={`${url}#${title}`} data-ui-close className={classes + titleSelected} onClick={() => scrollToHash(title)}>
+                                            <Link to={`${url}#${title}`} className={classes + titleSelected} onClick={() => scrollToHash(title)}>
                                                 {title}
                                             </Link>
                                             <br />
