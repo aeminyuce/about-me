@@ -4,7 +4,7 @@ import Breadcrumbs from 'uilab/react/Breadcrumbs';
 // misc
 import type { BreadcrumbsWrapperProps } from '../../models/Lab';
 
-export default function (props:BreadcrumbsWrapperProps) {
+export default function (props: BreadcrumbsWrapperProps) {
     const { children } = props;
     const classes = 'ui-opacity ui-ease-layout';
 
