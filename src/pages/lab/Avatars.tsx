@@ -30,7 +30,7 @@ export default function () {
     const circleClasses = `${wrapperClasses} ui-circle-1st`;
     const roundClasses = `${wrapperClasses} ui-round-1st`;
 
-    const countHolderClasses = 'ui-p-5 ui-circle ui-circle-1st';
+    const countHolderClasses = `${wrapperClasses} ui-p-5 ui-circle ui-circle-1st`;
     const countHolderBorderClasses = `${countHolderClasses} ui-border`;
 
     const avatarClasses = 'ui-m-5-h';
@@ -194,24 +194,24 @@ export default function () {
         </Description>
         <Preview>
             <Avatar.Holder className={countHolderBorderClasses}>
-                <Avatar className={`${selfAnimatedClasses} ${themeClasses}purple`}>
+                <Avatar noease className={`${themeClasses}purple`}>
                     <SvgIcon as='js' src={IconUser} />
                 </Avatar>
-                <Avatar className={selfAnimatedClasses}>
+                <Avatar noease>
                     <span>AEY</span>
                 </Avatar>
-                <Avatar className={selfAnimatedClasses}>
+                <Avatar noease>
                     <img src={profileImage4} />
                 </Avatar>
-                <Avatar className={`${selfAnimatedClasses} ${themeClasses}purpleBlue`}>
+                <Avatar noease className={`${themeClasses}purpleBlue`}>
                     <span>L</span>
                 </Avatar>
-                <Avatar className={selfAnimatedClasses}>
+                <Avatar noease>
                     <img src={profileImage6} />
                 </Avatar>
-                <span className='ui-m-20-h ui-inline-block'>
-                    +27
-                </span>
+                <Avatar noease>
+                    <span>+27</span>
+                </Avatar>
             </Avatar.Holder>
         </Preview>
 
@@ -219,25 +219,25 @@ export default function () {
             Avatar groups can use custom background colors or theme colors.
         </Description>
         <Preview>
-            <Avatar.Holder className={`${countHolderClasses} ${themeClasses}purpleBlue`}>
-                <Avatar className={selfAnimatedClasses}>
+            <Avatar.Holder className={`${countHolderBorderClasses} ${themeClasses}purpleBlue`}>
+                <Avatar noease>
                     <span>AEY</span>
                 </Avatar>
-                <Avatar className={selfAnimatedClasses}>
+                <Avatar noease>
                     <img src={profileImage2} />
                 </Avatar>
-                <Avatar className={selfAnimatedClasses}>
+                <Avatar noease>
                     <img src={profileImage4} />
                 </Avatar>
-                <Avatar className={`${selfAnimatedClasses} ${themeClasses}redPurple`}>
+                <Avatar noease className={`${themeClasses}redPurple`}>
                     <span>HY</span>
                 </Avatar>
-                <Avatar className={selfAnimatedClasses}>
+                <Avatar noease>
                     <img src={profileImage5} />
                 </Avatar>
-                <span className='ui-m-20-h ui-inline-block'>
-                    +113
-                </span>
+                <Avatar noease>
+                    <span>+113</span>
+                </Avatar>
             </Avatar.Holder>
         </Preview>
 
@@ -249,7 +249,7 @@ export default function () {
                 <span className='ui-m-30-r ui-inline-block'>
                     Written by
                 </span>
-                <Avatar size='sm' title='Clair' data={{ 'tooltip': 't' }} className={`${selfAnimatedClasses} ${themedBorderedClasses}yellow`}>
+                <Avatar size='sm' title='Claire' data={{ 'tooltip': 't' }} className={`${selfAnimatedClasses} ${themedBorderedClasses}yellow`}>
                     <img src={profileImage6} />
                 </Avatar>
                 <Avatar size='sm' title='Matthew' data={{ 'tooltip': 't' }} className={`${selfAnimatedClasses} ${themedBorderedClasses}orangeRed`}>
@@ -265,14 +265,10 @@ export default function () {
 
             <Spacer size={20} />
 
-            <p className='ui-p-15-h ui-m-auto ui-ease-1st-layout' style={{ maxWidth: '880px' }}>
-                This text provides additional context about avatar groups and their characteristics. It describes several profile types and the traits they represent.{' '}
-                <span id='text1' className={`${textClasses}yellow`}>Green profiles reflect analytical, detail‑oriented professionals who excel in systematic work, data analysis, and problem‑solving.</span>{' '}
-                <span id='text2' className={`${textClasses}orangeRed`}>Orange‑red profiles represent creative, dynamic team members who drive innovation and take initiative, bringing energy, passion, and breakthrough ideas.</span>
-                <br /><br />
-                They excel in zommunication, collaboration, and connecting technical and human aspects of work.{' '}
-                <span id='text4' className={`${textClasses}green`}>They contribute structured thinking and reliability to their projects.</span>{' '}
-                Red‑purple profiles highlight visionary leaders with strong intuition and strategic insight. They see the bigger picture and inspire teams toward ambitious goals.
+            <p className='ui-p-15-h' >
+                <span className={`${textClasses}yellow`}>Claire said something wonderful. </span>
+                <span className={`${textClasses}orangeRed`}>Matthew said something awesome. </span>
+                <span className={`${textClasses}green`}>Tom said something great.</span>
             </p>
         </Preview>
         </>
