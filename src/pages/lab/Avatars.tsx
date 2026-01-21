@@ -35,7 +35,10 @@ export default function () {
 
     const avatarClasses = 'ui-m-5-h';
     const selfAnimatedClasses = 'ui-hover-scale-more ui-hover-shadow';
+    const themedBorderedClasses = 'ui-border ui-border-dual ui-stroke ui-theme-';
     const themeClasses = 'ui-fill-dark-100 ui-theme-';
+
+    const textClasses = 'ui-text ui-theme-';
 
     return (
         <>
@@ -236,6 +239,41 @@ export default function () {
                     +113
                 </span>
             </Avatar.Holder>
+        </Preview>
+
+        <Description>
+            Avatar groups include tooltip text that corresponds to the colored borders, referencing the descriptive text written below.
+        </Description>
+        <Preview>
+            <Avatar.Holder className={countHolderClasses}>
+                <span className='ui-m-30-r ui-inline-block'>
+                    Written by
+                </span>
+                <Avatar size='sm' title='Clair' data={{ 'tooltip': 't' }} className={`${selfAnimatedClasses} ${themedBorderedClasses}yellow`}>
+                    <img src={profileImage6} />
+                </Avatar>
+                <Avatar size='sm' title='Matthew' data={{ 'tooltip': 't' }} className={`${selfAnimatedClasses} ${themedBorderedClasses}orangeRed`}>
+                    <img src={profileImage3} />
+                </Avatar>
+                 <Avatar size='sm' title='Tom' data={{ 'tooltip': 't' }} className={`${selfAnimatedClasses} ${themedBorderedClasses}green`}>
+                    <img src={profileImage1} />
+                </Avatar>
+                <span className='ui-m-10-l ui-inline-block'>
+                    is shown below:
+                </span>
+            </Avatar.Holder>
+
+            <Spacer size={20} />
+
+            <p className='ui-p-15-h ui-m-auto ui-ease-1st-layout' style={{ maxWidth: '880px' }}>
+                This text provides additional context about avatar groups and their characteristics. It describes several profile types and the traits they represent.{' '}
+                <span id='text1' className={`${textClasses}yellow`}>Green profiles reflect analytical, detail‑oriented professionals who excel in systematic work, data analysis, and problem‑solving.</span>{' '}
+                <span id='text2' className={`${textClasses}orangeRed`}>Orange‑red profiles represent creative, dynamic team members who drive innovation and take initiative, bringing energy, passion, and breakthrough ideas.</span>
+                <br /><br />
+                They excel in zommunication, collaboration, and connecting technical and human aspects of work.{' '}
+                <span id='text4' className={`${textClasses}green`}>They contribute structured thinking and reliability to their projects.</span>{' '}
+                Red‑purple profiles highlight visionary leaders with strong intuition and strategic insight. They see the bigger picture and inspire teams toward ambitious goals.
+            </p>
         </Preview>
         </>
     );
