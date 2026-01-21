@@ -164,6 +164,34 @@ export default function () {
         </Preview>
 
         <Description>
+            Avatars can be linked to a URL.
+        </Description>
+        <Preview>
+            <div className={circleClasses}>
+                <Avatar noease className={avatarClasses}>
+                    <a href='#'>
+                        <span>AEY</span>
+                    </a>
+                </Avatar>
+                <Avatar noease className={avatarClasses}>
+                    <a href='#'>
+                        <img src={profileImage3} />
+                    </a>
+                </Avatar>
+                <Avatar noease className={avatarClasses}>
+                    <a href='#'>
+                        <span>EKY</span>
+                    </a>
+                </Avatar>
+                <Avatar noease className={avatarClasses}>
+                    <a href='#'>
+                        <img src={profileImage6} />
+                    </a>
+                </Avatar>
+            </div>
+        </Preview>
+
+        <Description>
             Avatar groups are ideal for displaying multiple avatars together.
         </Description>
         <Preview>
@@ -190,27 +218,39 @@ export default function () {
         </Preview>
 
         <Description>
-            Avatar groups with a circular border and a total‑count indicator.
+            Avatar groups can be linked to a URL and include a circular border along with a total‑count indicator.
         </Description>
         <Preview>
             <Avatar.Holder className={countHolderBorderClasses}>
                 <Avatar noease className={`${themeClasses}purple`}>
-                    <SvgIcon as='js' src={IconUser} />
+                    <a href='#'>
+                        <SvgIcon as='js' src={IconUser} />
+                    </a>
                 </Avatar>
                 <Avatar noease>
-                    <span>AEY</span>
+                    <a href='#'>
+                        <span>AEY</span>
+                    </a>
                 </Avatar>
                 <Avatar noease>
-                    <img src={profileImage4} />
+                    <a href='#'>
+                        <img src={profileImage4} />
+                    </a>
                 </Avatar>
                 <Avatar noease className={`${themeClasses}purpleBlue`}>
-                    <span>L</span>
+                    <a href='#'>
+                        <span>L</span>
+                    </a>
                 </Avatar>
                 <Avatar noease>
-                    <img src={profileImage6} />
+                    <a href='#'>
+                        <img src={profileImage6} />
+                    </a>
                 </Avatar>
                 <Avatar noease>
-                    <span>+27</span>
+                    <a href='#'>
+                        <span>+27</span>
+                    </a>
                 </Avatar>
             </Avatar.Holder>
         </Preview>
@@ -236,7 +276,9 @@ export default function () {
                     <img src={profileImage5} />
                 </Avatar>
                 <Avatar noease>
-                    <span>+113</span>
+                    <a href='#'>
+                        <span>+113</span>
+                    </a>
                 </Avatar>
             </Avatar.Holder>
         </Preview>
