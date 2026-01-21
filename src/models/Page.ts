@@ -55,4 +55,5 @@ export interface PreviewProps {
     children: ReactNode;
     playPos?: 'tl' | 'tr' | 'br' | 'bl';
     play?: ReactEventHandler;
+    className?: string;
 }

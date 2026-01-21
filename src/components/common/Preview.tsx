@@ -8,8 +8,8 @@ import type { PreviewProps } from '../../models/Page';
 // assets
 import { IconPlay } from 'uilab-icons/react/media/play';
 
-export default function (props:PreviewProps) {
-    const { children, play, playPos } = props;
+export default function (props: PreviewProps) {
+    const { children, play, playPos, className } = props;
 
     const positions = {
         'tl': 'ui-set-t ui-set-l',
@@ -18,17 +18,21 @@ export default function (props:PreviewProps) {
         'bl': 'ui-set-b ui-set-l',
     };
 
-    let classes = 'ui-m-15 ui-round-inner ui-set-absolute ui-theme-blue ui-fill-dark-100';
+    // classes
+    const setClassName = className ? ` ${className}` : '';
+    const classes = `preview ui-m-30-b ui-border ui-border-dual ui-round ui-shadow-in-sm ui-set-relative${setClassName}`;
+
+    let buttonClasses = 'ui-m-15 ui-round-inner ui-set-absolute ui-theme-blue ui-fill-dark-100';
 
     if (play) {
-        classes += ` ${positions[playPos]}`;
+        buttonClasses += ` ${positions[playPos]}`;
     }
 
     return (
-        <div className='preview ui-m-30-b ui-border ui-border-dual ui-round ui-shadow-in-sm ui-set-relative'>
+        <div className={classes}>
             {children}
             {play &&
-                <Button size='sm' className={classes} onClick={play}>
+                <Button size='sm' className={buttonClasses} onClick={play}>
                     <SvgIcon as='js' src={IconPlay} size='xs' />
                     <span className='ui-m-5-l ui-inline-block'>Play</span>
                 </Button>
