@@ -40,7 +40,6 @@ CREATE TABLE home_featured.people_list (
 );
 CREATE TABLE home_featured.peoplemore (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
-  morebtntext text,
   moreurl text,
   morecount numeric,
   CONSTRAINT peoplemore_pkey PRIMARY KEY (id)

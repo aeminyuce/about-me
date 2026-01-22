@@ -1,1 +1,1 @@
-INSERT INTO "home_featured"."profile_info" ("id", "avatar", "name", "email", "type") VALUES ('1', 'UPT', 'User Pine Tree', 'upt@yourdomain.com', 'Licensed User');
+INSERT INTO "home_featured"."profile_info" ("id", "avatar", "name", "email", "type") VALUES ('1', 'profile-image6.jpg', 'Claire', 'claire@yourdomain.com', 'Licensed User');

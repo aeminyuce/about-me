@@ -60,7 +60,6 @@ SELECT json_build_object(
     'peopleMore', (
       SELECT jsonb_strip_nulls(
         jsonb_build_object(
-          'moreBtnText', pmr.morebtntext,
           'moreUrl', pmr.moreurl,
           'moreCount', pmr.morecount,
           'list', (

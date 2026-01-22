@@ -22,7 +22,7 @@ export default function() {
                 <div className='ui-align-c ui-round-t ui-border-b ui-stroke ui-fill-light-100'>
                     <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
                         <Avatar size='lg'>
-                            <span>{info?.avatar}</span>
+                            <img src={`/images/${info?.avatar}`} />
                         </Avatar>
                     </Notifier>
                 </div>
@@ -31,7 +31,7 @@ export default function() {
             <div className='ui-align-c'>
                 {info?.name || ''}
                 {info?.email &&
-                    <div className='ui-color-black-50 ui-font-11 ui-m-15-b'>
+                    <div className='ui-color-black-50 ui-font-11 ui-m-10-b'>
                         {info?.email}
                     </div>
                 }

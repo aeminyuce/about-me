@@ -79,19 +79,13 @@ export const PeopleMore = () => {
     const moreCount = peopleMore?.moreCount;
 
     return (
-        <Card className='ui-p-15 ui-round ui-shadow'>
-            {moreBtnText &&
-                <Button to={peopleMore?.moreUrl} className='ui-p-20-h ui-float-r ui-circle ui-fill-dark-100'>
-                    {moreBtnText}
-                </Button>
-            }
-
-            <Avatar.Holder className='ui-m-auto ui-circle-1st ui-ease-1st-layout'>
+        <Card className='ui-align-c ui-p-15 ui-round ui-shadow'>
+            <Avatar.Holder className='ui-m-auto ui-circle-1st ui-ease-1st-layout ui-hover-scale-more-1st'>
 
                 {peopleMore?.list.map((item: PeopleMoreListProps) => (
                     <Fragment key={item.jobTitle}>
                         {(item.avatar || item.avatarText) &&
-                            <Avatar size='xs' noease className='ui-hover-scale-more'>
+                            <Avatar noease size='xs'>
                                 {item.avatar && <img src={`/images/${item.avatar}`} />}
                                 {item.avatarText && <span>{item.avatarText}</span>}
                             </Avatar>
@@ -100,9 +94,11 @@ export const PeopleMore = () => {
                 ))}
 
                 {moreCount &&
-                    <span className='ui-m-10-h ui-inline-block'>
-                        +{moreCount}
-                    </span>
+                    <Avatar noease size='xs'>
+                        <a href={peopleMore?.moreUrl}>
+                            <span>+{moreCount}</span>
+                        </a>
+                    </Avatar>
                 }
             </Avatar.Holder>
         </Card>

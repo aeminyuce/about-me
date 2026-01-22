@@ -41,10 +41,10 @@
         },
         "profile": {
             "info": {
-                "name": "User Pine Tree",
+                "name": "Claire",
                 "type": "Licensed User",
-                "email": "upt@yourdomain.com",
-                "avatar": "UPT"
+                "email": "claire@yourdomain.com",
+                "avatar": "profile-image6.jpg"
             },
             "userActivity": [
                 {
@@ -172,21 +172,31 @@
         "peopleMore": {
             "list": [
                 {
+                    "avatar": "profile-image4.jpg",
                     "jobTitle": "Front-end Developer",
-                    "avatarText": "BS"
+                    "avatarText": ""
                 },
                 {
-                    "avatar": "profile-image4.jpg",
-                    "jobTitle": "Back-end Developer"
+                    "avatar": "",
+                    "jobTitle": "Back-end Developer",
+                    "avatarText": "BS"
                 },
                 {
                     "avatar": "profile-image6.jpg",
                     "jobTitle": "UI-UX Designer"
+                },
+                {
+                    "avatar": "profile-image1.jpg",
+                    "jobTitle": "Prodcut Owner"
+                },
+                {
+                    "avatar": "profile-image2.jpg",
+                    "jobTitle": "Test Engineer",
+                    "avatarText": ""
                 }
             ],
             "moreUrl": "#people-more",
-            "moreCount": 13,
-            "moreBtnText": "See all"
+            "moreCount": 13
         },
         "reportsList": {
             "paused": [

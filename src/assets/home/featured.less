@@ -4,13 +4,13 @@
 @import (reference) 'uilab/less/core/mixins.less';
 
 /* profile */
-@home-profile-cover-size:                 80px;
-@home-profile-cover-margin-bottom:        10px;
-@home-profile-activity-max-height:        192px;
+@home-profile-cover-size:                 92px;
+@home-profile-cover-margin-bottom:        5px;
+@home-profile-activity-max-height:        184px;
 
 .home-profile {
     & > div:first-child {
-        height: @home-profile-cover-size; margin-bottom: (@home-profile-cover-size / 2 + @home-profile-cover-margin-bottom);
+        height: @home-profile-cover-size; margin-bottom: ((@home-profile-cover-size / 2) + @home-profile-cover-margin-bottom);
 
         .ui-notifier { margin-top: (@home-profile-cover-size / 2); }
     }
