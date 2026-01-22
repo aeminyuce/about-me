@@ -18,7 +18,8 @@ const Dashboard = lazy(() => import( /* webpackChunkName: "Dashboard" */ "./home
 
 const LabIntro = lazy(() => import( /* webpackChunkName: "lab/Intro" */ "./lab/Intro" ));
 const LabAlerts = lazy(() => import( /* webpackChunkName: "lab/Alerts" */ "./lab/Alerts" ));
-const LabAvatars = lazy(() => import( /* webpackChunkName: "lab/AleAvatarsrts" */ "./lab/Avatars" ));
+const LabAvatars = lazy(() => import( /* webpackChunkName: "lab/Avatars" */ "./lab/Avatars" ));
+const LabBreadcrumbs = lazy(() => import( /* webpackChunkName: "lab/Breadcrumbs" */ "./lab/Breadcrumbs" ));
 
 export default function () {
     return (
@@ -47,6 +48,9 @@ export default function () {
                     }/>
                     <Route path='avatars' element={
                         <PageTitle title='Lab | Avatars'><LabAvatars /></PageTitle>
+                    }/>
+                    <Route path='breadcrumbs' element={
+                        <PageTitle title='Lab | LabBreadcrumbs'><LabBreadcrumbs /></PageTitle>
                     }/>
 
                 </Route>
