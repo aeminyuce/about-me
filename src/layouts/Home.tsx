@@ -21,7 +21,7 @@ export default function () {
         <Header />
 
         {/* main */}
-        <Grid.Container as='main' noGutter='all'>
+        <Grid.Container as='main' ariaLabel='Main site content' noGutter='all'>
             <Grid.Container fixed='xl' as='div'>
 
                 {/* about me */}

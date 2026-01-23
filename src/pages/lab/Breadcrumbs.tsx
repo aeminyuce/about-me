@@ -20,7 +20,7 @@ export default function () {
     return (
         <>
         <BreadcrumbsWrapper>
-            <Breadcrumbs.Item>Breadcrumbs</Breadcrumbs.Item>
+            <Breadcrumbs.Item position={'3'}>Breadcrumbs</Breadcrumbs.Item>
         </BreadcrumbsWrapper>
 
         <Heading as='h1'>Breadcrumbs</Heading>
@@ -29,9 +29,9 @@ export default function () {
             Simple breadcrumb navigation with linked items separated by a bullet symbol. In the first variant, links show an underline on hover; in the second, links change opacity on hover.        </Description>
         <Preview>
             <Breadcrumbs className={underlineWrapperClasses}>
-                <Breadcrumbs.Item to='#'>Home</Breadcrumbs.Item>
-                <Breadcrumbs.Item to='#'>Search Results</Breadcrumbs.Item>
-                <Breadcrumbs.Item>
+                <Breadcrumbs.Item position={'1'} to='#'>Home</Breadcrumbs.Item>
+                <Breadcrumbs.Item position={'2'} to='#'>Search Results</Breadcrumbs.Item>
+                <Breadcrumbs.Item position={'3'}>
                     <strong>Details</strong>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
@@ -39,9 +39,9 @@ export default function () {
             <Spacer size={15} />
 
             <Breadcrumbs className={opacityWrapperClasses}>
-                <Breadcrumbs.Item className={opacityClasses} to='#'>Home</Breadcrumbs.Item>
-                <Breadcrumbs.Item className={opacityClasses} to='#'>Search Results</Breadcrumbs.Item>
-                <Breadcrumbs.Item>Details</Breadcrumbs.Item>
+                <Breadcrumbs.Item position={'1'} className={opacityClasses} to='#'>Home</Breadcrumbs.Item>
+                <Breadcrumbs.Item position={'2'} className={opacityClasses} to='#'>Search Results</Breadcrumbs.Item>
+                <Breadcrumbs.Item position={'3'}>Details</Breadcrumbs.Item>
             </Breadcrumbs>
         </Preview>
 

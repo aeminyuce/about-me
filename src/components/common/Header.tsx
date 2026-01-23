@@ -21,7 +21,7 @@ export default function () {
 
     return headerData && (
         <>
-        <HeaderSticky className='ui-container' dataClasses='ui-shadow'>
+        <HeaderSticky ariaLabel='Main site header' className='ui-container' dataClasses='ui-shadow'>
             <Grid.Row fluid='no'>
                 <Grid.Col size={9} md={3} sm={3} xs={3}>
 

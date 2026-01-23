@@ -10,8 +10,8 @@ export default function (props: BreadcrumbsWrapperProps) {
 
     return (
         <Breadcrumbs className='ui-p-10-b ui-m-30-b ui-border-b ui-border-light ui-ease-2nd-layout'>
-            <Breadcrumbs.Item to='/' className={classes}>Home</Breadcrumbs.Item>
-            <Breadcrumbs.Item to='/lab' className={classes}>Lab</Breadcrumbs.Item>
+            <Breadcrumbs.Item position={'1'} to='/' className={classes}>Home</Breadcrumbs.Item>
+            <Breadcrumbs.Item position={'2'} to='/lab' className={classes}>Lab</Breadcrumbs.Item>
             {children}
         </Breadcrumbs>
     );

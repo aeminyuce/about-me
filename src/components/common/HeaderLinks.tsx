@@ -10,7 +10,7 @@ export default function () {
     const { apiResponse } = useStoreContext();
 
     return (
-        <span className='ui-hidden-md'>
+        <nav aria-label='Main site navigation' className='ui-hidden-md'>
             <Button.Wrapper as='span' ease='1st' className='ui-sidebar-add-l ui-md-align-l ui-round-1st'>
 
                 {apiResponse?.header?.headerLinks.map((item: HeaderLinksProps) => {
@@ -24,6 +24,6 @@ export default function () {
                 })}
 
             </Button.Wrapper>
-        </span>
+        </nav>
     )
 }
