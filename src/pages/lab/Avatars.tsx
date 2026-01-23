@@ -35,7 +35,7 @@ export default function () {
 
     const avatarClasses = 'ui-m-5-h';
     const selfAnimatedClasses = 'ui-hover-scale-more ui-hover-shadow';
-    const themedBorderedClasses = 'ui-border ui-border-dual ui-stroke ui-theme-';
+    const themedBorderedClasses = 'ui-border ui-border-lg ui-stroke ui-theme-';
     const themeClasses = 'ui-fill-dark-100 ui-theme-';
 
     const textClasses = 'ui-text ui-theme-';
