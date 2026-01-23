@@ -2,16 +2,9 @@
 @import (reference) 'uilab/less/core/mixins.less';
 
 /* home nav */
-@home-nav-prev-margin:                    2px 0 0 10px;
-@home-nav-next-margin:                    2px 74px 0 0;
 @home-nav-theme-color-size:               17px;
 
 .home-nav {
-    .ui-carousel {
-        &-prev { margin: @home-nav-prev-margin; }
-        &-next { margin: @home-nav-next-margin; }
-    }
-
     .ui-dropdown {
         & > button,& li {
             & > span { width: @home-nav-theme-color-size; height: @home-nav-theme-color-size; }
