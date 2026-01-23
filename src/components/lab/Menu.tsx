@@ -32,7 +32,7 @@ export default function() {
                                 <Link to={url} className={classes + selected}>{item.name}</Link><br />
 
                                 {item?.titles?.map((title: string) => {
-                                    const titleSelected = `${hash === '#' + title ? ' ui-text' : ' ui-color-white'}`;
+                                    const titleSelected = `${hash === '#' + title ? ' ui-text' : ' ui-color-black'}`;
 
                                     return (
                                         <Fragment key={title}>
