@@ -48,22 +48,27 @@ export const People = () => {
             <ListGroup className={`ui-round-t ui-scroll-v ui-scrollbar-round ui-scrollbar-faded${setScrollOuter}`}>
                 <ListGroup.List avatarSize='xs'>
 
-                    {peopleList?.map((item: PeopleListProps) => (
-                        <ListGroup.Item key={item.jobTitle}>
-                            <a href={item.url}>
-                                <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
-                                {(item.avatar || item.avatarText) &&
-                                    <Avatar size='xs' className='ui-circle ui-fill-dark-100 ui-hover-scale-more'>
-                                        {item.avatar && <img src={`/images/${item.avatar}`} />}
-                                        {item.avatarText && <span>{item.avatarText}</span>}
-                                    </Avatar>
-                                }
+                    {peopleList?.map((item: PeopleListProps) => {
+                        let classes = 'ui-circle ui-hover-scale-more';
+                        classes += item.avatarText ? ' ui-fill-dark-100' : '';
 
-                                <span className='ui-font-ellipsis ui-block'>{item.jobTitle}</span>
-                                <span className='ui-color-black-25'>{item.description}</span>
-                            </a>
-                        </ListGroup.Item>
-                    ))}
+                        return (
+                            <ListGroup.Item key={item.jobTitle}>
+                                <a href={item.url}>
+                                    <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
+                                    {(item.avatar || item.avatarText) &&
+                                        <Avatar size='xs' className={classes}>
+                                            {item.avatar && <img src={`/images/${item.avatar}`} />}
+                                            {item.avatarText && <span>{item.avatarText}</span>}
+                                        </Avatar>
+                                    }
+
+                                    <span className='ui-font-ellipsis ui-block'>{item.jobTitle}</span>
+                                    <span className='ui-color-black-25'>{item.description}</span>
+                                </a>
+                            </ListGroup.Item>
+                        )
+                    })}
 
                 </ListGroup.List>
             </ListGroup>
@@ -82,16 +87,20 @@ export const PeopleMore = () => {
         <Card className='ui-align-c ui-p-15 ui-round ui-shadow'>
             <Avatar.Holder className='ui-m-auto ui-circle-1st ui-ease-1st-layout ui-hover-scale-more-1st'>
 
-                {peopleMore?.list.map((item: PeopleMoreListProps) => (
-                    <Fragment key={item.jobTitle}>
-                        {(item.avatar || item.avatarText) &&
-                            <Avatar noease size='xs'>
-                                {item.avatar && <img src={`/images/${item.avatar}`} />}
-                                {item.avatarText && <span>{item.avatarText}</span>}
-                            </Avatar>
-                        }
-                    </Fragment>
-                ))}
+                {peopleMore?.list.map((item: PeopleMoreListProps) => {
+                    const  classes = item.avatarText ? 'ui-fill-dark-100' : null;
+
+                    return (
+                        <Fragment key={item.jobTitle}>
+                            {(item.avatar || item.avatarText) &&
+                                <Avatar noease size='xs' className={classes}>
+                                    {item.avatar && <img src={`/images/${item.avatar}`} />}
+                                    {item.avatarText && <span>{item.avatarText}</span>}
+                                </Avatar>
+                            }
+                        </Fragment>
+                    )
+                })}
 
                 {moreCount &&
                     <Avatar noease size='xs'>
