@@ -43,7 +43,7 @@ export default function () {
     return (
         <>
         <BreadcrumbsWrapper>
-            <Breadcrumbs.Item pos={'3'}>Avatars</Breadcrumbs.Item>
+            <Breadcrumbs.Item seoFriendly pos={'3'}>Avatars</Breadcrumbs.Item>
         </BreadcrumbsWrapper>
 
         <Heading as='h1'>Avatars</Heading>

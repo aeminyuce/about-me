@@ -28,7 +28,7 @@ export default function () {
     return (
         <>
         <BreadcrumbsWrapper>
-            <Breadcrumbs.Item pos={'3'}>Breadcrumbs</Breadcrumbs.Item>
+            <Breadcrumbs.Item seoFriendly pos={'3'}>Breadcrumbs</Breadcrumbs.Item>
         </BreadcrumbsWrapper>
 
         <Heading as='h1'>Breadcrumbs</Heading>
