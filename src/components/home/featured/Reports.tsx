@@ -66,7 +66,7 @@ const ReportsListGroup = (props: any) => {
     const setScrollOuter = list?.length > 2 ? ' ui-scrollbar-outer' : '';
 
     return (
-        <ListGroup className={`ui-round ui-scroll-v ui-scrollbar-faded${setScrollOuter}`}>
+        <ListGroup className={`ui-round-t ui-scroll-v ui-scrollbar-round ui-scrollbar-faded${setScrollOuter}`}>
             <ListGroup.List>
 
                 {list?.map((item: ReportsListProps) => (
@@ -90,7 +90,7 @@ export const ReportsList = () => {
     const reportsList = apiResponse?.home_featured?.reportsList;
 
     return (
-        <Card className='home-reports-list ui-p-15 ui-shadow ui-round'>
+        <Card className='home-reports-list ui-p-15-t ui-p-15-h ui-shadow ui-round'>
             <Tab.Holder dataClasses='ui-fill-dark-100'>
                 <Button.Wrapper as='div' type='holder' ease='1st' className='ui-m-15-b ui-round-1st'>
 

@@ -30,9 +30,9 @@ export const People = () => {
     const setScrollOuter = peopleList?.length > 3 ? ' ui-scrollbar-outer' : '';
 
     return (
-        <Card className='home-people-list ui-p-15 ui-round ui-shadow'>
+        <Card className='home-people-list ui-p-15-t ui-p-15-h ui-round ui-shadow'>
             {addPeople &&
-                <Button ghost square title={addPeople?.title} className='ui-round ui-float-r' data={{ 'tooltip': '', 'only': 'desktop' }}>
+                <Button ghost square title={addPeople?.title} className='ui-round ui-float-r' data={{ 'tooltip': 'l', 'only': 'desktop' }}>
                     {addPeople?.icon &&
                         <SvgIcon as='js' src={peopleIcons[addPeople?.icon]} />
                     }
@@ -45,7 +45,7 @@ export const People = () => {
                 </Heading>
             }
 
-            <ListGroup className={`ui-round ui-scroll-v ui-scrollbar-faded${setScrollOuter}`}>
+            <ListGroup className={`ui-round-t ui-scroll-v ui-scrollbar-round ui-scrollbar-faded${setScrollOuter}`}>
                 <ListGroup.List avatarSize='xs'>
 
                     {peopleList?.map((item: PeopleListProps) => (

@@ -20,7 +20,7 @@ export default function() {
         <Card className='ui-p-15 ui-round ui-shadow'>
             {calendar?.settings &&
                 <Dropdown align='l' className='ui-float-r'>
-                    <Button square ghost title={calendar?.title} className='ui-round' data={{ 'tooltip': '', 'only': 'desktop' }}>
+                    <Button square ghost title={calendar?.title} className='ui-round' data={{ 'tooltip': 'l', 'only': 'desktop' }}>
                         <SvgIcon as='js' src={IconEllipsisH} />
                     </Button>
                     <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
