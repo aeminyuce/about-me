@@ -33,7 +33,7 @@ export default function () {
 
                             </Grid.Col>
                         </Grid.Row>
-                        <Grid.Col size={272} order={{ when: 'md', position: 'first'}} className='ui-p-10-h'>
+                        <Grid.Col size={272} className='ui-p-10-h'>
 
                             {/* menu */}
                             {apiResponse?.lab?.menu && <LabMenu />}
