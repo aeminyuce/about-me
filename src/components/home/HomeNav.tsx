@@ -18,9 +18,9 @@ export default function () {
         <Grid.Row className='home-nav ui-p-15-b ui-m-15-b ui-border-b ui-border-light'>
             <Grid.Static fluid='no' className='ui-set-relative'>
                 <Grid.Row>
-                    <Grid.Col size={12}>
+                    <Grid.Col size={12} className='ui-hidden-sm'>
 
-                        <nav aria-label='Home page desktop navigation' className='ui-ease-1st-btn ui-round-1st ui-hidden-sm'>
+                        <nav aria-label='Home page desktop navigation' className='ui-ease-1st-btn ui-round-1st'>
                             {navData?.navLinks && <NavDesktopLinks />}
                         </nav>
 
@@ -76,11 +76,10 @@ const NavMobileLinks = () => {
 
                 {navLinks?.map((item: HomeNavLinksProps) => {
                     const selected = item.to === pathname;
-                    const classes = !selected ? 'ui-border ui-border-light' : null;
 
                     return (
                         <Carousel.Content key={item.name} className='ui-p-3-r'>
-                            <Button noease ghost={!selected} block='all' to={item.to} className={classes}>
+                            <Button noease ghost={!selected} block='all' to={item.to} className='ui-border ui-border-light'>
                                 {item.name}
                             </Button>
                         </Carousel.Content>
