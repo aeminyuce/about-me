@@ -16,7 +16,7 @@ export default function () {
         <>
         {profileImage &&
             <Avatar size='lg' className='ui-circle'>
-                <img src={`/images/${profileImage}`} alt={`${fullName || ''}${jobTitle ? ` | ${jobTitle}` : ''}`} />
+                <img src={`/images/${profileImage}`} alt={`${fullName || '' + jobTitle ? ` | ${jobTitle}` : ''}`} />
             </Avatar>
         }
         </>

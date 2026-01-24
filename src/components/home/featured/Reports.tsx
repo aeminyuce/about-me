@@ -50,7 +50,7 @@ const Report = (props: any) => {
 
 export const Reports = () => {
     return (
-        <Grid.Row hGap='xs' vGap='no' fluid='no' className='ui-highlight'>
+        <Grid.Row hGap='xxs' vGap='no' fluid='no' className='ui-highlight'>
             <Grid.Col size={6}>
                 <Report type='l' />
             </Grid.Col>
@@ -63,7 +63,7 @@ export const Reports = () => {
 
 const ReportsListGroup = (props: any) => {
     const { list } = props;
-    const setScrollOuter = list?.length > 2 ? ' ui-scrollbar-outer' : '';
+    const setScrollOuter = list?.length > 3 ? ' ui-scrollbar-outer' : '';
 
     return (
         <ListGroup className={`ui-round-t ui-scroll-v ui-scrollbar-round ui-scrollbar-faded${setScrollOuter}`}>
