@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Button from 'uilab/react/Button';
 import Dropdown from 'uilab/react/Dropdown';
-import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
