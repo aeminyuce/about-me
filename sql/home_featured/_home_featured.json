@@ -1,5 +1,10 @@
 {
     "result": {
+        "nav": {
+            "item1": "Home",
+            "item2": "Results",
+            "item3": "Details"
+        },
         "people": {
             "list": [
                 {

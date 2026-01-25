@@ -84,6 +84,15 @@ SELECT json_build_object(
       )
       FROM home_featured.calendar cln
       LIMIT 1
+    ),
+    'nav', (
+      SELECT jsonb_build_object(
+        'item1', nav.item1,
+        'item2', nav.item2,
+        'item3', nav.item3
+      )
+      FROM home_featured.nav nav
+      LIMIT 1
     )
   )
 );

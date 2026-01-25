@@ -5,6 +5,7 @@ import Grid from 'uilab/react/Grid';
 import { useStoreContext } from '../../states/StoreContext';
 import Profile from '../../components/home/featured/Profile';
 import { Reports, ReportsList } from '../../components/home/featured/Reports';
+import Nav from '../../components/home/featured/Nav';
 import { People, PeopleMore } from '../../components/home/featured/People';
 import Events from '../../components/home/featured/Events';
 
@@ -13,29 +14,35 @@ import '../../assets/home/featured.less';
 
 export default function () {
     const { theme, apiResponse } = useStoreContext();
+    const homeFeatured = apiResponse?.home_featured;
+
+    const nav = homeFeatured?.nav;
+    const reports = homeFeatured?.reports;
+    const reportsList = homeFeatured?.reportsList;
 
     return (
         <Grid.Row className={theme ? ` ${theme}` : null}>
             <Grid.Col lg={2} size={4} md={6}>
 
-                {apiResponse?.home_featured?.profile && <Profile />}
+                {homeFeatured?.profile && <Profile />}
 
             </Grid.Col>
             <Grid.Col lg={3} size={4} md={6}>
 
-                {(apiResponse?.home_featured?.reports?.l || apiResponse?.home_featured?.reports?.r) && <Reports />}
-                {(apiResponse?.home_featured?.reportsList?.delayed || apiResponse?.home_featured?.reportsList?.paused) && <ReportsList />}
+                {nav?.item1 && nav?.item2 && nav?.item3 && <Nav />}
+                {(reports?.l || reports?.r) && <Reports />}
+                {(reportsList?.delayed || reportsList?.paused) && <ReportsList />}
 
             </Grid.Col>
             <Grid.Col lg={3} size={4} md={6}>
 
-                {apiResponse?.home_featured?.people?.list && <People />}
-                {apiResponse?.home_featured?.peopleMore?.list && <PeopleMore />}
+                {homeFeatured?.people?.list && <People />}
+                {homeFeatured?.peopleMore?.list && <PeopleMore />}
 
             </Grid.Col>
             <Grid.Col lg={4} size={4} md={6}>
 
-                {apiResponse?.home_featured?.calendar && <Events />}
+                {homeFeatured?.calendar && <Events />}
 
             </Grid.Col>
         </Grid.Row>

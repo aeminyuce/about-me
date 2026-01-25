@@ -18,6 +18,13 @@ CREATE TABLE home_featured.calendar_events (
   details jsonb,
   CONSTRAINT calendar_events_pkey PRIMARY KEY (id)
 );
+CREATE TABLE home_featured.nav (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  item1 text,
+  item2 text,
+  item3 text,
+  CONSTRAINT nav_pkey PRIMARY KEY (id)
+);
 CREATE TABLE home_featured.people (
   id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
   cardtitle text,
