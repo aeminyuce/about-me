@@ -49,21 +49,25 @@ export const People = () => {
                 <ListGroup.List avatarSize='xs'>
 
                     {peopleList?.map((item: PeopleListProps) => {
+                        const avatarText = item.avatarText;
+                        const avatar = item.avatar;
+                        const jobTitle = item.jobTitle;
+
                         let classes = 'ui-circle ui-hover-scale-more';
-                        classes += item.avatarText ? ' ui-fill-dark-100' : '';
+                        classes += avatarText ? ' ui-fill-dark-100' : '';
 
                         return (
-                            <ListGroup.Item key={item.jobTitle}>
+                            <ListGroup.Item key={jobTitle}>
                                 <a href={item.url}>
                                     <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
-                                    {(item.avatar || item.avatarText) &&
+                                    {(avatar && avatarText) &&
                                         <Avatar size='xs' className={classes}>
-                                            {item.avatar && <img src={`/images/${item.avatar}`} />}
-                                            {item.avatarText && <span>{item.avatarText}</span>}
+                                            <img src={`/images/${avatar}`} />
+                                            <span>{avatarText}</span>
                                         </Avatar>
                                     }
 
-                                    <span className='ui-font-ellipsis ui-block'>{item.jobTitle}</span>
+                                    <span className='ui-font-ellipsis ui-block'>{jobTitle}</span>
                                     <span className='ui-color-black-25'>{item.description}</span>
                                 </a>
                             </ListGroup.Item>
@@ -78,9 +82,8 @@ export const People = () => {
 
 export const PeopleMore = () => {
     const { apiResponse } = useStoreContext();
-    const peopleMore = apiResponse?.home_featured?.peopleMore;
 
-    const moreBtnText = peopleMore?.moreBtnText;
+    const peopleMore = apiResponse?.home_featured?.peopleMore;
     const moreCount = peopleMore?.moreCount;
 
     return (
@@ -88,14 +91,17 @@ export const PeopleMore = () => {
             <Avatar.Holder className='ui-m-auto ui-circle-1st ui-ease-1st-layout ui-hover-scale-more-1st'>
 
                 {peopleMore?.list.map((item: PeopleMoreListProps) => {
-                    const  classes = item.avatarText ? 'ui-fill-dark-100' : null;
+                    const avatarText = item.avatarText;
+                    const avatar = item.avatar;
+
+                    const  classes = avatarText ? 'ui-fill-dark-100' : null;
 
                     return (
                         <Fragment key={item.jobTitle}>
-                            {(item.avatar || item.avatarText) &&
+                            {(avatar && avatarText) &&
                                 <Avatar noease size='xs' className={classes}>
-                                    {item.avatar && <img src={`/images/${item.avatar}`} />}
-                                    {item.avatarText && <span>{item.avatarText}</span>}
+                                    <img src={`/images/${avatar}`} />
+                                    <span>{avatarText}</span>
                                 </Avatar>
                             }
                         </Fragment>

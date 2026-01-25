@@ -30,11 +30,11 @@ export const Paragraphs = () => {
 
     return (
         <p className='ui-font-18 ui-font-readable ui-p-30 ui-sm-no-p-h ui-m-30-h'>
-            {textPart1 && textPart1}
+            {textPart1}
             <br /><br />
-            {textPart2 && textPart2}
+            {textPart2}
             <br /><br />
-            {textPart3 && textPart3}
+            {textPart3}
         </p>
     )
 }

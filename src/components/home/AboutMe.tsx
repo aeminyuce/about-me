@@ -7,11 +7,12 @@ import MyFocus from './MyFocus';
 
 export default function () {
     const { apiResponse } = useStoreContext();
+    const aboutMe = apiResponse?.home?.aboutMe;
 
-    return apiResponse?.home?.aboutMe && (
+    return aboutMe && (
         <>
         <HomeProfile />
-        {apiResponse?.home?.aboutMe?.myFocus && <MyFocus />}
+        {aboutMe?.myFocus && <MyFocus />}
         </>
     )
 }

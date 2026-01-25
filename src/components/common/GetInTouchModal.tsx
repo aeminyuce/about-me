@@ -56,7 +56,7 @@ export default function () {
                                 <strong className='ui-font-24'>{title}</strong>
                             }
 
-                            {(messageStart || messageHighlight || messageEnd) &&
+                            {(messageStart && messageHighlight && messageEnd) &&
                                 <p className='ui-font-16 ui-font-condensed ui-m-10-t'>
                                     {messageStart}
                                     <strong>{messageHighlight}</strong>

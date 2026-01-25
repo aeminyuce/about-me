@@ -14,18 +14,23 @@ import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
 
 export default function() {
     const { apiResponse } = useStoreContext();
+
     const calendar = apiResponse?.home_featured?.calendar;
+    const settings = calendar?.settings;
+    const cardTitle = calendar?.cardTitle;
+    const calendarEvents = calendar?.eventsDate;
+    const events = calendar?.events;
 
     return (
         <Card className='ui-p-15 ui-round ui-shadow'>
-            {calendar?.settings &&
+            {settings &&
                 <Dropdown align='l' className='ui-float-r'>
                     <Button square ghost title={calendar?.title} className='ui-round' data={{ 'tooltip': 'l', 'only': 'desktop' }}>
                         <SvgIcon as='js' src={IconEllipsisH} />
                     </Button>
                     <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
 
-                        {calendar?.settings.map((name: string, index: number) => (
+                        {settings.map((name: string, index: number) => (
                             <Dropdown.Item key={name + index}>{name}</Dropdown.Item>
                         ))}
 
@@ -33,16 +38,16 @@ export default function() {
                 </Dropdown>
             }
 
-            {calendar?.cardTitle &&
+            {cardTitle &&
                 <Heading as='h3' className='ui-align-l ui-m-10-t'>
-                    {calendar?.cardTitle}
+                    {cardTitle}
                 </Heading>
             }
 
-            {calendar?.eventsDate && calendar?.events &&
+            {calendarEvents && events &&
                 <Calendar
                     className='ui-no-p ui-round'
-                    data={{ date: calendar?.eventsDate, json: JSON.stringify(calendar?.events) }}
+                    data={{ date: calendarEvents, json: JSON.stringify(events) }}
                 />
             }
         </Card>

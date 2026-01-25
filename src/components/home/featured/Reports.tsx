@@ -18,30 +18,35 @@ const Report = (props: any) => {
     const reportsData = apiResponse?.home_featured?.reports;
     const getData = reportsData[type];
 
+    const name = getData?.name;
+    const reports = getData?.reports;
+    const percent = getData?.percent;
+    const progressPercent = getData?.progressPercent;
+
     return (
         <Card className={`ui-p-15 ui-shadow ui-round-${type}`}>
-            {(getData?.name || getData?.reports) &&
+            {(name || reports) &&
                 <Grid.Static fluid='no' className='ui-font-condensed'>
                     <Grid.Row hGap='no' vGap='md'>
                         <Grid.Col size={12} className='ui-font-16 ui-m-10-b'>
-                            {getData?.name || ''}
+                            {name || ''}
                         </Grid.Col>
                     </Grid.Row>
                     <Grid.Col size={100} className='ui-font-38 ui-align-r ui-p-15-t'>
-                        {getData?.reports || 0}
+                        {reports || 0}
                     </Grid.Col>
                 </Grid.Static>
             }
 
-            {getData?.percent &&
+            {percent &&
                 <div className='ui-color-black-25 ui-m-10-b'>
-                    {getData?.percent}
+                    {percent}
                 </div>
             }
 
-            {getData?.progressPercent &&
+            {progressPercent &&
                 <ProgressBar className='ui-round'>
-                    <ProgressBar.Item percent={getData?.progressPercent} className='ui-fill-dark-100'/>
+                    <ProgressBar.Item percent={progressPercent} className='ui-fill-dark-100'/>
                 </ProgressBar>
             }
         </Card>
@@ -87,7 +92,10 @@ const ReportsListGroup = (props: any) => {
 
 export const ReportsList = () => {
     const { apiResponse } = useStoreContext();
+
     const reportsList = apiResponse?.home_featured?.reportsList;
+    const delayed = reportsList?.delayed;
+    const paused = reportsList?.paused;
 
     return (
         <Card className='home-reports-list ui-p-15-t ui-p-15-h ui-shadow ui-round'>
@@ -108,12 +116,12 @@ export const ReportsList = () => {
                 </Button.Wrapper>
                 <Tab.Content open>
 
-                    {reportsList?.delayed && <ReportsListGroup list={reportsList?.delayed} />}
+                    {delayed && <ReportsListGroup list={delayed} />}
 
                 </Tab.Content>
                 <Tab.Content>
 
-                    {reportsList?.paused && <ReportsListGroup list={reportsList?.paused} />}
+                    {paused && <ReportsListGroup list={paused} />}
 
                 </Tab.Content>
             </Tab.Holder>

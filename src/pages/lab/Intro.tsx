@@ -33,7 +33,7 @@ export default function() {
 
                 <div className='ui-m-30-h ui-sm-no-m'>
                     {leadText && <LeadText />}
-                    {(textPart1 || textPart2 || textPart3) && <Paragraphs />}
+                    {(textPart1 && textPart2 && textPart3) && <Paragraphs />}
                 </div>
 
             </Grid.Col>

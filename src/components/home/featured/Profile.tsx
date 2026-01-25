@@ -11,10 +11,13 @@ import Button from 'uilab/react/Button';
 
 export default function() {
     const { apiResponse } = useStoreContext();
-    const profile = apiResponse?.home_featured?.profile;
 
+    const profile = apiResponse?.home_featured?.profile;
     const info = profile?.info;
     const userActivity = profile?.userActivity;
+
+    const email = info?.email;
+    const type = info?.type;
 
     return (
         <Card className='home-profile ui-round ui-shadow'>
@@ -30,15 +33,15 @@ export default function() {
 
             <div className='ui-align-c'>
                 {info?.name || ''}
-                {info?.email &&
+                {email &&
                     <div className='ui-color-black-50 ui-font-11 ui-m-10-b'>
-                        {info?.email}
+                        {email}
                     </div>
                 }
-                {info?.type &&
+                {type &&
                     <div className='ui-font-11 ui-m-10-b'>
                         <Button as='span' size='xs' className='ui-p-10-h ui-circle ui-fill-dark-100'>
-                            {info?.type}
+                            {type}
                         </Button>
                     </div>
                 }

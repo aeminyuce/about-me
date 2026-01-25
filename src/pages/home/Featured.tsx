@@ -30,8 +30,8 @@ export default function () {
             <Grid.Col lg={3} size={4} md={6}>
 
                 {nav?.item1 && nav?.item2 && nav?.item3 && <Nav />}
-                {(reports?.l || reports?.r) && <Reports />}
-                {(reportsList?.delayed || reportsList?.paused) && <ReportsList />}
+                {(reports?.l && reports?.r) && <Reports />}
+                {(reportsList?.delayed && reportsList?.paused) && <ReportsList />}
 
             </Grid.Col>
             <Grid.Col lg={3} size={4} md={6}>

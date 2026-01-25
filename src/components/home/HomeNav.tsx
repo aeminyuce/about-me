@@ -64,10 +64,9 @@ const NavDesktopLinks = () => {
 
 const NavMobileLinks = () => {
     const { pathname } = useLocation();
-
     const { apiResponse } = useStoreContext();
-    const navLinks = apiResponse?.home?.nav?.navLinks;
 
+    const navLinks = apiResponse?.home?.nav?.navLinks;
     const start = mobileNavPosition(navLinks, pathname);
 
     return (

@@ -15,6 +15,8 @@ import '../assets/home.less';
 export default function () {
     const { apiResponse } = useStoreContext();
 
+    const home = apiResponse?.home;
+
     return (
         <>
         {/* header */}
@@ -25,10 +27,10 @@ export default function () {
             <Grid.Container fixed='xl' as='div'>
 
                 {/* about me */}
-                {apiResponse?.home?.aboutMe && <AboutMe />}
+                {home?.aboutMe && <AboutMe />}
 
                 {/* nav */}
-                {apiResponse?.home?.nav && <HomeNav />}
+                {home?.nav && <HomeNav />}
 
                 {/* home contents */}
                 <Outlet />
