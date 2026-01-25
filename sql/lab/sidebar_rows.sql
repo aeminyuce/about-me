@@ -1,1 +1,0 @@
-INSERT INTO "lab"."sidebar" ("id", "sidebartitle") VALUES ('1', 'Lab Contents');

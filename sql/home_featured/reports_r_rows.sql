@@ -1,1 +1,0 @@
-INSERT INTO "home_featured"."reports_r" ("id", "name", "reports", "percent", "progressPercent") VALUES ('1', 'Finished Reports', '19', '74% efficiency', '74');

@@ -1,1 +1,0 @@
-INSERT INTO "page"."header_sociallinks" ("id", "title", "url", "icon") VALUES ('1', 'GitHub', 'https://github.com/aeminyuce', 'github'), ('2', 'Dribbble', 'https://dribbble.com/aeminyuce', 'dribbble'), ('3', 'LinkedIn', 'https://www.linkedin.com/in/aeminyuce', 'linkedin');

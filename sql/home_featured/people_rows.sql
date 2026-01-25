@@ -1,1 +1,0 @@
-INSERT INTO "home_featured"."people" ("id", "cardtitle") VALUES ('1', 'People');

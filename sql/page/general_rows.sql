@@ -1,1 +1,0 @@
-INSERT INTO "page"."general" ("id", "profileImage", "fullName", "jobTitle") VALUES ('1', 'aeminyuce.png', 'A. Emin Yuce', 'UI Architect, Front End Developer');

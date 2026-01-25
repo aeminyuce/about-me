@@ -1,1 +1,0 @@
-INSERT INTO "home_featured"."nav" ("id", "item1", "item2", "item3") VALUES ('1', 'Home', 'Results', 'Details');

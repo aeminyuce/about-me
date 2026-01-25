@@ -1,1 +1,0 @@
-INSERT INTO "home_featured"."peoplemore" ("id", "moreurl", "morecount") VALUES ('1', '#people-more', '13');

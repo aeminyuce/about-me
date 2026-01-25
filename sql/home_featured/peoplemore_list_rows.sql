@@ -1,1 +1,0 @@
-INSERT INTO "home_featured"."peoplemore_list" ("id", "avatarText", "jobTitle", "avatar") VALUES ('1', '', 'Front-end Developer', 'profile-image4.jpg'), ('2', 'BS', 'Back-end Developer', ''), ('3', null, 'UI-UX Designer', 'profile-image6.jpg'), ('4', null, 'Prodcut Owner', 'profile-image1.jpg'), ('5', '', 'Test Engineer', 'profile-image2.jpg');
