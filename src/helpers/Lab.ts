@@ -13,3 +13,8 @@ export const scrollToHash = (id: string) => {
         if (el) el.scrollIntoView(true);
     });
 }
+
+// clear string spaces
+export const clearSpaces = (text: string) => {
+    return text ? text.replace(/[\s+]/g, '') : '';
+}

@@ -8,7 +8,7 @@ import Listing from 'uilab/react/Listing';
 // misc
 import { useStoreContext } from '../../states/StoreContext';
 import type { LabMenuProps } from '../../models/Lab';
-import { scrollToHash } from '../../helpers/Lab';
+import { scrollToHash, clearSpaces } from '../../helpers/Lab';
 
 export default function() {
     const { pathname, hash } = useLocation();
@@ -32,13 +32,14 @@ export default function() {
                                 <Link to={url} className={classes + selected}>{item.name}</Link><br />
 
                                 {item?.titles?.map((title: string) => {
-                                    const titleSelected = `${hash === '#' + title ? ' ui-text' : ' ui-color-black'}`;
+                                    const titleNoSpace = clearSpaces(title);
+                                    const titleSelected = `${hash === '#' + titleNoSpace ? ' ui-text' : ' ui-color-black'}`;
 
                                     return (
                                         <Fragment key={title}>
                                             {selected &&
                                                 <>
-                                                <Link to={`${url}#${title}`} className={classes + titleSelected} onClick={() => scrollToHash(title)}>
+                                                <Link to={`${url}#${titleNoSpace}`} className={classes + titleSelected} onClick={() => scrollToHash(titleNoSpace)}>
                                                     {title}
                                                 </Link>
                                                 <br />

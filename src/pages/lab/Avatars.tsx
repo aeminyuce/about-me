@@ -47,6 +47,7 @@ export default function () {
         </BreadcrumbsWrapper>
 
         <Heading as='h1'>Avatars</Heading>
+        <Heading as='h3' id='AvatarVariants'>Avatar Variants</Heading>
 
         <Description>
             Circular avatars come in multiple sizes and are typically used for profile images. The avatars animate when hovered with the mouse.
@@ -190,6 +191,8 @@ export default function () {
                 </Avatar>
             </div>
         </Preview>
+
+        <Heading as='h3' id='AvatarGroups'>Avatar Groups</Heading>
 
         <Description>
             Avatar groups are ideal for displaying multiple avatars together.
