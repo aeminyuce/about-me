@@ -12,6 +12,7 @@ import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
 
 export default function () {
     const { theme, setTheme, apiResponse } = useStoreContext();
+    const themeList = apiResponse?.home?.nav?.themeList;
 
     return (
         <Dropdown align='l'>
@@ -21,7 +22,7 @@ export default function () {
             </Button>
             <Dropdown.Menu className='ui-inline-block-2nd ui-round ui-circle-2nd ui-shadow-lg ui-cursor-pointer'>
 
-                {apiResponse?.home?.nav?.themeList.map((item: ThemeListProps) => (
+                {themeList.map((item: ThemeListProps) => (
                     <Dropdown.Item key={item.name} onClick={() => setTheme(item.theme)}>
                         <span className={`ui-m-10-r ${item.theme} ui-fill-dark-100`} />
                         {item.name}

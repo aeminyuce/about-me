@@ -47,9 +47,11 @@ const NavDesktopLinks = () => {
     const { pathname } = useLocation();
     const { apiResponse } = useStoreContext();
 
+    const navLinks = apiResponse?.home?.nav?.navLinks;
+
     return (
         <>
-        {apiResponse?.home?.nav?.navLinks.map((item: HomeNavLinksProps) => {
+        {navLinks.map((item: HomeNavLinksProps) => {
             const selected = item.to === pathname;
 
             return (

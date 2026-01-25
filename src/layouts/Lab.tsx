@@ -13,6 +13,7 @@ import '../assets/lab.less';
 
 export default function () {
     const { apiResponse } = useStoreContext();
+    const menu = apiResponse?.lab?.menu;
 
     return (
         <>
@@ -36,7 +37,7 @@ export default function () {
                         <Grid.Col size={272} className='ui-p-10-h'>
 
                             {/* menu */}
-                            {apiResponse?.lab?.menu && <LabMenu />}
+                            {menu && <LabMenu />}
 
                         </Grid.Col>
                     </Grid.Static>

@@ -13,6 +13,7 @@ import { IconLinkedin } from 'uilab-icons/react/social/linkedin';
 
 export default function () {
     const { apiResponse } = useStoreContext();
+    const socialLinks = apiResponse?.header?.socialLinks;
 
     const socialIcons = {
         github: IconGithub,
@@ -23,7 +24,7 @@ export default function () {
     return (
         <Button.Wrapper as='span' ease='1st' className='ui-round-1st'>
 
-            {apiResponse?.header?.socialLinks.map((item: SocialLinksProps) => (
+            {socialLinks.map((item: SocialLinksProps) => (
                 <Button key={item.title} square ghost noease title={item.title} href={item.url} target='_blank' rel='nofollow'>
                     <SvgIcon as='js' src={socialIcons[item.icon as string]} />
                 </Button>

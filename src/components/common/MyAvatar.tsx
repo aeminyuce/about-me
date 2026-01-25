@@ -9,14 +9,14 @@ export default function () {
     const general = apiResponse?.general;
 
     const profileImage = general?.profileImage;
-    const fullName = general?.fullName;
-    const jobTitle = general?.jobTitle;
+    const fullName = general?.fullName || '';
+    const jobTitle = general?.jobTitle || '';
 
     return (
         <>
         {profileImage &&
             <Avatar size='lg' className='ui-circle'>
-                <img src={`/images/${profileImage}`} alt={`${fullName || '' + jobTitle ? ` | ${jobTitle}` : ''}`} />
+                <img src={`/images/${profileImage}`} alt={`${fullName} | ${jobTitle}`} />
             </Avatar>
         }
         </>

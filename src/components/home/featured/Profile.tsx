@@ -32,7 +32,7 @@ export default function() {
             }
 
             <div className='ui-align-c'>
-                {info?.name || ''}
+                {info?.name}
                 {email &&
                     <div className='ui-color-black-50 ui-font-11 ui-m-10-b'>
                         {email}

@@ -8,12 +8,13 @@ import { useStoreContext } from '../../states/StoreContext';
 
 export default function () {
     const { apiResponse } = useStoreContext();
+    const headerLinks = apiResponse?.header?.headerLinks;
 
     return (
         <nav aria-label='Main site navigation' className='ui-hidden-md'>
             <Button.Wrapper as='span' ease='1st' className='ui-sidebar-add-l ui-md-align-l ui-round-1st'>
 
-                {apiResponse?.header?.headerLinks.map((item: HeaderLinksProps) => {
+                {headerLinks.map((item: HeaderLinksProps) => {
                     const isModal = item.modal ? () => ShowGetInTouch() : null;
 
                     return (

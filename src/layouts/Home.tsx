@@ -14,7 +14,6 @@ import '../assets/home.less';
 
 export default function () {
     const { apiResponse } = useStoreContext();
-
     const home = apiResponse?.home;
 
     return (

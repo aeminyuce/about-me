@@ -25,15 +25,15 @@ const Report = (props: any) => {
 
     return (
         <Card className={`ui-p-15 ui-shadow ui-round-${type}`}>
-            {(name || reports) &&
+            {(name && reports) &&
                 <Grid.Static fluid='no' className='ui-font-condensed'>
                     <Grid.Row hGap='no' vGap='md'>
                         <Grid.Col size={12} className='ui-font-16 ui-m-10-b'>
-                            {name || ''}
+                            {name}
                         </Grid.Col>
                     </Grid.Row>
                     <Grid.Col size={100} className='ui-font-38 ui-align-r ui-p-15-t'>
-                        {reports || 0}
+                        {reports}
                     </Grid.Col>
                 </Grid.Static>
             }

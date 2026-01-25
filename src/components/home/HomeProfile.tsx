@@ -22,6 +22,8 @@ export default function () {
     const aboutMe = apiResponse?.home?.aboutMe;
     const location = aboutMe?.location;
 
+    const personalSkills = apiResponse?.home?.aboutMe?.personalSkills;
+
     return (
         <Grid.Row fluid='sm' hGap='lg' className='ui-m-15-v'>
             <Grid.Col size={5} md={2} className='ui-align-r ui-sm-align-c'>
@@ -49,7 +51,7 @@ export default function () {
 
                 {aboutMe?.getInTouchText &&
                     <>
-                    {apiResponse?.home?.aboutMe?.personalSkills && <PersonalSkills />}
+                    {personalSkills && <PersonalSkills />}
                     <GetInTouchButtons />
                     </>
                 }
