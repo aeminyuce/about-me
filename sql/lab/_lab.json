@@ -12,7 +12,10 @@
             {
                 "to": "avatars",
                 "name": "Avatars",
-                "titles": null
+                "titles": [
+                    "Avatar Variants",
+                    "Avatar Groups"
+                ]
             },
             {
                 "to": "breadcrumbs",
@@ -22,7 +25,12 @@
             {
                 "to": "buttons",
                 "name": "Buttons",
-                "titles": null
+                "titles": [
+                    "Button Variants",
+                    "Button List",
+                    "Button Holder",
+                    "Pagination"
+                ]
             },
             {
                 "to": "calendar",

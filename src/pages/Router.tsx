@@ -20,6 +20,7 @@ const LabIntro = lazy(() => import( /* webpackChunkName: "lab/Intro" */ "./lab/I
 const LabAlerts = lazy(() => import( /* webpackChunkName: "lab/Alerts" */ "./lab/Alerts" ));
 const LabAvatars = lazy(() => import( /* webpackChunkName: "lab/Avatars" */ "./lab/Avatars" ));
 const LabBreadcrumbs = lazy(() => import( /* webpackChunkName: "lab/Breadcrumbs" */ "./lab/Breadcrumbs" ));
+const LabButtons= lazy(() => import( /* webpackChunkName: "lab/LabButtons" */ "./lab/Buttons" ));
 
 export default function () {
     return (
@@ -44,13 +45,16 @@ export default function () {
                         <PageTitle title='Lab'><LabIntro /></PageTitle>}
                     />
                     <Route path='alerts' element={
-                        <PageTitle title='Lab | Alerts'><LabAlerts /></PageTitle>
+                        <PageTitle title='Alerts | Lab'><LabAlerts /></PageTitle>
                     }/>
                     <Route path='avatars' element={
-                        <PageTitle title='Lab | Avatars'><LabAvatars /></PageTitle>
+                        <PageTitle title='Avatars | Lab'><LabAvatars /></PageTitle>
                     }/>
                     <Route path='breadcrumbs' element={
-                        <PageTitle title='Lab | LabBreadcrumbs'><LabBreadcrumbs /></PageTitle>
+                        <PageTitle title='Breadcrumbs | Lab'><LabBreadcrumbs /></PageTitle>
+                    }/>
+                    <Route path='buttons' element={
+                        <PageTitle title='Buttons | Lab'><LabButtons /></PageTitle>
                     }/>
 
                 </Route>
