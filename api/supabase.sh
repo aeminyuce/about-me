@@ -6,7 +6,7 @@ read -s -p "Enter Supabase DB password: " DB_PASSWORD
 echo ""
 
 CONN_STRING="postgresql://postgres.gllsrbnehuxttusfghrn:${DB_PASSWORD}@aws-1-ap-south-1.pooler.supabase.com:5432/postgres"
-BACKUP_FILE="./api/_backup.sql"
+BACKUP_FILE="./api/backup.sql"
 
 case "$1" in
   --backup)
