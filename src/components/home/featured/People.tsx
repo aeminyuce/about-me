@@ -48,7 +48,7 @@ export const People = () => {
             <ListGroup className={`ui-round-t ui-scroll-v ui-scrollbar-round ui-scrollbar-faded${setScrollOuter}`}>
                 <ListGroup.List avatarSize='xs'>
 
-                    {peopleList?.map((item: PeopleListProps) => {
+                    {peopleList.map((item: PeopleListProps) => {
                         const avatarText = item.avatarText;
                         const avatar = item.avatar;
                         const jobTitle = item.jobTitle;

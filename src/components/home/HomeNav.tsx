@@ -75,7 +75,7 @@ const NavMobileLinks = () => {
         <Carousel start={start} sm={3} xs={2}>
             <Carousel.Slider className='ui-ease-2nd-btn ui-round-2nd'>
 
-                {navLinks?.map((item: HomeNavLinksProps) => {
+                {navLinks.map((item: HomeNavLinksProps) => {
                     const selected = item.to === pathname;
 
                     return (
