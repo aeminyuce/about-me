@@ -9,7 +9,9 @@
     "dev": "webpack serve --mode development",
     "update": "npm update",
     "update-uilab": "node ../uilab/inject-latest.js && npm i uilab",
-    "update-uilab-icons": "node ../uilab-icons/inject-latest.js && npm i uilab-icons"
+    "update-uilab-icons": "node ../uilab-icons/inject-latest.js && npm i uilab-icons",
+    "api-backup": "bash ./api/supabase.sh --backup",
+    "api-restore": "bash ./api/supabase.sh --restore"
   },
   "keywords": [],
   "author": "",
