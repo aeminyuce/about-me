@@ -12,11 +12,11 @@ import { IconHome } from 'uilab-icons/react/general/home';
 import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
 
 export default function () {
-    const { theme, apiResponse } = useStoreContext();
+    const { theme, api } = useStoreContext();
 
-    const item1 = apiResponse?.home_featured?.nav?.item1;
-    const item2 = apiResponse?.home_featured?.nav?.item2;
-    const item3 = apiResponse?.home_featured?.nav?.item3;
+    const item1 = api?.home_featured?.nav?.item1;
+    const item2 = api?.home_featured?.nav?.item2;
+    const item3 = api?.home_featured?.nav?.item3;
 
     return (
         <Card className={`ui-align-c ui-p-15 ui-round ui-shadow ${theme}`}>

@@ -8,8 +8,8 @@ import { useStoreContext } from '../../states/StoreContext';
 import { IconSoundwave } from 'uilab-icons/react/media/soundwave';
 
 export const LeadText = () => {
-    const { apiResponse } = useStoreContext();
-    const leadText = apiResponse?.lab?.intro?.leadText;
+    const { api } = useStoreContext();
+    const leadText = api?.lab?.intro?.leadText;
 
     return (
         <div className='ui-p-30 ui-sm-no-p ui-theme-yellowOrange ui-text'>
@@ -22,8 +22,8 @@ export const LeadText = () => {
 }
 
 export const Paragraphs = () => {
-    const { apiResponse } = useStoreContext();
-    const intro = apiResponse?.lab?.intro;
+    const { api } = useStoreContext();
+    const intro = api?.lab?.intro;
 
     const textPart1 = intro?.textPart1;
     const textPart2 = intro?.textPart2;

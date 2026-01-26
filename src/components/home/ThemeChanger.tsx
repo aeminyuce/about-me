@@ -11,8 +11,8 @@ import { useStoreContext } from '../../states/StoreContext';
 import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
 
 export default function () {
-    const { theme, setTheme, apiResponse } = useStoreContext();
-    const themeList = apiResponse?.home?.nav?.themeList;
+    const { theme, setTheme, api } = useStoreContext();
+    const themeList = api?.home?.nav?.themeList;
 
     return (
         <Dropdown align='l'>

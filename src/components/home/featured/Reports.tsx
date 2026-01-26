@@ -12,10 +12,10 @@ import { useStoreContext } from '../../../states/StoreContext';
 import type { ReportsListProps } from '../../../models/Home_Featured';
 
 const Report = (props: any) => {
-    const { apiResponse } = useStoreContext();
+    const { api } = useStoreContext();
     const { type } = props;
 
-    const reportsData = apiResponse?.home_featured?.reports;
+    const reportsData = api?.home_featured?.reports;
     const getData = reportsData[type];
 
     const name = getData?.name;
@@ -91,9 +91,9 @@ const ReportsListGroup = (props: any) => {
 }
 
 export const ReportsList = () => {
-    const { apiResponse } = useStoreContext();
+    const { api } = useStoreContext();
 
-    const reportsList = apiResponse?.home_featured?.reportsList;
+    const reportsList = api?.home_featured?.reportsList;
     const delayed = reportsList?.delayed;
     const paused = reportsList?.paused;
 

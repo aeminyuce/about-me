@@ -14,8 +14,8 @@ import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
 import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
 export const HeaderLeftSidebar = () => {
-    const { apiResponse } = useStoreContext();
-    const sidebarTitle = apiResponse?.general?.fullName;
+    const { api } = useStoreContext();
+    const sidebarTitle = api?.general?.fullName;
 
     return (
         <Sidebar pos='l' className='ui-round'>
@@ -43,8 +43,8 @@ export const ToggleHeaderLeftSidebar = () => {
 }
 
 export const HeaderRightSidebar = () => {
-    const { apiResponse } = useStoreContext();
-    const sidebarTitle = apiResponse?.lab?.sidebarTitle;
+    const { api } = useStoreContext();
+    const sidebarTitle = api?.lab?.sidebarTitle;
 
     return (
         <Sidebar pos='r' className='ui-round'>

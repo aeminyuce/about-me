@@ -12,8 +12,8 @@ import { useStoreContext } from '../states/StoreContext';
 import '../assets/lab.less';
 
 export default function () {
-    const { apiResponse } = useStoreContext();
-    const menu = apiResponse?.lab?.menu;
+    const { api } = useStoreContext();
+    const menu = api?.lab?.menu;
 
     return (
         <>

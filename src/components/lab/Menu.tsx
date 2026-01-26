@@ -13,8 +13,8 @@ import { scrollToHash, clearSpaces } from '../../helpers/Lab';
 export default function() {
     const { pathname, hash } = useLocation();
 
-    const { apiResponse } = useStoreContext();
-    const menu = apiResponse?.lab?.menu;
+    const { api } = useStoreContext();
+    const menu = api?.lab?.menu;
 
     return (
         <Card className='ui-color-black-50 ui-p-15 ui-round ui-shadow ui-set-sticky ui-hidden-md'>

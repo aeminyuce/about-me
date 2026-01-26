@@ -7,8 +7,8 @@ import { useStoreContext } from '../../states/StoreContext';
 import type { IntroImagesProps } from '../../models/Lab';
 
 export default function IntroImages() {
-    const { apiResponse } = useStoreContext();
-    const images = apiResponse?.lab?.intro?.images;
+    const { api } = useStoreContext();
+    const images = api?.lab?.intro?.images;
 
     return (
         <Grid.Row fluid='no' gap='sm' className='images ui-m-auto ui-p-30-t ui-m-30-v ui-block-2nd ui-round-2nd ui-shadow-2nd ui-hover-shadow-2nd ui-hover-scale-more-2nd ui-ease-2nd-layout'>

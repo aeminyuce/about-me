@@ -12,8 +12,8 @@ import { IconGithub } from 'uilab-icons/react/social/github';
 import { IconLinkedin } from 'uilab-icons/react/social/linkedin';
 
 export default function () {
-    const { apiResponse } = useStoreContext();
-    const socialLinks = apiResponse?.header?.socialLinks;
+    const { api } = useStoreContext();
+    const socialLinks = api?.header?.socialLinks;
 
     const socialIcons = {
         github: IconGithub,

@@ -5,8 +5,8 @@ import Avatar from 'uilab/react/Avatar';
 import { useStoreContext } from '../../states/StoreContext';
 
 export default function () {
-    const { apiResponse } = useStoreContext();
-    const general = apiResponse?.general;
+    const { api } = useStoreContext();
+    const general = api?.general;
 
     const profileImage = general?.profileImage;
     const fullName = general?.fullName || '';

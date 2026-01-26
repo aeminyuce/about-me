@@ -6,8 +6,8 @@ import Grid from 'uilab/react/Grid';
 import { useStoreContext } from '../../states/StoreContext';
 
 export default function () {
-    const { apiResponse } = useStoreContext();
-    const personalSkills = apiResponse?.home?.aboutMe?.personalSkills;
+    const { api } = useStoreContext();
+    const personalSkills = api?.home?.aboutMe?.personalSkills;
 
     return (
         <Grid.Row fluid='sm' className='ui-m-15-b ui-m-10-t'>

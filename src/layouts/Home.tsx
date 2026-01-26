@@ -13,8 +13,8 @@ import { useStoreContext } from '../states/StoreContext';
 import '../assets/home.less';
 
 export default function () {
-    const { apiResponse } = useStoreContext();
-    const home = apiResponse?.home;
+    const { api } = useStoreContext();
+    const home = api?.home;
 
     return (
         <>

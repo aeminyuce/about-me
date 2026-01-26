@@ -23,8 +23,8 @@ const updateStoreContext = (state: any, action: any) => {
 			// fetch page data
 			return {
 				...state,
-				apiResponse: {
-					...state.apiResponse,
+				api: {
+					...state.api,
 					...action.result,
 				},
 			};
@@ -34,8 +34,8 @@ const updateStoreContext = (state: any, action: any) => {
 			// fetch data from other pages
 			return {
 				...state,
-				apiResponse: {
-					...state.apiResponse,
+				api: {
+					...state.api,
 
 					// home
 					...(action.type === HOME_DATA && { home: action.result }),

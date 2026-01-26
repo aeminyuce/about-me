@@ -16,8 +16,8 @@ import { IconUserPlus } from 'uilab-icons/react/general/user-plus';
 import { IconAngleRight} from 'uilab-icons/react/general/angle-right';
 
 export const People = () => {
-    const { apiResponse } = useStoreContext();
-    const people = apiResponse?.home_featured?.people;
+    const { api } = useStoreContext();
+    const people = api?.home_featured?.people;
 
     const peopleList = people?.list;
     const addPeople = people?.addPeople;
@@ -81,9 +81,9 @@ export const People = () => {
 }
 
 export const PeopleMore = () => {
-    const { apiResponse } = useStoreContext();
+    const { api } = useStoreContext();
 
-    const peopleMore = apiResponse?.home_featured?.peopleMore;
+    const peopleMore = api?.home_featured?.peopleMore;
     const moreCount = peopleMore?.moreCount;
 
     return (

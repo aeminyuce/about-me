@@ -5,8 +5,8 @@ import Grid from 'uilab/react/Grid';
 import { useStoreContext } from '../../states/StoreContext';
 
 export default function () {
-    const { apiResponse } = useStoreContext();
-    const myFocus = apiResponse?.home?.aboutMe?.myFocus;
+    const { api } = useStoreContext();
+    const myFocus = api?.home?.aboutMe?.myFocus;
 
     return (
         <Grid.Row>

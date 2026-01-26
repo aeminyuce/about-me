@@ -13,9 +13,9 @@ import { useStoreContext } from '../../../states/StoreContext';
 import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
 
 export default function() {
-    const { apiResponse } = useStoreContext();
+    const { api } = useStoreContext();
 
-    const calendar = apiResponse?.home_featured?.calendar;
+    const calendar = api?.home_featured?.calendar;
     const settings = calendar?.settings;
     const cardTitle = calendar?.cardTitle;
     const calendarEvents = calendar?.eventsDate;

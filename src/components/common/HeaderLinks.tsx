@@ -7,8 +7,8 @@ import { ShowGetInTouch } from './GetInTouchModal';
 import { useStoreContext } from '../../states/StoreContext';
 
 export default function () {
-    const { apiResponse } = useStoreContext();
-    const headerLinks = apiResponse?.header?.headerLinks;
+    const { api } = useStoreContext();
+    const headerLinks = api?.header?.headerLinks;
 
     return (
         <nav aria-label='Main site navigation' className='ui-hidden-md'>

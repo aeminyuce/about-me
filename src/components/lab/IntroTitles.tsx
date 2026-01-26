@@ -5,8 +5,8 @@ import Heading from 'uilab/react/Heading';
 import { useStoreContext } from '../../states/StoreContext';
 
 export const Title = () => {
-    const { apiResponse } = useStoreContext();
-    const title = apiResponse?.lab?.intro?.title;
+    const { api } = useStoreContext();
+    const title = api?.lab?.intro?.title;
 
     return (
         <Heading as='h1' className='ui-font-light ui-font-48 ui-m-30-v'>
@@ -16,8 +16,8 @@ export const Title = () => {
 }
 
 export const SubTitle = () => {
-    const { apiResponse } = useStoreContext();
-    const subTitle = apiResponse?.lab?.intro?.subTitle;
+    const { api } = useStoreContext();
+    const subTitle = api?.lab?.intro?.subTitle;
 
     return (
         <Heading as='h3' className='ui-font-36 ui-m-30-b ui-theme-greenYellow ui-text'>

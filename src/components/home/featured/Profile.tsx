@@ -10,9 +10,9 @@ import type { UserActivityProps } from '../../../models/Home_Featured';
 import Button from 'uilab/react/Button';
 
 export default function() {
-    const { apiResponse } = useStoreContext();
+    const { api } = useStoreContext();
 
-    const profile = apiResponse?.home_featured?.profile;
+    const profile = api?.home_featured?.profile;
     const info = profile?.info;
     const userActivity = profile?.userActivity;
 

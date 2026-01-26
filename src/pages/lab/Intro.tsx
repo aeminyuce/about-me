@@ -9,8 +9,8 @@ import IntroImages from '../../components/lab/IntroImages';
 import { LeadText, Paragraphs } from '../../components/lab/IntroTexts';
 
 export default function() {
-    const { apiResponse } = useStoreContext();
-    const intro = apiResponse?.lab?.intro;
+    const { api } = useStoreContext();
+    const intro = api?.lab?.intro;
 
     const title = intro?.title;
     const subTitle = intro?.subTitle;

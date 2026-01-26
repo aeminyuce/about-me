@@ -13,16 +13,16 @@ import PersonalSkills from './PersonalSkills';
 import { IconMarker } from 'uilab-icons/react/general/marker';
 
 export default function () {
-    const { apiResponse } = useStoreContext();
+    const { api } = useStoreContext();
 
-    const general = apiResponse?.general;
+    const general = api?.general;
     const fullName = general?.fullName;
     const jobTitle = general?.jobTitle;
 
-    const aboutMe = apiResponse?.home?.aboutMe;
+    const aboutMe = api?.home?.aboutMe;
     const location = aboutMe?.location;
 
-    const personalSkills = apiResponse?.home?.aboutMe?.personalSkills;
+    const personalSkills = api?.home?.aboutMe?.personalSkills;
 
     return (
         <Grid.Row fluid='sm' hGap='lg' className='ui-m-15-v'>

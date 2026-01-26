@@ -13,8 +13,8 @@ import Events from '../../components/home/featured/Events';
 import '../../assets/home/featured.less';
 
 export default function () {
-    const { theme, apiResponse } = useStoreContext();
-    const homeFeatured = apiResponse?.home_featured;
+    const { theme, api } = useStoreContext();
+    const homeFeatured = api?.home_featured;
 
     const nav = homeFeatured?.nav;
     const reports = homeFeatured?.reports;

@@ -15,8 +15,8 @@ export const ShowGetInTouch = () => {
 };
 
 export const GetInTouchButtons = () => {
-    const { apiResponse } = useStoreContext();
-    const getInTouchText = apiResponse?.home?.aboutMe?.getInTouchText;
+    const { api } = useStoreContext();
+    const getInTouchText = api?.home?.aboutMe?.getInTouchText;
 
     return (
         <Button.Wrapper as='div' largeButtons ease='1st' className='ui-circle-1st'>
@@ -31,8 +31,8 @@ export const GetInTouchButtons = () => {
 }
 
 export default function () {
-    const { apiResponse } = useStoreContext();
-    const getInTouch = apiResponse?.header?.getInTouch;
+    const { api } = useStoreContext();
+    const getInTouch = api?.header?.getInTouch;
 
     const qrCodeImage = getInTouch?.qrCodeImage;
     const title = getInTouch?.title;

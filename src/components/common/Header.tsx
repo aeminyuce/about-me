@@ -14,9 +14,9 @@ import { HeaderLeftSidebar, ToggleHeaderLeftSidebar, HeaderRightSidebar, ToggleH
 export default function () {
     const { pathname } = useLocation();
 
-    const { apiResponse } = useStoreContext();
+    const { api } = useStoreContext();
 
-    const headerData = apiResponse?.header;
+    const headerData = api?.header;
     const showRightSidebar = pathname.startsWith('/lab');
 
     return headerData && (

@@ -11,8 +11,8 @@ import { useStoreContext } from '../../states/StoreContext';
 import { mobileNavPosition } from '../../helpers/Home';
 
 export default function () {
-    const { apiResponse } = useStoreContext();
-    const navData = apiResponse?.home?.nav;
+    const { api } = useStoreContext();
+    const navData = api?.home?.nav;
 
     return navData && (
         <Grid.Row className='home-nav ui-p-15-b ui-m-15-b ui-border-b ui-border-light'>
@@ -45,9 +45,9 @@ export default function () {
 
 const NavDesktopLinks = () => {
     const { pathname } = useLocation();
-    const { apiResponse } = useStoreContext();
+    const { api } = useStoreContext();
 
-    const navLinks = apiResponse?.home?.nav?.navLinks;
+    const navLinks = api?.home?.nav?.navLinks;
 
     return (
         <>
@@ -66,9 +66,9 @@ const NavDesktopLinks = () => {
 
 const NavMobileLinks = () => {
     const { pathname } = useLocation();
-    const { apiResponse } = useStoreContext();
+    const { api } = useStoreContext();
 
-    const navLinks = apiResponse?.home?.nav?.navLinks;
+    const navLinks = api?.home?.nav?.navLinks;
     const start = mobileNavPosition(navLinks, pathname);
 
     return (
