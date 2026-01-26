@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Avatar from 'uilab/react/Avatar';
-import Breadcrumbs from 'uilab/react/Breadcrumbs';
 import Heading from 'uilab/react/Heading';
 import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
@@ -9,6 +8,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 import Description from '../../components/common/Description';
 import Preview from '../../components/common/Preview';
 import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
+import { headings } from '../../helpers/Lab';
 
 // assets
 import { IconUser } from 'uilab-icons/react/general/user';
@@ -17,13 +17,26 @@ import { IconFire } from 'uilab-icons/react/general/fire';
 import { IconStore } from 'uilab-icons/react/commerce/store';
 
 export default function () {
-    // image paths
-    const profileImage1 = '/images/profile-image1.jpg';
-    const profileImage2 = '/images/profile-image2.jpg';
-    const profileImage3 = '/images/profile-image3.jpg';
-    const profileImage4 = '/images/profile-image4.jpg';
-    const profileImage5 = '/images/profile-image5.jpg';
-    const profileImage6 = '/images/profile-image6.jpg';
+    const title = headings('avatars');
+
+    const desc = {};
+    const text = {};
+
+    const img = [
+        'profile-image1.jpg',
+        'profile-image2.jpg',
+        'profile-image3.jpg',
+        'profile-image4.jpg',
+        'profile-image5.jpg',
+        'profile-image6.jpg',
+    ];
+
+    const img1 = `/images/${img[0]}`;
+    const img2 = `/images/${img[1]}`;
+    const img3 = `/images/${img[2]}`;
+    const img4 = `/images/${img[3]}`;
+    const img5 = `/images/${img[4]}`;
+    const img6 = `/images/${img[5]}`;
 
     // classes
     const wrapperClasses = 'ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout';
@@ -34,20 +47,20 @@ export default function () {
     const countHolderBorderClasses = `${countHolderClasses} ui-border`;
 
     const avatarClasses = 'ui-m-5-h';
-    const selfAnimatedClasses = 'ui-hover-scale-more ui-hover-shadow';
-    const themedBorderedClasses = 'ui-border ui-border-lg ui-stroke ui-theme-';
+    const selfAnimateClasses = 'ui-hover-scale-more ui-hover-shadow';
+    const themedBorderClasses = 'ui-border ui-border-lg ui-stroke ui-theme-';
     const themeClasses = 'ui-fill-dark-100 ui-theme-';
 
     const textClasses = 'ui-text ui-theme-';
 
     return (
         <>
-        <BreadcrumbsWrapper>
-            <Breadcrumbs.Item seoFriendly pos={'3'}>Avatars</Breadcrumbs.Item>
-        </BreadcrumbsWrapper>
+        <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
+        <Heading as='h1'>{title?.h1}</Heading>
 
-        <Heading as='h1'>Avatars</Heading>
-        <Heading as='h3' id='AvatarVariants'>Avatar Variants</Heading>
+        <Heading as='h3' id={title?.hash[0]}>
+            {title?.h3[0]}
+        </Heading>
 
         <Description>
             Circular avatars come in multiple sizes and are typically used for profile images. The avatars animate when hovered with the mouse.
@@ -55,16 +68,16 @@ export default function () {
         <Preview>
             <div className={circleClasses}>
                 <Avatar noease size='xs' className={avatarClasses}>
-                    <img src={profileImage1} />
+                    <img src={img1} />
                 </Avatar>
                 <Avatar noease size='sm' className={avatarClasses}>
-                    <img src={profileImage2} />
+                    <img src={img2} />
                 </Avatar>
                 <Avatar noease className={avatarClasses}>
-                    <img src={profileImage3} />
+                    <img src={img3} />
                 </Avatar>
                 <Avatar noease size='lg' className={avatarClasses}>
-                    <img src={profileImage4} />
+                    <img src={img4} />
                 </Avatar>
             </div>
         </Preview>
@@ -75,16 +88,16 @@ export default function () {
         <Preview>
             <div className={roundClasses}>
                 <Avatar noease size='xs' className={avatarClasses}>
-                    <img src={profileImage3} />
+                    <img src={img3} />
                 </Avatar>
                 <Avatar noease size='sm' className={avatarClasses}>
-                    <img src={profileImage4} />
+                    <img src={img4} />
                 </Avatar>
                 <Avatar noease className={avatarClasses}>
-                    <img src={profileImage5} />
+                    <img src={img5} />
                 </Avatar>
                 <Avatar noease size='lg' className={avatarClasses}>
-                    <img src={profileImage6} />
+                    <img src={img6} />
                 </Avatar>
             </div>
         </Preview>
@@ -176,7 +189,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease className={avatarClasses}>
                     <a href='#'>
-                        <img src={profileImage3} />
+                        <img src={img3} />
                     </a>
                 </Avatar>
                 <Avatar noease className={avatarClasses}>
@@ -186,13 +199,15 @@ export default function () {
                 </Avatar>
                 <Avatar noease className={avatarClasses}>
                     <a href='#'>
-                        <img src={profileImage6} />
+                        <img src={img6} />
                     </a>
                 </Avatar>
             </div>
         </Preview>
 
-        <Heading as='h3' id='AvatarGroups'>Avatar Groups</Heading>
+        <Heading as='h3' id={title?.hash[1]}>
+            {title?.h3[1]}
+        </Heading>
 
         <Description>
             Avatar groups are ideal for displaying multiple avatars together.
@@ -206,16 +221,16 @@ export default function () {
                     <span>AEY</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={profileImage3} />
+                    <img src={img3} />
                 </Avatar>
                 <Avatar noease>
-                    <img src={profileImage4} />
+                    <img src={img4} />
                 </Avatar>
                 <Avatar noease className={`${themeClasses}purpleBlue`}>
                     <span>L</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={profileImage6} />
+                    <img src={img6} />
                 </Avatar>
             </Avatar.Holder>
         </Preview>
@@ -237,7 +252,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <img src={profileImage4} />
+                        <img src={img4} />
                     </a>
                 </Avatar>
                 <Avatar noease className={`${themeClasses}purpleBlue`}>
@@ -247,7 +262,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <img src={profileImage6} />
+                        <img src={img6} />
                     </a>
                 </Avatar>
                 <Avatar noease>
@@ -267,16 +282,16 @@ export default function () {
                     <span>AEY</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={profileImage2} />
+                    <img src={img2} />
                 </Avatar>
                 <Avatar noease>
-                    <img src={profileImage4} />
+                    <img src={img4} />
                 </Avatar>
                 <Avatar noease className={`${themeClasses}redPurple`}>
                     <span>HY</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={profileImage5} />
+                    <img src={img5} />
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
@@ -294,14 +309,14 @@ export default function () {
                 <span className='ui-m-30-r ui-inline-block'>
                     Written by
                 </span>
-                <Avatar size='sm' title='Claire' data={{ 'tooltip': 't' }} className={`${selfAnimatedClasses} ${themedBorderedClasses}yellow`}>
-                    <img src={profileImage6} />
+                <Avatar size='sm' title='Claire' data={{ 'tooltip': 't' }} className={`${selfAnimateClasses} ${themedBorderClasses}yellow`}>
+                    <img src={img6} />
                 </Avatar>
-                <Avatar size='sm' title='Matthew' data={{ 'tooltip': 't' }} className={`${selfAnimatedClasses} ${themedBorderedClasses}orangeRed`}>
-                    <img src={profileImage3} />
+                <Avatar size='sm' title='Matthew' data={{ 'tooltip': 't' }} className={`${selfAnimateClasses} ${themedBorderClasses}orangeRed`}>
+                    <img src={img3} />
                 </Avatar>
-                 <Avatar size='sm' title='Tom' data={{ 'tooltip': 't' }} className={`${selfAnimatedClasses} ${themedBorderedClasses}green`}>
-                    <img src={profileImage1} />
+                 <Avatar size='sm' title='Tom' data={{ 'tooltip': 't' }} className={`${selfAnimateClasses} ${themedBorderClasses}green`}>
+                    <img src={img1} />
                 </Avatar>
                 <span className='ui-m-10-l ui-inline-block'>
                     is shown below:
