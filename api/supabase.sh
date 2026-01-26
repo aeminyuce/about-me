@@ -1,18 +1,13 @@
 #!/bin/bash
+# Backup and restore DB for supabase
 
 set -e
-
-# Ask for password (hidden input)
 read -s -p "Enter Supabase DB password: " DB_PASSWORD
 echo ""
 
-# Build connection string dynamically
 CONN_STRING="postgresql://postgres.gllsrbnehuxttusfghrn:${DB_PASSWORD}@aws-1-ap-south-1.pooler.supabase.com:5432/postgres"
-
-# Backup file path
 BACKUP_FILE="./api/_backup.sql"
 
-# Parse CLI argument
 case "$1" in
   --backup)
     echo "Starting backup..."
