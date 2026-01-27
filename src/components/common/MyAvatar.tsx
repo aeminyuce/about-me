@@ -3,6 +3,7 @@ import Avatar from 'uilab/react/Avatar';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
+import { getImg } from '../../helpers/General';
 
 export default function () {
     const { api } = useStoreContext();
@@ -16,7 +17,7 @@ export default function () {
         <>
         {profileImage &&
             <Avatar size='lg' className='ui-circle'>
-                <img src={`/images/${profileImage}`} alt={`${fullName} | ${jobTitle}`} />
+                <img src={getImg(profileImage)} alt={`${fullName} | ${jobTitle}`} />
             </Avatar>
         }
         </>

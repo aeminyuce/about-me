@@ -6,6 +6,7 @@ import Notifier from 'uilab/react/Notifier';
 
 // misc
 import { useStoreContext } from '../../../states/StoreContext';
+import { getImg } from '../../../helpers/General';
 import type { UserActivityProps } from '../../../models/Home_Featured';
 import Button from 'uilab/react/Button';
 
@@ -25,7 +26,7 @@ export default function() {
                 <div className='ui-align-c ui-round-t ui-border-b ui-stroke ui-fill-light-100'>
                     <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
                         <Avatar size='lg'>
-                            <img src={`/images/${info?.avatar}`} />
+                            <img src={getImg(info?.avatar)} />
                         </Avatar>
                     </Notifier>
                 </div>

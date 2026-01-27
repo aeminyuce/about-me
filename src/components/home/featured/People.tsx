@@ -9,6 +9,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../../states/StoreContext';
+import { getImg } from '../../../helpers/General';
 import type { PeopleListProps, PeopleMoreListProps } from '../../../models/Home_Featured';
 
 // assets
@@ -62,7 +63,7 @@ export const People = () => {
                                     <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
                                     {(avatar && avatarText) &&
                                         <Avatar size='xs' className={classes}>
-                                            <img src={`/images/${avatar}`} />
+                                            <img src={getImg(avatar)} />
                                             <span>{avatarText}</span>
                                         </Avatar>
                                     }
@@ -100,7 +101,7 @@ export const PeopleMore = () => {
                         <Fragment key={item.jobTitle}>
                             {(avatar && avatarText) &&
                                 <Avatar noease size='xs' className={classes}>
-                                    <img src={`/images/${avatar}`} />
+                                    <img src={getImg(avatar)} />
                                     <span>{avatarText}</span>
                                 </Avatar>
                             }
