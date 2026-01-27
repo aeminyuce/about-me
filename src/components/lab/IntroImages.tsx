@@ -5,6 +5,7 @@ import Grid from 'uilab/react/Grid';
 // misc
 import { useStoreContext } from '../../states/StoreContext';
 import type { IntroImagesProps } from '../../models/Lab';
+import { getImg } from '../../helpers/General';
 
 export default function IntroImages() {
     const { api } = useStoreContext();
@@ -16,7 +17,7 @@ export default function IntroImages() {
             {images.map((item: IntroImagesProps) => (
                 <Grid.Col key={item.img} size={'7x'} sm={3} xs={3}>
                     <Button noease nostyle href={`https://dribbble.com/shots/${item.url}`} target='_blank'>
-                        <img className='ui-img-fluid' src={`/images/lab/aeminyuce-${item.img}`} />
+                        <img className='ui-img-fluid' src={getImg(`lab/aeminyuce-${item.img}`)} />
                     </Button>
                 </Grid.Col>
             ))}

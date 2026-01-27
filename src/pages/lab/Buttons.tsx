@@ -20,6 +20,11 @@ export default function () {
     const desc = {};
     const text = {};
 
+    // classes
+    const button = {
+        base: '',
+    };
+
     return (
         <>
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>

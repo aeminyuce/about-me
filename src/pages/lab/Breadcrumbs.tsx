@@ -32,6 +32,10 @@ export default function () {
     }
 
     // classes
+    const breadcrumb = {
+        base: '',
+    };
+
     const colorWrapperClasses = 'ui-color-black-25';
     const circleWrapperClasses = 'ui-circle-2nd';
     const roundWrapperClasses = 'ui-round-2nd';

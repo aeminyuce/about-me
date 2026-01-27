@@ -5,10 +5,11 @@ import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
+import { getImg } from '../../helpers/General';
+import { headings } from '../../helpers/Lab';
 import Description from '../../components/common/Description';
 import Preview from '../../components/common/Preview';
 import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
-import { headings } from '../../helpers/Lab';
 
 // assets
 import { IconUser } from 'uilab-icons/react/general/user';
@@ -23,35 +24,30 @@ export default function () {
     const text = {};
 
     const img = [
-        'profile-image1.jpg',
-        'profile-image2.jpg',
-        'profile-image3.jpg',
-        'profile-image4.jpg',
-        'profile-image5.jpg',
-        'profile-image6.jpg',
+        getImg('profile-image1.jpg'),
+        getImg('profile-image2.jpg'),
+        getImg('profile-image3.jpg'),
+        getImg('profile-image4.jpg'),
+        getImg('profile-image5.jpg'),
+        getImg('profile-image6.jpg'),
     ];
 
-    const img1 = `/images/${img[0]}`;
-    const img2 = `/images/${img[1]}`;
-    const img3 = `/images/${img[2]}`;
-    const img4 = `/images/${img[3]}`;
-    const img5 = `/images/${img[4]}`;
-    const img6 = `/images/${img[5]}`;
-
     // classes
-    const wrapperClasses = 'ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout';
-    const circleClasses = `${wrapperClasses} ui-circle-1st`;
-    const roundClasses = `${wrapperClasses} ui-round-1st`;
+    const wrap = 'ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout';
+    const count = `${wrap} ui-p-5 ui-circle ui-circle-1st`;
 
-    const countHolderClasses = `${wrapperClasses} ui-p-5 ui-circle ui-circle-1st`;
-    const countHolderBorderClasses = `${countHolderClasses} ui-border`;
-
-    const avatarClasses = 'ui-m-5-h';
-    const selfAnimateClasses = 'ui-hover-scale-more ui-hover-shadow';
-    const themedBorderClasses = 'ui-border ui-border-lg ui-stroke ui-theme-';
-    const themeClasses = 'ui-fill-dark-100 ui-theme-';
-
-    const textClasses = 'ui-text ui-theme-';
+    const avatar = {
+        wrap: wrap,
+        circle: `${wrap} ui-circle-1st`,
+        round: `${wrap} ui-round-1st`,
+        count: count,
+        countBorder: `${count} ui-border`,
+        marginH: 'ui-m-5-h',
+        animate: 'ui-hover-scale-more ui-hover-shadow',
+        theme: 'ui-fill-dark-100 ui-theme-',
+        border: 'ui-border ui-border-lg ui-stroke ui-theme-',
+        text: 'ui-text ui-theme-',
+    };
 
     return (
         <>
@@ -66,18 +62,18 @@ export default function () {
             Circular avatars come in multiple sizes and are typically used for profile images. The avatars animate when hovered with the mouse.
         </Description>
         <Preview>
-            <div className={circleClasses}>
-                <Avatar noease size='xs' className={avatarClasses}>
-                    <img src={img1} />
+            <div className={avatar.circle}>
+                <Avatar noease size='xs' className={avatar.marginH}>
+                    <img src={img[0]} />
                 </Avatar>
-                <Avatar noease size='sm' className={avatarClasses}>
-                    <img src={img2} />
+                <Avatar noease size='sm' className={avatar.marginH}>
+                    <img src={img[1]} />
                 </Avatar>
-                <Avatar noease className={avatarClasses}>
-                    <img src={img3} />
+                <Avatar noease className={avatar.marginH}>
+                    <img src={img[2]} />
                 </Avatar>
-                <Avatar noease size='lg' className={avatarClasses}>
-                    <img src={img4} />
+                <Avatar noease size='lg' className={avatar.marginH}>
+                    <img src={img[3]} />
                 </Avatar>
             </div>
         </Preview>
@@ -86,18 +82,18 @@ export default function () {
             Rounded avatars with different sizes.
         </Description>
         <Preview>
-            <div className={roundClasses}>
-                <Avatar noease size='xs' className={avatarClasses}>
-                    <img src={img3} />
+            <div className={avatar.round}>
+                <Avatar noease size='xs' className={avatar.marginH}>
+                    <img src={img[2]} />
                 </Avatar>
-                <Avatar noease size='sm' className={avatarClasses}>
-                    <img src={img4} />
+                <Avatar noease size='sm' className={avatar.marginH}>
+                    <img src={img[3]} />
                 </Avatar>
-                <Avatar noease className={avatarClasses}>
-                    <img src={img5} />
+                <Avatar noease className={avatar.marginH}>
+                    <img src={img[4]} />
                 </Avatar>
-                <Avatar noease size='lg' className={avatarClasses}>
-                    <img src={img6} />
+                <Avatar noease size='lg' className={avatar.marginH}>
+                    <img src={img[5]} />
                 </Avatar>
             </div>
         </Preview>
@@ -106,17 +102,17 @@ export default function () {
             Avatars can be used without an image, in which case they display placeholder text.
         </Description>
         <Preview>
-            <div className={circleClasses}>
-                <Avatar noease size='xs' className={avatarClasses}>
+            <div className={avatar.circle}>
+                <Avatar noease size='xs' className={avatar.marginH}>
                     <span>L</span>
                 </Avatar>
-                <Avatar noease size='sm' className={avatarClasses}>
+                <Avatar noease size='sm' className={avatar.marginH}>
                     <span>EKY</span>
                 </Avatar>
-                <Avatar noease className={avatarClasses}>
+                <Avatar noease className={avatar.marginH}>
                     <span>HY</span>
                 </Avatar>
-                <Avatar noease size='lg' className={avatarClasses}>
+                <Avatar noease size='lg' className={avatar.marginH}>
                     <span>AEY</span>
                 </Avatar>
             </div>
@@ -126,17 +122,17 @@ export default function () {
             Avatars can also display icons instead of images or text.
         </Description>
         <Preview>
-            <div className={roundClasses}>
-                <Avatar noease size='xs' className={avatarClasses}>
+            <div className={avatar.round}>
+                <Avatar noease size='xs' className={avatar.marginH}>
                     <SvgIcon as='js' src={IconUser} />
                 </Avatar>
-                <Avatar noease size='sm' className={avatarClasses}>
+                <Avatar noease size='sm' className={avatar.marginH}>
                     <SvgIcon as='js' src={IconFire} />
                 </Avatar>
-                <Avatar noease className={avatarClasses}>
+                <Avatar noease className={avatar.marginH}>
                     <SvgIcon as='js' src={IconTrees} />
                 </Avatar>
-                <Avatar noease size='lg' className={avatarClasses}>
+                <Avatar noease size='lg' className={avatar.marginH}>
                     <SvgIcon as='js' src={IconStore} />
                 </Avatar>
             </div>
@@ -146,32 +142,32 @@ export default function () {
             Avatars without an image can use custom background colors or theme colors.
         </Description>
         <Preview>
-            <div className={circleClasses}>
-                <Avatar noease size='xs' className={`${avatarClasses} ${themeClasses}yellow`}>
+            <div className={avatar.circle}>
+                <Avatar noease size='xs' className={`${avatar.marginH} ${avatar.theme}yellow`}>
                     <span>L</span>
                 </Avatar>
-                <Avatar noease size='sm' className={`${avatarClasses} ${themeClasses}yellow`}>
+                <Avatar noease size='sm' className={`${avatar.marginH} ${avatar.theme}yellow`}>
                     <span>EKY</span>
                 </Avatar>
-                <Avatar noease className={`${avatarClasses} ${themeClasses}redPurple`}>
+                <Avatar noease className={`${avatar.marginH} ${avatar.theme}redPurple`}>
                     <span>HY</span>
                 </Avatar>
-                <Avatar noease size='lg' className={`${avatarClasses} ${themeClasses}redPurple`}>
+                <Avatar noease size='lg' className={`${avatar.marginH} ${avatar.theme}redPurple`}>
                     <span>AEY</span>
                 </Avatar>
 
                 <Spacer size={10} />
 
-                <Avatar noease size='xs' className={`${avatarClasses} ${themeClasses}purple`}>
+                <Avatar noease size='xs' className={`${avatar.marginH} ${avatar.theme}purple`}>
                     <SvgIcon as='js' src={IconUser} />
                 </Avatar>
-                <Avatar noease size='sm' className={`${avatarClasses} ${themeClasses}purple`}>
+                <Avatar noease size='sm' className={`${avatar.marginH} ${avatar.theme}purple`}>
                     <SvgIcon as='js' src={IconFire} />
                 </Avatar>
-                <Avatar noease className={`${avatarClasses} ${themeClasses}purpleBlue`}>
+                <Avatar noease className={`${avatar.marginH} ${avatar.theme}purpleBlue`}>
                     <SvgIcon as='js' src={IconTrees} />
                 </Avatar>
-                <Avatar noease size='lg' className={`${avatarClasses} ${themeClasses}purpleBlue`}>
+                <Avatar noease size='lg' className={`${avatar.marginH} ${avatar.theme}purpleBlue`}>
                     <SvgIcon as='js' src={IconStore} />
                 </Avatar>
             </div>
@@ -181,25 +177,25 @@ export default function () {
             Avatars can be linked to a URL.
         </Description>
         <Preview>
-            <div className={circleClasses}>
-                <Avatar noease className={avatarClasses}>
+            <div className={avatar.circle}>
+                <Avatar noease className={avatar.marginH}>
                     <a href='#'>
                         <span>AEY</span>
                     </a>
                 </Avatar>
-                <Avatar noease className={avatarClasses}>
+                <Avatar noease className={avatar.marginH}>
                     <a href='#'>
-                        <img src={img3} />
+                        <img src={img[2]} />
                     </a>
                 </Avatar>
-                <Avatar noease className={avatarClasses}>
+                <Avatar noease className={avatar.marginH}>
                     <a href='#'>
                         <span>EKY</span>
                     </a>
                 </Avatar>
-                <Avatar noease className={avatarClasses}>
+                <Avatar noease className={avatar.marginH}>
                     <a href='#'>
-                        <img src={img6} />
+                        <img src={img[5]} />
                     </a>
                 </Avatar>
             </div>
@@ -213,24 +209,24 @@ export default function () {
             Avatar groups are ideal for displaying multiple avatars together.
         </Description>
         <Preview>
-            <Avatar.Holder className={circleClasses}>
-                <Avatar noease className={`${themeClasses}purple`}>
+            <Avatar.Holder className={avatar.circle}>
+                <Avatar noease className={`${avatar.theme}purple`}>
                     <SvgIcon as='js' src={IconUser} />
                 </Avatar>
                 <Avatar noease>
                     <span>AEY</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={img3} />
+                    <img src={img[2]} />
                 </Avatar>
                 <Avatar noease>
-                    <img src={img4} />
+                    <img src={img[3]} />
                 </Avatar>
-                <Avatar noease className={`${themeClasses}purpleBlue`}>
+                <Avatar noease className={`${avatar.theme}purpleBlue`}>
                     <span>L</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={img6} />
+                    <img src={img[5]} />
                 </Avatar>
             </Avatar.Holder>
         </Preview>
@@ -239,8 +235,8 @@ export default function () {
             Avatar groups can be linked to a URL and include a circular border along with a total‑count indicator.
         </Description>
         <Preview>
-            <Avatar.Holder className={countHolderBorderClasses}>
-                <Avatar noease className={`${themeClasses}purple`}>
+            <Avatar.Holder className={avatar.countBorder}>
+                <Avatar noease className={`${avatar.theme}purple`}>
                     <a href='#'>
                         <SvgIcon as='js' src={IconUser} />
                     </a>
@@ -252,17 +248,17 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <img src={img4} />
+                        <img src={img[3]} />
                     </a>
                 </Avatar>
-                <Avatar noease className={`${themeClasses}purpleBlue`}>
+                <Avatar noease className={`${avatar.theme}purpleBlue`}>
                     <a href='#'>
                         <span>L</span>
                     </a>
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <img src={img6} />
+                        <img src={img[5]} />
                     </a>
                 </Avatar>
                 <Avatar noease>
@@ -277,21 +273,21 @@ export default function () {
             Avatar groups can use custom background colors or theme colors.
         </Description>
         <Preview>
-            <Avatar.Holder className={`${countHolderBorderClasses} ${themeClasses}purpleBlue`}>
+            <Avatar.Holder className={`${avatar.countBorder} ${avatar.theme}purpleBlue`}>
                 <Avatar noease>
                     <span>AEY</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={img2} />
+                    <img src={img[1]} />
                 </Avatar>
                 <Avatar noease>
-                    <img src={img4} />
+                    <img src={img[3]} />
                 </Avatar>
-                <Avatar noease className={`${themeClasses}redPurple`}>
+                <Avatar noease className={`${avatar.theme}redPurple`}>
                     <span>HY</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={img5} />
+                    <img src={img[4]} />
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
@@ -305,18 +301,18 @@ export default function () {
             Avatar groups include tooltip text that corresponds to the colored borders, referencing the descriptive text written below.
         </Description>
         <Preview>
-            <Avatar.Holder className={countHolderClasses}>
+            <Avatar.Holder className={avatar.count}>
                 <span className='ui-m-30-r ui-inline-block'>
                     Written by
                 </span>
-                <Avatar size='sm' title='Claire' data={{ 'tooltip': 't' }} className={`${selfAnimateClasses} ${themedBorderClasses}yellow`}>
-                    <img src={img6} />
+                <Avatar size='sm' title='Claire' data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}yellow`}>
+                    <img src={img[5]} />
                 </Avatar>
-                <Avatar size='sm' title='Matthew' data={{ 'tooltip': 't' }} className={`${selfAnimateClasses} ${themedBorderClasses}orangeRed`}>
-                    <img src={img3} />
+                <Avatar size='sm' title='Matthew' data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}orangeRed`}>
+                    <img src={img[2]} />
                 </Avatar>
-                 <Avatar size='sm' title='Tom' data={{ 'tooltip': 't' }} className={`${selfAnimateClasses} ${themedBorderClasses}green`}>
-                    <img src={img1} />
+                 <Avatar size='sm' title='Tom' data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}green`}>
+                    <img src={img[0]} />
                 </Avatar>
                 <span className='ui-m-10-l ui-inline-block'>
                     is shown below:
@@ -326,9 +322,9 @@ export default function () {
             <Spacer size={20} />
 
             <p className='ui-p-15-h' >
-                <span className={`${textClasses}yellow`}>Claire said something wonderful. </span>
-                <span className={`${textClasses}orangeRed`}>Matthew said something awesome. </span>
-                <span className={`${textClasses}green`}>Tom said something great.</span>
+                <span className={`${avatar.text}yellow`}>Claire said something wonderful. </span>
+                <span className={`${avatar.text}orangeRed`}>Matthew said something awesome. </span>
+                <span className={`${avatar.text}green`}>Tom said something great.</span>
             </p>
         </Preview>
         </>
