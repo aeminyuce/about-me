@@ -9,6 +9,7 @@ import Page500 from '../pages/500';
 import Page404 from '../pages/404';
 
 // layouts
+const Error = lazy(() => import( /* webpackChunkName: "Error" */ "../layouts/Error" ));
 const Home = lazy(() => import( /* webpackChunkName: "Home" */ "../layouts/Home" ));
 const Lab = lazy(() => import( /* webpackChunkName: "Lab" */ "../layouts/Lab" ));
 
@@ -60,12 +61,16 @@ export default function () {
                 </Route>
 
                 {/* error pages */}
-                <Route path='500' element={
-                    <PageTitle title='Server Error'><Page500 /></PageTitle>
-                }/>
-                <Route path='*' element={
-                    <PageTitle title='Page Not Found'><Page404 /></PageTitle>
-                }/>
+                <Route element={<Error />}>
+
+                    <Route path='500' element={
+                        <PageTitle title='Server Error'><Page500 /></PageTitle>
+                    }/>
+                    <Route path='*' element={
+                        <PageTitle title='Page Not Found'><Page404 /></PageTitle>
+                    }/>
+
+                </Route>
             </Routes>
         </Suspense>
     );
