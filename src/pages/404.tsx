@@ -8,7 +8,7 @@ export default function () {
             <Heading as='h1' className='ui-font-72'>
                 404
             </Heading>
-            <p className='ui-m-30-b'>Page not found</p>
+            <p className='ui-font-22 ui-m-30-b'>Whoops, that page is gone.</p>
             <Button className='ui-circle' to='/'>Go to Home</Button>
         </div>
     );
