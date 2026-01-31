@@ -61,10 +61,10 @@ export const People = () => {
                             <ListGroup.Item key={jobTitle}>
                                 <a href={item.url}>
                                     <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
-                                    {(avatar && avatarText) &&
+                                    {(avatar || avatarText) &&
                                         <Avatar size='xs' className={classes}>
-                                            <img src={getImg(avatar)} />
-                                            <span>{avatarText}</span>
+                                            {avatar && <img src={getImg(avatar)} />}
+                                            {avatarText && <span>{avatarText}</span>}
                                         </Avatar>
                                     }
 
@@ -99,10 +99,10 @@ export const PeopleMore = () => {
 
                     return (
                         <Fragment key={item.jobTitle}>
-                            {(avatar && avatarText) &&
+                            {(avatar || avatarText) &&
                                 <Avatar noease size='xs' className={classes}>
-                                    <img src={getImg(avatar)} />
-                                    <span>{avatarText}</span>
+                                    {avatar && <img src={getImg(avatar)} />}
+                                    {avatarText && <span>{avatarText}</span>}
                                 </Avatar>
                             }
                         </Fragment>
