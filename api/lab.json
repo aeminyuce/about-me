@@ -295,6 +295,90 @@
             "textPart2": "My focus is on creating custom design systems that empower clients with a visual language and component library built exclusively for their brand. Using Less, vanilla JavaScript, and handcrafted React components, I develop flexible modules that can evolve with the product.",
             "textPart3": "The result is a clean, maintainable foundation that accelerates development while preserving creative freedom—perfect for teams who value both speed and originality."
         },
+        "alerts": {
+            "desc": {
+                "msg_bl": "A message appears at the bottom-left of the screen.",
+                "msg_br": "A message appears at the bottom-right of the screen.",
+                "msg_tl": "A message appears at the top-left of the screen.",
+                "msg_tr": "A message appears at the top-right of the screen.",
+                "dlg_simple": "A simple dialog includes a single button in a gray footer. It cannot be closed by clicking outside the window, it can only be closed by clicking the button. When the dialog opens, the button is focused by default.",
+                "dlg_twoBtn": "This dialog includes success and error buttons with custom text. This dialog can be closed by clicking outside the dialog window, and it also includes a close button in the top‑right corner. Additionally, this dialog can be closed using the ESC key on the keyboard. When a dialog contains an error button, the error button is focused first when the dialog opens.",
+                "msg_default": "A message appears at the top of the screen in one of three colors: success, warning, or danger. When the message is clicked, it dismisses by sliding upward. If not clicked, it automatically dismisses after a short delay.",
+                "dlg_callback": "This dialog runs a callback function when the success or error button is clicked. In this example, it displays an alert showing which option you selected.",
+                "dlg_threeBtn": "This dialog includes success, error, and custom buttons along with custom text.  Custom buttons are displayed separately at the top. When all button types are placed in the footer, and when the dialog opens, the error button is focused first.",
+                "dlg_singleBtn": "This dialog includes single button along with custom text.'"
+            },
+            "text": {
+                "no": "No",
+                "ok": "Okay",
+                "got": "Got it!",
+                "yes": "Yes",
+                "beOk": "Everything will be OK.",
+                "alert": "Can you alert my response?",
+                "later": "Remind me later!",
+                "maybe": "Maybe",
+                "danger": "Oh no! Houston, we have a problem.",
+                "remove": "Are you sure you want to remove from your list?",
+                "simple": "I am simple.",
+                "success": "Here is the first default message.",
+                "warning": "Hey, we have a message again.",
+                "download": "Are you sure you want to donwload your backup files?"
+            }
+        },
+        "avatars": {
+            "img": [
+                "profile-image1.jpg",
+                "profile-image2.jpg",
+                "profile-image3.jpg",
+                "profile-image4.jpg",
+                "profile-image5.jpg",
+                "profile-image6.jpg"
+            ],
+            "desc": {
+                "ref": "Avatar groups include tooltip text that corresponds to the colored borders, referencing the descriptive text written below.",
+                "url": "Avatars can be linked to a URL.",
+                "icon": "Avatars can also display icons instead of images or text.",
+                "count": "Avatar groups can be linked to a URL and include a circular border along with a total‑count indicator.",
+                "group": "Avatar groups are ideal for displaying multiple avatars together.'",
+                "noImg": "Avatars can be used without an image, in which case they display placeholder text.",
+                "round": "Rounded avatars with different sizes.",
+                "theme": "Avatars without an image can use custom background colors or theme colors.'",
+                "circle": "Circular avatars come in multiple sizes and are typically used for profile images. The avatars animate when hovered with the mouse.",
+                "groupTheme": "Avatar groups can use custom background colors or theme colors.'"
+            },
+            "text": {
+                "ph1": "AEY",
+                "ph2": "HY",
+                "ph3": "EKY",
+                "ph4": "L",
+                "ref1": "Claire said something wonderful.",
+                "ref2": "Matthew said something awesome.",
+                "ref3": "Tom said something great.",
+                "name1": "Claire",
+                "name2": "Matthew",
+                "name3": "Tom",
+                "count1": "+27",
+                "count2": "+113",
+                "refPrefix": "Written by",
+                "refSuffix": "is shown below:"
+            }
+        },
+        "breadcrumbs": {
+            "desc": {
+                "btn": "Breadcrumb navigation can also be used with buttons, and it supports combining separators, icons, and custom theme colors.",
+                "icon": "Breadcrumb navigation with the first item replaced by an icon. The second and third variants use custom theme colors, while the separators remain unstyled and do not adopt theme colors.",
+                "noSep": "Separators can be disabled, which works well when using button‑based breadcrumb variations.",
+                "simple": "Simple breadcrumb navigation with linked items separated by different symbols. In the first variant group, links show an underline on hover except for the last item; in the second, links change opacity on hover.",
+                "dropdown": "Breadcrumb navigation with a dropdown menu that collapses the middle items between the first and last. This approach works well when the navigation path is too long. The dropdown menu remains unstyled and does not adopt the theme colors."
+            },
+            "text": {
+                "item1": "Home",
+                "item2": "Results",
+                "item3": "Details",
+                "item2a": "Options",
+                "item2b": "Variants"
+            }
+        },
         "sidebarTitle": "Lab Contents"
     }
 }

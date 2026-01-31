@@ -27,8 +27,8 @@ export default function() {
 
                 {title &&
                 <>
-                    <MyAvatar />
-                    <Title />
+                <MyAvatar />
+                <Title />
                 </>
                 }
 

@@ -7,10 +7,11 @@ import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
+import { useStoreContext } from '../../states/StoreContext';
+import { headings } from '../../helpers/Lab';
 import Description from '../../components/common/Description';
 import Preview from '../../components/common/Preview';
 import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
-import { headings } from '../../helpers/Lab';
 
 // assets
 import { IconHome } from 'uilab-icons/react/general/home';
@@ -19,23 +20,12 @@ import { IconLongArrowLeft } from 'uilab-icons/react/general/long-arrow-left';
 import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
 
 export default function () {
+    const { api } = useStoreContext();
     const title = headings('breadcrumbs');
 
-    const desc = {
-        'simple': 'Simple breadcrumb navigation with linked items separated by different symbols. In the first variant group, links show an underline on hover except for the last item; in the second, links change opacity on hover.',
-        'icon': 'Breadcrumb navigation with the first item replaced by an icon. The second and third variants use custom theme colors, while the separators remain unstyled and do not adopt theme colors.',
-        'btn': 'Breadcrumb navigation can also be used with buttons, and it supports combining separators, icons, and custom theme colors.',
-        'noSep': 'Separators can be disabled, which works well when using button‑based breadcrumb variations.',
-        'dropdown': 'Breadcrumb navigation with a dropdown menu that collapses the middle items between the first and last. This approach works well when the navigation path is too long. The dropdown menu remains unstyled and does not adopt the theme colors.',
-    };
-
-    const text = {
-        'item1': 'Home',
-        'item2': 'Results',
-        'item2a': 'Options',
-        'item2b': 'Variants',
-        'item3': 'Details',
-    }
+    const breadcrumbs = api?.lab?.breadcrumbs;
+    const desc = breadcrumbs?.desc;
+    const text = breadcrumbs?.text;
 
     // classes
     const bc = {
@@ -51,7 +41,7 @@ export default function () {
         iconM: 'ui-m-4-v ui-m-10-r',
     };
 
-    return (
+    if (breadcrumbs) return (
         <>
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>

@@ -5,6 +5,7 @@ import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
+import { useStoreContext } from '../../states/StoreContext';
 import { getImg } from '../../helpers/General';
 import { headings } from '../../helpers/Lab';
 import Description from '../../components/common/Description';
@@ -18,51 +19,19 @@ import { IconFire } from 'uilab-icons/react/general/fire';
 import { IconStore } from 'uilab-icons/react/commerce/store';
 
 export default function () {
+    const { api } = useStoreContext();
     const title = headings('avatars');
 
-    const desc = {
-        'circle': 'Circular avatars come in multiple sizes and are typically used for profile images. The avatars animate when hovered with the mouse.',
-        'round': 'Rounded avatars with different sizes.',
-        'noimg': 'Avatars can be used without an image, in which case they display placeholder text.',
-        'icon': 'Avatars can also display icons instead of images or text.',
-        'theme': 'Avatars without an image can use custom background colors or theme colors.',
-        'url': 'Avatars can be linked to a URL.',
-        'group': 'Avatar groups are ideal for displaying multiple avatars together.',
-        'count': 'Avatar groups can be linked to a URL and include a circular border along with a total‑count indicator.',
-        'groupTheme': 'Avatar groups can use custom background colors or theme colors.',
-        'ref': 'Avatar groups include tooltip text that corresponds to the colored borders, referencing the descriptive text written below.',
-    };
-    const text = {
-        'ph1': 'AEY',
-        'ph2': 'HY',
-        'ph3': 'EKY',
-        'ph4': 'L',
-        'count1': '+27',
-        'count2': '+113',
-        'refPrefix': 'Written by',
-        'refSuffix': 'is shown below:',
-        'name1': 'Claire',
-        'name2': 'Matthew',
-        'name3': 'Tom',
-        'ref1': 'Claire said something wonderful.',
-        'ref2': 'Matthew said something awesome.',
-        'ref3': 'Tom said something great.',
-    };
-
-    const img = [
-        'profile-image1.jpg',
-        'profile-image2.jpg',
-        'profile-image3.jpg',
-        'profile-image4.jpg',
-        'profile-image5.jpg',
-        'profile-image6.jpg',
-    ];
+    const avatars = api?.lab?.avatars;
+    const desc = avatars?.desc;
+    const text = avatars?.text;
+    const img = avatars?.img;
 
     // classes
     const wrap = 'ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout';
     const count = `${wrap} ui-p-5 ui-circle ui-circle-1st`;
 
-    const avatar = {
+    const avt = {
         wrap: wrap,
         circle: `${wrap} ui-circle-1st`,
         round: `${wrap} ui-round-1st`,
@@ -78,7 +47,7 @@ export default function () {
         refs: 'ui-p-15-h',
     };
 
-    return (
+    if (avatars) return (
         <>
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>
@@ -89,17 +58,17 @@ export default function () {
 
         <Description>{desc?.circle}</Description>
         <Preview>
-            <div className={avatar.circle}>
-                <Avatar noease size='xs' className={avatar.marginH}>
+            <div className={avt.circle}>
+                <Avatar noease size='xs' className={avt.marginH}>
                     <img src={getImg(img[0])} />
                 </Avatar>
-                <Avatar noease size='sm' className={avatar.marginH}>
+                <Avatar noease size='sm' className={avt.marginH}>
                     <img src={getImg(img[1])} />
                 </Avatar>
-                <Avatar noease className={avatar.marginH}>
+                <Avatar noease className={avt.marginH}>
                     <img src={getImg(img[2])} />
                 </Avatar>
-                <Avatar noease size='lg' className={avatar.marginH}>
+                <Avatar noease size='lg' className={avt.marginH}>
                     <img src={getImg(img[3])} />
                 </Avatar>
             </div>
@@ -107,35 +76,35 @@ export default function () {
 
         <Description>{desc?.round}</Description>
         <Preview>
-            <div className={avatar.round}>
-                <Avatar noease size='xs' className={avatar.marginH}>
+            <div className={avt.round}>
+                <Avatar noease size='xs' className={avt.marginH}>
                     <img src={getImg(img[2])} />
                 </Avatar>
-                <Avatar noease size='sm' className={avatar.marginH}>
+                <Avatar noease size='sm' className={avt.marginH}>
                     <img src={getImg(img[3])} />
                 </Avatar>
-                <Avatar noease className={avatar.marginH}>
+                <Avatar noease className={avt.marginH}>
                     <img src={getImg(img[4])} />
                 </Avatar>
-                <Avatar noease size='lg' className={avatar.marginH}>
+                <Avatar noease size='lg' className={avt.marginH}>
                     <img src={getImg(img[5])} />
                 </Avatar>
             </div>
         </Preview>
 
-        <Description>{desc?.noimg}</Description>
+        <Description>{desc?.noImg}</Description>
         <Preview>
-            <div className={avatar.circle}>
-                <Avatar noease size='xs' className={avatar.marginH}>
+            <div className={avt.circle}>
+                <Avatar noease size='xs' className={avt.marginH}>
                     <span>{text?.ph4}</span>
                 </Avatar>
-                <Avatar noease size='sm' className={avatar.marginH}>
+                <Avatar noease size='sm' className={avt.marginH}>
                     <span>{text?.ph3}</span>
                 </Avatar>
-                <Avatar noease className={avatar.marginH}>
+                <Avatar noease className={avt.marginH}>
                     <span>{text?.ph2}</span>
                 </Avatar>
-                <Avatar noease size='lg' className={avatar.marginH}>
+                <Avatar noease size='lg' className={avt.marginH}>
                     <span>{text?.ph1}</span>
                 </Avatar>
             </div>
@@ -143,17 +112,17 @@ export default function () {
 
         <Description>{desc?.icon}</Description>
         <Preview>
-            <div className={avatar.round}>
-                <Avatar noease size='xs' className={avatar.marginH}>
+            <div className={avt.round}>
+                <Avatar noease size='xs' className={avt.marginH}>
                     <SvgIcon as='js' src={IconUser} />
                 </Avatar>
-                <Avatar noease size='sm' className={avatar.marginH}>
+                <Avatar noease size='sm' className={avt.marginH}>
                     <SvgIcon as='js' src={IconFire} />
                 </Avatar>
-                <Avatar noease className={avatar.marginH}>
+                <Avatar noease className={avt.marginH}>
                     <SvgIcon as='js' src={IconTrees} />
                 </Avatar>
-                <Avatar noease size='lg' className={avatar.marginH}>
+                <Avatar noease size='lg' className={avt.marginH}>
                     <SvgIcon as='js' src={IconStore} />
                 </Avatar>
             </div>
@@ -161,32 +130,32 @@ export default function () {
 
         <Description>{desc?.theme}</Description>
         <Preview>
-            <div className={avatar.circle}>
-                <Avatar noease size='xs' className={`${avatar.marginH} ${avatar.theme}yellow`}>
+            <div className={avt.circle}>
+                <Avatar noease size='xs' className={`${avt.marginH} ${avt.theme}yellow`}>
                     <span>{text?.ph4}</span>
                 </Avatar>
-                <Avatar noease size='sm' className={`${avatar.marginH} ${avatar.theme}yellow`}>
+                <Avatar noease size='sm' className={`${avt.marginH} ${avt.theme}yellow`}>
                     <span>{text?.ph3}</span>
                 </Avatar>
-                <Avatar noease className={`${avatar.marginH} ${avatar.theme}redPurple`}>
+                <Avatar noease className={`${avt.marginH} ${avt.theme}redPurple`}>
                     <span>{text?.ph2}</span>
                 </Avatar>
-                <Avatar noease size='lg' className={`${avatar.marginH} ${avatar.theme}redPurple`}>
+                <Avatar noease size='lg' className={`${avt.marginH} ${avt.theme}redPurple`}>
                     <span>{text?.ph1}</span>
                 </Avatar>
 
                 <Spacer size={10} />
 
-                <Avatar noease size='xs' className={`${avatar.marginH} ${avatar.theme}purple`}>
+                <Avatar noease size='xs' className={`${avt.marginH} ${avt.theme}purple`}>
                     <SvgIcon as='js' src={IconUser} />
                 </Avatar>
-                <Avatar noease size='sm' className={`${avatar.marginH} ${avatar.theme}purple`}>
+                <Avatar noease size='sm' className={`${avt.marginH} ${avt.theme}purple`}>
                     <SvgIcon as='js' src={IconFire} />
                 </Avatar>
-                <Avatar noease className={`${avatar.marginH} ${avatar.theme}purpleBlue`}>
+                <Avatar noease className={`${avt.marginH} ${avt.theme}purpleBlue`}>
                     <SvgIcon as='js' src={IconTrees} />
                 </Avatar>
-                <Avatar noease size='lg' className={`${avatar.marginH} ${avatar.theme}purpleBlue`}>
+                <Avatar noease size='lg' className={`${avt.marginH} ${avt.theme}purpleBlue`}>
                     <SvgIcon as='js' src={IconStore} />
                 </Avatar>
             </div>
@@ -194,23 +163,23 @@ export default function () {
 
         <Description>{desc?.url}</Description>
         <Preview>
-            <div className={avatar.circle}>
-                <Avatar noease className={avatar.marginH}>
+            <div className={avt.circle}>
+                <Avatar noease className={avt.marginH}>
                     <a href='#'>
                         <span>{text?.ph1}</span>
                     </a>
                 </Avatar>
-                <Avatar noease className={avatar.marginH}>
+                <Avatar noease className={avt.marginH}>
                     <a href='#'>
                         <img src={getImg(img[2])} />
                     </a>
                 </Avatar>
-                <Avatar noease className={avatar.marginH}>
+                <Avatar noease className={avt.marginH}>
                     <a href='#'>
                         <span>{text?.ph3}</span>
                     </a>
                 </Avatar>
-                <Avatar noease className={avatar.marginH}>
+                <Avatar noease className={avt.marginH}>
                     <a href='#'>
                         <img src={getImg(img[5])} />
                     </a>
@@ -224,8 +193,8 @@ export default function () {
 
         <Description>{desc?.group}</Description>
         <Preview>
-            <Avatar.Holder className={avatar.circle}>
-                <Avatar noease className={`${avatar.theme}purple`}>
+            <Avatar.Holder className={avt.circle}>
+                <Avatar noease className={`${avt.theme}purple`}>
                     <SvgIcon as='js' src={IconUser} />
                 </Avatar>
                 <Avatar noease>
@@ -237,7 +206,7 @@ export default function () {
                 <Avatar noease>
                     <img src={getImg(img[3])} />
                 </Avatar>
-                <Avatar noease className={`${avatar.theme}purpleBlue`}>
+                <Avatar noease className={`${avt.theme}purpleBlue`}>
                     <span>{text?.ph4}</span>
                 </Avatar>
                 <Avatar noease>
@@ -248,8 +217,8 @@ export default function () {
 
         <Description>{desc?.count}</Description>
         <Preview>
-            <Avatar.Holder className={avatar.countBorder}>
-                <Avatar noease className={`${avatar.theme}purple`}>
+            <Avatar.Holder className={avt.countBorder}>
+                <Avatar noease className={`${avt.theme}purple`}>
                     <a href='#'>
                         <SvgIcon as='js' src={IconUser} />
                     </a>
@@ -264,7 +233,7 @@ export default function () {
                         <img src={getImg(img[3])} />
                     </a>
                 </Avatar>
-                <Avatar noease className={`${avatar.theme}purpleBlue`}>
+                <Avatar noease className={`${avt.theme}purpleBlue`}>
                     <a href='#'>
                         <span>{text?.ph4}</span>
                     </a>
@@ -284,7 +253,7 @@ export default function () {
 
         <Description>{desc?.groupTheme}</Description>
         <Preview>
-            <Avatar.Holder className={`${avatar.countBorder} ${avatar.theme}purpleBlue`}>
+            <Avatar.Holder className={`${avt.countBorder} ${avt.theme}purpleBlue`}>
                 <Avatar noease>
                     <span>{text?.ph1}</span>
                 </Avatar>
@@ -294,7 +263,7 @@ export default function () {
                 <Avatar noease>
                     <img src={getImg(img[3])} />
                 </Avatar>
-                <Avatar noease className={`${avatar.theme}redPurple`}>
+                <Avatar noease className={`${avt.theme}redPurple`}>
                     <span>{text?.ph2}</span>
                 </Avatar>
                 <Avatar noease>
@@ -310,30 +279,32 @@ export default function () {
 
         <Description>{desc?.ref}</Description>
         <Preview>
-            <Avatar.Holder className={avatar.count}>
-                <span className={avatar.prefix}>
+            <Avatar.Holder>
+                <span className={avt.prefix}>
                     {text?.refPrefix}
                 </span>
-                <Avatar size='sm' title={text?.name1} data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}yellow`}>
-                    <img src={getImg(img[5])} />
-                </Avatar>
-                <Avatar size='sm' title={text?.name1} data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}orangeRed`}>
-                    <img src={getImg(img[2])} />
-                </Avatar>
-                 <Avatar size='sm' title={text?.name1} data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}green`}>
-                    <img src={getImg(img[0])} />
-                </Avatar>
-                <span className={avatar.suffix}>
+                <span className={avt.count}>
+                    <Avatar size='sm' title={text?.name1} data={{ 'tooltip': 't' }} className={`${avt.animate} ${avt.border}yellow`}>
+                      <img src={getImg(img[5])} />
+                    </Avatar>
+                    <Avatar size='sm' title={text?.name2} data={{ 'tooltip': 't' }} className={`${avt.animate} ${avt.border}orangeRed`}>
+                        <img src={getImg(img[2])} />
+                    </Avatar>
+                    <Avatar size='sm' title={text?.name3} data={{ 'tooltip': 't' }} className={`${avt.animate} ${avt.border}green`}>
+                        <img src={getImg(img[0])} />
+                    </Avatar>
+                </span>
+                <span className={avt.suffix}>
                     {text?.refSuffix}
                 </span>
             </Avatar.Holder>
 
             <Spacer size={20} />
 
-            <p className={avatar.refs}>
-                <span className={`${avatar.txt}yellow`}>{text?.ref1}</span>{' '}
-                <span className={`${avatar.txt}orangeRed`}>{text?.ref2}</span>{' '}
-                <span className={`${avatar.txt}green`}>{text?.ref3}</span>
+            <p className={avt.refs}>
+                <span className={`${avt.txt}yellow`}>{text?.ref1}</span>{' '}
+                <span className={`${avt.txt}orangeRed`}>{text?.ref2}</span>{' '}
+                <span className={`${avt.txt}green`}>{text?.ref3}</span>
             </p>
         </Preview>
         </>
