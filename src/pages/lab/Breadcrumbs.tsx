@@ -21,7 +21,13 @@ import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
 export default function () {
     const title = headings('breadcrumbs');
 
-    const desc = {};
+    const desc = {
+        'simple': 'Simple breadcrumb navigation with linked items separated by different symbols. In the first variant group, links show an underline on hover except for the last item; in the second, links change opacity on hover.',
+        'icon': 'Breadcrumb navigation with the first item replaced by an icon. The second and third variants use custom theme colors, while the separators remain unstyled and do not adopt theme colors.',
+        'btn': 'Breadcrumb navigation can also be used with buttons, and it supports combining separators, icons, and custom theme colors.',
+        'noSep': 'Separators can be disabled, which works well when using button‑based breadcrumb variations.',
+        'dropdown': 'Breadcrumb navigation with a dropdown menu that collapses the middle items between the first and last. This approach works well when the navigation path is too long. The dropdown menu remains unstyled and does not adopt the theme colors.',
+    };
 
     const text = {
         'item1': 'Home',
@@ -32,37 +38,31 @@ export default function () {
     }
 
     // classes
-    const breadcrumb = {
-        base: '',
+    const bc = {
+        color: 'ui-color-black-25',
+        circle: 'ui-circle-2nd',
+        round: 'ui-round-2nd',
+        hoverline: 'ui-font-hoverline',
+        opacity: 'ui-opacity ui-ease-layout',
+        border: 'ui-border',
+        dropdown: 'ui-round ui-shadow-lg',
+        btnTheme: 'ui-fill-dark-100 ui-theme-',
+        txtTheme: 'ui-text ui-theme-',
+        iconM: 'ui-m-4-v ui-m-10-r',
     };
-
-    const colorWrapperClasses = 'ui-color-black-25';
-    const circleWrapperClasses = 'ui-circle-2nd';
-    const roundWrapperClasses = 'ui-round-2nd';
-
-    const underlineClasses = 'ui-font-hoverline';
-    const opacityClasses = 'ui-opacity ui-ease-layout';
-    const borderClasses = 'ui-border';
-
-    const textThemeClasses = 'ui-text ui-theme-';
-    const btnThemeClasses = 'ui-fill-dark-100 ui-theme-';
-
-    const iconWithTextClasses = 'ui-m-4-v ui-m-10-r';
 
     return (
         <>
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>
 
-        <Description>
-            Simple breadcrumb navigation with linked items separated by different symbols. In the first variant group, links show an underline on hover except for the last item; in the second, links change opacity on hover.
-        </Description>
+        <Description>{desc?.simple}</Description>
         <Preview>
-            <Breadcrumbs sep='arrow' className={colorWrapperClasses}>
-                <Breadcrumbs.Item to='#' className={underlineClasses}>
+            <Breadcrumbs sep='arrow' className={bc.color}>
+                <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item1}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item to='#' className={underlineClasses}>
+                <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -70,7 +70,7 @@ export default function () {
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='bull' className={colorWrapperClasses}>
+            <Breadcrumbs sep='bull' className={bc.color}>
                 <Breadcrumbs.Item to='#'>
                     {text?.item1}
                 </Breadcrumbs.Item>
@@ -82,11 +82,11 @@ export default function () {
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='pipe' className={colorWrapperClasses}>
-                <Breadcrumbs.Item to='#' className={underlineClasses}>
+            <Breadcrumbs sep='pipe' className={bc.color}>
+                <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item1}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item to='#' className={underlineClasses}>
+                <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -97,30 +97,30 @@ export default function () {
             <Spacer size={15} />
 
             <Breadcrumbs sep='arrow'>
-                <Breadcrumbs.Item className={opacityClasses} to='#'>
+                <Breadcrumbs.Item className={bc.opacity} to='#'>
                     {text?.item1}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item className={opacityClasses} to='#'>
+                <Breadcrumbs.Item className={bc.opacity} to='#'>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>{text?.item3}</Breadcrumbs.Item>
             </Breadcrumbs>
 
             <Breadcrumbs sep='bull'>
-                <Breadcrumbs.Item className={opacityClasses} to='#'>
+                <Breadcrumbs.Item className={bc.opacity} to='#'>
                     {text?.item1}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item className={opacityClasses} to='#'>
+                <Breadcrumbs.Item className={bc.opacity} to='#'>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>{text?.item3}</Breadcrumbs.Item>
             </Breadcrumbs>
 
             <Breadcrumbs sep='pipe'>
-                <Breadcrumbs.Item className={opacityClasses} to='#'>
+                <Breadcrumbs.Item className={bc.opacity} to='#'>
                     {text?.item1}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item className={opacityClasses} to='#'>
+                <Breadcrumbs.Item className={bc.opacity} to='#'>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -129,15 +129,13 @@ export default function () {
             </Breadcrumbs>
         </Preview>
 
-        <Description>
-            Breadcrumb navigation with the first item replaced by an icon. The second and third variants use custom theme colors, while the separators remain unstyled and do not adopt theme colors.
-        </Description>
+        <Description>{desc?.icon}</Description>
         <Preview>
             <Breadcrumbs sep='arrow'>
-                <Breadcrumbs.Item to='#' className={opacityClasses}>
+                <Breadcrumbs.Item to='#' className={bc.opacity}>
                     <SvgIcon as='js' src={IconHome} />
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item to='#' className={underlineClasses}>
+                <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -147,11 +145,11 @@ export default function () {
 
             <Spacer size={15} />
 
-            <Breadcrumbs sep='bull' className={`${textThemeClasses}greenYellow`}>
-                <Breadcrumbs.Item to='#' className={opacityClasses}>
+            <Breadcrumbs sep='bull' className={`${bc.txtTheme}greenYellow`}>
+                <Breadcrumbs.Item to='#' className={bc.opacity}>
                     <SvgIcon as='js' src={IconHome} />
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item to='#' className={underlineClasses}>
+                <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -161,11 +159,11 @@ export default function () {
 
             <Spacer size={15} />
 
-            <Breadcrumbs sep='pipe' className={`${textThemeClasses}blueGreen`}>
-                <Breadcrumbs.Item to='#' className={opacityClasses}>
+            <Breadcrumbs sep='pipe' className={`${bc.txtTheme}blueGreen`}>
+                <Breadcrumbs.Item to='#' className={bc.opacity}>
                     <SvgIcon as='js' src={IconHome} />
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item to='#' className={underlineClasses}>
+                <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -174,29 +172,27 @@ export default function () {
             </Breadcrumbs>
         </Preview>
 
-        <Description>
-            Breadcrumb navigation can also be used with buttons, and it supports combining separators, icons, and custom theme colors.
-        </Description>
+        <Description>{desc?.btn}</Description>
         <Preview>
-            <Breadcrumbs sep='bull' className={circleWrapperClasses}>
+            <Breadcrumbs sep='bull' className={bc.circle}>
                 <Breadcrumbs.Item >
-                    <Button ghost square className={borderClasses}>
+                    <Button ghost square className={bc.border}>
                         <SvgIcon as='js' src={IconLongArrowLeft} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button ghost className={borderClasses}>
+                    <Button ghost className={bc.border}>
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button ghost as='span' className={borderClasses}>
+                    <Button ghost as='span' className={bc.border}>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='bull' className={circleWrapperClasses}>
+            <Breadcrumbs sep='bull' className={bc.circle}>
                 <Breadcrumbs.Item>
                     <Button square >
                         <SvgIcon as='js' src={IconLongArrowLeft} />
@@ -214,38 +210,38 @@ export default function () {
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='bull' className={circleWrapperClasses}>
+            <Breadcrumbs sep='bull' className={bc.circle}>
                 <Breadcrumbs.Item>
-                    <Button square className={`${btnThemeClasses}purple`}>
+                    <Button square className={`${bc.btnTheme}purple`}>
                         <SvgIcon as='js' src={IconLongArrowLeft} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className={`${btnThemeClasses}purple`}>
+                    <Button className={`${bc.btnTheme}purple`}>
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${btnThemeClasses}purple`}>
+                    <Button as='span' className={`${bc.btnTheme}purple`}>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='bull' className={circleWrapperClasses}>
+            <Breadcrumbs sep='bull' className={bc.circle}>
                 <Breadcrumbs.Item>
-                    <Button square className={`${btnThemeClasses}purpleBlue`}>
+                    <Button square className={`${bc.btnTheme}purpleBlue`}>
                         <SvgIcon as='js' src={IconLongArrowLeft} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className={`${btnThemeClasses}purpleBlue`}>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={iconWithTextClasses} />
+                    <Button className={`${bc.btnTheme}purpleBlue`}>
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={bc.iconM} />
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${btnThemeClasses}purpleBlue`}>
+                    <Button as='span' className={`${bc.btnTheme}purpleBlue`}>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
@@ -253,7 +249,7 @@ export default function () {
 
             <Spacer size={30} />
 
-            <Breadcrumbs sep='arrow' className={roundWrapperClasses}>
+            <Breadcrumbs sep='arrow' className={bc.round}>
                 <Breadcrumbs.Item>
                     <Button square>
                         <SvgIcon as='js' src={IconHome} />
@@ -271,62 +267,60 @@ export default function () {
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='arrow' className={roundWrapperClasses}>
+            <Breadcrumbs sep='arrow' className={bc.round}>
                 <Breadcrumbs.Item>
-                    <Button square className={`${btnThemeClasses}greenYellow`}>
+                    <Button square className={`${bc.btnTheme}greenYellow`}>
                         <SvgIcon as='js' src={IconHome} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className={`${btnThemeClasses}greenYellow`}>
+                    <Button className={`${bc.btnTheme}greenYellow`}>
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${btnThemeClasses}greenYellow`}>
+                    <Button as='span' className={`${bc.btnTheme}greenYellow`}>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='arrow' className={roundWrapperClasses}>
+            <Breadcrumbs sep='arrow' className={bc.round}>
                 <Breadcrumbs.Item>
-                    <Button square className={`${btnThemeClasses}blueGreen`}>
+                    <Button square className={`${bc.btnTheme}blueGreen`}>
                         <SvgIcon as='js' src={IconHome} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className={`${btnThemeClasses}blueGreen`}>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={iconWithTextClasses} />
+                    <Button className={`${bc.btnTheme}blueGreen`}>
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={bc.iconM} />
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${btnThemeClasses}blueGreen`}>
+                    <Button as='span' className={`${bc.btnTheme}blueGreen`}>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
         </Preview>
 
-        <Description>
-            Separators can be disabled, which works well when using button‑based breadcrumb variations.
-        </Description>
+        <Description>{desc?.noSep}</Description>
         <Preview>
-            <Breadcrumbs sep='no' className={circleWrapperClasses}>
+            <Breadcrumbs sep='no' className={bc.circle}>
                 <Breadcrumbs.Item>
-                    <Button square className={`${btnThemeClasses}purpleBlue`}>
+                    <Button square className={`${bc.btnTheme}purpleBlue`}>
                         <SvgIcon as='js' src={IconLongArrowLeft} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className={`${btnThemeClasses}purpleBlue`}>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={iconWithTextClasses} />
+                    <Button className={`${bc.btnTheme}purpleBlue`}>
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={bc.iconM} />
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${btnThemeClasses}purpleBlue`}>
+                    <Button as='span' className={`${bc.btnTheme}purpleBlue`}>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
@@ -334,42 +328,40 @@ export default function () {
 
             <Spacer size={5} />
 
-            <Breadcrumbs sep='no' className={roundWrapperClasses}>
+            <Breadcrumbs sep='no' className={bc.round}>
                 <Breadcrumbs.Item>
-                    <Button square className={`${btnThemeClasses}blueGreen`}>
+                    <Button square className={`${bc.btnTheme}blueGreen`}>
                         <SvgIcon as='js' src={IconHome} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className={`${btnThemeClasses}blueGreen`}>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={iconWithTextClasses} />
+                    <Button className={`${bc.btnTheme}blueGreen`}>
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={bc.iconM} />
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${btnThemeClasses}blueGreen`}>
+                    <Button as='span' className={`${bc.btnTheme}blueGreen`}>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
         </Preview>
 
-        <Description>
-            Breadcrumb navigation with a dropdown menu that collapses the middle items between the first and last. This approach works well when the navigation path is too long. The dropdown menu remains unstyled and does not adopt the theme colors.
-        </Description>
+        <Description>{desc?.dropdown}</Description>
         <Preview>
-            <Breadcrumbs sep='no' className={roundWrapperClasses}>
+            <Breadcrumbs sep='no' className={bc.round}>
                 <Breadcrumbs.Item>
-                    <Button square className={`${btnThemeClasses}yellowOrange`}>
+                    <Button square className={`${bc.btnTheme}yellowOrange`}>
                         <SvgIcon as='js' src={IconHome} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
                     <Dropdown>
-                        <Button square className={`ui-round ${btnThemeClasses}yellowOrange`}>
+                        <Button square className={`ui-round ${bc.btnTheme}yellowOrange`}>
                             <SvgIcon as='js' src={IconEllipsisH} />
                         </Button>
-                        <Dropdown.Menu className='ui-round ui-shadow-lg'>
+                        <Dropdown.Menu className={bc.dropdown}>
                             <Dropdown.Item>{text?.item2}</Dropdown.Item>
                             <Dropdown.Item>{text?.item2a}</Dropdown.Item>
                             <Dropdown.Item>{text?.item2b}</Dropdown.Item>
@@ -377,7 +369,7 @@ export default function () {
                     </Dropdown>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${btnThemeClasses}yellowOrange`}>
+                    <Button as='span' className={`${bc.btnTheme}yellowOrange`}>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>

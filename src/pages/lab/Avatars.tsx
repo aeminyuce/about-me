@@ -20,16 +20,42 @@ import { IconStore } from 'uilab-icons/react/commerce/store';
 export default function () {
     const title = headings('avatars');
 
-    const desc = {};
-    const text = {};
+    const desc = {
+        'circle': 'Circular avatars come in multiple sizes and are typically used for profile images. The avatars animate when hovered with the mouse.',
+        'round': 'Rounded avatars with different sizes.',
+        'noimg': 'Avatars can be used without an image, in which case they display placeholder text.',
+        'icon': 'Avatars can also display icons instead of images or text.',
+        'theme': 'Avatars without an image can use custom background colors or theme colors.',
+        'url': 'Avatars can be linked to a URL.',
+        'group': 'Avatar groups are ideal for displaying multiple avatars together.',
+        'count': 'Avatar groups can be linked to a URL and include a circular border along with a total‑count indicator.',
+        'groupTheme': 'Avatar groups can use custom background colors or theme colors.',
+        'ref': 'Avatar groups include tooltip text that corresponds to the colored borders, referencing the descriptive text written below.',
+    };
+    const text = {
+        'ph1': 'AEY',
+        'ph2': 'HY',
+        'ph3': 'EKY',
+        'ph4': 'L',
+        'count1': '+27',
+        'count2': '+113',
+        'refPrefix': 'Written by',
+        'refSuffix': 'is shown below:',
+        'name1': 'Claire',
+        'name2': 'Matthew',
+        'name3': 'Tom',
+        'ref1': 'Claire said something wonderful.',
+        'ref2': 'Matthew said something awesome.',
+        'ref3': 'Tom said something great.',
+    };
 
     const img = [
-        getImg('profile-image1.jpg'),
-        getImg('profile-image2.jpg'),
-        getImg('profile-image3.jpg'),
-        getImg('profile-image4.jpg'),
-        getImg('profile-image5.jpg'),
-        getImg('profile-image6.jpg'),
+        'profile-image1.jpg',
+        'profile-image2.jpg',
+        'profile-image3.jpg',
+        'profile-image4.jpg',
+        'profile-image5.jpg',
+        'profile-image6.jpg',
     ];
 
     // classes
@@ -46,7 +72,10 @@ export default function () {
         animate: 'ui-hover-scale-more ui-hover-shadow',
         theme: 'ui-fill-dark-100 ui-theme-',
         border: 'ui-border ui-border-lg ui-stroke ui-theme-',
-        text: 'ui-text ui-theme-',
+        txt: 'ui-text ui-theme-',
+        prefix: 'ui-m-30-r ui-inline-block',
+        suffix: 'ui-m-10-l ui-inline-block',
+        refs: 'ui-p-15-h',
     };
 
     return (
@@ -58,69 +87,61 @@ export default function () {
             {title?.h3[0]}
         </Heading>
 
-        <Description>
-            Circular avatars come in multiple sizes and are typically used for profile images. The avatars animate when hovered with the mouse.
-        </Description>
+        <Description>{desc?.circle}</Description>
         <Preview>
             <div className={avatar.circle}>
                 <Avatar noease size='xs' className={avatar.marginH}>
-                    <img src={img[0]} />
+                    <img src={getImg(img[0])} />
                 </Avatar>
                 <Avatar noease size='sm' className={avatar.marginH}>
-                    <img src={img[1]} />
+                    <img src={getImg(img[1])} />
                 </Avatar>
                 <Avatar noease className={avatar.marginH}>
-                    <img src={img[2]} />
+                    <img src={getImg(img[2])} />
                 </Avatar>
                 <Avatar noease size='lg' className={avatar.marginH}>
-                    <img src={img[3]} />
+                    <img src={getImg(img[3])} />
                 </Avatar>
             </div>
         </Preview>
 
-        <Description>
-            Rounded avatars with different sizes.
-        </Description>
+        <Description>{desc?.round}</Description>
         <Preview>
             <div className={avatar.round}>
                 <Avatar noease size='xs' className={avatar.marginH}>
-                    <img src={img[2]} />
+                    <img src={getImg(img[2])} />
                 </Avatar>
                 <Avatar noease size='sm' className={avatar.marginH}>
-                    <img src={img[3]} />
+                    <img src={getImg(img[3])} />
                 </Avatar>
                 <Avatar noease className={avatar.marginH}>
-                    <img src={img[4]} />
+                    <img src={getImg(img[4])} />
                 </Avatar>
                 <Avatar noease size='lg' className={avatar.marginH}>
-                    <img src={img[5]} />
+                    <img src={getImg(img[5])} />
                 </Avatar>
             </div>
         </Preview>
 
-        <Description>
-            Avatars can be used without an image, in which case they display placeholder text.
-        </Description>
+        <Description>{desc?.noimg}</Description>
         <Preview>
             <div className={avatar.circle}>
                 <Avatar noease size='xs' className={avatar.marginH}>
-                    <span>L</span>
+                    <span>{text?.ph4}</span>
                 </Avatar>
                 <Avatar noease size='sm' className={avatar.marginH}>
-                    <span>EKY</span>
+                    <span>{text?.ph3}</span>
                 </Avatar>
                 <Avatar noease className={avatar.marginH}>
-                    <span>HY</span>
+                    <span>{text?.ph2}</span>
                 </Avatar>
                 <Avatar noease size='lg' className={avatar.marginH}>
-                    <span>AEY</span>
+                    <span>{text?.ph1}</span>
                 </Avatar>
             </div>
         </Preview>
 
-        <Description>
-            Avatars can also display icons instead of images or text.
-        </Description>
+        <Description>{desc?.icon}</Description>
         <Preview>
             <div className={avatar.round}>
                 <Avatar noease size='xs' className={avatar.marginH}>
@@ -138,22 +159,20 @@ export default function () {
             </div>
         </Preview>
 
-        <Description>
-            Avatars without an image can use custom background colors or theme colors.
-        </Description>
+        <Description>{desc?.theme}</Description>
         <Preview>
             <div className={avatar.circle}>
                 <Avatar noease size='xs' className={`${avatar.marginH} ${avatar.theme}yellow`}>
-                    <span>L</span>
+                    <span>{text?.ph4}</span>
                 </Avatar>
                 <Avatar noease size='sm' className={`${avatar.marginH} ${avatar.theme}yellow`}>
-                    <span>EKY</span>
+                    <span>{text?.ph3}</span>
                 </Avatar>
                 <Avatar noease className={`${avatar.marginH} ${avatar.theme}redPurple`}>
-                    <span>HY</span>
+                    <span>{text?.ph2}</span>
                 </Avatar>
                 <Avatar noease size='lg' className={`${avatar.marginH} ${avatar.theme}redPurple`}>
-                    <span>AEY</span>
+                    <span>{text?.ph1}</span>
                 </Avatar>
 
                 <Spacer size={10} />
@@ -173,29 +192,27 @@ export default function () {
             </div>
         </Preview>
 
-        <Description>
-            Avatars can be linked to a URL.
-        </Description>
+        <Description>{desc?.url}</Description>
         <Preview>
             <div className={avatar.circle}>
                 <Avatar noease className={avatar.marginH}>
                     <a href='#'>
-                        <span>AEY</span>
+                        <span>{text?.ph1}</span>
                     </a>
                 </Avatar>
                 <Avatar noease className={avatar.marginH}>
                     <a href='#'>
-                        <img src={img[2]} />
+                        <img src={getImg(img[2])} />
                     </a>
                 </Avatar>
                 <Avatar noease className={avatar.marginH}>
                     <a href='#'>
-                        <span>EKY</span>
+                        <span>{text?.ph3}</span>
                     </a>
                 </Avatar>
                 <Avatar noease className={avatar.marginH}>
                     <a href='#'>
-                        <img src={img[5]} />
+                        <img src={getImg(img[5])} />
                     </a>
                 </Avatar>
             </div>
@@ -205,35 +222,31 @@ export default function () {
             {title?.h3[1]}
         </Heading>
 
-        <Description>
-            Avatar groups are ideal for displaying multiple avatars together.
-        </Description>
+        <Description>{desc?.group}</Description>
         <Preview>
             <Avatar.Holder className={avatar.circle}>
                 <Avatar noease className={`${avatar.theme}purple`}>
                     <SvgIcon as='js' src={IconUser} />
                 </Avatar>
                 <Avatar noease>
-                    <span>AEY</span>
+                    <span>{text?.ph1}</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={img[2]} />
+                    <img src={getImg(img[2])} />
                 </Avatar>
                 <Avatar noease>
-                    <img src={img[3]} />
+                    <img src={getImg(img[3])} />
                 </Avatar>
                 <Avatar noease className={`${avatar.theme}purpleBlue`}>
-                    <span>L</span>
+                    <span>{text?.ph4}</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={img[5]} />
+                    <img src={getImg(img[5])} />
                 </Avatar>
             </Avatar.Holder>
         </Preview>
 
-        <Description>
-            Avatar groups can be linked to a URL and include a circular border along with a total‑count indicator.
-        </Description>
+        <Description>{desc?.count}</Description>
         <Preview>
             <Avatar.Holder className={avatar.countBorder}>
                 <Avatar noease className={`${avatar.theme}purple`}>
@@ -243,88 +256,84 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <span>AEY</span>
+                        <span>{text?.ph1}</span>
                     </a>
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <img src={img[3]} />
+                        <img src={getImg(img[3])} />
                     </a>
                 </Avatar>
                 <Avatar noease className={`${avatar.theme}purpleBlue`}>
                     <a href='#'>
-                        <span>L</span>
+                        <span>{text?.ph4}</span>
                     </a>
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <img src={img[5]} />
+                        <img src={getImg(img[5])} />
                     </a>
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <span>+27</span>
+                        <span>{text?.count1}</span>
                     </a>
                 </Avatar>
             </Avatar.Holder>
         </Preview>
 
-        <Description>
-            Avatar groups can use custom background colors or theme colors.
-        </Description>
+        <Description>{desc?.groupTheme}</Description>
         <Preview>
             <Avatar.Holder className={`${avatar.countBorder} ${avatar.theme}purpleBlue`}>
                 <Avatar noease>
-                    <span>AEY</span>
+                    <span>{text?.ph1}</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={img[1]} />
+                    <img src={getImg(img[1])} />
                 </Avatar>
                 <Avatar noease>
-                    <img src={img[3]} />
+                    <img src={getImg(img[3])} />
                 </Avatar>
                 <Avatar noease className={`${avatar.theme}redPurple`}>
-                    <span>HY</span>
+                    <span>{text?.ph2}</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={img[4]} />
+                    <img src={getImg(img[4])} />
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <span>+113</span>
+                        <span>{text?.count2}</span>
                     </a>
                 </Avatar>
             </Avatar.Holder>
         </Preview>
 
-        <Description>
-            Avatar groups include tooltip text that corresponds to the colored borders, referencing the descriptive text written below.
-        </Description>
+        <Description>{desc?.ref}</Description>
         <Preview>
             <Avatar.Holder className={avatar.count}>
-                <span className='ui-m-30-r ui-inline-block'>
-                    Written by
+                <span className={avatar.prefix}>
+                    {text?.refPrefix}
                 </span>
-                <Avatar size='sm' title='Claire' data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}yellow`}>
-                    <img src={img[5]} />
+                <Avatar size='sm' title={text?.name1} data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}yellow`}>
+                    <img src={getImg(img[5])} />
                 </Avatar>
-                <Avatar size='sm' title='Matthew' data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}orangeRed`}>
-                    <img src={img[2]} />
+                <Avatar size='sm' title={text?.name1} data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}orangeRed`}>
+                    <img src={getImg(img[2])} />
                 </Avatar>
-                 <Avatar size='sm' title='Tom' data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}green`}>
-                    <img src={img[0]} />
+                 <Avatar size='sm' title={text?.name1} data={{ 'tooltip': 't' }} className={`${avatar.animate} ${avatar.border}green`}>
+                    <img src={getImg(img[0])} />
                 </Avatar>
-                <span className='ui-m-10-l ui-inline-block'>
-                    is shown below:
+                <span className={avatar.suffix}>
+                    {text?.refSuffix}
                 </span>
             </Avatar.Holder>
 
             <Spacer size={20} />
 
-            <p className='ui-p-15-h' >
-                <span className={`${avatar.text}yellow`}>Claire said something wonderful. </span>
-                <span className={`${avatar.text}orangeRed`}>Matthew said something awesome. </span>
-                <span className={`${avatar.text}green`}>Tom said something great.</span>
+            <p className={avatar.refs}>
+                <span className={`${avatar.txt}yellow`}>{text?.ref1}</span>{' '}
+                <span className={`${avatar.txt}orangeRed`}>{text?.ref2}</span>{' '}
+                <span className={`${avatar.txt}green`}>{text?.ref3}</span>
             </p>
         </Preview>
         </>

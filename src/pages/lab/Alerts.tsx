@@ -56,6 +56,7 @@ export default function () {
         btn: `ui-dialog-buttons ${btnWrap}`,
         success: 'ui-dialog-success',
         error: 'ui-dialog-error',
+        custom: 'ui-dialog-custom',
     };
 
     const msg = {
@@ -74,6 +75,9 @@ export default function () {
     const style = {
         dlg: { top: '0', left: '0', transform: 'none', zIndex: 'unset' },
         msg: { zIndex: 'unset' },
+        v1: '83px',
+        v2: '146px',
+        clamp: (num: number) => `clamp(280px, 50%, ${num}px)`,
     };
 
     return (
@@ -91,7 +95,7 @@ export default function () {
                 msg: text?.simple,
             });
         }}>
-            <div className={dlg.base} style={{ width: 'clamp(280px, 50%, 300px)', ...style.dlg }}>
+            <div className={dlg.base} style={{ width: style.clamp(300), ...style.dlg }}>
                 <div className={dlg.msg}>{text?.simple}</div>
                 <div className={dlg.btn}>
                     <div className={dlg.btnWrap}>
@@ -108,7 +112,7 @@ export default function () {
                 success: text?.got,
             });
         }}>
-            <div className={dlg.base} style={{ width: 'clamp(280px, 50%, 320px)', ...style.dlg }}>
+            <div className={dlg.base} style={{ width: style.clamp(320), ...style.dlg }}>
                 <div className={dlg.msg}>{text?.willOk}</div>
                 <div className={dlg.btn}>
                     <div className={dlg.btnWrap}>
@@ -126,7 +130,7 @@ export default function () {
                 error: text?.no,
             });
         }}>
-            <div className={dlg.base} style={{ width: 'clamp(280px, 50%, 450px)', ...style.dlg }}>
+            <div className={dlg.base} style={{ width: style.clamp(450), ...style.dlg }}>
                 <button className={dlg.close}>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
@@ -152,14 +156,14 @@ export default function () {
                 }
             });
         }}>
-            <div className={dlg.base} style={{ width: 'clamp(280px, 50%, 480px)', ...style.dlg }}>
+            <div className={dlg.base} style={{ width: style.clamp(480), ...style.dlg }}>
                 <button className={dlg.close}>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
                 <div className={dlg.msg}>{text?.download}</div>
                 <div className={dlg.btn}>
-                    <button className='ui-dialog-custom' value='0'>{text?.maybe}</button>
-                    <button className='ui-dialog-custom' value='1'>{text?.later}</button>
+                    <button className={dlg?.custom} value='0'>{text?.maybe}</button>
+                    <button className={dlg?.custom} value='1'>{text?.later}</button>
                     <div className={dlg.btnWrap}>
                         <button className={dlg.success} value='success'>{text?.yes}</button>
                         <button className={dlg.error} value='error'>{text?.no}</button>
@@ -179,7 +183,7 @@ export default function () {
                 }
             });
         }}>
-            <div className={dlg.base} style={{ width: 'clamp(280px, 50%, 280px)', ...style.dlg }}>
+            <div className={dlg.base} style={{ width: style.clamp(280), ...style.dlg }}>
                 <button className={dlg.close}>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
@@ -208,10 +212,10 @@ export default function () {
             <div className={`${msg.base} ${msg.danger} ${msg.c}`} style={style.msg}>
                 {text?.danger}
             </div>
-            <div className={`${msg.base} ${msg.warning} ${msg.c}`} style={{ top: '83px', ...style.msg }}>
+            <div className={`${msg.base} ${msg.warning} ${msg.c}`} style={{ top: style.v1, ...style.msg }}>
                 {text?.warning}
             </div>
-            <div className={`${msg.base} ${msg.success} ${msg.c}`} style={{ top: '146px', ...style.msg }}>
+            <div className={`${msg.base} ${msg.success} ${msg.c}`} style={{ top: style.v2, ...style.msg }}>
                 {text?.success}
             </div>
         </Preview>
@@ -228,10 +232,10 @@ export default function () {
             <div className={`${msg.base} ${msg.danger} ${msg.tl}`} style={style.msg}>
                 {text?.danger}
             </div>
-            <div className={`${msg.base} ${msg.warning} ${msg.tl}`} style={{ top: '83px', ...style.msg }}>
+            <div className={`${msg.base} ${msg.warning} ${msg.tl}`} style={{ top: style.v1, ...style.msg }}>
                 {text?.warning}
             </div>
-            <div className={`${msg.base} ${msg.success} ${msg.tl}`} style={{ top: '146px', ...style.msg }}>
+            <div className={`${msg.base} ${msg.success} ${msg.tl}`} style={{ top: style.v2, ...style.msg }}>
                 {text?.success}
             </div>
         </Preview>
@@ -248,10 +252,10 @@ export default function () {
             <div className={`${msg.base} ${msg.danger} ${msg.tr}`} style={style.msg}>
                 {text?.danger}
             </div>
-            <div className={`${msg.base} ${msg.warning} ${msg.tr}`} style={{ top: '83px', ...style.msg }}>
+            <div className={`${msg.base} ${msg.warning} ${msg.tr}`} style={{ top: style.v1, ...style.msg }}>
                 {text?.warning}
             </div>
-            <div className={`${msg.base} ${msg.success} ${msg.tr}`} style={{ top: '146px', ...style.msg }}>
+            <div className={`${msg.base} ${msg.success} ${msg.tr}`} style={{ top: style.v2, ...style.msg }}>
                 {text?.success}
             </div>
         </Preview>
@@ -265,10 +269,10 @@ export default function () {
                 pos: 'br',
             });
         }}>
-            <div className={`${msg.base} ${msg.danger} ${msg.br}`} style={{ bottom: '146px', ...style.msg }}>
+            <div className={`${msg.base} ${msg.danger} ${msg.br}`} style={{ bottom: style.v2, ...style.msg }}>
                 {text?.danger}
             </div>
-            <div className={`${msg.base} ${msg.warning} ${msg.br}`} style={{ bottom: '83px', ...style.msg }}>
+            <div className={`${msg.base} ${msg.warning} ${msg.br}`} style={{ bottom: style.v1, ...style.msg }}>
                 {text?.warning}
             </div>
             <div className={`${msg.base} ${msg.success} ${msg.br}`} style={style.msg}>
@@ -285,10 +289,10 @@ export default function () {
                 pos: 'bl',
             })
         }}>
-            <div className={`${msg.base} ${msg.danger} ${msg.bl}`} style={{ bottom: '146px', ...style.msg }}>
+            <div className={`${msg.base} ${msg.danger} ${msg.bl}`} style={{ bottom: style.v2, ...style.msg }}>
                 {text?.danger}
             </div>
-            <div className={`${msg.base} ${msg.warning} ${msg.bl}`} style={{ bottom: '83px', ...style.msg }}>
+            <div className={`${msg.base} ${msg.warning} ${msg.bl}`} style={{ bottom: style.v1, ...style.msg }}>
                 {text?.warning}
             </div>
             <div className={`${msg.base} ${msg.success} ${msg.bl}`} style={style.msg}>
