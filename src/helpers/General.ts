@@ -13,8 +13,3 @@ export const getParamsFromObject = (url: string, obj: any) => {
 
     return url;
 }
-
-// getImg
-export const getImg = (src: string) => {
-    return `/images/${src}`;
-}

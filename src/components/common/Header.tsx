@@ -5,11 +5,11 @@ import HeaderSticky from 'uilab/react/HeaderSticky';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
+import { HeaderLeftSidebar, ToggleHeaderLeftSidebar, HeaderRightSidebar, ToggleHeaderRightSidebar } from './HeaderSidebars';
 import GetInTouchModal from './GetInTouchModal';
 import HeaderLinks from './HeaderLinks';
 import SocialLinks from './SocialLinks';
 import ToggleDarkMode from './ToggleDarkMode';
-import { HeaderLeftSidebar, ToggleHeaderLeftSidebar, HeaderRightSidebar, ToggleHeaderRightSidebar } from './HeaderSidebars';
 
 export default function () {
     const { pathname } = useLocation();

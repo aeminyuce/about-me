@@ -57,3 +57,10 @@ export interface PreviewProps {
     play?: ReactEventHandler;
     className?: string;
 }
+
+// Get Image from public Folder
+export interface GetImgProps {
+    src: string;
+    className?: string;
+    alt?: string;
+}

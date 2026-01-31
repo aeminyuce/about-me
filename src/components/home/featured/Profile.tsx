@@ -1,14 +1,14 @@
 import * as React from 'react';
 import Avatar from 'uilab/react/Avatar';
+import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
 import ListGroup from 'uilab/react/ListGroup';
 import Notifier from 'uilab/react/Notifier';
 
 // misc
 import { useStoreContext } from '../../../states/StoreContext';
-import { getImg } from '../../../helpers/General';
 import type { UserActivityProps } from '../../../models/Home_Featured';
-import Button from 'uilab/react/Button';
+import GetImage from '../../common/GetImage';
 
 export default function() {
     const { api } = useStoreContext();
@@ -26,7 +26,7 @@ export default function() {
                 <div className='ui-align-c ui-round-t ui-border-b ui-stroke ui-fill-light-100'>
                     <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
                         <Avatar size='lg'>
-                            <img src={getImg(info?.avatar)} />
+                            <GetImage src={info?.avatar} />
                         </Avatar>
                     </Notifier>
                 </div>

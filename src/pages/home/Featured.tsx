@@ -3,10 +3,10 @@ import Grid from 'uilab/react/Grid';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
-import Profile from '../../components/home/featured/Profile';
 import { Reports, ReportsList } from '../../components/home/featured/Reports';
-import Nav from '../../components/home/featured/Nav';
 import { People, PeopleMore } from '../../components/home/featured/People';
+import Profile from '../../components/home/featured/Profile';
+import Nav from '../../components/home/featured/Nav';
 import Events from '../../components/home/featured/Events';
 
 // styles

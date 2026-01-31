@@ -6,11 +6,11 @@ import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
-import { getImg } from '../../helpers/General';
 import { headings } from '../../helpers/Lab';
 import Description from '../../components/common/Description';
 import Preview from '../../components/common/Preview';
 import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
+import GetImage from '../../components/common/GetImage';
 
 // assets
 import { IconUser } from 'uilab-icons/react/general/user';
@@ -60,16 +60,16 @@ export default function () {
         <Preview>
             <div className={avt.circle}>
                 <Avatar noease size='xs' className={avt.marginH}>
-                    <img src={getImg(img[0])} />
+                    <GetImage src={img[0]} />
                 </Avatar>
                 <Avatar noease size='sm' className={avt.marginH}>
-                    <img src={getImg(img[1])} />
+                    <GetImage src={img[1]} />
                 </Avatar>
                 <Avatar noease className={avt.marginH}>
-                    <img src={getImg(img[2])} />
+                    <GetImage src={img[2]} />
                 </Avatar>
                 <Avatar noease size='lg' className={avt.marginH}>
-                    <img src={getImg(img[3])} />
+                    <GetImage src={img[3]} />
                 </Avatar>
             </div>
         </Preview>
@@ -78,16 +78,16 @@ export default function () {
         <Preview>
             <div className={avt.round}>
                 <Avatar noease size='xs' className={avt.marginH}>
-                    <img src={getImg(img[2])} />
+                    <GetImage src={img[2]} />
                 </Avatar>
                 <Avatar noease size='sm' className={avt.marginH}>
-                    <img src={getImg(img[3])} />
+                    <GetImage src={img[3]} />
                 </Avatar>
                 <Avatar noease className={avt.marginH}>
-                    <img src={getImg(img[4])} />
+                    <GetImage src={img[4]} />
                 </Avatar>
                 <Avatar noease size='lg' className={avt.marginH}>
-                    <img src={getImg(img[5])} />
+                    <GetImage src={img[5]} />
                 </Avatar>
             </div>
         </Preview>
@@ -171,7 +171,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease className={avt.marginH}>
                     <a href='#'>
-                        <img src={getImg(img[2])} />
+                        <GetImage src={img[2]} />
                     </a>
                 </Avatar>
                 <Avatar noease className={avt.marginH}>
@@ -181,7 +181,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease className={avt.marginH}>
                     <a href='#'>
-                        <img src={getImg(img[5])} />
+                        <GetImage src={img[5]} />
                     </a>
                 </Avatar>
             </div>
@@ -201,16 +201,16 @@ export default function () {
                     <span>{text?.ph1}</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={getImg(img[2])} />
+                    <GetImage src={img[2]} />
                 </Avatar>
                 <Avatar noease>
-                    <img src={getImg(img[3])} />
+                    <GetImage src={img[3]} />
                 </Avatar>
                 <Avatar noease className={`${avt.theme}purpleBlue`}>
                     <span>{text?.ph4}</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={getImg(img[5])} />
+                    <GetImage src={img[5]} />
                 </Avatar>
             </Avatar.Holder>
         </Preview>
@@ -230,7 +230,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <img src={getImg(img[3])} />
+                        <GetImage src={img[3]} />
                     </a>
                 </Avatar>
                 <Avatar noease className={`${avt.theme}purpleBlue`}>
@@ -240,7 +240,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <img src={getImg(img[5])} />
+                        <GetImage src={img[5]} />
                     </a>
                 </Avatar>
                 <Avatar noease>
@@ -258,16 +258,16 @@ export default function () {
                     <span>{text?.ph1}</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={getImg(img[1])} />
+                    <GetImage src={img[1]} />
                 </Avatar>
                 <Avatar noease>
-                    <img src={getImg(img[3])} />
+                    <GetImage src={img[3]} />
                 </Avatar>
                 <Avatar noease className={`${avt.theme}redPurple`}>
                     <span>{text?.ph2}</span>
                 </Avatar>
                 <Avatar noease>
-                    <img src={getImg(img[4])} />
+                    <GetImage src={img[4]} />
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
@@ -285,13 +285,13 @@ export default function () {
                 </span>
                 <span className={avt.count}>
                     <Avatar size='sm' title={text?.name1} data={{ 'tooltip': 't' }} className={`${avt.animate} ${avt.border}yellow`}>
-                      <img src={getImg(img[5])} />
+                      <GetImage src={img[5]} />
                     </Avatar>
                     <Avatar size='sm' title={text?.name2} data={{ 'tooltip': 't' }} className={`${avt.animate} ${avt.border}orangeRed`}>
-                        <img src={getImg(img[2])} />
+                        <GetImage src={img[2]} />
                     </Avatar>
                     <Avatar size='sm' title={text?.name3} data={{ 'tooltip': 't' }} className={`${avt.animate} ${avt.border}green`}>
-                        <img src={getImg(img[0])} />
+                        <GetImage src={img[0]} />
                     </Avatar>
                 </span>
                 <span className={avt.suffix}>

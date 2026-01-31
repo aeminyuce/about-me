@@ -3,10 +3,10 @@ import Grid from 'uilab/react/Grid';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
-import MyAvatar from '../../components/common/MyAvatar';
 import { Title, SubTitle } from '../../components/lab/IntroTitles';
-import IntroImages from '../../components/lab/IntroImages';
 import { LeadText, Paragraphs } from '../../components/lab/IntroTexts';
+import MyAvatar from '../../components/common/MyAvatar';
+import IntroImages from '../../components/lab/IntroImages';
 
 export default function() {
     const { api } = useStoreContext();

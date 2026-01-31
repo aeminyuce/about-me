@@ -5,7 +5,7 @@ import Modal, { modalOpen } from 'uilab/react/Modal';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
-import { getImg } from '../../helpers/General';
+import GetImage from './GetImage';
 
 // get in touch modal
 export const ShowGetInTouch = () => {
@@ -48,7 +48,7 @@ export default function () {
                 <Grid.Static fluid='no'>
                     <Grid.Col size={133} className='ui-p-10'>
                         {qrCodeImage &&
-                            <img src={getImg(qrCodeImage)} className='ui-img-fluid' />
+                            <GetImage src={qrCodeImage} className='ui-img-fluid' />
                         }
                     </Grid.Col>
                     <Grid.Row>
