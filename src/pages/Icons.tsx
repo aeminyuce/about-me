@@ -23,6 +23,9 @@ const SpriteFiles = require('uilab-icons/sprite/files.svg');
 const SpriteSocial = require('uilab-icons/sprite/social.svg');
 const SpriteBrands = require('uilab-icons/sprite/brands.svg');
 
+// styles
+import '../../src/assets/icons.less';
+
 export default function () {
     const { iconSize, setIconSize, setIconCopy } = useStoreContext();
 
@@ -40,16 +43,16 @@ export default function () {
 
     // sprites
     const spritesList = {
-        'General': SpriteGeneral,
-        'Touch': SpriteTouch,
-        'Media': SpriteMedia,
-        'Kitchen': SpriteKitchen,
-        'Real Estate': SpriteRealEstate,
-        'Weather': SpriteWeather,
-        'Commerce': SpriteCommerce,
-        'Files': SpriteFiles,
-        'Social': SpriteSocial,
-        'Brands': SpriteBrands,
+        'general': SpriteGeneral,
+        'touch': SpriteTouch,
+        'media': SpriteMedia,
+        'kitchen': SpriteKitchen,
+        'real-estate': SpriteRealEstate,
+        'weather': SpriteWeather,
+        'commerce': SpriteCommerce,
+        'files': SpriteFiles,
+        'social': SpriteSocial,
+        'brands': SpriteBrands,
     };
 
     // get total icons length
@@ -111,7 +114,7 @@ export default function () {
                     </Grid.Row>
 
                     <Grid.Row>
-                        <Grid.Col size={12}>
+                        <Grid.Col size={12} className='icon-list'>
 
                             {iconsList.map((item: IconsListProps) => (
                                 <Fragment key={item.category}>
