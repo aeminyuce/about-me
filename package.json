@@ -9,7 +9,8 @@
     "dev": "webpack serve --mode development",
     "update": "npm update",
     "update-uilab": "node ../uilab/inject-latest.js && npm i uilab",
-    "update-uilab-icons": "node ../uilab-icons/inject-latest.js && npm i uilab-icons",
+    "update-icons-list": "cp ../uilab-icons/icons-list.json ./icons-list.json",
+    "update-uilab-icons": "node ../uilab-icons/inject-latest.js && npm i uilab-icons && npm run update-icons-list",
     "api-backup": "bash ./api/supabase.sh --backup",
     "api-restore": "bash ./api/supabase.sh --restore"
   },
@@ -17,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uilab": "file:../uilab/uilab-1.0.629.tgz",
-    "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.47.tgz"
+    "uilab": "file:../uilab/uilab-1.0.320.tgz",
+    "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.424.tgz"
   }
 }
