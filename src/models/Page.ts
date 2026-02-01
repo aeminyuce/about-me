@@ -18,6 +18,10 @@ export interface StoreContextProps {
     isMobile: boolean;
     theme: string;
     setTheme(name: string): string;
+    iconSize: string;
+    setIconSize(name: string): string;
+    iconCopy: string;
+    setIconCopy(name: string): string;
     api: any;
 }
 

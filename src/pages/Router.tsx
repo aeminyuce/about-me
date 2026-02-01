@@ -9,6 +9,7 @@ import Page500 from '../pages/500';
 import Page404 from '../pages/404';
 
 // layouts
+const Default = lazy(() => import( /* webpackChunkName: "Default" */ "../layouts/Default" ));
 const Error = lazy(() => import( /* webpackChunkName: "Error" */ "../layouts/Error" ));
 const Home = lazy(() => import( /* webpackChunkName: "Home" */ "../layouts/Home" ));
 const Lab = lazy(() => import( /* webpackChunkName: "Lab" */ "../layouts/Lab" ));
@@ -23,10 +24,21 @@ const LabAvatars = lazy(() => import( /* webpackChunkName: "lab/Avatars" */ "./l
 const LabBreadcrumbs = lazy(() => import( /* webpackChunkName: "lab/Breadcrumbs" */ "./lab/Breadcrumbs" ));
 const LabButtons= lazy(() => import( /* webpackChunkName: "lab/LabButtons" */ "./lab/Buttons" ));
 
+const Icons= lazy(() => import( /* webpackChunkName: "Icons" */ "./Icons" ));
+
 export default function () {
     return (
         <Suspense fallback={<PageLoader />}>
             <Routes>
+                {/* default pages */}
+                <Route element={<Default />}>
+
+                    <Route path='icons' element={
+                        <PageTitle title='I Love Icons'><Icons /></PageTitle>
+                    }/>
+
+                </Route>
+
                 {/* home pages */}
                 <Route path='/' element={<Home />}>
 

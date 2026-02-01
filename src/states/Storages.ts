@@ -1,5 +1,5 @@
 // misc
-import { CURRENT_THEME } from './Actions';
+import { CURRENT_THEME, ICON_SIZE, ICON_COPY } from './Actions';
 import type { SetStorageProps, GetStorageProps } from '../models/Page';
 
 export const setStorage = (props: SetStorageProps) => {
@@ -25,4 +25,6 @@ export const getStorage = (props: GetStorageProps) => {
 
 export const storedData = {
 	theme: getStorage({ name: CURRENT_THEME }) || 'ui-theme-purpleBlue', // default theme
+	iconSize: getStorage({ name: ICON_SIZE }) || 'xl', // default icon size
+	iconCopy: getStorage({ name: ICON_COPY }) || '', // default copied icon
 }

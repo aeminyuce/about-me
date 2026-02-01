@@ -8,7 +8,15 @@ import { getPageData, getHomeData, getHomeFeaturedData, getLabData } from '../se
 // misc
 import type { StoreContextProps, StoreProviderProps } from '../models/Page';
 import reducer from './StoreReducer';
-import { CURRENT_THEME, PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA } from './Actions';
+import {
+
+	// state
+	CURRENT_THEME, ICON_SIZE, ICON_COPY,
+
+	// data
+	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA
+
+} from './Actions';
 
 export const StoreContext = createContext({} as StoreContextProps);
 
@@ -51,6 +59,21 @@ export default function (props: StoreProviderProps) {
         });
     };
 
+    // icons
+    const setIconSize = (name: string) => {
+        dispatch({
+            type: ICON_SIZE,
+            iconSize: name,
+        });
+    }
+
+    const setIconCopy = (name: string) => {
+        dispatch({
+            type: ICON_COPY,
+            iconCopy: name,
+        });
+    }
+
     // fetch page data
     const loadPageData = () => {
         getPageData(service).then((response: any) => {
@@ -92,7 +115,13 @@ export default function (props: StoreProviderProps) {
     const contextValue: StoreContextProps =  {
         ...state,
         isMobile,
+
+        // state
         setTheme,
+        setIconSize,
+        setIconCopy,
+
+        // data
         loadHomeData,
         loadHomeFeaturedData,
         loadLabData,
