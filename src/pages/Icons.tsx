@@ -43,16 +43,16 @@ export default function () {
 
     // sprites
     const spritesList = {
-        'general': SpriteGeneral,
-        'touch': SpriteTouch,
-        'media': SpriteMedia,
-        'kitchen': SpriteKitchen,
-        'real-estate': SpriteRealEstate,
-        'weather': SpriteWeather,
-        'commerce': SpriteCommerce,
-        'files': SpriteFiles,
-        'social': SpriteSocial,
-        'brands': SpriteBrands,
+        'General': SpriteGeneral,
+        'Touch': SpriteTouch,
+        'Media': SpriteMedia,
+        'Kitchen': SpriteKitchen,
+        'Real Estate': SpriteRealEstate,
+        'Weather': SpriteWeather,
+        'Commerce': SpriteCommerce,
+        'Files': SpriteFiles,
+        'Social': SpriteSocial,
+        'Brands': SpriteBrands,
     };
 
     // get total icons length
