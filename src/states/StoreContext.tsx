@@ -11,7 +11,7 @@ import reducer from './StoreReducer';
 import {
 
 	// state
-	CURRENT_THEME, ICON_SIZE, ICON_COPY,
+	CURRENT_THEME, ICON_SIZE,
 
 	// data
 	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA
@@ -67,13 +67,6 @@ export default function (props: StoreProviderProps) {
         });
     }
 
-    const setIconCopy = (name: string) => {
-        dispatch({
-            type: ICON_COPY,
-            iconCopy: name,
-        });
-    }
-
     // fetch page data
     const loadPageData = () => {
         getPageData(service).then((response: any) => {
@@ -119,7 +112,6 @@ export default function (props: StoreProviderProps) {
         // state
         setTheme,
         setIconSize,
-        setIconCopy,
 
         // data
         loadHomeData,

@@ -5,4 +5,3 @@ export const HOME_DATA = 'HOME_DATA';
 export const HOME_FEATURED_DATA = 'HOME_FEATURED_DATA';
 export const LAB_DATA = 'LAB_DATA';
 export const ICON_SIZE = 'ICON_SIZE';
-export const ICON_COPY = 'ICON_COPY';

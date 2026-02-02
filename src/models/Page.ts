@@ -21,7 +21,6 @@ export interface StoreContextProps {
     iconSize: string;
     setIconSize(name: string): string;
     iconCopy: string;
-    setIconCopy(name: string): string;
     api: any;
 }
 

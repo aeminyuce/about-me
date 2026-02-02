@@ -3,7 +3,7 @@ import { setStorage } from './Storages';
 import {
 
 	// state
-	CURRENT_THEME, ICON_SIZE, ICON_COPY,
+	CURRENT_THEME, ICON_SIZE,
 
 	// data
 	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA
@@ -26,18 +26,17 @@ const updateStoreContext = (state: any, action: any) => {
 				theme: action.theme,
 			};
 
-		} else if ([ICON_SIZE, ICON_COPY].includes(action?.type)) {
+		} else if ([ICON_SIZE].includes(action?.type)) {
 
 			// icons
 			setStorage({
-				name: action.type, // ICON_SIZE or ICON_COPY
-				value: (action.type === ICON_SIZE ? action.iconSize : action.iconCopy),
+				name: ICON_SIZE,
+				value: action.iconSize,
 			});
 
 			return {
 				...state,
-				...(action.type === ICON_SIZE && { iconSize: action.result }),
-				...(action.type === ICON_COPY && { iconCopy: action.result }),
+				iconSize: action.iconSize,
 			};
 
 		} else if ([PAGE_DATA].includes(action?.type)) {
