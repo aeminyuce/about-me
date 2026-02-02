@@ -1,37 +1,36 @@
 import * as React from 'react';
 import { Fragment } from 'react';
-import Alerts from 'uilab/react/Alerts';
 import Button from 'uilab/react/Button';
 import Grid from 'uilab/react/Grid';
+import Heading from 'uilab/react/Heading';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../states/StoreContext';
 import type { SizeListProps, IconsListProps } from '../models/Icons';
+import { copyIconName } from '../helpers/Icons';
 
 // assets
 const iconsList = require('uilab-icons/icons-list.json') as IconsListProps[];
 
-const SpriteGeneral = require('uilab-icons/sprite/general.svg');
-const SpriteTouch = require('uilab-icons/sprite/touch.svg');
-const SpriteMedia = require('uilab-icons/sprite/media.svg');
-const SpriteKitchen = require('uilab-icons/sprite/kitchen.svg');
-const SpriteRealEstate = require('uilab-icons/sprite/real-estate.svg');
-const SpriteWeather = require('uilab-icons/sprite/weather.svg');
-const SpriteCommerce = require('uilab-icons/sprite/commerce.svg');
-const SpriteFiles = require('uilab-icons/sprite/files.svg');
-const SpriteSocial = require('uilab-icons/sprite/social.svg');
-const SpriteBrands = require('uilab-icons/sprite/brands.svg');
+const SpriteGeneral = require('uilab-icons/sprite/general.svg') as string;
+const SpriteTouch = require('uilab-icons/sprite/touch.svg') as string;
+const SpriteMedia = require('uilab-icons/sprite/media.svg') as string;
+const SpriteKitchen = require('uilab-icons/sprite/kitchen.svg') as string;
+const SpriteRealEstate = require('uilab-icons/sprite/real-estate.svg') as string;
+const SpriteWeather = require('uilab-icons/sprite/weather.svg') as string;
+const SpriteCommerce = require('uilab-icons/sprite/commerce.svg') as string;
+const SpriteFiles = require('uilab-icons/sprite/files.svg') as string;
+const SpriteSocial = require('uilab-icons/sprite/social.svg') as string;
+const SpriteBrands = require('uilab-icons/sprite/brands.svg') as string;
 
 // styles
 import '../../src/assets/icons.less';
 
 export default function () {
-    const { iconSize, setIconSize, setIconCopy } = useStoreContext();
+    const { iconSize, setIconSize } = useStoreContext();
 
     // icon sizes
-    const selectedSize = 'xl';
-
     const sizeList = [
         { name: 'XXL', size: 'xxl' },
         { name: 'XL', size: 'xl' },
@@ -62,90 +61,67 @@ export default function () {
         totalLength += item.length;
     });
 
-    // helpers
-    const copyText = (text: string) => {
-        if (document.hasFocus()) {
-            navigator.clipboard.writeText(text).then(() => {
-                Alerts.Message({
-                    msg: `<b>Copied!</b><br>${text}`
-                });
-            }).catch((err) => {
-                Alerts.Message({
-                    msg: `<b>Failed to copy ${text}!</b><br>${err}`,
-                    theme: 'danger'
-                });
-            });
-        }
-    };
-
     return (
         <Grid.Container as='main' ariaLabel='Main site content' noGutter='all'>
-            <Grid.Container fixed='xl' as='div'>
+            <Grid.Container fixed='xl' as='div' className='ui-sm-no-p ui-align-c ui-p-30-v'>
 
-                <div className='ui-sm-no-p ui-align-c ui-p-30-v'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h1' className='ui-font-light ui-font-48 ui-theme-greenYellow ui-text'>
+                            I design elegant, hand‑crafted SVG icons.
+                        </Heading>
+                        <p className='ui-font-22 ui-font-readable ui-m-25-b'>
+                            I design elegant, hand‑crafted SVG icons that give your interface clarity, personality, and precision.<br />
+                            Each icon is drawn from scratch, creating a lightweight, scalable system that feels uniquely yours.
+                        </p>
+                        <div className='ui-font-18 ui-opacity-half'>
+                            A total of {totalLength} icons crafted! Adjust the icon sizes below.
+                        </div>
+                    </Grid.Col>
+                    <Grid.Col size={8} offset={2}>
+                        <Button.Wrapper as='div' type='holder' largeButtons ease='1st' className='ui-theme-redPurple'>
 
-                    <Grid.Row>
-                        <Grid.Col size={12}>
-                            <h2 className='ui-h2'>
-                                SVG Icons
-                                <span className='ui-font-18 ui-m-5-v ui-block ui-opacity-half'>(Total Icons: {totalLength})</span>
-                            </h2>
-                        </Grid.Col>
-                    </Grid.Row>
+                            {sizeList.map((item: SizeListProps) => {
+                                const classes = `ui-round${item.size === iconSize ? ' ui-fill-dark-100' : ''}`;
 
-                    <Grid.Row>
-                        <Grid.Col size={8} offset={2}>
-                            <h4 className='ui-h4 ui-m-10-b'>Change Size</h4>
-                            <Button.Wrapper as='div' largeButtons ease='1st' className={`ui-m-20-b ui-theme-blue`}>
+                                return (
+                                    <Button key={item.name} noease className={classes} data={{ 'size': item.size  }} onClick={() => setIconSize(item.size)}>
+                                        {item.name}
+                                    </Button>
+                                )
+                            })}
 
-                                {sizeList.map((item: SizeListProps) => {
-                                    let classes = 'ui-round';
-                                    if ((iconSize === null && item.size === selectedSize) || (iconSize !== null && item.size === iconSize)) classes += ' ui-fill-dark-100';
+                        </Button.Wrapper>
+                    </Grid.Col>
+                    <Grid.Col size={12} className='icon-list'>
 
-                                    return (
-                                        <Button noease key={item.name} size-ui-size={item.size} className={classes} onClick={() => setIconSize(item.size)}>
-                                            {item.name}
-                                        </Button>
-                                    )
-                                })}
+                        {iconsList.map((item: IconsListProps) => (
+                            <Fragment key={item.category}>
+                                <Heading as='h2'>
+                                    {item.category} Icons
+                                    <Button as='span' size='xs' className='ui-m-10-l ui-round'>
+                                        {item.length} Icons
+                                    </Button>
+                                </Heading>
+                                <Button.Wrapper as='div' ease='1st' className={`ui-highlight ui-round-1st ui-icons-${iconSize}`}>
 
-                            </Button.Wrapper>
-                        </Grid.Col>
-                    </Grid.Row>
+                                    {item.icons.map((name: string) => {
+                                        const classes = name.includes('loader-') ? 'ui-animate-spin' : null;
 
-                    <Grid.Row>
-                        <Grid.Col size={12} className='icon-list'>
+                                        return (
+                                            <Button key={name} multi noease onClick={() => copyIconName(name)}>
+                                                <SvgIcon as='sprite' src={spritesList[item.category]} symbolId={name} className={classes} opacity='no' />
+                                                <span>{name}</span>
+                                            </Button>
+                                        )
+                                    })}
 
-                            {iconsList.map((item: IconsListProps) => (
-                                <Fragment key={item.category}>
-                                    <h2 className='ui-h2 ui-m-30-v'>
-                                        {item.category} Icons
-                                        <span className='ui-font-16 ui-m-5-v ui-block ui-opacity-half'>
-                                            ({item.length} icons)
-                                        </span>
-                                    </h2>
+                                </Button.Wrapper>
+                            </Fragment>
+                        ))}
 
-                                    <Button.Wrapper as='div' ease='1st' className={`ui-highlight ui-icons-${iconSize ? iconSize : selectedSize}`}>
-
-                                        {item.icons.map((name: string) => {
-                                            const classes = name.includes('loader-') ? 'ui-animate-spin' : null;
-
-                                            return (
-                                                <Button key={name} multi noease className='ui-col-150 ui-p-10-v ui-no-p-h ui-m-1 ui-round' onClick={() => copyText(setIconCopy(name))}>
-                                                    <SvgIcon as='sprite' src={spritesList[item.category]} symbolId={name} className={classes} opacity='no' />
-                                                    <span className='ui-font-13 ui-opacity-half ui-m-5-t ui-block'>{name}</span>
-                                                </Button>
-                                            )
-                                        })}
-
-                                    </Button.Wrapper>
-                                </Fragment>
-                            ))}
-
-                        </Grid.Col>
-                    </Grid.Row>
-
-                </div>
+                    </Grid.Col>
+                </Grid.Row>
 
             </Grid.Container>
         </Grid.Container>

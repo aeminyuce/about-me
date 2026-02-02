@@ -1,9 +1,17 @@
 @import (reference) 'uilab/less/core/globals.less';
 @import (reference) 'uilab/less/core/mixins.less';
 
-@preview-text-align:                      center;
-@icon-list-btn-width:                     172px;
+@iconlist-btn-width:                      172px;
+@iconlist-btn-padding:                    10px 0;
+@iconlist-btn-margin:                     1px;
+
+@iconlist-info-margin-t:                  5px;
 
 .icon-list {
-    .ui-btn-multi { min-width: @icon-list-btn-width; }
+    .ui-h2 { margin-top: 60px; margin-bottom: 20px; }
+    .ui-btn-multi {
+        min-width: @iconlist-btn-width; padding: @iconlist-btn-padding; margin: @iconlist-btn-margin;
+
+        span { ._color-var(black-50); font-size: @font-13; margin-top: @iconlist-info-margin-t; display: block; }
+    }
 }
