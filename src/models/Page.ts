@@ -64,6 +64,7 @@ export interface PreviewProps {
 // Get Image from public Folder
 export interface GetImageProps {
     src: string;
-    className?: string;
     alt?: string;
+    className?: string;
+    style?: any;
 }

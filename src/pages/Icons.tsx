@@ -9,6 +9,8 @@ import SvgIcon from 'uilab/react/SvgIcon';
 import { useStoreContext } from '../states/StoreContext';
 import type { SizeListProps, IconsListProps } from '../models/Icons';
 import { copyIconName } from '../helpers/Icons';
+import GetImage from '../components/common/GetImage';
+import MyAvatar from '../components/common/MyAvatar';
 
 // assets
 const iconsList = require('uilab-icons/icons-list.json') as IconsListProps[];
@@ -46,7 +48,7 @@ export default function () {
         'Touch': SpriteTouch,
         'Media': SpriteMedia,
         'Kitchen': SpriteKitchen,
-        'Real Estate': SpriteRealEstate,
+        'RealEstate': SpriteRealEstate,
         'Weather': SpriteWeather,
         'Commerce': SpriteCommerce,
         'Files': SpriteFiles,
@@ -67,10 +69,12 @@ export default function () {
 
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h1' className='ui-font-light ui-font-48 ui-theme-greenYellow ui-text'>
-                            I design elegant, hand‑crafted SVG icons.
+                        <MyAvatar />
+                        <Heading as='h1' className='ui-font-light ui-font-48 ui-m-30-v'>
+                            Hi! I design elegant and hand-crafted SVG icons.
                         </Heading>
-                        <p className='ui-font-22 ui-font-readable ui-m-25-b'>
+                        <GetImage src='icon-preview.jpg' className='ui-m-20-b ui-round-more ui-border' style={{ width: '260px' }} />
+                        <p className='ui-font-22 ui-font-readable ui-m-25-b ui-theme-greenYellow ui-text'>
                             I design elegant, hand‑crafted SVG icons that give your interface clarity, personality, and precision.<br />
                             Each icon is drawn from scratch, creating a lightweight, scalable system that feels uniquely yours.
                         </p>
@@ -78,7 +82,7 @@ export default function () {
                             A total of {totalLength} icons crafted! Adjust the icon sizes below.
                         </div>
                     </Grid.Col>
-                    <Grid.Col size={8} offset={2}>
+                    <Grid.Col size={4} offset={4}>
                         <Button.Wrapper as='div' type='holder' largeButtons ease='1st' className='ui-theme-redPurple'>
 
                             {sizeList.map((item: SizeListProps) => {
