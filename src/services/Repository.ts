@@ -15,3 +15,7 @@ export const getHomeFeaturedData = async (service: Service, params?: any) => {
 export const getLabData = async (service: Service, params?: any) => {
     return service.get(`${process.env.API_URL}/get_lab`, params);
 };
+
+export const getIconsData = async (service: Service, params?: any) => {
+    return service.get(`${process.env.API_URL}/get_icons`, params);
+};

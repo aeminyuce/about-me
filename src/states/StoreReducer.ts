@@ -6,7 +6,7 @@ import {
 	CURRENT_THEME, ICON_SIZE,
 
 	// data
-	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA
+	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA, ICONS_DATA
 
 } from './Actions';
 
@@ -64,6 +64,9 @@ const updateStoreContext = (state: any, action: any) => {
 
 					// lab
 					...(action.type === LAB_DATA && { lab: action.result }),
+
+					// icons
+					...(action.type === ICONS_DATA && { icons: action.result }),
 				},
 			};
 

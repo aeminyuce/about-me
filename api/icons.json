@@ -1,0 +1,39 @@
+{
+    "result": {
+        "info": {
+            "text": "I design elegant, hand‑crafted SVG icons that give your interface clarity, personality, and precision. Each icon is drawn from scratch, resulting in a lightweight, cleanly‑anchored, and fully scalable system that feels uniquely yours.",
+            "title": "Hi! I design elegant and hand-crafted SVG icons.",
+            "image1": "icon-preview.jpg",
+            "image2": "vector-preview.jpg",
+            "iconsSuffix": "Icons",
+            "sizeChangerPrefix": "A total of",
+            "sizeChangerSuffix": "icons crafted! Adjust the icon sizes below."
+        },
+        "sizes": [
+            {
+                "name": "XXL",
+                "size": "xxl"
+            },
+            {
+                "name": "XL",
+                "size": "xl"
+            },
+            {
+                "name": "L",
+                "size": "lg"
+            },
+            {
+                "name": "-",
+                "size": "-"
+            },
+            {
+                "name": "SM",
+                "size": "sm"
+            },
+            {
+                "name": "XS",
+                "size": "xs"
+            }
+        ]
+    }
+}

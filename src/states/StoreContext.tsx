@@ -3,7 +3,7 @@ import { createContext, useContext, useReducer, useState, useEffect } from 'reac
 import { useLocation } from 'react-router-dom';
 import Loadingmask from 'uilab/react/Loadingmask';
 import Service from '../services/Service';
-import { getPageData, getHomeData, getHomeFeaturedData, getLabData } from '../services/Repository';
+import { getPageData, getHomeData, getHomeFeaturedData, getLabData, getIconsData } from '../services/Repository';
 
 // misc
 import type { StoreContextProps, StoreProviderProps } from '../models/Page';
@@ -14,7 +14,7 @@ import {
 	CURRENT_THEME, ICON_SIZE,
 
 	// data
-	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA
+	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA, ICONS_DATA
 
 } from './Actions';
 
@@ -48,6 +48,9 @@ export default function (props: StoreProviderProps) {
         } else if (pathname.startsWith('/lab') && !state?.api?.lab) {
             loadLabData();
 
+        } else if (pathname.startsWith('/icons') && !state?.api?.icons) {
+            loadIconsData();
+
         } else Loadingmask();
     }, [pathname]);
 
@@ -77,7 +80,7 @@ export default function (props: StoreProviderProps) {
         });
     };
 
-    // fetch home data
+    // fetch data from other pages
     const loadHomeData = () => {
         getHomeData(service).then((response: any) => {
             dispatch({
@@ -94,12 +97,18 @@ export default function (props: StoreProviderProps) {
             });
         });
     };
-
-    // fetch lab data
     const loadLabData = () => {
         getLabData(service).then((response: any) => {
             dispatch({
                 type: LAB_DATA,
+                result: response?.result,
+            });
+        });
+    };
+    const loadIconsData = () => {
+        getIconsData(service).then((response: any) => {
+            dispatch({
+                type: ICONS_DATA,
                 result: response?.result,
             });
         });
@@ -117,6 +126,7 @@ export default function (props: StoreProviderProps) {
         loadHomeData,
         loadHomeFeaturedData,
         loadLabData,
+        loadIconsData,
     };
 
     return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>
