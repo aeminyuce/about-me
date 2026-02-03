@@ -34,7 +34,7 @@ export const copyIconName = (text: string) => {
     copyToClipboard(text)
         .then(() => {
             Alerts.Message({
-                msg: `<b>Copied!</b><br>${text}`,
+                msg: `<b>Icon name copied!</b><br>${text}`,
                 theme: 'success',
             });
         })
