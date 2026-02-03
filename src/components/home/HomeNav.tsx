@@ -33,7 +33,7 @@ export default function () {
 
                     </Grid.Col>
                 </Grid.Row>
-                <Grid.Col size={129} className='ui-p-10-v'>
+                <Grid.Col size={85} className='ui-p-10-v'>
 
                     {navData?.themeList &&
                         <>

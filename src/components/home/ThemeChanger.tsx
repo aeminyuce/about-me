@@ -1,14 +1,10 @@
 import * as React from 'react';
 import Button from 'uilab/react/Button';
 import Dropdown from 'uilab/react/Dropdown';
-import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import type { ThemeListProps } from '../../models/Home';
 import { useStoreContext } from '../../states/StoreContext';
-
-// assets
-import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
 
 export default function (props: any) {
     const { themeA, setThemeA, themeB, setThemeB, api } = useStoreContext();
@@ -25,8 +21,7 @@ export default function (props: any) {
     return (
         <Dropdown align='l'>
             <Button noease className={`ui-p-10-h ${round}`}>
-                <span className={`ui-inline-block ui-circle ${theme} ui-fill-dark-100`} />
-                <SvgIcon as='js' toggle src={IconAngleDown} className='ui-m-10-l' />
+                <span className={`ui-block ui-circle ${theme} ui-fill-dark-100`} />
             </Button>
             <Dropdown.Menu className='ui-inline-block-2nd ui-round ui-circle-2nd ui-shadow-lg ui-cursor-pointer'>
 
