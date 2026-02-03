@@ -9,22 +9,22 @@ import Page500 from '../pages/500';
 import Page404 from '../pages/404';
 
 // layouts
-const Default = lazy(() => import( /* webpackChunkName: "Default" */ "../layouts/Default" ));
-const Error = lazy(() => import( /* webpackChunkName: "Error" */ "../layouts/Error" ));
-const Home = lazy(() => import( /* webpackChunkName: "Home" */ "../layouts/Home" ));
-const Lab = lazy(() => import( /* webpackChunkName: "Lab" */ "../layouts/Lab" ));
+const Default = lazy(() => import( /* webpackChunkName: 'Default' */ '../layouts/Default' ));
+const Error = lazy(() => import( /* webpackChunkName: 'Error' */ '../layouts/Error' ));
+const Home = lazy(() => import( /* webpackChunkName: 'Home' */ '../layouts/Home' ));
+const Lab = lazy(() => import( /* webpackChunkName: 'Lab' */ '../layouts/Lab' ));
 
 // routes
-const Featured = lazy(() => import( /* webpackChunkName: "Featured" */ "./home/Featured" ));
-const Dashboard = lazy(() => import( /* webpackChunkName: "Dashboard" */ "./home/Dashboard" ));
+const Featured = lazy(() => import( /* webpackChunkName: 'Featured' */ './home/Featured' ));
+const Dashboard = lazy(() => import( /* webpackChunkName: 'Dashboard' */ './home/Dashboard' ));
 
-const LabIntro = lazy(() => import( /* webpackChunkName: "lab/Intro" */ "./lab/Intro" ));
-const LabAlerts = lazy(() => import( /* webpackChunkName: "lab/Alerts" */ "./lab/Alerts" ));
-const LabAvatars = lazy(() => import( /* webpackChunkName: "lab/Avatars" */ "./lab/Avatars" ));
-const LabBreadcrumbs = lazy(() => import( /* webpackChunkName: "lab/Breadcrumbs" */ "./lab/Breadcrumbs" ));
-const LabButtons= lazy(() => import( /* webpackChunkName: "lab/LabButtons" */ "./lab/Buttons" ));
+const LabIntro = lazy(() => import( /* webpackChunkName: 'lab/Intro' */ './lab/Intro' ));
+const LabAlerts = lazy(() => import( /* webpackChunkName: 'lab/Alerts' */ './lab/Alerts' ));
+const LabAvatars = lazy(() => import( /* webpackChunkName: 'lab/Avatars' */ './lab/Avatars' ));
+const LabBreadcrumbs = lazy(() => import( /* webpackChunkName: 'lab/Breadcrumbs' */ './lab/Breadcrumbs' ));
+const LabButtons= lazy(() => import( /* webpackChunkName: 'lab/LabButtons' */ './lab/Buttons' ));
 
-const Icons= lazy(() => import( /* webpackChunkName: "Icons" */ "./Icons" ));
+const Icons= lazy(() => import( /* webpackChunkName: 'Icons' */ './Icons' ));
 
 export default function () {
     return (

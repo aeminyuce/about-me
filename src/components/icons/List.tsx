@@ -47,7 +47,7 @@ export default function (props: any) {
             {iconsList.map((item: IconsListProps) => (
                 <Fragment key={item.category}>
                     <Heading as='h2'>
-                        <span className="ui-inline-block">
+                        <span className='ui-inline-block'>
                             {item.category} {iconsSuffix}
                         </span>
                         <Button as='span' size='xs' className='ui-m-10-l ui-p-10-h ui-circle'>
