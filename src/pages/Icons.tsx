@@ -48,7 +48,7 @@ export default function () {
         'Touch': SpriteTouch,
         'Media': SpriteMedia,
         'Kitchen': SpriteKitchen,
-        'RealEstate': SpriteRealEstate,
+        'Real-Estate': SpriteRealEstate,
         'Weather': SpriteWeather,
         'Commerce': SpriteCommerce,
         'Files': SpriteFiles,
@@ -73,10 +73,19 @@ export default function () {
                         <Heading as='h1' className='ui-font-light ui-font-48 ui-m-30-v'>
                             Hi! I design elegant and hand-crafted SVG icons.
                         </Heading>
-                        <GetImage src='icon-preview.jpg' className='ui-m-20-b ui-round-more ui-border' style={{ width: '260px' }} />
+                    </Grid.Col>
+                    <Grid.Row fluid='sm' className='iconslist-images ui-m-auto ui-m-20-b ui-round-more-2nd'>
+                        <Grid.Col size={6}>
+                            <GetImage src='icon-preview.jpg' className='ui-img-fluid ui-border' />
+                        </Grid.Col>
+                        <Grid.Col size={6}>
+                            <GetImage src='vector-preview.jpg' className='ui-img-fluid ui-border' />
+                        </Grid.Col>
+                    </Grid.Row>
+                    <Grid.Col size={12}>
                         <p className='ui-font-22 ui-font-readable ui-m-25-b ui-theme-greenYellow ui-text'>
                             I design elegant, hand‑crafted SVG icons that give your interface clarity, personality, and precision.<br />
-                            Each icon is drawn from scratch, creating a lightweight, scalable system that feels uniquely yours.
+                            Each icon is drawn from scratch, resulting in a lightweight, cleanly‑anchored, and fully scalable system that feels uniquely yours.
                         </p>
                         <div className='ui-font-18 ui-opacity-half'>
                             A total of {totalLength} icons crafted! Adjust the icon sizes below.
@@ -97,13 +106,15 @@ export default function () {
 
                         </Button.Wrapper>
                     </Grid.Col>
-                    <Grid.Col size={12} className='icon-list'>
+                    <Grid.Col size={12} className='iconslist'>
 
                         {iconsList.map((item: IconsListProps) => (
                             <Fragment key={item.category}>
                                 <Heading as='h2'>
-                                    {item.category} Icons
-                                    <Button as='span' size='xs' className='ui-m-10-l ui-round'>
+                                    <span className="ui-inline-block">
+                                        {item.category} Icons
+                                    </span>
+                                    <Button as='span' size='xs' className='ui-m-10-l ui-p-10-h ui-circle'>
                                         {item.length} Icons
                                     </Button>
                                 </Heading>
