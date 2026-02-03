@@ -17,23 +17,29 @@ export default function() {
     const info = profile?.info;
     const userActivity = profile?.userActivity;
 
+    const avatar = info?.avatar;
+    const cover = info?.cover;
+    const name = info?.name;
     const email = info?.email;
     const type = info?.type;
 
     return (
         <Card className='home-profile ui-round ui-shadow'>
-            {info?.avatar &&
-                <div className='ui-align-c ui-round-t ui-border-b ui-stroke ui-fill-light-100'>
+            {avatar && cover &&
+                <div className='ui-align-c ui-round-t ui-border-b'>
+                    <div className='ui-round-t'>
+                        <GetImage src={cover} />
+                    </div>
                     <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
                         <Avatar size='lg'>
-                            <GetImage src={info?.avatar} />
+                            <GetImage src={avatar} />
                         </Avatar>
                     </Notifier>
                 </div>
             }
 
             <div className='ui-align-c'>
-                {info?.name}
+                {name}
                 {email &&
                     <div className='ui-color-black-50 ui-font-11 ui-m-10-b'>
                         {email}

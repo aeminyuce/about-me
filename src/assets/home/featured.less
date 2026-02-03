@@ -10,7 +10,14 @@
 
 .home-profile {
     & > div:first-child {
-        height: @home-profile-cover-size; margin-bottom: ((@home-profile-cover-size / 2) + @home-profile-cover-margin-bottom);
+        margin-bottom: ((@home-profile-cover-size / 2) + @home-profile-cover-margin-bottom); position: relative;
+
+        &,& > div { height: @home-profile-cover-size; }
+        & > div {
+            overflow: hidden; position: absolute; top: 0; left: 0;
+
+            img { width: 100%; }
+        }
 
         .ui-notifier { margin-top: (@home-profile-cover-size / 2); }
     }
