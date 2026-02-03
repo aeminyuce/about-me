@@ -14,12 +14,12 @@ export default function () {
     const image2 = info?.image2;
 
     return (
-        <Grid.Row fluid='sm' className='iconslist-images ui-m-auto ui-m-20-b ui-round-more-2nd'>
+        <Grid.Row fluid='sm' className='iconslist-images ui-m-auto ui-m-20-b ui-round-more-2nd ui-shadow-lg-2nd'>
             <Grid.Col size={6}>
-                <GetImage src={image1} className='ui-img-fluid ui-border' />
+                <GetImage src={image1} className='ui-img-fluid' />
             </Grid.Col>
             <Grid.Col size={6}>
-                <GetImage src={image2} className='ui-img-fluid ui-border' />
+                <GetImage src={image2} className='ui-img-fluid' />
             </Grid.Col>
         </Grid.Row>
     )
