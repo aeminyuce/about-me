@@ -17,7 +17,8 @@ import { IconUserPlus } from 'uilab-icons/react/general/user-plus';
 import { IconAngleRight} from 'uilab-icons/react/general/angle-right';
 
 export const People = () => {
-    const { api } = useStoreContext();
+    const { themeA, api } = useStoreContext();
+
     const people = api?.home_featured?.people;
 
     const peopleList = people?.list;
@@ -25,7 +26,7 @@ export const People = () => {
     const cardTitle = people?.cardTitle;
 
     const peopleIcons = {
-        "user-plus": IconUserPlus,
+        'user-plus': IconUserPlus,
     };
 
     const setScrollOuter = peopleList?.length > 3 ? ' ui-scrollbar-outer' : '';
@@ -46,7 +47,7 @@ export const People = () => {
                 </Heading>
             }
 
-            <ListGroup className={`ui-round-t ui-scroll-v ui-scrollbar-round ui-scrollbar-faded${setScrollOuter}`}>
+            <ListGroup className={`ui-round-t ui-scroll-v ui-scrollbar-round ui-scrollbar-faded${setScrollOuter} ${themeA}`}>
                 <ListGroup.List avatarSize='xs'>
 
                     {peopleList.map((item: PeopleListProps) => {
@@ -82,13 +83,13 @@ export const People = () => {
 }
 
 export const PeopleMore = () => {
-    const { api } = useStoreContext();
+    const { themeB, api } = useStoreContext();
 
     const peopleMore = api?.home_featured?.peopleMore;
     const moreCount = peopleMore?.moreCount;
 
     return (
-        <Card className='ui-align-c ui-p-15 ui-round ui-shadow'>
+        <Card className={`ui-align-c ui-p-15 ui-round ui-shadow ${themeB}`}>
             <Avatar.Holder className='ui-m-auto ui-circle-1st ui-ease-1st-layout ui-hover-scale-more-1st'>
 
                 {peopleMore?.list.map((item: PeopleMoreListProps) => {

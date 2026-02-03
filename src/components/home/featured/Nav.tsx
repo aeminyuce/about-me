@@ -12,14 +12,14 @@ import { IconHome } from 'uilab-icons/react/general/home';
 import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
 
 export default function () {
-    const { theme, api } = useStoreContext();
+    const { themeA, api } = useStoreContext();
 
     const item1 = api?.home_featured?.nav?.item1;
     const item2 = api?.home_featured?.nav?.item2;
     const item3 = api?.home_featured?.nav?.item3;
 
     return (
-        <Card className={`ui-align-c ui-p-15 ui-round ui-shadow ${theme}`}>
+        <Card className={`ui-align-c ui-p-15 ui-round ui-shadow ${themeA}`}>
             <Breadcrumbs sep='bull' className='ui-circle-2nd'>
                 <Breadcrumbs.Item>
                     <Button to={`#${item1}`} square className='ui-fill-dark-100'>
@@ -27,13 +27,13 @@ export default function () {
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button to={`#${item2}`}>
+                    <Button to={`#${item2}`} className='ui-fill-dark-100'>
                         <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-m-4-v ui-m-10-r' />
                         {item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button to={`#${item3}`} ghost as='span' className='ui-border'>
+                    <Button to={`#${item3}`} as='span'>
                         {item3}
                     </Button>
                 </Breadcrumbs.Item>

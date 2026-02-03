@@ -11,7 +11,7 @@ import reducer from './StoreReducer';
 import {
 
 	// state
-	CURRENT_THEME, ICON_SIZE,
+	CURRENT_THEME_A, CURRENT_THEME_B, ICON_SIZE,
 
 	// data
 	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA, ICONS_DATA
@@ -55,10 +55,16 @@ export default function (props: StoreProviderProps) {
     }, [pathname]);
 
     // themes
-    const setTheme = (name: string) => {
+    const setThemeA = (name: string) => {
         dispatch({
-            type: CURRENT_THEME,
-            theme: name,
+            type: CURRENT_THEME_A,
+            themeA: name,
+        });
+    };
+    const setThemeB = (name: string) => {
+        dispatch({
+            type: CURRENT_THEME_B,
+            themeB: name,
         });
     };
 
@@ -119,7 +125,8 @@ export default function (props: StoreProviderProps) {
         isMobile,
 
         // state
-        setTheme,
+        setThemeA,
+        setThemeB,
         setIconSize,
 
         // data

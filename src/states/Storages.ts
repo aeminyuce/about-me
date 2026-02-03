@@ -1,5 +1,5 @@
 // misc
-import { CURRENT_THEME, ICON_SIZE } from './Actions';
+import { CURRENT_THEME_A, CURRENT_THEME_B, ICON_SIZE } from './Actions';
 import type { SetStorageProps, GetStorageProps } from '../models/Page';
 
 export const setStorage = (props: SetStorageProps) => {
@@ -24,6 +24,7 @@ export const getStorage = (props: GetStorageProps) => {
 }
 
 export const storedData = {
-	theme: getStorage({ name: CURRENT_THEME }) || 'ui-theme-purpleBlue', // default theme
+	themeA: getStorage({ name: CURRENT_THEME_A }) || 'ui-theme-purpleBlue', // default theme type A
+	themeB: getStorage({ name: CURRENT_THEME_B }) || 'ui-theme-redPurple', // default theme type B
 	iconSize: getStorage({ name: ICON_SIZE }) || 'xl', // default icon size
 }

@@ -3,7 +3,7 @@ import { setStorage } from './Storages';
 import {
 
 	// state
-	CURRENT_THEME, ICON_SIZE,
+	CURRENT_THEME_A, CURRENT_THEME_B, ICON_SIZE,
 
 	// data
 	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA, ICONS_DATA
@@ -13,17 +13,20 @@ import {
 const updateStoreContext = (state: any, action: any) => {
 	try {
 
-		if ([CURRENT_THEME].includes(action?.type)) {
+		if ([CURRENT_THEME_A, CURRENT_THEME_B].includes(action?.type)) {
 
 			// themes
+			const theme = action.type === CURRENT_THEME_A ? action.themeA : action.themeB;
+
 			setStorage({
-				name: CURRENT_THEME,
-				value: action.theme,
+				name: action.type, // CURRENT_THEME_A or CURRENT_THEME_B
+				value: theme,
 			});
 
 			return {
 				...state,
-				theme: action.theme,
+				...(action.type === CURRENT_THEME_A && { themeA: theme }),
+				...(action.type === CURRENT_THEME_B && { themeB: theme }),
 			};
 
 		} else if ([ICON_SIZE].includes(action?.type)) {

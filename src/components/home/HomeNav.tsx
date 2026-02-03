@@ -33,9 +33,14 @@ export default function () {
 
                     </Grid.Col>
                 </Grid.Row>
-                <Grid.Col size={70} className='ui-p-10-v'>
+                <Grid.Col size={129} className='ui-p-10-v'>
 
-                    {navData?.themeList && <ThemeChanger />}
+                    {navData?.themeList &&
+                        <>
+                        <ThemeChanger type='a' />
+                        <ThemeChanger type='b' />
+                        </>
+                    }
 
                 </Grid.Col>
             </Grid.Static>

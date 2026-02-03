@@ -16,8 +16,10 @@ export interface GetStorageProps {
 // Store Context
 export interface StoreContextProps {
     isMobile: boolean;
-    theme: string;
-    setTheme(name: string): string;
+    themeA: string;
+    themeB: string;
+    setThemeA(name: string): string;
+    setThemeB(name: string): string;
     iconSize: string;
     setIconSize(name: string): string;
     iconCopy: string;

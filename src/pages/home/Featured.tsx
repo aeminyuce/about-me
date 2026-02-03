@@ -13,7 +13,7 @@ import Events from '../../components/home/featured/Events';
 import '../../assets/home/featured.less';
 
 export default function () {
-    const { theme, api } = useStoreContext();
+    const { api } = useStoreContext();
     const homeFeatured = api?.home_featured;
 
     const nav = homeFeatured?.nav;
@@ -21,7 +21,7 @@ export default function () {
     const reportsList = homeFeatured?.reportsList;
 
     return (
-        <Grid.Row className={theme ? ` ${theme}` : null}>
+        <Grid.Row>
             <Grid.Col lg={2} size={4} md={6}>
 
                 {homeFeatured?.profile && <Profile />}

@@ -12,8 +12,10 @@ import { useStoreContext } from '../../../states/StoreContext';
 import type { ReportsListProps } from '../../../models/Home_Featured';
 
 const Report = (props: any) => {
-    const { api } = useStoreContext();
+    const { themeA, themeB, api } = useStoreContext();
+
     const { type } = props;
+    const theme = type === 'l' ? themeA: themeB;
 
     const reportsData = api?.home_featured?.reports;
     const getData = reportsData[type];
@@ -45,7 +47,7 @@ const Report = (props: any) => {
             }
 
             {progressPercent &&
-                <ProgressBar className='ui-round'>
+                <ProgressBar className={`ui-round ${theme}`}>
                     <ProgressBar.Item percent={progressPercent} className='ui-fill-dark-100'/>
                 </ProgressBar>
             }
@@ -67,23 +69,30 @@ export const Reports = () => {
 }
 
 const ReportsListGroup = (props: any) => {
+    const { themeA, themeB } = useStoreContext();
     const { list } = props;
+
     const setScrollOuter = list?.length > 3 ? ' ui-scrollbar-outer' : '';
 
     return (
         <ListGroup className={`ui-round-t ui-scroll-v ui-scrollbar-round ui-scrollbar-faded${setScrollOuter}`}>
             <ListGroup.List>
 
-                {list?.map((item: ReportsListProps) => (
-                    <ListGroup.Item key={item.name}>
-                        <DonutChart.Holder as='span' msg={item.percent} className='ui-float-r'>
-                            <DonutChart.Item percent={item.chartPercent} className='ui-stroke' />
-                        </DonutChart.Holder>
+                {list?.map((item: ReportsListProps, index: number) => {
+                    const isEven = index % 2 === 0;
+                    const theme = isEven ? themeA : themeB;
 
-                        <span className='ui-m-5-t ui-block'>{item.name}</span>
-                        <span className='ui-color-black-50 ui-font-12'>{item.reports}</span>
-                    </ListGroup.Item>
-                ))}
+                    return (
+                        <ListGroup.Item key={item.name}>
+                            <DonutChart.Holder as='span' msg={item.percent} className='ui-float-r'>
+                                <DonutChart.Item percent={item.chartPercent} className={`ui-stroke ${theme}`} />
+                            </DonutChart.Holder>
+
+                            <span className='ui-m-5-t ui-block'>{item.name}</span>
+                            <span className='ui-color-black-50 ui-font-12'>{item.reports}</span>
+                        </ListGroup.Item>
+                    )
+                })}
 
             </ListGroup.List>
         </ListGroup>
@@ -91,7 +100,7 @@ const ReportsListGroup = (props: any) => {
 }
 
 export const ReportsList = () => {
-    const { api } = useStoreContext();
+    const { themeB, api } = useStoreContext();
 
     const reportsList = api?.home_featured?.reportsList;
     const delayed = reportsList?.delayed;
@@ -99,7 +108,7 @@ export const ReportsList = () => {
 
     return (
         <Card className='home-reports-list ui-p-15-t ui-p-15-h ui-shadow ui-round'>
-            <Tab.Holder dataClasses='ui-fill-dark-100'>
+            <Tab.Holder className={themeB} dataClasses='ui-fill-dark-100'>
                 <Button.Wrapper as='div' type='holder' ease='1st' className='ui-m-15-b ui-round-1st'>
 
                     {reportsList && Object.keys(reportsList).map((name: string, index: number) => {

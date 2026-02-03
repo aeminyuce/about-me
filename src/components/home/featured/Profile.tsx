@@ -11,7 +11,7 @@ import type { UserActivityProps } from '../../../models/Home_Featured';
 import GetImage from '../../common/GetImage';
 
 export default function() {
-    const { api } = useStoreContext();
+    const { themeA, api } = useStoreContext();
 
     const profile = api?.home_featured?.profile;
     const info = profile?.info;
@@ -47,7 +47,7 @@ export default function() {
                 }
                 {type &&
                     <div className='ui-font-11 ui-m-10-b'>
-                        <Button as='span' size='xs' className='ui-p-10-h ui-circle ui-fill-dark-100'>
+                        <Button as='span' size='xs' className={`ui-p-10-h ui-circle ui-fill-dark-100 ${themeA}`}>
                             {type}
                         </Button>
                     </div>

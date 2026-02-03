@@ -13,7 +13,7 @@ import { useStoreContext } from '../../../states/StoreContext';
 import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
 
 export default function() {
-    const { api } = useStoreContext();
+    const { themeB, api } = useStoreContext();
 
     const calendar = api?.home_featured?.calendar;
     const settings = calendar?.settings;
@@ -45,10 +45,7 @@ export default function() {
             }
 
             {calendarEvents && events &&
-                <Calendar
-                    className='ui-no-p ui-round'
-                    data={{ date: calendarEvents, json: JSON.stringify(events) }}
-                />
+                <Calendar className={`ui-no-p ui-round ${themeB}`} data={{ date: calendarEvents, json: JSON.stringify(events) }} />
             }
         </Card>
     )
