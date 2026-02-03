@@ -30,7 +30,7 @@ export const Paragraphs = () => {
     const textPart3 = intro?.textPart3;
 
     return (
-        <p className='ui-font-18 ui-font-readable ui-p-30 ui-sm-no-p-h ui-m-30-h'>
+        <p className='ui-font-18 ui-font-readable ui-p-30-h ui-sm-no-p-h ui-m-30-h'>
             {textPart1}
             <br /><br />
             {textPart2}
