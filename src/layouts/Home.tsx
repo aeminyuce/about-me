@@ -28,8 +28,12 @@ export default function () {
                 {/* about me */}
                 {home?.aboutMe && <AboutMe />}
 
-                {/* nav */}
-                {home?.nav && <HomeNav />}
+            </Grid.Container>
+
+            {/* nav */}
+            {home?.nav && <HomeNav />}
+
+            <Grid.Container fixed='xl' as='div'>
 
                 {/* home contents */}
                 <Outlet />

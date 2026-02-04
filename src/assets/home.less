@@ -3,8 +3,11 @@
 
 /* home nav */
 @home-nav-theme-color-size:               17px;
+@home-nav-sticky-z-index:                 89;
 
 .home-nav {
+    ._bg-var(body-bg); ._backdrop-blur(); z-index: @home-nav-sticky-z-index;
+
     .ui-dropdown {
         & > button,& li {
             & > span { width: @home-nav-theme-color-size; height: @home-nav-theme-color-size; }
