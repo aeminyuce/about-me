@@ -24,6 +24,7 @@ export const getStorage = (props: GetStorageProps) => {
 }
 
 export const storedData = {
+	api: {},
 	themeA: getStorage({ name: CURRENT_THEME_A }) || 'ui-theme-purpleBlue', // default theme type A
 	themeB: getStorage({ name: CURRENT_THEME_B }) || 'ui-theme-redPurple', // default theme type B
 	iconSize: getStorage({ name: ICON_SIZE }) || 'xl', // default icon size
