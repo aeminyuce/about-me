@@ -25,6 +25,7 @@ const LabBreadcrumbs = lazy(() => import( /* webpackChunkName: 'lab/Breadcrumbs'
 const LabButtons= lazy(() => import( /* webpackChunkName: 'lab/LabButtons' */ './lab/Buttons' ));
 
 const Icons= lazy(() => import( /* webpackChunkName: 'Icons' */ './Icons' ));
+const Blog= lazy(() => import( /* webpackChunkName: 'Blog' */ './Blog' ));
 
 export default function () {
     return (
@@ -33,8 +34,14 @@ export default function () {
                 {/* default pages */}
                 <Route element={<Default />}>
 
+                    {/* icons */}
                     <Route path='icons' element={
                         <PageTitle title='I Love Icons'><Icons /></PageTitle>
+                    }/>
+
+                    {/* blog */}
+                    <Route path='blog/*' element={
+                        <PageTitle title='Blog'><Blog /></PageTitle>
                     }/>
 
                 </Route>

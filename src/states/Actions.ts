@@ -10,3 +10,4 @@ export const HOME_DATA = 'HOME_DATA';
 export const HOME_FEATURED_DATA = 'HOME_FEATURED_DATA';
 export const LAB_DATA = 'LAB_DATA';
 export const ICONS_DATA = 'ICONS_DATA';
+export const BLOG_DATA = 'BLOG_DATA';

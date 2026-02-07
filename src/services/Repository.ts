@@ -19,3 +19,7 @@ export const getLabData = async (service: Service, params?: any) => {
 export const getIconsData = async (service: Service, params?: any) => {
     return service.get(`${process.env.API_URL}/get_icons`, params);
 };
+
+export const getBlogData = async (service: Service, params?: any) => {
+    return service.get(`${process.env.API_URL}/get_blog`, params);
+};

@@ -6,7 +6,7 @@ import {
 	CURRENT_THEME_A, CURRENT_THEME_B, ICON_SIZE,
 
 	// data
-	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA, ICONS_DATA
+	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA, ICONS_DATA, BLOG_DATA
 
 } from './Actions';
 
@@ -70,6 +70,15 @@ const updateStoreContext = (state: any, action: any) => {
 
 					// icons
 					...(action.type === ICONS_DATA && { icons: action.result }),
+
+					// blog
+					...(action.type === BLOG_DATA && {
+						blog: {
+							...((state.api && state.api.blog) || {}),
+							...(action.post ? { ...action.result } : { archives: action.result })
+						}
+					}),
+
 				},
 			};
 

@@ -3,7 +3,7 @@ import { createContext, useContext, useReducer, useState, useEffect } from 'reac
 import { useLocation } from 'react-router-dom';
 import Loadingmask from 'uilab/react/Loadingmask';
 import Service from '../services/Service';
-import { getPageData, getHomeData, getHomeFeaturedData, getLabData, getIconsData } from '../services/Repository';
+import { getPageData, getHomeData, getHomeFeaturedData, getLabData, getIconsData, getBlogData } from '../services/Repository';
 
 // misc
 import type { StoreContextProps, StoreProviderProps } from '../models/Page';
@@ -14,7 +14,7 @@ import {
 	CURRENT_THEME_A, CURRENT_THEME_B, ICON_SIZE,
 
 	// data
-	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA, ICONS_DATA
+	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA, ICONS_DATA, BLOG_DATA
 
 } from './Actions';
 
@@ -24,10 +24,9 @@ export default function (props: StoreProviderProps) {
     const { children, initialValue } = props;
 
     const service = new Service();
-    const { pathname } = useLocation();
+    const { pathname, search } = useLocation();
 
     const [state, dispatch] = useReducer(reducer, initialValue);
-    const [isMobile, setIsmobile] = useState(false);
 
     useEffect(() => {
         // load page data from api when set your api urls
@@ -35,8 +34,6 @@ export default function (props: StoreProviderProps) {
     }, []);
 
     useEffect(() => {
-        setIsmobile(window.innerWidth < 768);
-
         // route based data
         if (['/', '/dashboard'].includes(pathname) && !state?.api?.home) {
             loadHomeData();
@@ -51,8 +48,21 @@ export default function (props: StoreProviderProps) {
         } else if (pathname.startsWith('/icons') && !state?.api?.icons) {
             loadIconsData();
 
+        } else if (pathname.startsWith('/blog')) {
+            const params = new URLSearchParams(search);
+            const post = params.get('post');
+
+            if (post && !(state?.api?.blog && state.api.blog[post])) {
+                Loadingmask('body'); // trigger when param changed
+                loadBlogData(post);
+
+            } else if (!state?.api?.blog?.archives) {
+                Loadingmask('body'); // trigger when param changed
+                loadBlogData();
+            }
+
         } else Loadingmask();
-    }, [pathname]);
+    }, [pathname, search]);
 
     // themes
     const setThemeA = (name: string) => {
@@ -119,10 +129,20 @@ export default function (props: StoreProviderProps) {
             });
         });
     };
+    const loadBlogData = (post?: string) => {
+        const params = post ? `?target_table=${post}` : null;
+
+        getBlogData(service, params).then((response: any) => {
+            dispatch({
+                type: BLOG_DATA,
+                result: response?.result,
+                post: post,
+            });
+        });
+    };
 
     const contextValue: StoreContextProps =  {
         ...state,
-        isMobile,
 
         // state
         setThemeA,
@@ -134,6 +154,7 @@ export default function (props: StoreProviderProps) {
         loadHomeFeaturedData,
         loadLabData,
         loadIconsData,
+        loadBlogData,
     };
 
     return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>
