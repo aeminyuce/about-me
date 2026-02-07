@@ -74,7 +74,7 @@ const updateStoreContext = (state: any, action: any) => {
 					// blog
 					...(action.type === BLOG_DATA && {
 						blog: {
-							...((state.api && state.api.blog) || {}),
+							...(state.api.blog || {}),
 							...(action.post ? { ...action.result } : { archives: action.result })
 						}
 					}),
