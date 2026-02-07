@@ -1,6 +1,5 @@
 import { ui } from 'uilab/js/core/globals';
 import Loadingmask from 'uilab/react/Loadingmask';
-import { getParamsFromObject } from '../helpers/General';
 
 let activeFetches = 0;
 
@@ -32,9 +31,9 @@ const errorHandler = (status: number) => {
 export default class Service {
     get = async (url: string, params: any) => {
         let response = null;
-        activeFetches++;
 
-        url = params ? getParamsFromObject(url, params) : url;
+        activeFetches++;
+        if (params) url += params;
 
         try {
 
