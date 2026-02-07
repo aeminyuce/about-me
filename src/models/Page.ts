@@ -15,7 +15,6 @@ export interface GetStorageProps {
 
 // Store Context
 export interface StoreContextProps {
-    isMobile: boolean;
     themeA: string;
     themeB: string;
     setThemeA(name: string): string;
