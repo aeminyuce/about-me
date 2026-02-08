@@ -1,0 +1,34 @@
+{
+    "result": {
+        "alerts": {
+            "desc": {
+                "msg_bl": "A message appears at the bottom-left of the screen.",
+                "msg_br": "A message appears at the bottom-right of the screen.",
+                "msg_tl": "A message appears at the top-left of the screen.",
+                "msg_tr": "A message appears at the top-right of the screen.",
+                "dlg_simple": "A simple dialog includes a single button in a gray footer. It cannot be closed by clicking outside the window, it can only be closed by clicking the button. When the dialog opens, the button is focused by default.",
+                "dlg_twoBtn": "This dialog includes success and error buttons with custom text. This dialog can be closed by clicking outside the dialog window, and it also includes a close button in the top‑right corner. Additionally, this dialog can be closed using the ESC key on the keyboard. When a dialog contains an error button, the error button is focused first when the dialog opens.",
+                "msg_default": "A message appears at the top of the screen in one of three colors: success, warning, or danger. When the message is clicked, it dismisses by sliding upward. If not clicked, it automatically dismisses after a short delay.",
+                "dlg_callback": "This dialog runs a callback function when the success or error button is clicked. In this example, it displays an alert showing which option you selected.",
+                "dlg_threeBtn": "This dialog includes success, error, and custom buttons along with custom text.  Custom buttons are displayed separately at the top. When all button types are placed in the footer, and when the dialog opens, the error button is focused first.",
+                "dlg_singleBtn": "This dialog includes single button along with custom text.'"
+            },
+            "text": {
+                "no": "No",
+                "ok": "Okay",
+                "got": "Got it!",
+                "yes": "Yes",
+                "beOk": "Everything will be OK.",
+                "alert": "Can you alert my response?",
+                "later": "Remind me later!",
+                "maybe": "Maybe",
+                "danger": "Oh no! Houston, we have a problem.",
+                "remove": "Are you sure you want to remove from your list?",
+                "simple": "I am simple.",
+                "success": "Here is the first default message.",
+                "warning": "Hey, we have a message again.",
+                "download": "Are you sure you want to donwload your backup files?"
+            }
+        }
+    }
+}

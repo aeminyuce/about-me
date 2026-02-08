@@ -1,0 +1,42 @@
+{
+    "result": {
+        "avatars": {
+            "img": [
+                "profile-image1.jpg",
+                "profile-image2.jpg",
+                "profile-image3.jpg",
+                "profile-image4.jpg",
+                "profile-image5.jpg",
+                "profile-image6.jpg"
+            ],
+            "desc": {
+                "ref": "Avatar groups include tooltip text that corresponds to the colored borders, referencing the descriptive text written below.",
+                "url": "Avatars can be linked to a URL.",
+                "icon": "Avatars can also display icons instead of images or text.",
+                "count": "Avatar groups can be linked to a URL and include a circular border along with a total‑count indicator.",
+                "group": "Avatar groups are ideal for displaying multiple avatars together.'",
+                "noImg": "Avatars can be used without an image, in which case they display placeholder text.",
+                "round": "Rounded avatars with different sizes.",
+                "theme": "Avatars without an image can use custom background colors or theme colors.'",
+                "circle": "Circular avatars come in multiple sizes and are typically used for profile images. The avatars animate when hovered with the mouse.",
+                "groupTheme": "Avatar groups can use custom background colors or theme colors.'"
+            },
+            "text": {
+                "ph1": "AEY",
+                "ph2": "HY",
+                "ph3": "EKY",
+                "ph4": "L",
+                "ref1": "Claire said something wonderful.",
+                "ref2": "Matthew said something awesome.",
+                "ref3": "Tom said something great.",
+                "name1": "Claire",
+                "name2": "Matthew",
+                "name3": "Tom",
+                "count1": "+27",
+                "count2": "+113",
+                "refPrefix": "Written by",
+                "refSuffix": "is shown below:"
+            }
+        }
+    }
+}

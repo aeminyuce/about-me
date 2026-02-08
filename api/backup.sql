@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict WPqzU2hcmM98OM9IKqzAKjx5LeaKJZTw8FfjMbRG1jDalkVpiy5k74rzLobzc5g
+\restrict UJvATcyKlZ7OHbVYIy4AWZd5sHhrOR9aE5OqhD1unoD7J7T76Ev8pc06ipePLrr
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1 (Postgres.app)
@@ -27,6 +27,15 @@ CREATE SCHEMA auth;
 
 
 ALTER SCHEMA auth OWNER TO supabase_admin;
+
+--
+-- Name: blog; Type: SCHEMA; Schema: -; Owner: postgres
+--
+
+CREATE SCHEMA blog;
+
+
+ALTER SCHEMA blog OWNER TO postgres;
 
 --
 -- Name: extensions; Type: SCHEMA; Schema: -; Owner: postgres
@@ -806,46 +815,6 @@ COMMENT ON FUNCTION extensions.set_graphql_placeholder() IS 'Reintroduces placeh
 
 
 --
--- Name: get_page(); Type: FUNCTION; Schema: page; Owner: postgres
---
-
-CREATE FUNCTION page.get_page() RETURNS jsonb
-    LANGUAGE sql
-    SET search_path TO 'page'
-    AS $$SELECT jsonb_build_object(
-  'result', (
-    'header', (
-      'sidebarTitle', (
-        SELECT sidebarTitle
-        FROM page.header LIMIT 1
-      ),
-      'getInTouch', (
-        SELECT json_agg(to_jsonb(hgi) - 'id')
-        FROM page.header_getintouch hgi
-      ),
-      'headerLinks', (
-        SELECT json_agg(to_jsonb(hhl) - 'id')
-        FROM page.header_headerlinks hhl
-      ),
-      'socialLinks', (
-        SELECT json_agg(to_jsonb(hsl) - 'id')
-        FROM page.header_sociallinks hsl
-      )
-    ),
-    'aboutMe', (
-      SELECT jsonb_build_object(
-        'profileImage', profileimage
-      )
-      FROM page.aboutme
-      LIMIT 1
-    )
-  )
-);$$;
-
-
-ALTER FUNCTION page.get_page() OWNER TO postgres;
-
---
 -- Name: get_auth(text); Type: FUNCTION; Schema: pgbouncer; Owner: supabase_admin
 --
 
@@ -870,6 +839,62 @@ CREATE FUNCTION pgbouncer.get_auth(p_usename text) RETURNS TABLE(username text, 
 
 
 ALTER FUNCTION pgbouncer.get_auth(p_usename text) OWNER TO supabase_admin;
+
+--
+-- Name: get_blog(text); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.get_blog(target_table text DEFAULT NULL::text) RETURNS jsonb
+    LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'blog'
+    AS $_$
+DECLARE
+    tbl text;
+    result jsonb := '{}'::jsonb;
+    rows jsonb;
+    sql text;
+BEGIN
+    FOR tbl IN
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = 'blog'
+          AND table_type = 'BASE TABLE'
+          AND (target_table IS NULL OR table_name = target_table)
+        ORDER BY table_name DESC
+    LOOP
+
+        IF target_table IS NULL THEN
+            -- Pivot first, then aggregate
+            sql := format(
+                'SELECT json_agg(pivoted) FROM (
+                    SELECT jsonb_build_object(
+                        ''postTitle'', (SELECT data FROM blog.%1$I WHERE type = ''postTitle'' LIMIT 1),
+                        ''postDate'',  (SELECT data FROM blog.%1$I WHERE type = ''postDate'' LIMIT 1),
+                        ''postImage'', (SELECT data FROM blog.%1$I WHERE type = ''postImage'' LIMIT 1),
+                        ''postUrl'',   (SELECT data FROM blog.%1$I WHERE type = ''postUrl'' LIMIT 1)
+                    ) AS pivoted
+                ) s',
+                tbl
+            );
+        ELSE
+            -- Full table data
+            sql := format(
+                'SELECT json_agg(to_jsonb(t) - ''id'') FROM blog.%I t',
+                tbl
+            );
+        END IF;
+
+        EXECUTE sql INTO rows;
+
+        result := result || jsonb_build_object(tbl, rows);
+    END LOOP;
+
+    RETURN jsonb_build_object('result', result);
+END;
+$_$;
+
+
+ALTER FUNCTION public.get_blog(target_table text) OWNER TO postgres;
 
 --
 -- Name: get_featured(); Type: FUNCTION; Schema: public; Owner: postgres
@@ -1177,46 +1202,6 @@ SELECT json_build_object(
         )
         FROM lab.intro lin
         LIMIT 1
-      ),
-      'alerts', json_strip_nulls(
-        json_build_object(
-          'desc', (
-            SELECT jsonb_object_agg(lald.type, lald.desc ORDER BY lald.id)
-            FROM lab.alerts_desc lald
-          ),
-          'text', (
-            SELECT jsonb_object_agg(lalt.type, lalt.text ORDER BY lalt.id)
-            FROM lab.alerts_text lalt
-          )
-        )
-      ),
-      'avatars', json_strip_nulls(
-        json_build_object(
-          'desc', (
-            SELECT jsonb_object_agg(lavd.type, lavd.desc ORDER BY lavd.id)
-            FROM lab.avatars_desc lavd
-          ),
-          'text', (
-            SELECT jsonb_object_agg(lavt.type, lavt.text ORDER BY lavt.id)
-            FROM lab.avatars_text lavt
-          ),
-          'img', (
-            SELECT json_agg(lavi.avatar ORDER BY lavi.id)
-            FROM lab.avatars_img lavi
-          )
-        )
-      ),
-      'breadcrumbs', json_strip_nulls(
-        json_build_object(
-          'desc', (
-            SELECT jsonb_object_agg(lbrd.type, lbrd.desc ORDER BY lbrd.id)
-            FROM lab.breadcrumbs_desc lbrd
-          ),
-          'text', (
-            SELECT jsonb_object_agg(lbrt.type, lbrt.text ORDER BY lbrt.id)
-            FROM lab.breadcrumbs_text lbrt
-          )
-        )
       )
     )
 );
@@ -1224,6 +1209,97 @@ $$;
 
 
 ALTER FUNCTION public.get_lab() OWNER TO postgres;
+
+--
+-- Name: get_lab_alerts(); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.get_lab_alerts() RETURNS jsonb
+    LANGUAGE sql SECURITY DEFINER
+    SET search_path TO 'lab'
+    AS $$
+SELECT json_build_object(
+  'result', json_build_object(
+    'alerts', json_strip_nulls(
+      json_build_object(
+        'desc', (
+          SELECT jsonb_object_agg(lald.type, lald.desc ORDER BY lald.id)
+          FROM lab.alerts_desc lald
+        ),
+        'text', (
+          SELECT jsonb_object_agg(lalt.type, lalt.text ORDER BY lalt.id)
+          FROM lab.alerts_text lalt
+        )
+      )
+    )
+  )
+);
+$$;
+
+
+ALTER FUNCTION public.get_lab_alerts() OWNER TO postgres;
+
+--
+-- Name: get_lab_avatars(); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.get_lab_avatars() RETURNS jsonb
+    LANGUAGE sql SECURITY DEFINER
+    SET search_path TO 'lab'
+    AS $$
+SELECT json_build_object(
+  'result', json_build_object(
+    'avatars', json_strip_nulls(
+      json_build_object(
+        'desc', (
+          SELECT jsonb_object_agg(lavd.type, lavd.desc ORDER BY lavd.id)
+          FROM lab.avatars_desc lavd
+        ),
+        'text', (
+          SELECT jsonb_object_agg(lavt.type, lavt.text ORDER BY lavt.id)
+          FROM lab.avatars_text lavt
+        ),
+        'img', (
+          SELECT json_agg(lavi.avatar ORDER BY lavi.id)
+          FROM lab.avatars_img lavi
+        )
+      )
+    )
+  )
+);
+$$;
+
+
+ALTER FUNCTION public.get_lab_avatars() OWNER TO postgres;
+
+--
+-- Name: get_lab_breadcrumbs(); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION public.get_lab_breadcrumbs() RETURNS jsonb
+    LANGUAGE sql SECURITY DEFINER
+    SET search_path TO 'lab'
+    AS $$
+SELECT json_build_object(
+  'result', json_build_object(
+    'breadcrumbs', json_strip_nulls(
+      json_build_object(
+        'desc', (
+          SELECT jsonb_object_agg(lbrd.type, lbrd.desc ORDER BY lbrd.id)
+          FROM lab.breadcrumbs_desc lbrd
+        ),
+        'text', (
+          SELECT jsonb_object_agg(lbrt.type, lbrt.text ORDER BY lbrt.id)
+          FROM lab.breadcrumbs_text lbrt
+        )
+      )
+    )
+  )
+);
+$$;
+
+
+ALTER FUNCTION public.get_lab_breadcrumbs() OWNER TO postgres;
 
 --
 -- Name: get_page(); Type: FUNCTION; Schema: public; Owner: postgres
@@ -1292,7 +1368,10 @@ subscriptions realtime.subscription[] = array_agg(subs)
     from
         realtime.subscription subs
     where
-        subs.entity = entity_;
+        subs.entity = entity_
+        -- Filter by action early - only get subscriptions interested in this action
+        -- action_filter column can be: '*' (all), 'INSERT', 'UPDATE', or 'DELETE'
+        and (subs.action_filter = '*' or subs.action_filter = action::text);
 
 -- Subscription vars
 roles regrole[] = array_agg(distinct us.claims_role::text)
@@ -3011,16 +3090,21 @@ COMMENT ON TABLE auth.audit_log_entries IS 'Auth: Audit trail for user actions.'
 CREATE TABLE auth.flow_state (
     id uuid NOT NULL,
     user_id uuid,
-    auth_code text NOT NULL,
-    code_challenge_method auth.code_challenge_method NOT NULL,
-    code_challenge text NOT NULL,
+    auth_code text,
+    code_challenge_method auth.code_challenge_method,
+    code_challenge text,
     provider_type text NOT NULL,
     provider_access_token text,
     provider_refresh_token text,
     created_at timestamp with time zone,
     updated_at timestamp with time zone,
     authentication_method text NOT NULL,
-    auth_code_issued_at timestamp with time zone
+    auth_code_issued_at timestamp with time zone,
+    invite_token text,
+    referrer text,
+    oauth_client_state_id uuid,
+    linking_target_id uuid,
+    email_optional boolean DEFAULT false NOT NULL
 );
 
 
@@ -3030,7 +3114,7 @@ ALTER TABLE auth.flow_state OWNER TO supabase_auth_admin;
 -- Name: TABLE flow_state; Type: COMMENT; Schema: auth; Owner: supabase_auth_admin
 --
 
-COMMENT ON TABLE auth.flow_state IS 'stores metadata for pkce logins';
+COMMENT ON TABLE auth.flow_state IS 'Stores metadata for all OAuth/SSO login flows';
 
 
 --
@@ -3244,9 +3328,11 @@ CREATE TABLE auth.oauth_clients (
     updated_at timestamp with time zone DEFAULT now() NOT NULL,
     deleted_at timestamp with time zone,
     client_type auth.oauth_client_type DEFAULT 'confidential'::auth.oauth_client_type NOT NULL,
+    token_endpoint_auth_method text NOT NULL,
     CONSTRAINT oauth_clients_client_name_length CHECK ((char_length(client_name) <= 1024)),
     CONSTRAINT oauth_clients_client_uri_length CHECK ((char_length(client_uri) <= 2048)),
-    CONSTRAINT oauth_clients_logo_uri_length CHECK ((char_length(logo_uri) <= 2048))
+    CONSTRAINT oauth_clients_logo_uri_length CHECK ((char_length(logo_uri) <= 2048)),
+    CONSTRAINT oauth_clients_token_endpoint_auth_method_check CHECK ((token_endpoint_auth_method = ANY (ARRAY['client_secret_basic'::text, 'client_secret_post'::text, 'none'::text])))
 );
 
 
@@ -3574,6 +3660,60 @@ COMMENT ON TABLE auth.users IS 'Auth: Stores user login data within a secure sch
 --
 
 COMMENT ON COLUMN auth.users.is_sso_user IS 'Auth: Set this column to true when the account comes from SSO. These accounts can have duplicate emails.';
+
+
+--
+-- Name: hello; Type: TABLE; Schema: blog; Owner: postgres
+--
+
+CREATE TABLE blog.hello (
+    id bigint NOT NULL,
+    type text NOT NULL,
+    data jsonb
+);
+
+
+ALTER TABLE blog.hello OWNER TO postgres;
+
+--
+-- Name: blocks_id_seq; Type: SEQUENCE; Schema: blog; Owner: postgres
+--
+
+ALTER TABLE blog.hello ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
+    SEQUENCE NAME blog.blocks_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- Name: goodbye; Type: TABLE; Schema: blog; Owner: postgres
+--
+
+CREATE TABLE blog.goodbye (
+    id bigint NOT NULL,
+    type text NOT NULL,
+    data jsonb
+);
+
+
+ALTER TABLE blog.goodbye OWNER TO postgres;
+
+--
+-- Name: goodybye_id_seq; Type: SEQUENCE; Schema: blog; Owner: postgres
+--
+
+ALTER TABLE blog.goodbye ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
+    SEQUENCE NAME blog.goodybye_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
 
 
 --
@@ -4586,7 +4726,9 @@ CREATE TABLE realtime.subscription (
     filters realtime.user_defined_filter[] DEFAULT '{}'::realtime.user_defined_filter[] NOT NULL,
     claims jsonb NOT NULL,
     claims_role regrole GENERATED ALWAYS AS (realtime.to_regrole((claims ->> 'role'::text))) STORED NOT NULL,
-    created_at timestamp without time zone DEFAULT timezone('utc'::text, now()) NOT NULL
+    created_at timestamp without time zone DEFAULT timezone('utc'::text, now()) NOT NULL,
+    action_filter text DEFAULT '*'::text,
+    CONSTRAINT subscription_action_filter_check CHECK ((action_filter = ANY (ARRAY['*'::text, 'INSERT'::text, 'UPDATE'::text, 'DELETE'::text])))
 );
 
 
@@ -4801,7 +4943,7 @@ COPY auth.audit_log_entries (instance_id, id, payload, created_at, ip_address) F
 -- Data for Name: flow_state; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
-COPY auth.flow_state (id, user_id, auth_code, code_challenge_method, code_challenge, provider_type, provider_access_token, provider_refresh_token, created_at, updated_at, authentication_method, auth_code_issued_at) FROM stdin;
+COPY auth.flow_state (id, user_id, auth_code, code_challenge_method, code_challenge, provider_type, provider_access_token, provider_refresh_token, created_at, updated_at, authentication_method, auth_code_issued_at, invite_token, referrer, oauth_client_state_id, linking_target_id, email_optional) FROM stdin;
 \.
 
 
@@ -4865,7 +5007,7 @@ COPY auth.oauth_client_states (id, provider_type, code_verifier, created_at) FRO
 -- Data for Name: oauth_clients; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
-COPY auth.oauth_clients (id, client_secret_hash, registration_type, redirect_uris, grant_types, client_name, client_uri, logo_uri, created_at, updated_at, deleted_at, client_type) FROM stdin;
+COPY auth.oauth_clients (id, client_secret_hash, registration_type, redirect_uris, grant_types, client_name, client_uri, logo_uri, created_at, updated_at, deleted_at, client_type, token_endpoint_auth_method) FROM stdin;
 \.
 
 
@@ -4986,6 +5128,8 @@ COPY auth.schema_migrations (version) FROM stdin;
 20251104100000
 20251111201300
 20251201000000
+20260115000000
+20260121000000
 \.
 
 
@@ -5018,6 +5162,32 @@ COPY auth.sso_providers (id, resource_id, created_at, updated_at, disabled) FROM
 --
 
 COPY auth.users (instance_id, id, aud, role, email, encrypted_password, email_confirmed_at, invited_at, confirmation_token, confirmation_sent_at, recovery_token, recovery_sent_at, email_change_token_new, email_change, email_change_sent_at, last_sign_in_at, raw_app_meta_data, raw_user_meta_data, is_super_admin, created_at, updated_at, phone, phone_confirmed_at, phone_change, phone_change_token, phone_change_sent_at, email_change_token_current, email_change_confirm_status, banned_until, reauthentication_token, reauthentication_sent_at, is_sso_user, deleted_at, is_anonymous) FROM stdin;
+\.
+
+
+--
+-- Data for Name: goodbye; Type: TABLE DATA; Schema: blog; Owner: postgres
+--
+
+COPY blog.goodbye (id, type, data) FROM stdin;
+2	text	{"text": "This is a paragraph inside the composite block."}
+1	postTitle	{"text": "Section2 Title", "level": 2}
+3	postImage	{"alt": "Example", "url": "https://supabase.storage/image.png"}
+4	postDate	{"text": "2026-02-06"}
+5	postUrl	{"url": "/post-url-02"}
+\.
+
+
+--
+-- Data for Name: hello; Type: TABLE DATA; Schema: blog; Owner: postgres
+--
+
+COPY blog.hello (id, type, data) FROM stdin;
+2	text	{"text": "This is a paragraph inside the composite block."}
+1	postTitle	{"text": "Section Title", "level": 2}
+3	postImage	{"alt": "Example", "url": "https://supabase.storage/image.png"}
+4	postDate	{"text": "2026-02-05"}
+5	postUrl	{"url": "/post-url-01"}
 \.
 
 
@@ -5565,6 +5735,8 @@ COPY realtime.schema_migrations (version, inserted_at) FROM stdin;
 20250714121412	2025-12-10 09:20:38
 20250905041441	2025-12-10 09:20:39
 20251103001201	2025-12-10 09:20:40
+20251120212548	2026-02-04 21:18:58
+20251120215549	2026-02-04 21:18:59
 \.
 
 
@@ -5572,7 +5744,7 @@ COPY realtime.schema_migrations (version, inserted_at) FROM stdin;
 -- Data for Name: subscription; Type: TABLE DATA; Schema: realtime; Owner: supabase_admin
 --
 
-COPY realtime.subscription (id, subscription_id, entity, filters, claims, created_at) FROM stdin;
+COPY realtime.subscription (id, subscription_id, entity, filters, claims, created_at, action_filter) FROM stdin;
 \.
 
 
@@ -5711,6 +5883,20 @@ COPY vault.secrets (id, name, description, secret, key_id, nonce, created_at, up
 --
 
 SELECT pg_catalog.setval('auth.refresh_tokens_id_seq', 1, false);
+
+
+--
+-- Name: blocks_id_seq; Type: SEQUENCE SET; Schema: blog; Owner: postgres
+--
+
+SELECT pg_catalog.setval('blog.blocks_id_seq', 5, true);
+
+
+--
+-- Name: goodybye_id_seq; Type: SEQUENCE SET; Schema: blog; Owner: postgres
+--
+
+SELECT pg_catalog.setval('blog.goodybye_id_seq', 5, true);
 
 
 --
@@ -6188,6 +6374,22 @@ ALTER TABLE ONLY auth.users
 
 ALTER TABLE ONLY auth.users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: hello blocks_pkey; Type: CONSTRAINT; Schema: blog; Owner: postgres
+--
+
+ALTER TABLE ONLY blog.hello
+    ADD CONSTRAINT blocks_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: goodbye goodybye_pkey; Type: CONSTRAINT; Schema: blog; Owner: postgres
+--
+
+ALTER TABLE ONLY blog.goodbye
+    ADD CONSTRAINT goodybye_pkey PRIMARY KEY (id);
 
 
 --
@@ -6917,10 +7119,10 @@ CREATE INDEX messages_inserted_at_topic_index ON ONLY realtime.messages USING bt
 
 
 --
--- Name: subscription_subscription_id_entity_filters_key; Type: INDEX; Schema: realtime; Owner: supabase_admin
+-- Name: subscription_subscription_id_entity_filters_action_filter_key; Type: INDEX; Schema: realtime; Owner: supabase_admin
 --
 
-CREATE UNIQUE INDEX subscription_subscription_id_entity_filters_key ON realtime.subscription USING btree (subscription_id, entity, filters);
+CREATE UNIQUE INDEX subscription_subscription_id_entity_filters_action_filter_key ON realtime.subscription USING btree (subscription_id, entity, filters, action_filter);
 
 
 --
@@ -7327,6 +7529,18 @@ ALTER TABLE auth.sso_providers ENABLE ROW LEVEL SECURITY;
 --
 
 ALTER TABLE auth.users ENABLE ROW LEVEL SECURITY;
+
+--
+-- Name: goodbye; Type: ROW SECURITY; Schema: blog; Owner: postgres
+--
+
+ALTER TABLE blog.goodbye ENABLE ROW LEVEL SECURITY;
+
+--
+-- Name: hello; Type: ROW SECURITY; Schema: blog; Owner: postgres
+--
+
+ALTER TABLE blog.hello ENABLE ROW LEVEL SECURITY;
 
 --
 -- Name: aboutme; Type: ROW SECURITY; Schema: home; Owner: postgres
@@ -8198,15 +8412,6 @@ GRANT ALL ON FUNCTION graphql_public.graphql("operationName" text, query text, v
 
 
 --
--- Name: FUNCTION get_page(); Type: ACL; Schema: page; Owner: postgres
---
-
-GRANT ALL ON FUNCTION page.get_page() TO anon;
-GRANT ALL ON FUNCTION page.get_page() TO authenticated;
-GRANT ALL ON FUNCTION page.get_page() TO service_role;
-
-
---
 -- Name: FUNCTION pg_reload_conf(); Type: ACL; Schema: pg_catalog; Owner: supabase_admin
 --
 
@@ -8219,6 +8424,15 @@ GRANT ALL ON FUNCTION pg_catalog.pg_reload_conf() TO postgres WITH GRANT OPTION;
 
 REVOKE ALL ON FUNCTION pgbouncer.get_auth(p_usename text) FROM PUBLIC;
 GRANT ALL ON FUNCTION pgbouncer.get_auth(p_usename text) TO pgbouncer;
+
+
+--
+-- Name: FUNCTION get_blog(target_table text); Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON FUNCTION public.get_blog(target_table text) TO anon;
+GRANT ALL ON FUNCTION public.get_blog(target_table text) TO authenticated;
+GRANT ALL ON FUNCTION public.get_blog(target_table text) TO service_role;
 
 
 --
@@ -8264,6 +8478,33 @@ GRANT ALL ON FUNCTION public.get_icons() TO service_role;
 GRANT ALL ON FUNCTION public.get_lab() TO anon;
 GRANT ALL ON FUNCTION public.get_lab() TO authenticated;
 GRANT ALL ON FUNCTION public.get_lab() TO service_role;
+
+
+--
+-- Name: FUNCTION get_lab_alerts(); Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON FUNCTION public.get_lab_alerts() TO anon;
+GRANT ALL ON FUNCTION public.get_lab_alerts() TO authenticated;
+GRANT ALL ON FUNCTION public.get_lab_alerts() TO service_role;
+
+
+--
+-- Name: FUNCTION get_lab_avatars(); Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON FUNCTION public.get_lab_avatars() TO anon;
+GRANT ALL ON FUNCTION public.get_lab_avatars() TO authenticated;
+GRANT ALL ON FUNCTION public.get_lab_avatars() TO service_role;
+
+
+--
+-- Name: FUNCTION get_lab_breadcrumbs(); Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT ALL ON FUNCTION public.get_lab_breadcrumbs() TO anon;
+GRANT ALL ON FUNCTION public.get_lab_breadcrumbs() TO authenticated;
+GRANT ALL ON FUNCTION public.get_lab_breadcrumbs() TO service_role;
 
 
 --
@@ -9113,5 +9354,5 @@ ALTER EVENT TRIGGER pgrst_drop_watch OWNER TO supabase_admin;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict WPqzU2hcmM98OM9IKqzAKjx5LeaKJZTw8FfjMbRG1jDalkVpiy5k74rzLobzc5g
+\unrestrict UJvATcyKlZ7OHbVYIy4AWZd5sHhrOR9aE5OqhD1unoD7J7T76Ev8pc06ipePLrr
 
