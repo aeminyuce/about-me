@@ -24,7 +24,7 @@ export default function (props: StoreProviderProps) {
     const { children, initialValue } = props;
 
     const service = new Service();
-    const { pathname, search } = useLocation();
+    const { pathname, hash, search } = useLocation();
 
     const [state, dispatch] = useReducer(reducer, initialValue);
 
@@ -68,7 +68,7 @@ export default function (props: StoreProviderProps) {
             if (isPost) loadBlogData(post);
 
         } else Loadingmask();
-    }, [pathname, search]);
+    }, [pathname, hash, search]);
 
     // themes
     const setThemeA = (name: string) => {
