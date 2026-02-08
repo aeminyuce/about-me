@@ -29,7 +29,7 @@ const errorHandler = (status: number) => {
 }
 
 export default class Service {
-    get = async (url: string, params: any) => {
+    get = async (url: string, params?: any) => {
         let response = null;
 
         activeFetches++;
@@ -51,7 +51,7 @@ export default class Service {
         } finally { hidePageLoader(); }
     };
 
-    post = async (url: string, body: any) => {
+    post = async (url: string, body?: any) => {
         let response = null;
         activeFetches++;
 
