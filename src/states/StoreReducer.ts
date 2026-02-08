@@ -66,7 +66,12 @@ const updateStoreContext = (state: any, action: any) => {
 					...(action.type === HOME_FEATURED_DATA && { home_featured: action.result }),
 
 					// lab
-					...(action.type === LAB_DATA && { lab: action.result }),
+					...(action.type === LAB_DATA && {
+						lab: {
+							...(state.api.lab || {}),
+							...action.result,
+						}
+					}),
 
 					// icons
 					...(action.type === ICONS_DATA && { icons: action.result }),
@@ -75,7 +80,7 @@ const updateStoreContext = (state: any, action: any) => {
 					...(action.type === BLOG_DATA && {
 						blog: {
 							...(state.api.blog || {}),
-							...(action.post ? { ...action.result } : { archives: action.result })
+							...(action.post ? { ...action.result } : { archives: action.result }),
 						}
 					}),
 

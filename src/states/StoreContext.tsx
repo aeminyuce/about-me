@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { createContext, useContext, useReducer, useState, useEffect } from 'react';
+import { createContext, useContext, useReducer, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Loadingmask from 'uilab/react/Loadingmask';
 import Service from '../services/Service';
@@ -42,8 +42,16 @@ export default function (props: StoreProviderProps) {
         if (pathname === '/' && !state?.api?.home_featured) {
             loadHomeFeaturedData();
 
-        } else if (pathname.startsWith('/lab') && !state?.api?.lab) {
-            loadLabData();
+        } else if (pathname.startsWith('/lab')) {
+            let page = null;
+            const isUrl = (name: string) => pathname.startsWith(`/lab/${name}`);
+
+            if (isUrl('alerts')) page = 'alerts';
+            if (isUrl('avatars')) page = 'avatars';
+            if (isUrl('breadcrumbs')) page = 'breadcrumbs';
+
+            if (!state?.api?.lab) loadLabData();
+            if (page && !(state.api.lab && state.api.lab[page])) loadLabData(page);
 
         } else if (pathname.startsWith('/icons') && !state?.api?.icons) {
             loadIconsData();
@@ -52,14 +60,12 @@ export default function (props: StoreProviderProps) {
             const params = new URLSearchParams(search);
             const post = params.get('post');
 
-            if (post && !(state?.api?.blog && state.api.blog[post])) {
-                Loadingmask('body'); // trigger when param changed
-                loadBlogData(post);
+            const isArchive = !post && !state?.api?.blog?.archives;
+            const isPost = post && !(state?.api?.blog && state.api.blog[post]);
 
-            } else if (!state?.api?.blog?.archives) {
-                Loadingmask('body'); // trigger when param changed
-                loadBlogData();
-            }
+            if (isArchive || isPost) Loadingmask('body'); // trigger when param changed
+            if (isArchive) loadBlogData();
+            if (isPost) loadBlogData(post);
 
         } else Loadingmask();
     }, [pathname, search]);
@@ -113,11 +119,12 @@ export default function (props: StoreProviderProps) {
             });
         });
     };
-    const loadLabData = () => {
-        getLabData(service).then((response: any) => {
+    const loadLabData = (page?: string) => {
+        getLabData(service, page).then((response: any) => {
             dispatch({
                 type: LAB_DATA,
                 result: response?.result,
+                page: page,
             });
         });
     };
