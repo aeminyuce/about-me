@@ -16,7 +16,7 @@ BEGIN
         WHERE table_schema = 'blog'
           AND table_type = 'BASE TABLE'
           AND (post IS NULL OR table_name = post)
-        ORDER BY table_name DESC
+        ORDER BY table_name
     LOOP
 
         IF post IS NULL THEN
@@ -26,8 +26,7 @@ BEGIN
                     SELECT jsonb_build_object(
                         ''postTitle'', (SELECT data FROM blog.%1$I WHERE type = ''postTitle'' LIMIT 1),
                         ''postDate'',  (SELECT data FROM blog.%1$I WHERE type = ''postDate'' LIMIT 1),
-                        ''postImage'', (SELECT data FROM blog.%1$I WHERE type = ''postImage'' LIMIT 1),
-                        ''postUrl'',   (SELECT data FROM blog.%1$I WHERE type = ''postUrl'' LIMIT 1)
+                        ''postImage'', (SELECT data FROM blog.%1$I WHERE type = ''postImage'' LIMIT 1)
                     ) AS pivoted
                 ) s',
                 tbl
