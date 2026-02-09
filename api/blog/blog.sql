@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION get_blog(target_table text DEFAULT NULL)
+CREATE OR REPLACE FUNCTION get_blog(post text DEFAULT NULL)
 RETURNS jsonb
 LANGUAGE plpgsql
 SECURITY DEFINER
@@ -15,11 +15,11 @@ BEGIN
         FROM information_schema.tables
         WHERE table_schema = 'blog'
           AND table_type = 'BASE TABLE'
-          AND (target_table IS NULL OR table_name = target_table)
+          AND (post IS NULL OR table_name = post)
         ORDER BY table_name DESC
     LOOP
 
-        IF target_table IS NULL THEN
+        IF post IS NULL THEN
             -- Pivot first, then aggregate
             sql := format(
                 'SELECT json_agg(pivoted) FROM (

@@ -137,7 +137,7 @@ export default function (props: StoreProviderProps) {
         });
     };
     const loadBlogData = (post?: string) => {
-        const params = post ? `?target_table=${post}` : null;
+        const params = post ? `?post=${post}` : null;
 
         getBlogData(service, params).then((response: any) => {
             dispatch({
