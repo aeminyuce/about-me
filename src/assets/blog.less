@@ -1,0 +1,19 @@
+@import (reference) 'uilab/less/core/globals.less';
+@import (reference) 'uilab/less/core/mixins.less';
+
+@blog-archive-space:                      15px;
+@blog-archive-img-width:                  160px;
+
+.blog {
+    &-archive {
+        .ui-btn {
+            &:not(:first-child) { padding: @blog-archive-space; margin-bottom: @blog-archive-space;; }
+            &:first-child { padding: (@blog-archive-space * 2); margin-bottom: (@blog-archive-space * 2); }
+
+            img {
+                &:not(.ui-img-fluid) { width: @blog-archive-img-width; margin-right: @blog-archive-space; }
+                &.ui-img-fluid { max-width: (@blog-archive-img-width * 4.5); margin: 0 auto @blog-archive-space auto; }
+            }
+        }
+    }
+}
