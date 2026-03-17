@@ -32,7 +32,7 @@ export default function () {
         btn: `ui-dialog-buttons ${btnWrap}`,
         success: 'ui-dialog-success',
         error: 'ui-dialog-error',
-        custom: 'ui-dialog-custom',
+        custom: 'ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover',
     };
 
     const msg = {
