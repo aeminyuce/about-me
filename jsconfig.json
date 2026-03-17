@@ -1,4 +1,7 @@
 {
+    "alerts": {
+        "nameDialogCustom": "ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover"
+    },
     "calendar": {
         "stylesCaption": "ui-fill-dark-100"
     }
