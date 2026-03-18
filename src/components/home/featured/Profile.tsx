@@ -54,7 +54,7 @@ export default function() {
                 }
             </div>
 
-            <ListGroup className={`ui-scroll-v ui-scrollbar-round ui-scrollbar-faded`}>
+            <ListGroup className={`ui-scroll-v ui-round-b ui-scrollbar-round ui-scrollbar-faded`}>
                 <ListGroup.List avatarSize='xs'>
 
                     {userActivity?.map((item: UserActivityProps, index: number) => (

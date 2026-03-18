@@ -101,7 +101,7 @@ export const PeopleMore = () => {
                     return (
                         <Fragment key={item.jobTitle}>
                             {(avatar || avatarText) &&
-                                <Avatar noease size='xs' className={classes}>
+                                <Avatar noease size='sm' className={classes}>
                                     {avatar && <GetImage src={avatar} />}
                                     {avatarText && <span>{avatarText}</span>}
                                 </Avatar>
@@ -111,7 +111,7 @@ export const PeopleMore = () => {
                 })}
 
                 {moreCount &&
-                    <Avatar noease size='xs'>
+                    <Avatar noease size='sm'>
                         <a href={peopleMore?.moreUrl}>
                             <span>+{moreCount}</span>
                         </a>
