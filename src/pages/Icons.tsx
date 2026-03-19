@@ -34,27 +34,21 @@ export default function () {
     const iconsSuffix = info?.iconsSuffix;
 
     return (
-        <Grid.Container as='main' ariaLabel='Main site content' noGutter='all'>
-            <Grid.Container fixed='xl' as='div' className='ui-sm-no-p ui-align-c ui-p-30-v'>
-
-                <Grid.Row>
-                    <Grid.Col size={12}>
-                        {title &&
-                        <>
-                        <MyAvatar />
-                        <Title />
-                        </>
-                        }
-                        {image1 && image2 && <Images />}
-                        {text && sizeChangerSuffix && sizeChangerPrefix && iconsList &&
-                            <Texts iconsList={iconsList} />
-                        }
-                        {sizes && <SizeChanger />}
-                        {iconsSuffix && iconsList && <List iconsList={iconsList} />}
-                    </Grid.Col>
-                </Grid.Row>
-
-            </Grid.Container>
-        </Grid.Container>
+        <Grid.Row className='ui-sm-no-p ui-align-c ui-p-30-v'>
+            <Grid.Col size={12}>
+                {title &&
+                <>
+                <MyAvatar />
+                <Title />
+                </>
+                }
+                {image1 && image2 && <Images />}
+                {text && sizeChangerSuffix && sizeChangerPrefix && iconsList &&
+                    <Texts iconsList={iconsList} />
+                }
+                {sizes && <SizeChanger />}
+                {iconsSuffix && iconsList && <List iconsList={iconsList} />}
+            </Grid.Col>
+        </Grid.Row>
     );
 }

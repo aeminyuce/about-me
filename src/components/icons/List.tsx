@@ -42,7 +42,7 @@ export default function (props: any) {
     };
 
     return (
-        <div className='iconslist-icons'>
+        <div className='iconslist-icons ui-theme-dribbble'>
 
             {iconsList.map((item: IconsListProps) => (
                 <Fragment key={item.category}>
@@ -57,10 +57,10 @@ export default function (props: any) {
                     <Button.Wrapper as='div' ease='1st' className={`ui-highlight ui-round-1st ui-icons-${iconSize}`}>
 
                         {item.icons.map((name: string) => {
-                            const classes = name.includes('loader-') ? 'ui-animate-spin' : null;
+                            const classes = `ui-text${name.includes('loader-') ? 'ui-animate-spin' : ''}`;
 
                             return (
-                                <Button key={name} multi noease onClick={() => copyIconName(name)}>
+                                <Button key={name} ghost multi noease onClick={() => copyIconName(name)}>
                                     <SvgIcon as='sprite' src={spritesList[item.category]} symbolId={name} className={classes} opacity='no' />
                                     <span>{name}</span>
                                 </Button>
