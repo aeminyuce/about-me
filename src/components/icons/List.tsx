@@ -42,7 +42,7 @@ export default function (props: any) {
     };
 
     return (
-        <div className='iconslist-icons ui-theme-dribbble'>
+        <div className='iconslist-icons'>
 
             {iconsList.map((item: IconsListProps) => (
                 <Fragment key={item.category}>

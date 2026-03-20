@@ -8,13 +8,18 @@
 @preview-bg:                            hsla(220, 10%, 100%, 0.015);
 @preview-bg-dark:                       hsla(220, 4%, 36%, 0.1);
 
+@dribbble-color:                        hsl(327.3, 100%, 50%);
+
 ._page-vars () {
+    --ui-dribbble-color: @dribbble-color;
     --ui-preview-bg: @preview-bg;
 }
 ._page-vars-dark () {
     --ui-preview-bg: @preview-bg-dark;
+    --ui-dribbble-color: @white;
 }
 
 ._mode-vars(._page-vars(), ._page-vars-dark());
 
+.color-dribbble { color: @dribbble-color; }
 .preview { text-align: @preview-text-align; ._bg-var(preview-bg); padding: @preview-padding; }
