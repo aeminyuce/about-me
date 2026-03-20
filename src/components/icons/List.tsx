@@ -57,7 +57,7 @@ export default function (props: any) {
                     <Button.Wrapper as='div' ease='1st' className={`ui-highlight ui-round-1st ui-icons-${iconSize}`}>
 
                         {item.icons.map((name: string) => {
-                            const classes = `ui-text${name.includes('loader-') ? 'ui-animate-spin' : ''}`;
+                            const classes = name.includes('loader-') ? 'ui-animate-spin' : '';
 
                             return (
                                 <Button key={name} ghost multi noease onClick={() => copyIconName(name)}>
