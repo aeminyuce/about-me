@@ -15,6 +15,7 @@ import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
 
 // assets
 import { IconHome } from 'uilab-icons/react/general/home';
+import { IconArrowCircleLeft } from 'uilab-icons/react/general/arrow-circle-left';
 import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
 import { IconLongArrowLeft } from 'uilab-icons/react/general/long-arrow-left';
 import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
@@ -123,7 +124,7 @@ export default function () {
         <Preview>
             <Breadcrumbs sep='arrow'>
                 <Breadcrumbs.Item to='#' className={bc.opacity}>
-                    <SvgIcon as='js' src={IconHome} />
+                    <SvgIcon as='js' src={IconArrowCircleLeft} />
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item2}
@@ -137,7 +138,7 @@ export default function () {
 
             <Breadcrumbs sep='bull' className={`${bc.txtTheme}greenYellow`}>
                 <Breadcrumbs.Item to='#' className={bc.opacity}>
-                    <SvgIcon as='js' src={IconHome} />
+                    <SvgIcon as='js' src={IconArrowCircleLeft} />
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item2}
@@ -151,7 +152,7 @@ export default function () {
 
             <Breadcrumbs sep='pipe' className={`${bc.txtTheme}blueGreen`}>
                 <Breadcrumbs.Item to='#' className={bc.opacity}>
-                    <SvgIcon as='js' src={IconHome} />
+                    <SvgIcon as='js' src={IconArrowCircleLeft} />
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item2}
