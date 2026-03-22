@@ -45,6 +45,11 @@
                     "url": "https://www.linkedin.com/in/aeminyuce",
                     "icon": "linkedin",
                     "title": "LinkedIn"
+                },
+                {
+                    "url": "https://x.com/aeminyuce",
+                    "icon": "x",
+                    "title": "X"
                 }
             ]
         },

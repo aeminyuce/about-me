@@ -10,6 +10,7 @@ import { useStoreContext } from '../../states/StoreContext';
 import { IconDribbble } from 'uilab-icons/react/social/dribbble';
 import { IconGithub } from 'uilab-icons/react/social/github';
 import { IconLinkedin } from 'uilab-icons/react/social/linkedin';
+import { IconX } from 'uilab-icons/react/social/x';
 
 export default function () {
     const { api } = useStoreContext();
@@ -19,6 +20,7 @@ export default function () {
         github: IconGithub,
         dribbble: IconDribbble,
         linkedin: IconLinkedin,
+        x: IconX,
     };
 
     return (
