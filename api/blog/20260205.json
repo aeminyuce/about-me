@@ -1,0 +1,31 @@
+{
+    "result": {
+        "20260205": [
+            {
+                "data": {
+                    "alt": "Example",
+                    "url": "cover-image1.jpg"
+                },
+                "type": "postImage"
+            },
+            {
+                "data": {
+                    "text": "How my journey began and continues in developing UI interfaces"
+                },
+                "type": "postTitle"
+            },
+            {
+                "data": {
+                    "text": "February 05, 2026"
+                },
+                "type": "postDate"
+            },
+            {
+                "data": {
+                    "text": "My journey began in 1998, when I put my first web page online. It was an incredibly exciting day — I uploaded my design via FTP, and suddenly anyone in the world could see it. That moment sparked a lifelong passion, and it set my personal motto: this world is watching me."
+                },
+                "type": "text"
+            }
+        ]
+    }
+}

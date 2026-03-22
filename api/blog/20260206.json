@@ -1,0 +1,31 @@
+{
+    "result": {
+        "20260206": [
+            {
+                "data": {
+                    "alt": "Example",
+                    "url": "cover-image2.jpg"
+                },
+                "type": "postImage"
+            },
+            {
+                "data": {
+                    "text": "February 06, 2026"
+                },
+                "type": "postDate"
+            },
+            {
+                "data": {
+                    "text": "Design leaders Joseph Lebus and Max Ottington remind us that great brands aren’t built by chasing trends or relying on AI shortcuts. Trends come and go, but timeless work comes from context, clarity, and the countless decisions designers make with taste and intention. AI can speed up output, but it can’t replace intuition or the deep thinking that gives a brand meaning. As they put it, the future belongs to creatives who stay focused, think systematically, and build work that lasts."
+                },
+                "type": "text"
+            },
+            {
+                "data": {
+                    "text": "Design trends: How designers can stay ahead of the curve"
+                },
+                "type": "postTitle"
+            }
+        ]
+    }
+}

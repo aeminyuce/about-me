@@ -1,0 +1,34 @@
+{
+    "result": {
+        "20260205": [
+            {
+                "postUrl": null,
+                "postDate": {
+                    "text": "February 05, 2026"
+                },
+                "postImage": {
+                    "alt": "Example",
+                    "url": "cover-image1.jpg"
+                },
+                "postTitle": {
+                    "text": "How my journey began and continues in developing UI interfaces"
+                }
+            }
+        ],
+        "20260206": [
+            {
+                "postUrl": null,
+                "postDate": {
+                    "text": "February 06, 2026"
+                },
+                "postImage": {
+                    "alt": "Example",
+                    "url": "cover-image2.jpg"
+                },
+                "postTitle": {
+                    "text": "Design trends: How designers can stay ahead of the curve"
+                }
+            }
+        ]
+    }
+}
