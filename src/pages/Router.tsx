@@ -40,8 +40,9 @@ export default function () {
                     }/>
 
                     {/* blog */}
-                    <Route path='blog/*' element={
-                        <PageTitle title='Blog'><Blog /></PageTitle>
+                    <Route path='blog' element={
+                        // page title creates dynamically in component
+                        <Blog />
                     }/>
 
                 </Route>
