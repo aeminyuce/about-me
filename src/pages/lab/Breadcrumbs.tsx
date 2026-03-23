@@ -57,7 +57,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    {text?.item3}
+                    <b>{text?.item3}</b>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -69,7 +69,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    {text?.item3}
+                    <b>{text?.item3}</b>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -81,7 +81,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    {text?.item3}
+                    <b>{text?.item3}</b>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -94,7 +94,9 @@ export default function () {
                 <Breadcrumbs.Item className={bc.opacity} to='#'>
                     {text?.item2}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item>{text?.item3}</Breadcrumbs.Item>
+                <Breadcrumbs.Item>
+                    <b>{text?.item3}</b>
+                </Breadcrumbs.Item>
             </Breadcrumbs>
 
             <Breadcrumbs sep='bull'>
@@ -104,7 +106,9 @@ export default function () {
                 <Breadcrumbs.Item className={bc.opacity} to='#'>
                     {text?.item2}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item>{text?.item3}</Breadcrumbs.Item>
+                <Breadcrumbs.Item>
+                    <b>{text?.item3}</b>
+                </Breadcrumbs.Item>
             </Breadcrumbs>
 
             <Breadcrumbs sep='pipe'>
@@ -115,7 +119,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    {text?.item3}
+                    <b>{text?.item3}</b>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
         </Preview>
@@ -124,13 +128,13 @@ export default function () {
         <Preview>
             <Breadcrumbs sep='arrow'>
                 <Breadcrumbs.Item to='#' className={bc.opacity}>
-                    <SvgIcon as='js' src={IconArrowCircleLeft} />
+                    <SvgIcon as='js' src={IconHome} />
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    {text?.item3}
+                    <b>{text?.item3}</b>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -138,13 +142,13 @@ export default function () {
 
             <Breadcrumbs sep='bull' className={`${bc.txtTheme}greenYellow`}>
                 <Breadcrumbs.Item to='#' className={bc.opacity}>
-                    <SvgIcon as='js' src={IconArrowCircleLeft} />
+                    <SvgIcon as='js' src={IconHome} />
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    {text?.item3}
+                    <b>{text?.item3}</b>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -152,13 +156,13 @@ export default function () {
 
             <Breadcrumbs sep='pipe' className={`${bc.txtTheme}blueGreen`}>
                 <Breadcrumbs.Item to='#' className={bc.opacity}>
-                    <SvgIcon as='js' src={IconArrowCircleLeft} />
+                    <SvgIcon as='js' src={IconHome} />
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item to='#' className={bc.hoverline}>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    {text?.item3}
+                    <b>{text?.item3}</b>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
         </Preview>
@@ -301,7 +305,7 @@ export default function () {
             <Breadcrumbs sep='no' className={bc.circle}>
                 <Breadcrumbs.Item>
                     <Button square className={`${bc.btnTheme}purpleBlue`}>
-                        <SvgIcon as='js' src={IconLongArrowLeft} />
+                        <SvgIcon as='js' src={IconHome} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -341,7 +345,7 @@ export default function () {
 
         <Description>{desc?.dropdown}</Description>
         <Preview>
-            <Breadcrumbs sep='no' className={bc.round}>
+            <Breadcrumbs sep='arrow' className={bc.round}>
                 <Breadcrumbs.Item>
                     <Button square className={`${bc.btnTheme}yellowOrange`}>
                         <SvgIcon as='js' src={IconHome} />
@@ -349,7 +353,7 @@ export default function () {
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
                     <Dropdown>
-                        <Button square className={`ui-round ${bc.btnTheme}yellowOrange`}>
+                        <Button square className='ui-round'>
                             <SvgIcon as='js' src={IconEllipsisH} />
                         </Button>
                         <Dropdown.Menu className={bc.dropdown}>
