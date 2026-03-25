@@ -14,22 +14,32 @@ export default function () {
     const [searchParams] = useSearchParams();
     const post = searchParams.get('post');
 
-    // get title
-    let title: 'Blog';
+    // page title
+    let pageTitle: 'Blog';
 
     {blog[post]?.forEach((item: any) => {
-        if (item?.type === 'postTitle') title = item?.data?.text;
+        if (item?.type === 'postTitle') pageTitle = item?.data?.text;
     })}
 
     return (
-        <PageTitle title={`${title} | Blog`}>
+        <PageTitle title={`${pageTitle} | Blog`}>
             <Grid.Row>
-                <Grid.Col size={12}>
-                    <Heading as='h1'>{post}</Heading>
+                <Grid.Col xl={{ size: 8, push: 2}} lg={{ size: 8, push: 2}} size={12} className='blog-post ui-p-30-v'>
 
                     {blog[post]?.map((item: any) => {
                         const name = item?.type;
-                        return <div key={name} className='ui-m-10-l'>{name}</div>
+                        switch (name) {
+                            case 'postTitle':
+                                return <Heading key={name} as='h1'>{item?.data?.text}</Heading>;
+                            case 'postDate':
+                                return <div key={name}>{item?.data?.text}</div>;
+                            case 'postImage':
+                                return <img key={name} src={`/images/${item?.data?.url}`} alt={item?.data?.alt} className='blog-post-image ui-round ui-img-fluid ui-shadow-lg' />;
+                            case 'text':
+                                return <p key={name} className='ui-font-readable'>{item?.data?.text}</p>;
+                            default:
+                                break;
+                        }
                     })}
 
                 </Grid.Col>
