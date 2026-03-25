@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict ngaZbB5ikpoZZFVofv8n848yyFNmmcSrMbfOdCBQh12Y0j6PXS4YfNKRJ9hogtc
+\restrict I2LMzleCA9KWbyohpCfTrh0GnjYKDNNKUnpM1VUdGT6sX0mQgOdYGSOFjBsHkpz
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1 (Postgres.app)
@@ -870,8 +870,7 @@ BEGIN
                     SELECT jsonb_build_object(
                         ''postTitle'', (SELECT data FROM blog.%1$I WHERE type = ''postTitle'' LIMIT 1),
                         ''postDate'',  (SELECT data FROM blog.%1$I WHERE type = ''postDate'' LIMIT 1),
-                        ''postImage'', (SELECT data FROM blog.%1$I WHERE type = ''postImage'' LIMIT 1),
-                        ''postUrl'',   (SELECT data FROM blog.%1$I WHERE type = ''postUrl'' LIMIT 1)
+                        ''postImage'', (SELECT data FROM blog.%1$I WHERE type = ''postImage'' LIMIT 1)
                     ) AS pivoted
                 ) s',
                 tbl
@@ -879,7 +878,7 @@ BEGIN
         ELSE
             -- Full table data
             sql := format(
-                'SELECT json_agg(to_jsonb(t) - ''id'') FROM blog.%I t',
+                'SELECT json_agg(to_jsonb(t) - ''id'' ORDER BY t.id) FROM blog.%I t',
                 tbl
             );
         END IF;
@@ -5352,9 +5351,9 @@ COPY auth.webauthn_credentials (id, user_id, credential_id, public_key, attestat
 
 COPY blog."20260205" (id, type, data) FROM stdin;
 3	postImage	{"alt": "Example", "url": "cover-image1.jpg"}
-2	postTitle	{"text": "How my journey began and continues in developing UI interfaces"}
-1	postDate	{"text": "February 05, 2026"}
 4	text	{"text": "My journey began in 1998, when I put my first web page online. It was an incredibly exciting day — I uploaded my design via FTP, and suddenly anyone in the world could see it. That moment sparked a lifelong passion, and it set my personal motto: this world is watching me."}
+1	postTitle	{"text": "How my journey began and continues in developing UI interfaces"}
+2	postDate	{"text": "February 05, 2026"}
 \.
 
 
@@ -5363,10 +5362,10 @@ COPY blog."20260205" (id, type, data) FROM stdin;
 --
 
 COPY blog."20260206" (id, type, data) FROM stdin;
-3	postImage	{"alt": "Example", "url": "cover-image2.jpg"}
-1	postDate	{"text": "February 06, 2026"}
 4	text	{"text": "Design leaders Joseph Lebus and Max Ottington remind us that great brands aren’t built by chasing trends or relying on AI shortcuts. Trends come and go, but timeless work comes from context, clarity, and the countless decisions designers make with taste and intention. AI can speed up output, but it can’t replace intuition or the deep thinking that gives a brand meaning. As they put it, the future belongs to creatives who stay focused, think systematically, and build work that lasts."}
-2	postTitle	{"text": "Design trends: How designers can stay ahead of the curve"}
+1	postTitle	{"text": "Design trends: How designers can stay ahead of the curve"}
+2	postDate	{"text": "February 06, 2026"}
+3	postImage	{"alt": "Example", "url": "cover-image2.jpg"}
 \.
 
 
@@ -5687,11 +5686,11 @@ COPY lab.avatars_text (id, type, text) FROM stdin;
 --
 
 COPY lab.breadcrumbs_desc (id, type, "desc") FROM stdin;
-1	simple	Simple breadcrumb navigation with linked items separated by different symbols. In the first variant group, links show an underline on hover except for the last item; in the second, links change opacity on hover.
 2	icon	Breadcrumb navigation with the first item replaced by an icon. The second and third variants use custom theme colors, while the separators remain unstyled and do not adopt theme colors.
 3	btn	Breadcrumb navigation can also be used with buttons, and it supports combining separators, icons, and custom theme colors.
 4	noSep	Separators can be disabled, which works well when using button‑based breadcrumb variations.
 5	dropdown	Breadcrumb navigation with a dropdown menu that collapses the middle items between the first and last. This approach works well when the navigation path is too long. The dropdown menu remains unstyled and does not adopt the theme colors.
+1	simple	Simple breadcrumb navigation with linked items separated by different symbols. In the first variant group, links show an underline on hover except for the last item; in the second, links change opacity on hover. And highlighted the current page's title.
 \.
 
 
@@ -9589,5 +9588,5 @@ ALTER EVENT TRIGGER pgrst_drop_watch OWNER TO supabase_admin;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict ngaZbB5ikpoZZFVofv8n848yyFNmmcSrMbfOdCBQh12Y0j6PXS4YfNKRJ9hogtc
+\unrestrict I2LMzleCA9KWbyohpCfTrh0GnjYKDNNKUnpM1VUdGT6sX0mQgOdYGSOFjBsHkpz
 

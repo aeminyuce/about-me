@@ -3,13 +3,6 @@
         "20260205": [
             {
                 "data": {
-                    "alt": "Example",
-                    "url": "cover-image1.jpg"
-                },
-                "type": "postImage"
-            },
-            {
-                "data": {
                     "text": "How my journey began and continues in developing UI interfaces"
                 },
                 "type": "postTitle"
@@ -19,6 +12,13 @@
                     "text": "February 05, 2026"
                 },
                 "type": "postDate"
+            },
+            {
+                "data": {
+                    "alt": "Example",
+                    "url": "cover-image1.jpg"
+                },
+                "type": "postImage"
             },
             {
                 "data": {

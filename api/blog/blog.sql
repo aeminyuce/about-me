@@ -34,7 +34,7 @@ BEGIN
         ELSE
             -- Full table data
             sql := format(
-                'SELECT json_agg(to_jsonb(t) - ''id'') FROM blog.%I t',
+                'SELECT json_agg(to_jsonb(t) - ''id'' ORDER BY t.id) FROM blog.%I t',
                 tbl
             );
         END IF;
