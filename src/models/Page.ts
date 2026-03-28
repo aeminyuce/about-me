@@ -66,7 +66,7 @@ export interface PreviewProps {
 export interface GetImageProps {
     src: string;
     alt?: string;
-    ratio?: string;
+    aspect?: 'square' | 'photo' | 'portrait' | 'landscape' | 'golden' | 'wide' | 'wide-more';
     className?: string;
     style?: any;
 }

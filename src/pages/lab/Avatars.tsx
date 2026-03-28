@@ -60,16 +60,16 @@ export default function () {
         <Preview>
             <div className={avt.circle}>
                 <Avatar noease size='xs' className={avt.marginH}>
-                    <GetImage src={img[0]} ratio='1/1' />
+                    <GetImage src={img[0]} aspect='square' />
                 </Avatar>
                 <Avatar noease size='sm' className={avt.marginH}>
-                    <GetImage src={img[1]} ratio='1/1' />
+                    <GetImage src={img[1]} aspect='square' />
                 </Avatar>
                 <Avatar noease className={avt.marginH}>
-                    <GetImage src={img[2]} ratio='1/1' />
+                    <GetImage src={img[2]} aspect='square' />
                 </Avatar>
                 <Avatar noease size='lg' className={avt.marginH}>
-                    <GetImage src={img[3]} ratio='1/1' />
+                    <GetImage src={img[3]} aspect='square' />
                 </Avatar>
             </div>
         </Preview>
@@ -78,16 +78,16 @@ export default function () {
         <Preview>
             <div className={avt.round}>
                 <Avatar noease size='xs' className={avt.marginH}>
-                    <GetImage src={img[2]} ratio='1/1' />
+                    <GetImage src={img[2]} aspect='square' />
                 </Avatar>
                 <Avatar noease size='sm' className={avt.marginH}>
-                    <GetImage src={img[3]} ratio='1/1' />
+                    <GetImage src={img[3]} aspect='square' />
                 </Avatar>
                 <Avatar noease className={avt.marginH}>
-                    <GetImage src={img[4]} ratio='1/1' />
+                    <GetImage src={img[4]} aspect='square' />
                 </Avatar>
                 <Avatar noease size='lg' className={avt.marginH}>
-                    <GetImage src={img[5]} ratio='1/1' />
+                    <GetImage src={img[5]} aspect='square' />
                 </Avatar>
             </div>
         </Preview>
@@ -171,7 +171,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease className={avt.marginH}>
                     <a href='#'>
-                        <GetImage src={img[2]} ratio='1/1' />
+                        <GetImage src={img[2]} aspect='square' />
                     </a>
                 </Avatar>
                 <Avatar noease className={avt.marginH}>
@@ -181,7 +181,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease className={avt.marginH}>
                     <a href='#'>
-                        <GetImage src={img[5]} ratio='1/1' />
+                        <GetImage src={img[5]} aspect='square' />
                     </a>
                 </Avatar>
             </div>
@@ -201,16 +201,16 @@ export default function () {
                     <span>{text?.ph1}</span>
                 </Avatar>
                 <Avatar noease>
-                    <GetImage src={img[2]} ratio='1/1' />
+                    <GetImage src={img[2]} aspect='square' />
                 </Avatar>
                 <Avatar noease>
-                    <GetImage src={img[3]} ratio='1/1' />
+                    <GetImage src={img[3]} aspect='square' />
                 </Avatar>
                 <Avatar noease className={`${avt.theme}purpleBlue`}>
                     <span>{text?.ph4}</span>
                 </Avatar>
                 <Avatar noease>
-                    <GetImage src={img[5]} ratio='1/1' />
+                    <GetImage src={img[5]} aspect='square' />
                 </Avatar>
             </Avatar.Holder>
         </Preview>
@@ -230,7 +230,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <GetImage src={img[3]} ratio='1/1' />
+                        <GetImage src={img[3]} aspect='square' />
                     </a>
                 </Avatar>
                 <Avatar noease className={`${avt.theme}purpleBlue`}>
@@ -240,7 +240,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <GetImage src={img[5]} ratio='1/1' />
+                        <GetImage src={img[5]} aspect='square' />
                     </a>
                 </Avatar>
                 <Avatar noease>
@@ -258,16 +258,16 @@ export default function () {
                     <span>{text?.ph1}</span>
                 </Avatar>
                 <Avatar noease>
-                    <GetImage src={img[1]} ratio='1/1' />
+                    <GetImage src={img[1]} aspect='square' />
                 </Avatar>
                 <Avatar noease>
-                    <GetImage src={img[3]} ratio='1/1' />
+                    <GetImage src={img[3]} aspect='square' />
                 </Avatar>
                 <Avatar noease className={`${avt.theme}redPurple`}>
                     <span>{text?.ph2}</span>
                 </Avatar>
                 <Avatar noease>
-                    <GetImage src={img[4]} ratio='1/1' />
+                    <GetImage src={img[4]} aspect='square' />
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
@@ -285,13 +285,13 @@ export default function () {
                 </span>
                 <span className={avt.count}>
                     <Avatar size='sm' title={text?.name1} data={{ 'tooltip': 't' }} className={`${avt.animate} ${avt.border}yellow`}>
-                      <GetImage src={img[5]} ratio='1/1' />
+                      <GetImage src={img[5]} aspect='square' />
                     </Avatar>
                     <Avatar size='sm' title={text?.name2} data={{ 'tooltip': 't' }} className={`${avt.animate} ${avt.border}orangeRed`}>
-                        <GetImage src={img[2]} ratio='1/1' />
+                        <GetImage src={img[2]} aspect='square' />
                     </Avatar>
                     <Avatar size='sm' title={text?.name3} data={{ 'tooltip': 't' }} className={`${avt.animate} ${avt.border}green`}>
-                        <GetImage src={img[0]} ratio='1/1' />
+                        <GetImage src={img[0]} aspect='square' />
                     </Avatar>
                 </span>
                 <span className={avt.suffix}>

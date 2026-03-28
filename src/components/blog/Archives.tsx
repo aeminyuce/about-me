@@ -37,7 +37,7 @@ export default function () {
 
                             return (
                                 <Button key={name} noease ghost multi to={`/blog?post=${name}`} className={classes}>
-                                    <GetImage src={imageUrl} alt={imageAlt} ratio='3/2' className={imgClasses} />
+                                    <GetImage src={imageUrl} alt={imageAlt} aspect='photo' className={imgClasses} />
                                     <span className='ui-block-1st'>
                                         <span className='ui-color-black-50 ui-m-10-b'>{date}</span>
                                         <span className={titleClasses}>{title}</span>
