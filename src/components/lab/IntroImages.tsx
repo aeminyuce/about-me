@@ -17,7 +17,7 @@ export default function IntroImages() {
             {images.map((item: IntroImagesProps) => (
                 <Grid.Col key={item.img} size={'7x'} sm={3} xs={3}>
                     <Button noease nostyle href={`https://dribbble.com/shots/${item.url}`} target='_blank'>
-                        <GetImage className='ui-img-fluid' src={`lab/aeminyuce-${item.img}`} />
+                        <GetImage className='ui-img-fluid' src={`lab/aeminyuce-${item.img}`} ratio='4/3' />
                     </Button>
                 </Grid.Col>
             ))}

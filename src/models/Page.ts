@@ -66,6 +66,7 @@ export interface PreviewProps {
 export interface GetImageProps {
     src: string;
     alt?: string;
+    ratio?: string;
     className?: string;
     style?: any;
 }

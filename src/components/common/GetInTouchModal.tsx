@@ -48,7 +48,7 @@ export default function () {
                 <Grid.Static fluid='no'>
                     <Grid.Col size={133} className='ui-p-10'>
                         {qrCodeImage &&
-                            <GetImage src={qrCodeImage} className='ui-img-fluid' />
+                            <GetImage src={qrCodeImage} ratio='1/1' className='ui-img-fluid' />
                         }
                     </Grid.Col>
                     <Grid.Row>

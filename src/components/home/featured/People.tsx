@@ -64,7 +64,7 @@ export const People = () => {
                                     <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
                                     {(avatar || avatarText) &&
                                         <Avatar size='xs' className={classes}>
-                                            {avatar && <GetImage src={avatar} />}
+                                            {avatar && <GetImage src={avatar} ratio='1/1' />}
                                             {avatarText && <span>{avatarText}</span>}
                                         </Avatar>
                                     }
@@ -102,7 +102,7 @@ export const PeopleMore = () => {
                         <Fragment key={item.jobTitle}>
                             {(avatar || avatarText) &&
                                 <Avatar noease size='sm' className={classes}>
-                                    {avatar && <GetImage src={avatar} />}
+                                    {avatar && <GetImage src={avatar} ratio='1/1' />}
                                     {avatarText && <span>{avatarText}</span>}
                                 </Avatar>
                             }

@@ -28,11 +28,11 @@ export default function() {
             {avatar && cover &&
                 <div className='ui-align-c ui-round-t ui-border-b'>
                     <div className='ui-round-t'>
-                        <GetImage src={cover} />
+                        <GetImage src={cover} ratio='3/2' />
                     </div>
                     <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
                         <Avatar size='lg'>
-                            <GetImage src={avatar} />
+                            <GetImage src={avatar} ratio='3/2' />
                         </Avatar>
                     </Notifier>
                 </div>

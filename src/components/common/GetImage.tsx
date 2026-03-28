@@ -4,7 +4,7 @@ import * as React from 'react';
 import type { GetImageProps } from '../../models/Page';
 
 export default function (props: GetImageProps) {
-    const { src, alt, className, style } = props;
+    const { src, alt, ratio, className, style } = props;
 
-    return <img src={`/images/${src}`} alt={alt} className={className} style={style} />
+    return <img src={`/images/${src}`} alt={alt} data-ui-ratio={ratio} className={className} style={style} />
 }

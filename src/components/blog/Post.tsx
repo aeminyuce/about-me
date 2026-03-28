@@ -5,6 +5,7 @@ import Grid from 'uilab/react/Grid';
 
 // misc
 import { useStoreContext } from '../../states/StoreContext';
+import GetImage from '../common/GetImage';
 import PageTitle from '../../components/common/PageTitle';
 
 export default function () {
@@ -34,7 +35,7 @@ export default function () {
                             case 'postDate':
                                 return <div key={name}>{item?.data?.text}</div>;
                             case 'postImage':
-                                return <img key={name} src={`/images/${item?.data?.url}`} alt={item?.data?.alt} className='blog-post-image ui-round ui-img-fluid ui-shadow-lg' />;
+                                return <GetImage key={name} src={item?.data?.url} alt={item?.data?.alt} ratio='3/2' className='blog-post-image ui-round ui-img-fluid ui-shadow-lg' />;
                             case 'text':
                                 return <p key={name} className='ui-font-readable'>{item?.data?.text}</p>;
                             default:
