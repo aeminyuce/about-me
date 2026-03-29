@@ -15,7 +15,6 @@ import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
 
 // assets
 import { IconHome } from 'uilab-icons/react/general/home';
-import { IconArrowCircleLeft } from 'uilab-icons/react/general/arrow-circle-left';
 import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
 import { IconLongArrowLeft } from 'uilab-icons/react/general/long-arrow-left';
 import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
