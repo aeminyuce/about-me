@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict I2LMzleCA9KWbyohpCfTrh0GnjYKDNNKUnpM1VUdGT6sX0mQgOdYGSOFjBsHkpz
+\restrict d53WSxhGtkwInMi6pbtOhWmKddGVX7Dc8mOXL6F4aBaQ5H8KyG70bQCRYydShiZ
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1 (Postgres.app)
@@ -5721,34 +5721,34 @@ COPY lab.intro (id, title, subtitle, leadtext, textpart1, textpart2, textpart3) 
 --
 
 COPY lab.intro_images (id, img, url) FROM stdin;
-1	business-dashboard-tablet-version.png	18305207-Business-Dashboard-Tablet-Version
-2	change-location-tool-for-mobile.png	18300082-Change-Location-Tool-for-Mobile
-3	business-dashboard-dark-mode.png	18287637-Business-Dashboard-Dark-Mode
-4	business-dashboard.png	18287612-Business-Dashboard
-5	mobile-signature-app.png	16777334-Mobile-Signature-App
-6	photo-editing-tool-for-mobile.png	16771303-Photo-Editing-Tool-for-Mobile
-7	outline-icons-set-part2.png	14983443-Outline-Icons-Set-Part-2
-8	daily-planning-app.png	14982784-Daily-Planning-App
-9	daily-golas-app.png	14981051-Daily-Goals-App
-10	last-transactions-app.png	14974721-Last-Transactions-App
-11	personal-dashboard.png	14969122-Personal-Dashboard
-12	weather-widgets.png	14764006-Weather-Widgets
-13	reports-app.png	14763936-Reports-App
-14	outline-icons-set.png	13906690-Outline-Icons-Set
-15	real-estate-landing-page.png	13897252-Real-Estate-Landing-Page
-16	dashboard.png	7905212-Dashboard
-17	sign-up-page.png	7400652-Sign-Up-Page
-18	dark-mode-app.png	7381796-Dark-Mode-App
-19	landing-page-agriculture.png	7289550-Landing-Page-Agriculture
-20	login-page.png	7210654-Login-Page
-21	messaging-app.png	7199035-Messaging-App
-22	dashboard-app.png	7172476-Dashboard-App
-23	movie-app.png	6942454-Movie-App
-24	weather-app.png	6921326-Weather-App
-25	admin-panel.png	6887864-Admin-Panel
-26	product-listing.png	6844579-Product-Listing
-27	real-estate-details.png	6834370-Real-Estate-Details
-28	photo-albums.png	5446040-Photo-Albums
+1	business-dashboard-tablet-version.jpg	18305207-Business-Dashboard-Tablet-Version
+2	change-location-tool-for-mobile.jpg	18300082-Change-Location-Tool-for-Mobile
+3	business-dashboard-dark-mode.jpg	18287637-Business-Dashboard-Dark-Mode
+4	business-dashboard.jpg	18287612-Business-Dashboard
+5	mobile-signature-app.jpg	16777334-Mobile-Signature-App
+6	photo-editing-tool-for-mobile.jpg	16771303-Photo-Editing-Tool-for-Mobile
+7	outline-icons-set-part2.jpg	14983443-Outline-Icons-Set-Part-2
+8	daily-planning-app.jpg	14982784-Daily-Planning-App
+9	daily-golas-app.jpg	14981051-Daily-Goals-App
+11	personal-dashboard.jpg	14969122-Personal-Dashboard
+10	last-transactions-app.jpg	14974721-Last-Transactions-App
+12	weather-widgets.jpg	14764006-Weather-Widgets
+13	reports-app.jpg	14763936-Reports-App
+14	outline-icons-set.jpg	13906690-Outline-Icons-Set
+15	real-estate-landing-page.jpg	13897252-Real-Estate-Landing-Page
+16	dashboard.jpg	7905212-Dashboard
+17	sign-up-page.jpg	7400652-Sign-Up-Page
+18	dark-mode-app.jpg	7381796-Dark-Mode-App
+19	landing-page-agriculture.jpg	7289550-Landing-Page-Agriculture
+20	login-page.jpg	7210654-Login-Page
+21	messaging-app.jpg	7199035-Messaging-App
+22	dashboard-app.jpg	7172476-Dashboard-App
+23	movie-app.jpg	6942454-Movie-App
+24	weather-app.jpg	6921326-Weather-App
+25	admin-panel.jpg	6887864-Admin-Panel
+26	product-listing.jpg	6844579-Product-Listing
+27	real-estate-details.jpg	6834370-Real-Estate-Details
+28	photo-albums.jpg	5446040-Photo-Albums
 \.
 
 
@@ -9588,5 +9588,5 @@ ALTER EVENT TRIGGER pgrst_drop_watch OWNER TO supabase_admin;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict I2LMzleCA9KWbyohpCfTrh0GnjYKDNNKUnpM1VUdGT6sX0mQgOdYGSOFjBsHkpz
+\unrestrict d53WSxhGtkwInMi6pbtOhWmKddGVX7Dc8mOXL6F4aBaQ5H8KyG70bQCRYydShiZ
 
