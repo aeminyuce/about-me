@@ -64,9 +64,11 @@ export interface PreviewProps {
 
 // Get Image from public Folder
 export interface GetImageProps {
+    fetchPriority?: 'low' | 'high';
     src: string;
     alt?: string;
     aspect?: 'square' | 'photo' | 'portrait' | 'landscape' | 'golden' | 'wide' | 'wide-more';
+    lazy?: boolean;
     className?: string;
     style?: any;
 }

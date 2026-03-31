@@ -17,7 +17,7 @@ export default function () {
         <>
         {profileImage &&
             <Avatar size='lg' className='ui-circle'>
-                <GetImage src={profileImage} alt={`${fullName} | ${jobTitle}`} aspect='square' />
+                <GetImage fetchPriority='high' src={profileImage} alt={`${fullName} | ${jobTitle}`} aspect='square' />
             </Avatar>
         }
         </>

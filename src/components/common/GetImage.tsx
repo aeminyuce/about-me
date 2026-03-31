@@ -4,7 +4,7 @@ import * as React from 'react';
 import type { GetImageProps } from '../../models/Page';
 
 export default function (props: GetImageProps) {
-    const { src, alt, aspect, className, style } = props;
+    const { fetchPriority, src, alt, aspect, lazy, className, style } = props;
 
     // classes
     const setClassName = className ? `${className}` : '';
@@ -13,5 +13,8 @@ export default function (props: GetImageProps) {
     let classes: string | undefined =  setClassName + setAspect;
     if (classes === '') { classes = undefined; }
 
-    return <img src={`/images/${src}`} alt={alt} className={classes} style={style} />
+    // attrs
+    const setLazy = lazy ? 'lazy' : null;
+
+    return <img fetchPriority={fetchPriority} src={`/images/${src}`} alt={alt} loading={setLazy} className={classes} style={style} />
 }

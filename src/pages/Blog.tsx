@@ -22,7 +22,9 @@ export default function () {
         {post ?
             <Post />
             :
-            <PageTitle title='Blog'><Archives /></PageTitle>
+            <PageTitle title='Blog'>
+                <Archives />
+            </PageTitle>
         }
         </>
     );
