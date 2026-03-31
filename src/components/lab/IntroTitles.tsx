@@ -2,7 +2,7 @@ import * as React from 'react';
 import Heading from 'uilab/react/Heading';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 
 export const Title = () => {
     const { api } = useStoreContext();

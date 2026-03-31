@@ -5,7 +5,7 @@ import Sidebar from 'uilab/react/Sidebar';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 
 // assets
 import { IconBarsLeft } from 'uilab-icons/react/general/bars-left';

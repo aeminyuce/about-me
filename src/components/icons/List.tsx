@@ -5,7 +5,7 @@ import Heading from 'uilab/react/Heading';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import type { IconsListProps } from '../../models/Icons';
 import { copyIconName } from '../../helpers/Icons';
 

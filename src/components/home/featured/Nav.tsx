@@ -5,7 +5,7 @@ import Card from 'uilab/react/Card';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../../states/StoreContext';
+import { useStoreContext } from '../../../stores/StoreContext';
 
 // assets
 import { IconHome } from 'uilab-icons/react/general/home';

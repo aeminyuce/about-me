@@ -8,7 +8,7 @@ import ListGroup from 'uilab/react/ListGroup';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../../states/StoreContext';
+import { useStoreContext } from '../../../stores/StoreContext';
 import type { PeopleListProps, PeopleMoreListProps } from '../../../models/Home_Featured';
 import GetImage from '../../common/GetImage';
 

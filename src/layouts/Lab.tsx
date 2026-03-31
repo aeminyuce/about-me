@@ -6,7 +6,7 @@ import Grid from 'uilab/react/Grid';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import LabMenu from '../components/lab/Menu';
-import { useStoreContext } from '../states/StoreContext';
+import { useStoreContext } from '../stores/StoreContext';
 
 // styles
 import '../assets/lab.less';

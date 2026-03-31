@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import type { IconsListProps } from '../../models/Icons';
 
 export default function (props: any) {

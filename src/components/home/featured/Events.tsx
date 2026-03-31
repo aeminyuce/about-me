@@ -7,7 +7,7 @@ import Heading from 'uilab/react/Heading';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../../states/StoreContext';
+import { useStoreContext } from '../../../stores/StoreContext';
 
 // assets
 import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';

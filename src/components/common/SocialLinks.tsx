@@ -4,7 +4,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import type { SocialLinksProps } from '../../models/Page';
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 
 // assets
 import { IconDribbble } from 'uilab-icons/react/social/dribbble';

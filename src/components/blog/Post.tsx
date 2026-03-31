@@ -4,7 +4,7 @@ import Heading from 'uilab/react/Heading';
 import Grid from 'uilab/react/Grid';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import GetImage from '../common/GetImage';
 import PageTitle from '../../components/common/PageTitle';
 

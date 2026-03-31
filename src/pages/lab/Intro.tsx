@@ -2,7 +2,7 @@ import * as React from 'react';
 import Grid from 'uilab/react/Grid';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import { Title, SubTitle } from '../../components/lab/IntroTitles';
 import { LeadText, Paragraphs } from '../../components/lab/IntroTexts';
 import MyAvatar from '../../components/common/MyAvatar';

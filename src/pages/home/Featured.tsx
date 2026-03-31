@@ -2,7 +2,7 @@ import * as React from 'react';
 import Grid from 'uilab/react/Grid';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import { Reports, ReportsList } from '../../components/home/featured/Reports';
 import { People, PeopleMore } from '../../components/home/featured/People';
 import Profile from '../../components/home/featured/Profile';

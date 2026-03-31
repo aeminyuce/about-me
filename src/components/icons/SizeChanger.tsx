@@ -3,7 +3,7 @@ import Button from 'uilab/react/Button';
 import Grid from 'uilab/react/Grid';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import type { SizeListProps } from '../../models/Icons';
 
 export default function () {

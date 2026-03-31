@@ -6,7 +6,7 @@ import Card from 'uilab/react/Card';
 import Listing from 'uilab/react/Listing';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import type { LabMenuProps } from '../../models/Lab';
 import { scrollToHash, clearSpaces } from '../../helpers/Lab';
 

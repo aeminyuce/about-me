@@ -7,7 +7,7 @@ import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import AboutMe from '../components/home/AboutMe';
 import HomeNav from '../components/home/HomeNav';
-import { useStoreContext } from '../states/StoreContext';
+import { useStoreContext } from '../stores/StoreContext';
 
 // styles
 import '../assets/home.less';

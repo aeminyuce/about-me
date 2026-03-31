@@ -8,7 +8,7 @@ import ProgressBar from 'uilab/react/ProgressBar';
 import Tab from 'uilab/react/Tab';
 
 // misc
-import { useStoreContext } from '../../../states/StoreContext';
+import { useStoreContext } from '../../../stores/StoreContext';
 import type { ReportsListProps } from '../../../models/Home_Featured';
 
 const Report = (props: any) => {

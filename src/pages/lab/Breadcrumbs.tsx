@@ -7,7 +7,7 @@ import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import { headings } from '../../helpers/Lab';
 import Description from '../../components/common/Description';
 import Preview from '../../components/common/Preview';

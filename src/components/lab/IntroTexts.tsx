@@ -2,7 +2,7 @@ import * as React from 'react';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 
 // assets
 import { IconSoundwave } from 'uilab-icons/react/media/soundwave';

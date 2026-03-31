@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import HomeProfile from './HomeProfile';
 import MyFocus from './MyFocus';
 

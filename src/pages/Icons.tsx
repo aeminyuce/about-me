@@ -2,7 +2,7 @@ import * as React from 'react';
 import Grid from 'uilab/react/Grid';
 
 // misc
-import { useStoreContext } from '../states/StoreContext';
+import { useStoreContext } from '../stores/StoreContext';
 import type { IconsListProps } from '../models/Icons';
 import MyAvatar from '../components/common/MyAvatar';
 import Title from '../components/icons/Title';

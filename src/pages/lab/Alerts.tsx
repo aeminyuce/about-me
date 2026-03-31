@@ -4,7 +4,7 @@ import Heading from 'uilab/react/Heading';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import { headings, themeRandomizer } from '../../helpers/Lab';
 import Description from '../../components/common/Description';
 import Preview from '../../components/common/Preview';

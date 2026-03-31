@@ -5,7 +5,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 // misc
 import type { HeaderLinksProps } from '../../models/Page';
 import { ShowGetInTouch } from './GetInTouchModal';
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 
 // assets
 import { IconHeart } from 'uilab-icons/react/general/heart';

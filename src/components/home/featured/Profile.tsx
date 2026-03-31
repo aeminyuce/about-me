@@ -6,7 +6,7 @@ import ListGroup from 'uilab/react/ListGroup';
 import Notifier from 'uilab/react/Notifier';
 
 // misc
-import { useStoreContext } from '../../../states/StoreContext';
+import { useStoreContext } from '../../../stores/StoreContext';
 import type { UserActivityProps } from '../../../models/Home_Featured';
 import GetImage from '../../common/GetImage';
 

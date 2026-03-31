@@ -3,7 +3,7 @@ import Button from 'uilab/react/Button';
 import Grid from 'uilab/react/Grid';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import GetImage from '../../components/common/GetImage';
 
 export default function () {

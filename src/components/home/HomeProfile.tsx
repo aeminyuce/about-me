@@ -5,7 +5,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { GetInTouchButtons } from '../common/GetInTouchModal';
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import MyAvatar from '../common/MyAvatar';
 import PersonalSkills from './PersonalSkills';
 

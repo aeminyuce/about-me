@@ -1,4 +1,4 @@
-import { useStoreContext } from '../states/StoreContext';
+import { useStoreContext } from '../stores/StoreContext';
 
 // returns a random theme type
 type RandomTheme = 'success' | 'warning' | 'danger';

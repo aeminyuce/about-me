@@ -2,7 +2,7 @@ import * as React from 'react';
 import Avatar from 'uilab/react/Avatar';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import GetImage from './GetImage';
 
 export default function () {

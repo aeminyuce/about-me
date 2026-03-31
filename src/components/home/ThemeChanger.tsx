@@ -4,7 +4,7 @@ import Dropdown from 'uilab/react/Dropdown';
 
 // misc
 import type { ThemeListProps } from '../../models/Home';
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 
 export default function (props: any) {
     const { themeA, setThemeA, themeB, setThemeB, api } = useStoreContext();

@@ -7,7 +7,7 @@ import Grid from 'uilab/react/Grid';
 // misc
 import type { HomeNavLinksProps } from '../../models/Home';
 import ThemeChanger from './ThemeChanger';
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import { mobileNavPosition } from '../../helpers/Home';
 
 export default function () {

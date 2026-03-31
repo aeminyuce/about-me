@@ -4,7 +4,7 @@ import Grid from 'uilab/react/Grid';
 import HeaderSticky from 'uilab/react/HeaderSticky';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import { HeaderLeftSidebar, ToggleHeaderLeftSidebar, HeaderRightSidebar, ToggleHeaderRightSidebar } from './HeaderSidebars';
 import GetInTouchModal from './GetInTouchModal';
 import HeaderLinks from './HeaderLinks';

@@ -4,7 +4,7 @@ import Grid from 'uilab/react/Grid';
 import Modal, { modalOpen } from 'uilab/react/Modal';
 
 // misc
-import { useStoreContext } from '../../states/StoreContext';
+import { useStoreContext } from '../../stores/StoreContext';
 import GetImage from './GetImage';
 
 // get in touch modal
