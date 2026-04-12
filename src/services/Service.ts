@@ -16,7 +16,7 @@ const hidePageLoader = () => {
     }, ui.globals.slow);
 };
 
-const errorHandler = (status: number) => {
+const errorHandler = (status: any) => {
     if (status === 404 && window.location.pathname !== '/404') {
         hidePageLoader();
         window.location.href = '/404';
@@ -25,6 +25,11 @@ const errorHandler = (status: number) => {
     if (status === 500 && window.location.pathname !== '/500') {
         hidePageLoader();
         window.location.href = '/500';
+    }
+
+    if (status === 'apiError' && window.location.pathname !== '/error') {
+        hidePageLoader();
+        window.location.href = '/error';
     }
 }
 
@@ -46,6 +51,7 @@ export default class Service {
             return await response.json();
 
         } catch (e: any) {
+            errorHandler('apiError');
             // run error logger
 
         } finally { hidePageLoader(); }
@@ -67,6 +73,7 @@ export default class Service {
             return await response.json();
 
         } catch (e: any) {
+            errorHandler('apiError');
             // run error logger
 
         } finally { hidePageLoader(); }

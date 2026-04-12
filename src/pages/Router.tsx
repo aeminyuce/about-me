@@ -7,6 +7,7 @@ import PageTitle from '../components/common/PageTitle';
 import PageLoader from '../components/common/PageLoader';
 import Page500 from '../pages/500';
 import Page404 from '../pages/404';
+import PageApiError from './ApiError';
 
 // layouts
 const Default = lazy(() => import( /* webpackChunkName: 'Default' */ '../layouts/Default' ));
@@ -83,6 +84,9 @@ export default function () {
                 {/* error pages */}
                 <Route element={<Error />}>
 
+                    <Route path='error' element={
+                        <PageTitle title='API Error'><PageApiError /></PageTitle>
+                    }/>
                     <Route path='500' element={
                         <PageTitle title='Server Error'><Page500 /></PageTitle>
                     }/>
