@@ -20,26 +20,25 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)?$/,
+            test: /\.(js|jsx)?$/,
                 exclude: [/node_modules\/(?!(uilab|uilab-icons)\/).*/],
                 use: {
-                    loader: "babel-loader",
+                    loader: "ts-loader",
                     options: {
-                        presets: ["@babel/preset-env", "@babel/preset-react"],
-                    },
-                },
+                        transpileOnly: true,
+                        allowTsInNodeModules: true,
+                    }
+                }
             },
             {
                 test: /\.(ts|tsx)?$/,
                 exclude: [/node_modules\/(?!(uilab|uilab-icons)\/).*/],
-                use: [
-                    {
-                        loader: 'ts-loader',
-                        options: {
-                            allowTsInNodeModules: true,
-                        }
+                use: {
+                    loader: "ts-loader",
+                    options: {
+                        transpileOnly: true,
                     }
-                ]
+                }
             },
             {
                 test: /\.less$/i,

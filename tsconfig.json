@@ -6,6 +6,6 @@
         "dom"
       ],
       "module": "esnext",
-      "moduleResolution": "node"
+      "moduleResolution": "bundler"
     }
 }
