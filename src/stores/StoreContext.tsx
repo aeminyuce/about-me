@@ -46,9 +46,9 @@ export default function (props: StoreProviderProps) {
             let page = null;
             const isUrl = (name: string) => pathname.startsWith(`/lab/${name}`);
 
-            if (isUrl('alerts')) page = 'alerts';
-            if (isUrl('avatars')) page = 'avatars';
-            if (isUrl('breadcrumbs')) page = 'breadcrumbs';
+            ['alerts', 'avatars', 'breadcrumbs'].forEach((name: string) => {
+                if (isUrl(name)) page = name;
+            });
 
             if (!state?.api?.lab) loadLabData();
             if (page && !(state.api.lab && state.api.lab[page])) loadLabData(page);
