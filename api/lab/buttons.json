@@ -1,0 +1,21 @@
+{
+    "result": {
+        "buttons": {
+            "desc": {
+                "size": "Button sizes adjust the overall dimensions using padding, text size and inline icon size.",
+                "style": "Buttons can combine multiple styles—borders, rounded or circular shapes, and hover‑revealed backgrounds (like ghost buttons).",
+                "theme": "Buttons can use any theme color for their borders, backgrounds and text, and these can be combined with any style variant.",
+                "noStyle": "No‑style buttons reset the browser’s default appearance and give you a clean, neutral starting point"
+            },
+            "text": {
+                "lg": "Large Button",
+                "sm": "Small Button",
+                "xs": "Extra Small Button",
+                "ghost": "Ghost Button",
+                "default": "Button",
+                "noStyleBtn": "No Styled Button",
+                "noStyleLink": "No Styled Link"
+            }
+        }
+    }
+}
