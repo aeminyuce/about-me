@@ -222,25 +222,6 @@ export default function () {
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='bull' className={bc.circle}>
-                <Breadcrumbs.Item>
-                    <Button square className={`${bc.btnTheme}purpleBlue`}>
-                        <SvgIcon as='js' src={IconLongArrowLeft} />
-                    </Button>
-                </Breadcrumbs.Item>
-                <Breadcrumbs.Item>
-                    <Button className={`${bc.btnTheme}purpleBlue`}>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={bc.iconM} />
-                        {text?.item2}
-                    </Button>
-                </Breadcrumbs.Item>
-                <Breadcrumbs.Item>
-                    <Button as='span' className={`${bc.btnTheme}purpleBlue`}>
-                        {text?.item3}
-                    </Button>
-                </Breadcrumbs.Item>
-            </Breadcrumbs>
-
             <Spacer size={30} />
 
             <Breadcrumbs sep='arrow' className={bc.round}>
