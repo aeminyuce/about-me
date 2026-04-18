@@ -20,11 +20,11 @@ export default function (props: PreviewProps) {
 
     // classes
     const setClassName = className ? ` ${className}` : '';
-    const classes = `preview ui-m-30-b ui-border ui-border-dual ui-round ui-shadow-in-sm ui-set-relative${setClassName}`;
+    const classes = `preview ui-m-30-b ui-p ui-border ui-border-dual ui-round ui-shadow-in-sm ui-set-relative${setClassName}`;
 
     let buttonClasses = 'ui-m-15 ui-round-inner ui-set-absolute ui-theme-blue ui-fill-dark-100';
 
-    if (play) {
+    if (playPos) {
         buttonClasses += ` ${positions[playPos]}`;
     }
 

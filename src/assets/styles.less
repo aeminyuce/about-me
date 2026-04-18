@@ -3,7 +3,8 @@
 
 /* preview */
 @preview-text-align:                      center;
-@preview-padding:                         150px 0;
+@preview-padding:                         150px 75px;
+@preview-padding-sm:                      150px 10px;
 
 @preview-bg:                            hsla(220, 10%, 100%, 0.015);
 @preview-bg-dark:                       hsla(220, 4%, 36%, 0.1);
@@ -20,4 +21,11 @@
 ._mode-vars(._page-vars(), ._page-vars-dark());
 
 .color-dribbble { color: @dribbble-color; }
-.preview { text-align: @preview-text-align; ._bg-var(preview-bg); padding: @preview-padding; }
+.preview { text-align: @preview-text-align; ._bg-var(preview-bg); }
+
+@media (@md-start) {
+    .preview { padding: @preview-padding; }
+}
+@media (@sm-finish) {
+    .preview { padding: @preview-padding-sm; }
+}
