@@ -29,16 +29,16 @@ export default function () {
 
     // classes
     const bc = {
+        opacity: 'ui-opacity ui-ease-layout',
+        dropdown: 'ui-round ui-shadow-lg',
+        btnTheme: 'ui-fill-dark-100 ui-theme-',
+        hoverline: 'ui-font-hoverline',
+        txtTheme: 'ui-text ui-theme-',
+        iconM: 'ui-m-4-v ui-m-10-r',
         color: 'ui-color-black-25',
         circle: 'ui-circle-2nd',
         round: 'ui-round-2nd',
-        hoverline: 'ui-font-hoverline',
-        opacity: 'ui-opacity ui-ease-layout',
         border: 'ui-border',
-        dropdown: 'ui-round ui-shadow-lg',
-        btnTheme: 'ui-fill-dark-100 ui-theme-',
-        txtTheme: 'ui-text ui-theme-',
-        iconM: 'ui-m-4-v ui-m-10-r',
     };
 
     if (breadcrumbs) return (

@@ -32,19 +32,18 @@ export default function () {
     const count = `${wrap} ui-p-5 ui-circle ui-circle-1st`;
 
     const avt = {
-        wrap: wrap,
+        count,
         circle: `${wrap} ui-circle-1st`,
         round: `${wrap} ui-round-1st`,
-        count: count,
         countBorder: `${count} ui-border`,
-        marginH: 'ui-m-5-h',
         animate: 'ui-hover-scale-more ui-hover-shadow',
-        theme: 'ui-fill-dark-100 ui-theme-',
         border: 'ui-border ui-border-lg ui-stroke ui-theme-',
-        txt: 'ui-text ui-theme-',
+        theme: 'ui-fill-dark-100 ui-theme-',
         prefix: 'ui-m-30-r ui-inline-block',
         suffix: 'ui-m-10-l ui-inline-block',
+        txt: 'ui-text ui-theme-',
         refs: 'ui-p-15-h',
+        marginH: 'ui-m-5-h',
     };
 
     if (avatars) return (

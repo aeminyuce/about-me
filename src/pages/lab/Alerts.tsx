@@ -22,17 +22,15 @@ export default function () {
     const text = alerts?.text;
 
     // classes
-    const btnWrap = 'ui-ease-1st-bg';
-
     const dlg = {
         base: 'ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative',
+        custom: 'ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover',
         close: 'ui-dialog-close ui-ease-layout',
+        btn: 'ui-dialog-buttons ui-ease-1st-bg',
+        btnWrap: 'ui-ease-1st-bg',
         msg: 'ui-dialog-msg',
-        btnWrap: btnWrap,
-        btn: `ui-dialog-buttons ${btnWrap}`,
         success: 'ui-dialog-success',
         error: 'ui-dialog-error',
-        custom: 'ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover',
     };
 
     const msg = {
@@ -132,7 +130,7 @@ export default function () {
                 }
             });
         }}>
-            <div className={dlg.base} style={{ width: style.clamp(480), ...style.dlg }}>
+            <div className={dlg.base} style={{ width: style.clamp(492), ...style.dlg }}>
                 <button className={dlg.close}>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
