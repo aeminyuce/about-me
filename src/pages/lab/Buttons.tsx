@@ -15,6 +15,7 @@ import { headings } from '../../helpers/Lab';
 // assets
 import { IconAi } from 'uilab-icons/react/general/ai';
 import { IconFolder } from 'uilab-icons/react/general/folder';
+import { IconTrash } from 'uilab-icons/react/general/trash';
 
 export default function () {
     const { api } = useStoreContext();
@@ -25,32 +26,28 @@ export default function () {
     const text = buttons?.text;
 
     // classes
-    const round = 'ui-round';
-    const circle = 'ui-circle';
-    const border = 'ui-border';
-    const blockW = 'ui-block-2nd ui-ease-2nd-btn';
-
     const btn = {
-        round: round,
-        circle: circle,
-        border: border,
-        blockW: blockW,
-        blockWL: `ui-align-l ${blockW}`,
-        borderCirc: `${circle} ${border}`,
-        borderCirc2x: `${circle} ${border} ${border}-dual`,
-        borderRnd: `${round} ${border}`,
-        borderL: `${border}-l ${border}-lg`,
-        borderB: `${border}-b ${border}-dual`,
-        borderBL: `${border}-b ${border}-lg`,
+        blockW: 'ui-block-2nd ui-ease-2nd-btn',
+        fillDark: 'ui-fill-dark-100',
+        blockWL: 'ui-align-l ui-block-2nd ui-ease-2nd-btn',
+        themeW: 'ui-round-1st ui-theme-',
+        borderCirc: 'ui-circle ui-border',
+        borderCirc2x: 'ui-circle ui-border ui-border-dual',
+        borderRnd: 'ui-round ui-border',
+        borderL: 'ui-border-l ui-border-lg',
+        borderB: 'ui-border-b ui-border-dual',
+        borderBL: 'ui-border-b ui-border-lg',
         themeFill: 'ui-fill-dark-100 ui-theme-',
         themeDarkStr: 'ui-fill-dark-100 ui-stroke ui-theme-',
         themeLightStr: 'ui-fill-light-100 ui-stroke ui-theme-',
         themeBrd: 'ui-stroke ui-theme-',
         themeClr: 'ui-text ui-theme-',
         themeBrdClr: 'ui-text ui-stroke ui-theme-',
-        iconL: 'ui-m-10-r',
         iconR: 'ui-m-5-l ui-float-r',
-    };
+        iconL: 'ui-m-10-r',
+        round: 'ui-round',
+        circle: 'ui-circle',
+        border: 'ui-border',    };
 
     return (
         <>
@@ -233,6 +230,25 @@ export default function () {
                     </Button>
                 </Grid.Col>
             </Grid.Row>
+        </Preview>
+
+        <Description>{desc?.square}</Description>
+        <Preview className={`${btn.themeW}blue`}>
+            <Button square size='xs' className={btn.fillDark}>
+                <SvgIcon as='js' src={IconTrash} />
+            </Button>
+            {' '}
+            <Button square size='sm' className={btn.fillDark}>
+                <SvgIcon as='js' src={IconTrash} />
+            </Button>
+            {' '}
+            <Button square className={btn.fillDark}>
+                <SvgIcon as='js' src={IconTrash} />
+            </Button>
+            {' '}
+            <Button square size='lg' className={btn.fillDark}>
+                <SvgIcon as='js' src={IconTrash} />
+            </Button>
         </Preview>
         </>
     );
