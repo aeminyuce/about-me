@@ -45,6 +45,7 @@ export default function () {
         themeBrdClr: 'ui-text ui-stroke ui-theme-',
         iconR: 'ui-m-5-l ui-float-r',
         iconL: 'ui-m-10-r',
+        bottomSp: 'ui-m-10-b',
         round: 'ui-round',
         circle: 'ui-circle',
         border: 'ui-border',    };
@@ -233,22 +234,27 @@ export default function () {
         </Preview>
 
         <Description>{desc?.square}</Description>
-        <Preview className={`${btn.themeW}blue`}>
+        <Preview className={`${btn.themeW}blueGreen`}>
             <Button square size='xs' className={btn.fillDark}>
                 <SvgIcon as='js' src={IconTrash} />
-            </Button>
-            {' '}
+            </Button>{' '}
             <Button square size='sm' className={btn.fillDark}>
                 <SvgIcon as='js' src={IconTrash} />
-            </Button>
-            {' '}
+            </Button>{' '}
             <Button square className={btn.fillDark}>
                 <SvgIcon as='js' src={IconTrash} />
-            </Button>
-            {' '}
+            </Button>{' '}
             <Button square size='lg' className={btn.fillDark}>
                 <SvgIcon as='js' src={IconTrash} />
             </Button>
+        </Preview>
+
+        <Description>{desc?.responsive}</Description>
+        <Preview className={btn.themeW}>
+            <Button square fluid='xs' className={btn.bottomSp}>{text?.resXsShort}</Button>{' '}
+            <Button fluid='md' className={btn.bottomSp}>{text?.resMd}</Button>{' '}
+            <Button fluid='sm' className={btn.bottomSp}>{text?.resSm}</Button>{' '}
+            <Button fluid='xs' className={btn.bottomSp}>{text?.resXs}</Button>
         </Preview>
         </>
     );
