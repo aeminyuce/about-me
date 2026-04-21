@@ -21,30 +21,6 @@ export default function () {
     const desc = alerts?.desc;
     const text = alerts?.text;
 
-    // classes
-    const dlg = {
-        base: 'ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative',
-        custom: 'ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover',
-        close: 'ui-dialog-close ui-ease-layout',
-        btn: 'ui-dialog-buttons ui-ease-1st-bg',
-        btnWrap: 'ui-ease-1st-bg',
-        msg: 'ui-dialog-msg',
-        success: 'ui-dialog-success',
-        error: 'ui-dialog-error',
-    };
-
-    const msg = {
-        base: 'ui-alerts-msg ui-alerts-demo ui-round ui-shadow-lg ui-ease-layout ui-show ui-show-ease ui-set-absolute',
-        danger: 'ui-msg-danger',
-        warning: 'ui-msg-warning',
-        success: 'ui-msg-success',
-        tl: 'ui-tl',
-        tr: 'ui-tr',
-        br: 'ui-br',
-        bl: 'ui-bl',
-        c: 'ui-c',
-    };
-
     // styles
     const style = {
         dlg: { top: '0', left: '0', transform: 'none', zIndex: 'unset' },
@@ -69,11 +45,11 @@ export default function () {
                 msg: text?.simple,
             });
         }}>
-            <div className={dlg.base} style={{ width: style.clamp(300), ...style.dlg }}>
-                <div className={dlg.msg}>{text?.simple}</div>
-                <div className={dlg.btn}>
-                    <div className={dlg.btnWrap}>
-                        <button className={dlg.success} value='success'>{text?.ok}</button>
+            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: style.clamp(300), ...style.dlg }}>
+                <div className='ui-dialog-msg'>{text?.simple}</div>
+                <div className='ui-dialog-buttons ui-ease-1st-bg'>
+                    <div className='ui-ease-1st-bg'>
+                        <button className='ui-dialog-success' value='success'>{text?.ok}</button>
                     </div>
                 </div>
             </div>
@@ -86,11 +62,11 @@ export default function () {
                 success: text?.got,
             });
         }}>
-            <div className={dlg.base} style={{ width: style.clamp(320), ...style.dlg }}>
-                <div className={dlg.msg}>{text?.beOk}</div>
-                <div className={dlg.btn}>
-                    <div className={dlg.btnWrap}>
-                        <button className={dlg.success} value='success'>{text?.got}</button>
+            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: style.clamp(320), ...style.dlg }}>
+                <div className='ui-dialog-msg'>{text?.beOk}</div>
+                <div className='ui-dialog-buttons ui-ease-1st-bg'>
+                    <div className='ui-ease-1st-bg'>
+                        <button className='ui-dialog-success' value='success'>{text?.got}</button>
                     </div>
                 </div>
             </div>
@@ -104,15 +80,15 @@ export default function () {
                 error: text?.no,
             });
         }}>
-            <div className={dlg.base} style={{ width: style.clamp(450), ...style.dlg }}>
-                <button className={dlg.close}>
+            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: style.clamp(450), ...style.dlg }}>
+                <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
-                <div className={dlg.msg}>{text?.remove}</div>
-                <div className={dlg.btn}>
-                    <div className={dlg.btnWrap}>
-                        <button className={dlg.success} value='success'>{text?.yes}</button>
-                        <button className={dlg.error} value='error'>{text?.no}</button>
+                <div className='ui-dialog-msg'>{text?.remove}</div>
+                <div className='ui-dialog-buttons ui-ease-1st-bg'>
+                    <div className='ui-ease-1st-bg'>
+                        <button className='ui-dialog-success' value='success'>{text?.yes}</button>
+                        <button className='ui-dialog-error' value='error'>{text?.no}</button>
                     </div>
                 </div>
             </div>
@@ -130,17 +106,17 @@ export default function () {
                 }
             });
         }}>
-            <div className={dlg.base} style={{ width: style.clamp(492), ...style.dlg }}>
-                <button className={dlg.close}>
+            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: style.clamp(492), ...style.dlg }}>
+                <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
-                <div className={dlg.msg}>{text?.download}</div>
-                <div className={dlg.btn}>
-                    <button className={dlg?.custom} value='0'>{text?.maybe}</button>
-                    <button className={dlg?.custom} value='1'>{text?.later}</button>
-                    <div className={dlg.btnWrap}>
-                        <button className={dlg.success} value='success'>{text?.yes}</button>
-                        <button className={dlg.error} value='error'>{text?.no}</button>
+                <div className='ui-dialog-msg'>{text?.download}</div>
+                <div className='ui-dialog-buttons ui-ease-1st-bg'>
+                    <button className='ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover' value='0'>{text?.maybe}</button>
+                    <button className='ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover' value='1'>{text?.later}</button>
+                    <div className='ui-ease-1st-bg'>
+                        <button className='ui-dialog-success' value='success'>{text?.yes}</button>
+                        <button className='ui-dialog-error' value='error'>{text?.no}</button>
                     </div>
                 </div>
             </div>
@@ -157,15 +133,15 @@ export default function () {
                 }
             });
         }}>
-            <div className={dlg.base} style={{ width: style.clamp(280), ...style.dlg }}>
-                <button className={dlg.close}>
+            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: style.clamp(280), ...style.dlg }}>
+                <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
-                <div className={dlg.msg}>{text?.alert}</div>
-                <div className={dlg.btn}>
-                    <div className={dlg.btnWrap}>
-                        <button className={dlg.success} value='success'>{text?.yes}</button>
-                        <button className={dlg.error} value='error'>{text?.no}</button>
+                <div className='ui-dialog-msg'>{text?.alert}</div>
+                <div className='ui-dialog-buttons ui-ease-1st-bg'>
+                    <div className='ui-ease-1st-bg'>
+                        <button className='ui-dialog-success' value='success'>{text?.yes}</button>
+                        <button className='ui-dialog-error' value='error'>{text?.no}</button>
                     </div>
                 </div>
             </div>
@@ -182,14 +158,14 @@ export default function () {
                 msg: text[type],
                 theme: type,
             });
-        }}>
-            <div className={`${msg.base} ${msg.danger} ${msg.c}`} style={style.msg}>
+        }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-c' style={style.msg}>
                 {text?.danger}
             </div>
-            <div className={`${msg.base} ${msg.warning} ${msg.c}`} style={{ top: style.v1, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-c' style={{ top: style.v1, ...style.msg }}>
                 {text?.warning}
             </div>
-            <div className={`${msg.base} ${msg.success} ${msg.c}`} style={{ top: style.v2, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-c' style={{ top: style.v2, ...style.msg }}>
                 {text?.success}
             </div>
         </Preview>
@@ -202,14 +178,14 @@ export default function () {
                 theme: type,
                 pos: 'tl',
             });
-        }}>
-            <div className={`${msg.base} ${msg.danger} ${msg.tl}`} style={style.msg}>
+        }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-tl' style={style.msg}>
                 {text?.danger}
             </div>
-            <div className={`${msg.base} ${msg.warning} ${msg.tl}`} style={{ top: style.v1, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-tl' style={{ top: style.v1, ...style.msg }}>
                 {text?.warning}
             </div>
-            <div className={`${msg.base} ${msg.success} ${msg.tl}`} style={{ top: style.v2, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-tl' style={{ top: style.v2, ...style.msg }}>
                 {text?.success}
             </div>
         </Preview>
@@ -222,14 +198,14 @@ export default function () {
                 theme: type,
                 pos: 'tr',
             });
-        }}>
-            <div className={`${msg.base} ${msg.danger} ${msg.tr}`} style={style.msg}>
+        }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-tr' style={style.msg}>
                 {text?.danger}
             </div>
-            <div className={`${msg.base} ${msg.warning} ${msg.tr}`} style={{ top: style.v1, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-tr' style={{ top: style.v1, ...style.msg }}>
                 {text?.warning}
             </div>
-            <div className={`${msg.base} ${msg.success} ${msg.tr}`} style={{ top: style.v2, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-tr' style={{ top: style.v2, ...style.msg }}>
                 {text?.success}
             </div>
         </Preview>
@@ -242,14 +218,14 @@ export default function () {
                 theme: type,
                 pos: 'br',
             });
-        }}>
-            <div className={`${msg.base} ${msg.danger} ${msg.br}`} style={{ bottom: style.v2, ...style.msg }}>
+        }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-br' style={{ bottom: style.v2, ...style.msg }}>
                 {text?.danger}
             </div>
-            <div className={`${msg.base} ${msg.warning} ${msg.br}`} style={{ bottom: style.v1, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-br' style={{ bottom: style.v1, ...style.msg }}>
                 {text?.warning}
             </div>
-            <div className={`${msg.base} ${msg.success} ${msg.br}`} style={style.msg}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-br' style={style.msg}>
                 {text?.success}
             </div>
         </Preview>
@@ -262,14 +238,14 @@ export default function () {
                 theme: type,
                 pos: 'bl',
             })
-        }}>
-            <div className={`${msg.base} ${msg.danger} ${msg.bl}`} style={{ bottom: style.v2, ...style.msg }}>
+        }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-bl' style={{ bottom: style.v2, ...style.msg }}>
                 {text?.danger}
             </div>
-            <div className={`${msg.base} ${msg.warning} ${msg.bl}`} style={{ bottom: style.v1, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-bl' style={{ bottom: style.v1, ...style.msg }}>
                 {text?.warning}
             </div>
-            <div className={`${msg.base} ${msg.success} ${msg.bl}`} style={style.msg}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-bl' style={style.msg}>
                 {text?.success}
             </div>
         </Preview>

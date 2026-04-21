@@ -25,31 +25,6 @@ export default function () {
     const desc = buttons?.desc;
     const text = buttons?.text;
 
-    // classes
-    const btn = {
-        blockW: 'ui-block-2nd ui-ease-2nd-btn',
-        fillDark: 'ui-fill-dark-100',
-        blockWL: 'ui-align-l ui-block-2nd ui-ease-2nd-btn',
-        themeW: 'ui-round-1st ui-theme-',
-        borderCirc: 'ui-circle ui-border',
-        borderCirc2x: 'ui-circle ui-border ui-border-dual',
-        borderRnd: 'ui-round ui-border',
-        borderL: 'ui-border-l ui-border-lg',
-        borderB: 'ui-border-b ui-border-dual',
-        borderBL: 'ui-border-b ui-border-lg',
-        themeFill: 'ui-fill-dark-100 ui-theme-',
-        themeDarkStr: 'ui-fill-dark-100 ui-stroke ui-theme-',
-        themeLightStr: 'ui-fill-light-100 ui-stroke ui-theme-',
-        themeBrd: 'ui-stroke ui-theme-',
-        themeClr: 'ui-text ui-theme-',
-        themeBrdClr: 'ui-text ui-stroke ui-theme-',
-        iconR: 'ui-m-5-l ui-float-r',
-        iconL: 'ui-m-10-r',
-        bottomSp: 'ui-m-10-b',
-        round: 'ui-round',
-        circle: 'ui-circle',
-        border: 'ui-border',    };
-
     return (
         <>
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
@@ -68,110 +43,110 @@ export default function () {
 
         <Description>{desc?.style}</Description>
         <Preview>
-            <Grid.Row fluid='xs' className={btn.blockW}>
+            <Grid.Row fluid='xs' className='ui-block-2nd ui-ease-2nd-btn'>
                 <Grid.Col xl={3} lg={3} size={6}>
                     <Button>{text?.default}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease className={btn.round}>{text?.default}</Button>
+                    <Button noease className='ui-round'>{text?.default}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease className={btn.circle}>{text?.default}</Button>
+                    <Button noease className='ui-circle'>{text?.default}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease className={btn.borderCirc2x}>{text?.default}</Button>
+                    <Button noease className='ui-circle ui-border ui-border-dual'>{text?.default}</Button>
                 </Grid.Col>
 
                 <Grid.Col xl={3} lg={3} size={6}>
                     <Button noease ghost>{text?.ghost}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={btn.borderL}>{text?.ghost}</Button>
+                    <Button noease ghost className='ui-border-l ui-border-lg'>{text?.ghost}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={btn.borderB}>{text?.ghost}</Button>
+                    <Button noease ghost className='ui-border-b ui-border-dual'>{text?.ghost}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={btn.borderBL}>{text?.ghost}</Button>
+                    <Button noease ghost className='ui-border-b ui-border-lg'>{text?.ghost}</Button>
                 </Grid.Col>
 
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={btn.borderRnd}>{text?.ghost}</Button>
+                    <Button noease ghost className='ui-round ui-border'>{text?.ghost}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={btn.borderCirc2x}>{text?.ghost}</Button>
+                    <Button noease ghost className='ui-circle ui-border ui-border-dual'>{text?.ghost}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={btn.border}>{text?.ghost}</Button>
+                    <Button noease ghost className='ui-border'>{text?.ghost}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease className={btn.borderRnd}>{text?.default}</Button>
+                    <Button noease className='ui-round ui-border'>{text?.default}</Button>
                 </Grid.Col>
             </Grid.Row>
         </Preview>
 
         <Description>{desc?.theme}</Description>
         <Preview>
-            <Grid.Row fluid='xs' className={btn.blockW}>
+            <Grid.Row fluid='xs' className='ui-block-2nd ui-ease-2nd-btn'>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease className={`${btn.themeFill}red`}>
+                    <Button noease className='ui-fill-dark-100 ui-theme-red'>
                         {text?.default}
                     </Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease className={`${btn.round} ${btn.themeFill}orange`}>
+                    <Button noease className='ui-round ui-fill-dark-100 ui-theme-orange'>
                         {text?.default}
                     </Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease className={`${btn.circle} ${btn.themeFill}yellow`}>
+                    <Button noease className='ui-circle ui-fill-dark-100 ui-theme-yellow'>
                         {text?.default}
                     </Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease className={`${btn.borderCirc2x} ${btn.themeDarkStr}blue`}>
+                    <Button noease className='ui-circle ui-border ui-border-dual ui-fill-dark-100 ui-stroke ui-theme-blue'>
                         {text?.default}
                     </Button>
                 </Grid.Col>
 
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={`${btn.themeClr}green`}>
+                    <Button noease ghost className='ui-text ui-theme-green'>
                         {text?.ghost}
                     </Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={`${btn.borderL} ${btn.themeLightStr}blueGreen`}>
+                    <Button noease ghost className='ui-border-l ui-border-lg ui-fill-light-100 ui-stroke ui-theme-blueGreen'>
                         {text?.ghost}
                     </Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={`${btn.borderB} ${btn.themeLightStr}purpleBlue`}>
+                    <Button noease ghost className='ui-border-b ui-border-dual ui-fill-light-100 ui-stroke ui-theme-purpleBlue'>
                         {text?.ghost}
                     </Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={`${btn.borderBL} ${btn.themeDarkStr}green`}>
+                    <Button noease ghost className='ui-border-b ui-border-lg ui-fill-dark-100 ui-stroke ui-theme-green'>
                         {text?.ghost}
                     </Button>
                 </Grid.Col>
 
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={`${btn.borderRnd} ${btn.themeFill}orange`}>
+                    <Button noease ghost className='ui-round ui-border ui-fill-dark-100 ui-theme-orange'>
                         {text?.ghost}
                     </Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={`${btn.borderCirc2x} ${btn.themeBrdClr}yellow`}>
+                    <Button noease ghost className='ui-circle ui-border ui-border-dual ui-text ui-stroke ui-theme-yellow'>
                         {text?.ghost}
                     </Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease ghost className={`${btn.border} ${btn.themeLightStr}purple`}>
+                    <Button noease ghost className='ui-border ui-fill-light-100 ui-stroke ui-theme-purple'>
                         {text?.ghost}
                     </Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease className={`${btn.borderRnd} ${btn.themeDarkStr}greenYellow`}>
+                    <Button noease className='ui-round ui-border ui-fill-dark-100 ui-stroke ui-theme-greenYellow'>
                         {text?.default}
                     </Button>
                 </Grid.Col>
@@ -180,53 +155,53 @@ export default function () {
 
         <Description>{desc?.size}</Description>
         <Preview>
-            <Grid.Row fluid='xs' className={btn.blockWL}>
+            <Grid.Row fluid='xs' className='ui-align-l ui-block-2nd ui-ease-2nd-btn'>
                 <Grid.Col size={6}>
-                    <Button noease ghost size='lg' className={btn.borderCirc}>
-                        <SvgIcon as='js' src={IconAi} className={btn.iconL} />
+                    <Button noease ghost size='lg' className='ui-circle ui-border'>
+                        <SvgIcon as='js' src={IconAi} className='ui-m-10-r' />
                         {text?.lg}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease ghost className={btn.borderCirc}>
-                        <SvgIcon as='js' src={IconAi} className={btn.iconL} />
+                    <Button noease ghost className='ui-circle ui-border'>
+                        <SvgIcon as='js' src={IconAi} className='ui-m-10-r' />
                         {text?.default}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease ghost size='sm' className={btn.borderCirc}>
-                        <SvgIcon as='js' src={IconAi} className={btn.iconL} />
+                    <Button noease ghost size='sm' className='ui-circle ui-border'>
+                        <SvgIcon as='js' src={IconAi} className='ui-m-10-r' />
                         {text?.sm}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease ghost size='xs' className={btn.borderCirc}>
-                        <SvgIcon as='js' src={IconAi} className={btn.iconL} />
+                    <Button noease ghost size='xs' className='ui-circle ui-border'>
+                        <SvgIcon as='js' src={IconAi} className='ui-m-10-r' />
                         {text?.xs}
                     </Button>
                 </Grid.Col>
 
                 <Grid.Col size={6}>
-                    <Button noease size='lg' className={btn.round}>
-                        <SvgIcon as='js' src={IconFolder} className={btn.iconL} />
+                    <Button noease size='lg' className='ui-round'>
+                        <SvgIcon as='js' src={IconFolder} className='ui-m-10-r' />
                         {text?.lg}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease className={btn.round}>
-                        <SvgIcon as='js' src={IconFolder} className={btn.iconL} />
+                    <Button noease className='ui-round'>
+                        <SvgIcon as='js' src={IconFolder} className='ui-m-10-r' />
                         {text?.default}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease size='sm' className={btn.round}>
-                        <SvgIcon as='js' src={IconFolder} className={btn.iconL} />
+                    <Button noease size='sm' className='ui-round'>
+                        <SvgIcon as='js' src={IconFolder} className='ui-m-10-r' />
                         {text?.sm}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease size='xs' className={btn.round}>
-                        <SvgIcon as='js' src={IconFolder} className={btn.iconL} />
+                    <Button noease size='xs' className='ui-round'>
+                        <SvgIcon as='js' src={IconFolder} className='ui-m-10-r' />
                         {text?.xs}
                     </Button>
                 </Grid.Col>
@@ -234,27 +209,39 @@ export default function () {
         </Preview>
 
         <Description>{desc?.square}</Description>
-        <Preview className={`${btn.themeW}blueGreen`}>
-            <Button square size='xs' className={btn.fillDark}>
+        <Preview className='ui-round-1st ui-theme-blueGreen'>
+            <Button square size='xs' className='ui-fill-dark-100'>
                 <SvgIcon as='js' src={IconTrash} />
             </Button>{' '}
-            <Button square size='sm' className={btn.fillDark}>
+            <Button square size='sm' className='ui-fill-dark-100'>
                 <SvgIcon as='js' src={IconTrash} />
             </Button>{' '}
-            <Button square className={btn.fillDark}>
+            <Button square className='ui-fill-dark-100'>
                 <SvgIcon as='js' src={IconTrash} />
             </Button>{' '}
-            <Button square size='lg' className={btn.fillDark}>
+            <Button square size='lg' className='ui-fill-dark-100'>
                 <SvgIcon as='js' src={IconTrash} />
             </Button>
         </Preview>
 
         <Description>{desc?.responsive}</Description>
-        <Preview className={btn.themeW}>
-            <Button square fluid='xs' className={btn.bottomSp}>{text?.resXsShort}</Button>{' '}
-            <Button fluid='md' className={btn.bottomSp}>{text?.resMd}</Button>{' '}
-            <Button fluid='sm' className={btn.bottomSp}>{text?.resSm}</Button>{' '}
-            <Button fluid='xs' className={btn.bottomSp}>{text?.resXs}</Button>
+        <Preview className='ui-round-1st'>
+            <Button square fluid='xs' className='ui-m-10-b'>{text?.resXsShort}</Button>{' '}
+            <Button fluid='md' className='ui-m-10-b'>{text?.resMd}</Button>{' '}
+            <Button fluid='sm' className='ui-m-10-b'>{text?.resSm}</Button>{' '}
+            <Button fluid='xs' className='ui-m-10-b'>{text?.resXs}</Button>
+        </Preview>
+
+        <Description>{desc?.block}</Description>
+        <Preview>
+            <Grid.Row className='ui-round-2nd ui-theme-orange'>
+                <Grid.Col size={6} className='ui-align-c'>
+                    <Button fluid='xs' className='ui-fill-dark-100'>{text?.resSm}</Button>
+                </Grid.Col>
+                <Grid.Col size={6}>
+                    <Button block='all' className='ui-fill-dark-100'>{text?.block}</Button>
+                </Grid.Col>
+            </Grid.Row>
         </Preview>
         </>
     );

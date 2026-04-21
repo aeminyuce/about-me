@@ -27,20 +27,6 @@ export default function () {
     const desc = breadcrumbs?.desc;
     const text = breadcrumbs?.text;
 
-    // classes
-    const bc = {
-        opacity: 'ui-opacity ui-ease-layout',
-        dropdown: 'ui-round ui-shadow-lg',
-        btnTheme: 'ui-fill-dark-100 ui-theme-',
-        hoverline: 'ui-font-hoverline',
-        txtTheme: 'ui-text ui-theme-',
-        iconM: 'ui-m-4-v ui-m-10-r',
-        color: 'ui-color-black-25',
-        circle: 'ui-circle-2nd',
-        round: 'ui-round-2nd',
-        border: 'ui-border',
-    };
-
     if (breadcrumbs) return (
         <>
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
@@ -48,11 +34,11 @@ export default function () {
 
         <Description>{desc?.simple}</Description>
         <Preview>
-            <Breadcrumbs sep='arrow' className={bc.color}>
-                <Breadcrumbs.Item to='#' className={bc.hoverline}>
+            <Breadcrumbs sep='arrow' className='ui-color-black-25'>
+                <Breadcrumbs.Item to='#' className='ui-font-hoverline'>
                     {text?.item1}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item to='#' className={bc.hoverline}>
+                <Breadcrumbs.Item to='#' className='ui-font-hoverline'>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -60,7 +46,7 @@ export default function () {
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='bull' className={bc.color}>
+            <Breadcrumbs sep='bull' className='ui-color-black-25'>
                 <Breadcrumbs.Item to='#'>
                     {text?.item1}
                 </Breadcrumbs.Item>
@@ -72,11 +58,11 @@ export default function () {
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='pipe' className={bc.color}>
-                <Breadcrumbs.Item to='#' className={bc.hoverline}>
+            <Breadcrumbs sep='pipe' className='ui-color-black-25'>
+                <Breadcrumbs.Item to='#' className='ui-font-hoverline'>
                     {text?.item1}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item to='#' className={bc.hoverline}>
+                <Breadcrumbs.Item to='#' className='ui-font-hoverline'>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -87,10 +73,10 @@ export default function () {
             <Spacer size={15} />
 
             <Breadcrumbs sep='arrow'>
-                <Breadcrumbs.Item className={bc.opacity} to='#'>
+                <Breadcrumbs.Item className='ui-opacity ui-ease-layout' to='#'>
                     {text?.item1}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item className={bc.opacity} to='#'>
+                <Breadcrumbs.Item className='ui-opacity ui-ease-layout' to='#'>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -99,10 +85,10 @@ export default function () {
             </Breadcrumbs>
 
             <Breadcrumbs sep='bull'>
-                <Breadcrumbs.Item className={bc.opacity} to='#'>
+                <Breadcrumbs.Item className='ui-opacity ui-ease-layout' to='#'>
                     {text?.item1}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item className={bc.opacity} to='#'>
+                <Breadcrumbs.Item className='ui-opacity ui-ease-layout' to='#'>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -111,10 +97,10 @@ export default function () {
             </Breadcrumbs>
 
             <Breadcrumbs sep='pipe'>
-                <Breadcrumbs.Item className={bc.opacity} to='#'>
+                <Breadcrumbs.Item className='ui-opacity ui-ease-layout' to='#'>
                     {text?.item1}
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item className={bc.opacity} to='#'>
+                <Breadcrumbs.Item className='ui-opacity ui-ease-layout' to='#'>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -126,10 +112,10 @@ export default function () {
         <Description>{desc?.icon}</Description>
         <Preview>
             <Breadcrumbs sep='arrow'>
-                <Breadcrumbs.Item to='#' className={bc.opacity}>
+                <Breadcrumbs.Item to='#' className='ui-opacity ui-ease-layout'>
                     <SvgIcon as='js' src={IconHome} />
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item to='#' className={bc.hoverline}>
+                <Breadcrumbs.Item to='#' className='ui-font-hoverline'>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -139,11 +125,11 @@ export default function () {
 
             <Spacer size={15} />
 
-            <Breadcrumbs sep='bull' className={`${bc.txtTheme}greenYellow`}>
-                <Breadcrumbs.Item to='#' className={bc.opacity}>
+            <Breadcrumbs sep='bull' className='ui-text ui-theme-greenYellow'>
+                <Breadcrumbs.Item to='#' className='ui-opacity ui-ease-layout'>
                     <SvgIcon as='js' src={IconHome} />
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item to='#' className={bc.hoverline}>
+                <Breadcrumbs.Item to='#' className='ui-font-hoverline'>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -153,11 +139,11 @@ export default function () {
 
             <Spacer size={15} />
 
-            <Breadcrumbs sep='pipe' className={`${bc.txtTheme}blueGreen`}>
-                <Breadcrumbs.Item to='#' className={bc.opacity}>
+            <Breadcrumbs sep='pipe' className='ui-text ui-theme-blueGreen'>
+                <Breadcrumbs.Item to='#' className='ui-opacity ui-ease-layout'>
                     <SvgIcon as='js' src={IconHome} />
                 </Breadcrumbs.Item>
-                <Breadcrumbs.Item to='#' className={bc.hoverline}>
+                <Breadcrumbs.Item to='#' className='ui-font-hoverline'>
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -168,25 +154,25 @@ export default function () {
 
         <Description>{desc?.btn}</Description>
         <Preview>
-            <Breadcrumbs sep='bull' className={bc.circle}>
+            <Breadcrumbs sep='bull' className='ui-circle-2nd'>
                 <Breadcrumbs.Item >
-                    <Button ghost square className={bc.border}>
+                    <Button ghost square className='ui-border'>
                         <SvgIcon as='js' src={IconLongArrowLeft} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button ghost className={bc.border}>
+                    <Button ghost className='ui-border'>
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button ghost as='span' className={bc.border}>
+                    <Button ghost as='span' className='ui-border'>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='bull' className={bc.circle}>
+            <Breadcrumbs sep='bull' className='ui-circle-2nd'>
                 <Breadcrumbs.Item>
                     <Button square >
                         <SvgIcon as='js' src={IconLongArrowLeft} />
@@ -204,19 +190,19 @@ export default function () {
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='bull' className={bc.circle}>
+            <Breadcrumbs sep='bull' className='ui-circle-2nd'>
                 <Breadcrumbs.Item>
-                    <Button square className={`${bc.btnTheme}purple`}>
+                    <Button square className='ui-fill-dark-100 ui-theme-purple'>
                         <SvgIcon as='js' src={IconLongArrowLeft} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className={`${bc.btnTheme}purple`}>
+                    <Button className='ui-fill-dark-100 ui-theme-purple'>
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${bc.btnTheme}purple`}>
+                    <Button as='span' className='ui-fill-dark-100 ui-theme-purple'>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
@@ -224,7 +210,7 @@ export default function () {
 
             <Spacer size={30} />
 
-            <Breadcrumbs sep='arrow' className={bc.round}>
+            <Breadcrumbs sep='arrow' className='ui-round-2nd'>
                 <Breadcrumbs.Item>
                     <Button square>
                         <SvgIcon as='js' src={IconHome} />
@@ -242,38 +228,38 @@ export default function () {
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='arrow' className={bc.round}>
+            <Breadcrumbs sep='arrow' className='ui-round-2nd'>
                 <Breadcrumbs.Item>
-                    <Button square className={`${bc.btnTheme}greenYellow`}>
+                    <Button square className='ui-fill-dark-100 ui-theme-greenYellow'>
                         <SvgIcon as='js' src={IconHome} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className={`${bc.btnTheme}greenYellow`}>
+                    <Button className='ui-fill-dark-100 ui-theme-greenYellow'>
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${bc.btnTheme}greenYellow`}>
+                    <Button as='span' className='ui-fill-dark-100 ui-theme-greenYellow'>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
-            <Breadcrumbs sep='arrow' className={bc.round}>
+            <Breadcrumbs sep='arrow' className='ui-round-2nd'>
                 <Breadcrumbs.Item>
-                    <Button square className={`${bc.btnTheme}blueGreen`}>
+                    <Button square className='ui-fill-dark-100 ui-theme-blueGreen'>
                         <SvgIcon as='js' src={IconHome} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className={`${bc.btnTheme}blueGreen`}>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={bc.iconM} />
+                    <Button className='ui-fill-dark-100 ui-theme-blueGreen'>
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-m-4-v ui-m-10-r' />
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${bc.btnTheme}blueGreen`}>
+                    <Button as='span' className='ui-fill-dark-100 ui-theme-blueGreen'>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
@@ -282,20 +268,20 @@ export default function () {
 
         <Description>{desc?.noSep}</Description>
         <Preview>
-            <Breadcrumbs sep='no' className={bc.circle}>
+            <Breadcrumbs sep='no' className='ui-circle-2nd'>
                 <Breadcrumbs.Item>
-                    <Button square className={`${bc.btnTheme}purpleBlue`}>
+                    <Button square className='ui-fill-dark-100 ui-theme-purpleBlue'>
                         <SvgIcon as='js' src={IconHome} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className={`${bc.btnTheme}purpleBlue`}>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={bc.iconM} />
+                    <Button className='ui-fill-dark-100 ui-theme-purpleBlue'>
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-m-4-v ui-m-10-r' />
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${bc.btnTheme}purpleBlue`}>
+                    <Button as='span' className='ui-fill-dark-100 ui-theme-purpleBlue'>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
@@ -303,20 +289,20 @@ export default function () {
 
             <Spacer size={5} />
 
-            <Breadcrumbs sep='no' className={bc.round}>
+            <Breadcrumbs sep='no' className='ui-round-2nd'>
                 <Breadcrumbs.Item>
-                    <Button square className={`${bc.btnTheme}blueGreen`}>
+                    <Button square className='ui-fill-dark-100 ui-theme-blueGreen'>
                         <SvgIcon as='js' src={IconHome} />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className={`${bc.btnTheme}blueGreen`}>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className={bc.iconM} />
+                    <Button className='ui-fill-dark-100 ui-theme-blueGreen'>
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-m-4-v ui-m-10-r' />
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${bc.btnTheme}blueGreen`}>
+                    <Button as='span' className='ui-fill-dark-100 ui-theme-blueGreen'>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
@@ -325,9 +311,9 @@ export default function () {
 
         <Description>{desc?.dropdown}</Description>
         <Preview>
-            <Breadcrumbs sep='arrow' className={bc.round}>
+            <Breadcrumbs sep='arrow' className='ui-round-2nd'>
                 <Breadcrumbs.Item>
-                    <Button square className={`${bc.btnTheme}yellowOrange`}>
+                    <Button square className='ui-fill-dark-100 ui-theme-yellowOrange'>
                         <SvgIcon as='js' src={IconHome} />
                     </Button>
                 </Breadcrumbs.Item>
@@ -336,7 +322,7 @@ export default function () {
                         <Button square className='ui-round'>
                             <SvgIcon as='js' src={IconEllipsisH} />
                         </Button>
-                        <Dropdown.Menu className={bc.dropdown}>
+                        <Dropdown.Menu className='ui-round ui-shadow-lg'>
                             <Dropdown.Item>{text?.item2}</Dropdown.Item>
                             <Dropdown.Item>{text?.item2a}</Dropdown.Item>
                             <Dropdown.Item>{text?.item2b}</Dropdown.Item>
@@ -344,7 +330,7 @@ export default function () {
                     </Dropdown>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button as='span' className={`${bc.btnTheme}yellowOrange`}>
+                    <Button as='span' className='ui-fill-dark-100 ui-theme-yellowOrange'>
                         {text?.item3}
                     </Button>
                 </Breadcrumbs.Item>
