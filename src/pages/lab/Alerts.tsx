@@ -21,15 +21,6 @@ export default function () {
     const desc = alerts?.desc;
     const text = alerts?.text;
 
-    // styles
-    const style = {
-        dlg: { top: '0', left: '0', transform: 'none', zIndex: 'unset' },
-        msg: { zIndex: 'unset' },
-        v1: '83px',
-        v2: '146px',
-        clamp: (num: number) => `clamp(280px, 50%, ${num}px)`,
-    };
-
     if (alerts) return (
         <>
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
@@ -45,7 +36,7 @@ export default function () {
                 msg: text?.simple,
             });
         }}>
-            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: style.clamp(300), ...style.dlg }}>
+            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 300px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <div className='ui-dialog-msg'>{text?.simple}</div>
                 <div className='ui-dialog-buttons ui-ease-1st-bg'>
                     <div className='ui-ease-1st-bg'>
@@ -62,7 +53,7 @@ export default function () {
                 success: text?.got,
             });
         }}>
-            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: style.clamp(320), ...style.dlg }}>
+            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 320px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <div className='ui-dialog-msg'>{text?.beOk}</div>
                 <div className='ui-dialog-buttons ui-ease-1st-bg'>
                     <div className='ui-ease-1st-bg'>
@@ -80,7 +71,7 @@ export default function () {
                 error: text?.no,
             });
         }}>
-            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: style.clamp(450), ...style.dlg }}>
+            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 450px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
@@ -106,7 +97,7 @@ export default function () {
                 }
             });
         }}>
-            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: style.clamp(492), ...style.dlg }}>
+            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 492px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
@@ -133,7 +124,7 @@ export default function () {
                 }
             });
         }}>
-            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: style.clamp(280), ...style.dlg }}>
+            <div className='ui-alerts-dialog ui-alerts-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 280px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
@@ -159,13 +150,13 @@ export default function () {
                 theme: type,
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-c' style={style.msg}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-c' style={{ zIndex: 'unset' }}>
                 {text?.danger}
             </div>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-c' style={{ top: style.v1, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-c' style={{ top: '83px', zIndex: 'unset'  }}>
                 {text?.warning}
             </div>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-c' style={{ top: style.v2, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-c' style={{ top: '146px', zIndex: 'unset'  }}>
                 {text?.success}
             </div>
         </Preview>
@@ -179,13 +170,13 @@ export default function () {
                 pos: 'tl',
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-tl' style={style.msg}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-tl' style={{ zIndex: 'unset' }}>
                 {text?.danger}
             </div>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-tl' style={{ top: style.v1, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-tl' style={{ top: '83px', zIndex: 'unset'  }}>
                 {text?.warning}
             </div>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-tl' style={{ top: style.v2, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-tl' style={{ top: '146px', zIndex: 'unset'  }}>
                 {text?.success}
             </div>
         </Preview>
@@ -199,13 +190,13 @@ export default function () {
                 pos: 'tr',
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-tr' style={style.msg}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-tr' style={{ zIndex: 'unset' }}>
                 {text?.danger}
             </div>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-tr' style={{ top: style.v1, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-tr' style={{ top: '83px', zIndex: 'unset'  }}>
                 {text?.warning}
             </div>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-tr' style={{ top: style.v2, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-tr' style={{ top: '146px', zIndex: 'unset'  }}>
                 {text?.success}
             </div>
         </Preview>
@@ -219,13 +210,13 @@ export default function () {
                 pos: 'br',
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-br' style={{ bottom: style.v2, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-br' style={{ bottom: '146px', zIndex: 'unset'  }}>
                 {text?.danger}
             </div>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-br' style={{ bottom: style.v1, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-br' style={{ bottom: '83px', zIndex: 'unset'  }}>
                 {text?.warning}
             </div>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-br' style={style.msg}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-br' style={{ zIndex: 'unset' }}>
                 {text?.success}
             </div>
         </Preview>
@@ -239,13 +230,13 @@ export default function () {
                 pos: 'bl',
             })
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-bl' style={{ bottom: style.v2, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-danger ui-bl' style={{ bottom: '146px', zIndex: 'unset'  }}>
                 {text?.danger}
             </div>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-bl' style={{ bottom: style.v1, ...style.msg }}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-warning ui-bl' style={{ bottom: '83px', zIndex: 'unset'  }}>
                 {text?.warning}
             </div>
-            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-bl' style={style.msg}>
+            <div className='ui-alerts-msg ui-alerts-demo ui-show ui-show-ease ui-msg-success ui-bl' style={{ zIndex: 'unset' }}>
                 {text?.success}
             </div>
         </Preview>
