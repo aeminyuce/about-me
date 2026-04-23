@@ -257,10 +257,10 @@ export default function () {
                     <Button noease active>{text?.active2}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <input type='text' className='ui-btn ui-btn-active' value={text?.active3} />
+                    <input type='text' className='ui-btn ui-btn-active' defaultValue={text?.active3} />
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <input type='submit' className='ui-btn ui-btn-active' value={text?.active4} />
+                    <input type='submit' className='ui-btn ui-btn-active' defaultValue={text?.active4} />
                 </Grid.Col>
 
                 <Grid.Col xl={3} lg={3} size={6}>
@@ -270,10 +270,10 @@ export default function () {
                     <Button noease passive>{text?.passive2}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <input type='button' className='ui-btn ui-btn-passive' value={text?.passive3} />
+                    <input type='button' className='ui-btn ui-btn-passive' defaultValue={text?.passive3} />
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <input type='submit' className='ui-btn ui-btn-passive' value={text?.passive4} />
+                    <input type='submit' className='ui-btn ui-btn-passive' defaultValue={text?.passive4} />
                 </Grid.Col>
             </Grid.Row>
         </Preview>
@@ -338,16 +338,48 @@ export default function () {
                     </Button.Wrapper>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-m-10-l ui-icons-no-opacity ui-theme-greenYellow'>
-                        <Button noease>
+                    <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-m-10-l ui-icons-no-opacity ui-theme-blue'>
+                        <Button noease className='ui-fill-dark-100'>
+                            {text?.listA}
+                            <SvgIcon as='js' src={IconShield} className='ui-float-r' />
+                        </Button>
+                        <Button noease className='ui-fill-dark-100'>
+                            {text?.listB}
+                            <SvgIcon as='js' src={IconClock} className='ui-float-r' />
+                        </Button>
+                        <Button noease className='ui-fill-dark-100'>
+                            {text?.listC}
+                            <SvgIcon as='js' src={IconSettings} className='ui-float-r' />
+                        </Button>
+                    </Button.Wrapper>
+                </Grid.Col>
+                <Grid.Col size={6}>
+                    <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-m-10-r ui-icons-no-opacity ui-theme-blueGreen'>
+                        <Button noease ghost className='ui-border'>
+                            <SvgIcon as='js' src={IconShield} className='ui-text' />
+                            {text?.listA}
+                        </Button>
+                        <Button noease ghost className='ui-border'>
+                            <SvgIcon as='js' src={IconClock} className='ui-text' />
+                            {text?.listB}
+                        </Button>
+                        <Button noease ghost className='ui-border'>
+                            <SvgIcon as='js' src={IconSettings} className='ui-text' />
+                            {text?.listC}
+                        </Button>
+                    </Button.Wrapper>
+                </Grid.Col>
+                <Grid.Col size={6}>
+                    <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-m-10-l ui-icons-no-opacity ui-theme-purpleBlue'>
+                        <Button noease ghost className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
                             {text?.listA}
                             <SvgIcon as='js' src={IconShield} className='ui-text ui-float-r' />
                         </Button>
-                        <Button noease>
+                        <Button noease ghost className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
                             {text?.listB}
                             <SvgIcon as='js' src={IconClock} className='ui-text ui-float-r' />
                         </Button>
-                        <Button noease>
+                        <Button noease ghost className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
                             {text?.listC}
                             <SvgIcon as='js' src={IconSettings} className='ui-text ui-float-r' />
                         </Button>
