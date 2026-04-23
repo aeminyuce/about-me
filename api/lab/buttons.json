@@ -2,18 +2,42 @@
     "result": {
         "buttons": {
             "desc": {
+                "list": "Button lists are...",
                 "size": "Button sizes adjust the overall dimensions using padding, text size and inline icon size.",
+                "block": "Block‑level buttons always expand to fill the width of their parent element at every screen size.",
+                "multi": "Multiple buttons can wrap onto one or more lines when space is limited.",
                 "style": "Buttons can combine multiple styles—borders, rounded or circular shapes, and hover‑revealed backgrounds (like ghost buttons).",
                 "theme": "Buttons can use any theme color for their borders, backgrounds and text, and these can be combined with any style variant.",
-                "noStyle": "No‑style buttons reset the browser’s default appearance and give you a clean, neutral starting point"
+                "square": "Square buttons always maintain a square aspect ratio, and they can be used with any of the existing button sizes.",
+                "noStyle": "No‑style buttons reset the browser’s default appearance and give you a clean, neutral starting point",
+                "multiCon": "Multiple buttons with condensed text.\n",
+                "responsive": "Inline and square buttons can be responsive to any of the xs, sm, or md breakpoints.",
+                "activePassive": "Active buttons use bold text, while passive buttons disable pointer events and display reduced opacity."
             },
             "text": {
                 "lg": "Large Button",
                 "sm": "Small Button",
                 "xs": "Extra Small Button",
+                "block": "Block Level Button",
                 "ghost": "Ghost Button",
+                "listA": "Administration",
+                "listB": "Recent History",
+                "listC": "Tools",
+                "resMd": "MD Responsive Button",
+                "resSm": "SM Responsive Button",
+                "resXs": "XS Responsive Button",
+                "lipsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et quam nec augue accumsan cursus.",
+                "active1": "Active Link",
+                "active2": "Active Button",
+                "active3": "Active Input",
+                "active4": "Active Submit",
                 "default": "Button",
+                "passive1": "Passive Link",
+                "passive2": "Passive Button",
+                "passive3": "Passive Input",
+                "passive4": "Passive Submit",
                 "noStyleBtn": "No Styled Button",
+                "resXsShort": "XS",
                 "noStyleLink": "No Styled Link"
             }
         }
