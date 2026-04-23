@@ -53,6 +53,8 @@ export default function (props: StoreProviderProps) {
             if (!state?.api?.lab) loadLabData();
             if (page && !(state.api.lab && state.api.lab[page])) loadLabData(page);
 
+            if (!page) Loadingmask(); // necessary for lab intro page
+
         } else if (pathname.startsWith('/icons') && !state?.api?.icons) {
             loadIconsData();
 
