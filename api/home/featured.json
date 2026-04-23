@@ -39,7 +39,6 @@
                 }
             ],
             "addPeople": {
-                "icon": "user-plus",
                 "title": "Add People"
             },
             "cardTitle": "People"
