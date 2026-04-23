@@ -16,7 +16,7 @@ export default function () {
     const { api } = useStoreContext();
     const socialLinks = api?.header?.socialLinks;
 
-    const socialIcons = {
+    const socialIcons: any = {
         github: IconGithub,
         dribbble: IconDribbble,
         linkedin: IconLinkedin,

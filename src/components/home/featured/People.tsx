@@ -25,19 +25,13 @@ export const People = () => {
     const addPeople = people?.addPeople;
     const cardTitle = people?.cardTitle;
 
-    const peopleIcons = {
-        'user-plus': IconUserPlus,
-    };
-
     const setScrollOuter = peopleList?.length > 3 ? ' ui-scrollbar-outer' : '';
 
     return (
         <Card className='home-people-list ui-p-15-t ui-p-15-h ui-round ui-shadow'>
             {addPeople &&
                 <Button ghost square title={addPeople?.title} className='ui-round ui-float-r' data={{ 'tooltip': 'l', 'only': 'desktop' }}>
-                    {addPeople?.icon &&
-                        <SvgIcon as='js' src={peopleIcons[addPeople?.icon]} />
-                    }
+                    <SvgIcon as='js' src={IconUserPlus} />
                 </Button>
             }
 
@@ -48,7 +42,7 @@ export const People = () => {
             }
 
             <ListGroup className={`ui-round-t ui-scroll-v ui-scrollbar-round ui-scrollbar-faded${setScrollOuter} ${themeA}`}>
-                <ListGroup.List avatarSize='xs'>
+                <ListGroup.List iconSize='sm' avatarSize='xs'>
 
                     {peopleList.map((item: PeopleListProps) => {
                         const avatarText = item.avatarText;
@@ -96,7 +90,7 @@ export const PeopleMore = () => {
                     const avatarText = item.avatarText;
                     const avatar = item.avatar;
 
-                    const  classes = avatarText ? 'ui-fill-dark-100' : null;
+                    const  classes = avatarText ? 'ui-fill-dark-100' : undefined;
 
                     return (
                         <Fragment key={item.jobTitle}>
