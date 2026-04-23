@@ -16,6 +16,9 @@ import { headings } from '../../helpers/Lab';
 import { IconAi } from 'uilab-icons/react/general/ai';
 import { IconFolder } from 'uilab-icons/react/general/folder';
 import { IconTrash } from 'uilab-icons/react/general/trash';
+import { IconShield } from 'uilab-icons/react/general/shield';
+import { IconClock } from 'uilab-icons/react/general/clock';
+import { IconSettings } from 'uilab-icons/react/general/settings';
 
 export default function () {
     const { api } = useStoreContext();
@@ -239,7 +242,7 @@ export default function () {
                     <Button noease fluid='xs' className='ui-theme-yellow ui-fill-dark-100'>{text?.resSm}</Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease block='all' className='ui-theme-orange ui-fill-dark-100'>{text?.block}</Button>
+                    <Button noease block='all' className='ui-theme-yellowOrange ui-fill-dark-100'>{text?.block}</Button>
                 </Grid.Col>
             </Grid.Row>
         </Preview>
@@ -271,6 +274,84 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
                     <input type='submit' className='ui-btn ui-btn-passive' value={text?.passive4} />
+                </Grid.Col>
+            </Grid.Row>
+        </Preview>
+
+        <Description>{desc?.multi}</Description>
+        <Preview>
+            <Grid.Row fluid='xs' className='ui-block-2nd ui-round-2nd ui-ease-2nd-btn ui-theme-green'>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease multi size='lg' className='ui-fill-dark-100'>{text?.lipsum}</Button>
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease multi className='ui-fill-dark-100'>{text?.lipsum}</Button>
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease multi size='sm' className='ui-fill-dark-100'>{text?.lipsum}</Button>
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease multi size='xs' className='ui-fill-dark-100'>{text?.lipsum}</Button>
+                </Grid.Col>
+            </Grid.Row>
+        </Preview>
+
+        <Description>{desc?.multiCon}</Description>
+        <Preview>
+            <Grid.Row fluid='xs' className='ui-block-2nd ui-round-2nd ui-ease-2nd-btn ui-theme-purpleBlue'>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease multi size='lg' className='ui-font-condensed ui-fill-dark-100'>{text?.lipsum}</Button>
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease multi className='ui-font-condensed ui-fill-dark-100'>{text?.lipsum}</Button>
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease multi size='sm' className='ui-font-condensed ui-fill-dark-100'>{text?.lipsum}</Button>
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease multi size='xs' className='ui-font-condensed ui-fill-dark-100'>{text?.lipsum}</Button>
+                </Grid.Col>
+            </Grid.Row>
+        </Preview>
+
+        <Heading as='h3' id={title?.hash[1]}>
+            {title?.h3[1]}
+        </Heading>
+
+        <Description>{desc?.list}</Description>
+        <Preview>
+            <Grid.Row fluid='xs'>
+                <Grid.Col size={6}>
+                    <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-m-10-r ui-icons-no-opacity ui-theme-greenYellow'>
+                        <Button noease>
+                            <SvgIcon as='js' src={IconShield} className='ui-text' />
+                            {text?.listA}
+                        </Button>
+                        <Button noease>
+                            <SvgIcon as='js' src={IconClock} className='ui-text' />
+                            {text?.listB}
+                        </Button>
+                        <Button noease>
+                            <SvgIcon as='js' src={IconSettings} className='ui-text' />
+                            {text?.listC}
+                        </Button>
+                    </Button.Wrapper>
+                </Grid.Col>
+                <Grid.Col size={6}>
+                    <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-m-10-l ui-icons-no-opacity ui-theme-greenYellow'>
+                        <Button noease>
+                            {text?.listA}
+                            <SvgIcon as='js' src={IconShield} className='ui-text ui-float-r' />
+                        </Button>
+                        <Button noease>
+                            {text?.listB}
+                            <SvgIcon as='js' src={IconClock} className='ui-text ui-float-r' />
+                        </Button>
+                        <Button noease>
+                            {text?.listC}
+                            <SvgIcon as='js' src={IconSettings} className='ui-text ui-float-r' />
+                        </Button>
+                    </Button.Wrapper>
                 </Grid.Col>
             </Grid.Row>
         </Preview>
