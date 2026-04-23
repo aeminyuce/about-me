@@ -45,7 +45,7 @@ export default function () {
         <Preview>
             <Grid.Row fluid='xs' className='ui-block-2nd ui-ease-2nd-btn'>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button>{text?.default}</Button>
+                    <Button noease>{text?.default}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
                     <Button noease className='ui-round'>{text?.default}</Button>
@@ -209,37 +209,68 @@ export default function () {
         </Preview>
 
         <Description>{desc?.square}</Description>
-        <Preview className='ui-round-1st ui-theme-blueGreen'>
-            <Button square size='xs' className='ui-fill-dark-100'>
+        <Preview className='ui-round-1st ui-theme-blueGreen ui-ease-1st-btn'>
+            <Button noease square size='xs' className='ui-fill-dark-100'>
                 <SvgIcon as='js' src={IconTrash} />
             </Button>{' '}
-            <Button square size='sm' className='ui-fill-dark-100'>
+            <Button noease square size='sm' className='ui-fill-dark-100'>
                 <SvgIcon as='js' src={IconTrash} />
             </Button>{' '}
-            <Button square className='ui-fill-dark-100'>
+            <Button noease square className='ui-fill-dark-100'>
                 <SvgIcon as='js' src={IconTrash} />
             </Button>{' '}
-            <Button square size='lg' className='ui-fill-dark-100'>
+            <Button noease square size='lg' className='ui-fill-dark-100'>
                 <SvgIcon as='js' src={IconTrash} />
             </Button>
         </Preview>
 
         <Description>{desc?.responsive}</Description>
-        <Preview className='ui-round-1st'>
-            <Button square fluid='xs' className='ui-m-10-b'>{text?.resXsShort}</Button>{' '}
-            <Button fluid='md' className='ui-m-10-b'>{text?.resMd}</Button>{' '}
-            <Button fluid='sm' className='ui-m-10-b'>{text?.resSm}</Button>{' '}
-            <Button fluid='xs' className='ui-m-10-b'>{text?.resXs}</Button>
+        <Preview className='ui-round-1st ui-ease-1st-btn'>
+            <Button noease square fluid='xs' className='ui-m-10-b'>{text?.resXsShort}</Button>{' '}
+            <Button noease fluid='md' className='ui-m-10-b'>{text?.resMd}</Button>{' '}
+            <Button noease fluid='sm' className='ui-m-10-b'>{text?.resSm}</Button>{' '}
+            <Button noease fluid='xs' className='ui-m-10-b'>{text?.resXs}</Button>
         </Preview>
 
         <Description>{desc?.block}</Description>
         <Preview>
-            <Grid.Row className='ui-round-2nd ui-theme-orange'>
+            <Grid.Row className='ui-round-2nd ui-ease-2nd-btn'>
                 <Grid.Col size={6} className='ui-align-c'>
-                    <Button fluid='xs' className='ui-fill-dark-100'>{text?.resSm}</Button>
+                    <Button noease fluid='xs' className='ui-theme-yellow ui-fill-dark-100'>{text?.resSm}</Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button block='all' className='ui-fill-dark-100'>{text?.block}</Button>
+                    <Button noease block='all' className='ui-theme-orange ui-fill-dark-100'>{text?.block}</Button>
+                </Grid.Col>
+            </Grid.Row>
+        </Preview>
+
+        <Description>{desc?.activePassive}</Description>
+        <Preview>
+            <Grid.Row fluid='xs' className='ui-block-2nd ui-circle-2nd ui-ease-2nd-btn'>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease active href='#'>{text?.active1}</Button>
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease active>{text?.active2}</Button>
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <input type='text' className='ui-btn ui-btn-active' value={text?.active3} />
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <input type='submit' className='ui-btn ui-btn-active' value={text?.active4} />
+                </Grid.Col>
+
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease passive href='#'>{text?.passive1}</Button>
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <Button noease passive>{text?.passive2}</Button>
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <input type='button' className='ui-btn ui-btn-passive' value={text?.passive3} />
+                </Grid.Col>
+                <Grid.Col xl={3} lg={3} size={6}>
+                    <input type='submit' className='ui-btn ui-btn-passive' value={text?.passive4} />
                 </Grid.Col>
             </Grid.Row>
         </Preview>
