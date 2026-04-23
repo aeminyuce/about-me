@@ -19,7 +19,7 @@ export default function () {
             <Button.Wrapper as='span' ease='1st' className='ui-sidebar-add-l ui-md-align-l ui-round-1st'>
 
                 {headerLinks.map((item: HeaderLinksProps) => {
-                    const isModal = item.modal ? () => ShowGetInTouch() : null;
+                    const isModal = item.modal ? () => ShowGetInTouch() : undefined;
 
                     return (
                         <Button key={item.name} ghost noease block='md' to={item.to} data={{ 'close': item.modal }} onClick={isModal} className='ui-m-2-r'>

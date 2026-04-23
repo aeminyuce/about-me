@@ -14,7 +14,7 @@ export default function (props: GetImageProps) {
     if (classes === '') { classes = undefined; }
 
     // attrs
-    const setLazy = lazy ? 'lazy' : null;
+    const setLazy = lazy ? 'lazy' : undefined;
 
     return <img fetchPriority={fetchPriority} src={`/images/${src}`} alt={alt} loading={setLazy} className={classes} style={style} />
 }

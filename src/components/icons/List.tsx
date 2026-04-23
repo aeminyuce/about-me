@@ -28,7 +28,7 @@ export default function (props: any) {
     const { iconsList } = props;
 
     // sprites
-    const spritesList = {
+    const spritesList: any = {
         'General': SpriteGeneral,
         'Touch': SpriteTouch,
         'Media': SpriteMedia,
