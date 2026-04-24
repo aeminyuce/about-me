@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from 'uilab/react/Button';
+import Dropdown from 'uilab/react/Dropdown';
 import Grid from 'uilab/react/Grid';
 import Heading from 'uilab/react/Heading';
 import Spacer from 'uilab/react/Spacer';
@@ -19,6 +20,7 @@ import { IconTrash } from 'uilab-icons/react/general/trash';
 import { IconShield } from 'uilab-icons/react/general/shield';
 import { IconClock } from 'uilab-icons/react/general/clock';
 import { IconSettings } from 'uilab-icons/react/general/settings';
+import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
 
 export default function () {
     const { api } = useStoreContext();
@@ -314,8 +316,8 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Heading as='h3' id={title?.hash[1]}>
-            {title?.h3[1]}
+        <Heading as='h3' id={title?.hash[2]}>
+            {title?.h3[2]}
         </Heading>
 
         <Description>{desc?.list}</Description>
@@ -393,6 +395,22 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col size={6}>
                     <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-m-10-l ui-icons-no-opacity ui-theme-purpleBlue'>
+                        <Button noease className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
+                            {text?.listA}
+                            <SvgIcon as='js' src={IconShield} className='ui-text ui-float-r' />
+                        </Button>
+                        <Button noease className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
+                            {text?.listB}
+                            <SvgIcon as='js' src={IconClock} className='ui-text ui-float-r' />
+                        </Button>
+                        <Button noease className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
+                            {text?.listC}
+                            <SvgIcon as='js' src={IconSettings} className='ui-text ui-float-r' />
+                        </Button>
+                    </Button.Wrapper>
+                </Grid.Col>
+                <Grid.Col size={6}>
+                    <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-m-10-l ui-icons-no-opacity ui-theme-purpleBlue'>
                         <Button noease ghost className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
                             {text?.listA}
                             <SvgIcon as='js' src={IconShield} className='ui-text ui-float-r' />
@@ -448,7 +466,7 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Description>{desc?.holderBolder}</Description>
+        <Description>{desc?.holderBorder}</Description>
         <Preview>
             <Grid.Row fluid='xs'>
                 <Grid.Col size={6}>
@@ -461,6 +479,15 @@ export default function () {
                     </Button.Wrapper>
                 </Grid.Col>
                 <Grid.Col size={6}>
+                    <Button.Wrapper type='holder' as='div' ease='1st' className='ui-round-1st ui-theme-yellow'>
+                        <Button noease className='ui-border ui-stroke ui-fill-light-100'>{text?.num1}</Button>
+                        <Button noease className='ui-border ui-stroke ui-fill-light-100'>{text?.num2}</Button>
+                        <Button noease className='ui-border ui-stroke ui-fill-light-100'>{text?.num3}</Button>
+                        <Button noease className='ui-border ui-stroke ui-fill-light-100'>{text?.num4}</Button>
+                        <Button noease className='ui-border ui-stroke ui-fill-light-100'>{text?.num5}</Button>
+                    </Button.Wrapper>
+                </Grid.Col>
+                <Grid.Col size={6}>
                     <Button.Wrapper type='holder' as='div' ease='1st' className='ui-round-1st'>
                         <Button noease className='ui-border'>{text?.one}</Button>
                         <Button noease className='ui-border'>{text?.two}</Button>
@@ -468,13 +495,123 @@ export default function () {
                     </Button.Wrapper>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button.Wrapper type='holder' as='div' ease='1st' className='ui-round-1st' fluid='sm'>
-                        <Button noease className='ui-border ui-border-dual'>{text?.one}</Button>
-                        <Button noease className='ui-border ui-border-dual'>{text?.two}</Button>
-                        <Button noease className='ui-border ui-border-dual'>{text?.three}</Button>
+                    <Button.Wrapper type='holder' as='div' ease='1st' className='ui-round-1st ui-theme-yellowOrange'>
+                        <Button noease className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>{text?.one}</Button>
+                        <Button noease className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>{text?.two}</Button>
+                        <Button noease className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>{text?.three}</Button>
                     </Button.Wrapper>
                 </Grid.Col>
             </Grid.Row>
+        </Preview>
+
+        <Description>{desc?.holderRes}</Description>
+        <Preview>
+            <Grid.Row fluid='sm'>
+                <Grid.Col size={6} offset={3}>
+                    <Button.Wrapper type='holder' as='div' ease='1st' fluid='sm' className='ui-round-1st'>
+                        <Button noease>{text?.num1}</Button>
+                        <Button noease>{text?.num2}</Button>
+                        <Button noease>{text?.num3}</Button>
+                        <Button noease>{text?.num4}</Button>
+                        <Button noease>{text?.num5}</Button>
+                    </Button.Wrapper>
+                </Grid.Col>
+            </Grid.Row>
+            <Grid.Row fluid='xs'>
+                <Grid.Col size={6} offset={3}>
+                    <Button.Wrapper type='holder' as='div' ease='1st' fluid='xs' className='ui-round-1st'>
+                        <Button noease>{text?.one}</Button>
+                        <Button noease>{text?.two}</Button>
+                        <Button noease>{text?.three}</Button>
+                    </Button.Wrapper>
+                </Grid.Col>
+            </Grid.Row>
+        </Preview>
+
+        <Description>{desc?.holderDrop}</Description>
+        <Preview>
+            <Grid.Row fluid='xs'>
+                <Grid.Col size={6} offset={3}>
+                    <Button.Wrapper type='holder' as='div' ease='1st' fluid='xs' className='ui-round-1st'>
+                        <Button noease>{text?.one}</Button>
+                        <Button noease>{text?.two}</Button>
+                        <Dropdown className='ui-round-1st'>
+                            <Button>
+                                {text?.three}
+                                <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
+                            </Button>
+                            <Dropdown.Menu className='ui-shadow-lg'>
+                                <Dropdown.Item>{text?.num1}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num2}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num3}</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </Button.Wrapper>
+                </Grid.Col>
+                <Grid.Col size={6} offset={3}>
+                    <Button.Wrapper type='holder' as='div' ease='1st' fluid='xs' className='ui-round-1st'>
+                        <Button noease className='ui-border-r'>{text?.one}</Button>
+                        <Button noease className='ui-border-r'>{text?.two}</Button>
+                        <Dropdown className='ui-round-1st'>
+                            <Button className='ui-border-r'>
+                                {text?.three}
+                                <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
+                            </Button>
+                            <Dropdown.Menu className='ui-shadow-lg'>
+                                <Dropdown.Item>{text?.num1}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num2}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num3}</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </Button.Wrapper>
+                </Grid.Col>
+                <Grid.Col size={6} offset={3}>
+                    <Button.Wrapper type='holder' as='div' ease='1st' fluid='xs' className='ui-round-1st'>
+                        <Button noease className='ui-border'>{text?.one}</Button>
+                        <Button noease className='ui-border'>{text?.two}</Button>
+                        <Dropdown className='ui-round-1st'>
+                            <Button className='ui-border'>
+                                {text?.three}
+                                <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
+                            </Button>
+                            <Dropdown.Menu className='ui-shadow-lg'>
+                                <Dropdown.Item>{text?.num1}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num2}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num3}</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </Button.Wrapper>
+                </Grid.Col>
+                <Grid.Col size={6} offset={3}>
+                    <Button.Wrapper type='holder' as='div' ease='1st' fluid='xs' className='ui-round-1st'>
+                        <Button noease className='ui-border ui-border-dual'>{text?.one}</Button>
+                        <Button noease className='ui-border ui-border-dual'>{text?.two}</Button>
+                        <Dropdown className='ui-round-1st'>
+                            <Button className='ui-border ui-border-dual'>
+                                {text?.three}
+                                <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
+                            </Button>
+                            <Dropdown.Menu className='ui-shadow-lg'>
+                                <Dropdown.Item>{text?.num1}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num2}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num3}</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </Button.Wrapper>
+                </Grid.Col>
+            </Grid.Row>
+        </Preview>
+
+         <Heading as='h3' id={title?.hash[3]}>
+            {title?.h3[3]}
+        </Heading>
+
+        <Description>{desc?.paging}</Description>
+        <Preview>
+            <Button.Wrapper as='div' ease='1st' className='ui-round-1st ui-theme-blue'>
+                <Button noease className='ui-fill-dark-100'>{text?.num1}</Button>
+                <Button noease className='ui-fill-dark-100'>{text?.num2}</Button>
+            </Button.Wrapper>
         </Preview>
         </>
     );
