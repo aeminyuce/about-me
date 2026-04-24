@@ -76,7 +76,7 @@ module.exports = (env, argv) => {
         config.devServer = {
             host: '0.0.0.0',
             port: 3000,
-            open: true,
+            // open: true,
             historyApiFallback: true,
             hot: true,
             devMiddleware: { writeToDisk: true },
