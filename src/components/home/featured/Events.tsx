@@ -24,11 +24,11 @@ export default function() {
     return (
         <Card className='ui-p-15 ui-round ui-shadow'>
             {settings &&
-                <Dropdown align='l' className='ui-float-r'>
-                    <Button square ghost title={calendar?.title} className='ui-round' data={{ 'tooltip': 'l', 'only': 'desktop' }}>
+                <Dropdown align='l' className='ui-float-r ui-round-1st'>
+                    <Button square ghost title={calendar?.title} data={{ 'tooltip': 'l', 'only': 'desktop' }}>
                         <SvgIcon as='js' src={IconEllipsisH} />
                     </Button>
-                    <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-round ui-shadow-lg ui-cursor-pointer'>
+                    <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-shadow-lg ui-cursor-pointer'>
 
                         {settings?.map((name: string, index: number) => (
                             <Dropdown.Item key={name + index}>{name}</Dropdown.Item>

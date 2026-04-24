@@ -318,11 +318,11 @@ export default function () {
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Dropdown>
-                        <Button square className='ui-round'>
+                    <Dropdown className='ui-round-1st'>
+                        <Button square>
                             <SvgIcon as='js' src={IconEllipsisH} />
                         </Button>
-                        <Dropdown.Menu className='ui-round ui-shadow-lg'>
+                        <Dropdown.Menu className='ui-shadow-lg'>
                             <Dropdown.Item>{text?.item2}</Dropdown.Item>
                             <Dropdown.Item>{text?.item2a}</Dropdown.Item>
                             <Dropdown.Item>{text?.item2b}</Dropdown.Item>
