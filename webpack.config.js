@@ -100,6 +100,9 @@ module.exports = (env, argv) => {
                 {
                     from: "public",
                     noErrorOnMissing: true,
+                    globOptions: {
+                        ignore: ["**/.DS_Store"]
+                    }
                 }
             ],
         }),
