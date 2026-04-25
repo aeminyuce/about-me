@@ -6,7 +6,6 @@ import { useStoreContext } from '../../stores/StoreContext';
 import { Reports, ReportsList } from '../../components/home/featured/Reports';
 import { People, PeopleMore } from '../../components/home/featured/People';
 import Profile from '../../components/home/featured/Profile';
-import Nav from '../../components/home/featured/Nav';
 import Events from '../../components/home/featured/Events';
 
 // styles
@@ -16,7 +15,6 @@ export default function () {
     const { api } = useStoreContext();
     const homeFeatured = api?.home_featured;
 
-    const nav = homeFeatured?.nav;
     const reports = homeFeatured?.reports;
     const reportsList = homeFeatured?.reportsList;
 
@@ -29,7 +27,6 @@ export default function () {
             </Grid.Col>
             <Grid.Col lg={3} size={4} md={6}>
 
-                {nav?.item1 && nav?.item2 && nav?.item3 && <Nav />}
                 {(reports?.l && reports?.r) && <Reports />}
                 {(reportsList?.delayed && reportsList?.paused) && <ReportsList />}
 
