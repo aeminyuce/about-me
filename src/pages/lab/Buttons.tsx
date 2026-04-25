@@ -21,6 +21,9 @@ import { IconShield } from 'uilab-icons/react/general/shield';
 import { IconClock } from 'uilab-icons/react/general/clock';
 import { IconSettings } from 'uilab-icons/react/general/settings';
 import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
+import { IconArrowLeft } from 'uilab-icons/react/general/arrow-left';
+import { IconArrowRight } from 'uilab-icons/react/general/arrow-right';
+import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
 
 export default function () {
     const { api } = useStoreContext();
@@ -533,36 +536,36 @@ export default function () {
             <Grid.Row fluid='xs'>
                 <Grid.Col size={6} offset={3}>
                     <Button.Wrapper type='holder' as='div' ease='1st' fluid='xs' className='ui-round-1st'>
-                        <Button noease>{text?.one}</Button>
-                        <Button noease>{text?.two}</Button>
                         <Dropdown className='ui-round-1st'>
                             <Button>
-                                {text?.three}
+                                {text?.one}
                                 <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>
-                                <Dropdown.Item>{text?.num1}</Dropdown.Item>
-                                <Dropdown.Item>{text?.num2}</Dropdown.Item>
-                                <Dropdown.Item>{text?.num3}</Dropdown.Item>
+                                <Dropdown.Item>{text?.one}</Dropdown.Item>
+                                <Dropdown.Item>{text?.two}</Dropdown.Item>
+                                <Dropdown.Item>{text?.three}</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
+                        <Button noease>{text?.two}</Button>
+                        <Button noease>{text?.three}</Button>
                     </Button.Wrapper>
                 </Grid.Col>
                 <Grid.Col size={6} offset={3}>
                     <Button.Wrapper type='holder' as='div' ease='1st' fluid='xs' className='ui-round-1st'>
                         <Button noease className='ui-border-r'>{text?.one}</Button>
-                        <Button noease className='ui-border-r'>{text?.two}</Button>
                         <Dropdown className='ui-round-1st'>
                             <Button className='ui-border-r'>
-                                {text?.three}
+                                {text?.two}
                                 <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>
-                                <Dropdown.Item>{text?.num1}</Dropdown.Item>
-                                <Dropdown.Item>{text?.num2}</Dropdown.Item>
-                                <Dropdown.Item>{text?.num3}</Dropdown.Item>
+                                <Dropdown.Item>{text?.one}</Dropdown.Item>
+                                <Dropdown.Item>{text?.two}</Dropdown.Item>
+                                <Dropdown.Item>{text?.three}</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
+                        <Button noease className='ui-border-r'>{text?.three}</Button>
                     </Button.Wrapper>
                 </Grid.Col>
                 <Grid.Col size={6} offset={3}>
@@ -575,9 +578,9 @@ export default function () {
                                 <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>
-                                <Dropdown.Item>{text?.num1}</Dropdown.Item>
-                                <Dropdown.Item>{text?.num2}</Dropdown.Item>
-                                <Dropdown.Item>{text?.num3}</Dropdown.Item>
+                                <Dropdown.Item>{text?.one}</Dropdown.Item>
+                                <Dropdown.Item>{text?.two}</Dropdown.Item>
+                                <Dropdown.Item>{text?.three}</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Button.Wrapper>
@@ -592,9 +595,9 @@ export default function () {
                                 <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>
-                                <Dropdown.Item>{text?.num1}</Dropdown.Item>
-                                <Dropdown.Item>{text?.num2}</Dropdown.Item>
-                                <Dropdown.Item>{text?.num3}</Dropdown.Item>
+                                <Dropdown.Item>{text?.one}</Dropdown.Item>
+                                <Dropdown.Item>{text?.two}</Dropdown.Item>
+                                <Dropdown.Item>{text?.three}</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Button.Wrapper>
@@ -608,10 +611,121 @@ export default function () {
 
         <Description>{desc?.paging}</Description>
         <Preview>
-            <Button.Wrapper as='div' ease='1st' className='ui-round-1st ui-theme-blue'>
-                <Button noease className='ui-fill-dark-100'>{text?.num1}</Button>
-                <Button noease className='ui-fill-dark-100'>{text?.num2}</Button>
+            <Button.Wrapper type='paging' as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+                <Button noease ghost size='xs' pagingPrev>
+                    <SvgIcon as='js' src={IconArrowLeft} />
+                </Button>
+                <Button noease size='xs' active className='ui-fill-dark-100'>{text?.num1}</Button>
+                <Button noease ghost size='xs'>{text?.num2}</Button>
+                <Button noease ghost size='xs'>{text?.num3}</Button>
+                <Button noease ghost size='xs'>{text?.num4}</Button>
+                <Button noease ghost size='xs'>{text?.num5}</Button>
+                <Button noease ghost size='xs' passive>
+                    <SvgIcon as='js' src={IconEllipsisH} />
+                </Button>
+                <Button noease ghost size='xs'>{text?.num10}</Button>
+                <Button noease ghost size='xs' pagingNext>
+                    <SvgIcon as='js' src={IconArrowRight} />
+                </Button>
             </Button.Wrapper>
+
+            <Button.Wrapper type='paging' as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+                <Button noease ghost size='sm' pagingPrev className='ui-border'>
+                    <SvgIcon as='js' src={IconArrowLeft} />
+                </Button>
+                <Button noease size='sm' active className='ui-border ui-fill-dark-100'>{text?.num1}</Button>
+                <Button noease ghost size='sm' className='ui-border'>{text?.num2}</Button>
+                <Button noease ghost size='sm' className='ui-border'>{text?.num3}</Button>
+                <Button noease ghost size='sm' className='ui-border'>{text?.num4}</Button>
+                <Button noease ghost size='sm' className='ui-border'>{text?.num5}</Button>
+                <Button noease ghost size='sm' passive className='ui-border'>
+                    <SvgIcon as='js' src={IconEllipsisH} />
+                </Button>
+                <Button noease ghost size='sm' className='ui-border'>{text?.num10}</Button>
+                <Button noease ghost size='sm' pagingNext className='ui-border'>
+                    <SvgIcon as='js' src={IconArrowRight} />
+                </Button>
+            </Button.Wrapper>
+
+            <Button.Wrapper type='paging' as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+                <Button noease pagingPrev className='ui-fill-light-100'>
+                    <SvgIcon as='js' src={IconArrowLeft} />
+                </Button>
+                <Button noease active className='ui-fill-dark-100 ui-fill-light-100'>{text?.num1}</Button>
+                <Button noease className='ui-fill-light-100'>{text?.num2}</Button>
+                <Button noease className='ui-fill-light-100'>{text?.num3}</Button>
+                <Button noease className='ui-fill-light-100'>{text?.num4}</Button>
+                <Button noease className='ui-fill-light-100'>{text?.num5}</Button>
+                <Button noease passive className='ui-fill-light-100'>
+                    <SvgIcon as='js' src={IconEllipsisH} />
+                </Button>
+                <Button noease className='ui-fill-light-100'>{text?.num10}</Button>
+                <Button noease pagingNext className='ui-fill-light-100'>
+                    <SvgIcon as='js' src={IconArrowRight} />
+                </Button>
+            </Button.Wrapper>
+
+            <Button.Wrapper largeButtons type='paging' as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+                <Button noease pagingPrev>
+                    <SvgIcon as='js' src={IconArrowLeft} />
+                </Button>
+                <Button noease active className='ui-fill-dark-100'>{text?.num1}</Button>
+                <Button noease>{text?.num2}</Button>
+                <Button noease>{text?.num3}</Button>
+                <Button noease>{text?.num4}</Button>
+                <Button noease>{text?.num5}</Button>
+                <Button noease passive>
+                    <SvgIcon as='js' src={IconEllipsisH} />
+                </Button>
+                <Button noease>{text?.num10}</Button>
+                <Button noease pagingNext>
+                    <SvgIcon as='js' src={IconArrowRight} />
+                </Button>
+            </Button.Wrapper>
+
+            <Grid.Row fluid='no'>
+                <Grid.Col size={6} offset={3}>
+                    <Button.Wrapper type='holder' as='div' ease='1st' className='ui-paging ui-round-1st ui-theme-redPurple'>
+                        <Button noease pagingPrev>
+                            <SvgIcon as='js' src={IconArrowLeft} />
+                        </Button>
+                        <Button noease active className='ui-fill-dark-100'>{text?.num1}</Button>
+                        <Button noease>{text?.num2}</Button>
+                        <Button noease>{text?.num3}</Button>
+                        <Button noease>{text?.num4}</Button>
+                        <Button noease>{text?.num5}</Button>
+                        <Button noease passive>
+                            <SvgIcon as='js' src={IconEllipsisH} />
+                        </Button>
+                        <Button noease>{text?.num10}</Button>
+                        <Button noease pagingNext>
+                            <SvgIcon as='js' src={IconArrowRight} />
+                        </Button>
+                    </Button.Wrapper>
+                </Grid.Col>
+                <Grid.Col size={4} offset={4}>
+                    <Button.Wrapper type='holder' as='div' ease='1st' className='ui-paging ui-round-1st ui-theme-redPurple'>
+                        <Button noease pagingPrev>
+                            <SvgIcon as='js' src={IconArrowLeft} />
+                        </Button>
+                        <Button noease active className='ui-fill-dark-100'>{text?.num1}</Button>
+                        <Dropdown className='ui-round-1st'>
+                            <Button>
+                                <SvgIcon as='js' src={IconEllipsisH} />
+                            </Button>
+                            <Dropdown.Menu className='ui-shadow-lg'>
+                                <Dropdown.Item>{text?.num3}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num2}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num4}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num5}</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                        <Button noease pagingNext>
+                            <SvgIcon as='js' src={IconArrowRight} />
+                        </Button>
+                    </Button.Wrapper>
+                </Grid.Col>
+            </Grid.Row>
         </Preview>
         </>
     );
