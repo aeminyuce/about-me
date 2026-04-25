@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict Q2Q6qVfzVhIUup9GOKz3gzHqeGkPYsUKuFip5WIBvkhrqwYBJUCIwPMx7Ms1Vn9
+\restrict KIAWmkdlkRlrC9edKx0pUeAy0fOP3oYU50Yq8agH0A0n4851ofW58iUqSuNBsX3
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1 (Postgres.app)
@@ -5870,7 +5870,13 @@ COPY lab.buttons_desc (id, type, "desc") FROM stdin;
 8	activePassive	Active buttons use bold text, while passive buttons disable pointer events and display reduced opacity.
 9	multi	Multiple buttons can wrap onto one or more lines when space is limited.
 10	multiCon	Multiple buttons with condensed text.\n
-11	list	Button lists are...
+12	listBorder	Button lists manage and control the borders between repeated buttons.
+11	list	Button lists include specific design guidelines for handling vertically repeated buttons.
+13	holder	Holder lists include specific design guidelines for handling horizontally repeated buttons.
+14	holderBorder	Holder lists manage and control the borders between repeated buttons.
+15	holderRes	Button holders can adapt responsively across breakpoints.
+17	holderDrop	Dropdowns can be used inside button holders.
+18	paging	All button variations can be used for paging. On small screens, only the active, previous, and next buttons remain visible.
 \.
 
 
@@ -5903,6 +5909,15 @@ COPY lab.buttons_text (id, type, text) FROM stdin;
 22	listA	Administration
 23	listB	Recent History
 24	listC	Tools
+26	two	Two
+27	three	Three
+25	one	One
+28	num1	1
+29	num2	2
+30	num3	3
+31	num4	4
+32	num5	5
+33	num10	10
 \.
 
 
@@ -6465,14 +6480,14 @@ SELECT pg_catalog.setval('lab.breadcrumbs_text_id_seq', 5, true);
 -- Name: buttons_desc_id_seq; Type: SEQUENCE SET; Schema: lab; Owner: postgres
 --
 
-SELECT pg_catalog.setval('lab.buttons_desc_id_seq', 11, true);
+SELECT pg_catalog.setval('lab.buttons_desc_id_seq', 18, true);
 
 
 --
 -- Name: buttons_text_id_seq; Type: SEQUENCE SET; Schema: lab; Owner: postgres
 --
 
-SELECT pg_catalog.setval('lab.buttons_text_id_seq', 24, true);
+SELECT pg_catalog.setval('lab.buttons_text_id_seq', 34, true);
 
 
 --
@@ -9840,5 +9855,5 @@ ALTER EVENT TRIGGER pgrst_drop_watch OWNER TO supabase_admin;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict Q2Q6qVfzVhIUup9GOKz3gzHqeGkPYsUKuFip5WIBvkhrqwYBJUCIwPMx7Ms1Vn9
+\unrestrict KIAWmkdlkRlrC9edKx0pUeAy0fOP3oYU50Yq8agH0A0n4851ofW58iUqSuNBsX3
 
