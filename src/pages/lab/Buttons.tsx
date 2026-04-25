@@ -611,7 +611,7 @@ export default function () {
 
         <Description>{desc?.paging}</Description>
         <Preview>
-            <Button.Wrapper type='paging' as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+            <Button.Wrapper paging as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
                 <Button noease ghost size='xs' pagingPrev>
                     <SvgIcon as='js' src={IconArrowLeft} />
                 </Button>
@@ -629,7 +629,7 @@ export default function () {
                 </Button>
             </Button.Wrapper>
 
-            <Button.Wrapper type='paging' as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+            <Button.Wrapper paging as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
                 <Button noease ghost size='sm' pagingPrev className='ui-border'>
                     <SvgIcon as='js' src={IconArrowLeft} />
                 </Button>
@@ -647,7 +647,7 @@ export default function () {
                 </Button>
             </Button.Wrapper>
 
-            <Button.Wrapper type='paging' as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+            <Button.Wrapper paging as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
                 <Button noease pagingPrev className='ui-fill-light-100'>
                     <SvgIcon as='js' src={IconArrowLeft} />
                 </Button>
@@ -665,7 +665,7 @@ export default function () {
                 </Button>
             </Button.Wrapper>
 
-            <Button.Wrapper largeButtons type='paging' as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+            <Button.Wrapper largeButtons paging as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
                 <Button noease pagingPrev>
                     <SvgIcon as='js' src={IconArrowLeft} />
                 </Button>
@@ -683,9 +683,9 @@ export default function () {
                 </Button>
             </Button.Wrapper>
 
-            <Grid.Row fluid='no'>
+            <Grid.Row fluid='xs'>
                 <Grid.Col size={6} offset={3}>
-                    <Button.Wrapper type='holder' as='div' ease='1st' className='ui-paging ui-round-1st ui-theme-redPurple'>
+                    <Button.Wrapper paging type='holder' as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
                         <Button noease pagingPrev>
                             <SvgIcon as='js' src={IconArrowLeft} />
                         </Button>
@@ -704,7 +704,7 @@ export default function () {
                     </Button.Wrapper>
                 </Grid.Col>
                 <Grid.Col size={4} offset={4}>
-                    <Button.Wrapper type='holder' as='div' ease='1st' className='ui-paging ui-round-1st ui-theme-redPurple'>
+                    <Button.Wrapper paging type='holder' as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
                         <Button noease pagingPrev>
                             <SvgIcon as='js' src={IconArrowLeft} />
                         </Button>

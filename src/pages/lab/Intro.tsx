@@ -23,7 +23,7 @@ export default function() {
 
     return (
         <Grid.Row>
-            <Grid.Col xl={{ size: 10, push: 1}} lg={{ size: 10, push: 1}} size={12} className='ui-align-c ui-p-30-v'>
+            <Grid.Col xl={{ size: 10, push: 1 }} lg={{ size: 10, push: 1 }} size={12} className='ui-align-c ui-p-30-v'>
 
                 {title &&
                     <>

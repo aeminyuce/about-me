@@ -14,7 +14,7 @@ export default function () {
 
     return (
         <Grid.Row>
-            <Grid.Col xl={{ size: 8, push: 2}} lg={{ size: 8, push: 2}} size={12} className='ui-p-30-v'>
+            <Grid.Col xl={{ size: 8, push: 2 }} lg={{ size: 8, push: 2 }} size={12} className='ui-p-30-v'>
                 <Button.Wrapper as='div' ease='1st' block='1st' className='blog-archive ui-align-l ui-round-1st'>
 
                     {archives && Object.keys(archives).sort((a, b) => Number(b) - Number(a))

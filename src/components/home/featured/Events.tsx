@@ -18,7 +18,7 @@ export default function() {
     const calendar = api?.home_featured?.calendar;
     const settings = calendar?.settings;
     const cardTitle = calendar?.cardTitle;
-    const calendarEvents = calendar?.eventsDate;
+    const eventsData = calendar?.eventsDate;
     const events = calendar?.events;
 
     return (
@@ -44,8 +44,8 @@ export default function() {
                 </Heading>
             }
 
-            {calendarEvents && events &&
-                <Calendar className={`ui-no-p ui-round ${themeB}`} data={{ date: calendarEvents, json: JSON.stringify(events) }} />
+            {eventsData && events &&
+                <Calendar className={`ui-no-p ui-round ${themeB}`} data={{ date: eventsData, json: JSON.stringify(events) }} />
             }
         </Card>
     )

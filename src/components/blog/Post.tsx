@@ -16,18 +16,18 @@ export default function () {
     const post = searchParams.get('post');
 
     // page title
-    let pageTitle: 'Blog';
+    let pageTitle = 'Blog';
 
-    {blog[post]?.forEach((item: any) => {
+    {post && blog[post]?.find((item: any) => {
         if (item?.type === 'postTitle') pageTitle = item?.data?.text;
     })}
 
     return (
         <PageTitle title={`${pageTitle} | Blog`}>
             <Grid.Row>
-                <Grid.Col xl={{ size: 8, push: 2}} lg={{ size: 8, push: 2}} size={12} className='blog-post ui-p-30-v'>
+                <Grid.Col xl={{ size: 8, push: 2 }} lg={{ size: 8, push: 2 }} size={12} className='blog-post ui-p-30-v'>
 
-                    {blog[post]?.map((item: any) => {
+                    {post && blog[post]?.map((item: any) => {
                         const name = item?.type;
                         switch (name) {
                             case 'postTitle':
