@@ -33,7 +33,7 @@ export default function () {
     const desc = buttons?.desc;
     const text = buttons?.text;
 
-    return (
+    if (buttons) return (
         <>
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>
