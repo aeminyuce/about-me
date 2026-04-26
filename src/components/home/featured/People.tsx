@@ -50,7 +50,7 @@ export const People = () => {
                         const jobTitle = item.jobTitle;
 
                         let classes = 'ui-circle ui-hover-scale-more';
-                        classes += avatarText ? ' ui-fill-dark-100' : '';
+                        classes += avatarText ? ' ui-fill-light-300' : '';
 
                         return (
                             <ListGroup.Item key={jobTitle}>

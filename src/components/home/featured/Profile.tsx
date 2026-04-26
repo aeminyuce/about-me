@@ -47,7 +47,7 @@ export default function() {
                 }
                 {type &&
                     <div className='ui-font-11 ui-m-10-b'>
-                        <Button as='span' size='xs' className={`ui-p-10-h ui-circle ui-fill-dark-100 ${themeA}`}>
+                        <Button as='span' size='xs' className={`ui-p-10-h ui-circle ui-fill-light-200 ${themeA}`}>
                             {type}
                         </Button>
                     </div>
