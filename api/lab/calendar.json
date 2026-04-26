@@ -1,0 +1,109 @@
+{
+    "result": {
+        "calendar": {
+            "desc": {
+                "styles": "Calendars display the days of the current month by default. You can switch to any date to view its corresponding month. Calendars support all theme colors and include several predefined styling options.",
+                "details": "Calendars can display day‑by‑day details for the current month, such as events and meetings. Days with activity show a notification dot, and selecting a day opens a detailed list for the month with the chosen day highlighted.",
+                "pickers": "Calendar pickers provide an efficient way to select dates within input fields. When the input is focused, the picker appears above or below the field depending on available space. If the input already contains a date, the picker opens with that date preselected.",
+                "predefined": "Calendars with defined dates are..."
+            },
+            "text": {
+                "next": "Next Month: data-ui-date=",
+                "prev": "Previous Month: data-ui-date=",
+                "month": "Show Defined Month: data-ui-date=",
+                "yearMonth": "Show Defined Year and Month: data-ui-date="
+            },
+            "dates": {
+                "picker": "2/5/2025",
+                "details": "2025,6",
+                "defined1": "prev",
+                "defined2": "next",
+                "defined3": "10",
+                "defined4": "2012,1"
+            },
+            "details": [
+                {
+                    "day": 12,
+                    "year": 2025,
+                    "month": 6,
+                    "dayName": "Wednesday",
+                    "details": {
+                        "11:00": "<a href=\"#\" target=\"_blank\">Team Strategy Meeting</a>",
+                        "13:30": "<a href=\"#\" target=\"_blank\">Design Review Session</a>",
+                        "14:00": "<a href=\"#\" target=\"_blank\">Product Launch Briefing</a>",
+                        "15:00": "<a href=\"#\" target=\"_blank\">Client Call: Project X</a>",
+                        "17:00": "<a href=\"#\" target=\"_blank\">Marketing Sync-Up</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">Evening Code Sprint</a>"
+                    },
+                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                },
+                {
+                    "day": 14,
+                    "year": 2025,
+                    "month": 6,
+                    "dayName": "Friday",
+                    "details": {
+                        "11:00": "<a href=\"#\" target=\"_blank\">Weekly Stand-Up</a>",
+                        "14:00": "<a href=\"#\" target=\"_blank\">Sales Pipeline Review</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">UX Feedback Roundtable</a>"
+                    },
+                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                },
+                {
+                    "day": 18,
+                    "year": 2025,
+                    "month": 6,
+                    "dayName": "Wednesday",
+                    "details": {
+                        "11:00": "<a href=\"#\" target=\"_blank\">Sprint Planning</a>",
+                        "13:30": "<a href=\"#\" target=\"_blank\">Bug Triage Session</a>",
+                        "14:00": "<a href=\"#\" target=\"_blank\">Investor Update Call</a>",
+                        "15:00": "<a href=\"#\" target=\"_blank\">Feature Demo Prep</a>",
+                        "17:00": "<a href=\"#\" target=\"_blank\">Content Strategy Workshop</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">DevOps Sync</a>"
+                    },
+                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                },
+                {
+                    "day": 19,
+                    "year": 2025,
+                    "month": 6,
+                    "dayName": "Friday",
+                    "details": {
+                        "14:00": "<a href=\"#\" target=\"_blank\">Customer Journey Mapping</a>",
+                        "15:00": "<a href=\"#\" target=\"_blank\">Security Audit Review</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">Frontend Refactor Session</a>"
+                    },
+                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                },
+                {
+                    "day": 2,
+                    "year": 2025,
+                    "month": 7,
+                    "dayName": "Wednesday",
+                    "details": {
+                        "11:00": "<a href=\"#\" target=\"_blank\">Quarterly Goals Kickoff</a>",
+                        "13:30": "<a href=\"#\" target=\"_blank\">Accessibility Review</a>",
+                        "14:00": "<a href=\"#\" target=\"_blank\">Cross-Team Collaboration Talk</a>",
+                        "15:00": "<a href=\"#\" target=\"_blank\">API Integration Planning</a>",
+                        "17:00": "<a href=\"#\" target=\"_blank\">Brand Refresh Discussion</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">Late Night Debugging</a>"
+                    },
+                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                },
+                {
+                    "day": 9,
+                    "year": 2025,
+                    "month": 7,
+                    "dayName": "Friday",
+                    "details": {
+                        "14:00": "<a href=\"#\" target=\"_blank\">Performance Review Prep</a>",
+                        "15:00": "<a href=\"#\" target=\"_blank\">Infrastructure Planning</a>",
+                        "19:00": "<a href=\"#\" target=\"_blank\">Code Review Marathon</a>"
+                    },
+                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                }
+            ]
+        }
+    }
+}
