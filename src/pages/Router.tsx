@@ -23,7 +23,8 @@ const LabIntro = lazy(() => import( /* webpackChunkName: 'lab/Intro' */ './lab/I
 const LabAlerts = lazy(() => import( /* webpackChunkName: 'lab/Alerts' */ './lab/Alerts' ));
 const LabAvatars = lazy(() => import( /* webpackChunkName: 'lab/Avatars' */ './lab/Avatars' ));
 const LabBreadcrumbs = lazy(() => import( /* webpackChunkName: 'lab/Breadcrumbs' */ './lab/Breadcrumbs' ));
-const LabButtons= lazy(() => import( /* webpackChunkName: 'lab/LabButtons' */ './lab/Buttons' ));
+const LabButtons = lazy(() => import( /* webpackChunkName: 'lab/Buttons' */ './lab/Buttons' ));
+const LabCalendar = lazy(() => import( /* webpackChunkName: 'lab/Calendar' */ './lab/Calendar' ));
 
 const Icons= lazy(() => import( /* webpackChunkName: 'Icons' */ './Icons' ));
 const Blog= lazy(() => import( /* webpackChunkName: 'Blog' */ './Blog' ));
@@ -77,6 +78,9 @@ export default function () {
                     }/>
                     <Route path='buttons' element={
                         <PageTitle title='Buttons | Lab'><LabButtons /></PageTitle>
+                    }/>
+                    <Route path='calendar' element={
+                        <PageTitle title='Calendar | Lab'><LabCalendar /></PageTitle>
                     }/>
 
                 </Route>
