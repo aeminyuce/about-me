@@ -254,7 +254,7 @@ export default function () {
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
                     <Button className='ui-fill-dark-100 ui-theme-blueGreen'>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-m-4-v ui-m-10-r' />
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} v={4} />
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
@@ -276,7 +276,7 @@ export default function () {
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
                     <Button className='ui-fill-dark-100 ui-theme-purpleBlue'>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-m-4-v ui-m-10-r' />
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} v={4} />
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>
@@ -297,7 +297,7 @@ export default function () {
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
                     <Button className='ui-fill-dark-100 ui-theme-blueGreen'>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-m-4-v ui-m-10-r' />
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} v={4} />
                         {text?.item2}
                     </Button>
                 </Breadcrumbs.Item>

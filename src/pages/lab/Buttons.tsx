@@ -163,53 +163,53 @@ export default function () {
 
         <Description>{desc?.size}</Description>
         <Preview>
-            <Grid.Row fluid='xs' className='ui-align-l ui-block-2nd ui-ease-2nd-btn'>
+            <Grid.Row fluid='xs' className='ui-align-l ui-block-2nd ui-ease-2nd-btn ui-icons-m-10-r'>
                 <Grid.Col size={6}>
                     <Button noease ghost size='lg' className='ui-circle ui-border'>
-                        <SvgIcon as='js' src={IconAi} className='ui-m-10-r' />
+                        <SvgIcon as='js' src={IconAi} />
                         {text?.lg}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
                     <Button noease ghost className='ui-circle ui-border'>
-                        <SvgIcon as='js' src={IconAi} className='ui-m-10-r' />
+                        <SvgIcon as='js' src={IconAi} />
                         {text?.default}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
                     <Button noease ghost size='sm' className='ui-circle ui-border'>
-                        <SvgIcon as='js' src={IconAi} className='ui-m-10-r' />
+                        <SvgIcon as='js' src={IconAi} />
                         {text?.sm}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
                     <Button noease ghost size='xs' className='ui-circle ui-border'>
-                        <SvgIcon as='js' src={IconAi} className='ui-m-10-r' />
+                        <SvgIcon as='js' src={IconAi} />
                         {text?.xs}
                     </Button>
                 </Grid.Col>
 
                 <Grid.Col size={6}>
                     <Button noease size='lg' className='ui-round'>
-                        <SvgIcon as='js' src={IconFolder} className='ui-m-10-r' />
+                        <SvgIcon as='js' src={IconFolder} />
                         {text?.lg}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
                     <Button noease className='ui-round'>
-                        <SvgIcon as='js' src={IconFolder} className='ui-m-10-r' />
+                        <SvgIcon as='js' src={IconFolder} />
                         {text?.default}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
                     <Button noease size='sm' className='ui-round'>
-                        <SvgIcon as='js' src={IconFolder} className='ui-m-10-r' />
+                        <SvgIcon as='js' src={IconFolder} />
                         {text?.sm}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
                     <Button noease size='xs' className='ui-round'>
-                        <SvgIcon as='js' src={IconFolder} className='ui-m-10-r' />
+                        <SvgIcon as='js' src={IconFolder} />
                         {text?.xs}
                     </Button>
                 </Grid.Col>
@@ -346,15 +346,15 @@ export default function () {
                     <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-m-10-l ui-icons-no-opacity ui-theme-purpleBlue'>
                         <Button noease className='ui-fill-dark-100'>
                             {text?.listA}
-                            <SvgIcon as='js' src={IconShield} className='ui-float-r' />
+                            <SvgIcon as='js' src={IconShield} float='r' />
                         </Button>
                         <Button noease className='ui-fill-dark-100'>
                             {text?.listB}
-                            <SvgIcon as='js' src={IconClock} className='ui-float-r' />
+                            <SvgIcon as='js' src={IconClock} float='r' />
                         </Button>
                         <Button noease className='ui-fill-dark-100'>
                             {text?.listC}
-                            <SvgIcon as='js' src={IconSettings} className='ui-float-r' />
+                            <SvgIcon as='js' src={IconSettings} float='r' />
                         </Button>
                     </Button.Wrapper>
                 </Grid.Col>
@@ -397,34 +397,34 @@ export default function () {
                     </Button.Wrapper>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-m-10-l ui-icons-no-opacity ui-theme-purpleBlue'>
+                    <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-no-opacity ui-theme-purpleBlue'>
                         <Button noease className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
                             {text?.listA}
-                            <SvgIcon as='js' src={IconShield} className='ui-text ui-float-r' />
+                            <SvgIcon as='js' src={IconShield} float='r' className='ui-text' />
                         </Button>
                         <Button noease className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
                             {text?.listB}
-                            <SvgIcon as='js' src={IconClock} className='ui-text ui-float-r' />
+                            <SvgIcon as='js' src={IconClock} float='r' className='ui-text' />
                         </Button>
                         <Button noease className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
                             {text?.listC}
-                            <SvgIcon as='js' src={IconSettings} className='ui-text ui-float-r' />
+                            <SvgIcon as='js' src={IconSettings} float='r' className='ui-text' />
                         </Button>
                     </Button.Wrapper>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-m-10-l ui-icons-no-opacity ui-theme-purpleBlue'>
+                    <Button.Wrapper type='list' as='div' ease='1st' className='ui-align-l ui-round-1st ui-icons-no-opacity ui-theme-purpleBlue'>
                         <Button noease ghost className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
                             {text?.listA}
-                            <SvgIcon as='js' src={IconShield} className='ui-text ui-float-r' />
+                            <SvgIcon as='js' src={IconShield} float='r' className='ui-text' />
                         </Button>
                         <Button noease ghost className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
                             {text?.listB}
-                            <SvgIcon as='js' src={IconClock} className='ui-text ui-float-r' />
+                            <SvgIcon as='js' src={IconClock} float='r' className='ui-text' />
                         </Button>
                         <Button noease ghost className='ui-border ui-border-dual ui-stroke ui-fill-light-100'>
                             {text?.listC}
-                            <SvgIcon as='js' src={IconSettings} className='ui-text ui-float-r' />
+                            <SvgIcon as='js' src={IconSettings} float='r' className='ui-text' />
                         </Button>
                     </Button.Wrapper>
                 </Grid.Col>
@@ -533,13 +533,13 @@ export default function () {
 
         <Description>{desc?.holderDrop}</Description>
         <Preview>
-            <Grid.Row fluid='xs'>
+            <Grid.Row fluid='xs' className='ui-icons-m-10-l'>
                 <Grid.Col size={6} offset={3}>
                     <Button.Wrapper type='holder' as='div' ease='1st' fluid='xs' className='ui-round-1st'>
                         <Dropdown className='ui-round-1st'>
                             <Button>
                                 {text?.one}
-                                <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
+                                <SvgIcon toggle as='js' src={IconAngleDown} />
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>
                                 <Dropdown.Item>{text?.one}</Dropdown.Item>
@@ -557,7 +557,7 @@ export default function () {
                         <Dropdown className='ui-round-1st'>
                             <Button className='ui-border-r'>
                                 {text?.two}
-                                <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
+                                <SvgIcon toggle as='js' src={IconAngleDown} />
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>
                                 <Dropdown.Item>{text?.one}</Dropdown.Item>
@@ -592,7 +592,7 @@ export default function () {
                         <Dropdown className='ui-round-1st'>
                             <Button className='ui-border ui-border-dual'>
                                 {text?.three}
-                                <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
+                                <SvgIcon toggle as='js' src={IconAngleDown}/>
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>
                                 <Dropdown.Item>{text?.one}</Dropdown.Item>

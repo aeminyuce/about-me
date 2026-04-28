@@ -33,8 +33,8 @@ export default function (props: PreviewProps) {
             {children}
             {play &&
                 <Button size='sm' className={buttonClasses} onClick={play}>
-                    <SvgIcon as='js' src={IconPlay} size='xs' />
-                    <span className='ui-m-5-l ui-inline-block'>Play</span>
+                    <SvgIcon as='js' src={IconPlay} size='xs' r={5} />
+                    <span className='ui-inline-block'>Play</span>
                 </Button>
             }
         </div>

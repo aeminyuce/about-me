@@ -15,7 +15,7 @@ export const LeadText = () => {
             <p className='ui-font-22 ui-font-readable ui-m-25-b'>
                 {api?.lab?.intro?.leadText}
             </p>
-            <SvgIcon as='js' src={IconSoundwave} size='xxl' className='ui-m-30-v' />
+            <SvgIcon as='js' src={IconSoundwave} size='xxl' v={30} />
         </div>
     )
 }

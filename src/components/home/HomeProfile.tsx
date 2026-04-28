@@ -30,7 +30,7 @@ export default function () {
                     {general?.jobTitle}
                 </Heading>
 
-                <SvgIcon as='js' src={IconMarker} size='sm' className='ui-m-5-r' />
+                <SvgIcon as='js' src={IconMarker} size='sm' r={5} />
                 <span className='ui-font-16 ui-inline-block'>{api?.home?.aboutMe?.location}</span>
 
                 <PersonalSkills />
