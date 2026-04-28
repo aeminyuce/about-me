@@ -46,7 +46,7 @@ export default function (props: StoreProviderProps) {
             let page = null;
             const isUrl = (name: string) => pathname.startsWith(`/lab/${name}`);
 
-            ['alerts', 'avatars', 'breadcrumbs', 'buttons'].forEach((name: string) => {
+            ['alerts', 'avatars', 'breadcrumbs', 'buttons', 'calendar','card'].find((name: string) => {
                 if (isUrl(name)) page = name;
             });
 
