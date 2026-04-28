@@ -6,6 +6,7 @@ import { useStoreContext } from '../../stores/StoreContext';
 import { Reports, ReportsList } from '../../components/home/featured/Reports';
 import { People, PeopleMore } from '../../components/home/featured/People';
 import Profile from '../../components/home/featured/Profile';
+import Race from '../../components/home/featured/Race';
 import Events from '../../components/home/featured/Events';
 
 // styles
@@ -35,6 +36,7 @@ export default function () {
 
                 {homeFeatured?.people?.list && <People />}
                 {homeFeatured?.peopleMore?.list && <PeopleMore />}
+                {homeFeatured?.race && <Race />}
 
             </Grid.Col>
             <Grid.Col lg={4} size={4} md={6}>

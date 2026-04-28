@@ -71,6 +71,21 @@ SELECT json_build_object(
       FROM home_featured.peoplemore pmr
       LIMIT 1
     ),
+    'race', (
+      SELECT jsonb_strip_nulls(
+        jsonb_build_object(
+          'img', rac.img,
+          'title', rac.title,
+          'text', rac.text,
+          'url1', rac.url1,
+          'url2', rac.url2,
+          'url3', rac.url3,
+          'more', rac.more
+        )
+      )
+      FROM home_featured.race rac
+      LIMIT 1
+    ),
     'calendar', (
       SELECT jsonb_build_object(
         'cardTitle', cln.cardtitle,
