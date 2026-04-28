@@ -78,8 +78,8 @@ SELECT json_build_object(
         'title', cln.title,
         'settings', cln.settings,
         'events', (
-          SELECT jsonb_agg(to_jsonb(cle) - 'id' ORDER BY cle.id)
-          FROM home_featured.calendar_events cle
+          SELECT jsonb_agg(to_jsonb(lcldt) - 'id' ORDER BY lcldt.id)
+          FROM lab.calendar_details lcldt
         )
       )
       FROM home_featured.calendar cln

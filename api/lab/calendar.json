@@ -34,8 +34,7 @@
                         "15:00": "<a href=\"#\" target=\"_blank\">Client Call: Project X</a>",
                         "17:00": "<a href=\"#\" target=\"_blank\">Marketing Sync-Up</a>",
                         "19:00": "<a href=\"#\" target=\"_blank\">Evening Code Sprint</a>"
-                    },
-                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                    }
                 },
                 {
                     "day": 14,
@@ -46,8 +45,7 @@
                         "11:00": "<a href=\"#\" target=\"_blank\">Weekly Stand-Up</a>",
                         "14:00": "<a href=\"#\" target=\"_blank\">Sales Pipeline Review</a>",
                         "19:00": "<a href=\"#\" target=\"_blank\">UX Feedback Roundtable</a>"
-                    },
-                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                    }
                 },
                 {
                     "day": 18,
@@ -61,8 +59,7 @@
                         "15:00": "<a href=\"#\" target=\"_blank\">Feature Demo Prep</a>",
                         "17:00": "<a href=\"#\" target=\"_blank\">Content Strategy Workshop</a>",
                         "19:00": "<a href=\"#\" target=\"_blank\">DevOps Sync</a>"
-                    },
-                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                    }
                 },
                 {
                     "day": 19,
@@ -73,8 +70,7 @@
                         "14:00": "<a href=\"#\" target=\"_blank\">Customer Journey Mapping</a>",
                         "15:00": "<a href=\"#\" target=\"_blank\">Security Audit Review</a>",
                         "19:00": "<a href=\"#\" target=\"_blank\">Frontend Refactor Session</a>"
-                    },
-                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                    }
                 },
                 {
                     "day": 2,
@@ -88,8 +84,7 @@
                         "15:00": "<a href=\"#\" target=\"_blank\">API Integration Planning</a>",
                         "17:00": "<a href=\"#\" target=\"_blank\">Brand Refresh Discussion</a>",
                         "19:00": "<a href=\"#\" target=\"_blank\">Late Night Debugging</a>"
-                    },
-                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                    }
                 },
                 {
                     "day": 9,
@@ -100,8 +95,7 @@
                         "14:00": "<a href=\"#\" target=\"_blank\">Performance Review Prep</a>",
                         "15:00": "<a href=\"#\" target=\"_blank\">Infrastructure Planning</a>",
                         "19:00": "<a href=\"#\" target=\"_blank\">Code Review Marathon</a>"
-                    },
-                    "created_at": "2026-04-25T15:35:05.178796+00:00"
+                    }
                 }
             ]
         }
