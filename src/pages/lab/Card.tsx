@@ -46,7 +46,7 @@ export default function () {
                         <Card className='ui-round ui-shadow-lg'>
                             <Card.Side className='ui-p-30'>
                                 <Heading as='h2'>{text?.forestTitle}</Heading>
-                                <p className='ui-font-18 ui-font-light ui-align-justify'>{text?.forest}</p>
+                                <p className='ui-font-18 ui-font-light ui-font-readable ui-align-justify'>{text?.forest}</p>
                             </Card.Side>
                             <Card.Side>
                                 <GetImage fluid src={img[3]} aspect='landscape' className='ui-round-b' />
