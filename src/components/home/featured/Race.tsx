@@ -17,9 +17,8 @@ export default function() {
             <Card.Side>
                 <Image fluid src={race?.img} aspect='landscape' className='ui-round-t' />
             </Card.Side>
-            <Card.Side className='ui-p-10-h ui-p-20-v'>
-                <Heading as='h4'>{race?.title}</Heading>
-                <p className='ui-color-black-50'>{race?.text}</p>
+            <Card.Side className='ui-color-black-50 ui-p-10-h ui-p-15-v'>
+                {race?.text}
             </Card.Side>
             <Card.Side>
                 <ListGroup>
@@ -29,9 +28,6 @@ export default function() {
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <a href='#'>{race?.url2}</a>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <a href='#'>{race?.url3}</a>
                         </ListGroup.Item>
                     </ListGroup.List>
                 </ListGroup>

@@ -75,11 +75,9 @@ SELECT json_build_object(
       SELECT jsonb_strip_nulls(
         jsonb_build_object(
           'img', rac.img,
-          'title', rac.title,
           'text', rac.text,
           'url1', rac.url1,
           'url2', rac.url2,
-          'url3', rac.url3,
           'more', rac.more
         )
       )
