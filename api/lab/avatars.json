@@ -14,12 +14,12 @@
                 "url": "Avatars can be linked to a URL.",
                 "icon": "Avatars can also display icons instead of images or text.",
                 "count": "Avatar groups can be linked to a URL and include a circular border along with a total‑count indicator.",
-                "group": "Avatar groups are ideal for displaying multiple avatars together.'",
+                "group": "Avatar groups are ideal for displaying multiple avatars together.",
                 "noImg": "Avatars can be used without an image, in which case they display placeholder text.",
                 "round": "Rounded avatars with different sizes.",
-                "theme": "Avatars without an image can use custom background colors or theme colors.'",
+                "theme": "Avatars without an image can use custom background colors or theme colors.",
                 "circle": "Circular avatars come in multiple sizes and are typically used for profile images. The avatars animate when hovered with the mouse.",
-                "groupTheme": "Avatar groups can use custom background colors or theme colors.'"
+                "groupTheme": "Avatar groups can use custom background colors or theme colors."
             },
             "text": {
                 "ph1": "AEY",
