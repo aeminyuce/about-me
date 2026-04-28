@@ -20,37 +20,26 @@ const Report = (props: any) => {
     const reportsData = api?.home_featured?.reports;
     const getData = reportsData[type];
 
-    const name = getData?.name;
-    const reports = getData?.reports;
-    const percent = getData?.percent;
-    const progressPercent = getData?.progressPercent;
-
     return (
         <Card className={`ui-p-15 ui-shadow ui-round-${type}`}>
-            {(name && reports) &&
-                <Grid.Static fluid='no' className='ui-font-condensed'>
-                    <Grid.Row hGap='no' vGap='md'>
-                        <Grid.Col size={12} className='ui-font-16 ui-m-10-b'>
-                            {name}
-                        </Grid.Col>
-                    </Grid.Row>
-                    <Grid.Col size={100} className='ui-font-38 ui-align-r ui-p-15-t'>
-                        {reports}
+            <Grid.Static fluid='no' className='ui-font-condensed'>
+                <Grid.Row hGap='no' vGap='md'>
+                    <Grid.Col size={12} className='ui-font-16 ui-m-10-b'>
+                        {getData?.name}
                     </Grid.Col>
-                </Grid.Static>
-            }
+                </Grid.Row>
+                <Grid.Col size={100} className='ui-font-38 ui-align-r ui-p-15-t'>
+                    {getData?.reports}
+                </Grid.Col>
+            </Grid.Static>
 
-            {percent &&
-                <div className='ui-color-black-25 ui-m-10-b'>
-                    {percent}
-                </div>
-            }
+            <div className='ui-color-black-25 ui-m-10-b'>
+                {getData?.percent}
+            </div>
 
-            {progressPercent &&
-                <ProgressBar className={`ui-round ${theme}`}>
-                    <ProgressBar.Item percent={progressPercent} className='ui-fill-dark-100'/>
-                </ProgressBar>
-            }
+            <ProgressBar className={`ui-round ${theme}`}>
+                <ProgressBar.Item percent={getData?.progressPercent} className='ui-fill-dark-100'/>
+            </ProgressBar>
         </Card>
     )
 }
@@ -101,10 +90,7 @@ const ReportsListGroup = (props: any) => {
 
 export const ReportsList = () => {
     const { themeB, api } = useStoreContext();
-
     const reportsList = api?.home_featured?.reportsList;
-    const delayed = reportsList?.delayed;
-    const paused = reportsList?.paused;
 
     return (
         <Card className='home-reports-list ui-p-15-t ui-p-15-h ui-shadow ui-round'>
@@ -123,15 +109,12 @@ export const ReportsList = () => {
                     })}
 
                 </Button.Wrapper>
+
                 <Tab.Content open>
-
-                    {delayed && <ReportsListGroup list={delayed} />}
-
+                    <ReportsListGroup list={reportsList?.delayed} />
                 </Tab.Content>
                 <Tab.Content>
-
-                    {paused && <ReportsListGroup list={paused} />}
-
+                    <ReportsListGroup list={reportsList?.paused} />
                 </Tab.Content>
             </Tab.Holder>
         </Card>

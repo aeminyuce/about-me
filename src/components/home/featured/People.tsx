@@ -20,26 +20,18 @@ export const People = () => {
     const { themeA, api } = useStoreContext();
 
     const people = api?.home_featured?.people;
-
     const peopleList = people?.list;
-    const addPeople = people?.addPeople;
-    const cardTitle = people?.cardTitle;
-
     const setScrollOuter = peopleList?.length > 3 ? ' ui-scrollbar-outer' : '';
 
     return (
         <Card className='home-people-list ui-p-15-t ui-p-15-h ui-round ui-shadow'>
-            {addPeople &&
-                <Button ghost square title={addPeople?.title} className='ui-round ui-float-r' data={{ 'tooltip': 'l', 'only': 'desktop' }}>
-                    <SvgIcon as='js' src={IconUserPlus} />
-                </Button>
-            }
+            <Button ghost square title={people?.addPeople?.title} className='ui-round ui-float-r' data={{ 'tooltip': 'l', 'only': 'desktop' }}>
+                <SvgIcon as='js' src={IconUserPlus} />
+            </Button>
 
-            {cardTitle &&
-                <Heading as='h3' className='ui-align-l ui-m-10-t'>
-                    {cardTitle}
-                </Heading>
-            }
+            <Heading as='h3' className='ui-align-l ui-m-10-t'>
+                {people?.cardTitle}
+            </Heading>
 
             <ListGroup className={`ui-round-t ui-scroll-v ui-scrollbar-round ui-scrollbar-faded${setScrollOuter} ${themeA}`}>
                 <ListGroup.List iconSize='sm' avatarSize='xs'>
@@ -78,9 +70,7 @@ export const People = () => {
 
 export const PeopleMore = () => {
     const { themeB, api } = useStoreContext();
-
     const peopleMore = api?.home_featured?.peopleMore;
-    const moreCount = peopleMore?.moreCount;
 
     return (
         <Card className={`ui-align-c ui-p-15 ui-round ui-shadow ${themeB}`}>
@@ -104,13 +94,11 @@ export const PeopleMore = () => {
                     )
                 })}
 
-                {moreCount &&
-                    <Avatar noease size='sm'>
-                        <a href={peopleMore?.moreUrl}>
-                            <span>+{moreCount}</span>
-                        </a>
-                    </Avatar>
-                }
+                <Avatar noease size='sm'>
+                    <a href={peopleMore?.moreUrl}>
+                        <span>+{peopleMore?.moreCount}</span>
+                    </a>
+                </Avatar>
             </Avatar.Holder>
         </Card>
     )

@@ -15,49 +15,36 @@ export default function() {
 
     const profile = api?.home_featured?.profile;
     const info = profile?.info;
-    const userActivity = profile?.userActivity;
-
-    const avatar = info?.avatar;
-    const cover = info?.cover;
-    const name = info?.name;
-    const email = info?.email;
-    const type = info?.type;
 
     return (
         <Card className='home-profile ui-round ui-shadow'>
-            {avatar && cover &&
-                <div className='ui-align-c ui-round-t ui-border-b'>
-                    <div className='ui-round-t'>
-                        <GetImage lazy src={cover} aspect='photo' />
-                    </div>
-                    <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
-                        <Avatar size='lg'>
-                            <GetImage lazy src={avatar} aspect='square' />
-                        </Avatar>
-                    </Notifier>
+            <div className='ui-align-c ui-round-t ui-border-b'>
+                <div className='ui-round-t'>
+                    <GetImage lazy src={info?.cover} aspect='photo' />
                 </div>
-            }
+                <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
+                    <Avatar size='lg'>
+                        <GetImage lazy src={info?.avatar} aspect='square' />
+                    </Avatar>
+                </Notifier>
+            </div>
 
             <div className='ui-align-c'>
-                {name}
-                {email &&
-                    <div className='ui-color-black-50 ui-font-11 ui-m-10-b'>
-                        {email}
-                    </div>
-                }
-                {type &&
-                    <div className='ui-font-11 ui-m-10-b'>
-                        <Button as='span' size='xs' className={`ui-p-10-h ui-circle ui-fill-light-200 ${themeA}`}>
-                            {type}
-                        </Button>
-                    </div>
-                }
+                {info?.name}
+                <div className='ui-color-black-50 ui-font-11 ui-m-10-b'>
+                    {info?.email}
+                </div>
+                <div className='ui-font-11 ui-m-10-b'>
+                    <Button as='span' size='xs' className={`ui-p-10-h ui-circle ui-fill-light-200 ${themeA}`}>
+                        {info?.type}
+                    </Button>
+                </div>
             </div>
 
             <ListGroup className={`ui-scroll-v ui-round-b ui-scrollbar-round ui-scrollbar-faded`}>
                 <ListGroup.List avatarSize='xs'>
 
-                    {userActivity?.map((item: UserActivityProps, index: number) => (
+                    {profile?.userActivity?.map((item: UserActivityProps, index: number) => (
                         <ListGroup.Item key={`uac-${index}`}>
                             <a href={item.url}>
                                 <Avatar size='xs' className='ui-round'>
