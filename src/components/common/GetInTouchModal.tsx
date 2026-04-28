@@ -40,7 +40,7 @@ export default function () {
             <Modal.Container>
                 <Grid.Static fluid='no'>
                     <Grid.Col size={133} className='ui-p-10'>
-                        <GetImage fluid src={getInTouch?.qrCodeImage} aspect='square' />
+                        <GetImage lazy fluid src={getInTouch?.qrCodeImage} aspect='square' />
                     </Grid.Col>
                     <Grid.Row>
                         <Grid.Col size={12}>
