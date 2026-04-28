@@ -25,6 +25,7 @@ const LabAvatars = lazy(() => import( /* webpackChunkName: 'lab/Avatars' */ './l
 const LabBreadcrumbs = lazy(() => import( /* webpackChunkName: 'lab/Breadcrumbs' */ './lab/Breadcrumbs' ));
 const LabButtons = lazy(() => import( /* webpackChunkName: 'lab/Buttons' */ './lab/Buttons' ));
 const LabCalendar = lazy(() => import( /* webpackChunkName: 'lab/Calendar' */ './lab/Calendar' ));
+const LabCard = lazy(() => import( /* webpackChunkName: 'lab/Card' */ './lab/Card' ));
 
 const Icons= lazy(() => import( /* webpackChunkName: 'Icons' */ './Icons' ));
 const Blog= lazy(() => import( /* webpackChunkName: 'Blog' */ './Blog' ));
@@ -81,6 +82,9 @@ export default function () {
                     }/>
                     <Route path='calendar' element={
                         <PageTitle title='Calendar | Lab'><LabCalendar /></PageTitle>
+                    }/>
+                    <Route path='card' element={
+                        <PageTitle title='Card | Lab'><LabCard /></PageTitle>
                     }/>
 
                 </Route>

@@ -105,7 +105,7 @@ export default function () {
                 <Grid.Col size={12} className='ui-round-1st'>
                     <Calendar.Picker inline='always' className='ui-m-20-r ui-sm-no-m' />
                     <Spacer size={10} className='ui-visible-sm' />
-                    <Calendar.Picker inline='always' value={dates?.picker} />
+                    <Calendar.Picker inline='always' defaultValue={dates?.picker} />
                 </Grid.Col>
             </Grid.Row>
             <Grid.Row className='ui-round-2nd'>
@@ -113,7 +113,7 @@ export default function () {
                     <Calendar.Picker />
                 </Grid.Col>
                 <Grid.Col lg={{ size: 5 }} size={12}>
-                    <Calendar.Picker value={dates?.picker} />
+                    <Calendar.Picker defaultValue={dates?.picker} />
                 </Grid.Col>
             </Grid.Row>
         </Preview>

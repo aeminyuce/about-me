@@ -1,0 +1,16 @@
+{
+    "result": {
+        "card": {
+            "desc": {
+                "sides": "Card sides are ...",
+                "alerts": "Card alerts are ...",
+                "examples": "Card examples are ...",
+                "messages": "Card messages are ..."
+            },
+            "text": {
+                "title": "Card Title",
+                "titleSep": "Separated Title"
+            }
+        }
+    }
+}
