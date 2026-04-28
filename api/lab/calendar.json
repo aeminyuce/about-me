@@ -14,7 +14,7 @@
                 "yearMonth": "Show Defined Year and Month: data-ui-date="
             },
             "dates": {
-                "picker": "2/5/2025",
+                "picker": "02/05/2025",
                 "details": "2025,6",
                 "defined1": "prev",
                 "defined2": "next",
