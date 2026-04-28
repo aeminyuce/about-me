@@ -1,6 +1,18 @@
 {
     "result": {
         "card": {
+            "img": [
+                "random-image1.jpg",
+                "random-image2.jpg",
+                "random-image3.jpg",
+                "random-image4.jpg",
+                "random-image5.jpg",
+                "random-image6.jpg",
+                "random-image7.jpg",
+                "random-image8.jpg",
+                "random-image9.jpg",
+                "random-image10.jpg"
+            ],
             "desc": {
                 "sides": "Card sides are ...",
                 "alerts": "Card alerts are ...",
@@ -8,8 +20,20 @@
                 "messages": "Card messages are ..."
             },
             "text": {
-                "title": "Card Title",
-                "titleSep": "Separated Title"
+                "food": "Don’t forget to explore local food spots.",
+                "race": "Last week’s bike race was intense and full of energy. The riders pushed hard through every climb, and the crowd stayed loud from start to finish.",
+                "forest": "The weekend in the little town beside the city forest turned into a burst of adventure, with friends gathering for trail races that wound through the tall pines. By midday, everyone cooled off at the lake, diving into the water after long runs, and the afternoon shifted into lively ball games on the open field. As the sun set, the whole place felt like a playground of stories waiting to happen, each moment carrying its own spark of excitement.",
+                "foodBtn1": "Coffees",
+                "foodBtn2": "Meals",
+                "foodBtn3": "Ovens",
+                "raceMore": "Explore More Races",
+                "raceUrl1": "Racing Calendar & Recent Events",
+                "raceUrl2": "Official Cycling Calendar",
+                "raceUrl3": "Latest Race Results",
+                "forestImg": "A quiet town sits at the edge of the city forest.",
+                "raceTitle": "Cycling Heat",
+                "forestMore": "Discover City Forest",
+                "forestTitle": "Townside Adventures Weekend"
             }
         }
     }

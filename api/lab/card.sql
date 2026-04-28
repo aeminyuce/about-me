@@ -15,6 +15,10 @@ SELECT json_build_object(
         'text', (
           SELECT jsonb_object_agg(lct.type, lct.text ORDER BY lct.id)
           FROM lab.card_text lct
+        ),
+        'img', (
+          SELECT json_agg(lci.name ORDER BY lci.id)
+          FROM lab.card_img lci
         )
       )
     )

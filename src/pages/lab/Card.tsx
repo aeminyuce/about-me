@@ -1,15 +1,24 @@
 import * as React from 'react';
+import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
 import Grid from 'uilab/react/Grid';
 import Heading from 'uilab/react/Heading';
-import Spacer from 'uilab/react/Spacer';
+import ListGroup from 'uilab/react/ListGroup';
+import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
+import GetImage from '../../components/common/GetImage';
 import Description from '../../components/common/Description';
 import Preview from '../../components/common/Preview';
 import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
 import { headings } from '../../helpers/Lab';
+
+// assets
+import { IconTrees } from 'uilab-icons/react/general/trees';
+import { IconCoffee } from 'uilab-icons/react/kitchen/coffee';
+import { IconForkKnife } from 'uilab-icons/react/kitchen/fork-knife';
+import { IconMitten } from 'uilab-icons/react/kitchen/mitten';
 
 export default function () {
     const { api } = useStoreContext();
@@ -18,6 +27,7 @@ export default function () {
     const card = api?.lab?.card;
     const desc = card?.desc;
     const text = card?.text;
+    const img = card?.img;
 
     if (card) return (
         <>
@@ -28,16 +38,86 @@ export default function () {
             {title?.h3[0]}
         </Heading>
 
-        <Description>{desc?.styles}</Description>
+        <Description>{desc?.examples}</Description>
         <Preview>
-            <Grid.Row className='ui-round-2nd'>
-                <Grid.Col lg={{ size: 5, offset: 1 }} size={12}>
-                    <Card>...</Card>
+            <Grid.Static fluid='lg' className='ui-align-l'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Card className='ui-round ui-shadow-lg'>
+                            <Card.Side className='ui-p-30'>
+                                <Heading as='h2'>{text?.forestTitle}</Heading>
+                                <p className='ui-font-18 ui-font-light ui-align-justify'>{text?.forest}</p>
+                            </Card.Side>
+                            <Card.Side>
+                                <GetImage fluid src={img[3]} aspect='landscape' className='ui-round-b' />
+                                <div className='ui-m-30 ui-set-absolute ui-set-b ui-set-l'>
+                                    <p className='ui-color-white ui-font-18'>
+                                        <SvgIcon as='js' src={IconTrees} size='xxl' className='ui-m-10-r' />
+                                        {text?.forestImg}
+                                    </p>
+                                    <Button block='sm' className='ui-m-15-t ui-round ui-theme-greenYellow ui-fill-dark-100'>
+                                        {text?.forestMore}
+                                    </Button>
+                                </div>
+                            </Card.Side>
+                        </Card>
+                    </Grid.Col>
+                </Grid.Row>
+
+                <Grid.Col size={420} className='ui-p-10 ui-round-1st ui-theme-orangeRed'>
+                    <Card className='ui-shadow-lg'>
+                        <Card.Side>
+                            <GetImage fluid src={img[5]} aspect='landscape' className='ui-round-t' />
+                        </Card.Side>
+                        <Card.Side className='ui-p-10-h ui-p-20-v'>
+                            <Heading as='h4'>{text?.raceTitle}</Heading>
+                            <p className='ui-color-black-50'>{text?.race}</p>
+                        </Card.Side>
+                        <Card.Side>
+                            <ListGroup>
+                                <ListGroup.List>
+                                    <ListGroup.Item>
+                                        <a href='#'>{text?.raceUrl1}</a>
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <a href='#'>{text?.raceUrl2}</a>
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <a href='#'>{text?.raceUrl3}</a>
+                                    </ListGroup.Item>
+                                </ListGroup.List>
+                            </ListGroup>
+                        </Card.Side>
+                        <Card.Side className='ui-p-10'>
+                            <Button block='all' className='ui-round ui-fill-dark-100'>
+                                {text?.raceMore}
+                            </Button>
+                        </Card.Side>
+                    </Card>
+
+                    <Card className='ui-p-10'>
+                        <Card.Side className='ui-color-black-50 ui-m-10-b'>
+                            {text?.food}
+                        </Card.Side>
+                        <Card.Side>
+                            <Button.Wrapper type='holder' as='div' ease='1st' className='ui-round-1st ui-block-2nd ui-icons-lg ui-icons-no-opacity'>
+                                <Button noease multi className='ui-p-20-v'>
+                                    <SvgIcon as='js' src={IconCoffee} className='ui-m-5-b ui-m-auto' />
+                                    {text?.foodBtn1}
+                                </Button>
+                                <Button noease multi className='ui-p-20-v'>
+                                    <SvgIcon as='js' src={IconForkKnife} className='ui-m-5-b ui-m-auto' />
+                                    {text?.foodBtn2}
+                                </Button>
+                                <Button noease multi className='ui-p-20-v'>
+                                    <SvgIcon as='js' src={IconMitten} className='ui-m-5-b ui-m-auto' />
+                                    {text?.foodBtn3}
+                                </Button>
+                            </Button.Wrapper>
+                        </Card.Side>
+                    </Card>
                 </Grid.Col>
-                <Grid.Col lg={{ size: 5 }} size={12}>
-                    <Card>...</Card>
-                </Grid.Col>
-            </Grid.Row>
+            </Grid.Static>
         </Preview>
         </>
     );
