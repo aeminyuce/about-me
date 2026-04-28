@@ -16,10 +16,10 @@ export default function () {
     return (
         <Grid.Row fluid='sm' className='iconslist-images ui-m-auto ui-m-20-b ui-round-more-2nd ui-shadow-lg-2nd'>
             <Grid.Col size={6}>
-                <GetImage fetchPriority='high' src={image1} className='ui-img-fluid' aspect='square' />
+                <GetImage fluid fetchPriority='high' src={image1} aspect='square' />
             </Grid.Col>
             <Grid.Col size={6}>
-                <GetImage fetchPriority='high' src={image2} className='ui-img-fluid' aspect='square' />
+                <GetImage fluid fetchPriority='high' src={image2} aspect='square' />
             </Grid.Col>
         </Grid.Row>
     )

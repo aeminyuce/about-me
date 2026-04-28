@@ -69,6 +69,7 @@ export interface GetImageProps {
     alt?: string;
     aspect?: 'square' | 'photo' | 'portrait' | 'landscape' | 'golden' | 'wide' | 'wide-more';
     lazy?: boolean;
+    fluid?: boolean;
     className?: string;
     style?: any;
 }

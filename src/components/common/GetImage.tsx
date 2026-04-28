@@ -4,13 +4,14 @@ import * as React from 'react';
 import type { GetImageProps } from '../../models/Page';
 
 export default function (props: GetImageProps) {
-    const { fetchPriority, src, alt, aspect, lazy, className, style } = props;
+    const { fetchPriority, src, alt, aspect, lazy, fluid, className, style } = props;
 
     // classes
     const setClassName = className ? `${className}` : '';
     const setAspect = aspect ? ` ui-aspect-${aspect}` : '';
+    const setFluid = fluid ? ' ui-img-fluid' : '';
 
-    let classes: string | undefined =  setClassName + setAspect;
+    let classes: string | undefined =  setClassName + setAspect + setFluid;
     if (classes === '') { classes = undefined; }
 
     // attrs

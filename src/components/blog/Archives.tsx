@@ -32,12 +32,12 @@ export default function () {
                             const isFirst = index === 0;
 
                             const classes = isFirst ? 'ui-align-c ui-block-1st' : 'ui-border ui-inline-block-1st';
-                            const imgClasses = isFirst ? 'ui-round ui-img-fluid ui-shadow-lg' : 'ui-round-inner';
+                            const imgClasses = isFirst ? 'ui-round ui-shadow-lg' : 'ui-round-inner';
                             const titleClasses = isFirst ? 'ui-font-30 ui-font-condensed' : 'ui-font-22';
 
                             return (
                                 <Button key={name} noease ghost multi to={`/blog?post=${name}`} className={classes}>
-                                    <GetImage lazy src={imageUrl} alt={imageAlt} aspect='photo' className={imgClasses} />
+                                    <GetImage lazy fluid={isFirst} src={imageUrl} alt={imageAlt} aspect='photo' className={imgClasses} />
                                     <span className='ui-block-1st'>
                                         <span className='ui-color-black-50 ui-m-10-b'>{date}</span>
                                         <span className={titleClasses}>{title}</span>
