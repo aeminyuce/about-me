@@ -74,6 +74,7 @@ SELECT json_build_object(
     'race', (
       SELECT jsonb_strip_nulls(
         jsonb_build_object(
+          'winner', rac.winner,
           'img', rac.img,
           'text', rac.text,
           'url1', rac.url1,
