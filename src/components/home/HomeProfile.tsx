@@ -14,15 +14,7 @@ import { IconMarker } from 'uilab-icons/react/general/marker';
 
 export default function () {
     const { api } = useStoreContext();
-
     const general = api?.general;
-    const fullName = general?.fullName;
-    const jobTitle = general?.jobTitle;
-
-    const aboutMe = api?.home?.aboutMe;
-    const location = aboutMe?.location;
-
-    const personalSkills = api?.home?.aboutMe?.personalSkills;
 
     return (
         <Grid.Row fluid='sm' hGap='lg' className='ui-m-15-v'>
@@ -30,31 +22,19 @@ export default function () {
                 <MyAvatar />
             </Grid.Col>
             <Grid.Col size={7} md={10} className='ui-sm-align-c'>
-                {fullName &&
-                    <Heading as='h1' className='ui-font-30 ui-font-bold'>
-                        {fullName}
-                    </Heading>
-                }
+                <Heading as='h1' className='ui-font-30 ui-font-bold'>
+                    {general?.fullName}
+                </Heading>
 
-                {jobTitle &&
-                    <Heading as='h2' className='ui-font-16 ui-font-regular ui-m-5-b ui-block'>
-                        {jobTitle}
-                    </Heading>
-                }
+                <Heading as='h2' className='ui-font-16 ui-font-regular ui-m-5-b ui-block'>
+                    {general?.jobTitle}
+                </Heading>
 
-                {location &&
-                    <>
-                    <SvgIcon as='js' src={IconMarker} size='sm' className='ui-m-5-r' />
-                    <span className='ui-font-16 ui-inline-block'>{location}</span>
-                    </>
-                }
+                <SvgIcon as='js' src={IconMarker} size='sm' className='ui-m-5-r' />
+                <span className='ui-font-16 ui-inline-block'>{api?.home?.aboutMe?.location}</span>
 
-                {aboutMe?.getInTouchText &&
-                    <>
-                    {personalSkills && <PersonalSkills />}
-                    <GetInTouchButtons />
-                    </>
-                }
+                <PersonalSkills />
+                <GetInTouchButtons />
             </Grid.Col>
         </Grid.Row>
     )

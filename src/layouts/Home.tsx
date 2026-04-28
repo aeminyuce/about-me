@@ -5,7 +5,8 @@ import Grid from 'uilab/react/Grid';
 // misc
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
-import AboutMe from '../components/home/AboutMe';
+import MyFocus from '../components/home/MyFocus';
+import HomeProfile from '../components/home/HomeProfile';
 import HomeNav from '../components/home/HomeNav';
 import { useStoreContext } from '../stores/StoreContext';
 
@@ -26,7 +27,12 @@ export default function () {
             <Grid.Container fixed='xl' as='div'>
 
                 {/* about me */}
-                {home?.aboutMe && <AboutMe />}
+                {home?.aboutMe &&
+                    <>
+                    <HomeProfile />
+                    <MyFocus />
+                    </>
+                }
 
             </Grid.Container>
 

@@ -8,14 +8,13 @@ import type { SizeListProps } from '../../models/Icons';
 
 export default function () {
     const { iconSize, setIconSize, api } = useStoreContext();
-    const sizes = api?.icons?.sizes;
 
     return (
         <Grid.Row>
             <Grid.Col size={4} offset={4}>
                 <Button.Wrapper as='div' type='holder' largeButtons ease='1st' className='ui-theme-purpleBlue'>
 
-                    {sizes?.map((item: SizeListProps) => {
+                    {api?.icons?.sizes?.map((item: SizeListProps) => {
                         const classes = `ui-round${item.size === iconSize ? ' ui-fill-dark-100' : ''}`;
 
                         return (

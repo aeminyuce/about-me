@@ -12,13 +12,12 @@ import { IconHeart } from 'uilab-icons/react/general/heart';
 
 export default function () {
     const { api } = useStoreContext();
-    const headerLinks = api?.header?.headerLinks;
 
     return (
         <nav aria-label='Main site navigation' className='ui-hidden-md'>
             <Button.Wrapper as='span' ease='1st' className='ui-sidebar-add-l ui-md-align-l ui-round-1st'>
 
-                {headerLinks.map((item: HeaderLinksProps) => {
+                {api?.header?.headerLinks?.map((item: HeaderLinksProps) => {
                     const isModal = item.modal ? () => ShowGetInTouch() : undefined;
 
                     return (

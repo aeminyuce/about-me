@@ -35,35 +35,21 @@ export default function () {
     const { api } = useStoreContext();
     const getInTouch = api?.header?.getInTouch;
 
-    const qrCodeImage = getInTouch?.qrCodeImage;
-    const title = getInTouch?.title;
-
-    const messageStart = getInTouch?.messageStart;
-    const messageHighlight = getInTouch?.messageHighlight;
-    const messageEnd = getInTouch?.messageEnd;
-
     return (
         <Modal as='div' className='getInTouchModal'>
             <Modal.Container>
                 <Grid.Static fluid='no'>
                     <Grid.Col size={133} className='ui-p-10'>
-                        {qrCodeImage &&
-                            <GetImage fluid src={qrCodeImage} aspect='square' />
-                        }
+                        <GetImage fluid src={getInTouch?.qrCodeImage} aspect='square' />
                     </Grid.Col>
                     <Grid.Row>
                         <Grid.Col size={12}>
-                            {title &&
-                                <strong className='ui-font-24'>{title}</strong>
-                            }
-
-                            {(messageStart && messageHighlight && messageEnd) &&
-                                <p className='ui-font-16 ui-font-condensed ui-m-10-t'>
-                                    {messageStart}
-                                    <strong>{messageHighlight}</strong>
-                                    {messageEnd}
-                                </p>
-                            }
+                            <strong className='ui-font-24'>{getInTouch?.title}</strong>
+                            <p className='ui-font-16 ui-font-condensed ui-m-10-t'>
+                                {getInTouch?.messageStart}
+                                <strong>{getInTouch?.messageHighlight}</strong>
+                                {getInTouch?.messageEnd}
+                            </p>
                         </Grid.Col>
                     </Grid.Row>
                 </Grid.Static>

@@ -13,32 +13,29 @@ import ToggleDarkMode from './ToggleDarkMode';
 
 export default function () {
     const { pathname } = useLocation();
-
     const { api } = useStoreContext();
 
-    const headerData = api?.header;
     const showRightSidebar = pathname.startsWith('/lab');
 
-    return headerData && (
+    return api?.header && (
         <>
         <HeaderSticky ariaLabel='Main site header' className='ui-container' dataClasses='ui-shadow'>
             <Grid.Row fluid='no'>
                 <Grid.Col size={9} md={3} sm={3} xs={3}>
 
                     <ToggleHeaderLeftSidebar />
-                    {headerData?.headerLinks && <HeaderLinks />}
+                    <HeaderLinks />
 
                 </Grid.Col>
                 <Grid.Col size={3} md={9} sm={9} xs={9} className='ui-align-r ui-icons-no-opacity'>
 
-                    {headerData?.socialLinks && <SocialLinks />}
+                    <SocialLinks />
                     <ToggleDarkMode />
                     {showRightSidebar && <ToggleHeaderRightSidebar />}
 
                 </Grid.Col>
             </Grid.Row>
-
-            {headerData?.getInTouch && <GetInTouchModal />}
+            <GetInTouchModal />
         </HeaderSticky>
         <HeaderLeftSidebar />
         <HeaderRightSidebar />

@@ -11,37 +11,28 @@ import { useStoreContext } from '../../stores/StoreContext';
 import { mobileNavPosition } from '../../helpers/Home';
 
 export default function () {
-    const { api } = useStoreContext();
-    const navData = api?.home?.nav;
-
-    return navData && (
+    return (
         <Grid.Row className='home-nav ui-p-15-h ui-no-m-h ui-m-15-b ui-border-b ui-border-light ui-set-sticky'>
             <Grid.Static fluid='no' className='ui-set-relative'>
                 <Grid.Row>
                     <Grid.Col size={12} className='ui-hidden-sm'>
 
                         <nav aria-label='Home page desktop navigation' className='ui-ease-1st-btn ui-round-1st'>
-                            {navData?.navLinks && <NavDesktopLinks />}
+                            <NavDesktopLinks />
                         </nav>
 
                     </Grid.Col>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-visible-sm'>
 
                         <nav aria-label='Home page mobile navigation'>
-                            {navData?.navLinks && <NavMobileLinks />}
+                            <NavMobileLinks />
                         </nav>
 
                     </Grid.Col>
                 </Grid.Row>
                 <Grid.Col size={85} className='ui-p-10-v'>
-
-                    {navData?.themeList &&
-                        <>
-                        <ThemeChanger type='a' />
-                        <ThemeChanger type='b' />
-                        </>
-                    }
-
+                    <ThemeChanger type='a' />
+                    <ThemeChanger type='b' />
                 </Grid.Col>
             </Grid.Static>
         </Grid.Row>
@@ -52,11 +43,9 @@ const NavDesktopLinks = () => {
     const { pathname } = useLocation();
     const { api } = useStoreContext();
 
-    const navLinks = api?.home?.nav?.navLinks;
-
     return (
         <>
-        {navLinks.map((item: HomeNavLinksProps) => {
+        {api?.home?.nav?.navLinks?.map((item: HomeNavLinksProps) => {
             const selected = item.to === pathname;
 
             return (
@@ -80,7 +69,7 @@ const NavMobileLinks = () => {
         <Carousel start={start} sm={3} xs={2}>
             <Carousel.Slider className='ui-ease-2nd-btn ui-round-2nd'>
 
-                {navLinks.map((item: HomeNavLinksProps) => {
+                {navLinks?.map((item: HomeNavLinksProps) => {
                     const selected = item.to === pathname;
 
                     return (

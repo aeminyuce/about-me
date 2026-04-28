@@ -23,12 +23,6 @@ export default function () {
                             if (!item) return;
 
                             const image = item?.postImage;
-                            const imageUrl = image?.url;
-                            const imageAlt = image?.alt;
-
-                            const date = item?.postDate?.text;
-                            const title = item?.postTitle?.text;
-
                             const isFirst = index === 0;
 
                             const classes = isFirst ? 'ui-align-c ui-block-1st' : 'ui-border ui-inline-block-1st';
@@ -37,10 +31,10 @@ export default function () {
 
                             return (
                                 <Button key={name} noease ghost multi to={`/blog?post=${name}`} className={classes}>
-                                    <GetImage lazy fluid={isFirst} src={imageUrl} alt={imageAlt} aspect='photo' className={imgClasses} />
+                                    <GetImage lazy fluid={isFirst} src={image?.url} alt={image?.alt} aspect='photo' className={imgClasses} />
                                     <span className='ui-block-1st'>
-                                        <span className='ui-color-black-50 ui-m-10-b'>{date}</span>
-                                        <span className={titleClasses}>{title}</span>
+                                        <span className='ui-color-black-50 ui-m-10-b'>{item?.postDate?.text}</span>
+                                        <span className={titleClasses}>{item?.postTitle?.text}</span>
                                     </span>
                                 </Button>
                             )

@@ -15,7 +15,6 @@ import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
 export const HeaderLeftSidebar = () => {
     const { api } = useStoreContext();
-    const sidebarTitle = api?.general?.fullName;
 
     return (
         <Sidebar pos='l' className='ui-round'>
@@ -23,11 +22,9 @@ export const HeaderLeftSidebar = () => {
                 <Button square ghost title='Close' className='ui-sidebar-close ui-round'>
                     <SvgIcon as='js' src={IconAngleLeft} />
                 </Button>
-                {sidebarTitle &&
-                    <Heading as='h3' className='ui-font-bold ui-align-l ui-m-10-t'>
-                        {sidebarTitle}
-                    </Heading>
-                }
+                <Heading as='h3' className='ui-font-bold ui-align-l ui-m-10-t'>
+                    {api?.general?.fullName}
+                </Heading>
             </Sidebar.Title>
             <Sidebar.Content className='ui-scroll-v ui-align-c' />
         </Sidebar>
@@ -44,7 +41,6 @@ export const ToggleHeaderLeftSidebar = () => {
 
 export const HeaderRightSidebar = () => {
     const { api } = useStoreContext();
-    const sidebarTitle = api?.lab?.sidebarTitle;
 
     return (
         <Sidebar pos='r' className='ui-round'>
@@ -52,11 +48,9 @@ export const HeaderRightSidebar = () => {
                 <Button square ghost title='Close' className='ui-sidebar-close ui-round'>
                     <SvgIcon as='js' src={IconAngleRight} />
                 </Button>
-                {sidebarTitle &&
-                    <Heading as='h3' className='ui-font-bold ui-align-l ui-m-10-t'>
-                        {sidebarTitle}
-                    </Heading>
-                }
+                <Heading as='h3' className='ui-font-bold ui-align-l ui-m-10-t'>
+                    {api?.lab?.sidebarTitle}
+                </Heading>
             </Sidebar.Title>
             <Sidebar.Content className='ui-scroll-v' />
         </Sidebar>

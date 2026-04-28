@@ -14,9 +14,8 @@ export default function (props: any) {
 
     const theme = typeA ? themeA : themeB;
     const round = typeA ? 'ui-round-l' : 'ui-m-1-l ui-round-r';
-    const setTheme = (set: string) => typeA ? setThemeA(set) : setThemeB(set);
 
-    const themeList = api?.home?.nav?.themeList;
+    const setTheme = (set: string) => typeA ? setThemeA(set) : setThemeB(set);
 
     return (
         <Dropdown align='l'>
@@ -25,7 +24,7 @@ export default function (props: any) {
             </Button>
             <Dropdown.Menu className='ui-inline-block-2nd ui-round ui-circle-2nd ui-shadow-lg ui-cursor-pointer'>
 
-                {themeList.map((item: ThemeListProps) => (
+                {api?.home?.nav?.themeList?.map((item: ThemeListProps) => (
                     <Dropdown.Item key={item.name} onClick={() => setTheme(item.theme)}>
                         <span className={`ui-m-10-r ${item.theme} ui-fill-dark-100`} />
                         {item.name}

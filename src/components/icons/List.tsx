@@ -23,9 +23,9 @@ const SpriteBrands = require('uilab-icons/sprite/brands.svg') as string;
 
 export default function (props: any) {
     const { iconSize, api } = useStoreContext();
-    const iconsSuffix = api?.icons?.info?.iconsSuffix;
-
     const { iconsList } = props;
+
+    const iconsSuffix = api?.icons?.info?.iconsSuffix;
 
     // sprites
     const spritesList: any = {

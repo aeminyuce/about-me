@@ -7,19 +7,13 @@ import GetImage from './GetImage';
 
 export default function () {
     const { api } = useStoreContext();
+
     const general = api?.general;
-
     const profileImage = general?.profileImage;
-    const fullName = general?.fullName || '';
-    const jobTitle = general?.jobTitle || '';
 
-    return (
-        <>
-        {profileImage &&
-            <Avatar size='lg' className='ui-circle'>
-                <GetImage fetchPriority='high' src={profileImage} alt={`${fullName} | ${jobTitle}`} aspect='square' />
-            </Avatar>
-        }
-        </>
+    if (profileImage) return (
+        <Avatar size='lg' className='ui-circle'>
+            <GetImage fetchPriority='high' src={profileImage} alt={`${general?.fullName} | ${general?.jobTitle}`} aspect='square' />
+        </Avatar>
     )
 }

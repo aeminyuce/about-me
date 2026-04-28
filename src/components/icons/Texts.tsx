@@ -10,10 +10,6 @@ export default function (props: any) {
 
     const info = api?.icons?.info;
 
-    const text = info?.text;
-    const sizeChangerPrefix = info?.sizeChangerPrefix;
-    const sizeChangerSuffix = info?.sizeChangerSuffix;
-
     // get total icons length
     let totalLength = 0;
 
@@ -24,10 +20,10 @@ export default function (props: any) {
     return (
         <>
         <p className='ui-font-22 ui-font-readable ui-m-25-b ui-theme-greenYellow ui-text'>
-            {text}
+            {info?.text}
         </p>
         <div className='ui-font-18 ui-opacity-half ui-m-20-b'>
-            {sizeChangerPrefix} {totalLength} {sizeChangerSuffix}
+            {info?.sizeChangerPrefix} {totalLength} {info?.sizeChangerSuffix}
         </div>
         </>
     )

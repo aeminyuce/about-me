@@ -9,14 +9,13 @@ import { IconSoundwave } from 'uilab-icons/react/media/soundwave';
 
 export const LeadText = () => {
     const { api } = useStoreContext();
-    const leadText = api?.lab?.intro?.leadText;
 
     return (
         <div className='ui-p-30 ui-sm-no-p ui-theme-yellowOrange ui-text'>
-        <p className='ui-font-22 ui-font-readable ui-m-25-b'>
-            {leadText}
-        </p>
-        <SvgIcon as='js' src={IconSoundwave} size='xxl' className='ui-m-30-v' />
+            <p className='ui-font-22 ui-font-readable ui-m-25-b'>
+                {api?.lab?.intro?.leadText}
+            </p>
+            <SvgIcon as='js' src={IconSoundwave} size='xxl' className='ui-m-30-v' />
         </div>
     )
 }
@@ -25,17 +24,13 @@ export const Paragraphs = () => {
     const { api } = useStoreContext();
     const intro = api?.lab?.intro;
 
-    const textPart1 = intro?.textPart1;
-    const textPart2 = intro?.textPart2;
-    const textPart3 = intro?.textPart3;
-
     return (
         <p className='ui-font-18 ui-font-readable ui-p-30-h ui-sm-no-p-h ui-m-30-h'>
-            {textPart1}
+            {intro?.textPart1}
             <br /><br />
-            {textPart2}
+            {intro?.textPart2}
             <br /><br />
-            {textPart3}
+            {intro?.textPart3}
         </p>
     )
 }

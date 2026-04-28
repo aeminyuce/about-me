@@ -21,33 +21,22 @@ export default function () {
     const { api } = useStoreContext();
 
     const info = api?.icons?.info;
-    const title = info?.title;
-
-    const image1 = info?.image1;
-    const image2 = info?.image2;
-
-    const text = info?.text;
-    const sizeChangerPrefix = info?.sizeChangerPrefix;
-    const sizeChangerSuffix = info?.sizeChangerSuffix;
-
-    const sizes = api?.icons?.sizes;
-    const iconsSuffix = info?.iconsSuffix;
 
     return (
         <Grid.Row className='ui-sm-no-p ui-align-c ui-p-30-v'>
             <Grid.Col size={12}>
-                {title &&
-                <>
-                <MyAvatar />
-                <Title />
-                </>
+                {info?.title &&
+                    <>
+                    <MyAvatar />
+                    <Title />
+                    </>
                 }
-                {image1 && image2 && <Images />}
-                {text && sizeChangerSuffix && sizeChangerPrefix && iconsList &&
+                {(info?.image1 || info?.image2) && <Images />}
+                {(info?.text || info?.sizeChangerSuffix || info?.sizeChangerPrefix || iconsList) &&
                     <Texts iconsList={iconsList} />
                 }
-                {sizes && <SizeChanger />}
-                {iconsSuffix && iconsList && <List iconsList={iconsList} />}
+                {api?.icons?.sizes && <SizeChanger />}
+                {(info?.iconsSuffix || iconsList) && <List iconsList={iconsList} />}
             </Grid.Col>
         </Grid.Row>
     );
