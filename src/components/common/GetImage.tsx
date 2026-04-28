@@ -12,7 +12,7 @@ export default function (props: GetImageProps) {
     const setFluid = fluid ? ' ui-img-fluid' : '';
 
     let classes: string | undefined =  setClassName + setAspect + setFluid;
-    if (classes === '') { classes = undefined; }
+    classes = classes === '' ? undefined : classes.replace(/^\s+/g, ''); // remove first spaces
 
     // attrs
     const setLazy = lazy ? 'lazy' : undefined;
