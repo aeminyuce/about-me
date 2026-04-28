@@ -3,12 +3,12 @@ import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
 import Grid from 'uilab/react/Grid';
 import Heading from 'uilab/react/Heading';
+import Image from 'uilab/react/Image';
 import ListGroup from 'uilab/react/ListGroup';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
-import GetImage from '../../components/common/GetImage';
 import Description from '../../components/common/Description';
 import Preview from '../../components/common/Preview';
 import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
@@ -49,7 +49,7 @@ export default function () {
                                 <p className='ui-font-18 ui-font-light ui-font-readable ui-align-justify'>{text?.forest}</p>
                             </Card.Side>
                             <Card.Side>
-                                <GetImage fluid src={img[3]} aspect='landscape' className='ui-round-b' />
+                                <Image fluid src={img[3]} aspect='landscape' className='ui-round-b' />
                                 <div className='ui-m-30 ui-set-absolute ui-set-b ui-set-l'>
                                     <p className='ui-color-white ui-font-18'>
                                         <SvgIcon as='js' src={IconTrees} size='xxl' className='ui-m-10-r' />
@@ -67,7 +67,7 @@ export default function () {
                 <Grid.Col size={420} className='ui-p-10 ui-round-1st ui-theme-orangeRed'>
                     <Card className='ui-shadow-lg'>
                         <Card.Side>
-                            <GetImage fluid src={img[5]} aspect='landscape' className='ui-round-t' />
+                            <Image fluid src={img[5]} aspect='landscape' className='ui-round-t' />
                         </Card.Side>
                         <Card.Side className='ui-p-10-h ui-p-20-v'>
                             <Heading as='h4'>{text?.raceTitle}</Heading>

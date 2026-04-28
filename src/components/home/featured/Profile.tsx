@@ -2,13 +2,13 @@ import * as React from 'react';
 import Avatar from 'uilab/react/Avatar';
 import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
+import Image from 'uilab/react/Image';
 import ListGroup from 'uilab/react/ListGroup';
 import Notifier from 'uilab/react/Notifier';
 
 // misc
 import { useStoreContext } from '../../../stores/StoreContext';
 import type { UserActivityProps } from '../../../models/Home_Featured';
-import GetImage from '../../common/GetImage';
 
 export default function() {
     const { themeA, api } = useStoreContext();
@@ -20,11 +20,11 @@ export default function() {
         <Card className='home-profile ui-round ui-shadow'>
             <div className='ui-align-c ui-round-t ui-border-b'>
                 <div className='ui-round-t'>
-                    <GetImage lazy src={info?.cover} aspect='photo' />
+                    <Image lazy src={info?.cover} aspect='photo' />
                 </div>
                 <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
                     <Avatar size='lg'>
-                        <GetImage lazy src={info?.avatar} aspect='square' />
+                        <Image lazy src={info?.avatar} aspect='square' />
                     </Avatar>
                 </Notifier>
             </div>

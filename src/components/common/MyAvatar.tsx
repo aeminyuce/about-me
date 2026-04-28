@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Avatar from 'uilab/react/Avatar';
+import Image from 'uilab/react/Image';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
-import GetImage from './GetImage';
 
 export default function () {
     const { api } = useStoreContext();
@@ -13,7 +13,7 @@ export default function () {
 
     if (profileImage) return (
         <Avatar size='lg' className='ui-circle'>
-            <GetImage fetchPriority='high' src={profileImage} alt={`${general?.fullName} | ${general?.jobTitle}`} aspect='square' />
+            <Image fetchPriority='high' src={profileImage} alt={`${general?.fullName} | ${general?.jobTitle}`} aspect='square' />
         </Avatar>
     )
 }

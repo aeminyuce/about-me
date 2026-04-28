@@ -4,13 +4,13 @@ import Avatar from 'uilab/react/Avatar';
 import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
 import Heading from 'uilab/react/Heading';
+import Image from 'uilab/react/Image';
 import ListGroup from 'uilab/react/ListGroup';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../../stores/StoreContext';
 import type { PeopleListProps, PeopleMoreListProps } from '../../../models/Home_Featured';
-import GetImage from '../../common/GetImage';
 
 // assets
 import { IconUserPlus } from 'uilab-icons/react/general/user-plus';
@@ -50,7 +50,7 @@ export const People = () => {
                                     <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
                                     {(avatar || avatarText) &&
                                         <Avatar size='xs' className={classes}>
-                                            {avatar && <GetImage lazy src={avatar} aspect='square' />}
+                                            {avatar && <Image lazy src={avatar} aspect='square' />}
                                             {avatarText && <span>{avatarText}</span>}
                                         </Avatar>
                                     }
@@ -86,7 +86,7 @@ export const PeopleMore = () => {
                         <Fragment key={item.jobTitle}>
                             {(avatar || avatarText) &&
                                 <Avatar noease size='sm' className={classes}>
-                                    {avatar && <GetImage lazy src={avatar} aspect='square' />}
+                                    {avatar && <Image lazy src={avatar} aspect='square' />}
                                     {avatarText && <span>{avatarText}</span>}
                                 </Avatar>
                             }

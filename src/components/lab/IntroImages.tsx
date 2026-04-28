@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Button from 'uilab/react/Button';
 import Grid from 'uilab/react/Grid';
+import Image from 'uilab/react/Image';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
 import type { IntroImagesProps } from '../../models/Lab';
-import GetImage from '../../components/common/GetImage';
 
 export default function IntroImages() {
     const { api } = useStoreContext();
@@ -16,7 +16,7 @@ export default function IntroImages() {
             {api?.lab?.intro?.images?.map((item: IntroImagesProps) => (
                 <Grid.Col key={item.img} size={'7x'} sm={3} xs={3}>
                     <Button noease nostyle href={`https://dribbble.com/shots/${item.url}`} target='_blank'>
-                        <GetImage lazy fluid src={`lab/aeminyuce-${item.img}`} aspect='landscape' />
+                        <Image lazy fluid src={`lab/aeminyuce-${item.img}`} aspect='landscape' />
                     </Button>
                 </Grid.Col>
             ))}

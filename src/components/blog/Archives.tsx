@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Button from 'uilab/react/Button';
 import Grid from 'uilab/react/Grid';
+import Image from 'uilab/react/Image';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
-import GetImage from '../../components/common/GetImage';
 
 export default function () {
     const { api } = useStoreContext();
@@ -31,7 +31,7 @@ export default function () {
 
                             return (
                                 <Button key={name} noease ghost multi to={`/blog?post=${name}`} className={classes}>
-                                    <GetImage lazy fluid={isFirst} src={image?.url} alt={image?.alt} aspect='photo' className={imgClasses} />
+                                    <Image lazy fluid={isFirst} src={image?.url} alt={image?.alt} aspect='photo' className={imgClasses} />
                                     <span className='ui-block-1st'>
                                         <span className='ui-color-black-50 ui-m-10-b'>{item?.postDate?.text}</span>
                                         <span className={titleClasses}>{item?.postTitle?.text}</span>

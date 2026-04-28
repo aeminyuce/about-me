@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Avatar from 'uilab/react/Avatar';
 import Heading from 'uilab/react/Heading';
+import Image from 'uilab/react/Image';
 import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
@@ -10,7 +11,6 @@ import { headings } from '../../helpers/Lab';
 import Description from '../../components/common/Description';
 import Preview from '../../components/common/Preview';
 import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
-import GetImage from '../../components/common/GetImage';
 
 // assets
 import { IconUser } from 'uilab-icons/react/general/user';
@@ -40,16 +40,16 @@ export default function () {
         <Preview>
             <div className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout ui-circle-1st'>
                 <Avatar noease size='xs' className='ui-m-5-h'>
-                    <GetImage lazy src={img[0]} aspect='square' />
+                    <Image lazy src={img[0]} aspect='square' />
                 </Avatar>
                 <Avatar noease size='sm' className='ui-m-5-h'>
-                    <GetImage lazy src={img[1]} aspect='square' />
+                    <Image lazy src={img[1]} aspect='square' />
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
-                    <GetImage lazy src={img[2]} aspect='square' />
+                    <Image lazy src={img[2]} aspect='square' />
                 </Avatar>
                 <Avatar noease size='lg' className='ui-m-5-h'>
-                    <GetImage lazy src={img[3]} aspect='square' />
+                    <Image lazy src={img[3]} aspect='square' />
                 </Avatar>
             </div>
         </Preview>
@@ -58,16 +58,16 @@ export default function () {
         <Preview>
             <div className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout ui-round-1st'>
                 <Avatar noease size='xs' className='ui-m-5-h'>
-                    <GetImage lazy src={img[2]} aspect='square' />
+                    <Image lazy src={img[2]} aspect='square' />
                 </Avatar>
                 <Avatar noease size='sm' className='ui-m-5-h'>
-                    <GetImage lazy src={img[3]} aspect='square' />
+                    <Image lazy src={img[3]} aspect='square' />
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
-                    <GetImage lazy src={img[4]} aspect='square' />
+                    <Image lazy src={img[4]} aspect='square' />
                 </Avatar>
                 <Avatar noease size='lg' className='ui-m-5-h'>
-                    <GetImage lazy src={img[5]} aspect='square' />
+                    <Image lazy src={img[5]} aspect='square' />
                 </Avatar>
             </div>
         </Preview>
@@ -151,7 +151,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
                     <a href='#'>
-                        <GetImage lazy src={img[2]} aspect='square' />
+                        <Image lazy src={img[2]} aspect='square' />
                     </a>
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
@@ -161,7 +161,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
                     <a href='#'>
-                        <GetImage lazy src={img[5]} aspect='square' />
+                        <Image lazy src={img[5]} aspect='square' />
                     </a>
                 </Avatar>
             </div>
@@ -181,16 +181,16 @@ export default function () {
                     <span>{text?.ph1}</span>
                 </Avatar>
                 <Avatar noease>
-                    <GetImage lazy src={img[2]} aspect='square' />
+                    <Image lazy src={img[2]} aspect='square' />
                 </Avatar>
                 <Avatar noease>
-                    <GetImage lazy src={img[3]} aspect='square' />
+                    <Image lazy src={img[3]} aspect='square' />
                 </Avatar>
                 <Avatar noease className='ui-fill-dark-100 ui-theme-purpleBlue'>
                     <span>{text?.ph4}</span>
                 </Avatar>
                 <Avatar noease>
-                    <GetImage lazy src={img[5]} aspect='square' />
+                    <Image lazy src={img[5]} aspect='square' />
                 </Avatar>
             </Avatar.Holder>
         </Preview>
@@ -210,7 +210,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <GetImage lazy src={img[3]} aspect='square' />
+                        <Image lazy src={img[3]} aspect='square' />
                     </a>
                 </Avatar>
                 <Avatar noease className='ui-fill-dark-100 ui-theme-purpleBlue'>
@@ -220,7 +220,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
-                        <GetImage lazy src={img[5]} aspect='square' />
+                        <Image lazy src={img[5]} aspect='square' />
                     </a>
                 </Avatar>
                 <Avatar noease>
@@ -238,16 +238,16 @@ export default function () {
                     <span>{text?.ph1}</span>
                 </Avatar>
                 <Avatar noease>
-                    <GetImage lazy src={img[1]} aspect='square' />
+                    <Image lazy src={img[1]} aspect='square' />
                 </Avatar>
                 <Avatar noease>
-                    <GetImage lazy src={img[3]} aspect='square' />
+                    <Image lazy src={img[3]} aspect='square' />
                 </Avatar>
                 <Avatar noease className='ui-fill-dark-100 ui-theme-redPurple'>
                     <span>{text?.ph2}</span>
                 </Avatar>
                 <Avatar noease>
-                    <GetImage lazy src={img[4]} aspect='square' />
+                    <Image lazy src={img[4]} aspect='square' />
                 </Avatar>
                 <Avatar noease>
                     <a href='#'>
@@ -265,13 +265,13 @@ export default function () {
                 </span>
                 <span className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout ui-p-5 ui-circle ui-circle-1st'>
                     <Avatar size='sm' title={text?.name1} data={{ 'tooltip': 't' }} className='ui-border ui-border-lg ui-stroke ui-theme-yellow'>
-                      <GetImage lazy src={img[5]} aspect='square' />
+                      <Image lazy src={img[5]} aspect='square' />
                     </Avatar>
                     <Avatar size='sm' title={text?.name2} data={{ 'tooltip': 't' }} className='ui-border ui-border-lg ui-stroke ui-theme-orangeRed'>
-                        <GetImage lazy src={img[2]} aspect='square' />
+                        <Image lazy src={img[2]} aspect='square' />
                     </Avatar>
                     <Avatar size='sm' title={text?.name3} data={{ 'tooltip': 't' }} className='ui-border ui-border-lg ui-stroke ui-theme-green'>
-                        <GetImage lazy src={img[0]} aspect='square' />
+                        <Image lazy src={img[0]} aspect='square' />
                     </Avatar>
                 </span>
                 <span className='ui-m-10-l ui-inline-block'>

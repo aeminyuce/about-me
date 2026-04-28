@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Button from 'uilab/react/Button';
 import Grid from 'uilab/react/Grid';
+import Image from 'uilab/react/Image';
 import Modal, { modalOpen } from 'uilab/react/Modal';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
-import GetImage from './GetImage';
 
 // get in touch modal
 export const ShowGetInTouch = () => {
@@ -40,7 +40,7 @@ export default function () {
             <Modal.Container>
                 <Grid.Static fluid='no'>
                     <Grid.Col size={133} className='ui-p-10'>
-                        <GetImage lazy fluid src={getInTouch?.qrCodeImage} aspect='square' />
+                        <Image lazy fluid src={getInTouch?.qrCodeImage} aspect='square' />
                     </Grid.Col>
                     <Grid.Row>
                         <Grid.Col size={12}>

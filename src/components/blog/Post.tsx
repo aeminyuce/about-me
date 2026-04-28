@@ -2,10 +2,10 @@ import * as React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Heading from 'uilab/react/Heading';
 import Grid from 'uilab/react/Grid';
+import Image from 'uilab/react/Image';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
-import GetImage from '../common/GetImage';
 import PageTitle from '../../components/common/PageTitle';
 
 export default function () {
@@ -35,7 +35,7 @@ export default function () {
                             case 'postDate':
                                 return <div key={name}>{item?.data?.text}</div>;
                             case 'postImage':
-                                return <GetImage key={name} lazy fluid src={item?.data?.url} alt={item?.data?.alt} aspect='photo' className='blog-post-image ui-round ui-shadow-lg' />;
+                                return <Image key={name} lazy fluid src={item?.data?.url} alt={item?.data?.alt} aspect='photo' className='blog-post-image ui-round ui-shadow-lg' />;
                             case 'text':
                                 return <p key={name} className='ui-font-readable'>{item?.data?.text}</p>;
                             default:

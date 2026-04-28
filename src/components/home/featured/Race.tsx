@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
+import Image from 'uilab/react/Image';
 import Heading from 'uilab/react/Heading';
 import ListGroup from 'uilab/react/ListGroup';
 
 // misc
 import { useStoreContext } from '../../../stores/StoreContext';
-import GetImage from '../../../components/common/GetImage';
 
 export default function() {
     const { themeA, api } = useStoreContext();
@@ -15,7 +15,7 @@ export default function() {
     return (
         <Card className='ui-round ui-shadow'>
             <Card.Side>
-                <GetImage fluid src={race?.img} aspect='landscape' className='ui-round-t' />
+                <Image fluid src={race?.img} aspect='landscape' className='ui-round-t' />
             </Card.Side>
             <Card.Side className='ui-p-10-h ui-p-20-v'>
                 <Heading as='h4'>{race?.title}</Heading>
