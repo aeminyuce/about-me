@@ -35,12 +35,22 @@
             {
                 "to": "calendar",
                 "name": "Calendar",
-                "titles": null
+                "titles": [
+                    "Calendar Styles",
+                    "Predefined Calendars",
+                    "Calendar Details",
+                    "Calendar Pickers"
+                ]
             },
             {
                 "to": "card",
                 "name": "Card",
-                "titles": null
+                "titles": [
+                    "Card Examples",
+                    "Card Sides",
+                    "Card Alerts",
+                    "Card Messages"
+                ]
             },
             {
                 "to": "carousel",
