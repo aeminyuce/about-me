@@ -12,13 +12,13 @@ import { useStoreContext } from '../../../stores/StoreContext';
 import { IconTrophyStar } from 'uilab-icons/react/general/trophy-star';
 
 export default function() {
-    const { themeA, api } = useStoreContext();
+    const { themeB, api } = useStoreContext();
     const race = api?.home_featured?.race;
 
     return (
-        <Card className='ui-round ui-shadow'>
+        <Card className={`ui-round ui-shadow ${themeB}`}>
             <Card.Side className='ui-set-relative'>
-                <span className='ui-color-white ui-p-10-v ui-p-20-h ui-m-30 ui-round ui-set-absolute ui-set-b ui-bg-blur'>
+                <span className='ui-color-white ui-p-10-v ui-p-20-h ui-m-30 ui-round ui-set-absolute ui-set-b ui-fill-light-200 ui-bg-blur'>
                     <SvgIcon as='js' src={IconTrophyStar} size='lg' r={10} />
                     {race?.winner}
                 </span>
@@ -40,7 +40,7 @@ export default function() {
                 </ListGroup>
             </Card.Side>
             <Card.Side className='ui-p-10'>
-                <Button block='all' className={`ui-round ${themeA} ui-fill-dark-100`}>
+                <Button block='all' className='ui-round ui-fill-dark-100'>
                     {race?.more}
                 </Button>
             </Card.Side>
