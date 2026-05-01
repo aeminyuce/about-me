@@ -18,8 +18,8 @@ export default function() {
     return (
         <Card className='ui-round ui-shadow'>
             <Card.Side className='ui-set-relative'>
-                <span className='ui-p-15 ui-set-absolute'>
-                    <SvgIcon as='js' src={IconTrophyStar} size='lg' r={5} />
+                <span className='ui-color-white ui-p-10-v ui-p-20-h ui-m-30 ui-round ui-set-absolute ui-set-b ui-bg-blur'>
+                    <SvgIcon as='js' src={IconTrophyStar} size='lg' r={10} />
                     {race?.winner}
                 </span>
                 <Image fluid src={race?.img} aspect='landscape' className='ui-round-t' />
