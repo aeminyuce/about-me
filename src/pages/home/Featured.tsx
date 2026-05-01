@@ -6,8 +6,9 @@ import { useStoreContext } from '../../stores/StoreContext';
 import { Reports, ReportsList } from '../../components/home/featured/Reports';
 import { People, PeopleMore } from '../../components/home/featured/People';
 import Profile from '../../components/home/featured/Profile';
-import Race from '../../components/home/featured/Race';
 import Events from '../../components/home/featured/Events';
+import Foods from '../../components/home/featured/Foods';
+import Race from '../../components/home/featured/Race';
 
 // styles
 import '../../assets/home/featured.less';
@@ -30,6 +31,7 @@ export default function () {
 
                 {(reports?.l && reports?.r) && <Reports />}
                 {(reportsList?.delayed && reportsList?.paused) && <ReportsList />}
+                {homeFeatured?.foods && <Foods />}
 
             </Grid.Col>
             <Grid.Col lg={3} size={4} md={6}>
