@@ -30,17 +30,25 @@ const copyToClipboard = (text: string) => {
 }
 
 // copy icon name
-export const copyIconName = (text: string) => {
-    copyToClipboard(text)
+export const copyIconName = (text: string, category: string) => {
+    const getCategory = category.toLowerCase();
+    const capitalizeText = text
+        .split('-')
+        .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+        .join('');
+
+    const getText = `import { Icon${capitalizeText} } from 'uilab-icons/react/${getCategory}/${text}';`;
+
+    copyToClipboard(getText)
         .then(() => {
             Alerts.Message({
-                msg: `<b>Icon name copied!</b><br>${text}`,
+                msg: `<b>Icon source copied!</b><br>${getText}`,
                 theme: 'success',
             });
         })
         .catch((err) => {
             Alerts.Message({
-                msg: `<b>Failed to copy ${text}!</b><br>${err}`,
+                msg: `<b>Failed to copy ${getText}!</b><br>${err}`,
                 theme: 'danger',
             });
         });

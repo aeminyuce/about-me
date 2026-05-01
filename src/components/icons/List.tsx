@@ -60,7 +60,7 @@ export default function (props: any) {
                             const classes = name.includes('loader-') ? 'ui-animate-spin' : '';
 
                             return (
-                                <Button key={name} ghost multi noease onClick={() => copyIconName(name)}>
+                                <Button key={name} ghost multi noease onClick={() => copyIconName(name, item.category)}>
                                     <SvgIcon as='sprite' src={spritesList[item.category]} symbolId={name} className={classes} opacity='no' />
                                     <span>{name}</span>
                                 </Button>
