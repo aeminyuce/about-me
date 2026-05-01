@@ -71,6 +71,21 @@ SELECT json_build_object(
       FROM home_featured.peoplemore pmr
       LIMIT 1
     ),
+    'foods', (
+      SELECT jsonb_strip_nulls(
+        jsonb_build_object(
+          'food', fds.food,
+          'foodBtn1', fds.foodbtn1,
+          'foodBtn2', fds.foodbtn2,
+          'foodBtn3', fds.foodbtn3,
+          'foodBtn4', fds.foodbtn4,
+          'foodBtn5', fds.foodbtn5,
+          'foodBtn6', fds.foodbtn6
+        )
+      )
+      FROM home_featured.foods fds
+      LIMIT 1
+    ),
     'race', (
       SELECT jsonb_strip_nulls(
         jsonb_build_object(

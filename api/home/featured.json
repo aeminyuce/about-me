@@ -8,6 +8,15 @@
             "url2": "Official Cycling Calendar",
             "winner": "Tom Crabbe"
         },
+        "foods": {
+            "food": "Don’t forget to explore local food spots.",
+            "foodBtn1": "Bistros",
+            "foodBtn2": "Fast Foods",
+            "foodBtn3": "Drinks",
+            "foodBtn4": "Coffees",
+            "foodBtn5": "Meals",
+            "foodBtn6": "Ovens"
+        },
         "people": {
             "list": [
                 {
