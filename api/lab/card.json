@@ -3,9 +3,14 @@
         "card": {
             "img": [
                 "random-image4.jpg",
-                "random-image6.jpg"
+                "random-image6.jpg",
+                "random-image2.jpg",
+                "random-image1.jpg",
+                "random-image5.jpg",
+                "random-image10.jpg"
             ],
             "desc": {
+                "grids": "The grid system is optimized for use inside cards and card sides, helping organize and structure card content more effectively.",
                 "sides": "Card sides divide the card vertically, helping organize content with borders, background colors, spacing, and other visual separators.",
                 "alerts": "Card alerts are ...",
                 "examples": "Cards play a central role in interface design. They’re versatile, easy to repurpose for different ideas, and great at grouping UI content while keeping sections clearly separated.",
@@ -14,9 +19,13 @@
             "text": {
                 "food": "Don’t forget to explore local food spots.",
                 "race": "Last week’s bike race was intense and full of energy. The riders pushed hard through every climb, and the crowd stayed loud from start to finish.",
+                "week": "This Week",
                 "forest": "The weekend in the little town beside the city forest turned into a burst of adventure, with friends gathering for trail races that wound through the tall pines. By midday, everyone cooled off at the lake, diving into the water after long runs, and the afternoon shifted into lively ball games on the open field. As the sun set, the whole place felt like a playground of stories waiting to happen, each moment carrying its own spark of excitement.",
+                "museum": "The city museum presents local history through curated exhibits of culture. Each gallery invites visitors to explore stories shaped.",
                 "ticket1": "Buying tickets in a store is quick and straightforward, letting you ask questions on the spot. You also walk out with your tickets immediately.",
                 "ticket2": "The process is simple: pick what you need and pay at the counter. Many people like having a physical ticket they can hold.",
+                "travel1": "Traveling to peaceful places brings calm moments, offering quiet paths where nature softens every sound.",
+                "travel2": "Exploring silent corners of the world reveals gentle beauty, inviting travelers to rest in stillness.",
                 "foodBtn1": "Bistros",
                 "foodBtn2": "Fast Foods",
                 "foodBtn3": "Drinks",
@@ -33,6 +42,9 @@
                 "forestMore": "Discover City Forest",
                 "raceWinner": "Tom Crabbe",
                 "forestTitle": "Townside Adventures Weekend",
+                "museumHash1": "#UrbanHistory",
+                "museumHash2": "#MuseumVibes",
+                "museumTitle": "City Museum’s Timeless Stories",
                 "ticketTitle1": "Buying Tickets",
                 "ticketTitle2": "At The Counter"
             }
