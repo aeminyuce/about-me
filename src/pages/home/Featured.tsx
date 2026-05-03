@@ -9,6 +9,7 @@ import Profile from '../../components/home/featured/Profile';
 import Events from '../../components/home/featured/Events';
 import Foods from '../../components/home/featured/Foods';
 import Race from '../../components/home/featured/Race';
+import Travel from '../../components/home/featured/Travel';
 
 // styles
 import '../../assets/home/featured.less';
@@ -43,6 +44,7 @@ export default function () {
             </Grid.Col>
             <Grid.Col lg={4} size={4} md={6}>
 
+                {homeFeatured?.travel && <Travel />}
                 {homeFeatured?.calendar && <Events />}
 
             </Grid.Col>

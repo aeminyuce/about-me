@@ -113,6 +113,19 @@ SELECT json_build_object(
       )
       FROM home_featured.calendar cln
       LIMIT 1
+    ),
+    'travel', (
+      SELECT jsonb_strip_nulls(
+        jsonb_build_object(
+          'img1', trv.img1,
+          'img2', trv.img2,
+          'img3', trv.img3,
+          'text1', trv.text1,
+          'text2', trv.text2
+        )
+      )
+      FROM home_featured.travel trv
+      LIMIT 1
     )
   )
 );
