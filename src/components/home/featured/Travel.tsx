@@ -7,11 +7,11 @@ import Grid from 'uilab/react/Grid';
 import { useStoreContext } from '../../../stores/StoreContext';
 
 export default function() {
-    const { themeA, api } = useStoreContext();
+    const { api } = useStoreContext();
     const travel = api?.home_featured?.travel;
 
     return (
-        <Card className={`ui-round ui-shadow ${themeA}`}>
+        <Card className={'ui-round ui-shadow'}>
             <Grid.Row fluid='no' gap='xxs'>
                 <Grid.Col size={4}>
                     <Image fluid src={travel?.img1} aspect='square' className='ui-round-l ui-no-round-bl' />
