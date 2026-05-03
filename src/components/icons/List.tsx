@@ -57,11 +57,11 @@ export default function (props: any) {
                     <Button.Wrapper as='div' ease='1st' className={`ui-highlight ui-round-1st ui-icons-${iconSize}`}>
 
                         {item.icons.map((name: string) => {
-                            const classes = name.includes('loader-') ? 'ui-animate-spin' : '';
+                            const spin = name.includes('loader-') ? 'spin' : undefined;
 
                             return (
                                 <Button key={name} ghost multi noease onClick={() => copyIconName(name, item.category)}>
-                                    <SvgIcon as='sprite' src={spritesList[item.category]} symbolId={name} className={classes} opacity='no' />
+                                    <SvgIcon as='sprite' src={spritesList[item.category]} symbolId={name} opacity='no' animate={spin} />
                                     <span>{name}</span>
                                 </Button>
                             )
