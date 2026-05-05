@@ -126,6 +126,16 @@ SELECT json_build_object(
       )
       FROM home_featured.travel trv
       LIMIT 1
+    ),
+    'alerts', (
+      SELECT jsonb_strip_nulls(
+        jsonb_build_object(
+          'alertSuccess', alr.alertsuccess,
+          'alertWarning', alr.alertwarning
+        )
+      )
+      FROM home_featured.alerts alr
+      LIMIT 1
     )
   )
 );

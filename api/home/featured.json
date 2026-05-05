@@ -17,6 +17,10 @@
             "foodBtn5": "Meals",
             "foodBtn6": "Ovens"
         },
+        "alerts": {
+            "alertSuccess": "All done — your action completed successfully.",
+            "alertWarning": "Careful — something here needs your attention."
+        },
         "people": {
             "list": [
                 {
