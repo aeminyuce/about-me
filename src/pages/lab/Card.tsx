@@ -26,6 +26,10 @@ import { IconForkKnife } from 'uilab-icons/react/kitchen/fork-knife';
 import { IconMitten } from 'uilab-icons/react/kitchen/mitten';
 import { IconTicket } from 'uilab-icons/react/commerce/ticket';
 import { IconStore } from 'uilab-icons/react/commerce/store';
+import { IconAlertCircle } from 'uilab-icons/react/general/alert-circle';
+import { IconAlertShield } from 'uilab-icons/react/general/alert-shield';
+import { IconRemoveShield } from 'uilab-icons/react/general/remove-shield';
+import { IconCheckBadge } from 'uilab-icons/react/general/check-badge';
 
 export default function () {
     const { api } = useStoreContext();
@@ -72,8 +76,8 @@ export default function () {
                     </Grid.Col>
                 </Grid.Row>
 
-                <Grid.Col size={420} className='ui-p-10 ui-round-1st ui-theme-orangeRed'>
-                    <Card className='ui-align-l ui-shadow-lg'>
+                <Grid.Col size={420} className='ui-p-10 ui-round-1st ui-shadow-lg-1st ui-theme-orangeRed'>
+                    <Card className='ui-align-l'>
                         <Card.Side className='ui-set-relative'>
                             <span className='ui-color-white ui-p-10-v ui-p-20-h ui-m-30 ui-round ui-set-absolute ui-set-b ui-fill-light-200 ui-bg-blur'>
                                 <SvgIcon as='js' src={IconTrophyStar} size='lg' r={10} />
@@ -107,7 +111,7 @@ export default function () {
                         </Card.Side>
                     </Card>
 
-                    <Card className='ui-p-10 ui-shadow-lg'>
+                    <Card className='ui-p-10'>
                         <Card.Side className='ui-m-10-b'>
                             {text?.food}
                         </Card.Side>
@@ -146,11 +150,15 @@ export default function () {
             </Grid.Static>
         </Preview>
 
+        <Heading as='h3' id={title?.hash[1]}>
+            {title?.h3[1]}
+        </Heading>
+
         <Description>{desc?.sides}</Description>
         <Preview>
-            <Grid.Row className='ui-align-l'>
+            <Grid.Row className='ui-align-l ui-round-2nd ui-shadow-2nd'>
                 <Grid.Col lg={3} size={6}>
-                    <Card className='ui-round ui-shadow ui-theme-yellowOrange'>
+                    <Card className='ui-theme-yellowOrange'>
                         <Card.Side className='ui-p-15 ui-border-b'>
                             <Heading as='h4'>
                                 <SvgIcon as='js' src={IconTicket} className='ui-text' />
@@ -177,7 +185,7 @@ export default function () {
                     </Card>
                 </Grid.Col>
                 <Grid.Col lg={3} size={6}>
-                    <Card className='ui-round ui-shadow ui-theme-gray'>
+                    <Card className='ui-theme-gray'>
                         <Card.Side className='ui-p-15 ui-fill-light-100'>
                             <Heading as='h4' className='ui-theme-yellowOrange ui-text'>
                                 <SvgIcon as='js' src={IconTicket} />
@@ -202,7 +210,7 @@ export default function () {
                     </Card>
                 </Grid.Col>
                 <Grid.Col lg={3} size={6}>
-                    <Card className='ui-round ui-shadow ui-theme-gray'>
+                    <Card className='ui-theme-gray'>
                         <Card.Side className='ui-p-15'>
                             <Heading as='h4'>{text?.ticketTitle1}</Heading>
                         </Card.Side>
@@ -221,7 +229,7 @@ export default function () {
                     </Card>
                 </Grid.Col>
                 <Grid.Col lg={3} size={6}>
-                    <Card className='ui-round ui-shadow'>
+                    <Card>
                         <Card.Side className='ui-p-15'>
                             <Heading as='h4'>{text?.ticketTitle1}</Heading>
                         </Card.Side>
@@ -242,12 +250,16 @@ export default function () {
             </Grid.Row>
         </Preview>
 
+        <Heading as='h3' id={title?.hash[2]}>
+            {title?.h3[2]}
+        </Heading>
+
         <Description>{desc?.grids}</Description>
         <Preview>
-            <Grid.Row>
+            <Grid.Row className='ui-round-2nd ui-shadow-lg-2nd'>
                 <Grid.Col lg={6} size={12}>
 
-                    <Card className='ui-align-l ui-round ui-shadow-lg'>
+                    <Card className='ui-align-l'>
                         <Card.Side className='ui-p-15 ui-border-b'>
                             <Heading as='h4'>{text?.week}</Heading>
                         </Card.Side>
@@ -274,7 +286,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={6} size={12}>
 
-                    <Card className='ui-round ui-shadow-lg'>
+                    <Card>
                         <Grid.Row fluid='no' gap='xxs'>
                             <Grid.Col size={4}>
                                 <Image fluid src={img[3]} aspect='square' className='ui-round-l ui-no-round-bl' />
@@ -290,6 +302,113 @@ export default function () {
                             <Grid.Col size={6}>{text?.travel1}</Grid.Col>
                             <Grid.Col size={6}>{text?.travel2}</Grid.Col>
                         </Grid.Row>
+                    </Card>
+
+                </Grid.Col>
+            </Grid.Row>
+        </Preview>
+
+        <Heading as='h3' id={title?.hash[3]}>
+            {title?.h3[3]}
+        </Heading>
+
+        <Description>{desc?.alerts}</Description>
+        <Preview className='ui-align-l ui-round-1st'>
+
+            <Card closable className='ui-shadow'>
+                <Grid.Static fluid='no'>
+                    <Grid.Col size={72} className='ui-set-relative'>
+                        <span className='ui-set-absolute ui-set-c'>
+                            <SvgIcon as='js' src={IconAlertCircle} size='lg' animate='wiggle' />
+                        </span>
+                    </Grid.Col>
+                    <Grid.Row>
+                        <Grid.Col size={12} className='ui-p-30-v ui-no-p-l'>{text?.info}</Grid.Col>
+                    </Grid.Row>
+                </Grid.Static>
+            </Card>
+
+            <Card closable className='ui-theme-greenYellow ui-fill-light-200'>
+                <Grid.Static fluid='no'>
+                    <Grid.Col size={72} className='ui-set-relative'>
+                        <span className='ui-set-absolute ui-set-c'>
+                            <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' className='ui-text' />
+                        </span>
+                    </Grid.Col>
+                    <Grid.Row>
+                        <Grid.Col size={12} className='ui-p-30-v ui-no-p-l'>{text?.success}</Grid.Col>
+                    </Grid.Row>
+                </Grid.Static>
+            </Card>
+
+            <Card closable className='ui-theme-yellowOrange ui-fill-light-200'>
+                <Grid.Static fluid='no'>
+                    <Grid.Col size={72} className='ui-set-relative'>
+                        <span className='ui-set-absolute ui-set-c'>
+                            <SvgIcon as='js' src={IconAlertShield} size='lg' animate='pop' className='ui-text' />
+                        </span>
+                    </Grid.Col>
+                    <Grid.Row>
+                        <Grid.Col size={12} className='ui-p-30-v ui-no-p-l'>{text?.warning}</Grid.Col>
+                    </Grid.Row>
+                </Grid.Static>
+            </Card>
+
+            <Card closable className='ui-theme-red ui-fill-light-200'>
+                <Grid.Static fluid='no'>
+                    <Grid.Col size={72} className='ui-set-relative'>
+                        <span className='ui-set-absolute ui-set-c'>
+                            <SvgIcon as='js' src={IconRemoveShield} size='lg' animate='elastic' className='ui-text' />
+                        </span>
+                    </Grid.Col>
+                    <Grid.Row>
+                        <Grid.Col size={12} className='ui-p-30-v ui-no-p-l'>{text?.danger}</Grid.Col>
+                    </Grid.Row>
+                </Grid.Static>
+            </Card>
+
+        </Preview>
+
+        <Heading as='h3' id={title?.hash[4]}>
+            {title?.h3[4]}
+        </Heading>
+
+        <Description>{desc?.messages}</Description>
+        <Preview>
+            <Grid.Row className='ui-align-l ui-round-2nd'>
+                <Grid.Col size={6} className='ui-shadow-1st'>
+
+                    <Card type='success' closable className='ui-p-20'>
+                        <Heading as='h3'>{text?.successTitle}</Heading>
+                        <p className='ui-font-16'>{text?.success}</p>
+                    </Card>
+
+                    <Card type='warning' closable className='ui-p-20'>
+                        <Heading as='h3'>{text?.warningTitle}</Heading>
+                        <p className='ui-font-16'>{text?.warning}</p>
+                    </Card>
+
+                    <Card type='danger' closable className='ui-p-20'>
+                        <Heading as='h3'>{text?.dangerTitle}</Heading>
+                        <p className='ui-font-16'>{text?.danger}</p>
+                    </Card>
+
+                </Grid.Col>
+                <Grid.Col size={6}>
+
+                    <Card type='success' closable className='ui-p-20 ui-theme-green ui-fill-light-100'>
+                        <Heading as='h3'>{text?.successTitle}</Heading>
+                        <p className='ui-font-16'>{text?.success}</p>
+                    </Card>
+
+                    <Card type='warning' closable className='ui-p-20 ui-theme-yellow ui-fill-light-100'>
+                        <Heading as='h3'>{text?.warningTitle}</Heading>
+                        <p className='ui-font-16'>{text?.warning}</p>
+                    </Card>
+
+                    <Card type='danger' closable className='ui-p-20 ui-theme-red ui-fill-light-100'>
+                        <Heading as='h3'>{text?.dangerTitle}</Heading>
+                        <p className='ui-font-16'>{text?.danger}</p>
                     </Card>
 
                 </Grid.Col>
