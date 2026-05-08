@@ -11,12 +11,12 @@ import { IconAlertShield } from 'uilab-icons/react/general/alert-shield';
 import { IconCheckBadge } from 'uilab-icons/react/general/check-badge';
 
 export default function() {
-    const { api } = useStoreContext();
+    const { themeA, themeB, api } = useStoreContext();
     const alerts = api?.home_featured?.alerts;
 
     return (
         <>
-            <Card closable className='ui-round ui-theme-greenYellow ui-fill-light-200'>
+            <Card closable className={`ui-round ${themeB} ui-fill-light-200`}>
                 <Grid.Static fluid='no'>
                     <Grid.Col size={72} className='ui-set-relative'>
                         <span className='ui-set-absolute ui-set-c'>
@@ -24,12 +24,12 @@ export default function() {
                         </span>
                     </Grid.Col>
                     <Grid.Row>
-                        <Grid.Col size={12} className='ui-p-30-v ui-no-p-l'>{alerts?.alertSuccess}</Grid.Col>
+                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{alerts?.alertSuccess}</Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
             </Card>
 
-            <Card closable className='ui-round ui-theme-yellowOrange ui-fill-light-200'>
+            <Card closable className={`ui-round ${themeA} ui-fill-light-200`}>
                 <Grid.Static fluid='no'>
                     <Grid.Col size={72} className='ui-set-relative'>
                         <span className='ui-set-absolute ui-set-c'>
@@ -37,7 +37,7 @@ export default function() {
                         </span>
                     </Grid.Col>
                     <Grid.Row>
-                        <Grid.Col size={12} className='ui-p-30-v ui-no-p-l'>{alerts?.alertWarning}</Grid.Col>
+                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{alerts?.alertWarning}</Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
             </Card>

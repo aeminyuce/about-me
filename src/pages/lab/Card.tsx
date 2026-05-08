@@ -323,7 +323,7 @@ export default function () {
                         </span>
                     </Grid.Col>
                     <Grid.Row>
-                        <Grid.Col size={12} className='ui-p-30-v ui-no-p-l'>{text?.info}</Grid.Col>
+                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.info}</Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
             </Card>
@@ -336,7 +336,7 @@ export default function () {
                         </span>
                     </Grid.Col>
                     <Grid.Row>
-                        <Grid.Col size={12} className='ui-p-30-v ui-no-p-l'>{text?.success}</Grid.Col>
+                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.success}</Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
             </Card>
@@ -349,7 +349,7 @@ export default function () {
                         </span>
                     </Grid.Col>
                     <Grid.Row>
-                        <Grid.Col size={12} className='ui-p-30-v ui-no-p-l'>{text?.warning}</Grid.Col>
+                        <Grid.Col size={12} className='ui-p-15-v ui-no-p-l'>{text?.warning}</Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
             </Card>
@@ -362,7 +362,7 @@ export default function () {
                         </span>
                     </Grid.Col>
                     <Grid.Row>
-                        <Grid.Col size={12} className='ui-p-30-v ui-no-p-l'>{text?.danger}</Grid.Col>
+                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.danger}</Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
             </Card>
@@ -378,37 +378,37 @@ export default function () {
             <Grid.Row className='ui-align-l ui-round-2nd'>
                 <Grid.Col size={6} className='ui-shadow-1st'>
 
-                    <Card type='success' closable className='ui-p-20'>
-                        <Heading as='h3'>{text?.successTitle}</Heading>
-                        <p className='ui-font-16'>{text?.success}</p>
+                    <Card type='success' closable className='ui-p-15'>
+                        <Heading as='h4'>{text?.successTitle}</Heading>
+                        <p className='ui-text-readable'>{text?.success}</p>
                     </Card>
 
-                    <Card type='warning' closable className='ui-p-20'>
-                        <Heading as='h3'>{text?.warningTitle}</Heading>
-                        <p className='ui-font-16'>{text?.warning}</p>
+                    <Card type='warning' closable className='ui-p-15'>
+                        <Heading as='h4'>{text?.warningTitle}</Heading>
+                        <p className='ui-text-readable'>{text?.warning}</p>
                     </Card>
 
-                    <Card type='danger' closable className='ui-p-20'>
-                        <Heading as='h3'>{text?.dangerTitle}</Heading>
-                        <p className='ui-font-16'>{text?.danger}</p>
+                    <Card type='danger' closable className='ui-p-15'>
+                        <Heading as='h4'>{text?.dangerTitle}</Heading>
+                        <p className='ui-text-readable'>{text?.danger}</p>
                     </Card>
 
                 </Grid.Col>
                 <Grid.Col size={6}>
 
-                    <Card type='success' closable className='ui-p-20 ui-theme-green ui-fill-light-100'>
-                        <Heading as='h3'>{text?.successTitle}</Heading>
-                        <p className='ui-font-16'>{text?.success}</p>
+                    <Card type='success' closable className='ui-p-15 ui-theme-green ui-fill-light-100'>
+                        <Heading as='h4'>{text?.successTitle}</Heading>
+                        <p className='ui-text-readable'>{text?.success}</p>
                     </Card>
 
-                    <Card type='warning' closable className='ui-p-20 ui-theme-yellow ui-fill-light-100'>
-                        <Heading as='h3'>{text?.warningTitle}</Heading>
-                        <p className='ui-font-16'>{text?.warning}</p>
+                    <Card type='warning' closable className='ui-p-15 ui-theme-yellow ui-fill-light-100'>
+                        <Heading as='h4'>{text?.warningTitle}</Heading>
+                        <p className='ui-text-readable'>{text?.warning}</p>
                     </Card>
 
-                    <Card type='danger' closable className='ui-p-20 ui-theme-red ui-fill-light-100'>
-                        <Heading as='h3'>{text?.dangerTitle}</Heading>
-                        <p className='ui-font-16'>{text?.danger}</p>
+                    <Card type='danger' closable className='ui-p-15 ui-theme-red ui-fill-light-100'>
+                        <Heading as='h4'>{text?.dangerTitle}</Heading>
+                        <p className='ui-text-readable'>{text?.danger}</p>
                     </Card>
 
                 </Grid.Col>
