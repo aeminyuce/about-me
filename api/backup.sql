@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict fVI9zIGGxZatabyApt8UhKSbMMfUK9wNei6ouUAgBe285hqtFPZKxPdQvXgYuih
+\restrict eAZ3ZlqoD6KBqbHCgoUwEaDZPUgDWhPbTPbHAJjMZi34eANbAemTtfLLYf9KFKK
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1 (Postgres.app)
@@ -887,7 +887,7 @@ BEGIN
         IF post IS NULL THEN
             -- Pivot first, then aggregate
             sql := format(
-                'SELECT json_agg(pivoted) FROM (
+                'SELECT jsonb_agg(pivoted) FROM (
                     SELECT jsonb_build_object(
                         ''postTitle'', (SELECT data FROM blog.%1$I WHERE type = ''postTitle'' LIMIT 1),
                         ''postDate'',  (SELECT data FROM blog.%1$I WHERE type = ''postDate'' LIMIT 1),
@@ -899,7 +899,7 @@ BEGIN
         ELSE
             -- Full table data
             sql := format(
-                'SELECT json_agg(to_jsonb(t) - ''id'' ORDER BY t.id) FROM blog.%I t',
+                'SELECT jsonb_agg(to_jsonb(t) - ''id'' ORDER BY t.id) FROM blog.%I t',
                 tbl
             );
         END IF;
@@ -1021,20 +1021,20 @@ CREATE FUNCTION public.get_home() RETURNS jsonb
     LANGUAGE sql SECURITY DEFINER
     SET search_path TO 'home'
     AS $$
-SELECT json_build_object(
-  'result', json_build_object(
+SELECT jsonb_build_object(
+  'result', jsonb_build_object(
     'aboutMe', (
       SELECT to_jsonb(abm) - 'id'
       FROM home.aboutme abm
       LIMIT 1
     ),
-    'nav', json_build_object(
+    'nav', jsonb_build_object(
       'navLinks', (
-        SELECT json_agg(to_jsonb(nsl) - 'id' ORDER BY nsl.id)
+        SELECT jsonb_agg(to_jsonb(nsl) - 'id' ORDER BY nsl.id)
         FROM home.nav_navlinks nsl
       ),
       'themeList', (
-        SELECT json_agg(to_jsonb(ntl) - 'id' ORDER BY ntl.id)
+        SELECT jsonb_agg(to_jsonb(ntl) - 'id' ORDER BY ntl.id)
         FROM home.nav_themelist ntl
       )
     )
@@ -1053,20 +1053,20 @@ CREATE FUNCTION public.get_home_featured() RETURNS jsonb
     LANGUAGE sql SECURITY DEFINER
     SET search_path TO 'home_featured'
     AS $$
-SELECT json_build_object(
-  'result', json_build_object(
-    'profile', json_build_object(
+SELECT jsonb_build_object(
+  'result', jsonb_build_object(
+    'profile', jsonb_build_object(
       'info', (
         SELECT to_jsonb(pin) - 'id'
         FROM home_featured.profile_info pin
         LIMIT 1
       ),
       'userActivity', (
-        SELECT json_agg(to_jsonb(pua) - 'id' ORDER BY pua.id)
+        SELECT jsonb_agg(to_jsonb(pua) - 'id' ORDER BY pua.id)
         FROM home_featured.profile_useractivity pua
       )
     ),
-    'reports', json_build_object(
+    'reports', jsonb_build_object(
       'l', (
         SELECT to_jsonb(rel) - 'id'
         FROM home_featured.reports_l rel
@@ -1078,18 +1078,18 @@ SELECT json_build_object(
         LIMIT 1
       )
     ),
-    'reportsList', json_build_object(
+    'reportsList', jsonb_build_object(
       'delayed', (
-        SELECT json_agg(to_jsonb(rld) - 'id' ORDER BY rld.id)
+        SELECT jsonb_agg(to_jsonb(rld) - 'id' ORDER BY rld.id)
         FROM home_featured.reportslist_delayed rld
       ),
       'paused', (
-        SELECT json_agg(to_jsonb(rlp) - 'id')
+        SELECT jsonb_agg(to_jsonb(rlp) - 'id' ORDER BY rlp.id)
         FROM home_featured.reportslist_paused rlp
       )
     ),
-    'people', json_strip_nulls(
-      json_build_object(
+    'people', jsonb_strip_nulls(
+      jsonb_build_object(
         'cardTitle', (
           SELECT cardtitle
           FROM home_featured.people
@@ -1101,88 +1101,56 @@ SELECT json_build_object(
           LIMIT 1
         ),
         'list', (
-          SELECT json_agg(to_jsonb(pli) - 'id' ORDER BY pli.id)
+          SELECT jsonb_agg(to_jsonb(pli) - 'id' ORDER BY pli.id)
           FROM home_featured.people_list pli
         )
       )
     ),
-    'peopleMore', (
-      SELECT jsonb_strip_nulls(
+    'peopleMore', ( SELECT
+      (
+        SELECT to_jsonb(pmr) - 'id'
+        FROM home_featured.peoplemore pmr
+        LIMIT 1
+      ) ||
+      jsonb_strip_nulls(
         jsonb_build_object(
-          'moreUrl', pmr.moreurl,
-          'moreCount', pmr.morecount,
           'list', (
             SELECT jsonb_agg(to_jsonb(pml) - 'id' ORDER BY pml.id)
             FROM home_featured.peoplemore_list pml
           )
         )
       )
-      FROM home_featured.peoplemore pmr
-      LIMIT 1
     ),
     'foods', (
-      SELECT jsonb_strip_nulls(
-        jsonb_build_object(
-          'food', fds.food,
-          'foodBtn1', fds.foodbtn1,
-          'foodBtn2', fds.foodbtn2,
-          'foodBtn3', fds.foodbtn3,
-          'foodBtn4', fds.foodbtn4,
-          'foodBtn5', fds.foodbtn5,
-          'foodBtn6', fds.foodbtn6
-        )
-      )
+      SELECT to_jsonb(fds) - 'id'
       FROM home_featured.foods fds
       LIMIT 1
     ),
     'race', (
-      SELECT jsonb_strip_nulls(
-        jsonb_build_object(
-          'winner', rac.winner,
-          'img', rac.img,
-          'text', rac.text,
-          'url1', rac.url1,
-          'url2', rac.url2,
-          'more', rac.more
-        )
-      )
+      SELECT to_jsonb(rac) - 'id'
       FROM home_featured.race rac
       LIMIT 1
     ),
-    'calendar', (
-      SELECT jsonb_build_object(
-        'cardTitle', cln.cardtitle,
-        'eventsDate', cln.eventsdate,
-        'title', cln.title,
-        'settings', cln.settings,
+    'calendar', ( SELECT
+      (
+        SELECT to_jsonb(cln) - 'id'
+        FROM home_featured.calendar cln
+        LIMIT 1
+      ) ||
+      jsonb_build_object(
         'events', (
           SELECT jsonb_agg(to_jsonb(lcldt) - 'id' ORDER BY lcldt.id)
           FROM lab.calendar_details lcldt
         )
       )
-      FROM home_featured.calendar cln
-      LIMIT 1
     ),
     'travel', (
-      SELECT jsonb_strip_nulls(
-        jsonb_build_object(
-          'img1', trv.img1,
-          'img2', trv.img2,
-          'img3', trv.img3,
-          'text1', trv.text1,
-          'text2', trv.text2
-        )
-      )
+      SELECT to_jsonb(trv) - 'id'
       FROM home_featured.travel trv
       LIMIT 1
     ),
     'alerts', (
-      SELECT jsonb_strip_nulls(
-        jsonb_build_object(
-          'alertSuccess', alr.alertsuccess,
-          'alertWarning', alr.alertwarning
-        )
-      )
+      SELECT to_jsonb(alr) - 'id'
       FROM home_featured.alerts alr
       LIMIT 1
     )
@@ -1201,28 +1169,18 @@ CREATE FUNCTION public.get_icons() RETURNS jsonb
     LANGUAGE sql SECURITY DEFINER
     SET search_path TO 'icons'
     AS $$
-SELECT json_build_object(
-  'result', json_build_object(
-      'info', (
-        SELECT jsonb_strip_nulls(
-          jsonb_build_object(
-            'title', ici.title,
-            'image1', ici.image1,
-            'image2', ici.image2,
-            'text', ici.text,
-            'sizeChangerPrefix', ici.sizechangerprefix,
-            'sizeChangerSuffix', ici.sizechangersuffix,
-            'iconsSuffix', ici.iconssuffix
-          )
-        )
-        FROM icons.info ici
-        LIMIT 1
-      ),
-      'sizes', (
-        SELECT json_agg(to_jsonb(ics) - 'id' ORDER BY ics.id)
-        FROM icons.sizes ics
-      )
+SELECT jsonb_build_object(
+  'result', jsonb_build_object(
+    'info', (
+      SELECT to_jsonb(ici) - 'id'
+      FROM icons.info ici
+      LIMIT 1
+    ),
+    'sizes', (
+      SELECT jsonb_agg(to_jsonb(ics) - 'id' ORDER BY ics.id)
+      FROM icons.sizes ics
     )
+  )
 );
 $$;
 
@@ -1237,36 +1195,33 @@ CREATE FUNCTION public.get_lab() RETURNS jsonb
     LANGUAGE sql SECURITY DEFINER
     SET search_path TO 'lab'
     AS $$
-SELECT json_build_object(
-  'result', json_build_object(
+SELECT jsonb_build_object(
+  'result', ( SELECT
+    (
+      SELECT to_jsonb(lsb) - 'id'
+      FROM lab.sidebar lsb
+      LIMIT 1
+    ) ||
+    jsonb_build_object (
       'menu', (
-        SELECT json_agg(to_jsonb(lme) - 'id' ORDER BY lme.id)
+        SELECT jsonb_agg(to_jsonb(lme) - 'id' ORDER BY lme.id)
         FROM lab.menu lme
       ),
-      'sidebarTitle', (
-        SELECT sidebartitle
-        FROM lab.sidebar
-        LIMIT 1
-      ),
-      'intro', (
-        SELECT jsonb_strip_nulls(
-          jsonb_build_object(
-            'title', lin.title,
-            'subTitle', lin.subtitle,
-            'leadText', lin.leadtext,
-            'textPart1', lin.textpart1,
-            'textPart2', lin.textpart2,
-            'textPart3', lin.textpart3,
-            'images', (
-              SELECT json_agg(to_jsonb(lii) - 'id' ORDER BY lii.id)
-              FROM lab.intro_images lii
-            )
+      'intro', ( SELECT
+        (
+          SELECT to_jsonb(lin) - 'id'
+          FROM lab.intro lin
+          LIMIT 1
+        ) ||
+        jsonb_build_object(
+          'images', (
+            SELECT jsonb_agg(to_jsonb(lii) - 'id' ORDER BY lii.id)
+            FROM lab.intro_images lii
           )
         )
-        FROM lab.intro lin
-        LIMIT 1
       )
     )
+  )
 );
 $$;
 
@@ -1281,18 +1236,16 @@ CREATE FUNCTION public.get_lab_alerts() RETURNS jsonb
     LANGUAGE sql SECURITY DEFINER
     SET search_path TO 'lab'
     AS $$
-SELECT json_build_object(
-  'result', json_build_object(
-    'alerts', json_strip_nulls(
-      json_build_object(
-        'desc', (
-          SELECT jsonb_object_agg(lald.type, lald.desc ORDER BY lald.id)
-          FROM lab.alerts_desc lald
-        ),
-        'text', (
-          SELECT jsonb_object_agg(lalt.type, lalt.text ORDER BY lalt.id)
-          FROM lab.alerts_text lalt
-        )
+SELECT jsonb_build_object(
+  'result', jsonb_build_object(
+    'alerts',jsonb_build_object(
+      'desc', (
+        SELECT jsonb_object_agg(lald.type, lald.desc ORDER BY lald.id)
+        FROM lab.alerts_desc lald
+      ),
+      'text', (
+        SELECT jsonb_object_agg(lalt.type, lalt.text ORDER BY lalt.id)
+        FROM lab.alerts_text lalt
       )
     )
   )
@@ -1310,22 +1263,20 @@ CREATE FUNCTION public.get_lab_avatars() RETURNS jsonb
     LANGUAGE sql SECURITY DEFINER
     SET search_path TO 'lab'
     AS $$
-SELECT json_build_object(
-  'result', json_build_object(
-    'avatars', json_strip_nulls(
-      json_build_object(
-        'desc', (
-          SELECT jsonb_object_agg(lavd.type, lavd.desc ORDER BY lavd.id)
-          FROM lab.avatars_desc lavd
-        ),
-        'text', (
-          SELECT jsonb_object_agg(lavt.type, lavt.text ORDER BY lavt.id)
-          FROM lab.avatars_text lavt
-        ),
-        'img', (
-          SELECT json_agg(lavi.avatar ORDER BY lavi.id)
-          FROM lab.avatars_img lavi
-        )
+SELECT jsonb_build_object(
+  'result', jsonb_build_object(
+    'avatars', jsonb_build_object(
+      'desc', (
+        SELECT jsonb_object_agg(lavd.type, lavd.desc ORDER BY lavd.id)
+        FROM lab.avatars_desc lavd
+      ),
+      'text', (
+        SELECT jsonb_object_agg(lavt.type, lavt.text ORDER BY lavt.id)
+        FROM lab.avatars_text lavt
+      ),
+      'img', (
+        SELECT jsonb_agg(lavi.avatar ORDER BY lavi.id)
+        FROM lab.avatars_img lavi
       )
     )
   )
@@ -1343,18 +1294,16 @@ CREATE FUNCTION public.get_lab_breadcrumbs() RETURNS jsonb
     LANGUAGE sql SECURITY DEFINER
     SET search_path TO 'lab'
     AS $$
-SELECT json_build_object(
-  'result', json_build_object(
-    'breadcrumbs', json_strip_nulls(
-      json_build_object(
-        'desc', (
-          SELECT jsonb_object_agg(lbrd.type, lbrd.desc ORDER BY lbrd.id)
-          FROM lab.breadcrumbs_desc lbrd
-        ),
-        'text', (
-          SELECT jsonb_object_agg(lbrt.type, lbrt.text ORDER BY lbrt.id)
-          FROM lab.breadcrumbs_text lbrt
-        )
+SELECT jsonb_build_object(
+  'result', jsonb_build_object(
+    'breadcrumbs', jsonb_build_object(
+      'desc', (
+        SELECT jsonb_object_agg(lbrd.type, lbrd.desc ORDER BY lbrd.id)
+        FROM lab.breadcrumbs_desc lbrd
+      ),
+      'text', (
+        SELECT jsonb_object_agg(lbrt.type, lbrt.text ORDER BY lbrt.id)
+        FROM lab.breadcrumbs_text lbrt
       )
     )
   )
@@ -1372,18 +1321,16 @@ CREATE FUNCTION public.get_lab_buttons() RETURNS jsonb
     LANGUAGE sql SECURITY DEFINER
     SET search_path TO 'lab'
     AS $$
-SELECT json_build_object(
-  'result', json_build_object(
-    'buttons', json_strip_nulls(
-      json_build_object(
-        'desc', (
-          SELECT jsonb_object_agg(lbtd.type, lbtd.desc ORDER BY lbtd.id)
-          FROM lab.buttons_desc lbtd
-        ),
-        'text', (
-          SELECT jsonb_object_agg(lbtt.type, lbtt.text ORDER BY lbtt.id)
-          FROM lab.buttons_text lbtt
-        )
+SELECT jsonb_build_object(
+  'result', jsonb_build_object(
+    'buttons', jsonb_build_object(
+      'desc', (
+        SELECT jsonb_object_agg(lbtd.type, lbtd.desc ORDER BY lbtd.id)
+        FROM lab.buttons_desc lbtd
+      ),
+      'text', (
+        SELECT jsonb_object_agg(lbtt.type, lbtt.text ORDER BY lbtt.id)
+        FROM lab.buttons_text lbtt
       )
     )
   )
@@ -1401,26 +1348,24 @@ CREATE FUNCTION public.get_lab_calendar() RETURNS jsonb
     LANGUAGE sql SECURITY DEFINER
     SET search_path TO 'lab'
     AS $$
-SELECT json_build_object(
-  'result', json_build_object(
-    'calendar', json_strip_nulls(
-      json_build_object(
-        'desc', (
-          SELECT jsonb_object_agg(lclds.type, lclds.desc ORDER BY lclds.id)
-          FROM lab.calendar_desc lclds
-        ),
-        'text', (
-          SELECT jsonb_object_agg(lclt.type, lclt.text ORDER BY lclt.id)
-          FROM lab.calendar_text lclt
-        ),
-        'dates', (
-          SELECT jsonb_object_agg(lcld.name, lcld.date ORDER BY lcld.id)
-          FROM lab.calendar_dates lcld
-        ),
-        'details', (
-          SELECT jsonb_agg(to_jsonb(lcldt) - 'id' ORDER BY lcldt.id)
-          FROM lab.calendar_details lcldt
-        )
+SELECT jsonb_build_object(
+  'result', jsonb_build_object(
+    'calendar', jsonb_build_object(
+      'desc', (
+        SELECT jsonb_object_agg(lclds.type, lclds.desc ORDER BY lclds.id)
+        FROM lab.calendar_desc lclds
+      ),
+      'text', (
+        SELECT jsonb_object_agg(lclt.type, lclt.text ORDER BY lclt.id)
+        FROM lab.calendar_text lclt
+      ),
+      'dates', (
+        SELECT jsonb_object_agg(lcld.name, lcld.date ORDER BY lcld.id)
+        FROM lab.calendar_dates lcld
+      ),
+      'details', (
+        SELECT jsonb_agg(to_jsonb(lcldt) - 'id' ORDER BY lcldt.id)
+        FROM lab.calendar_details lcldt
       )
     )
   )
@@ -1438,22 +1383,20 @@ CREATE FUNCTION public.get_lab_card() RETURNS jsonb
     LANGUAGE sql SECURITY DEFINER
     SET search_path TO 'lab'
     AS $$
-SELECT json_build_object(
-  'result', json_build_object(
-    'card', json_strip_nulls(
-      json_build_object(
-        'desc', (
-          SELECT jsonb_object_agg(lcd.type, lcd.desc ORDER BY lcd.id)
-          FROM lab.card_desc lcd
-        ),
-        'text', (
-          SELECT jsonb_object_agg(lct.type, lct.text ORDER BY lct.id)
-          FROM lab.card_text lct
-        ),
-        'img', (
-          SELECT json_agg(lci.name ORDER BY lci.id)
-          FROM lab.card_img lci
-        )
+SELECT jsonb_build_object(
+  'result', jsonb_build_object(
+    'card', jsonb_build_object(
+      'desc', (
+        SELECT jsonb_object_agg(lcd.type, lcd.desc ORDER BY lcd.id)
+        FROM lab.card_desc lcd
+      ),
+      'text', (
+        SELECT jsonb_object_agg(lct.type, lct.text ORDER BY lct.id)
+        FROM lab.card_text lct
+      ),
+      'img', (
+        SELECT jsonb_agg(lci.name ORDER BY lci.id)
+        FROM lab.card_img lci
       )
     )
   )
@@ -1471,26 +1414,26 @@ CREATE FUNCTION public.get_page() RETURNS jsonb
     LANGUAGE sql SECURITY DEFINER
     SET search_path TO 'page'
     AS $$
-SELECT json_build_object(
-  'result', json_build_object(
+SELECT jsonb_build_object(
+  'result', jsonb_build_object(
     'general', (
       SELECT to_jsonb(gnr) - 'id'
       FROM page.general gnr
       LIMIT 1
     ),
-    'header', json_strip_nulls(
-      json_build_object(
+    'header', jsonb_strip_nulls(
+      jsonb_build_object(
         'getInTouch', (
           SELECT to_jsonb(hgi) - 'id'
           FROM page.header_getintouch hgi
           LIMIT 1
         ),
         'headerLinks', (
-          SELECT json_agg(to_jsonb(hhl) - 'id' ORDER BY hhl.id)
+          SELECT jsonb_agg(to_jsonb(hhl) - 'id' ORDER BY hhl.id)
           FROM page.header_headerlinks hhl
         ),
         'socialLinks', (
-          SELECT json_agg(to_jsonb(hsl) - 'id' ORDER BY hsl.id)
+          SELECT jsonb_agg(to_jsonb(hsl) - 'id' ORDER BY hsl.id)
           FROM page.header_sociallinks hsl
         )
       )
@@ -2310,73 +2253,6 @@ $$;
 ALTER FUNCTION storage.can_insert_object(bucketid text, name text, owner uuid, metadata jsonb) OWNER TO supabase_storage_admin;
 
 --
--- Name: delete_leaf_prefixes(text[], text[]); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
---
-
-CREATE FUNCTION storage.delete_leaf_prefixes(bucket_ids text[], names text[]) RETURNS void
-    LANGUAGE plpgsql SECURITY DEFINER
-    AS $$
-DECLARE
-    v_rows_deleted integer;
-BEGIN
-    LOOP
-        WITH candidates AS (
-            SELECT DISTINCT
-                t.bucket_id,
-                unnest(storage.get_prefixes(t.name)) AS name
-            FROM unnest(bucket_ids, names) AS t(bucket_id, name)
-        ),
-        uniq AS (
-             SELECT
-                 bucket_id,
-                 name,
-                 storage.get_level(name) AS level
-             FROM candidates
-             WHERE name <> ''
-             GROUP BY bucket_id, name
-        ),
-        leaf AS (
-             SELECT
-                 p.bucket_id,
-                 p.name,
-                 p.level
-             FROM storage.prefixes AS p
-                  JOIN uniq AS u
-                       ON u.bucket_id = p.bucket_id
-                           AND u.name = p.name
-                           AND u.level = p.level
-             WHERE NOT EXISTS (
-                 SELECT 1
-                 FROM storage.objects AS o
-                 WHERE o.bucket_id = p.bucket_id
-                   AND o.level = p.level + 1
-                   AND o.name COLLATE "C" LIKE p.name || '/%'
-             )
-             AND NOT EXISTS (
-                 SELECT 1
-                 FROM storage.prefixes AS c
-                 WHERE c.bucket_id = p.bucket_id
-                   AND c.level = p.level + 1
-                   AND c.name COLLATE "C" LIKE p.name || '/%'
-             )
-        )
-        DELETE
-        FROM storage.prefixes AS p
-            USING leaf AS l
-        WHERE p.bucket_id = l.bucket_id
-          AND p.name = l.name
-          AND p.level = l.level;
-
-        GET DIAGNOSTICS v_rows_deleted = ROW_COUNT;
-        EXIT WHEN v_rows_deleted = 0;
-    END LOOP;
-END;
-$$;
-
-
-ALTER FUNCTION storage.delete_leaf_prefixes(bucket_ids text[], names text[]) OWNER TO supabase_storage_admin;
-
---
 -- Name: enforce_bucket_name_length(); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
 --
 
@@ -2405,8 +2281,11 @@ DECLARE
     _parts text[];
     _filename text;
 BEGIN
+    -- Split on "/" to get path segments
     SELECT string_to_array(name, '/') INTO _parts;
-    SELECT _parts[array_length(_parts,1)] INTO _filename;
+    -- Get the last path segment (the actual filename)
+    SELECT _parts[array_length(_parts, 1)] INTO _filename;
+    -- Extract extension: reverse, split on '.', then reverse again
     RETURN reverse(split_part(reverse(_filename), '.', 1));
 END
 $$;
@@ -2470,66 +2349,6 @@ $$;
 ALTER FUNCTION storage.get_common_prefix(p_key text, p_prefix text, p_delimiter text) OWNER TO supabase_storage_admin;
 
 --
--- Name: get_level(text); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
---
-
-CREATE FUNCTION storage.get_level(name text) RETURNS integer
-    LANGUAGE sql IMMUTABLE STRICT
-    AS $$
-SELECT array_length(string_to_array("name", '/'), 1);
-$$;
-
-
-ALTER FUNCTION storage.get_level(name text) OWNER TO supabase_storage_admin;
-
---
--- Name: get_prefix(text); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
---
-
-CREATE FUNCTION storage.get_prefix(name text) RETURNS text
-    LANGUAGE sql IMMUTABLE STRICT
-    AS $_$
-SELECT
-    CASE WHEN strpos("name", '/') > 0 THEN
-             regexp_replace("name", '[\/]{1}[^\/]+\/?$', '')
-         ELSE
-             ''
-        END;
-$_$;
-
-
-ALTER FUNCTION storage.get_prefix(name text) OWNER TO supabase_storage_admin;
-
---
--- Name: get_prefixes(text); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
---
-
-CREATE FUNCTION storage.get_prefixes(name text) RETURNS text[]
-    LANGUAGE plpgsql IMMUTABLE STRICT
-    AS $$
-DECLARE
-    parts text[];
-    prefixes text[];
-    prefix text;
-BEGIN
-    -- Split the name into parts by '/'
-    parts := string_to_array("name", '/');
-    prefixes := '{}';
-
-    -- Construct the prefixes, stopping one level below the last part
-    FOR i IN 1..array_length(parts, 1) - 1 LOOP
-            prefix := array_to_string(parts[1:i], '/');
-            prefixes := array_append(prefixes, prefix);
-    END LOOP;
-
-    RETURN prefixes;
-END;
-$$;
-
-
-ALTER FUNCTION storage.get_prefixes(name text) OWNER TO supabase_storage_admin;
-
---
 -- Name: get_size_by_bucket(); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
 --
 
@@ -2538,7 +2357,7 @@ CREATE FUNCTION storage.get_size_by_bucket() RETURNS TABLE(size bigint, bucket_i
     AS $$
 BEGIN
     return query
-        select sum((metadata->>'size')::bigint) as size, obj.bucket_id
+        select sum((metadata->>'size')::bigint)::bigint as size, obj.bucket_id
         from "storage".objects as obj
         group by obj.bucket_id;
 END
@@ -3212,77 +3031,6 @@ $_$;
 
 
 ALTER FUNCTION storage.search_by_timestamp(p_prefix text, p_bucket_id text, p_limit integer, p_level integer, p_start_after text, p_sort_order text, p_sort_column text, p_sort_column_after text) OWNER TO supabase_storage_admin;
-
---
--- Name: search_legacy_v1(text, text, integer, integer, integer, text, text, text); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
---
-
-CREATE FUNCTION storage.search_legacy_v1(prefix text, bucketname text, limits integer DEFAULT 100, levels integer DEFAULT 1, offsets integer DEFAULT 0, search text DEFAULT ''::text, sortcolumn text DEFAULT 'name'::text, sortorder text DEFAULT 'asc'::text) RETURNS TABLE(name text, id uuid, updated_at timestamp with time zone, created_at timestamp with time zone, last_accessed_at timestamp with time zone, metadata jsonb)
-    LANGUAGE plpgsql STABLE
-    AS $_$
-declare
-    v_order_by text;
-    v_sort_order text;
-begin
-    case
-        when sortcolumn = 'name' then
-            v_order_by = 'name';
-        when sortcolumn = 'updated_at' then
-            v_order_by = 'updated_at';
-        when sortcolumn = 'created_at' then
-            v_order_by = 'created_at';
-        when sortcolumn = 'last_accessed_at' then
-            v_order_by = 'last_accessed_at';
-        else
-            v_order_by = 'name';
-        end case;
-
-    case
-        when sortorder = 'asc' then
-            v_sort_order = 'asc';
-        when sortorder = 'desc' then
-            v_sort_order = 'desc';
-        else
-            v_sort_order = 'asc';
-        end case;
-
-    v_order_by = v_order_by || ' ' || v_sort_order;
-
-    return query execute
-        'with folders as (
-           select path_tokens[$1] as folder
-           from storage.objects
-             where objects.name ilike $2 || $3 || ''%''
-               and bucket_id = $4
-               and array_length(objects.path_tokens, 1) <> $1
-           group by folder
-           order by folder ' || v_sort_order || '
-     )
-     (select folder as "name",
-            null as id,
-            null as updated_at,
-            null as created_at,
-            null as last_accessed_at,
-            null as metadata from folders)
-     union all
-     (select path_tokens[$1] as "name",
-            id,
-            updated_at,
-            created_at,
-            last_accessed_at,
-            metadata
-     from storage.objects
-     where objects.name ilike $2 || $3 || ''%''
-       and bucket_id = $4
-       and array_length(objects.path_tokens, 1) = $1
-     order by ' || v_order_by || ')
-     limit $5
-     offset $6' using levels, prefix, search, bucketname, limits, offsets;
-end;
-$_$;
-
-
-ALTER FUNCTION storage.search_legacy_v1(prefix text, bucketname text, limits integer, levels integer, offsets integer, search text, sortcolumn text, sortorder text) OWNER TO supabase_storage_admin;
 
 --
 -- Name: search_v2(text, text, integer, integer, text, text, text, text); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
@@ -4203,8 +3951,8 @@ ALTER TABLE home.nav_themelist ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENT
 
 CREATE TABLE home_featured.alerts (
     id bigint NOT NULL,
-    alertsuccess text,
-    alertwarning text
+    "alertSuccess" text,
+    "alertWarning" text
 );
 
 
@@ -4230,8 +3978,8 @@ ALTER TABLE home_featured.alerts ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDE
 
 CREATE TABLE home_featured.calendar (
     id bigint NOT NULL,
-    cardtitle text,
-    eventsdate text,
+    "cardTitle" text,
+    "eventsDate" text,
     title text,
     settings text[]
 );
@@ -4260,12 +4008,12 @@ ALTER TABLE home_featured.calendar ALTER COLUMN id ADD GENERATED BY DEFAULT AS I
 CREATE TABLE home_featured.foods (
     id bigint NOT NULL,
     food text,
-    foodbtn1 text,
-    foodbtn2 text,
-    foodbtn3 text,
-    foodbtn4 text,
-    foodbtn5 text,
-    foodbtn6 text
+    "foodBtn1" text,
+    "foodBtn2" text,
+    "foodBtn3" text,
+    "foodBtn4" text,
+    "foodBtn5" text,
+    "foodBtn6" text
 );
 
 
@@ -4373,8 +4121,8 @@ ALTER TABLE home_featured.people_list ALTER COLUMN id ADD GENERATED BY DEFAULT A
 
 CREATE TABLE home_featured.peoplemore (
     id bigint NOT NULL,
-    moreurl text,
-    morecount numeric
+    "moreUrl" text,
+    "moreCount" numeric
 );
 
 
@@ -4680,9 +4428,9 @@ CREATE TABLE icons.info (
     image1 text,
     image2 text,
     text text,
-    sizechangerprefix text,
-    sizechangersuffix text,
-    iconssuffix text
+    "sizeChangerPrefix" text,
+    "sizeChangerSuffix" text,
+    "iconsSuffix" text
 );
 
 
@@ -5169,11 +4917,11 @@ ALTER TABLE lab.card_text ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
 CREATE TABLE lab.intro (
     id bigint NOT NULL,
     title text,
-    subtitle text,
-    leadtext text,
-    textpart1 text,
-    textpart2 text,
-    textpart3 text
+    "subTitle" text,
+    "leadText" text,
+    "textPart1" text,
+    "textPart2" text,
+    "textPart3" text
 );
 
 
@@ -5254,7 +5002,7 @@ ALTER TABLE lab.menu ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
 
 CREATE TABLE lab.sidebar (
     id bigint NOT NULL,
-    sidebartitle text
+    "sidebarTitle" text
 );
 
 
@@ -5950,7 +5698,7 @@ COPY home.nav_themelist (id, name, theme) FROM stdin;
 -- Data for Name: alerts; Type: TABLE DATA; Schema: home_featured; Owner: postgres
 --
 
-COPY home_featured.alerts (id, alertsuccess, alertwarning) FROM stdin;
+COPY home_featured.alerts (id, "alertSuccess", "alertWarning") FROM stdin;
 1	All done — your action completed successfully.	Careful — something here needs your attention.
 \.
 
@@ -5959,7 +5707,7 @@ COPY home_featured.alerts (id, alertsuccess, alertwarning) FROM stdin;
 -- Data for Name: calendar; Type: TABLE DATA; Schema: home_featured; Owner: postgres
 --
 
-COPY home_featured.calendar (id, cardtitle, eventsdate, title, settings) FROM stdin;
+COPY home_featured.calendar (id, "cardTitle", "eventsDate", title, settings) FROM stdin;
 1	Events	2025,6	Customize events	{"Add to your calendar","See all events"}
 \.
 
@@ -5968,7 +5716,7 @@ COPY home_featured.calendar (id, cardtitle, eventsdate, title, settings) FROM st
 -- Data for Name: foods; Type: TABLE DATA; Schema: home_featured; Owner: postgres
 --
 
-COPY home_featured.foods (id, food, foodbtn1, foodbtn2, foodbtn3, foodbtn4, foodbtn5, foodbtn6) FROM stdin;
+COPY home_featured.foods (id, food, "foodBtn1", "foodBtn2", "foodBtn3", "foodBtn4", "foodBtn5", "foodBtn6") FROM stdin;
 1	Don’t forget to explore local food spots.	Bistros	Fast Foods	Drinks	Coffees	Meals	Ovens
 \.
 
@@ -6008,7 +5756,7 @@ COPY home_featured.people_list (id, "avatarText", "jobTitle", description, url, 
 -- Data for Name: peoplemore; Type: TABLE DATA; Schema: home_featured; Owner: postgres
 --
 
-COPY home_featured.peoplemore (id, moreurl, morecount) FROM stdin;
+COPY home_featured.peoplemore (id, "moreUrl", "moreCount") FROM stdin;
 1	#people-more	13
 \.
 
@@ -6020,9 +5768,9 @@ COPY home_featured.peoplemore (id, moreurl, morecount) FROM stdin;
 COPY home_featured.peoplemore_list (id, "avatarText", "jobTitle", avatar) FROM stdin;
 3	\N	UI-UX Designer	profile-image6.jpg
 4	\N	Prodcut Owner	profile-image1.jpg
-5		Test Engineer	profile-image2.jpg
-2	BS	Back-end Developer	
-1		Front-end Developer	profile-image4.jpg
+1	\N	Front-end Developer	profile-image4.jpg
+5	\N	Test Engineer	profile-image2.jpg
+2	BS	Back-end Developer	\N
 \.
 
 
@@ -6116,7 +5864,7 @@ COPY home_featured.travel (id, img1, img2, img3, text1, text2) FROM stdin;
 -- Data for Name: info; Type: TABLE DATA; Schema: icons; Owner: postgres
 --
 
-COPY icons.info (id, title, image1, image2, text, sizechangerprefix, sizechangersuffix, iconssuffix) FROM stdin;
+COPY icons.info (id, title, image1, image2, text, "sizeChangerPrefix", "sizeChangerSuffix", "iconsSuffix") FROM stdin;
 1	Hi! I design elegant and hand-crafted SVG icons.	icon-preview.jpg	vector-preview.jpg	I design elegant, hand‑crafted SVG icons that give your interface clarity, personality, and precision. Each icon is drawn from scratch, resulting in a lightweight, cleanly‑anchored, and fully scalable system that feels uniquely yours.	A total of	icons crafted! Adjust the icon sizes below.	Icons
 \.
 
@@ -6378,11 +6126,11 @@ COPY lab.calendar_text (id, type, text) FROM stdin;
 --
 
 COPY lab.card_desc (id, type, "desc") FROM stdin;
-1	examples	Cards play a central role in interface design. They’re versatile, easy to repurpose for different ideas, and great at grouping UI content while keeping sections clearly separated.
 2	sides	Card sides divide the card vertically, helping organize content with borders, background colors, spacing, and other visual separators.
 3	grids	The grid system is optimized for use inside cards and card sides, helping organize and structure card content more effectively.
 4	alerts	Card alerts use card components in any color variation, featuring animated icons and an optional close button.
 6	messages	Card messages offer an alternative way to inform users about success, warning, or danger states with more detailed context.
+1	examples	Cards play a central role in interface design. They’re versatile, easy to repurpose for different ideas, and great at grouping UI content while keeping sections clearly separated.
 \.
 
 
@@ -6449,7 +6197,7 @@ COPY lab.card_text (id, type, text) FROM stdin;
 -- Data for Name: intro; Type: TABLE DATA; Schema: lab; Owner: postgres
 --
 
-COPY lab.intro (id, title, subtitle, leadtext, textpart1, textpart2, textpart3) FROM stdin;
+COPY lab.intro (id, title, "subTitle", "leadText", "textPart1", "textPart2", "textPart3") FROM stdin;
 1	Hi! I am building modular design systems for you.	For developing web interfaces fastly!	I build fast, scalable, and fully modular front‑end systems designed from the ground up for each project. Instead of relying on third‑party CSS frameworks or JavaScript plugins, I craft every component myself—from grid layouts and UI patterns like buttons, accordions, dialogs, and interactive galleries.	This approach gives me complete control over performance, accessibility, and design consistency, allowing me to deliver interfaces that feel cohesive, lightweight, and uniquely tailored.	My focus is on creating custom design systems that empower clients with a visual language and component library built exclusively for their brand. Using Less, vanilla JavaScript, and handcrafted React components, I develop flexible modules that can evolve with the product.	The result is a clean, maintainable foundation that accelerates development while preserving creative freedom—perfect for teams who value both speed and originality.
 \.
 
@@ -6534,7 +6282,7 @@ COPY lab.menu (id, name, "to", titles) FROM stdin;
 -- Data for Name: sidebar; Type: TABLE DATA; Schema: lab; Owner: postgres
 --
 
-COPY lab.sidebar (id, sidebartitle) FROM stdin;
+COPY lab.sidebar (id, "sidebarTitle") FROM stdin;
 1	Lab Contents
 \.
 
@@ -6751,9 +6499,11 @@ COPY storage.migrations (id, name, hash, executed_at) FROM stdin;
 53	drop-index-lower-name	d0cb18777d9e2a98ebe0bc5cc7a42e57ebe41854	2026-02-19 18:09:25.37955
 54	drop-index-object-level	6289e048b1472da17c31a7eba1ded625a6457e67	2026-02-19 18:09:25.381221
 55	prevent-direct-deletes	262a4798d5e0f2e7c8970232e03ce8be695d5819	2026-02-19 18:09:25.38312
-56	fix-optimized-search-function	cb58526ebc23048049fd5bf2fd148d18b04a2073	2026-02-19 18:09:25.405114
 57	s3-multipart-uploads-metadata	f127886e00d1b374fadbc7c6b31e09336aad5287	2026-04-06 15:40:31.547021
 58	operation-ergonomics	00ca5d483b3fe0d522133d9002ccc5df98365120	2026-04-06 15:40:31.592936
+56	fix-optimized-search-function	b823ed1e418101032fa01374edc9a436e54e3ed4	2026-02-19 18:09:25.405114
+59	drop-unused-functions	38456f13e39691c2bbb4b5151d0d1cdbabd4a8c4	2026-05-08 22:42:16.105517
+60	optimize-existing-functions-again	db35e1c91a9201e59f4fef8d972c2f277d68b157	2026-05-08 22:42:16.127131
 \.
 
 
@@ -10586,5 +10336,5 @@ ALTER EVENT TRIGGER pgrst_drop_watch OWNER TO supabase_admin;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict fVI9zIGGxZatabyApt8UhKSbMMfUK9wNei6ouUAgBe285hqtFPZKxPdQvXgYuih
+\unrestrict eAZ3ZlqoD6KBqbHCgoUwEaDZPUgDWhPbTPbHAJjMZi34eANbAemTtfLLYf9KFKK
 

@@ -4,20 +4,20 @@ LANGUAGE sql
 SECURITY DEFINER
 SET search_path = home_featured
 AS $$
-SELECT json_build_object(
-  'result', json_build_object(
-    'profile', json_build_object(
+SELECT jsonb_build_object(
+  'result', jsonb_build_object(
+    'profile', jsonb_build_object(
       'info', (
         SELECT to_jsonb(pin) - 'id'
         FROM home_featured.profile_info pin
         LIMIT 1
       ),
       'userActivity', (
-        SELECT json_agg(to_jsonb(pua) - 'id' ORDER BY pua.id)
+        SELECT jsonb_agg(to_jsonb(pua) - 'id' ORDER BY pua.id)
         FROM home_featured.profile_useractivity pua
       )
     ),
-    'reports', json_build_object(
+    'reports', jsonb_build_object(
       'l', (
         SELECT to_jsonb(rel) - 'id'
         FROM home_featured.reports_l rel
@@ -29,18 +29,18 @@ SELECT json_build_object(
         LIMIT 1
       )
     ),
-    'reportsList', json_build_object(
+    'reportsList', jsonb_build_object(
       'delayed', (
-        SELECT json_agg(to_jsonb(rld) - 'id' ORDER BY rld.id)
+        SELECT jsonb_agg(to_jsonb(rld) - 'id' ORDER BY rld.id)
         FROM home_featured.reportslist_delayed rld
       ),
       'paused', (
-        SELECT json_agg(to_jsonb(rlp) - 'id')
+        SELECT jsonb_agg(to_jsonb(rlp) - 'id' ORDER BY rlp.id)
         FROM home_featured.reportslist_paused rlp
       )
     ),
-    'people', json_strip_nulls(
-      json_build_object(
+    'people', jsonb_strip_nulls(
+      jsonb_build_object(
         'cardTitle', (
           SELECT cardtitle
           FROM home_featured.people
@@ -52,88 +52,56 @@ SELECT json_build_object(
           LIMIT 1
         ),
         'list', (
-          SELECT json_agg(to_jsonb(pli) - 'id' ORDER BY pli.id)
+          SELECT jsonb_agg(to_jsonb(pli) - 'id' ORDER BY pli.id)
           FROM home_featured.people_list pli
         )
       )
     ),
-    'peopleMore', (
-      SELECT jsonb_strip_nulls(
+    'peopleMore', ( SELECT
+      (
+        SELECT to_jsonb(pmr) - 'id'
+        FROM home_featured.peoplemore pmr
+        LIMIT 1
+      ) ||
+      jsonb_strip_nulls(
         jsonb_build_object(
-          'moreUrl', pmr.moreurl,
-          'moreCount', pmr.morecount,
           'list', (
             SELECT jsonb_agg(to_jsonb(pml) - 'id' ORDER BY pml.id)
             FROM home_featured.peoplemore_list pml
           )
         )
       )
-      FROM home_featured.peoplemore pmr
-      LIMIT 1
     ),
     'foods', (
-      SELECT jsonb_strip_nulls(
-        jsonb_build_object(
-          'food', fds.food,
-          'foodBtn1', fds.foodbtn1,
-          'foodBtn2', fds.foodbtn2,
-          'foodBtn3', fds.foodbtn3,
-          'foodBtn4', fds.foodbtn4,
-          'foodBtn5', fds.foodbtn5,
-          'foodBtn6', fds.foodbtn6
-        )
-      )
+      SELECT to_jsonb(fds) - 'id'
       FROM home_featured.foods fds
       LIMIT 1
     ),
     'race', (
-      SELECT jsonb_strip_nulls(
-        jsonb_build_object(
-          'winner', rac.winner,
-          'img', rac.img,
-          'text', rac.text,
-          'url1', rac.url1,
-          'url2', rac.url2,
-          'more', rac.more
-        )
-      )
+      SELECT to_jsonb(rac) - 'id'
       FROM home_featured.race rac
       LIMIT 1
     ),
-    'calendar', (
-      SELECT jsonb_build_object(
-        'cardTitle', cln.cardtitle,
-        'eventsDate', cln.eventsdate,
-        'title', cln.title,
-        'settings', cln.settings,
+    'calendar', ( SELECT
+      (
+        SELECT to_jsonb(cln) - 'id'
+        FROM home_featured.calendar cln
+        LIMIT 1
+      ) ||
+      jsonb_build_object(
         'events', (
           SELECT jsonb_agg(to_jsonb(lcldt) - 'id' ORDER BY lcldt.id)
           FROM lab.calendar_details lcldt
         )
       )
-      FROM home_featured.calendar cln
-      LIMIT 1
     ),
     'travel', (
-      SELECT jsonb_strip_nulls(
-        jsonb_build_object(
-          'img1', trv.img1,
-          'img2', trv.img2,
-          'img3', trv.img3,
-          'text1', trv.text1,
-          'text2', trv.text2
-        )
-      )
+      SELECT to_jsonb(trv) - 'id'
       FROM home_featured.travel trv
       LIMIT 1
     ),
     'alerts', (
-      SELECT jsonb_strip_nulls(
-        jsonb_build_object(
-          'alertSuccess', alr.alertsuccess,
-          'alertWarning', alr.alertwarning
-        )
-      )
+      SELECT to_jsonb(alr) - 'id'
       FROM home_featured.alerts alr
       LIMIT 1
     )

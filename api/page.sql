@@ -13,18 +13,18 @@ SELECT jsonb_build_object(
     ),
     'header', jsonb_strip_nulls(
       jsonb_build_object(
-      'getInTouch', (
-        SELECT to_jsonb(hgi) - 'id'
-        FROM page.header_getintouch hgi
-        LIMIT 1
-      ),
-      'headerLinks', (
-        SELECT json_agg(to_jsonb(hhl) - 'id' ORDER BY hhl.id)
-        FROM page.header_headerlinks hhl
-      ),
-      'socialLinks', (
-        SELECT json_agg(to_jsonb(hsl) - 'id' ORDER BY hsl.id)
-        FROM page.header_sociallinks hsl
+        'getInTouch', (
+          SELECT to_jsonb(hgi) - 'id'
+          FROM page.header_getintouch hgi
+          LIMIT 1
+        ),
+        'headerLinks', (
+          SELECT jsonb_agg(to_jsonb(hhl) - 'id' ORDER BY hhl.id)
+          FROM page.header_headerlinks hhl
+        ),
+        'socialLinks', (
+          SELECT jsonb_agg(to_jsonb(hsl) - 'id' ORDER BY hsl.id)
+          FROM page.header_sociallinks hsl
         )
       )
     )

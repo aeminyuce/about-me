@@ -22,7 +22,7 @@ BEGIN
         IF post IS NULL THEN
             -- Pivot first, then aggregate
             sql := format(
-                'SELECT json_agg(pivoted) FROM (
+                'SELECT jsonb_agg(pivoted) FROM (
                     SELECT jsonb_build_object(
                         ''postTitle'', (SELECT data FROM blog.%1$I WHERE type = ''postTitle'' LIMIT 1),
                         ''postDate'',  (SELECT data FROM blog.%1$I WHERE type = ''postDate'' LIMIT 1),
@@ -34,7 +34,7 @@ BEGIN
         ELSE
             -- Full table data
             sql := format(
-                'SELECT json_agg(to_jsonb(t) - ''id'' ORDER BY t.id) FROM blog.%I t',
+                'SELECT jsonb_agg(to_jsonb(t) - ''id'' ORDER BY t.id) FROM blog.%I t',
                 tbl
             );
         END IF;

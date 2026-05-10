@@ -201,11 +201,9 @@
             "list": [
                 {
                     "avatar": "profile-image4.jpg",
-                    "jobTitle": "Front-end Developer",
-                    "avatarText": ""
+                    "jobTitle": "Front-end Developer"
                 },
                 {
-                    "avatar": "",
                     "jobTitle": "Back-end Developer",
                     "avatarText": "BS"
                 },
@@ -219,8 +217,7 @@
                 },
                 {
                     "avatar": "profile-image2.jpg",
-                    "jobTitle": "Test Engineer",
-                    "avatarText": ""
+                    "jobTitle": "Test Engineer"
                 }
             ],
             "moreUrl": "#people-more",

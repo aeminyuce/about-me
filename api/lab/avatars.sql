@@ -16,7 +16,7 @@ SELECT jsonb_build_object(
         FROM lab.avatars_text lavt
       ),
       'img', (
-        SELECT json_agg(lavi.avatar ORDER BY lavi.id)
+        SELECT jsonb_agg(lavi.avatar ORDER BY lavi.id)
         FROM lab.avatars_img lavi
       )
     )

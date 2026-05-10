@@ -12,7 +12,7 @@ SELECT jsonb_build_object(
       LIMIT 1
     ),
     'sizes', (
-      SELECT json_agg(to_jsonb(ics) - 'id' ORDER BY ics.id)
+      SELECT jsonb_agg(to_jsonb(ics) - 'id' ORDER BY ics.id)
       FROM icons.sizes ics
     )
   )
