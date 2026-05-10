@@ -48,12 +48,10 @@ export const People = () => {
                             <ListGroup.Item key={jobTitle}>
                                 <a href={item.url}>
                                     <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
-                                    {(avatar || avatarText) &&
-                                        <Avatar size='xs' className={classes}>
-                                            {avatar && <Image lazy src={avatar} aspect='square' />}
-                                            {avatarText && <span>{avatarText}</span>}
-                                        </Avatar>
-                                    }
+                                    <Avatar size='xs' className={classes}>
+                                        {avatar && <Image lazy src={avatar} aspect='square' />}
+                                        {avatarText && <span>{avatarText}</span>}
+                                    </Avatar>
 
                                     <span className='ui-font-ellipsis ui-block'>{jobTitle}</span>
                                     <span className='ui-color-black-25'>{item.description}</span>
@@ -79,18 +77,13 @@ export const PeopleMore = () => {
                 {peopleMore?.list.map((item: PeopleMoreListProps) => {
                     const avatarText = item.avatarText;
                     const avatar = item.avatar;
-
-                    const  classes = avatarText ? 'ui-fill-dark-100' : undefined;
+                    const classes = avatarText ? 'ui-fill-dark-100' : undefined;
 
                     return (
-                        <Fragment key={item.jobTitle}>
-                            {(avatar || avatarText) &&
-                                <Avatar noease size='sm' className={classes}>
-                                    {avatar && <Image lazy src={avatar} aspect='square' />}
-                                    {avatarText && <span>{avatarText}</span>}
-                                </Avatar>
-                            }
-                        </Fragment>
+                        <Avatar key={item.jobTitle} noease size='sm' className={classes}>
+                            {avatar && <Image lazy src={avatar} aspect='square' />}
+                            {avatarText && <span>{avatarText}</span>}
+                        </Avatar>
                     )
                 })}
 
