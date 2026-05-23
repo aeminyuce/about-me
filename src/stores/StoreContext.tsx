@@ -7,6 +7,7 @@ import { getPageData, getHomeData, getHomeFeaturedData, getLabData, getIconsData
 
 // misc
 import type { StoreContextProps, StoreProviderProps } from '../models/Page';
+import { scrollToTop } from '../helpers/General';
 import reducer from './StoreReducer';
 import {
 
@@ -112,6 +113,7 @@ export default function (props: StoreProviderProps) {
                 result: response?.result,
             });
         });
+        scrollToTop();
     };
     const loadHomeFeaturedData = () => {
         getHomeFeaturedData(service).then((response: any) => {
@@ -120,6 +122,7 @@ export default function (props: StoreProviderProps) {
                 result: response?.result,
             });
         });
+        scrollToTop();
     };
     const loadLabData = (page?: string) => {
         getLabData(service, page).then((response: any) => {
@@ -129,6 +132,7 @@ export default function (props: StoreProviderProps) {
                 page: page,
             });
         });
+        scrollToTop();
     };
     const loadIconsData = () => {
         getIconsData(service).then((response: any) => {
@@ -137,6 +141,7 @@ export default function (props: StoreProviderProps) {
                 result: response?.result,
             });
         });
+        scrollToTop();
     };
     const loadBlogData = (post?: string) => {
         const params = post ? `?post=${post}` : null;
@@ -148,6 +153,7 @@ export default function (props: StoreProviderProps) {
                 post: post,
             });
         });
+        scrollToTop();
     };
 
     const contextValue: StoreContextProps =  {
