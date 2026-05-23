@@ -45,8 +45,8 @@ export default function () {
             </Grid.Col>
             <Grid.Col lg={4} size={4} md={6}>
 
-                {homeFeatured?.travel && <Travel />}
                 {homeFeatured?.alerts && <Alerts />}
+                {homeFeatured?.travel && <Travel />}
                 {homeFeatured?.calendar && <Events />}
 
             </Grid.Col>
