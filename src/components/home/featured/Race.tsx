@@ -22,7 +22,7 @@ export default function() {
                     <SvgIcon as='js' src={IconTrophyStar} size='lg' r={10} />
                     {race?.winner}
                 </span>
-                <Image fluid src={race?.img} aspect='landscape' className='ui-round-t' />
+                <Image lazy fluid src={race?.img} aspect='landscape' className='ui-round-t' />
             </Card.Side>
             <Card.Side className='ui-color-black-50 ui-p-10-h ui-p-15-v'>
                 {race?.text}
