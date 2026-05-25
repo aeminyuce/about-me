@@ -18,6 +18,6 @@
   "license": "ISC",
   "dependencies": {
     "uilab": "file:../uilab/uilab-1.0.637.tgz",
-    "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.155tgz"
+    "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.155.tgz"
   }
 }
