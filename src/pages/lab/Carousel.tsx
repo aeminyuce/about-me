@@ -1,11 +1,9 @@
 import * as React from 'react';
 import Button from 'uilab/react/Button';
-import Card from 'uilab/react/Card';
 import Carousel from 'uilab/react/Carousel';
 import Grid from 'uilab/react/Grid';
 import Heading from 'uilab/react/Heading';
 import Image from 'uilab/react/Image';
-import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
@@ -16,7 +14,8 @@ import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
 import { headings } from '../../helpers/Lab';
 
 // assets
-import { IconArrowRight } from 'uilab-icons/react/general/arrow-right';
+import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
+import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
 export default function () {
     const { api } = useStoreContext();
@@ -38,7 +37,216 @@ export default function () {
 
         <Description>{desc?.html}</Description>
         <Preview>
-            ...
+            <Carousel col={1}>
+                <Carousel.Slider>
+
+                    <Carousel.Content>
+                        <Grid.Static fluid='lg'>
+                            <Grid.Col size={425} className='ui-p-10'>
+
+                                <Grid.Row fluid='no' gap='xs'>
+                                    <Grid.Col size={6}>
+                                        <Image lazy fluid src={img[14]} aspect='landscape' />
+                                    </Grid.Col>
+                                    <Grid.Col size={6}>
+                                        <Image lazy fluid src={img[10]} aspect='landscape' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[7]} aspect='landscape' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[8]} aspect='landscape' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[6]} aspect='landscape' />
+                                    </Grid.Col>
+                                </Grid.Row>
+
+                            </Grid.Col>
+                            <Grid.Row fluid='sm'>
+                                <Grid.Col size={12}>
+
+                                    <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                        <Heading as='h3'>{text?.travelTitle}</Heading>
+                                        <p className='ui-font-16 ui-font-readable'>
+                                            {text?.travelText1}
+                                            <br /><br />
+                                            {text?.travelText1}
+                                            <br /><br />
+                                        </p>
+                                        <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
+                                    </div>
+
+                                </Grid.Col>
+                            </Grid.Row>
+                        </Grid.Static>
+                    </Carousel.Content>
+
+                    <Carousel.Content>
+                        <Grid.Static fluid='lg'>
+                            <Grid.Col size={425} className='ui-p-10'>
+
+                                <Grid.Row fluid='no' gap='xs'>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[1]} aspect='square' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[2]} aspect='square' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[3]} aspect='square' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[4]} aspect='square' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[5]} aspect='square' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[6]} aspect='square' />
+                                    </Grid.Col>
+                                </Grid.Row>
+
+                            </Grid.Col>
+                            <Grid.Row fluid='sm'>
+                                <Grid.Col size={12}>
+
+                                    <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                        <Heading as='h3'>{text?.friendsTitle}</Heading>
+                                        <p className='ui-font-16 ui-font-readable'>
+                                            {text?.friendsText1}
+                                            <br /><br />
+                                            {text?.friendsText2}
+                                            <br /><br />
+                                        </p>
+                                        <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
+                                    </div>
+
+                                </Grid.Col>
+                            </Grid.Row>
+                        </Grid.Static>
+                    </Carousel.Content>
+
+                </Carousel.Slider>
+                <Carousel.Nav>
+                    <Button ghost square className='ui-carousel-prev ui-circle'>
+                        <SvgIcon as='js' src={IconAngleLeft} />
+                    </Button>
+                    <Carousel.Dots />
+                    <Button ghost square className='ui-carousel-next ui-circle'>
+                        <SvgIcon as='js' src={IconAngleRight} />
+                    </Button>
+                </Carousel.Nav>
+            </Carousel>
+        </Preview>
+
+        <Description>{desc?.htmlAnimate}</Description>
+        <Preview>
+            <Carousel col={1} slide={5000}>
+                <Carousel.Slider className='ui-ease-slow'>
+
+                    <Carousel.Content animate={150}>
+                        <Grid.Static fluid='lg'>
+                            <Grid.Col size={425} className='ui-p-10'>
+
+                                <Grid.Row fluid='no' gap='xs' className='ui-ease-2nd-layout ui-ease-2nd-slow ui-ease-2nd-in-out'>
+                                    <Grid.Col size={6}>
+                                        <Image lazy fluid src={img[14]} aspect='landscape' className='ui-bring-back' />
+                                    </Grid.Col>
+                                    <Grid.Col size={6}>
+                                        <Image lazy fluid src={img[10]} aspect='landscape' className='ui-bring-front' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[7]} aspect='landscape' className='ui-bring-l' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[8]} aspect='landscape' className='ui-bring-b' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[6]} aspect='landscape' className='ui-bring-r' />
+                                    </Grid.Col>
+                                </Grid.Row>
+
+                            </Grid.Col>
+                            <Grid.Row fluid='sm'>
+                                <Grid.Col size={12}>
+
+                                    <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
+                                        <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                            <Heading as='h3'>{text?.travelTitle}</Heading>
+                                            <p className='ui-font-16 ui-font-readable'>
+                                                {text?.travelText1}
+                                                <br /><br />
+                                                {text?.travelText1}
+                                                <br /><br />
+                                            </p>
+                                            <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
+                                        </div>
+                                    </div>
+
+                                </Grid.Col>
+                            </Grid.Row>
+                        </Grid.Static>
+                    </Carousel.Content>
+
+                    <Carousel.Content animate={150}>
+                        <Grid.Static fluid='lg'>
+                            <Grid.Col size={425} className='ui-p-10'>
+
+                                <Grid.Row fluid='no' gap='xs' className='ui-ease-2nd-layout ui-ease-2nd-slow ui-ease-2nd-in-out'>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[1]} aspect='square' className='ui-bring-back' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[2]} aspect='square' className='ui-bring-front' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[3]} aspect='square' className='ui-bring-back' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[4]} aspect='square' className='ui-bring-front' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[5]} aspect='square' className='ui-bring-back' />
+                                    </Grid.Col>
+                                    <Grid.Col size={4}>
+                                        <Image lazy fluid src={img[6]} aspect='square' className='ui-bring-front' />
+                                    </Grid.Col>
+                                </Grid.Row>
+
+                            </Grid.Col>
+                            <Grid.Row fluid='sm'>
+                                <Grid.Col size={12}>
+
+                                    <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
+                                        <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                            <Heading as='h3'>{text?.friendsTitle}</Heading>
+                                            <p className='ui-font-16 ui-font-readable'>
+                                                {text?.friendsText1}
+                                                <br /><br />
+                                                {text?.friendsText2}
+                                                <br /><br />
+                                            </p>
+                                            <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
+                                        </div>
+                                    </div>
+
+                                </Grid.Col>
+                            </Grid.Row>
+                        </Grid.Static>
+                    </Carousel.Content>
+
+                </Carousel.Slider>
+                <Carousel.Nav>
+                    <Button ghost square className='ui-carousel-prev ui-circle'>
+                        <SvgIcon as='js' src={IconAngleLeft} />
+                    </Button>
+                    <Carousel.Dots />
+                    <Button ghost square className='ui-carousel-next ui-circle'>
+                        <SvgIcon as='js' src={IconAngleRight} />
+                    </Button>
+                </Carousel.Nav>
+            </Carousel>
         </Preview>
 
         <Heading as='h3' id={title?.hash[1]}>
@@ -47,7 +255,106 @@ export default function () {
 
         <Description>{desc?.img}</Description>
         <Preview>
-            ...
+            <Carousel col={8} md={4} sm={3} xs={1} slide={2000}>
+                <Carousel.Slider className='ui-ease-slow'>
+
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[6]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[7]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[8]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[9]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[10]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[11]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[12]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[13]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[14]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[15]} aspect='landscape' />
+                    </Carousel.Content>
+                     <Carousel.Content>
+                        <Image lazy fluid src={img[6]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[7]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[8]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[9]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[10]} aspect='landscape' />
+                    </Carousel.Content>
+
+                </Carousel.Slider>
+                <Carousel.Nav>
+                    <Button ghost square className='ui-carousel-prev ui-circle'>
+                        <SvgIcon as='js' src={IconAngleLeft} />
+                    </Button>
+                    <Carousel.Dots />
+                    <Button ghost square className='ui-carousel-next ui-circle'>
+                        <SvgIcon as='js' src={IconAngleRight} />
+                    </Button>
+                </Carousel.Nav>
+            </Carousel>
+        </Preview>
+
+        <Description>{desc?.imgHalf}</Description>
+        <Preview>
+            <Carousel half col={4} md={3} sm={2} xs={2}>
+                <Carousel.Slider>
+
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[14]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[7]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[8]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[7]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[9]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[10]} aspect='landscape' />
+                    </Carousel.Content>
+                    <Carousel.Content>
+                        <Image lazy fluid src={img[11]} aspect='landscape' />
+                    </Carousel.Content>
+
+                </Carousel.Slider>
+                <Carousel.Nav>
+                    <Button ghost square className='ui-carousel-prev ui-circle'>
+                        <SvgIcon as='js' src={IconAngleLeft} />
+                    </Button>
+                    <Carousel.Dots />
+                    <Button ghost square className='ui-carousel-next ui-circle'>
+                        <SvgIcon as='js' src={IconAngleRight} />
+                    </Button>
+                </Carousel.Nav>
+            </Carousel>
         </Preview>
         </>
     );

@@ -1,9 +1,39 @@
 {
     "result": {
         "carousel": {
-            "img": null,
-            "desc": null,
-            "text": null
+            "img": [
+                "profile-image1.jpg",
+                "profile-image2.jpg",
+                "profile-image3.jpg",
+                "profile-image4.jpg",
+                "profile-image5.jpg",
+                "profile-image6.jpg",
+                "random-image1.jpg",
+                "random-image2.jpg",
+                "random-image3.jpg",
+                "random-image4.jpg",
+                "random-image5.jpg",
+                "random-image6.jpg",
+                "random-image7.jpg",
+                "random-image8.jpg",
+                "random-image9.jpg",
+                "random-image10.jpg"
+            ],
+            "desc": {
+                "img": "Carousel content can adapt to responsive breakpoints. In this example, the carousel contains only images, and their layout adjusts at each breakpoint, showing different image sizes across screen widths.",
+                "html": "Carousels are an effective way to group HTML content into a horizontally sliding layout. Any HTML elements can be placed inside the carousel’s slides. Navigation sits below the carousel, allowing users to move between slides using arrows, while dots indicate the current slide’s position. Users can navigate the carousel by swiping horizontally on touch‑based mobile devices.",
+                "imgHalf": "Half‑sized carousel layouts reveal a portion of the next slide, creating a preview effect. They work especially well for image carousels.",
+                "htmlAnimate": "Carousels can slide automatically and pause the auto‑rotation when the user hovers over them. HTML content inside each slide can animate as the slide transition completes."
+            },
+            "text": {
+                "more": "Continue Reading",
+                "travelText1": "Traveling to peaceful places brings calm moments, offering quiet paths where nature softens every sound.",
+                "travelText2": "Exploring silent corners of the world reveals gentle beauty, inviting travelers to rest in stillness.",
+                "travelTitle": "Travelling The World",
+                "friendsText1": "New friendships often begin with simple moments—sharing a smile, joining a conversation, or helping someone nearby.",
+                "friendsText2": "These small connections can quickly grow into meaningful bonds that make any journey feel brighter.",
+                "friendsTtitle": "Making New Friends"
+            }
         }
     }
 }
