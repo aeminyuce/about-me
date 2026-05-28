@@ -4,6 +4,7 @@ import Carousel from 'uilab/react/Carousel';
 import Grid from 'uilab/react/Grid';
 import Heading from 'uilab/react/Heading';
 import Image from 'uilab/react/Image';
+import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
@@ -46,19 +47,19 @@ export default function () {
 
                                 <Grid.Row fluid='no' gap='xs'>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={img[14]} aspect='landscape' />
+                                        <Image lazy fluid src={img[14]} aspect='landscape' className='ui-round-l ui-no-round-bl' />
                                     </Grid.Col>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={img[10]} aspect='landscape' />
+                                        <Image lazy fluid src={img[10]} aspect='landscape' className='ui-round-r ui-no-round-br' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[7]} aspect='landscape' />
+                                        <Image lazy fluid src={img[7]} aspect='landscape' className='ui-round-l ui-no-round-tl' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
                                         <Image lazy fluid src={img[8]} aspect='landscape' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[6]} aspect='landscape' />
+                                        <Image lazy fluid src={img[6]} aspect='landscape' className='ui-round-r ui-no-round-tr' />
                                     </Grid.Col>
                                 </Grid.Row>
 
@@ -68,9 +69,9 @@ export default function () {
 
                                     <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                         <Heading as='h3'>{text?.travelTitle}</Heading>
-                                        <p className='ui-font-16 ui-font-readable ui-m-15-b'>
+                                        <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
                                             {text?.travelText1}
-                                            <br /><br />
+                                            <Spacer size={10} />
                                             {text?.travelText1}
                                         </p>
                                         <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
@@ -87,22 +88,22 @@ export default function () {
 
                                 <Grid.Row fluid='no' gap='xs'>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[1]} aspect='square' />
+                                        <Image lazy fluid src={img[1]} aspect='square' className='ui-round-l ui-no-round-bl' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
                                         <Image lazy fluid src={img[2]} aspect='square' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[3]} aspect='square' />
+                                        <Image lazy fluid src={img[3]} aspect='square' className='ui-round-rui-no-round-br' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[4]} aspect='square' />
+                                        <Image lazy fluid src={img[4]} aspect='square' className='ui-round-l ui-no-round-tl' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
                                         <Image lazy fluid src={img[5]} aspect='square' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[6]} aspect='square' />
+                                        <Image lazy fluid src={img[6]} aspect='square' className='ui-round-r ui-no-round-tr' />
                                     </Grid.Col>
                                 </Grid.Row>
 
@@ -112,9 +113,9 @@ export default function () {
 
                                     <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                         <Heading as='h3'>{text?.friendsTitle}</Heading>
-                                        <p className='ui-font-16 ui-font-readable ui-m-15-b'>
+                                        <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
                                             {text?.friendsText1}
-                                            <br /><br />
+                                            <Spacer size={10} />
                                             {text?.friendsText2}
                                         </p>
                                         <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
@@ -149,19 +150,19 @@ export default function () {
 
                                 <Grid.Row fluid='no' gap='xs' className='ui-ease-2nd-layout ui-ease-2nd-slow ui-ease-2nd-in-out'>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={img[14]} aspect='landscape' className='ui-bring-back' />
+                                        <Image lazy fluid src={img[14]} aspect='landscape' className='ui-round-l ui-no-round-bl ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={img[10]} aspect='landscape' className='ui-bring-front' />
+                                        <Image lazy fluid src={img[10]} aspect='landscape' className='ui-round-r ui-no-round-br ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[7]} aspect='landscape' className='ui-bring-l' />
+                                        <Image lazy fluid src={img[7]} aspect='landscape' className='ui-round-l ui-no-round-tl ui-bring-l' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
                                         <Image lazy fluid src={img[8]} aspect='landscape' className='ui-bring-b' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[6]} aspect='landscape' className='ui-bring-r' />
+                                        <Image lazy fluid src={img[6]} aspect='landscape' className='ui-round-l ui-no-round-tr ui-bring-r' />
                                     </Grid.Col>
                                 </Grid.Row>
 
@@ -172,9 +173,9 @@ export default function () {
                                     <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
                                         <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.travelTitle}</Heading>
-                                            <p className='ui-font-16 ui-font-readable ui-m-15-b'>
+                                            <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
                                                 {text?.travelText1}
-                                                <br /><br />
+                                                <Spacer size={10} />
                                                 {text?.travelText1}
                                             </p>
                                             <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
@@ -192,22 +193,22 @@ export default function () {
 
                                 <Grid.Row fluid='no' gap='xs' className='ui-ease-2nd-layout ui-ease-2nd-slow ui-ease-2nd-in-out'>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[1]} aspect='square' className='ui-bring-back' />
+                                        <Image lazy fluid src={img[1]} aspect='square' className='ui-round-l ui-no-round-bl ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
                                         <Image lazy fluid src={img[2]} aspect='square' className='ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[3]} aspect='square' className='ui-bring-back' />
+                                        <Image lazy fluid src={img[3]} aspect='square' className='ui-round-r ui-no-round-br ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[4]} aspect='square' className='ui-bring-front' />
+                                        <Image lazy fluid src={img[4]} aspect='square' className='ui-round-l ui-no-round-tl ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
                                         <Image lazy fluid src={img[5]} aspect='square' className='ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[6]} aspect='square' className='ui-bring-front' />
+                                        <Image lazy fluid src={img[6]} aspect='square' className='ui-round-r ui-no-round-tr ui-bring-front' />
                                     </Grid.Col>
                                 </Grid.Row>
 
@@ -218,9 +219,9 @@ export default function () {
                                     <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
                                         <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.friendsTitle}</Heading>
-                                            <p className='ui-font-16 ui-font-readable ui-m-15-b'>
+                                            <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
                                                 {text?.friendsText1}
-                                                <br /><br />
+                                                <Spacer size={10} />
                                                 {text?.friendsText2}
                                             </p>
                                             <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
