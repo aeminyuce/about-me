@@ -15,11 +15,11 @@ import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
 import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
 export default function() {
-    const { api } = useStoreContext();
+    const { themeA, api } = useStoreContext();
     const travel = api?.home_featured?.travel;
 
     return (
-        <Card className='home-travel ui-p-15 ui-round ui-shadow'>
+        <Card className={`home-travel ui-p-15 ui-round ui-shadow ${themeA}`}>
             <Carousel col={1} slide={5000}>
                 <Carousel.Slider className='ui-ease-slow'>
 
@@ -55,7 +55,7 @@ export default function() {
                                             <p className='ui-font-16 ui-font-readable ui-line-clamp-6 ui-m-20-b'>
                                                 {travel?.textA}
                                             </p>
-                                            <Button fluid='xs' className='ui-circle'>{travel?.textMore}</Button>
+                                            <Button fluid='xs' className='ui-circle ui-fill-dark-100'>{travel?.textMore}</Button>
                                         </div>
                                     </div>
 
@@ -99,7 +99,7 @@ export default function() {
                                             <p className='ui-font-16 ui-font-readable ui-line-clamp-6 ui-m-20-b'>
                                                 {travel?.textB}
                                             </p>
-                                            <Button fluid='xs' className='ui-circle'>{travel?.textMore}</Button>
+                                            <Button fluid='xs' className='ui-circle ui-fill-dark-100'>{travel?.textMore}</Button>
                                         </div>
                                     </div>
 
