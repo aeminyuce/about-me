@@ -23,8 +23,9 @@ export default function () {
     const reportsList = homeFeatured?.reportsList;
 
     return (
+        <>
         <Grid.Row>
-            <Grid.Col lg={2} size={4} md={6}>
+            <Grid.Col lg={2} size={3} md={6}>
 
                 {homeFeatured?.profile && <Profile />}
 
@@ -33,23 +34,46 @@ export default function () {
 
                 {(reports?.l && reports?.r) && <Reports />}
                 {(reportsList?.delayed && reportsList?.paused) && <ReportsList />}
-                {homeFeatured?.foods && <Foods />}
+
+            </Grid.Col>
+            <Grid.Col lg={3} size={5} md={6}>
+
+                {homeFeatured?.people?.list && <People />}
+                {homeFeatured?.peopleMore?.list && <PeopleMore />}
+
+            </Grid.Col>
+            <Grid.Col size={4} md={6}>
+
+                {homeFeatured?.calendar && <Events />}
+
+            </Grid.Col>
+            <Grid.Col lg={8} size={8} md={12}>
+
+                {homeFeatured?.travel && <Travel />}
+
+            </Grid.Col>
+            <Grid.Col size={4} md={6}>
+
+                ...
 
             </Grid.Col>
             <Grid.Col lg={3} size={4} md={6}>
 
-                {homeFeatured?.people?.list && <People />}
-                {homeFeatured?.peopleMore?.list && <PeopleMore />}
                 {homeFeatured?.race && <Race />}
 
             </Grid.Col>
-            <Grid.Col lg={4} size={4} md={6}>
+            <Grid.Col size={4} md={6}>
 
                 {homeFeatured?.alerts && <Alerts />}
-                {homeFeatured?.travel && <Travel />}
-                {homeFeatured?.calendar && <Events />}
+                {homeFeatured?.foods && <Foods />}
+
+            </Grid.Col>
+            <Grid.Col lg={5} size={4} md={6}>
+
+                ...
 
             </Grid.Col>
         </Grid.Row>
+        </>
     );
 }

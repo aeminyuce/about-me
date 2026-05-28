@@ -23,8 +23,10 @@ export default function() {
                             <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' className='ui-text' />
                         </span>
                     </Grid.Col>
-                    <Grid.Row>
-                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{alerts?.alertSuccess}</Grid.Col>
+                    <Grid.Row gap='lg'>
+                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>
+                            <p className='ui-font-ellipsis'>{alerts?.alertSuccess}</p>
+                        </Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
             </Card>
@@ -36,8 +38,10 @@ export default function() {
                             <SvgIcon as='js' src={IconAlertShield} size='lg' animate='pop' className='ui-text' />
                         </span>
                     </Grid.Col>
-                    <Grid.Row>
-                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{alerts?.alertWarning}</Grid.Col>
+                    <Grid.Row gap='lg'>
+                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>
+                            <p className='ui-font-ellipsis'>{alerts?.alertWarning}</p>
+                        </Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
             </Card>

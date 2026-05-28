@@ -16,7 +16,7 @@ export default function() {
     const race = api?.home_featured?.race;
 
     return (
-        <Card className={`ui-round ui-shadow ${themeB}`}>
+        <Card className={`home-race ui-round ui-shadow ${themeB}`}>
             <Card.Side className='ui-set-relative'>
                 <span className='ui-color-white ui-p-10-v ui-p-20-h ui-m-30 ui-round ui-set-absolute ui-set-b ui-fill-light-200 ui-bg-blur'>
                     <SvgIcon as='js' src={IconTrophyStar} size='lg' r={10} />
@@ -24,22 +24,22 @@ export default function() {
                 </span>
                 <Image lazy fluid src={race?.img} aspect='landscape' className='ui-round-t' />
             </Card.Side>
-            <Card.Side className='ui-color-black-50 ui-p-10-h ui-p-15-v'>
-                {race?.text}
+            <Card.Side className='ui-color-black-50 ui-p-15'>
+                <p className='ui-line-clamp-2'>{race?.text}</p>
             </Card.Side>
             <Card.Side>
                 <ListGroup>
                     <ListGroup.List>
-                        <ListGroup.Item>
+                        <ListGroup.Item className='ui-p-15-h'>
                             <a href='#'>{race?.url1}</a>
                         </ListGroup.Item>
-                        <ListGroup.Item>
+                        <ListGroup.Item className='ui-p-15-h'>
                             <a href='#'>{race?.url2}</a>
                         </ListGroup.Item>
                     </ListGroup.List>
                 </ListGroup>
             </Card.Side>
-            <Card.Side className='ui-p-10'>
+            <Card.Side className='ui-p-15'>
                 <Button block='all' className='ui-round ui-fill-dark-100'>
                     {race?.more}
                 </Button>

@@ -6,7 +6,7 @@
 /* profile */
 @home-profile-cover-size:                 92px;
 @home-profile-cover-margin-bottom:        5px;
-@home-profile-activity-max-height:        186px;
+@home-profile-activity-max-height:        184px;
 
 .home-profile {
     & > div:first-child {
@@ -26,7 +26,7 @@
 }
 
 /* reports */
-@home-reports-max-height:                 246px;
+@home-reports-max-height:                 189px;
 @home-reports-donut-size:                 48px;
 
 .home-reports-list {
@@ -35,8 +35,28 @@
 }
 
 /* people */
-@home-people-max-height:                  221px;
+@home-people-max-height:                  235px;
 
 .home-people-list {
     .ui-listgroup { max-height: @home-people-max-height; }
+}
+
+/* travel */
+@home-travel-height:                      410px;
+@home-travel-images-width-md:             377px;
+
+@media (@default-finish) and (@default-start) {
+    .home-travel { height: @home-travel-height; }
+}
+@media (@default-finish) and (@md-start) {
+    .home-travel {
+        .ui-col-st { width: @home-travel-images-width-md !important; }
+    }
+}
+
+/* race */
+@home-race-height:                        169px;
+
+.home-race {
+    img { height: @home-race-height !important; }
 }
