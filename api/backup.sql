@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict Qxv21lTyvtV4OUWQhVla09wdlepJ2QdeU6Xd8XCQGgTIV92iUW9mgt0bUuHFiVy
+\restrict P7RAe4w8XxdrPqyQAsU6DsWwuer4IJdlHfy7kUhNz3z7TKUFSL7IDNar137HTLu
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1 (Postgres.app)
@@ -4428,8 +4428,19 @@ CREATE TABLE home_featured.travel (
     img1 text,
     img2 text,
     img3 text,
-    text1 text,
-    text2 text
+    img4 text,
+    img5 text,
+    "titleA" text,
+    "textA" text,
+    "titleB" text,
+    "textB" text,
+    "textMore" text,
+    avatar1 text,
+    avatar2 text,
+    avatar3 text,
+    avatar4 text,
+    avatar5 text,
+    avatar6 text
 );
 
 
@@ -5966,8 +5977,8 @@ COPY home_featured.reportslist_paused (id, name, percent, reports, "chartPercent
 -- Data for Name: travel; Type: TABLE DATA; Schema: home_featured; Owner: postgres
 --
 
-COPY home_featured.travel (id, img1, img2, img3, text1, text2) FROM stdin;
-1	random-image1.jpg	random-image5.jpg	random-image10.jpg	Traveling to peaceful places brings calm moments, offering quiet paths where nature softens every sound.	Exploring silent corners of the world reveals gentle beauty, inviting travelers to rest in stillness.
+COPY home_featured.travel (id, img1, img2, img3, img4, img5, "titleA", "textA", "titleB", "textB", "textMore", avatar1, avatar2, avatar3, avatar4, avatar5, avatar6) FROM stdin;
+1	random-image9.jpg	random-image5.jpg	random-image2.jpg	random-image3.jpg	random-image1.jpg	Travelling The World	Traveling to peaceful places brings calm moments, offering quiet paths where nature softens every sound. Traveling to peaceful places brings calm moments, offering quiet paths where nature softens every sound.	Making New Friends	New friendships often begin with simple moments—sharing a smile, joining a conversation, or helping someone nearby. These small connections can quickly grow into meaningful bonds that make any journey feel brighter.	Continue Reading	profile-image1.jpg	profile-image2.jpg	profile-image3.jpg	profile-image4.jpg	profile-image5.jpg	profile-image6.jpg
 \.
 
 
@@ -6349,9 +6360,9 @@ COPY lab.carousel_text (id, type, text) FROM stdin;
 2	travelTitle	Travelling The World
 3	travelText1	Traveling to peaceful places brings calm moments, offering quiet paths where nature softens every sound.
 4	travelText2	Exploring silent corners of the world reveals gentle beauty, inviting travelers to rest in stillness.
-5	friendsTtitle	Making New Friends
 6	friendsText1	New friendships often begin with simple moments—sharing a smile, joining a conversation, or helping someone nearby.
 7	friendsText2	These small connections can quickly grow into meaningful bonds that make any journey feel brighter.
+5	friendsTitle	Making New Friends
 \.
 
 
@@ -10570,5 +10581,5 @@ ALTER EVENT TRIGGER pgrst_drop_watch OWNER TO supabase_admin;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict Qxv21lTyvtV4OUWQhVla09wdlepJ2QdeU6Xd8XCQGgTIV92iUW9mgt0bUuHFiVy
+\unrestrict P7RAe4w8XxdrPqyQAsU6DsWwuer4IJdlHfy7kUhNz3z7TKUFSL7IDNar137HTLu
 
