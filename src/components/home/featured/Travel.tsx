@@ -19,29 +19,29 @@ export default function() {
     const travel = api?.home_featured?.travel;
 
     return (
-        <Card className={`home-travel ui-p-15 ui-round ui-shadow ${themeA}`}>
+        <Card className={`home-travel ui-p-5 ui-round ui-shadow ${themeA}`}>
             <Carousel col={1} slide={5000}>
                 <Carousel.Slider className='ui-ease-slow'>
 
                     <Carousel.Content animate={150}>
                         <Grid.Static fluid='sm'>
-                            <Grid.Col size={425} className='ui-p-10'>
+                            <Grid.Col size={455} className='ui-p-10'>
 
                                 <Grid.Row fluid='no' gap='xs' className='ui-ease-2nd-layout ui-ease-2nd-slow ui-ease-2nd-in-out'>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={travel?.img1} aspect='landscape' className='ui-bring-back' />
+                                        <Image lazy fluid src={travel?.img1} aspect='landscape' className='ui-round-l ui-no-round-bl ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={travel?.img2} aspect='landscape' className='ui-bring-front' />
+                                        <Image lazy fluid src={travel?.img2} aspect='landscape' className='ui-round-r ui-no-round-br ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.img3} aspect='landscape' className='ui-bring-l' />
+                                        <Image lazy fluid src={travel?.img3} aspect='landscape' className='ui-round-l ui-no-round-tl ui-bring-l' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
                                         <Image lazy fluid src={travel?.img4} aspect='landscape' className='ui-bring-b' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.img5} aspect='landscape' className='ui-bring-r' />
+                                        <Image lazy fluid src={travel?.img5} aspect='landscape' className='ui-round-r ui-no-round-tr ui-bring-r' />
                                     </Grid.Col>
                                 </Grid.Row>
 
@@ -52,7 +52,7 @@ export default function() {
                                     <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
                                         <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{travel?.titleA}</Heading>
-                                            <p className='ui-font-16 ui-font-readable ui-line-clamp-6 ui-m-20-b'>
+                                            <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-line-clamp-6 ui-m-30-b'>
                                                 {travel?.textA}
                                             </p>
                                             <Button fluid='xs' className='ui-circle ui-fill-dark-100'>{travel?.textMore}</Button>
@@ -66,26 +66,26 @@ export default function() {
 
                     <Carousel.Content animate={150}>
                         <Grid.Static fluid='sm'>
-                            <Grid.Col size={425} className='ui-p-10'>
+                            <Grid.Col size={455} className='ui-p-10'>
 
                                 <Grid.Row fluid='no' gap='xs' className='ui-ease-2nd-layout ui-ease-2nd-slow ui-ease-2nd-in-out'>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.avatar1} aspect='square' className='ui-bring-back' />
+                                        <Image lazy fluid src={travel?.avatar1} aspect='square' className='ui-round-l ui-no-round-bl ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
                                         <Image lazy fluid src={travel?.avatar2} aspect='square' className='ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.avatar3} aspect='square' className='ui-bring-back' />
+                                        <Image lazy fluid src={travel?.avatar3} aspect='square' className='ui-round-r ui-no-round-br ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.avatar4} aspect='square' className='ui-bring-front' />
+                                        <Image lazy fluid src={travel?.avatar4} aspect='square' className='ui-round-l ui-no-round-tl ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
                                         <Image lazy fluid src={travel?.avatar5} aspect='square' className='ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.avatar6} aspect='square' className='ui-bring-front' />
+                                        <Image lazy fluid src={travel?.avatar6} aspect='square' className='ui-round-r ui-no-round-tr ui-bring-front' />
                                     </Grid.Col>
                                 </Grid.Row>
 
@@ -96,7 +96,7 @@ export default function() {
                                     <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
                                         <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{travel?.titleB}</Heading>
-                                            <p className='ui-font-16 ui-font-readable ui-line-clamp-6 ui-m-20-b'>
+                                            <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-line-clamp-6 ui-m-30-b'>
                                                 {travel?.textB}
                                             </p>
                                             <Button fluid='xs' className='ui-circle ui-fill-dark-100'>{travel?.textMore}</Button>
@@ -109,7 +109,7 @@ export default function() {
                     </Carousel.Content>
 
                 </Carousel.Slider>
-                <Carousel.Nav>
+                <Carousel.Nav className='ui-m-10-b'>
                     <Button ghost square className='ui-carousel-prev ui-circle'>
                         <SvgIcon as='js' src={IconAngleLeft} />
                     </Button>

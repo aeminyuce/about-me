@@ -18,8 +18,8 @@ export default function() {
     return (
         <Card className={`home-race ui-round ui-shadow ${themeB}`}>
             <Card.Side className='ui-set-relative'>
-                <span className='ui-color-white ui-p-10-v ui-p-20-h ui-m-30 ui-round ui-set-absolute ui-set-b ui-fill-light-200 ui-bg-blur'>
-                    <SvgIcon as='js' src={IconTrophyStar} size='lg' r={10} />
+                <span className='ui-color-white ui-p-10-v ui-p-15-h ui-m-20 ui-round ui-set-absolute ui-set-b ui-fill-light-200 ui-bg-blur'>
+                    <SvgIcon as='js' src={IconTrophyStar} size='md' r={10} />
                     {race?.winner}
                 </span>
                 <Image lazy fluid src={race?.img} aspect='landscape' className='ui-round-t' />

@@ -57,11 +57,6 @@ export default function () {
                 ...
 
             </Grid.Col>
-            <Grid.Col lg={3} size={4} md={6}>
-
-                {homeFeatured?.race && <Race />}
-
-            </Grid.Col>
             <Grid.Col size={4} md={6}>
 
                 {homeFeatured?.alerts && <Alerts />}
@@ -71,6 +66,11 @@ export default function () {
             <Grid.Col lg={5} size={4} md={6}>
 
                 ...
+
+            </Grid.Col>
+            <Grid.Col lg={3} size={4} md={6}>
+
+                {homeFeatured?.race && <Race />}
 
             </Grid.Col>
         </Grid.Row>

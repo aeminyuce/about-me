@@ -17,7 +17,7 @@ export default function() {
     const info = profile?.info;
 
     return (
-        <Card className='home-profile ui-round ui-shadow'>
+        <Card className={`home-profile ui-round ui-shadow ${themeA}`}>
             <div className='ui-align-c ui-round-t ui-border-b'>
                 <div className='ui-round-t'>
                     <Image lazy src={info?.cover} aspect='photo' />
@@ -35,7 +35,7 @@ export default function() {
                     {info?.email}
                 </div>
                 <div className='ui-font-11 ui-m-10-b'>
-                    <Button as='span' size='xs' className={`ui-p-10-h ui-circle ui-fill-light-200 ${themeA}`}>
+                    <Button as='span' size='xs' className='ui-p-10-h ui-circle ui-fill-dark-100'>
                         {info?.type}
                     </Button>
                 </div>
@@ -47,7 +47,7 @@ export default function() {
                     {profile?.userActivity?.map((item: UserActivityProps, index: number) => (
                         <ListGroup.Item key={`uac-${index}`}>
                             <a href={item.url}>
-                                <Avatar size='xs' className='ui-round'>
+                                <Avatar size='xs' className='ui-round ui-fill-light-300'>
                                     <span>{item.time}</span>
                                 </Avatar>
                                 <span className='ui-color-black-50 ui-font-13 ui-font-condensed ui-p-5-t ui-block'>
