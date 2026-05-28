@@ -68,11 +68,10 @@ export default function () {
 
                                     <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                         <Heading as='h3'>{text?.travelTitle}</Heading>
-                                        <p className='ui-font-16 ui-font-readable'>
+                                        <p className='ui-font-16 ui-font-readable ui-m-15-b'>
                                             {text?.travelText1}
                                             <br /><br />
                                             {text?.travelText1}
-                                            <br /><br />
                                         </p>
                                         <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
                                     </div>
@@ -113,11 +112,10 @@ export default function () {
 
                                     <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                         <Heading as='h3'>{text?.friendsTitle}</Heading>
-                                        <p className='ui-font-16 ui-font-readable'>
+                                        <p className='ui-font-16 ui-font-readable ui-m-15-b'>
                                             {text?.friendsText1}
                                             <br /><br />
                                             {text?.friendsText2}
-                                            <br /><br />
                                         </p>
                                         <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
                                     </div>
@@ -174,11 +172,10 @@ export default function () {
                                     <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
                                         <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.travelTitle}</Heading>
-                                            <p className='ui-font-16 ui-font-readable'>
+                                            <p className='ui-font-16 ui-font-readable ui-m-15-b'>
                                                 {text?.travelText1}
                                                 <br /><br />
                                                 {text?.travelText1}
-                                                <br /><br />
                                             </p>
                                             <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
                                         </div>
@@ -221,11 +218,10 @@ export default function () {
                                     <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
                                         <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.friendsTitle}</Heading>
-                                            <p className='ui-font-16 ui-font-readable'>
+                                            <p className='ui-font-16 ui-font-readable ui-m-15-b'>
                                                 {text?.friendsText1}
                                                 <br /><br />
                                                 {text?.friendsText2}
-                                                <br /><br />
                                             </p>
                                             <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
                                         </div>
