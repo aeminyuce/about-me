@@ -115,31 +115,31 @@ export default function () {
                         <Card.Side className='ui-m-10-b'>
                             {text?.food}
                         </Card.Side>
-                        <Card.Side>
-                            <Button.Wrapper type='holder' as='div' ease='1st' className='ui-m-1-b ui-round-t-1st ui-block-2nd ui-icons-no-opacity'>
-                                <Button noease multi className='ui-p-10-v'>
+                        <Card.Side className='ui-icons-no-opacity'>
+                            <Button.Wrapper type='holder' as='div' ease='1st' className='ui-m-1-b ui-round-t-1st ui-block-2nd'>
+                                <Button noease multi className='ui-p-10'>
                                     <SvgIcon as='js' src={IconChef} b={5} className='ui-m-auto ui-text' />
                                     {text?.foodBtn1}
                                 </Button>
-                                <Button noease multi className='ui-p-10-v'>
+                                <Button noease multi className='ui-p-10'>
                                     <SvgIcon as='js' src={IconPlate} b={5} className='ui-m-auto ui-text' />
                                     {text?.foodBtn2}
                                 </Button>
-                                <Button noease multi className='ui-p-10-v'>
+                                <Button noease multi className='ui-p-10'>
                                     <SvgIcon as='js' src={IconCup} b={5} className='ui-m-auto ui-text' />
                                     {text?.foodBtn3}
                                 </Button>
                             </Button.Wrapper>
-                            <Button.Wrapper type='holder' as='div' ease='1st' className='ui-round-b-1st ui-block-2nd ui-icons-no-opacity'>
-                                <Button noease multi className='ui-p-10-v'>
+                            <Button.Wrapper type='holder' as='div' ease='1st' className='ui-round-b-1st ui-block-2nd'>
+                                <Button noease multi className='ui-p-10'>
                                     <SvgIcon as='js' src={IconCoffee} b={5} className='ui-m-auto ui-text' />
                                     {text?.foodBtn4}
                                 </Button>
-                                <Button noease multi className='ui-p-10-v'>
+                                <Button noease multi className='ui-p-10'>
                                     <SvgIcon as='js' src={IconForkKnife} b={5} className='ui-m-auto ui-text' />
                                     {text?.foodBtn5}
                                 </Button>
-                                <Button noease multi className='ui-p-10-v'>
+                                <Button noease multi className='ui-p-10'>
                                     <SvgIcon as='js' src={IconMitten} b={5} className='ui-m-auto ui-text' />
                                     {text?.foodBtn6}
                                 </Button>
@@ -298,9 +298,9 @@ export default function () {
                                 <Image lazy fluid src={img[5]} aspect='square' className='ui-round-r ui-no-round-br' />
                             </Grid.Col>
                         </Grid.Row>
-                        <Grid.Row fluid='sm' gap='lg' className='ui-color-black-50 ui-font-readable'>
+                        <Grid.Row fluid='sm' gap='lg' className='ui-color-black-50 ui-font-readable ui-align-l'>
                             <Grid.Col size={6}>{text?.travel1}</Grid.Col>
-                            <Grid.Col size={6}>{text?.travel2}</Grid.Col>
+                            <Grid.Col size={6} className='ui-sm-no-p-t'>{text?.travel2}</Grid.Col>
                         </Grid.Row>
                     </Card>
 
@@ -322,7 +322,7 @@ export default function () {
                             <SvgIcon as='js' src={IconAlertCircle} size='lg' animate='wiggle' />
                         </span>
                     </Grid.Col>
-                    <Grid.Row>
+                    <Grid.Row gap='lg'>
                         <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.info}</Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
@@ -335,7 +335,7 @@ export default function () {
                             <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' className='ui-text' />
                         </span>
                     </Grid.Col>
-                    <Grid.Row>
+                    <Grid.Row gap='lg'>
                         <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.success}</Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
@@ -348,7 +348,7 @@ export default function () {
                             <SvgIcon as='js' src={IconAlertShield} size='lg' animate='pop' className='ui-text' />
                         </span>
                     </Grid.Col>
-                    <Grid.Row>
+                    <Grid.Row gap='lg'>
                         <Grid.Col size={12} className='ui-p-15-v ui-no-p-l'>{text?.warning}</Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
@@ -361,7 +361,7 @@ export default function () {
                             <SvgIcon as='js' src={IconRemoveShield} size='lg' animate='elastic' className='ui-text' />
                         </span>
                     </Grid.Col>
-                    <Grid.Row>
+                    <Grid.Row gap='lg'>
                         <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.danger}</Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
