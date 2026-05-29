@@ -12,7 +12,7 @@ export default function () {
     const profileImage = general?.profileImage;
 
     if (profileImage) return (
-        <Avatar size='lg' className='ui-circle'>
+        <Avatar size='lg' className='ui-squircle'>
             <Image fetchPriority='high' src={profileImage} alt={`${general?.fullName} | ${general?.jobTitle}`} aspect='square' />
         </Avatar>
     )

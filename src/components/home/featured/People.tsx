@@ -41,7 +41,7 @@ export const People = () => {
                         const avatar = item.avatar;
                         const jobTitle = item.jobTitle;
 
-                        let classes = 'ui-circle ui-hover-scale-more';
+                        let classes = 'ui-squircle ui-hover-scale-more';
                         classes += avatarText ? ' ui-fill-light-300' : '';
 
                         return (

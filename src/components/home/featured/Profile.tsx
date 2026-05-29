@@ -22,8 +22,8 @@ export default function() {
                 <div className='ui-round-t'>
                     <Image lazy src={info?.cover} aspect='photo' />
                 </div>
-                <Notifier className='ui-circle ui-circle-1st' dataVal={'Idle'}>
-                    <Avatar size='lg'>
+                <Notifier dataVal={'Idle'}>
+                    <Avatar size='lg' className='ui-squircle'>
                         <Image lazy src={info?.avatar} aspect='square' />
                     </Avatar>
                 </Notifier>
