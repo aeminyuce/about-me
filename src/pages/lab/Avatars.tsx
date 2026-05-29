@@ -52,6 +52,23 @@ export default function () {
                     <Image lazy src={img[3]} aspect='square' />
                 </Avatar>
             </div>
+
+            <Spacer size={15} />
+
+            <div className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout ui-squircle-1st'>
+                <Avatar noease size='xs' className='ui-m-5-h'>
+                    <Image lazy src={img[0]} aspect='square' />
+                </Avatar>
+                <Avatar noease size='sm' className='ui-m-5-h'>
+                    <Image lazy src={img[1]} aspect='square' />
+                </Avatar>
+                <Avatar noease className='ui-m-5-h'>
+                    <Image lazy src={img[2]} aspect='square' />
+                </Avatar>
+                <Avatar noease size='lg' className='ui-m-5-h'>
+                    <Image lazy src={img[3]} aspect='square' />
+                </Avatar>
+            </div>
         </Preview>
 
         <Description>{desc?.round}</Description>
@@ -75,6 +92,23 @@ export default function () {
         <Description>{desc?.noImg}</Description>
         <Preview>
             <div className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout ui-circle-1st'>
+                <Avatar noease size='xs' className='ui-m-5-h'>
+                    <span>{text?.ph4}</span>
+                </Avatar>
+                <Avatar noease size='sm' className='ui-m-5-h'>
+                    <span>{text?.ph3}</span>
+                </Avatar>
+                <Avatar noease className='ui-m-5-h'>
+                    <span>{text?.ph2}</span>
+                </Avatar>
+                <Avatar noease size='lg' className='ui-m-5-h'>
+                    <span>{text?.ph1}</span>
+                </Avatar>
+            </div>
+
+            <Spacer size={15} />
+
+            <div className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout ui-squircle-1st'>
                 <Avatar noease size='xs' className='ui-m-5-h'>
                     <span>{text?.ph4}</span>
                 </Avatar>
@@ -123,8 +157,11 @@ export default function () {
                 <Avatar noease size='lg' className='ui-m-5-h ui-fill-dark-100 ui-theme-redPurple'>
                     <span>{text?.ph1}</span>
                 </Avatar>
+            </div>
 
-                <Spacer size={10} />
+            <Spacer size={15} />
+
+            <div className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout ui-squircle-1st'>
 
                 <Avatar noease size='xs' className='ui-m-5-h ui-fill-dark-100 ui-theme-purple'>
                     <SvgIcon as='js' src={IconUser} />
@@ -173,7 +210,7 @@ export default function () {
 
         <Description>{desc?.group}</Description>
         <Preview>
-            <Avatar.Holder className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout ui-circle-1st'>
+            <Avatar.Holder className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout ui-squircle-1st'>
                 <Avatar noease className='ui-fill-dark-100 ui-theme-purple'>
                     <SvgIcon as='js' src={IconUser} />
                 </Avatar>
