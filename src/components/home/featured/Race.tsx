@@ -25,7 +25,7 @@ export default function() {
                 <Image lazy fluid src={race?.img} aspect='landscape' className='ui-round-t' />
             </Card.Side>
             <Card.Side className='ui-color-black-50 ui-p-15'>
-                <p className='ui-line-clamp-2'>{race?.text}</p>
+                <p className='ui-line-2'>{race?.text}</p>
             </Card.Side>
             <Card.Side>
                 <ListGroup>
