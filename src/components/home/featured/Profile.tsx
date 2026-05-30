@@ -23,7 +23,7 @@ export default function() {
                     <Image lazy src={info?.cover} aspect='photo' />
                 </div>
                 <Notifier dataVal={'Idle'}>
-                    <Avatar size='lg' className='ui-squircle'>
+                    <Avatar className='ui-squircle'>
                         <Image lazy src={info?.avatar} aspect='square' />
                     </Avatar>
                 </Notifier>
