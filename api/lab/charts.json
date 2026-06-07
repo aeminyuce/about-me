@@ -1,9 +1,223 @@
 {
     "result": {
         "charts": {
-            "desc": null,
-            "text": null,
-            "value": null
+            "desc": {
+                "infos": "Line chart infos ...",
+                "multi": "Multiple lines ...",
+                "rowSizes": "Row sizes ...",
+                "lineGrids": "Line grids and roots ...",
+                "lineTypes": "Line chart line types ...",
+                "circleTypes": "Line chart circle types ...",
+                "dataVariants": "Line chart data variants ..."
+            },
+            "text": {
+                "grid": "With Grids",
+                "root": "With Roots",
+                "info1": "Sales",
+                "info2": "Profit",
+                "lines": "Dotted, Dashed, Filled",
+                "negPos": "Negative and Positive Datas",
+                "sepDot": "Dot Separator\n",
+                "zeroAll": "All Zero Datas",
+                "zeroRep": "Repeated Zero Datas",
+                "circleNo": "No Circles",
+                "gridRoot": "With Grids and Roots",
+                "negative": "Negative Datas\n",
+                "rows4x50": "4 rows x 50px height",
+                "rows8x20": "8 rows x 20px height",
+                "circleUrl": "Circles with URLs",
+                "rows1x200": "1 row x 200px height",
+                "noGridRoot": "Without Grids & Roots",
+                "infoToggle1": "Info Buttons with Toggle Lines",
+                "infoToggle2": "Default Hidden Lines with Toggle",
+                "linesCurved": "Curved",
+                "prefixSuffix": "Prefix € and Suffix m",
+                "circleNoRepeat": "No Repeated Circles",
+                "circleOnlyRepeat": "Show Only Repeated Lines Start"
+            },
+            "value": {
+                "y1": [
+                    84,
+                    56,
+                    112,
+                    140,
+                    28,
+                    0,
+                    28
+                ],
+                "y2": [
+                    120,
+                    20,
+                    159,
+                    120,
+                    80,
+                    0,
+                    20
+                ],
+                "y3": [
+                    32,
+                    52,
+                    117,
+                    85,
+                    137,
+                    144,
+                    59
+                ],
+                "y4": [
+                    55,
+                    72,
+                    92,
+                    55,
+                    89,
+                    98,
+                    116
+                ],
+                "xDays": [
+                    "Mon",
+                    "Tue",
+                    "Wed",
+                    "Thu",
+                    "Fri",
+                    "Sat",
+                    "Sun"
+                ],
+                "yNegPos": [
+                    -34,
+                    -56,
+                    -112,
+                    0,
+                    16,
+                    42,
+                    135
+                ],
+                "yDollars": [
+                    1200,
+                    1800,
+                    11200,
+                    7500,
+                    6300,
+                    800,
+                    1100
+                ],
+                "yRepeat1": [
+                    84,
+                    84,
+                    84,
+                    64,
+                    27,
+                    10,
+                    27
+                ],
+                "yRepeat2": [
+                    55,
+                    33,
+                    112,
+                    112,
+                    112,
+                    112,
+                    73
+                ],
+                "yRepeat3": [
+                    12,
+                    12,
+                    12,
+                    5,
+                    55,
+                    55,
+                    55
+                ],
+                "yRepeat4": [
+                    42,
+                    42,
+                    42,
+                    42,
+                    42,
+                    42,
+                    42
+                ],
+                "yRepeat5": [
+                    25,
+                    130,
+                    130,
+                    30,
+                    120,
+                    120,
+                    35
+                ],
+                "yRepeat6": [
+                    25,
+                    110,
+                    110,
+                    100,
+                    100,
+                    65,
+                    15
+                ],
+                "yRepeat7": [
+                    25,
+                    70,
+                    70,
+                    70,
+                    70,
+                    65,
+                    45
+                ],
+                "yRepeat8": [
+                    50,
+                    50,
+                    50,
+                    50,
+                    50,
+                    50,
+                    95,
+                    75
+                ],
+                "yRepeat9": [
+                    35,
+                    75,
+                    35,
+                    35,
+                    35,
+                    35,
+                    35
+                ],
+                "yZeroAll": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "yZeroRep": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    20,
+                    0,
+                    0
+                ],
+                "yNegative": [
+                    0,
+                    -56,
+                    -112,
+                    -140,
+                    -28,
+                    -20,
+                    -28
+                ],
+                "yRepeat10": [
+                    15,
+                    15,
+                    15,
+                    15,
+                    15,
+                    15,
+                    15
+                ]
+            }
         }
     }
 }
