@@ -119,7 +119,7 @@ export default function () {
                 msg: text?.alert,
                 success: text?.yes,
                 error: text?.no,
-                callback: function (value) {
+                callback: (value) => {
                     alert(value);
                 }
             });
