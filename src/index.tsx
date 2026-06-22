@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router';
 
 // shared assets
 import 'uilab/less/ui.less';
@@ -12,9 +12,10 @@ import './assets/styles.less';
 // app
 import App from './App';
 
-const root = createRoot(document.getElementById('app'));
-root.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
-);
+const root = createRoot(document.getElementById('app') as HTMLElement);
+const router = createBrowserRouter([{
+    path: '*',
+    element: <App />
+}]);
+
+root.render(<RouterProvider router={router} />);

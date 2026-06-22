@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createContext, useContext, useReducer, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import Loadingmask from 'uilab/react/Loadingmask';
 import Service from '../services/Service';
 import { getPageData, getHomeData, getHomeFeaturedData, getLabData, getIconsData, getBlogData } from '../services/Repository';

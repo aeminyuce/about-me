@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import Button from 'uilab/react/Button';
 import Carousel from 'uilab/react/Carousel';
 import Grid from 'uilab/react/Grid';

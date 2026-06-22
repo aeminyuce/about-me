@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router';
 import Heading from 'uilab/react/Heading';
 import Grid from 'uilab/react/Grid';
 import Image from 'uilab/react/Image';

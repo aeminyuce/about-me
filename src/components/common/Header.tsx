@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import Grid from 'uilab/react/Grid';
 import HeaderSticky from 'uilab/react/HeaderSticky';
 
