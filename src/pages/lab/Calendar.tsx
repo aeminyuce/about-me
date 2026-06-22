@@ -57,25 +57,25 @@ export default function () {
             <Grid.Row className='ui-align-l ui-round-2nd'>
                 <Grid.Col lg={{ size: 5, offset: 1 }} size={12}>
                     <b className='ui-m-5-b ui-inline-block'>
-                        {`${text?.prev}"${dates?.defined1}"`}
+                        {`${text?.prev}'${dates?.defined1}'`}
                     </b>
                     <Calendar className='ui-shadow' data={{ date: dates?.defined1 }} />
                 </Grid.Col>
                 <Grid.Col lg={{ size: 5 }} size={12}>
                     <b className='ui-m-5-b ui-inline-block'>
-                        {`${text?.next}"${dates?.defined2}"`}
+                        {`${text?.next}'${dates?.defined2}'`}
                     </b>
                     <Calendar className='ui-shadow' data={{ date: dates?.defined2 }} />
                 </Grid.Col>
                 <Grid.Col lg={{ size: 5, offset: 1 }} size={12}>
                     <b className='ui-m-5-b ui-inline-block'>
-                        {`${text?.month}"${dates?.defined3}"`}
+                        {`${text?.month}'${dates?.defined3}'`}
                     </b>
                     <Calendar className='ui-shadow' data={{ date: dates?.defined3 }} />
                 </Grid.Col>
                 <Grid.Col lg={{ size: 5 }} size={12}>
                     <b className='ui-m-5-b ui-inline-block'>
-                        {`${text?.yearMonth}"${dates?.defined4}"`}
+                        {`${text?.yearMonth}'${dates?.defined4}'`}
                     </b>
                     <Calendar className='ui-shadow' data={{ date: dates?.defined4 }} />
                 </Grid.Col>
