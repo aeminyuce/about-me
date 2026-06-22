@@ -2,7 +2,7 @@ import Service from './Service';
 
 // get
 export const getPageData = async (service: Service) => {
-    return service.get(`${process.env.API_URL}/get_page`);
+    return service.get(`${process.env.API_URL}/get_pag3e`);
 };
 
 export const getHomeData = async (service: Service) => {

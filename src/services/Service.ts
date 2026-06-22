@@ -4,7 +4,7 @@ import Loadingmask from 'uilab/react/Loadingmask';
 let activeFetches = 0;
 
 const serviceHeaders = {
-    'apikey': process.env.API_KEY,
+    'apikey': process.env.API_KEY ?? '',
     'Content-Type': 'application/json',
 };
 

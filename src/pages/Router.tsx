@@ -5,9 +5,9 @@ import { Routes, Route } from 'react-router';
 // misc
 import PageTitle from '../components/common/PageTitle';
 import PageLoader from '../components/common/PageLoader';
-import Page500 from '../pages/500';
-import Page404 from '../pages/404';
-import PageApiError from './ApiError';
+import Page500 from '../pages/error/500';
+import Page404 from '../pages/error/404';
+import PageApiError from './error/ApiError';
 
 // layouts
 const Default = lazy(() => import( /* webpackChunkName: 'Default' */ '../layouts/Default' ));
@@ -100,14 +100,17 @@ export default function () {
                 {/* error pages */}
                 <Route element={<Error />}>
 
-                    <Route path='error' element={
+                    <Route path='api-error' element={
                         <PageTitle title='API Error'><PageApiError /></PageTitle>
+                    }/>
+                    <Route path='404' element={
+                        <PageTitle title='Not Found'><Page404 /></PageTitle>
                     }/>
                     <Route path='500' element={
                         <PageTitle title='Server Error'><Page500 /></PageTitle>
                     }/>
                     <Route path='*' element={
-                        <PageTitle title='Page Not Found'><Page404 /></PageTitle>
+                        <PageTitle title='Not Found'><Page404 /></PageTitle>
                     }/>
 
                 </Route>

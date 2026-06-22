@@ -9,12 +9,16 @@ import 'uilab/js/ui.js';
 // styles
 import './assets/styles.less';
 
-// app
+// misc
 import App from './App';
+import ErrorBoundary from './pages/error/ErrorBoundary';
 
-const root = createRoot(document.getElementById('app') as HTMLElement);
+const app = document.getElementById('app') as HTMLElement;
+const root = createRoot(app);
+
 const router = createBrowserRouter([{
     path: '*',
+    ErrorBoundary: ErrorBoundary,
     element: <App />
 }]);
 
