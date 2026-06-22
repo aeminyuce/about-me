@@ -17,19 +17,21 @@ const hidePageLoader = () => {
 };
 
 const errorHandler = (status: any) => {
-    if (status === 404 && window.location.pathname !== '/404') {
+    const code = String(status);
+
+    if (code.startsWith('4') && window.location.pathname !== '/404') {
         hidePageLoader();
         window.location.href = '/404';
     }
 
-    if (status === 500 && window.location.pathname !== '/500') {
+    if (code.startsWith('5') && window.location.pathname !== '/500') {
         hidePageLoader();
         window.location.href = '/500';
     }
 
-    if (status === 'apiError' && window.location.pathname !== '/error') {
+    if (code === 'apiError' && window.location.pathname !== '/api-error') {
         hidePageLoader();
-        window.location.href = '/error';
+        window.location.href = '/api-error';
     }
 }
 
