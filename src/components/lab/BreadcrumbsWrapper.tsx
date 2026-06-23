@@ -13,5 +13,5 @@ export default function (props: BreadcrumbsWrapperProps) {
             <Breadcrumbs.Item seoFriendly pos={'2'} to='/lab' className={'ui-opacity'}>Lab</Breadcrumbs.Item>
             <Breadcrumbs.Item seoFriendly pos={'3'}>{children}</Breadcrumbs.Item>
         </Breadcrumbs>
-    );
+    )
 }

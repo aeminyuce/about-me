@@ -39,5 +39,5 @@ export default function () {
                 {(info?.iconsSuffix || iconsList) && <List iconsList={iconsList} />}
             </Grid.Col>
         </Grid.Row>
-    );
+    )
 }

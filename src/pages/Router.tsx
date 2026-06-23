@@ -116,5 +116,5 @@ export default function () {
                 </Route>
             </Routes>
         </Suspense>
-    );
+    )
 }

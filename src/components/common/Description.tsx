@@ -15,5 +15,5 @@ export default function (props: DescriptionProps) {
                 </p>
             </Grid.Col>
         </Grid.Row>
-    );
+    )
 }

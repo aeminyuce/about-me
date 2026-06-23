@@ -325,5 +325,5 @@ export default function () {
             </p>
         </Preview>
         </>
-    );
+    )
 }

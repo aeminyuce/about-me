@@ -11,5 +11,5 @@ export default function () {
                 Dashboard contents!
             </Grid.Col>
         </Grid.Row>
-    );
+    )
 }

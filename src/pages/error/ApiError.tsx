@@ -11,5 +11,5 @@ export default function () {
             <p className='ui-font-22 ui-m-30-b'>Whoops, the API paused or didn’t respond. We’ll be back soon.</p>
             <Button className='ui-circle' to='/'>Go to Home</Button>
         </div>
-    );
+    )
 }

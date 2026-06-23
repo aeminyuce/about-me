@@ -44,5 +44,5 @@ export default function () {
                 </Button.Wrapper>
             </Grid.Col>
         </Grid.Row>
-    );
+    )
 }

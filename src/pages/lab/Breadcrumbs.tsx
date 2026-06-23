@@ -337,5 +337,5 @@ export default function () {
             </Breadcrumbs>
         </Preview>
         </>
-    );
+    )
 }

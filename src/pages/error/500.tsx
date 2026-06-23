@@ -11,5 +11,5 @@ export default function () {
             <p className='ui-font-22 ui-m-30-b'>Oops! Server error</p>
             <Button className='ui-circle' to='/'>Go to Home</Button>
         </div>
-    );
+    )
 }

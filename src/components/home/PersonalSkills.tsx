@@ -13,7 +13,7 @@ export default function () {
             <Grid.Col xl={8} lg={8} size={10} className='ui-round-1st'>
 
                 {api?.home?.aboutMe?.personalSkills?.map((name: string) => (
-                    <Button as='span' size='xs' key={name} className='ui-m-1'>
+                    <Button noease as='span' size='xs' key={name} className='ui-m-1'>
                         {name}
                     </Button>
                 ))}

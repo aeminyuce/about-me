@@ -75,5 +75,5 @@ export default function () {
             </Grid.Col>
         </Grid.Row>
         </>
-    );
+    )
 }

@@ -36,7 +36,7 @@ export default function () {
                 </Grid.Col>
             </Grid.Static>
         </Grid.Row>
-    );
+    )
 }
 
 const NavDesktopLinks = () => {

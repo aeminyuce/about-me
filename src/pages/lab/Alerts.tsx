@@ -241,5 +241,5 @@ export default function () {
             </div>
         </Preview>
         </>
-    );
+    )
 }

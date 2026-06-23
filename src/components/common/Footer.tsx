@@ -12,5 +12,5 @@ export default function () {
 
             </Grid.Row>
         </Grid.Container>
-    );
+    )
 }

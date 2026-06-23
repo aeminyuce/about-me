@@ -12,10 +12,10 @@ export default function () {
     return (
         <Grid.Row>
             <Grid.Col size={4} offset={4}>
-                <Button.Wrapper as='div' type='holder' largeButtons ease='1st' className='ui-theme-purpleBlue'>
+                <Button.Wrapper as='div' type='holder' largeButtons ease='1st' className='ui-round-1st ui-theme-purpleBlue'>
 
                     {api?.icons?.sizes?.map((item: SizeListProps) => {
-                        const classes = `ui-round${item.size === iconSize ? ' ui-fill-dark-100' : ''}`;
+                        const classes = item.size === iconSize ? ' ui-fill-dark-100' : undefined;
 
                         return (
                             <Button key={item.name} noease className={classes} data={{ 'size': item.size  }} onClick={() => setIconSize(item.size)}>

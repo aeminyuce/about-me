@@ -728,5 +728,5 @@ export default function () {
             </Grid.Row>
         </Preview>
         </>
-    );
+    )
 }
