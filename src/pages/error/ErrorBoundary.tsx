@@ -13,7 +13,7 @@ export default function () {
                 Oops!
             </Heading>
             <p className='ui-font-22 ui-m-30-b'>{String(error)}</p>
-            <Button className='ui-circle' to='/'>Go to Home</Button>
+            <Button className='ui-circle' onClick={() => window.location.reload()}>Refresh</Button>
         </div>
     )
 }
