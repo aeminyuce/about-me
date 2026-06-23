@@ -575,7 +575,7 @@ export default function () {
                         <Dropdown className='ui-round-1st'>
                             <Button className='ui-border'>
                                 {text?.three}
-                                <SvgIcon toggle as='js' src={IconAngleDown} className='ui-m-10-l' />
+                                <SvgIcon toggle as='js' src={IconAngleDown} />
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>
                                 <Dropdown.Item>{text?.one}</Dropdown.Item>
