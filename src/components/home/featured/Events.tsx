@@ -35,7 +35,7 @@ export default function() {
                 {calendar?.cardTitle}
             </Heading>
 
-            <Calendar className={`ui-no-p ui-round ${themeB}`} data={{ date: calendar?.eventsDate, json: JSON.stringify(calendar?.events) }} />
+            <Calendar className={`ui-no-p ui-round ${themeB}`} data={{ date: calendar?.eventsDate }} json={calendar?.events} />
         </Card>
     )
 }

@@ -90,7 +90,7 @@ export default function () {
         <Preview>
             <Grid.Row>
                 <Grid.Col lg={{ size: 6, offset: 3 }} size={12}>
-                    <Calendar className='ui-round ui-shadow ui-theme-purpleBlue' data={{ date: dates?.details, json: JSON.stringify(details) }} />
+                    <Calendar className='ui-round ui-shadow ui-theme-purpleBlue' data={{ date: dates?.details }} json={details} />
                 </Grid.Col>
             </Grid.Row>
         </Preview>
