@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict KFkhkId4gd19dZ2sHoD4tkTNk6dWkNW25VVQm8eXIQmMF4tXJcARoyrlnGAFbzm
+\restrict H5KxHQTc5RXPfCncTTSfXvidlMMPnmloDRzICocLqN9ZbeBvi1HfnuKucOblQCv
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1 (Postgres.app)
@@ -2141,7 +2141,6 @@ DECLARE
   final_payload jsonb;
 BEGIN
   BEGIN
-    -- Generate a new UUID for the id
     generated_id := gen_random_uuid();
 
     -- Check if payload has an 'id' key, if not, add the generated UUID
@@ -2154,13 +2153,11 @@ BEGIN
     -- Set the topic configuration
     EXECUTE format('SET LOCAL realtime.topic TO %L', topic);
 
-    -- Attempt to insert the message
     INSERT INTO realtime.messages (id, payload, event, topic, private, extension)
     VALUES (generated_id, final_payload, event, topic, private, 'broadcast');
   EXCEPTION
     WHEN OTHERS THEN
-      -- Capture and notify the error
-      RAISE WARNING 'ErrorSendingBroadcastMessage: %', SQLERRM;
+      RAISE WARNING 'WarnSendingBroadcastMessage: %', SQLERRM;
   END;
 END;
 $$;
@@ -2187,7 +2184,7 @@ BEGIN
     VALUES (generated_id, payload, event, topic, private, 'broadcast');
   EXCEPTION
     WHEN OTHERS THEN
-      RAISE WARNING 'ErrorSendingBroadcastMessage: %', SQLERRM;
+      RAISE WARNING 'WarnSendingBroadcastMessage: %', SQLERRM;
   END;
 END;
 $$;
@@ -2204,40 +2201,31 @@ CREATE FUNCTION realtime.subscription_check_filters() RETURNS trigger
     AS $$
 declare
     col_names text[] = coalesce(
-            array_agg(c.column_name order by c.ordinal_position),
+            array_agg(a.attname order by a.attnum),
             '{}'::text[]
         )
         from
-            information_schema.columns c
+            pg_catalog.pg_attribute a
         where
-            format('%I.%I', c.table_schema, c.table_name)::regclass = new.entity
+            a.attrelid = new.entity
+            and a.attnum > 0
+            and not a.attisdropped
             and pg_catalog.has_column_privilege(
                 (new.claims ->> 'role'),
-                format('%I.%I', c.table_schema, c.table_name)::regclass,
-                c.column_name,
+                a.attrelid,
+                a.attnum,
                 'SELECT'
             );
-    table_col_names text[] = coalesce(
-            array_agg(pa.attname),
-            '{}'::text[]
-        )
-        from
-            pg_attribute pa
-        where
-            pa.attrelid = new.entity
-            and pa.attnum > 0;
     filter realtime.user_defined_filter;
     col_type regtype;
     in_val jsonb;
     selected_col text;
 begin
     for filter in select * from unnest(new.filters) loop
-        -- Filtered column is valid
         if not filter.column_name = any(col_names) then
             raise exception 'invalid column for filter %', filter.column_name;
         end if;
 
-        -- Type is sanitized and safe for string interpolation
         col_type = (
             select atttypid::regtype
             from pg_catalog.pg_attribute
@@ -2247,18 +2235,17 @@ begin
         if col_type is null then
             raise exception 'failed to lookup type for column %', filter.column_name;
         end if;
+
         if filter.op = 'in'::realtime.equality_op then
             in_val = realtime.cast(filter.value, (col_type::text || '[]')::regtype);
             if coalesce(jsonb_array_length(in_val), 0) > 100 then
                 raise exception 'too many values for `in` filter. Maximum 100';
             end if;
         else
-            -- raises an exception if value is not coercable to type
             perform realtime.cast(filter.value, col_type);
         end if;
     end loop;
 
-    -- Validate that selected_columns reference columns the role can SELECT
     if new.selected_columns is not null then
         for selected_col in select * from unnest(new.selected_columns) loop
             if not selected_col = any(col_names) then
@@ -2267,15 +2254,11 @@ begin
         end loop;
     end if;
 
-    -- Apply consistent order to filters so the unique constraint on
-    -- (subscription_id, entity, filters) can't be tricked by a different filter order
     new.filters = coalesce(
         array_agg(f order by f.column_name, f.op, f.value),
         '{}'
     ) from unnest(new.filters) f;
 
-    -- Normalize selected_columns order so ARRAY['a','b'] and ARRAY['b','a'] are
-    -- treated as the same subscription group in apply_rls
     new.selected_columns = (
         select array_agg(c order by c)
         from unnest(new.selected_columns) c
@@ -6582,12 +6565,14 @@ COPY lab.carousel_text (id, type, text) FROM stdin;
 
 COPY lab.charts_desc (id, type, "desc") FROM stdin;
 1	lineGrids	Line grids and roots ...
-2	rowSizes	Row sizes ...
-3	dataVariants	Line chart data variants ...
-4	multi	Multiple lines ...
 5	lineTypes	Line chart line types ...
-6	circleTypes	Line chart circle types ...
-7	infos	Line chart infos ...
+2	lineRows	Row sizes ...
+3	lineVariants	Line chart data variants ...
+4	lineMulti	Multiple lines ...
+6	lineCircles	Line chart circle types ...
+7	lineInfos	Line chart infos ...
+8	lineStepping	Column stepping charts...
+9	lineMulti	Multiple line charts...
 \.
 
 
@@ -6596,29 +6581,32 @@ COPY lab.charts_desc (id, type, "desc") FROM stdin;
 --
 
 COPY lab.charts_text (id, type, text) FROM stdin;
-1	noGridRoot	Without Grids & Roots
-2	root	With Roots
-3	grid	With Grids
-4	gridRoot	With Grids and Roots
-5	rows8x20	8 rows x 20px height
-6	rows4x50	4 rows x 50px height
-7	rows1x200	1 row x 200px height
-8	prefixSuffix	Prefix € and Suffix m
-9	sepDot	Dot Separator\n
-10	negative	Negative Datas\n
-11	negPos	Negative and Positive Datas
-12	zeroRep	Repeated Zero Datas
-13	zeroAll	All Zero Datas
-14	lines	Dotted, Dashed, Filled
-15	linesCurved	Curved
-16	circleNo	No Circles
-17	circleNoRepeat	No Repeated Circles
-18	circleOnlyRepeat	Show Only Repeated Lines Start
-19	circleUrl	Circles with URLs
-20	infoToggle1	Info Buttons with Toggle Lines
-21	infoToggle2	Default Hidden Lines with Toggle
-22	info1	Sales
-23	info2	Profit
+6	lineRows4x50	4 rows x 50px height
+5	lineRows8x20	8 rows x 20px height
+4	lineGridRoot	With Grids and Roots
+3	lineGrid	With Grids
+2	lineRoot	With Roots
+1	lineNoGridRoot	Without Grids & Roots
+24	lineMonthly	Monthly Results
+25	lineSales	Sales
+26	lineProfit	Profit
+23	lineInfo2	Profit
+22	lineInfo1	Sales
+21	lineToggle2	Default Hidden Lines with Toggle
+20	lineToggle1	Info Buttons with Toggle Lines
+19	lineCircleUrl	Circles with URLs
+18	lineRepeatOnly	Show Only Repeated Lines Start
+17	lineNoRepeat	No Repeated Circles
+16	lineCircleNo	No Circles
+15	lineCurved	Curved
+14	lineLines	Dotted, Dashed, Filled
+13	lineZeroAll	All Zero Datas
+12	lineZeroRep	Repeated Zero Datas
+11	lineNegPos	Negative and Positive Datas
+10	lineNeg	Negative Datas\n
+9	lineSepDot	Dot Separator\n
+8	linePrefixSuffix	Prefix € and Suffix m
+7	lineRows1x200	1 row x 200px height
 \.
 
 
@@ -6627,26 +6615,32 @@ COPY lab.charts_text (id, type, text) FROM stdin;
 --
 
 COPY lab.charts_value (id, name, value) FROM stdin;
-1	xDays	["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-2	y1	[84, 56, 112, 140, 28, 0, 28]
-3	yDollars	[1200, 1800, 11200, 7500, 6300, 800, 1100]
-4	yNegative	[0, -56, -112, -140, -28, -20, -28]
-5	yNegPos	[-34, -56, -112, 0, 16, 42, 135]
-6	yZeroRep	[0, 0, 0, 0, 20, 0, 0]
-7	yZeroAll	[0, 0, 0, 0, 0, 0, 0]
-8	y2	[120, 20, 159, 120, 80, 0, 20]
-9	y3	[32, 52, 117, 85, 137, 144, 59]
-10	y4	[55, 72, 92, 55, 89, 98, 116]
-11	yRepeat1	[84, 84, 84, 64, 27, 10, 27]
-12	yRepeat2	[55, 33, 112, 112, 112, 112, 73]
-13	yRepeat3	[12, 12, 12, 5, 55, 55, 55]
-14	yRepeat4	[42, 42, 42, 42, 42, 42, 42]
-15	yRepeat5	[25, 130, 130, 30, 120, 120, 35]
-16	yRepeat6	[25, 110, 110, 100, 100, 65, 15]
-17	yRepeat7	[25, 70, 70, 70, 70, 65, 45]
-18	yRepeat8	[50, 50, 50, 50, 50, 50, 95, 75]
-19	yRepeat9	[35, 75, 35, 35, 35, 35, 35]
-20	yRepeat10	[15, 15, 15, 15, 15, 15, 15]
+1	linexDays	["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+2	liney1	[84, 56, 112, 140, 28, 0, 28]
+3	lineyDollars	[1200, 1800, 11200, 7500, 6300, 800, 1100]
+4	lineyNeg	[0, -56, -112, -140, -28, -20, -28]
+5	lineyNegPos	[-34, -56, -112, 0, 16, 42, 135]
+6	lineyZeroRep	[0, 0, 0, 0, 20, 0, 0]
+7	lineyZeroAll	[0, 0, 0, 0, 0, 0, 0]
+8	liney2	[120, 20, 159, 120, 80, 0, 20]
+9	liney3	[32, 52, 117, 85, 137, 144, 59]
+10	liney4	[65, 42, 92, 55, 89, 98, 116]
+11	lineyRep1	[84, 84, 84, 64, 27, 10, 27]
+12	lineyRep2	[55, 33, 112, 112, 112, 112, 73]
+13	lineyRep3	[12, 12, 12, 5, 55, 55, 55]
+14	lineyRep4	[42, 42, 42, 42, 42, 42, 42]
+15	lineyRep5	[25, 130, 130, 30, 120, 120, 35]
+16	lineyRep6	[25, 110, 110, 100, 100, 65, 15]
+17	lineyRep7	[25, 70, 70, 70, 70, 65, 45]
+18	lineyRep8	[50, 50, 50, 50, 50, 50, 95, 75]
+19	lineyRep9	[35, 75, 35, 35, 35, 35, 35]
+20	lineyRep10	[15, 15, 15, 15, 15, 15, 15]
+21	linexStep	["01.12.2026", "02.12.2026", "03.12.2026", "04.12.2026", "05.12.2026", "06.12.2026", "07.12.2026", "08.12.2026", "09.12.2026", "10.12.2026", "11.12.2026", "12.12.2026", "13.12.2026", "14.12.2026", "15.12.2026", "16.12.2026", "17.12.2026", "18.12.2026", "19.12.2026", "20.12.2026", "21.12.2026"]
+22	lineyStep	[84, 56, 112, 140, 28, 0, 28, 32, 52, 117, 85, 137, 144, 59, 112, 140, 28, 0, 28, 32, 52]
+23	linexMonths	["Jan", "Fab", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+24	lineyMonth1	[10, 30, 64, 120, 100, 150, 178, 188, 140, 160, 188, 200]
+25	lineyMonth2	[72, 58, 92, 60, 43, 13, 26, 56, 77, 87, 64, 23]
+26	lineMonth3	[40, 12, 88, 156, 210, 182, 163, 188, 27, 169, 203, 190]
 \.
 
 
@@ -6865,6 +6859,8 @@ COPY realtime.schema_migrations (version, inserted_at) FROM stdin;
 20260527120000	2026-06-06 19:30:22
 20260528120000	2026-06-06 19:30:23
 20260603120000	2026-06-06 19:30:24
+20260605120000	2026-06-19 07:24:22
+20260606110000	2026-06-19 07:24:23
 \.
 
 
@@ -7314,21 +7310,21 @@ SELECT pg_catalog.setval('lab.carousel_text_id_seq', 7, true);
 -- Name: charts_desc_id_seq; Type: SEQUENCE SET; Schema: lab; Owner: postgres
 --
 
-SELECT pg_catalog.setval('lab.charts_desc_id_seq', 7, true);
+SELECT pg_catalog.setval('lab.charts_desc_id_seq', 9, true);
 
 
 --
 -- Name: charts_text_id_seq; Type: SEQUENCE SET; Schema: lab; Owner: postgres
 --
 
-SELECT pg_catalog.setval('lab.charts_text_id_seq', 23, true);
+SELECT pg_catalog.setval('lab.charts_text_id_seq', 26, true);
 
 
 --
 -- Name: charts_value_id_seq; Type: SEQUENCE SET; Schema: lab; Owner: postgres
 --
 
-SELECT pg_catalog.setval('lab.charts_value_id_seq', 21, false);
+SELECT pg_catalog.setval('lab.charts_value_id_seq', 26, true);
 
 
 --
@@ -10962,5 +10958,5 @@ ALTER EVENT TRIGGER pgrst_drop_watch OWNER TO supabase_admin;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict KFkhkId4gd19dZ2sHoD4tkTNk6dWkNW25VVQm8eXIQmMF4tXJcARoyrlnGAFbzm
+\unrestrict H5KxHQTc5RXPfCncTTSfXvidlMMPnmloDRzICocLqN9ZbeBvi1HfnuKucOblQCv
 
