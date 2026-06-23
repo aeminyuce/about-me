@@ -2,41 +2,45 @@
     "result": {
         "charts": {
             "desc": {
-                "infos": "Line chart infos ...",
-                "multi": "Multiple lines ...",
-                "rowSizes": "Row sizes ...",
+                "lineRows": "Row sizes ...",
                 "lineGrids": "Line grids and roots ...",
+                "lineInfos": "Line chart infos ...",
+                "lineMulti": "Multiple line charts...",
                 "lineTypes": "Line chart line types ...",
-                "circleTypes": "Line chart circle types ...",
-                "dataVariants": "Line chart data variants ..."
+                "lineCircles": "Line chart circle types ...",
+                "lineStepping": "Column stepping charts...",
+                "lineVariants": "Line chart data variants ..."
             },
             "text": {
-                "grid": "With Grids",
-                "root": "With Roots",
-                "info1": "Sales",
-                "info2": "Profit",
-                "lines": "Dotted, Dashed, Filled",
-                "negPos": "Negative and Positive Datas",
-                "sepDot": "Dot Separator\n",
-                "zeroAll": "All Zero Datas",
-                "zeroRep": "Repeated Zero Datas",
-                "circleNo": "No Circles",
-                "gridRoot": "With Grids and Roots",
-                "negative": "Negative Datas\n",
-                "rows4x50": "4 rows x 50px height",
-                "rows8x20": "8 rows x 20px height",
-                "circleUrl": "Circles with URLs",
-                "rows1x200": "1 row x 200px height",
-                "noGridRoot": "Without Grids & Roots",
-                "infoToggle1": "Info Buttons with Toggle Lines",
-                "infoToggle2": "Default Hidden Lines with Toggle",
-                "linesCurved": "Curved",
-                "prefixSuffix": "Prefix € and Suffix m",
-                "circleNoRepeat": "No Repeated Circles",
-                "circleOnlyRepeat": "Show Only Repeated Lines Start"
+                "lineNeg": "Negative Datas\n",
+                "lineGrid": "With Grids",
+                "lineRoot": "With Roots",
+                "lineInfo1": "Sales",
+                "lineInfo2": "Profit",
+                "lineLines": "Dotted, Dashed, Filled",
+                "lineSales": "Sales",
+                "lineCurved": "Curved",
+                "lineNegPos": "Negative and Positive Datas",
+                "lineProfit": "Profit",
+                "lineSepDot": "Dot Separator\n",
+                "lineMonthly": "Monthly Results",
+                "lineToggle1": "Info Buttons with Toggle Lines",
+                "lineToggle2": "Default Hidden Lines with Toggle",
+                "lineZeroAll": "All Zero Datas",
+                "lineZeroRep": "Repeated Zero Datas",
+                "lineCircleNo": "No Circles",
+                "lineGridRoot": "With Grids and Roots",
+                "lineNoRepeat": "No Repeated Circles",
+                "lineRows4x50": "4 rows x 50px height",
+                "lineRows8x20": "8 rows x 20px height",
+                "lineCircleUrl": "Circles with URLs",
+                "lineRows1x200": "1 row x 200px height",
+                "lineNoGridRoot": "Without Grids & Roots",
+                "lineRepeatOnly": "Show Only Repeated Lines Start",
+                "linePrefixSuffix": "Prefix € and Suffix m"
             },
             "value": {
-                "y1": [
+                "liney1": [
                     84,
                     56,
                     112,
@@ -45,7 +49,7 @@
                     0,
                     28
                 ],
-                "y2": [
+                "liney2": [
                     120,
                     20,
                     159,
@@ -54,7 +58,7 @@
                     0,
                     20
                 ],
-                "y3": [
+                "liney3": [
                     32,
                     52,
                     117,
@@ -63,16 +67,25 @@
                     144,
                     59
                 ],
-                "y4": [
-                    55,
-                    72,
+                "liney4": [
+                    65,
+                    42,
                     92,
                     55,
                     89,
                     98,
                     116
                 ],
-                "xDays": [
+                "lineyNeg": [
+                    0,
+                    -56,
+                    -112,
+                    -140,
+                    -28,
+                    -20,
+                    -28
+                ],
+                "linexDays": [
                     "Mon",
                     "Tue",
                     "Wed",
@@ -81,25 +94,30 @@
                     "Sat",
                     "Sun"
                 ],
-                "yNegPos": [
-                    -34,
-                    -56,
-                    -112,
-                    0,
-                    16,
-                    42,
-                    135
+                "linexStep": [
+                    "01.12.2026",
+                    "02.12.2026",
+                    "03.12.2026",
+                    "04.12.2026",
+                    "05.12.2026",
+                    "06.12.2026",
+                    "07.12.2026",
+                    "08.12.2026",
+                    "09.12.2026",
+                    "10.12.2026",
+                    "11.12.2026",
+                    "12.12.2026",
+                    "13.12.2026",
+                    "14.12.2026",
+                    "15.12.2026",
+                    "16.12.2026",
+                    "17.12.2026",
+                    "18.12.2026",
+                    "19.12.2026",
+                    "20.12.2026",
+                    "21.12.2026"
                 ],
-                "yDollars": [
-                    1200,
-                    1800,
-                    11200,
-                    7500,
-                    6300,
-                    800,
-                    1100
-                ],
-                "yRepeat1": [
+                "lineyRep1": [
                     84,
                     84,
                     84,
@@ -108,7 +126,7 @@
                     10,
                     27
                 ],
-                "yRepeat2": [
+                "lineyRep2": [
                     55,
                     33,
                     112,
@@ -117,7 +135,7 @@
                     112,
                     73
                 ],
-                "yRepeat3": [
+                "lineyRep3": [
                     12,
                     12,
                     12,
@@ -126,7 +144,7 @@
                     55,
                     55
                 ],
-                "yRepeat4": [
+                "lineyRep4": [
                     42,
                     42,
                     42,
@@ -135,7 +153,7 @@
                     42,
                     42
                 ],
-                "yRepeat5": [
+                "lineyRep5": [
                     25,
                     130,
                     130,
@@ -144,7 +162,7 @@
                     120,
                     35
                 ],
-                "yRepeat6": [
+                "lineyRep6": [
                     25,
                     110,
                     110,
@@ -153,7 +171,7 @@
                     65,
                     15
                 ],
-                "yRepeat7": [
+                "lineyRep7": [
                     25,
                     70,
                     70,
@@ -162,7 +180,7 @@
                     65,
                     45
                 ],
-                "yRepeat8": [
+                "lineyRep8": [
                     50,
                     50,
                     50,
@@ -172,7 +190,7 @@
                     95,
                     75
                 ],
-                "yRepeat9": [
+                "lineyRep9": [
                     35,
                     75,
                     35,
@@ -181,34 +199,44 @@
                     35,
                     35
                 ],
-                "yZeroAll": [
+                "lineyStep": [
+                    84,
+                    56,
+                    112,
+                    140,
+                    28,
                     0,
+                    28,
+                    32,
+                    52,
+                    117,
+                    85,
+                    137,
+                    144,
+                    59,
+                    112,
+                    140,
+                    28,
                     0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
+                    28,
+                    32,
+                    52
                 ],
-                "yZeroRep": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    20,
-                    0,
-                    0
+                "lineMonth3": [
+                    40,
+                    12,
+                    88,
+                    156,
+                    210,
+                    182,
+                    163,
+                    188,
+                    27,
+                    169,
+                    203,
+                    190
                 ],
-                "yNegative": [
-                    0,
-                    -56,
-                    -112,
-                    -140,
-                    -28,
-                    -20,
-                    -28
-                ],
-                "yRepeat10": [
+                "lineyRep10": [
                     15,
                     15,
                     15,
@@ -216,6 +244,84 @@
                     15,
                     15,
                     15
+                ],
+                "linexMonths": [
+                    "Jan",
+                    "Fab",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ],
+                "lineyMonth1": [
+                    10,
+                    30,
+                    64,
+                    120,
+                    100,
+                    150,
+                    178,
+                    188,
+                    140,
+                    160,
+                    188,
+                    200
+                ],
+                "lineyMonth2": [
+                    72,
+                    58,
+                    92,
+                    60,
+                    43,
+                    13,
+                    26,
+                    56,
+                    77,
+                    87,
+                    64,
+                    23
+                ],
+                "lineyNegPos": [
+                    -34,
+                    -56,
+                    -112,
+                    0,
+                    16,
+                    42,
+                    135
+                ],
+                "lineyDollars": [
+                    1200,
+                    1800,
+                    11200,
+                    7500,
+                    6300,
+                    800,
+                    1100
+                ],
+                "lineyZeroAll": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "lineyZeroRep": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    20,
+                    0,
+                    0
                 ]
             }
         }
