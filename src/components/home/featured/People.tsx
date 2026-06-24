@@ -72,7 +72,7 @@ export const PeopleMore = () => {
 
     return (
         <Card className={`ui-align-c ui-p-15 ui-round ui-shadow ${themeB}`}>
-            <Avatar.Holder className='ui-m-auto ui-circle-1st ui-ease-1st-layout ui-hover-scale-more-1st'>
+            <Avatar.Holder className='ui-m-auto ui-squircle-1st ui-ease-1st-layout ui-hover-scale-more-1st'>
 
                 {peopleMore?.list.map((item: PeopleMoreListProps) => {
                     const avatarText = item.avatarText;
