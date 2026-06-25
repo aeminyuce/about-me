@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Fragment } from 'react';
 import Avatar from 'uilab/react/Avatar';
 import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';

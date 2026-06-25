@@ -1,15 +1,12 @@
 import * as React from 'react';
 import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
-import Image from 'uilab/react/Image';
-import ListGroup from 'uilab/react/ListGroup';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../../stores/StoreContext';
 
 // assets
-import { IconTrophyStar } from 'uilab-icons/react/general/trophy-star';
 import { IconChef } from 'uilab-icons/react/kitchen/chef';
 import { IconPlate } from 'uilab-icons/react/kitchen/plate';
 import { IconCup } from 'uilab-icons/react/kitchen/cup';

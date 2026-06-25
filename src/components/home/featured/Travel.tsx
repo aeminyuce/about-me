@@ -2,9 +2,9 @@ import * as React from 'react';
 import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
 import Carousel from 'uilab/react/Carousel';
+import Grid from 'uilab/react/Grid';
 import Heading from 'uilab/react/Heading';
 import Image from 'uilab/react/Image';
-import Grid from 'uilab/react/Grid';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
