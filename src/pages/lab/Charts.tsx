@@ -386,10 +386,10 @@ export default function () {
             <Tab.Holder dataClasses='ui-font-bold'>
 
                 <Grid.Row fluid='no'>
-                    <Grid.Col size={6} className='ui-align-l'>
-                        <Heading as='h4' className='ui-m-10-v'>{text?.lineMonthly}</Heading>
+                    <Grid.Col size={8}>
+                        <Heading as='h4' className='ui-align-l ui-m-10-v'>{text?.lineMonthly}</Heading>
                     </Grid.Col>
-                    <Grid.Col size={6} className='ui-align-r'>
+                    <Grid.Col size={4} className='ui-align-r'>
                         <Dropdown toggle align='l' className='ui-float-r ui-round-1st'>
                             <Button ghost>
                                 <span>{currentYear}</span>
@@ -409,7 +409,7 @@ export default function () {
                         <LineChart.Line filled dotted name={text?.lineSales}>
                             <LineChart.Items y={value?.lineyMonth1} />
                         </LineChart.Line>
-                        <LineChart.Line filled dotted name={text?.lineProfit}>
+                        <LineChart.Line curved name={text?.lineProfit}>
                             <LineChart.Items y={value?.lineyMonth2} />
                         </LineChart.Line>
                     </LineChart.Holder>
@@ -421,7 +421,7 @@ export default function () {
                         <LineChart.Line filled dotted name={text?.lineSales}>
                             <LineChart.Items y={value?.lineyMonth3} />
                         </LineChart.Line>
-                        <LineChart.Line filled dotted name={text?.lineProfit}>
+                        <LineChart.Line curved name={text?.lineProfit}>
                             <LineChart.Items y={value?.lineyMonth4} />
                         </LineChart.Line>
                     </LineChart.Holder>
