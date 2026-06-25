@@ -104,6 +104,11 @@ SELECT jsonb_build_object(
       SELECT to_jsonb(alr) - 'id'
       FROM home_featured.alerts alr
       LIMIT 1
+    ),
+    'salesProfits', (
+      SELECT to_jsonb(slp) - 'id'
+      FROM home_featured.sales_profits slp
+      LIMIT 1
     )
   )
 );
