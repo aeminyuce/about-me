@@ -2,14 +2,14 @@
     "result": {
         "charts": {
             "desc": {
-                "lineRows": "Row sizes ...",
-                "lineGrids": "Line grids and roots ...",
-                "lineInfos": "Line chart infos ...",
-                "lineMulti": "Multiple line charts...",
-                "lineTypes": "Line chart line types ...",
-                "lineCircles": "Line chart circle types ...",
-                "lineStepping": "Column stepping charts...",
-                "lineVariants": "Line chart data variants ..."
+                "lineRows": "Row sizes can be defined using row length and row height. Line charts render at a fixed, static height.",
+                "lineGrids": "A line chart is used to display trend data or compare two data sets. Root lines and grid lines can be customized, including options to show or hide them.",
+                "lineInfos": "Info tags can be placed below the chart to describe each colored line. They can also be clickable, allowing users to toggle individual lines on or off.",
+                "lineMulti": "Here’s an example of how line charts can be used alongside other components, such as tabs. When a tab containing a line chart becomes visible for the first time, the chart plays its initial animation.",
+                "lineTypes": "Line chart line types can combine styles such as dotted, dashed, filled, and curved.",
+                "lineCircles": "Line chart circles can be shown, hidden, displayed only on repeated curve points, or limited to the first repeated segment. Circles can also link to URLs.",
+                "lineStepping": "When your chart contains many x‑axis labels, the text may no longer fit. To avoid this, you can use column stepping: by setting a step value, only the x‑axis labels that match that interval are displayed.",
+                "lineVariants": "A line chart’s horizontal axis can display any custom text. The vertical axis can format values using prefixes, suffixes, or custom separators. It also supports negative, positive, and repeated zero values without issue."
             },
             "text": {
                 "lineNeg": "Negative Datas\n",
@@ -263,15 +263,15 @@
                     72,
                     58,
                     92,
-                    60,
                     43,
+                    60,
                     13,
-                    26,
-                    56,
                     77,
-                    87,
-                    64,
-                    23
+                    103,
+                    22,
+                    117,
+                    54,
+                    93
                 ],
                 "lineyMonth3": [
                     40,
@@ -296,7 +296,7 @@
                     57,
                     116,
                     86,
-                    107,
+                    37,
                     121,
                     164,
                     137
