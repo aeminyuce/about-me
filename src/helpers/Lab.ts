@@ -6,7 +6,7 @@ type RandomTheme = 'success' | 'warning' | 'danger';
 export const themeRandomizer = () => {
     const types: RandomTheme[] = ['success', 'warning', 'danger'];
     return types[Math.floor(Math.random() * types.length)];
-};
+}
 
 // scroll to hash
 export const scrollToHash = (id: string) => {
