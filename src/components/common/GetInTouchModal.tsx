@@ -7,10 +7,9 @@ import Modal, { modalOpen } from 'uilab/react/Modal';
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
 
-// get in touch modal
 export const ShowGetInTouch = () => {
     modalOpen({
-        source: '.getInTouchModal',
+        source: '#getInTouchModal',
         size: 'sm',
     });
 };
@@ -35,8 +34,8 @@ export default function () {
     const { api } = useStoreContext();
     const getInTouch = api?.header?.getInTouch;
 
-    return (
-        <Modal as='div' className='getInTouchModal'>
+    if (getInTouch) return (
+        <Modal as='div' id='getInTouchModal'>
             <Modal.Container>
                 <Grid.Static fluid='no'>
                     <Grid.Col size={133} className='ui-p-10'>
@@ -44,10 +43,10 @@ export default function () {
                     </Grid.Col>
                     <Grid.Row>
                         <Grid.Col size={12}>
-                            <strong className='ui-font-24'>{getInTouch?.title}</strong>
+                            <b className='ui-font-24'>{getInTouch?.title}</b>
                             <p className='ui-font-16 ui-font-condensed ui-m-10-t'>
                                 {getInTouch?.messageStart}
-                                <strong>{getInTouch?.messageHighlight}</strong>
+                                <b>{getInTouch?.messageHighlight}</b>
                                 {getInTouch?.messageEnd}
                             </p>
                         </Grid.Col>
