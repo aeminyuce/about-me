@@ -37,7 +37,7 @@ export const showIconDetail = () => {
 };
 
 export default function (props: IconDetailsProps) {
-    const { name, category, list, spin } = props;
+    const { name, category, list } = props;
 
     return (
         <Modal as='div' id='iconDetailModal'>
@@ -45,7 +45,7 @@ export default function (props: IconDetailsProps) {
                 <Grid.Static fluid='sm'>
                     <Grid.Row>
                         <Grid.Col size={12}>
-                            <SvgIcon as='sprite' src={list} symbolId={name} opacity='no' animate={spin} className='icon-detail ui-img-fluid' />
+                            <SvgIcon as='sprite' src={list} symbolId={name} opacity='no' className='icon-detail ui-img-fluid' />
                         </Grid.Col>
                     </Grid.Row>
                     <Grid.Col size={400} order={{ when: 'sm', pos: 'first' }} className='ui-p-30 ui-no-p-r'>
@@ -66,7 +66,7 @@ export default function (props: IconDetailsProps) {
 
                             <Grid.Col as='dt' size={6} className='ui-color-black-50'>File size</Grid.Col>
                             <Grid.Col as='dd' size={6}>
-                                <span className='icon-size'></span> kb
+                                <span className='icon-size'></span>kb
                             </Grid.Col>
 
                             <Grid.Col as='dt' size={6} className='ui-color-black-50'>Designed with</Grid.Col>

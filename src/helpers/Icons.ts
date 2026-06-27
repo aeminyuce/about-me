@@ -2,14 +2,13 @@ import Alerts from 'uilab/react/Alerts';
 
 // copy to clipboard (new api)
 export const copyToClipboard = async (text: string): Promise<void> => {
-    if (!navigator.clipboard || !window.isSecureContext) {
-        throw new Error("Clipboard API requires a secure context");
-    }
+    if (!navigator.clipboard || !window.isSecureContext) return;
 
     if (window.ClipboardItem) {
         const item = new ClipboardItem({
-            "text/plain": new Blob([text], { type: "text/plain" })
+            'text/plain': new Blob([text], { type: 'text/plain' })
         });
+
         await navigator.clipboard.write([item]);
         return;
     }
@@ -98,7 +97,11 @@ export const addCirclesToPaths = (svgSelector: any) => {
                     if (cmd === 'Z' || cmd === 'z') {
                         currentX = startX;
                         currentY = startY;
-                        coords.push(currentX, currentY);
+
+                        coords.push({
+                            cx: String(currentX.toFixed(2)),
+                            cy: String(currentY.toFixed(2))
+                        });
                     }
                     continue;
                 }
@@ -131,7 +134,10 @@ export const addCirclesToPaths = (svgSelector: any) => {
                     currentX = x;
                     currentY = y;
 
-                    coords.push(x, y);
+                    coords.push({
+                        cx: String(x.toFixed(2)),
+                        cy: String(y.toFixed(2))
+                    });
                 };
 
                 if (cmd === 'M' || cmd === 'm') {
@@ -151,7 +157,10 @@ export const addCirclesToPaths = (svgSelector: any) => {
                     startX = x;
                     startY = y;
 
-                    coords.push(x, y);
+                    coords.push({
+                        cx: String(x.toFixed(2)),
+                        cy: String(y.toFixed(2))
+                    });
 
                     while (i < tokens.length && !/^[a-zA-Z]$/.test(tokens[i])) {
                         const extraPair = takeNums(2);
@@ -177,7 +186,11 @@ export const addCirclesToPaths = (svgSelector: any) => {
                         if (!absolute) x += currentX;
 
                         currentX = x;
-                        coords.push(x, currentY);
+
+                        coords.push({
+                            cx: String(x.toFixed(2)),
+                            cy: String(currentY.toFixed(2))
+                        });
                     }
 
                 } else if (cmd === 'V' || cmd === 'v') {
@@ -190,7 +203,11 @@ export const addCirclesToPaths = (svgSelector: any) => {
                         if (!absolute) y += currentY;
 
                         currentY = y;
-                        coords.push(currentX, y);
+
+                        coords.push({
+                            cx: String(currentX.toFixed(2)),
+                            cy: String(y.toFixed(2))
+                        });
                     }
 
                 } else if (cmd === 'C' || cmd === 'c') {
@@ -235,21 +252,19 @@ export const addCirclesToPaths = (svgSelector: any) => {
 
             if (!coords) return;
 
-            // group into [x,y] pairs
-            for (let i = 0; i < coords.length; i += 2) {
-                const cx = String(coords[i]);
-                const cy = String(coords[i + 1]);
+            // make circles unique (remove duplicates)
+            const uniqueCoords = [
+                ...new Map(coords.map((p: any) => [`${p.cx}|${p.cy}`, p])).values()
+            ]
 
-                if (cy === undefined) continue;
+            // group into [x,y] pairs
+            for (let i = 0; i < uniqueCoords.length; i ++) {
+                const c = uniqueCoords[i];
+                if (c.cy === undefined) continue;
 
                 const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-
-                circle.setAttribute('cx', cx);
-                circle.setAttribute('cy', cy);
-                circle.setAttribute('r', '0.95%');
-                circle.setAttribute('fill', 'hsl(0, 0%, 100%)');
-                circle.setAttribute('stroke', 'hsl(204.6, 100%, 51.2%)');
-                circle.setAttribute('stroke-width', '0.45%');
+                circle.setAttribute('cx', c.cx);
+                circle.setAttribute('cy', c.cy);
 
                 svg.appendChild(circle);
 

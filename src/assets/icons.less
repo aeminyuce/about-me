@@ -22,4 +22,14 @@
     }
 }
 
-.icon-detail { ._color-var(dribbble-color); overflow: visible; }
+/* icon detail */
+@icon-detail-circle-fill:                 hsl(0, 0%, 100%);
+@icon-detail-circle-stroke:               hsl(204.6, 100%, 51.2%);
+@icon-detail-circle-stroke-width:         0.45%;
+@icon-detail-circle-r:                    1%;
+
+.icon-detail {
+    ._color-var(dribbble-color); overflow: visible;
+
+    circle { fill: @icon-detail-circle-fill; stroke: @icon-detail-circle-stroke; stroke-width: @icon-detail-circle-stroke-width; r: @icon-detail-circle-r; }
+}
