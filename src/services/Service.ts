@@ -1,4 +1,3 @@
-import { ui } from 'uilab/js/core/globals';
 import Loadingmask from 'uilab/react/Loadingmask';
 
 let activeFetches = 0;
@@ -13,7 +12,7 @@ const hidePageLoader = () => {
 
     if (activeFetches === 0) setTimeout(() => {
         Loadingmask();
-    }, ui.globals.slow);
+    }, 400);
 };
 
 const errorHandler = (status: any) => {
