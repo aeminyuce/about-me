@@ -1,6 +1,6 @@
 import Alerts from 'uilab/react/Alerts';
 
-// copy to clipboard (ios safari supported)
+// copy to clipboard (new api)
 export const copyToClipboard = async (text: string): Promise<void> => {
     if (!navigator.clipboard || !window.isSecureContext) {
         throw new Error("Clipboard API requires a secure context");

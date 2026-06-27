@@ -59,7 +59,7 @@ export default function (props: IconDetailsProps) {
                             <Grid.Col as='dt' size={6} className='ui-color-black-50'>Category name</Grid.Col>
                             <Grid.Col as='dd' size={6}>{category}</Grid.Col>
 
-                            <Grid.Col as='dt' size={6} className='ui-color-black-50'>Paths count</Grid.Col>
+                            <Grid.Col as='dt' size={6} className='ui-color-black-50'>Points count</Grid.Col>
                             <Grid.Col as='dd' size={6}>
                                 <span className='paths-count'></span> points
                             </Grid.Col>
