@@ -9,3 +9,11 @@ export interface IconsListProps {
 	icons: string[];
 	length: number;
 }
+
+export interface IconDetailsProps {
+	name?: string;
+	category?: string;
+	list?: any;
+	spin?: string;
+	onClick?(): void;
+}

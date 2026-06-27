@@ -10,7 +10,7 @@ export default function () {
     const info = api?.icons?.info;
 
     return (
-        <Grid.Row fluid='sm' className='iconslist-images ui-m-auto ui-m-20-b ui-round-more-2nd ui-shadow-lg-2nd'>
+        <Grid.Row fluid='sm' className='iconslist-images ui-m-auto ui-m-20-b ui-squircle-2nd ui-shadow-lg-2nd'>
             <Grid.Col size={6}>
                 <Image fluid fetchPriority='high' src={info?.image1} aspect='square' />
             </Grid.Col>
