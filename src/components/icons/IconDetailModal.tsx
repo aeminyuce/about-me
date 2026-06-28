@@ -72,7 +72,10 @@ export default function (props: IconDetailsProps) {
                             <Grid.Col as='dt' size={6} className='ui-color-black-50'>Designed with</Grid.Col>
                             <Grid.Col as='dd' size={6}>Figma</Grid.Col>
 
-                            <Grid.Col as='dt' size={6} className='ui-color-black-50'>Optimized with</Grid.Col>
+                            <Grid.Col as='dt' size={6} className='ui-color-black-50'>Canvas size</Grid.Col>
+                            <Grid.Col as='dd' size={6}>264 x 264px</Grid.Col>
+
+                            <Grid.Col as='dt' size={6} className='ui-color-black-50'>Optimized wih</Grid.Col>
                             <Grid.Col as='dd' size={6}>SVGO</Grid.Col>
                         </Grid.Row>
 
