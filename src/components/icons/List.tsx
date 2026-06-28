@@ -47,9 +47,9 @@ export default function (props: any) {
     const handleClick = useCallback((props: IconDetailsProps) => {
 
         // onClick is recreated on every render: breaks memo!
-        const { name, category, spin } = props;
+        const { name, category } = props;
 
-        setDetails({ name: name, category, list: spritesList[category as string], spin });
+        setDetails({ name: name, category, list: spritesList[category as string] });
         showIconDetail();
 
     }, [spritesList]);
@@ -94,7 +94,7 @@ export default function (props: any) {
                                     category={item.category}
                                     list={spritesList[item.category]}
                                     spin={spin}
-                                    onClick={() => handleClick({ name, category: item.category, spin })}
+                                    onClick={() => handleClick({ name, category: item.category })}
                                 />
                             )
                         })}

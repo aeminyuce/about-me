@@ -44,6 +44,17 @@ export const copyIconPath = (text: string | undefined, category: string | undefi
         });
 }
 
+// toggle path points
+export const togglePoints = (that: any) => {
+    const modal = document.getElementById('iconDetailModal');
+    const icon = modal?.querySelector('.icon-detail');
+
+    const val = that.name === 'hide' ? 'block' : 'none';
+    that.name = val === 'block' ? 'show' : 'hide';
+
+    icon?.classList.toggle('hide-points');
+}
+
 // calculate UTF‑8 byte size of an SVG path's `d` attribute
 export const getSvgPathSize = (svg: any) => {
     if (!(svg instanceof SVGElement)) return;

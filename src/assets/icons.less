@@ -31,5 +31,9 @@
 .icon-detail {
     ._color-var(dribbble-color); overflow: visible;
 
-    circle { fill: @icon-detail-circle-fill; stroke: @icon-detail-circle-stroke; stroke-width: @icon-detail-circle-stroke-width; r: @icon-detail-circle-r; }
+    circle {
+        fill: @icon-detail-circle-fill; stroke: @icon-detail-circle-stroke; stroke-width: @icon-detail-circle-stroke-width; r: @icon-detail-circle-r;
+
+        .hide-points& { display: none; }
+    }
 }
