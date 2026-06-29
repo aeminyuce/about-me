@@ -12,7 +12,7 @@ export default function () {
     const { api } = useStoreContext();
     const blog = api?.blog;
 
-    const [searchParams] = useSearchParams();
+    const [ searchParams ] = useSearchParams();
     const post = searchParams.get('post');
 
     // page title

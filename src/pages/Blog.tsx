@@ -13,7 +13,7 @@ import '../../src/assets/blog.less';
 export default function () {
     const { api } = useStoreContext();
 
-    const [searchParams] = useSearchParams();
+    const [ searchParams ] = useSearchParams();
     const post = searchParams.get('post');
 
     if (api?.blog) return (
