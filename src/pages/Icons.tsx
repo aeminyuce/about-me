@@ -32,7 +32,7 @@ export default function () {
                     </>
                 }
                 {(info?.image1 || info?.image2) && <Images />}
-                {(info?.text || info?.sizeChangerSuffix || info?.sizeChangerPrefix || iconsList) &&
+                {(info?.text || info?.sizeChangerSuffix || info?.sizeChangerPrefix) &&
                     <Texts iconsList={iconsList} />
                 }
                 {api?.icons?.sizes && <SizeChanger />}
