@@ -22,11 +22,10 @@ const SpriteSocial = require('uilab-icons/sprite/social.svg') as string;
 const SpriteBrands = require('uilab-icons/sprite/brands.svg') as string;
 
 export default function (props: any) {
+    const { iconSize, api } = useStoreContext();
     const [ details, setDetails ] = useState<IconDetailsProps>();
 
-    const { iconSize, api } = useStoreContext();
     const { iconsList } = props;
-
     const iconsSuffix = api?.icons?.info?.iconsSuffix;
 
     // sprites
@@ -43,31 +42,15 @@ export default function (props: any) {
         'Brands': SpriteBrands,
     };
 
-    // memoize expensive unit:
     const handleClick = useCallback((props: IconDetailsProps) => {
 
-        // onClick is recreated on every render: breaks memo!
+        // onClick has dynamic action
         const { name, category } = props;
 
         setDetails({ name: name, category, list: spritesList[category as string] });
         showIconDetail();
 
     }, [spritesList]);
-
-    const IconItem = memo((props: IconDetailsProps) => {
-
-        // we need memo only for repeated unit:
-        // each icon item has stable props but not onClick (stabled with useCallback)
-        const { name, list, spin, onClick } = props;
-
-        return (
-            <Button ghost multi noease onClick={onClick}>
-                <SvgIcon as='sprite' src={list} symbolId={name} opacity='no' animate={spin} />
-                <span>{name}</span>
-            </Button>
-        )
-
-    });
 
     return (
         <div className='iconslist-icons'>
@@ -108,3 +91,15 @@ export default function (props: any) {
         </div>
     )
 }
+
+const IconItem = memo((props: IconDetailsProps) => {
+    // when icon sizes selected, prevent re-rendering of the repeated icons
+    const { name, list, spin, onClick } = props;
+
+    return (
+        <Button ghost multi noease onClick={onClick}>
+            <SvgIcon as='sprite' src={list} symbolId={name} opacity='no' animate={spin} />
+            <span>{name}</span>
+        </Button>
+    )
+});

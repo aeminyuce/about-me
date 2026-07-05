@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Button from 'uilab/react/Button';
 import DonutChart from 'uilab/react/DonutChart';
 import Dropdown from 'uilab/react/Dropdown';
@@ -20,6 +21,7 @@ import { headings } from '../../helpers/Lab';
 import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
 
 export default function () {
+    const [tabs, setTabs] = useState<number[]>([]);
     const { api } = useStoreContext();
     const title = headings('charts');
 
@@ -396,8 +398,12 @@ export default function () {
                                 <SvgIcon toggle as='js' src={IconAngleDown} l={10} />
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>
-                                <Dropdown.Item selected className='ui-tab ui-active'>{currentYear}</Dropdown.Item>
-                                <Dropdown.Item className='ui-tab'>{currentYear - 1}</Dropdown.Item>
+                                <Dropdown.Item active selected className='ui-tab'>
+                                    {currentYear}
+                                </Dropdown.Item>
+                                <Dropdown.Item className='ui-tab' onClick={() => setTabs(values => [...values, 1])}>
+                                    {currentYear - 1}
+                                </Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Grid.Col>
@@ -417,14 +423,16 @@ export default function () {
                 </Tab.Content>
                 <Tab.Content>
 
-                    <LineChart.Holder roots grids infos x={value?.linexMonths}>
-                        <LineChart.Line filled dotted name={text?.lineSales}>
-                            <LineChart.Items y={value?.lineyMonth3} />
-                        </LineChart.Line>
-                        <LineChart.Line curved name={text?.lineProfit}>
-                            <LineChart.Items y={value?.lineyMonth4} />
-                        </LineChart.Line>
-                    </LineChart.Holder>
+                    {tabs.includes(1) &&
+                        <LineChart.Holder roots grids infos x={value?.linexMonths}>
+                            <LineChart.Line filled dotted name={text?.lineSales}>
+                                <LineChart.Items y={value?.lineyMonth3} />
+                            </LineChart.Line>
+                            <LineChart.Line curved name={text?.lineProfit}>
+                                <LineChart.Items y={value?.lineyMonth4} />
+                            </LineChart.Line>
+                        </LineChart.Holder>
+                    }
 
                 </Tab.Content>
             </Tab.Holder>

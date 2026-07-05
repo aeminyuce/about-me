@@ -22,3 +22,10 @@ export interface ReportsListProps {
     reports: string;
     chartPercent: number;
 }
+
+export interface MonthlyChartsProps {
+    y1: number[];
+    y2: number[];
+    index1: number;
+    index2: number;
+}

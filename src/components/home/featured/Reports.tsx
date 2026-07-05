@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { memo, useState } from 'react';
 import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
 import DonutChart from 'uilab/react/DonutChart';
@@ -57,7 +58,8 @@ export const Reports = () => {
     )
 }
 
-const ReportsListGroup = (props: any) => {
+const ReportsListGroup = memo((props: any) => {
+    // when parent tabs toggled, prevent re-rendering of the donut charts
     const { themeA, themeB } = useStoreContext();
     const { list } = props;
 
@@ -86,10 +88,12 @@ const ReportsListGroup = (props: any) => {
             </ListGroup.List>
         </ListGroup>
     )
-}
+});
 
 export const ReportsList = () => {
     const { themeB, api } = useStoreContext();
+    const [tabs, setTabs] = useState<number[]>([]);
+
     const reportsList = api?.home_featured?.reportsList;
 
     return (
@@ -98,11 +102,12 @@ export const ReportsList = () => {
                 <Button.Wrapper as='div' type='holder' ease='1st' className='ui-m-15-b ui-round-1st'>
 
                     {reportsList && Object.keys(reportsList).map((name: string, index: number) => {
-                        const isActive = index === 0 ? ' ui-fill-dark-100 ui-active' : '';
+                        const isActive = index === 0;
+                        const classes = isActive ? 'ui-tab ui-fill-dark-100 ui-active' : 'ui-tab';
                         const text = name.charAt(0).toUpperCase() + name.slice(1);
 
                         return (
-                            <Button key={name} square className={`ui-tab${isActive}`}>
+                            <Button active={isActive} key={name} square className={classes} onClick={() => setTabs(values => [...values, index])}>
                                 {text}
                             </Button>
                         )
@@ -114,7 +119,7 @@ export const ReportsList = () => {
                     <ReportsListGroup list={reportsList?.delayed} />
                 </Tab.Content>
                 <Tab.Content>
-                    <ReportsListGroup list={reportsList?.paused} />
+                    {tabs.includes(1) && <ReportsListGroup list={reportsList?.paused} />}
                 </Tab.Content>
             </Tab.Holder>
         </Card>

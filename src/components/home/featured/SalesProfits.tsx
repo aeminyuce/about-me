@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { memo, useState } from 'react';
 import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
 import Dropdown from 'uilab/react/Dropdown';
@@ -10,12 +11,14 @@ import Tab from 'uilab/react/Tab';
 
 // misc
 import { useStoreContext } from '../../../stores/StoreContext';
+import type { MonthlyChartsProps } from '../../../models/Home_Featured';
 
 // assets
 import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
 
 export default function() {
     const { api } = useStoreContext();
+    const [tabs, setTabs] = useState<number[]>([]);
 
     const salesProfits = api?.home_featured?.salesProfits;
     const currentYear = new Date().getFullYear();
@@ -35,38 +38,43 @@ export default function() {
                                 <SvgIcon toggle as='js' src={IconAngleDown} l={10} />
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>
-                                <Dropdown.Item selected className='ui-tab ui-active'>{currentYear}</Dropdown.Item>
-                                <Dropdown.Item className='ui-tab'>{currentYear - 1}</Dropdown.Item>
+                                <Dropdown.Item active selected className='ui-tab'>
+                                    {currentYear}
+                                </Dropdown.Item>
+                                <Dropdown.Item className='ui-tab' onClick={() => setTabs(values => [...values, 1])}>
+                                    {currentYear - 1}
+                                </Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Grid.Col>
                 </Grid.Row>
 
                 <Tab.Content open className='ui-m-10-t'>
-
-                    <LineChart.Holder grids infos x={salesProfits?.x}>
-                        <LineChart.Line filled dotted name={salesProfits?.sales} colorIndex={5}>
-                            <LineChart.Items y={salesProfits?.y1} />
-                        </LineChart.Line>
-                        <LineChart.Line curved name={salesProfits?.profit} colorIndex={7}>
-                            <LineChart.Items y={salesProfits?.y2} />
-                        </LineChart.Line>
-                    </LineChart.Holder>
-
+                    <MonthlyCharts y1={salesProfits?.y1} y2={salesProfits?.y2} index1={5} index2={7} />
                 </Tab.Content>
                 <Tab.Content className='ui-m-10-t'>
-
-                    <LineChart.Holder grids infos x={salesProfits?.x}>
-                        <LineChart.Line filled dotted name={salesProfits?.sales} colorIndex={8}>
-                            <LineChart.Items y={salesProfits?.y3} />
-                        </LineChart.Line>
-                        <LineChart.Line curved name={salesProfits?.profit} colorIndex={10}>
-                            <LineChart.Items y={salesProfits?.y4} />
-                        </LineChart.Line>
-                    </LineChart.Holder>
-
+                    {tabs.includes(1) && <MonthlyCharts y1={salesProfits?.y3} y2={salesProfits?.y4} index1={8} index2={10} />}
                 </Tab.Content>
             </Tab.Holder>
         </Card>
     )
 }
+
+const MonthlyCharts = memo((props: MonthlyChartsProps) => {
+    // when parent tabs toggled, prevent re-rendering of the line charts
+    const { api } = useStoreContext();
+    const { y1, y2, index1, index2 } = props;
+
+    const salesProfits = api?.home_featured?.salesProfits;
+
+    return (
+        <LineChart.Holder grids infos x={salesProfits?.x}>
+            <LineChart.Line filled dotted name={salesProfits?.sales} colorIndex={index1}>
+                <LineChart.Items y={y1} />
+            </LineChart.Line>
+            <LineChart.Line curved name={salesProfits?.profit} colorIndex={index2}>
+                <LineChart.Items y={y2} />
+            </LineChart.Line>
+        </LineChart.Holder>
+    )
+});
