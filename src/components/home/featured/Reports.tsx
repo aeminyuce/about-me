@@ -10,7 +10,7 @@ import Tab from 'uilab/react/Tab';
 
 // misc
 import { useStoreContext } from '../../../stores/StoreContext';
-import type { ReportsListProps } from '../../../models/Home_Featured';
+import type { ReportsListProps, ReportsListGroupProps } from '../../../models/Home_Featured';
 
 const Report = (props: any) => {
     const { themeA, themeB, api } = useStoreContext();
@@ -58,11 +58,9 @@ export const Reports = () => {
     )
 }
 
-const ReportsListGroup = memo((props: any) => {
+const ReportsListGroup = memo((props: ReportsListGroupProps) => {
     // when parent tabs toggled, prevent re-rendering of the donut charts
-    const { themeA, themeB } = useStoreContext();
-    const { list } = props;
-
+    const { themeA, themeB, list } = props;
     const setScrollOuter = list?.length > 3 ? ' ui-scrollbar-outer' : '';
 
     return (
@@ -91,7 +89,7 @@ const ReportsListGroup = memo((props: any) => {
 });
 
 export const ReportsList = () => {
-    const { themeB, api } = useStoreContext();
+    const { themeA, themeB, api } = useStoreContext();
     const [tabs, setTabs] = useState<number[]>([]);
 
     const reportsList = api?.home_featured?.reportsList;
@@ -116,10 +114,10 @@ export const ReportsList = () => {
                 </Button.Wrapper>
 
                 <Tab.Content open>
-                    <ReportsListGroup list={reportsList?.delayed} />
+                    <ReportsListGroup themeA={themeA} themeB={themeB} list={reportsList?.delayed} />
                 </Tab.Content>
                 <Tab.Content>
-                    {tabs.includes(1) && <ReportsListGroup list={reportsList?.paused} />}
+                    {tabs.includes(1) && <ReportsListGroup themeA={themeA} themeB={themeB} list={reportsList?.paused} />}
                 </Tab.Content>
             </Tab.Holder>
         </Card>

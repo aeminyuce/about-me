@@ -50,10 +50,12 @@ export default function() {
                 </Grid.Row>
 
                 <Tab.Content open className='ui-m-10-t'>
-                    <MonthlyCharts y1={salesProfits?.y1} y2={salesProfits?.y2} index1={5} index2={7} />
+                    <MonthlyCharts y1={salesProfits?.y1} y2={salesProfits?.y2} index1={5} index2={7} data={salesProfits} />
                 </Tab.Content>
                 <Tab.Content className='ui-m-10-t'>
-                    {tabs.includes(1) && <MonthlyCharts y1={salesProfits?.y3} y2={salesProfits?.y4} index1={8} index2={10} />}
+                    {tabs.includes(1) &&
+                        <MonthlyCharts y1={salesProfits?.y3} y2={salesProfits?.y4} index1={8} index2={10} data={salesProfits} />
+                    }
                 </Tab.Content>
             </Tab.Holder>
         </Card>
@@ -62,17 +64,14 @@ export default function() {
 
 const MonthlyCharts = memo((props: MonthlyChartsProps) => {
     // when parent tabs toggled, prevent re-rendering of the line charts
-    const { api } = useStoreContext();
-    const { y1, y2, index1, index2 } = props;
-
-    const salesProfits = api?.home_featured?.salesProfits;
+    const { y1, y2, index1, index2, data } = props;
 
     return (
-        <LineChart.Holder grids infos x={salesProfits?.x}>
-            <LineChart.Line filled dotted name={salesProfits?.sales} colorIndex={index1}>
+        <LineChart.Holder grids infos x={data?.x}>
+            <LineChart.Line filled dotted name={data?.sales} colorIndex={index1}>
                 <LineChart.Items y={y1} />
             </LineChart.Line>
-            <LineChart.Line curved name={salesProfits?.profit} colorIndex={index2}>
+            <LineChart.Line curved name={data?.profit} colorIndex={index2}>
                 <LineChart.Items y={y2} />
             </LineChart.Line>
         </LineChart.Holder>

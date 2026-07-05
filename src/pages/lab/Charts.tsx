@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import Button from 'uilab/react/Button';
 import DonutChart from 'uilab/react/DonutChart';
 import Dropdown from 'uilab/react/Dropdown';
@@ -410,33 +410,31 @@ export default function () {
                 </Grid.Row>
 
                 <Tab.Content open>
-
-                    <LineChart.Holder roots grids infos x={value?.linexMonths}>
-                        <LineChart.Line filled dotted name={text?.lineSales}>
-                            <LineChart.Items y={value?.lineyMonth1} />
-                        </LineChart.Line>
-                        <LineChart.Line curved name={text?.lineProfit}>
-                            <LineChart.Items y={value?.lineyMonth2} />
-                        </LineChart.Line>
-                    </LineChart.Holder>
-
+                    <LineMulti x={value?.linexMonths} y1={value?.lineyMonth1} y2={value?.lineyMonth2} name1={text?.lineSales} name2={text?.lineProfit} />
                 </Tab.Content>
                 <Tab.Content>
-
                     {tabs.includes(1) &&
-                        <LineChart.Holder roots grids infos x={value?.linexMonths}>
-                            <LineChart.Line filled dotted name={text?.lineSales}>
-                                <LineChart.Items y={value?.lineyMonth3} />
-                            </LineChart.Line>
-                            <LineChart.Line curved name={text?.lineProfit}>
-                                <LineChart.Items y={value?.lineyMonth4} />
-                            </LineChart.Line>
-                        </LineChart.Holder>
+                        <LineMulti x={value?.linexMonths} y1={value?.lineyMonth3} y2={value?.lineyMonth4} name1={text?.lineSales} name2={text?.lineProfit} />
                     }
-
                 </Tab.Content>
             </Tab.Holder>
         </Preview>
         </>
     )
 }
+
+const LineMulti = memo((props: any) => {
+    // when parent tabs toggled, prevent re-rendering of the line charts
+    const { x, y1, y2, name1, name2 } = props;
+
+    return (
+        <LineChart.Holder roots grids infos x={x}>
+            <LineChart.Line filled dotted name={name1}>
+                <LineChart.Items y={y1} />
+            </LineChart.Line>
+            <LineChart.Line curved name={name2}>
+                <LineChart.Items y={y2} />
+            </LineChart.Line>
+        </LineChart.Holder>
+    )
+});

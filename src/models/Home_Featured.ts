@@ -23,9 +23,16 @@ export interface ReportsListProps {
     chartPercent: number;
 }
 
+export interface ReportsListGroupProps {
+    themeA: string;
+    themeB: string;
+    list: any;
+}
+
 export interface MonthlyChartsProps {
     y1: number[];
     y2: number[];
     index1: number;
     index2: number;
+    data: any;
 }

@@ -53,7 +53,7 @@ export default function (props: any) {
     }, [spritesList]);
 
     return (
-        <div className='iconslist-icons'>
+        <div className={`iconslist-icons ui-icons-${iconSize}`}>
 
             {iconsList.map((item: IconsListProps) => (
                 <Fragment key={item.category}>
@@ -65,7 +65,7 @@ export default function (props: any) {
                             {item.length} {iconsSuffix}
                         </Button>
                     </Heading>
-                    <Button.Wrapper as='div' ease='1st' className={`ui-highlight ui-round-1st ui-icons-${iconSize}`}>
+                    <Button.Wrapper as='div' ease='1st' className='ui-highlight ui-round-1st'>
 
                         {item.icons.map((name: string) => {
                             const spin = name.includes('loader-') ? 'spin' : undefined;
