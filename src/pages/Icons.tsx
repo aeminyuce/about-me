@@ -19,7 +19,6 @@ import '../../src/assets/icons.less';
 
 export default function () {
     const { api } = useStoreContext();
-
     const info = api?.icons?.info;
 
     return (
@@ -36,7 +35,7 @@ export default function () {
                     <Texts iconsList={iconsList} />
                 }
                 {api?.icons?.sizes && <SizeChanger />}
-                {(info?.iconsSuffix || iconsList) && <List iconsList={iconsList} />}
+                {(info?.iconsSuffix) && <List iconsList={iconsList} />}
             </Grid.Col>
         </Grid.Row>
     )

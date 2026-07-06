@@ -53,7 +53,7 @@ export default function (props: any) {
     }, [spritesList]);
 
     return (
-        <div className={`iconslist-icons ui-icons-${iconSize}`}>
+        <div className={`iconslist-icons ui-icons-no-opacity ui-icons-${iconSize}`}>
 
             {iconsList.map((item: IconsListProps) => (
                 <Fragment key={item.category}>
@@ -98,7 +98,7 @@ const IconItem = memo((props: IconDetailsProps) => {
 
     return (
         <Button ghost multi noease onClick={onClick}>
-            <SvgIcon as='sprite' src={list} symbolId={name} opacity='no' animate={spin} />
+            <SvgIcon as='sprite' src={list} symbolId={name} animate={spin} />
             <span>{name}</span>
         </Button>
     )
