@@ -1,7 +1,8 @@
-const path = require("path");
+const path = require('path');
 const Dotenv = require('dotenv-webpack');
-const CopyPlugin = require("copy-webpack-plugin");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+
 const config = {
     output: {
         filename: 'js/[name].[contenthash].js',
@@ -10,6 +11,7 @@ const config = {
         clean: true,
     },
     optimization: {
+        minimize: true,
         splitChunks: {
             chunks: 'all',
         },
@@ -23,7 +25,7 @@ const config = {
             test: /\.(js|jsx)?$/,
                 exclude: [/node_modules\/(?!(uilab|uilab-icons)\/).*/],
                 use: {
-                    loader: "ts-loader",
+                    loader: 'ts-loader',
                     options: {
                         transpileOnly: true,
                         allowTsInNodeModules: true,
@@ -34,44 +36,36 @@ const config = {
                 test: /\.(ts|tsx)?$/,
                 exclude: [/node_modules\/(?!(uilab|uilab-icons)\/).*/],
                 use: {
-                    loader: "ts-loader",
+                    loader: 'ts-loader',
                     options: {
                         transpileOnly: true,
                     }
                 }
             },
             {
-                test: /\.less$/i,
-                use: [
-                    { loader: "style-loader" },
-                    { loader: "css-loader" },
-                    {
-                        loader: "less-loader",
-                        options: {
-                            lessOptions: {
-                                strictMath: true,
-                            },
-                        },
-                    },
-                ],
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader']
             },
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.svg$/,
-                use: "svg-url-loader",
+                use: 'svg-url-loader',
             },
         ],
     },
 }
 
 module.exports = (env, argv) => {
-    config.output.path = path.resolve(__dirname, 'dist');
+    let outputPath;
     if (argv.mode === 'production') {
         config.devtool = false;
+        config.mode = argv.mode;
+        outputPath = 'build';
     }
+
     if (argv.mode === 'development') {
         config.devServer = {
             host: '0.0.0.0',
@@ -82,11 +76,14 @@ module.exports = (env, argv) => {
             devMiddleware: { writeToDisk: true },
             allowedHosts: 'all',
         };
+        outputPath = 'dist';
     }
+
+    config.output.path = path.resolve(__dirname, outputPath);
     config.plugins = [
         new HtmlWebPackPlugin({
-            template: "./src/index.html",
-            favicon: "./public/favicon.ico",
+            template: './src/index.html',
+            favicon: './public/favicon.ico',
         }),
         new Dotenv({
             path: './.env',
@@ -98,14 +95,15 @@ module.exports = (env, argv) => {
         new CopyPlugin({
             patterns: [
                 {
-                    from: "public",
+                    from: 'public',
                     noErrorOnMissing: true,
                     globOptions: {
-                        ignore: ["**/.DS_Store"]
+                        ignore: ['**/.DS_Store', '**/Thumbs.db']
                     }
                 }
             ],
         }),
     ]
+
     return config;
 };
