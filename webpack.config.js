@@ -17,6 +17,10 @@ const config = {
             chunks: 'all',
         },
     },
+    performance: {
+        maxEntrypointSize: 600 * 1024,
+        maxAssetSize: 600 * 1024,
+    },
     resolve: {
         extensions: ['.js', '.ts', '.tsx', '.less'],
     },
@@ -55,8 +59,8 @@ const config = {
                 test: /\.svg$/,
                 use: 'svg-url-loader',
             },
-        ],
-    },
+        ]
+    }
 }
 
 module.exports = (env, argv) => {
@@ -110,7 +114,7 @@ module.exports = (env, argv) => {
                         ignore: ['**/.DS_Store', '**/Thumbs.db']
                     }
                 }
-            ],
+            ]
         }),
     ]
 
