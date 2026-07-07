@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -79,12 +80,20 @@ module.exports = (env, argv) => {
         outputPath = 'dist';
     }
 
+    const templatesDir = path.resolve(__dirname, 'templates');
+    const htmlPlugins = fs.readdirSync(templatesDir)
+        .filter(file => file.endsWith('.html'))
+        .map(file => {
+            return new HtmlWebPackPlugin({
+                template: path.join(templatesDir, file),
+                filename: file,
+                favicon: './public/favicon.ico',
+            });
+        });
+
     config.output.path = path.resolve(__dirname, outputPath);
     config.plugins = [
-        new HtmlWebPackPlugin({
-            template: './src/index.html',
-            favicon: './public/favicon.ico',
-        }),
+        ...htmlPlugins,
         new Dotenv({
             path: './.env',
         }),
