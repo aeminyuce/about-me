@@ -6,6 +6,7 @@ import Heading from 'uilab/react/Heading';
 import Image from 'uilab/react/Image';
 import ListGroup from 'uilab/react/ListGroup';
 import SvgIcon from 'uilab/react/SvgIcon';
+import Tooltip from 'uilab/react/Tooltip';
 
 // misc
 import { useStoreContext } from '../../../stores/StoreContext';
@@ -24,7 +25,8 @@ export const People = () => {
 
     return (
         <Card className='home-people-list ui-p-15-t ui-p-15-h ui-round ui-shadow'>
-            <Button ghost square title={people?.addPeople?.title} className='ui-round ui-float-r' data={{ 'tooltip': 'l', 'only': 'desktop' }}>
+            <Tooltip id='peopleTooltip'>{people?.addPeople?.title}</Tooltip>
+            <Button ghost square className='ui-round ui-float-r' data={{ 'tooltip': 'l', 'id': 'peopleTooltip', 'only': 'desktop' }}>
                 <SvgIcon as='js' src={IconUserPlus} />
             </Button>
 

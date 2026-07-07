@@ -5,6 +5,7 @@ import Card from 'uilab/react/Card';
 import Dropdown from 'uilab/react/Dropdown';
 import Heading from 'uilab/react/Heading';
 import SvgIcon from 'uilab/react/SvgIcon';
+import Tooltip from 'uilab/react/Tooltip';
 
 // misc
 import { useStoreContext } from '../../../stores/StoreContext';
@@ -19,9 +20,11 @@ export default function() {
     return (
         <Card className='ui-p-15 ui-round ui-shadow'>
             <Dropdown align='l' className='ui-float-r ui-round-1st'>
-                <Button square ghost title={calendar?.title} data={{ 'tooltip': 'l', 'only': 'desktop' }}>
+                <Tooltip id='eventsTooltip'>{calendar?.title}</Tooltip>
+                <Button square ghost data={{ 'tooltip': 'l', 'id': 'eventsTooltip', 'only': 'desktop' }}>
                     <SvgIcon as='js' src={IconEllipsisH} />
                 </Button>
+
                 <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-shadow-lg ui-cursor-pointer'>
 
                     {calendar?.settings?.map((name: string, index: number) => (

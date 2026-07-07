@@ -4,6 +4,7 @@ import Heading from 'uilab/react/Heading';
 import Image from 'uilab/react/Image';
 import Spacer from 'uilab/react/Spacer';
 import SvgIcon from 'uilab/react/SvgIcon';
+import Tooltip from 'uilab/react/Tooltip';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
@@ -301,13 +302,18 @@ export default function () {
                     {text?.refPrefix}
                 </span>
                 <span className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-ease-1st-layout ui-p-5 ui-circle ui-circle-1st'>
-                    <Avatar size='sm' title={text?.name1} data={{ 'tooltip': 't' }} className='ui-border ui-border-lg ui-stroke ui-theme-yellow'>
+                    <Tooltip id='name1Tooltip'>{text?.name1}</Tooltip>
+                    <Avatar size='sm' data={{ 'tooltip': 't', 'id': 'name1Tooltip' }} className='ui-border ui-border-lg ui-stroke ui-theme-yellow'>
                       <Image lazy src={img[5]} aspect='square' />
                     </Avatar>
-                    <Avatar size='sm' title={text?.name2} data={{ 'tooltip': 't' }} className='ui-border ui-border-lg ui-stroke ui-theme-orangeRed'>
+
+                    <Tooltip id='name2Tooltip'>{text?.name2}</Tooltip>
+                    <Avatar size='sm' data={{ 'tooltip': 't', 'id': 'name2Tooltip' }} className='ui-border ui-border-lg ui-stroke ui-theme-orangeRed'>
                         <Image lazy src={img[2]} aspect='square' />
                     </Avatar>
-                    <Avatar size='sm' title={text?.name3} data={{ 'tooltip': 't' }} className='ui-border ui-border-lg ui-stroke ui-theme-green'>
+
+                    <Tooltip id='name3Tooltip'>{text?.name3}</Tooltip>
+                    <Avatar size='sm' data={{ 'tooltip': 't', 'id': 'name3Tooltip' }} className='ui-border ui-border-lg ui-stroke ui-theme-green'>
                         <Image lazy src={img[0]} aspect='square' />
                     </Avatar>
                 </span>
