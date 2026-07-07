@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /$
+
+Allow: /dashboard/
+Allow: /data-table/
+Allow: /gallery/
+Allow: /register/
+
+Allow: /lab/
+Allow: /lab/alerts/*
+Allow: /lab/avatars/*
+Allow: /lab/breadcrumbs/*
+Allow: /lab/buttons/*
+Allow: /lab/calendar/*
+Allow: /lab/card/*
+Allow: /lab/carousel/*
+Allow: /lab/charts/*
+
+Allow: /icons/
+Allow: /blog/*
+
+Allow: /images/*
+Disallow: /js/*
+
+Crawl-delay: 7
