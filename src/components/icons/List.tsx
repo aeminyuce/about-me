@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Fragment, memo, useState, useCallback } from 'react';
 import Button from 'uilab/react/Button';
 import Heading from 'uilab/react/Heading';

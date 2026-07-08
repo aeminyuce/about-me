@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Button from 'uilab/react/Button';
 import Grid from 'uilab/react/Grid';
 import Heading from 'uilab/react/Heading';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Avatar from 'uilab/react/Avatar';
 import Heading from 'uilab/react/Heading';
 import Image from 'uilab/react/Image';

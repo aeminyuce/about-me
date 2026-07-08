@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
 import Image from 'uilab/react/Image';

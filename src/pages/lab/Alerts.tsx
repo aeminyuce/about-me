@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Alerts from 'uilab/react/Alerts';
 import Heading from 'uilab/react/Heading';
 import SvgIcon from 'uilab/react/SvgIcon';

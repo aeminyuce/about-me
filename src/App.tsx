@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import TopButton from 'uilab/react/TopButton';
 import SquircleMask from 'uilab/react/SquircleMask';
 

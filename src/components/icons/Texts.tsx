@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
