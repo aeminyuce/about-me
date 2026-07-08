@@ -21,6 +21,7 @@
     "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.492.tgz"
   },
   "allowScripts": {
+    "esbuild@0.28.1": true,
     "fsevents@2.3.3": true
   }
 }

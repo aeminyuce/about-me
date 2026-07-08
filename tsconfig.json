@@ -2,10 +2,7 @@
   "compilerOptions": {
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "types": ["node"]

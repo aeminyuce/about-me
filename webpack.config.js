@@ -27,23 +27,13 @@ const config = {
     module: {
         rules: [
             {
-            test: /\.(js|jsx)?$/,
+            test: /\.(js|ts|tsx)?$/,
                 exclude: [/node_modules\/(?!(uilab|uilab-icons)\/).*/],
                 use: {
-                    loader: 'ts-loader',
+                    loader: 'esbuild-loader',
                     options: {
-                        transpileOnly: true,
-                        allowTsInNodeModules: true,
-                    }
-                }
-            },
-            {
-                test: /\.(ts|tsx)?$/,
-                exclude: [/node_modules\/(?!(uilab|uilab-icons)\/).*/],
-                use: {
-                    loader: 'ts-loader',
-                    options: {
-                        transpileOnly: true,
+                        loader: 'tsx',
+                        target: 'es2020'
                     }
                 }
             },
