@@ -58,7 +58,7 @@ export default function (props: IconDetailsProps) {
                 <Grid.Static fluid='sm'>
                     <Grid.Row gap='no'>
                         <Grid.Col size={12}>
-                            <SvgIcon as='sprite' src={list} symbolId={name} opacity='no' className='icon-detail ui-img-fluid' />
+                            <SvgIcon as='sprite' fluid src={list} symbolId={name} opacity='no' className='icon-detail' />
                         </Grid.Col>
                     </Grid.Row>
                     <Grid.Col size={400} order={{ when: 'sm', pos: 'first' }} className='ui-p-30 ui-no-p-r ui-sm-no-p-l ui-sm-no-p-t'>

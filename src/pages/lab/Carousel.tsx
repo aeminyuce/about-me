@@ -47,19 +47,19 @@ export default function () {
 
                                 <Grid.Row fluid='no' gap='xs'>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={img[14]} aspect='landscape' className='ui-round-l ui-no-round-bl' />
+                                        <Image lazy fluid='all' src={img[14]} aspect='landscape' className='ui-round-l ui-no-round-bl' />
                                     </Grid.Col>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={img[10]} aspect='landscape' className='ui-round-r ui-no-round-br' />
+                                        <Image lazy fluid='all' src={img[10]} aspect='landscape' className='ui-round-r ui-no-round-br' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[7]} aspect='landscape' className='ui-round-l ui-no-round-tl' />
+                                        <Image lazy fluid='all' src={img[7]} aspect='landscape' className='ui-round-l ui-no-round-tl' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[8]} aspect='landscape' className='ui-no-round' />
+                                        <Image lazy fluid='all' src={img[8]} aspect='landscape' className='ui-no-round' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[6]} aspect='landscape' className='ui-round-r ui-no-round-tr' />
+                                        <Image lazy fluid='all' src={img[6]} aspect='landscape' className='ui-round-r ui-no-round-tr' />
                                     </Grid.Col>
                                 </Grid.Row>
 
@@ -88,22 +88,22 @@ export default function () {
 
                                 <Grid.Row fluid='no' gap='xs'>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[1]} aspect='square' className='ui-round-l ui-no-round-bl' />
+                                        <Image lazy fluid='all' src={img[1]} aspect='square' className='ui-round-l ui-no-round-bl' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[2]} aspect='square' className='ui-no-round' />
+                                        <Image lazy fluid='all' src={img[2]} aspect='square' className='ui-no-round' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[3]} aspect='square' className='ui-round-rui-no-round-br' />
+                                        <Image lazy fluid='all' src={img[3]} aspect='square' className='ui-round-rui-no-round-br' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[4]} aspect='square' className='ui-round-l ui-no-round-tl' />
+                                        <Image lazy fluid='all' src={img[4]} aspect='square' className='ui-round-l ui-no-round-tl' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[5]} aspect='square' className='ui-no-round' />
+                                        <Image lazy fluid='all' src={img[5]} aspect='square' className='ui-no-round' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[6]} aspect='square' className='ui-round-r ui-no-round-tr' />
+                                        <Image lazy fluid='all' src={img[6]} aspect='square' className='ui-round-r ui-no-round-tr' />
                                     </Grid.Col>
                                 </Grid.Row>
 
@@ -150,19 +150,19 @@ export default function () {
 
                                 <Grid.Row fluid='no' gap='xs' className='ui-ease-2nd-layout ui-ease-2nd-slow ui-ease-2nd-in-out'>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={img[14]} aspect='landscape' className='ui-round-l ui-no-round-bl ui-bring-back' />
+                                        <Image lazy fluid='all' src={img[14]} aspect='landscape' className='ui-round-l ui-no-round-bl ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={img[10]} aspect='landscape' className='ui-round-r ui-no-round-br ui-bring-front' />
+                                        <Image lazy fluid='all' src={img[10]} aspect='landscape' className='ui-round-r ui-no-round-br ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[7]} aspect='landscape' className='ui-round-l ui-no-round-tl ui-bring-l' />
+                                        <Image lazy fluid='all' src={img[7]} aspect='landscape' className='ui-round-l ui-no-round-tl ui-bring-l' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[8]} aspect='landscape' className='ui-no-round ui-bring-b' />
+                                        <Image lazy fluid='all' src={img[8]} aspect='landscape' className='ui-no-round ui-bring-b' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[6]} aspect='landscape' className='ui-round-l ui-no-round-tr ui-bring-r' />
+                                        <Image lazy fluid='all' src={img[6]} aspect='landscape' className='ui-round-l ui-no-round-tr ui-bring-r' />
                                     </Grid.Col>
                                 </Grid.Row>
 
@@ -193,22 +193,22 @@ export default function () {
 
                                 <Grid.Row fluid='no' gap='xs' className='ui-ease-2nd-layout ui-ease-2nd-slow ui-ease-2nd-in-out'>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[1]} aspect='square' className='ui-round-l ui-no-round-bl ui-bring-back' />
+                                        <Image lazy fluid='all' src={img[1]} aspect='square' className='ui-round-l ui-no-round-bl ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[2]} aspect='square' className='ui-no-round ui-bring-front' />
+                                        <Image lazy fluid='all' src={img[2]} aspect='square' className='ui-no-round ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[3]} aspect='square' className='ui-round-r ui-no-round-br ui-bring-back' />
+                                        <Image lazy fluid='all' src={img[3]} aspect='square' className='ui-round-r ui-no-round-br ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[4]} aspect='square' className='ui-round-l ui-no-round-tl ui-bring-front' />
+                                        <Image lazy fluid='all' src={img[4]} aspect='square' className='ui-round-l ui-no-round-tl ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[5]} aspect='square' className='ui-no-round ui-bring-back' />
+                                        <Image lazy fluid='all' src={img[5]} aspect='square' className='ui-no-round ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={img[6]} aspect='square' className='ui-round-r ui-no-round-tr ui-bring-front' />
+                                        <Image lazy fluid='all' src={img[6]} aspect='square' className='ui-round-r ui-no-round-tr ui-bring-front' />
                                     </Grid.Col>
                                 </Grid.Row>
 
@@ -256,49 +256,49 @@ export default function () {
                 <Carousel.Slider className='ui-ease-slow'>
 
                     <Carousel.Content>
-                        <Image lazy fluid src={img[6]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[6]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[7]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[7]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[8]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[8]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[9]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[9]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[10]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[10]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[11]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[11]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[12]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[12]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[13]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[13]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[14]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[14]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[15]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[15]} aspect='landscape' />
                     </Carousel.Content>
                      <Carousel.Content>
-                        <Image lazy fluid src={img[6]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[6]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[7]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[7]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[8]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[8]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[9]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[9]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[10]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[10]} aspect='landscape' />
                     </Carousel.Content>
 
                 </Carousel.Slider>
@@ -320,25 +320,25 @@ export default function () {
                 <Carousel.Slider>
 
                     <Carousel.Content>
-                        <Image lazy fluid src={img[14]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[14]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[7]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[7]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[8]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[8]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[7]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[7]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[9]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[9]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[10]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[10]} aspect='landscape' />
                     </Carousel.Content>
                     <Carousel.Content>
-                        <Image lazy fluid src={img[11]} aspect='landscape' />
+                        <Image lazy fluid='all' src={img[11]} aspect='landscape' />
                     </Carousel.Content>
 
                 </Carousel.Slider>

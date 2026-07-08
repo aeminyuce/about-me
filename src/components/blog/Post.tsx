@@ -35,7 +35,7 @@ export default function () {
                             case 'postDate':
                                 return <div key={name}>{item?.data?.text}</div>;
                             case 'postImage':
-                                return <Image key={name} lazy fluid src={item?.data?.url} alt={item?.data?.alt} aspect='photo' className='blog-post-image ui-round ui-shadow-lg' />;
+                                return <Image key={name} lazy fluid='all' src={item?.data?.url} alt={item?.data?.alt} aspect='photo' className='blog-post-image ui-round ui-shadow-lg' />;
                             case 'text':
                                 return <p key={name} className='ui-font-readable'>{item?.data?.text}</p>;
                             default:

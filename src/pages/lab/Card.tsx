@@ -60,7 +60,7 @@ export default function () {
                                 <p className='ui-font-18 ui-font-light ui-font-readable ui-align-l'>{text?.forest}</p>
                             </Card.Side>
                             <Card.Side className='ui-set-relative ui-theme-greenYellow'>
-                                <Image lazy fluid src={img[0]} aspect='landscape' className='ui-round-b' />
+                                <Image lazy fluid='all' src={img[0]} aspect='landscape' className='ui-round-b' />
                                 <div className='ui-p-20 ui-round-more ui-set-absolute ui-set-c ui-fill-light-100 ui-bg-blur'>
                                     <p className='ui-color-white ui-font-18 ui-m-15-b'>
                                         <SvgIcon as='js' src={IconTrees} size='xl' />
@@ -83,7 +83,7 @@ export default function () {
                                 <SvgIcon as='js' src={IconTrophyStar} size='lg' r={10} />
                                 {text?.raceWinner}
                             </span>
-                            <Image lazy fluid src={img[1]} aspect='landscape' className='ui-round-t' />
+                            <Image lazy fluid='all' src={img[1]} aspect='landscape' className='ui-round-t' />
                         </Card.Side>
                         <Card.Side className='ui-p-10-h ui-p-15-v'>
                             <Heading as='h4'>{text?.raceTitle}</Heading>
@@ -266,8 +266,8 @@ export default function () {
                         <Card.Side>
                             <Grid.Static fluid='sm'>
                                 <Grid.Col size={190} className='ui-no-p'>
-                                    <Image lazy fluid src={img[2]} aspect='portrait' className='ui-hidden-sm ui-round-l ui-no-round-tl' />
-                                    <Image lazy fluid src={img[2]} aspect='landscape' className='ui-visible-sm' />
+                                    <Image lazy fluid='all' src={img[2]} aspect='portrait' className='ui-hidden-sm ui-round-l ui-no-round-tl' />
+                                    <Image lazy fluid='all' src={img[2]} aspect='landscape' className='ui-visible-sm' />
                                 </Grid.Col>
                                 <Grid.Row gap='lg'>
                                     <Grid.Col size={12}>
@@ -289,13 +289,13 @@ export default function () {
                     <Card>
                         <Grid.Row fluid='no' gap='xxs'>
                             <Grid.Col size={4}>
-                                <Image lazy fluid src={img[3]} aspect='square' className='ui-round-l ui-no-round-bl' />
+                                <Image lazy fluid='all' src={img[3]} aspect='square' className='ui-round-l ui-no-round-bl' />
                             </Grid.Col>
                             <Grid.Col size={4}>
-                                <Image lazy fluid src={img[4]} aspect='square' className='ui-no-round' />
+                                <Image lazy fluid='all' src={img[4]} aspect='square' className='ui-no-round' />
                             </Grid.Col>
                             <Grid.Col size={4}>
-                                <Image lazy fluid src={img[5]} aspect='square' className='ui-round-r ui-no-round-br' />
+                                <Image lazy fluid='all' src={img[5]} aspect='square' className='ui-round-r ui-no-round-br' />
                             </Grid.Col>
                         </Grid.Row>
                         <Grid.Row fluid='sm' gap='lg' className='ui-color-black-50 ui-font-readable ui-align-l'>

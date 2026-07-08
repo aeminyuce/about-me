@@ -31,7 +31,7 @@ export default function () {
 
                             return (
                                 <Button key={name} noease ghost multi to={`/blog?post=${name}`} className={classes}>
-                                    <Image lazy fluid={isFirst} src={image?.url} alt={image?.alt} aspect='photo' className={imgClasses} />
+                                    <Image lazy fluid={isFirst ? 'all' : undefined} src={image?.url} alt={image?.alt} aspect='photo' className={imgClasses} />
                                     <span className='ui-block-1st'>
                                         <span className='ui-color-black-50 ui-m-10-b'>{item?.postDate?.text}</span>
                                         <span className={titleClasses}>{item?.postTitle?.text}</span>

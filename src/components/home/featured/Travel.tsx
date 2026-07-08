@@ -29,19 +29,19 @@ export default function() {
 
                                 <Grid.Row fluid='no' gap='xs' className='ui-ease-2nd-layout ui-ease-2nd-slow ui-ease-2nd-in-out'>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={travel?.img1} aspect='landscape' className='ui-round-l ui-no-round-bl ui-bring-back' />
+                                        <Image lazy fluid='all' src={travel?.img1} aspect='landscape' className='ui-round-l ui-no-round-bl ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={6}>
-                                        <Image lazy fluid src={travel?.img2} aspect='landscape' className='ui-round-r ui-no-round-br ui-bring-front' />
+                                        <Image lazy fluid='all' src={travel?.img2} aspect='landscape' className='ui-round-r ui-no-round-br ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.img3} aspect='landscape' className='ui-round-l ui-no-round-tl ui-bring-l' />
+                                        <Image lazy fluid='all' src={travel?.img3} aspect='landscape' className='ui-round-l ui-no-round-tl ui-bring-l' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.img4} aspect='landscape' className='ui-no-round ui-bring-b' />
+                                        <Image lazy fluid='all' src={travel?.img4} aspect='landscape' className='ui-no-round ui-bring-b' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.img5} aspect='landscape' className='ui-round-r ui-no-round-tr ui-bring-r' />
+                                        <Image lazy fluid='all' src={travel?.img5} aspect='landscape' className='ui-round-r ui-no-round-tr ui-bring-r' />
                                     </Grid.Col>
                                 </Grid.Row>
 
@@ -70,22 +70,22 @@ export default function() {
 
                                 <Grid.Row fluid='no' gap='xs' className='ui-ease-2nd-layout ui-ease-2nd-slow ui-ease-2nd-in-out'>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.avatar1} aspect='square' className='ui-round-l ui-no-round-bl ui-bring-back' />
+                                        <Image lazy fluid='all' src={travel?.avatar1} aspect='square' className='ui-round-l ui-no-round-bl ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.avatar2} aspect='square' className='ui-no-round ui-bring-front' />
+                                        <Image lazy fluid='all' src={travel?.avatar2} aspect='square' className='ui-no-round ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.avatar3} aspect='square' className='ui-round-r ui-no-round-br ui-bring-back' />
+                                        <Image lazy fluid='all' src={travel?.avatar3} aspect='square' className='ui-round-r ui-no-round-br ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.avatar4} aspect='square' className='ui-round-l ui-no-round-tl ui-bring-front' />
+                                        <Image lazy fluid='all' src={travel?.avatar4} aspect='square' className='ui-round-l ui-no-round-tl ui-bring-front' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.avatar5} aspect='square' className='ui-no-round ui-bring-back' />
+                                        <Image lazy fluid='all' src={travel?.avatar5} aspect='square' className='ui-no-round ui-bring-back' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid src={travel?.avatar6} aspect='square' className='ui-round-r ui-no-round-tr ui-bring-front' />
+                                        <Image lazy fluid='all' src={travel?.avatar6} aspect='square' className='ui-round-r ui-no-round-tr ui-bring-front' />
                                     </Grid.Col>
                                 </Grid.Row>
 

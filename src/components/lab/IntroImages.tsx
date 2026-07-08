@@ -16,7 +16,7 @@ export default function IntroImages() {
             {api?.lab?.intro?.images?.map((item: IntroImagesProps) => (
                 <Grid.Col key={item.img} size={'7x'} sm={3} xs={3}>
                     <Button noease nostyle href={`https://dribbble.com/shots/${item.url}`} target='_blank'>
-                        <Image lazy fluid src={`lab/aeminyuce-${item.img}`} aspect='landscape' />
+                        <Image lazy fluid='all' src={`lab/aeminyuce-${item.img}`} aspect='landscape' />
                     </Button>
                 </Grid.Col>
             ))}
