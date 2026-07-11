@@ -22,7 +22,7 @@ const SpriteSocial = require('uilab-icons/sprite/social.svg') as string;
 const SpriteBrands = require('uilab-icons/sprite/brands.svg') as string;
 
 export default function (props: any) {
-    const { iconSize, api } = useStoreContext();
+    const { api } = useStoreContext();
     const [ details, setDetails ] = useState<IconDetailsProps>();
 
     const { iconsList } = props;
@@ -53,7 +53,7 @@ export default function (props: any) {
     }, [spritesList]);
 
     return (
-        <div className={`iconslist-icons ui-icons-no-opacity ui-icons-${iconSize}`}>
+        <div className='iconslist-icons ui-icons-no-opacity ui-icons-xl'>
 
             {iconsList.map((item: IconsListProps) => (
                 <Fragment key={item.category}>

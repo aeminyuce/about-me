@@ -19,9 +19,6 @@ export interface StoreContextProps {
     themeB: string;
     setThemeA(name: string): string;
     setThemeB(name: string): string;
-    iconSize: string;
-    setIconSize(name: string): string;
-    iconCopy: string;
     api: any;
 }
 

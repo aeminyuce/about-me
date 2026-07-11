@@ -2,7 +2,6 @@
 // state
 export const CURRENT_THEME_A = 'CURRENT_THEME_A';
 export const CURRENT_THEME_B = 'CURRENT_THEME_B';
-export const ICON_SIZE = 'ICON_SIZE';
 
 // data
 export const PAGE_DATA = 'PAGE_DATA';

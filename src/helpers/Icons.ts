@@ -1,5 +1,35 @@
 import Alerts from 'uilab/react/Alerts';
 
+// size changer
+export const changeIconsSize = (size: string) => {
+    // do not use react states for Google's INP optimization!
+    if (!size || size === '') return;
+
+    const sizesArr = ['ui-icons-xxl', 'ui-icons-xl', 'ui-icons-lg', 'ui-icons-sm', 'ui-icons-xs'];
+
+    const tabs = document.getElementsByClassName('iconslist-tabs')[0];
+    if (tabs) {
+        const theme = 'ui-fill-dark-100';
+
+        const activeBtn = tabs.querySelector(`button.${theme}`);
+        activeBtn?.classList.remove(theme);
+
+        const newSize = tabs.querySelector(`[data-ui-size="${size}"]`);
+        newSize?.classList.add(theme);
+    }
+
+    const wrapper = document.getElementsByClassName('iconslist-icons')[0];
+    if (wrapper) {
+
+        sizesArr.forEach(cls => {
+            if (wrapper.classList.contains(cls)) wrapper.classList.remove(cls);
+        });
+
+        if (size !== '-') wrapper.classList.add(`ui-icons-${size}`);
+
+    }
+}
+
 // copy to clipboard (new api)
 export const copyToClipboard = async (text: string): Promise<void> => {
     if (!navigator.clipboard || !window.isSecureContext) return;

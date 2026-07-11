@@ -3,7 +3,7 @@ import { setStorage } from './Storages';
 import {
 
 	// state
-	CURRENT_THEME_A, CURRENT_THEME_B, ICON_SIZE,
+	CURRENT_THEME_A, CURRENT_THEME_B,
 
 	// data
 	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA, ICONS_DATA, BLOG_DATA
@@ -27,19 +27,6 @@ const updateStoreContext = (state: any, action: any) => {
 				...state,
 				...(action.type === CURRENT_THEME_A && { themeA: theme }),
 				...(action.type === CURRENT_THEME_B && { themeB: theme }),
-			}
-
-		} else if ([ICON_SIZE].includes(action?.type)) {
-
-			// icons
-			setStorage({
-				name: ICON_SIZE,
-				value: action.iconSize,
-			});
-
-			return {
-				...state,
-				iconSize: action.iconSize,
 			}
 
 		} else if ([PAGE_DATA].includes(action?.type)) {

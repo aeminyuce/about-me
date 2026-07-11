@@ -12,7 +12,7 @@ import reducer from './StoreReducer';
 import {
 
 	// state
-	CURRENT_THEME_A, CURRENT_THEME_B, ICON_SIZE,
+	CURRENT_THEME_A, CURRENT_THEME_B,
 
 	// data
 	PAGE_DATA, HOME_DATA, HOME_FEATURED_DATA, LAB_DATA, ICONS_DATA, BLOG_DATA
@@ -87,14 +87,6 @@ export default function (props: StoreProviderProps) {
         });
     }
 
-    // icons
-    const setIconSize = (name: string) => {
-        dispatch({
-            type: ICON_SIZE,
-            iconSize: name,
-        });
-    }
-
     // fetch page data
     const loadPageData = () => {
         getPageData(service).then((response: any) => {
@@ -162,7 +154,6 @@ export default function (props: StoreProviderProps) {
         // state
         setThemeA,
         setThemeB,
-        setIconSize,
 
         // data
         loadHomeData,
