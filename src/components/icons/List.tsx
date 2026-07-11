@@ -40,7 +40,7 @@ export default function (props: any) {
         'Files': SpriteFiles,
         'Social': SpriteSocial,
         'Brands': SpriteBrands,
-    };
+    }
 
     const handleClick = useCallback((props: IconDetailsProps) => {
 

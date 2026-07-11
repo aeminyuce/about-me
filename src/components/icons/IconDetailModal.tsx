@@ -47,7 +47,7 @@ export const showIconDetail = () => {
 
         }
     });
-};
+}
 
 export default function (props: IconDetailsProps) {
     const { name, category, list } = props;

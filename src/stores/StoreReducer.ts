@@ -27,7 +27,7 @@ const updateStoreContext = (state: any, action: any) => {
 				...state,
 				...(action.type === CURRENT_THEME_A && { themeA: theme }),
 				...(action.type === CURRENT_THEME_B && { themeB: theme }),
-			};
+			}
 
 		} else if ([ICON_SIZE].includes(action?.type)) {
 
@@ -40,7 +40,7 @@ const updateStoreContext = (state: any, action: any) => {
 			return {
 				...state,
 				iconSize: action.iconSize,
-			};
+			}
 
 		} else if ([PAGE_DATA].includes(action?.type)) {
 
@@ -51,7 +51,7 @@ const updateStoreContext = (state: any, action: any) => {
 					...state.api,
 					...action.result,
 				},
-			};
+			}
 
 		} else {
 
@@ -85,7 +85,7 @@ const updateStoreContext = (state: any, action: any) => {
 					}),
 
 				},
-			};
+			}
 
 		}
 

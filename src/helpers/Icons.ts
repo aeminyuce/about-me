@@ -14,7 +14,7 @@ export const copyToClipboard = async (text: string): Promise<void> => {
     }
 
     await navigator.clipboard.writeText(text);
-};
+}
 
 
 // copy icon name
@@ -131,7 +131,7 @@ export const addCirclesToPaths = (svgSelector: any) => {
                     }
 
                     return out;
-                };
+                }
 
                 const addPoint = (x: any, y: any) => {
                     x = parseFloat(x);
@@ -149,7 +149,7 @@ export const addCirclesToPaths = (svgSelector: any) => {
                         cx: String(x.toFixed(2)),
                         cy: String(y.toFixed(2))
                     });
-                };
+                }
 
                 if (cmd === 'M' || cmd === 'm') {
                     const pair = takeNums(2);

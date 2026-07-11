@@ -5,7 +5,7 @@ let activeFetches = 0;
 const serviceHeaders = {
     'apikey': process.env.API_KEY ?? '',
     'Content-Type': 'application/json',
-};
+}
 
 const hidePageLoader = () => {
     activeFetches--;
@@ -13,7 +13,7 @@ const hidePageLoader = () => {
     if (activeFetches === 0) setTimeout(() => {
         Loadingmask();
     }, 400);
-};
+}
 
 const errorHandler = (status: any) => {
     const code = String(status);
@@ -56,7 +56,7 @@ export default class Service {
             // run error logger
 
         } finally { hidePageLoader(); }
-    };
+    }
 
     post = async (url: string, body?: any) => {
         let response = null;
@@ -78,6 +78,6 @@ export default class Service {
             // run error logger
 
         } finally { hidePageLoader(); }
-    };
+    }
 
 }

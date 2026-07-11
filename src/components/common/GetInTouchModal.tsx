@@ -12,7 +12,7 @@ export const ShowGetInTouch = () => {
         source: '#getInTouchModal',
         size: 'sm',
     });
-};
+}
 
 export const GetInTouchButtons = () => {
     const { api } = useStoreContext();

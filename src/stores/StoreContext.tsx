@@ -79,13 +79,13 @@ export default function (props: StoreProviderProps) {
             type: CURRENT_THEME_A,
             themeA: name,
         });
-    };
+    }
     const setThemeB = (name: string) => {
         dispatch({
             type: CURRENT_THEME_B,
             themeB: name,
         });
-    };
+    }
 
     // icons
     const setIconSize = (name: string) => {
@@ -103,7 +103,7 @@ export default function (props: StoreProviderProps) {
                 result: response?.result,
             });
         });
-    };
+    }
 
     // fetch data from other pages
     const loadHomeData = () => {
@@ -114,7 +114,7 @@ export default function (props: StoreProviderProps) {
             });
         });
         scrollToTop();
-    };
+    }
     const loadHomeFeaturedData = () => {
         getHomeFeaturedData(service).then((response: any) => {
             dispatch({
@@ -123,7 +123,7 @@ export default function (props: StoreProviderProps) {
             });
         });
         scrollToTop();
-    };
+    }
     const loadLabData = (page?: string) => {
         getLabData(service, page).then((response: any) => {
             dispatch({
@@ -133,7 +133,7 @@ export default function (props: StoreProviderProps) {
             });
         });
         scrollToTop();
-    };
+    }
     const loadIconsData = () => {
         getIconsData(service).then((response: any) => {
             dispatch({
@@ -142,7 +142,7 @@ export default function (props: StoreProviderProps) {
             });
         });
         scrollToTop();
-    };
+    }
     const loadBlogData = (post?: string) => {
         const params = post ? `?post=${post}` : null;
 
@@ -154,7 +154,7 @@ export default function (props: StoreProviderProps) {
             });
         });
         scrollToTop();
-    };
+    }
 
     const contextValue: StoreContextProps =  {
         ...state,
@@ -170,11 +170,11 @@ export default function (props: StoreProviderProps) {
         loadLabData,
         loadIconsData,
         loadBlogData,
-    };
+    }
 
     return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>
-};
+}
 
 export const useStoreContext = () => {
     return useContext(StoreContext);
-};
+}

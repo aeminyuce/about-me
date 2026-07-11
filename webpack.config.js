@@ -70,7 +70,7 @@ module.exports = (env, argv) => {
             hot: true,
             devMiddleware: { writeToDisk: true },
             allowedHosts: 'all',
-        };
+        }
         outputPath = 'dist';
     }
 
@@ -109,4 +109,4 @@ module.exports = (env, argv) => {
     ]
 
     return config;
-};
+}

@@ -20,7 +20,7 @@ export default function () {
         dribbble: IconDribbble,
         linkedin: IconLinkedin,
         x: IconX,
-    };
+    }
 
     return (
         <Button.Wrapper as='span' ease='1st' className='ui-round-1st'>
