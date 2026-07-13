@@ -37,7 +37,7 @@ NOTIFY pgrst, 'reload schema';
 
 /* fix table's crashed auto id increment */
 SELECT setval(
-  pg_get_serial_sequence('lab.charts_text', 'id'),
-  COALESCE((SELECT MAX(id) FROM lab.charts_text), 0) + 1,
+  pg_get_serial_sequence('lab.menu', 'id'),
+  COALESCE((SELECT MAX(id) FROM lab.menu), 0) + 1,
   false
 );
