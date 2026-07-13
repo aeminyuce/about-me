@@ -56,11 +56,23 @@
             {
                 "to": "carousel",
                 "name": "Carousel",
-                "titles": null
+                "titles": [
+                    "HTML Content Carousel",
+                    "Image Carousel"
+                ]
             },
             {
                 "to": "charts",
                 "name": "Charts",
+                "titles": [
+                    "Line Chart",
+                    "Donut Chart",
+                    "Pie Chart"
+                ]
+            },
+            {
+                "to": "code",
+                "name": "Code",
                 "titles": null
             },
             {
