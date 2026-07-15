@@ -156,6 +156,11 @@
                 "titles": null
             },
             {
+                "to": null,
+                "name": "Skeleton",
+                "titles": null
+            },
+            {
                 "to": "steps",
                 "name": "Steps",
                 "titles": null
