@@ -8,7 +8,9 @@
                 "msg_tr": "A message appears at the top-right of the screen.",
                 "dlg_simple": "A simple dialog includes a single button in a gray footer. It cannot be closed by clicking outside the window, it can only be closed by clicking the button. When the dialog opens, the button is focused by default.",
                 "dlg_twoBtn": "This dialog includes confirm and decline buttons with custom text. This dialog can be closed by clicking outside the dialog window, and it also includes a close button in the top‑right corner. Additionally, this dialog can be closed using the ESC key on the keyboard. When a dialog contains an decline button, the decline button is focused first when the dialog opens.",
-                "msg_default": "A message appears at the top of the screen in one of three colors: success, warning, or danger. When the message is clicked, it dismisses by sliding upward. If not clicked, it automatically dismisses after a short delay.",
+                "msg_action": "A bottom message with an action button that lets the user perform an action—such as undo—within a limited countdown period.",
+                "msg_bottom": "A message appears at the bottom of the screen.",
+                "msg_default": "A default message appears at the top of the screen in one of three colors: success, warning, or danger. When the message is clicked, it dismisses by sliding upward. If not clicked, it automatically dismisses after a short delay.",
                 "dlg_callback": "This dialog runs a callback function when the confirm or decline button is clicked. In this example, it displays an alert showing which option you selected.",
                 "dlg_threeBtn": "This dialog includes confirm, decline, and custom buttons along with custom text.  Custom buttons are displayed separately at the top. When all button types are placed in the footer, and when the dialog opens, the decline button is focused first.",
                 "dlg_singleBtn": "This dialog includes single button along with custom text."
@@ -22,12 +24,15 @@
                 "alert": "Can you alert my response?",
                 "later": "Remind me later!",
                 "maybe": "Maybe",
+                "action": "Your items removed.",
                 "danger": "Oh no! Houston, we have a problem.",
                 "remove": "Are you sure you want to remove from your list?",
                 "simple": "I am simple.",
                 "success": "Here is the first default message.",
                 "warning": "Hey, we have a message again.",
-                "download": "Are you sure you want to donwload your backup files?"
+                "download": "Are you sure you want to donwload your backup files?",
+                "actionName": "Undo",
+                "actionCallback": "Your removed item has been restored."
             }
         }
     }

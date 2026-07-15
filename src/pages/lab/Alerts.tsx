@@ -260,6 +260,23 @@ export default function () {
                 {text?.success}
             </div>
         </Preview>
+
+        <Description>{desc?.msg_action}</Description>
+        <Preview playPos={'tr'} play={() => {
+            Alerts.Message({
+                msg: text?.action,
+                pos: 'cb',
+                action: {
+                    name: text?.actionName,
+                    callback: () => { alert(text?.actionCallback); }
+                }
+            })
+        }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
+            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-theme-blue ui-fill-dark-100 ui-cb ui-has-action' style={{ zIndex: 'unset' }}>
+                {text?.action}
+                <button className='ui-hover-l-more ui-ease-layout'>{text?.actionName}</button>
+            </div>
+        </Preview>
         </>
     )
 }
