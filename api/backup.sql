@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict D1mAw5640OotxLmrU9cpBRP91FAiael6xS5Vq4dg06SXc0FAlKpOSpSdiwdMTBb
+\restrict Uil0czzvdHqA03RV6unEDUxilHziiibvUMGzqSkKNUuFcqZ6C4tSjwkQ7bLdIfB
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1 (Postgres.app)
@@ -6371,7 +6371,6 @@ COPY icons.sizes (id, name, size) FROM stdin;
 
 COPY lab.alerts_desc (id, type, "desc") FROM stdin;
 1	dlg_simple	A simple dialog includes a single button in a gray footer. It cannot be closed by clicking outside the window, it can only be closed by clicking the button. When the dialog opens, the button is focused by default.
-6	msg_default	A message appears at the top of the screen in one of three colors: success, warning, or danger. When the message is clicked, it dismisses by sliding upward. If not clicked, it automatically dismisses after a short delay.
 7	msg_tl	A message appears at the top-left of the screen.
 8	msg_tr	A message appears at the top-right of the screen.
 9	msg_br	A message appears at the bottom-right of the screen.
@@ -6380,6 +6379,9 @@ COPY lab.alerts_desc (id, type, "desc") FROM stdin;
 5	dlg_callback	This dialog runs a callback function when the confirm or decline button is clicked. In this example, it displays an alert showing which option you selected.
 4	dlg_threeBtn	This dialog includes confirm, decline, and custom buttons along with custom text.  Custom buttons are displayed separately at the top. When all button types are placed in the footer, and when the dialog opens, the decline button is focused first.
 3	dlg_twoBtn	This dialog includes confirm and decline buttons with custom text. This dialog can be closed by clicking outside the dialog window, and it also includes a close button in the top‑right corner. Additionally, this dialog can be closed using the ESC key on the keyboard. When a dialog contains an decline button, the decline button is focused first when the dialog opens.
+6	msg_default	A default message appears at the top of the screen in one of three colors: success, warning, or danger. When the message is clicked, it dismisses by sliding upward. If not clicked, it automatically dismisses after a short delay.
+11	msg_bottom	A message appears at the bottom of the screen.
+12	msg_action	A bottom message with an action button that lets the user perform an action—such as undo—within a limited countdown period.
 \.
 
 
@@ -6402,6 +6404,9 @@ COPY lab.alerts_text (id, type, text) FROM stdin;
 12	danger	Oh no! Houston, we have a problem.
 13	warning	Hey, we have a message again.
 14	success	Here is the first default message.
+15	action	Your items removed.
+16	actionName	Undo
+17	actionCallback	Your removed item has been restored.
 \.
 
 
@@ -7358,14 +7363,14 @@ SELECT pg_catalog.setval('icons.sizes_id_seq', 6, true);
 -- Name: alerts_desc_id_seq; Type: SEQUENCE SET; Schema: lab; Owner: postgres
 --
 
-SELECT pg_catalog.setval('lab.alerts_desc_id_seq', 10, true);
+SELECT pg_catalog.setval('lab.alerts_desc_id_seq', 12, true);
 
 
 --
 -- Name: alerts_text_id_seq; Type: SEQUENCE SET; Schema: lab; Owner: postgres
 --
 
-SELECT pg_catalog.setval('lab.alerts_text_id_seq', 14, true);
+SELECT pg_catalog.setval('lab.alerts_text_id_seq', 17, true);
 
 
 --
@@ -11164,5 +11169,5 @@ ALTER EVENT TRIGGER pgrst_drop_watch OWNER TO supabase_admin;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict D1mAw5640OotxLmrU9cpBRP91FAiael6xS5Vq4dg06SXc0FAlKpOSpSdiwdMTBb
+\unrestrict Uil0czzvdHqA03RV6unEDUxilHziiibvUMGzqSkKNUuFcqZ6C4tSjwkQ7bLdIfB
 
