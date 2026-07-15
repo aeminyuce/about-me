@@ -150,13 +150,33 @@ export default function () {
                 theme: type,
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-c' style={{ transform: 'translate(-50%, 52px) scale(0.95)', zIndex: 'unset' }}>
+            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-ct' style={{ transform: 'translate(-50%, 52px) scale(0.95)', zIndex: 'unset' }}>
                 {text?.danger}
             </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-c' style={{ transform: 'translate(-50%, 26px) scale(0.97)', zIndex: 'unset' }}>
+            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-ct' style={{ transform: 'translate(-50%, 26px) scale(0.97)', zIndex: 'unset' }}>
                 {text?.warning}
             </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-c' style={{ transform: 'translateX(-50%)', zIndex: 'unset' }}>
+            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-ct' style={{ transform: 'translateX(-50%)', zIndex: 'unset' }}>
+                {text?.success}
+            </div>
+        </Preview>
+
+        <Description>{desc?.msg_bottom}</Description>
+        <Preview playPos={'br'} play={() => {
+            const type = themeRandomizer();
+            Alerts.Message({
+                msg: text[type],
+                theme: type,
+                pos: 'cb',
+            });
+        }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
+            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-cb' style={{ transform: 'translate(-50%, -52px) scale(0.95)', zIndex: 'unset' }}>
+                {text?.danger}
+            </div>
+            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-cb' style={{ transform: 'translate(-50%, -26px) scale(0.97)', zIndex: 'unset' }}>
+                {text?.warning}
+            </div>
+            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-cb' style={{ zIndex: 'unset' }}>
                 {text?.success}
             </div>
         </Preview>
