@@ -6,7 +6,7 @@ export default function () {
     return (
         <div className='ui-align-c ui-set-absolute ui-set-c'>
             <Heading as='h1' className='ui-font-72'>
-                404
+                Not Found
             </Heading>
             <p className='ui-font-22 ui-m-30-b'>Whoops, that page is gone.</p>
             <Button className='ui-circle' to='/'>Go to Home</Button>

@@ -103,11 +103,11 @@ export default function () {
                     <Route path='api-error' element={
                         <PageTitle title='API Error'><PageApiError /></PageTitle>
                     }/>
-                    <Route path='404' element={
-                        <PageTitle title='Not Found'><Page404 /></PageTitle>
-                    }/>
-                    <Route path='500' element={
+                    <Route path='5*' element={
                         <PageTitle title='Server Error'><Page500 /></PageTitle>
+                    }/>
+                    <Route path='4*' element={
+                        <PageTitle title='Not Found'><Page404 /></PageTitle>
                     }/>
                     <Route path='*' element={
                         <PageTitle title='Not Found'><Page404 /></PageTitle>
