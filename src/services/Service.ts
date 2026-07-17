@@ -18,9 +18,14 @@ const hidePageLoader = () => {
 const errorHandler = (status: any) => {
     const code = String(status);
 
-    if ((code.startsWith('4') || code.startsWith('5')) && window.location.pathname !== '/' + code) {
+    if (code.startsWith('4') && window.location.pathname !== '/404') {
         hidePageLoader();
-        window.location.href = '/' + code;
+        window.location.href = '/404';
+    }
+
+    if (code.startsWith('5') && window.location.pathname !== '/500') {
+        hidePageLoader();
+        window.location.href = '/500';
     }
 
     if (code === 'apiError' && window.location.pathname !== '/api-error') {
