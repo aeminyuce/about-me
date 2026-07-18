@@ -6,6 +6,7 @@ import HeaderSticky from 'uilab/react/HeaderSticky';
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
 import { HeaderLeftSidebar, ToggleHeaderLeftSidebar, HeaderRightSidebar, ToggleHeaderRightSidebar } from './HeaderSidebars';
+import HeaderSkeleton from '../../skeleton/Header';
 import GetInTouchModal from './GetInTouchModal';
 import HeaderLinks from './HeaderLinks';
 import SocialLinks from './SocialLinks';
@@ -16,8 +17,9 @@ export default function () {
     const { api } = useStoreContext();
 
     const showRightSidebar = pathname.startsWith('/lab');
+    if (!api?.header) return <HeaderSkeleton />
 
-    return api?.header && (
+    return (
         <>
         <HeaderSticky ariaLabel='Main site header' className='ui-container' dataClasses='ui-shadow'>
             <Grid.Row fluid='no'>
@@ -38,7 +40,7 @@ export default function () {
             <GetInTouchModal />
         </HeaderSticky>
         <HeaderLeftSidebar />
-        <HeaderRightSidebar />
+        {showRightSidebar && <HeaderRightSidebar />}
         </>
     )
 }
