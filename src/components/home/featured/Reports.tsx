@@ -1,5 +1,4 @@
-import React from 'react';
-import { memo, useState } from 'react';
+import React, { memo, useState } from 'react';
 import Button from 'uilab/react/Button';
 import Card from 'uilab/react/Card';
 import DonutChart from 'uilab/react/DonutChart';

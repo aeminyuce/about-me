@@ -1,5 +1,4 @@
-import React from 'react';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Link, useLocation } from 'react-router';
 import Card from 'uilab/react/Card';
 import Listing from 'uilab/react/Listing';
