@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useLayoutEffect } from 'react';
 import { useLocation } from 'react-router';
 import Service from '../services/Service';
 import { getPageData, getHomeData, getHomeFeaturedData, getLabData, getIconsData, getBlogData } from '../services/Repository';
@@ -27,12 +27,12 @@ export default function (props: StoreProviderProps) {
 
     const [state, dispatch] = useReducer(reducer, initialValue);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         // load page data from api when set your api urls
         loadPageData();
     }, []);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         // route based data
         if (['/', '/dashboard'].includes(pathname) && !state?.api?.home) {
             loadHomeData();
