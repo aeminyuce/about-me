@@ -145,17 +145,8 @@ export default function (props: StoreProviderProps) {
 
     const contextValue: StoreContextProps =  {
         ...state,
-
-        // state
         setThemeA,
         setThemeB,
-
-        // data
-        loadHomeData,
-        loadHomeFeaturedData,
-        loadLabData,
-        loadIconsData,
-        loadBlogData,
     }
 
     return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>
