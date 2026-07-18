@@ -1,35 +1,20 @@
-import Loadingmask from 'uilab/react/Loadingmask';
-
-let activeFetches = 0;
-
 const serviceHeaders = {
     'apikey': process.env.API_KEY ?? '',
     'Content-Type': 'application/json',
-}
-
-const hidePageLoader = () => {
-    activeFetches--;
-
-    if (activeFetches === 0) setTimeout(() => {
-        Loadingmask();
-    }, 400);
 }
 
 const errorHandler = (status: any) => {
     const code = String(status);
 
     if (code.startsWith('4') && window.location.pathname !== '/404') {
-        hidePageLoader();
         window.location.href = '/404';
     }
 
     if (code.startsWith('5') && window.location.pathname !== '/500') {
-        hidePageLoader();
         window.location.href = '/500';
     }
 
     if (code === 'apiError' && window.location.pathname !== '/api-error') {
-        hidePageLoader();
         window.location.href = '/api-error';
     }
 }
@@ -38,7 +23,6 @@ export default class Service {
     get = async (url: string, params?: any) => {
         let response = null;
 
-        activeFetches++;
         if (params) url += params;
 
         try {
@@ -54,13 +38,11 @@ export default class Service {
         } catch (e: any) {
             errorHandler('apiError');
             // run error logger
-
-        } finally { hidePageLoader(); }
+        }
     }
 
     post = async (url: string, body?: any) => {
         let response = null;
-        activeFetches++;
 
         try {
 
@@ -76,8 +58,7 @@ export default class Service {
         } catch (e: any) {
             errorHandler('apiError');
             // run error logger
-
-        } finally { hidePageLoader(); }
+        }
     }
 
 }

@@ -1,10 +1,8 @@
-import React from 'react';
-import { lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router';
 
 // misc
 import PageTitle from '../components/common/PageTitle';
-import PageLoader from '../components/common/PageLoader';
 import Page500 from '../pages/error/500';
 import Page404 from '../pages/error/404';
 import PageApiError from './error/ApiError';
@@ -34,7 +32,7 @@ const Blog= lazy(() => import( /* webpackChunkName: 'Blog' */ './Blog' ));
 
 export default function () {
     return (
-        <Suspense fallback={<PageLoader />}>
+        <Suspense>
             <Routes>
                 {/* default pages */}
                 <Route element={<Default />}>

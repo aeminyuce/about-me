@@ -1,7 +1,5 @@
-import React from 'react';
-import { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import { useLocation } from 'react-router';
-import Loadingmask from 'uilab/react/Loadingmask';
 import Service from '../services/Service';
 import { getPageData, getHomeData, getHomeFeaturedData, getLabData, getIconsData, getBlogData } from '../services/Repository';
 
@@ -25,7 +23,7 @@ export default function (props: StoreProviderProps) {
     const { children, initialValue } = props;
 
     const service = new Service();
-    const { pathname, hash, search } = useLocation();
+    const { pathname, search } = useLocation();
 
     const [state, dispatch] = useReducer(reducer, initialValue);
 
@@ -54,8 +52,6 @@ export default function (props: StoreProviderProps) {
             if (!state?.api?.lab) loadLabData();
             if (page && !(state.api.lab && state.api.lab[page])) loadLabData(page);
 
-            if (!page) Loadingmask(); // necessary for lab intro page
-
         } else if (pathname.startsWith('/icons') && !state?.api?.icons) {
             loadIconsData();
 
@@ -66,12 +62,11 @@ export default function (props: StoreProviderProps) {
             const isArchive = !post && !state?.api?.blog?.archives;
             const isPost = post && !(state?.api?.blog && state.api.blog[post]);
 
-            if (isArchive || isPost) Loadingmask('body'); // trigger when param changed
             if (isArchive) loadBlogData();
             if (isPost) loadBlogData(post);
 
-        } else Loadingmask();
-    }, [pathname, hash, search]);
+        }
+    }, [pathname, search]);
 
     // themes
     const setThemeA = (name: string) => {
