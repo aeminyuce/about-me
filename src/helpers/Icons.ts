@@ -14,7 +14,7 @@ export const changeIconsSize = (size: string) => {
         const activeBtn = tabs.querySelector(`button.${theme}`);
         activeBtn?.classList.remove(theme);
 
-        const newSize = tabs.querySelector(`[data-ui-size="${size}"]`);
+        const newSize = tabs.querySelector(`[data-ui-size='${size}']`);
         newSize?.classList.add(theme);
     }
 
