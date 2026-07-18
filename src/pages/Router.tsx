@@ -34,6 +34,18 @@ export default function () {
     return (
         <Suspense>
             <Routes>
+                {/* home pages */}
+                <Route path='/' element={<Home />}>
+
+                    <Route index element={
+                        <PageTitle title='About Me'><Featured /></PageTitle>
+                    }/>
+                    <Route path='dashboard' element={
+                        <PageTitle title='Dashboard'><Dashboard /></PageTitle>
+                    }/>
+
+                </Route>
+
                 {/* default pages */}
                 <Route element={<Default />}>
 
@@ -46,18 +58,6 @@ export default function () {
                     <Route path='blog' element={
                         // page title creates dynamically in component
                         <Blog />
-                    }/>
-
-                </Route>
-
-                {/* home pages */}
-                <Route path='/' element={<Home />}>
-
-                    <Route index element={
-                        <PageTitle title='About Me'><Featured /></PageTitle>
-                    }/>
-                    <Route path='dashboard' element={
-                        <PageTitle title='Dashboard'><Dashboard /></PageTitle>
                     }/>
 
                 </Route>
