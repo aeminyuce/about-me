@@ -16,8 +16,8 @@ export default function () {
     const { pathname } = useLocation();
     const { api } = useStoreContext();
 
-    const showRightSidebar = pathname.startsWith('/lab');
     if (!api?.header) return <HeaderSkeleton />
+    const showRightSidebar = pathname.startsWith('/lab');
 
     return (
         <>
