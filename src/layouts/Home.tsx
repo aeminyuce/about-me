@@ -3,13 +3,13 @@ import { Outlet } from 'react-router';
 import Grid from 'uilab/react/Grid';
 
 // misc
+import { useStoreContext } from '../stores/StoreContext';
 import HomeSkeleton from '../skeleton/Home';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import MyFocus from '../components/home/MyFocus';
 import HomeProfile from '../components/home/HomeProfile';
 import HomeNav from '../components/home/HomeNav';
-import { useStoreContext } from '../stores/StoreContext';
 
 // styles
 import '../assets/home.less';

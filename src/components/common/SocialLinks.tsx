@@ -3,8 +3,8 @@ import Button from 'uilab/react/Button';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import type { SocialLinksProps } from '../../models/Page';
 import { useStoreContext } from '../../stores/StoreContext';
+import type { SocialLinksProps } from '../../models/Page';
 
 // assets
 import { IconDribbble } from 'uilab-icons/react/social/dribbble';

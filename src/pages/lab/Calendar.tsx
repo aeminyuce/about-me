@@ -7,10 +7,10 @@ import Spacer from 'uilab/react/Spacer';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
+import { headings } from '../../helpers/Lab';
 import Description from '../../components/common/Description';
 import Preview from '../../components/common/Preview';
 import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
-import { headings } from '../../helpers/Lab';
 
 export default function () {
     const { api } = useStoreContext();

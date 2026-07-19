@@ -9,10 +9,10 @@ import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
+import { headings } from '../../helpers/Lab';
 import Description from '../../components/common/Description';
 import Preview from '../../components/common/Preview';
 import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
-import { headings } from '../../helpers/Lab';
 
 // assets
 import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';

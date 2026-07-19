@@ -4,8 +4,8 @@ import Heading from 'uilab/react/Heading';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
-import { GetInTouchButtons } from '../common/GetInTouchModal';
 import { useStoreContext } from '../../stores/StoreContext';
+import { GetInTouchButtons } from '../common/GetInTouchModal';
 import MyAvatar from '../common/MyAvatar';
 import PersonalSkills from './PersonalSkills';
 

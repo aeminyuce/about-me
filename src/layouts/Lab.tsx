@@ -3,10 +3,10 @@ import { Outlet } from 'react-router';
 import Grid from 'uilab/react/Grid';
 
 // misc
+import { useStoreContext } from '../stores/StoreContext';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import LabMenu from '../components/lab/Menu';
-import { useStoreContext } from '../stores/StoreContext';
 
 // styles
 import '../assets/lab.less';

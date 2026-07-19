@@ -3,9 +3,9 @@ import Button from 'uilab/react/Button';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
+import { useStoreContext } from '../../stores/StoreContext';
 import type { HeaderLinksProps } from '../../models/Page';
 import { ShowGetInTouch } from './GetInTouchModal';
-import { useStoreContext } from '../../stores/StoreContext';
 
 // assets
 import { IconHeart } from 'uilab-icons/react/general/heart';

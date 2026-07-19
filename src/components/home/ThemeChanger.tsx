@@ -3,8 +3,8 @@ import Button from 'uilab/react/Button';
 import Dropdown from 'uilab/react/Dropdown';
 
 // misc
-import type { ThemeListProps } from '../../models/Home';
 import { useStoreContext } from '../../stores/StoreContext';
+import type { ThemeListProps } from '../../models/Home';
 
 export default function (props: any) {
     const { themeA, setThemeA, themeB, setThemeB, api } = useStoreContext();

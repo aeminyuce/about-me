@@ -5,10 +5,10 @@ import Carousel from 'uilab/react/Carousel';
 import Grid from 'uilab/react/Grid';
 
 // misc
-import type { HomeNavLinksProps } from '../../models/Home';
-import ThemeChanger from './ThemeChanger';
 import { useStoreContext } from '../../stores/StoreContext';
+import type { HomeNavLinksProps } from '../../models/Home';
 import { mobileNavPosition } from '../../helpers/Home';
+import ThemeChanger from './ThemeChanger';
 
 export default function () {
     return (
