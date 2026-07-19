@@ -3,6 +3,7 @@ import { Outlet } from 'react-router';
 import Grid from 'uilab/react/Grid';
 
 // misc
+import HomeSkeleton from '../skeleton/Home';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import MyFocus from '../components/home/MyFocus';
@@ -24,20 +25,26 @@ export default function () {
 
         {/* main */}
         <Grid.Container as='main' ariaLabel='Main site content' noGutter='all'>
-            <Grid.Container fixed='xl' as='div'>
+            {!home ?
+                <HomeSkeleton />
+                :
+                <>
+                <Grid.Container fixed='xl' as='div'>
 
-                {/* about me */}
-                {home?.aboutMe &&
-                    <>
-                    <HomeProfile />
-                    <MyFocus />
-                    </>
-                }
+                    {/* about me */}
+                    {home?.aboutMe &&
+                        <>
+                        <HomeProfile />
+                        <MyFocus />
+                        </>
+                    }
 
-            </Grid.Container>
+                </Grid.Container>
 
-            {/* nav */}
-            {home?.nav && <HomeNav />}
+                {/* nav */}
+                {home?.nav && <HomeNav />}
+                </>
+            }
 
             <Grid.Container fixed='xl' as='div'>
 
