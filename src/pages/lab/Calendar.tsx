@@ -1,5 +1,6 @@
 import React from 'react';
 import Calendar from 'uilab/react/Calendar';
+import CalendarPicker from 'uilab/react/CalendarPicker';
 import Grid from 'uilab/react/Grid';
 import Heading from 'uilab/react/Heading';
 import Spacer from 'uilab/react/Spacer';
@@ -103,17 +104,17 @@ export default function () {
         <Preview>
             <Grid.Row>
                 <Grid.Col size={12} className='ui-round-1st'>
-                    <Calendar.Picker inline='always' className='ui-m-20-r ui-sm-no-m' />
+                    <CalendarPicker inline='always' className='ui-m-20-r ui-sm-no-m' />
                     <Spacer size={10} className='ui-visible-sm' />
-                    <Calendar.Picker inline='always' defaultValue={dates?.picker} />
+                    <CalendarPicker inline='always' defaultValue={dates?.picker} />
                 </Grid.Col>
             </Grid.Row>
             <Grid.Row className='ui-round-2nd'>
                 <Grid.Col lg={{ size: 5, offset: 1 }} size={12}>
-                    <Calendar.Picker />
+                    <CalendarPicker />
                 </Grid.Col>
                 <Grid.Col lg={{ size: 5 }} size={12}>
-                    <Calendar.Picker defaultValue={dates?.picker} />
+                    <CalendarPicker defaultValue={dates?.picker} />
                 </Grid.Col>
             </Grid.Row>
         </Preview>
