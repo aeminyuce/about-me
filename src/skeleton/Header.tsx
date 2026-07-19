@@ -14,7 +14,7 @@ export default function () {
 
                 <Grid.Col size={3} md={9} sm={9} xs={9} className='ui-align-r'>
                     <Skeleton square repeat={5} h='42px' hGap={1} />
-                    <Skeleton square h='42px' hGap={2} className='ui-visible-md' />
+                    <Skeleton index={5} square h='42px' hGap={2} className='ui-m-1-l ui-visible-md' />
                 </Grid.Col>
 
             </Grid.Row>
