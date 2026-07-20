@@ -33,7 +33,7 @@ const config = {
                     loader: 'esbuild-loader',
                     options: {
                         loader: 'tsx',
-                        target: 'es2020'
+                        target: 'es2022'
                     }
                 }
             },
