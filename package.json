@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development",
-    "update-uilab": "node ../uilab/inject-latest.js && npm i uilab",
-    "update-uilab-icons": "node ../uilab-icons/inject-latest.js && npm i uilab-icons",
+    "update-uilab": "npm config set ignore-scripts true && node ../uilab/inject-latest.js && npm i uilab",
+    "update-uilab-icons": "npm config set ignore-scripts true && node ../uilab-icons/inject-latest.js && npm i uilab-icons",
     "api-backup": "bash ./api/supabase.sh --backup",
     "api-restore": "bash ./api/supabase.sh --restore"
   },
@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uilab": "file:../uilab/uilab-1.0.317.tgz",
-    "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.492.tgz"
+    "uilab": "file:../uilab/uilab-1.0.843.tgz",
+    "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.614.tgz"
   }
 }
