@@ -33,9 +33,9 @@ export default function () {
             <Grid.Row>
 
                 <Grid.Col size={8} push={2} className='ui-m-30-v ui-align-c ui-round-2nd'>
-                    <div className='ui-hidden-md'>
-                        <Skeleton index={9} w='100%' h='23px' className='ui-m-5-v' />
-                        <Skeleton index={10} w='86%' h='23px' className='ui-m-5-t ui-m-20-b' />
+                    <div className='ui-p-1-t ui-hidden-md'>
+                        <Skeleton index={9} w='100%' h='22px' className='ui-m-5-v' />
+                        <Skeleton index={10} w='86%' h='22px' className='ui-m-5-t ui-m-20-b' />
                     </div>
                     <div className='ui-visible-md'>
                         <Skeleton index={9} repeat={5} w='100%' h='20px' className='ui-m-5-v ui-visible-md' />
