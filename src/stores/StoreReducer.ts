@@ -29,7 +29,7 @@ const updateStoreContext = (state: any, action: any) => {
 				...(action.type === CURRENT_THEME_B && { themeB: theme }),
 			}
 
-		} else if ([PAGE_DATA].includes(action?.type)) {
+		} else if (action?.type === PAGE_DATA) {
 
 			// fetch page data
 			return {
