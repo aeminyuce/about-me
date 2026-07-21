@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development",
-    "update-uilab": "npm config set ignore-scripts true && node ../uilab/inject-latest.js && npm i uilab",
-    "update-uilab-icons": "npm config set ignore-scripts true && node ../uilab-icons/inject-latest.js && npm i uilab-icons",
+    "install-uilab": "npm config set ignore-scripts true && node ../uilab/inject-latest.js && npm i uilab",
+    "install-uilab-icons": "npm config set ignore-scripts true && node ../uilab-icons/inject-latest.js && npm i uilab-icons",
     "api-backup": "bash ./api/supabase.sh --backup",
     "api-restore": "bash ./api/supabase.sh --restore"
   },
