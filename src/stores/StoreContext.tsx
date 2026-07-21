@@ -1,7 +1,7 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
-import { useLocation } from 'react-router';
-import Service from '../services/Service';
+import React, { createContext, useContext, useReducer } from 'react';
+import { useMatches } from 'react-router';
 import { getPageData, getHomeData, getHomeFeaturedData, getLabData, getIconsData, getBlogData } from '../services/Repository';
+import Service from '../services/Service';
 
 // misc
 import type { StoreContextProps, StoreProviderProps } from '../models/Page';
@@ -17,56 +17,15 @@ import {
 
 } from './Actions';
 
+const cachedLoaders: string[] = [];
 export const StoreContext = createContext({} as StoreContextProps);
 
 export default function (props: StoreProviderProps) {
     const { children, initialValue } = props;
-
-    const service = new Service();
-    const { pathname, search } = useLocation();
-
     const [state, dispatch] = useReducer(reducer, initialValue);
 
-    useEffect(() => {
-        // load page data from api when set your api urls
-        loadPageData();
-    }, []);
-
-    useEffect(() => {
-        // route based data
-        if (['/', '/dashboard'].includes(pathname) && !state?.api?.home) {
-            loadHomeData();
-        }
-
-        if (pathname === '/' && !state?.api?.home_featured) {
-            loadHomeFeaturedData();
-
-        } else if (pathname.startsWith('/lab')) {
-            let page = null;
-            const isUrl = (name: string) => pathname.startsWith(`/lab/${name}`);
-
-            ['alerts', 'avatars', 'breadcrumbs', 'buttons', 'calendar','card','carousel','charts'].find((name: string) => {
-                if (isUrl(name)) page = name;
-            });
-
-            if (!state?.api?.lab) loadLabData();
-            if (page && !(state.api.lab && state.api.lab[page])) loadLabData(page);
-
-        } else if (pathname.startsWith('/icons') && !state?.api?.icons) {
-            loadIconsData();
-
-        } else if (pathname.startsWith('/blog')) {
-            const params = new URLSearchParams(search);
-            const post = params.get('post');
-
-            const isArchive = !post && !state?.api?.blog?.archives;
-            const isPost = post && !(state?.api?.blog && state.api.blog[post]);
-
-            if (isArchive) loadBlogData();
-            if (isPost) loadBlogData(post);
-
-        }
-    }, [pathname, search]);
+    const service = new Service();
+    const matches = useMatches();
 
     // themes
     const setThemeA = (name: string) => {
@@ -143,6 +102,58 @@ export default function (props: StoreProviderProps) {
         scrollToTop();
     }
 
+    // loaders
+    const routes = matches.map((m: any) => m.loaderData?.load).filter(Boolean);
+
+    const loaders: Record<string, () => void> = {
+        page: loadPageData,
+
+        home: loadHomeData,
+        home_featured: loadHomeFeaturedData,
+
+        lab: loadLabData,
+        lab_alerts: () => loadLabData('alerts'),
+        lab_avatars: () => loadLabData('avatars'),
+        lab_breadcrumbs: () => loadLabData('breadcrumbs'),
+        lab_buttons: () => loadLabData('buttons'),
+        lab_calendar: () => loadLabData('calendar'),
+        lab_card: () => loadLabData('card'),
+        lab_carousel: () => loadLabData('carousel'),
+        lab_charts: () => loadLabData('charts'),
+
+        icons: loadIconsData,
+
+        blog: loadBlogData,
+        post: () => {
+            const post = matches.map((m: any) => m.loaderData?.post).filter(Boolean)[0];
+
+            // check loaded posts
+            if (post && !(state?.api?.blog && state.api.blog[post])) {
+                loadBlogData(post);
+            }
+        }
+    }
+
+    const excludeFromCache = ['post']; // write your never cached routes
+
+    for (const route of routes) {
+        if (!cachedLoaders.includes(route)) {
+
+            const handler = loaders[route];
+            if (typeof handler === 'function') {
+
+                handler();
+
+                if (!excludeFromCache.includes(route)) {
+                    cachedLoaders.push(route);
+                }
+
+            }
+
+        };
+    }
+
+    // export state and actions
     const contextValue: StoreContextProps =  {
         ...state,
         setThemeA,
