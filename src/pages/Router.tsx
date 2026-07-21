@@ -1,11 +1,13 @@
-import React, { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router';
+import React, { lazy } from 'react';
+import { createBrowserRouter } from 'react-router';
 
 // misc
-import PageTitle from '../components/common/PageTitle';
-import Page500 from '../pages/error/500';
-import Page404 from '../pages/error/404';
+import App from './App';
 import PageApiError from './error/ApiError';
+import Page500 from './error/500';
+import Page404 from './error/404';
+import ErrorBoundary from './error/ErrorBoundary';
+import PageTitle from '../components/common/PageTitle';
 
 // layouts
 const Default = lazy(() => import( /* webpackChunkName: 'Default' */ '../layouts/Default' ));
@@ -30,89 +32,111 @@ const LabCharts = lazy(() => import( /* webpackChunkName: 'lab/Charts' */ './lab
 const Icons= lazy(() => import( /* webpackChunkName: 'Icons' */ './Icons' ));
 const Blog= lazy(() => import( /* webpackChunkName: 'Blog' */ './Blog' ));
 
-export default function () {
-    return (
-        <Suspense>
-            <Routes>
-                {/* home pages */}
-                <Route path='/' element={<Home />}>
+export const router = createBrowserRouter([
+    // app
+    {
+        element: <App />,
+        errorElement: <ErrorBoundary />,
+        children: [
 
-                    <Route index element={
-                        <PageTitle title='About Me'><Featured /></PageTitle>
-                    }/>
-                    <Route path='dashboard' element={
-                        <PageTitle title='Dashboard'><Dashboard /></PageTitle>
-                    }/>
+            // home layout
+            {
+                path: '/',
+                element: <Home />,
+                children: [
+                    {
+                        index: true,
+                        element: (<PageTitle title="About Me"><Featured /></PageTitle>),
+                    },
+                    {
+                        path: 'dashboard',
+                        element: (<PageTitle title="Dashboard"><Dashboard /></PageTitle>),
+                    },
+                ],
+            },
 
-                </Route>
+            // default layout
+            {
+                element: <Default />,
+                children: [
+                    {
+                        path: 'icons',
+                        element: (<PageTitle title="I Love Icons"><Icons /></PageTitle>),
+                    },
+                    {
+                        path: 'blog',
+                        element: <Blog />, // page title creates dynamically in component
+                    },
+                ],
+            },
 
-                {/* default pages */}
-                <Route element={<Default />}>
+            // lab layout
+            {
+                path: '/lab',
+                element: <Lab />,
+                children: [
+                    {
+                        index: true,
+                        element: (<PageTitle title="Lab"><LabIntro /></PageTitle>),
+                    },
+                    {
+                        path: 'alerts',
+                        element: (<PageTitle title="Alerts | Lab"><LabAlerts /></PageTitle>),
+                    },
+                    {
+                        path: 'avatars',
+                        element: (<PageTitle title="Avatars | Lab"><LabAvatars /></PageTitle>),
+                    },
+                    {
+                        path: 'breadcrumbs',
+                        element: (<PageTitle title="Breadcrumbs | Lab"><LabBreadcrumbs /></PageTitle>),
+                    },
+                    {
+                        path: 'buttons',
+                        element: (<PageTitle title="Buttons | Lab"><LabButtons /></PageTitle>),
+                    },
+                    {
+                        path: 'calendar',
+                        element: (<PageTitle title="Calendar | Lab"><LabCalendar /></PageTitle>),
+                    },
+                    {
+                        path: 'card',
+                        element: (<PageTitle title="Card | Lab"><LabCard /></PageTitle>),
+                    },
+                    {
+                        path: 'carousel',
+                        element: (<PageTitle title="Carousel | Lab"><LabCarousel /></PageTitle>),
+                    },
+                    {
+                        path: 'charts',
+                        element: (<PageTitle title="Charts | Lab"><LabCharts /></PageTitle>),
+                    },
+                ],
+            },
 
-                    {/* icons */}
-                    <Route path='icons' element={
-                        <PageTitle title='I Love Icons'><Icons /></PageTitle>
-                    }/>
+            // error layout
+            {
+                element: <Error />,
+                children: [
+                    {
+                        path: 'api-error',
+                        element: (<PageTitle title="API Error"><PageApiError /></PageTitle>),
+                    },
+                    {
+                        path: '500',
+                        element: (<PageTitle title="Server Error"><Page500 /></PageTitle>),
+                    },
+                    {
+                        path: '404',
+                        element: (<PageTitle title="Not Found"><Page404 /></PageTitle>),
+                    },
+                    {
+                        path: '*',
+                        element: (<PageTitle title="Not Found"><Page404 /></PageTitle>),
+                    },
+                ],
+            },
 
-                    {/* blog */}
-                    <Route path='blog' element={
-                        // page title creates dynamically in component
-                        <Blog />
-                    }/>
-
-                </Route>
-
-                {/* lab pages */}
-                <Route path='/lab' element={<Lab />}>
-
-                    <Route index element={
-                        <PageTitle title='Lab'><LabIntro /></PageTitle>}
-                    />
-                    <Route path='alerts' element={
-                        <PageTitle title='Alerts | Lab'><LabAlerts /></PageTitle>
-                    }/>
-                    <Route path='avatars' element={
-                        <PageTitle title='Avatars | Lab'><LabAvatars /></PageTitle>
-                    }/>
-                    <Route path='breadcrumbs' element={
-                        <PageTitle title='Breadcrumbs | Lab'><LabBreadcrumbs /></PageTitle>
-                    }/>
-                    <Route path='buttons' element={
-                        <PageTitle title='Buttons | Lab'><LabButtons /></PageTitle>
-                    }/>
-                    <Route path='calendar' element={
-                        <PageTitle title='Calendar | Lab'><LabCalendar /></PageTitle>
-                    }/>
-                    <Route path='card' element={
-                        <PageTitle title='Card | Lab'><LabCard /></PageTitle>
-                    }/>
-                    <Route path='carousel' element={
-                        <PageTitle title='Carousel | Lab'><LabCarousel /></PageTitle>
-                    }/>
-                    <Route path='charts' element={
-                        <PageTitle title='Charts | Lab'><LabCharts /></PageTitle>
-                    }/>
-
-                </Route>
-
-                {/* error pages */}
-                <Route element={<Error />}>
-
-                    <Route path='api-error' element={
-                        <PageTitle title='API Error'><PageApiError /></PageTitle>
-                    }/>
-                    <Route path='500' element={
-                        <PageTitle title='Server Error'><Page500 /></PageTitle>
-                    }/>
-                    <Route path='404' element={
-                        <PageTitle title='Not Found'><Page404 /></PageTitle>
-                    }/>
-                    <Route path='*' element={
-                        <PageTitle title='Not Found'><Page404 /></PageTitle>
-                    }/>
-
-                </Route>
-            </Routes>
-        </Suspense>
-    )
-}
+        ]
+    },
+]);

@@ -1,23 +1,20 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import { Outlet } from 'react-router';
 import TopButton from 'uilab/react/TopButton';
 import SquircleMask from 'uilab/react/SquircleMask';
 
 // misc
-import { storedData } from './stores/Storages';
-import StoreProvider from './stores/StoreContext';
-import Router from './pages/Router';
+import { storedData } from '../stores/Storages';
+import StoreProvider from '../stores/StoreContext';
 
 export default function () {
     return (
         <StoreProvider initialValue={storedData}>
 
-            {/* pages */}
-            <Router />
-
-            {/* top button */}
+            <Suspense>
+                <Outlet />
+            </Suspense>
             <TopButton />
-
-            {/* squircle mask */}
             <SquircleMask />
 
         </StoreProvider>
