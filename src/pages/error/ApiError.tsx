@@ -9,7 +9,7 @@ export default function () {
                 API Error
             </Heading>
             <p className='ui-font-22 ui-m-30-b'>Whoops, the API paused or didn’t respond. We’ll be back soon.</p>
-            <Button className='ui-circle' onClick={() => window.location.reload()}>Refresh</Button>
+            <Button className='ui-circle' onClick={() => window.history.back()}>Try Again</Button>
         </div>
     )
 }
