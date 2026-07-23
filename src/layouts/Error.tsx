@@ -2,8 +2,17 @@ import React from 'react';
 import { Outlet } from 'react-router';
 import Grid from 'uilab/react/Grid';
 
+// misc
+import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
+
 export default function () {
     return (
+        <>
+        {/* header */}
+        <Header />
+
+        {/* main */}
         <Grid.Container as='main' ariaLabel='Main site content' noGutter='all'>
             <Grid.Container fixed='xl' as='div'>
 
@@ -12,5 +21,9 @@ export default function () {
 
             </Grid.Container>
         </Grid.Container>
+
+        {/* footer */}
+        <Footer />
+        </>
     )
 }
