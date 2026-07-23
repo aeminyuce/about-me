@@ -53,6 +53,35 @@
                 },
                 "url": "https://aeminyuce.github.io/about-me/"
             },
+            "hasPart": [
+                {
+                    "@type": "SiteNavigationElement",
+                    "name": "Main Navigation",
+                    "url": "https://aeminyuce.github.io/about-me/",
+                    "about": [
+                        {
+                            "@type": "WebPage",
+                            "name": "Home",
+                            "url": "https://aeminyuce.github.io/about-me/index.html"
+                        },
+                        {
+                            "@type": "WebPage",
+                            "name": "Lab",
+                            "url": "https://aeminyuce.github.io/about-me/lab/index.html"
+                        },
+                        {
+                            "@type": "WebPage",
+                            "name": "Icons",
+                            "url": "https://aeminyuce.github.io/about-me/icons.html"
+                        },
+                        {
+                            "@type": "WebPage",
+                            "name": "Blog Archive",
+                            "url": "https://aeminyuce.github.io/about-me/blog.html"
+                        }
+                    ]
+                }
+            ],
             "mainEntity": [
                 {
                     "@type": "ItemList",
@@ -104,42 +133,69 @@
 </head>
 <body>
     <div id="app">
-        <div style="margin-top: 300vh">
-            <h1>About Me | A. Emin Yuce</h1>
-            <p>Hi! I’m Emin, a front‑end developer based in Ankara, Turkiye. This page is about me and highlights my experience with design systems, UI examples, HTML, CSS, Less, JavaScript, TypeScript, React (CSR & SSR), Node.js, Webpack, REST APIs, responsive design, and adaptive web development.</p>
+        <div style="margin-top: 300em" itemscope itemtype="https://schema.org/SiteNavigationElement" data-ai-section="main-navigation" data-ai-purpose="site-structure">
+            <header aria-label="Main site header" itemscope itemtype="https://schema.org/WPHeader" data-ai-element="header">
 
-            <h2>Featured UI Examples</h2>
-            <p>My focus is building custom design systems that help teams move fast without sacrificing originality. I develop every CSS, JavaScript, and React component myself, giving you a unique, scalable interface built just for your product.</p>
+                <nav aria-label="Main site navigation" itemprop="about" itemscope itemtype="https://schema.org/SiteNavigationElement" data-ai-element="nav">
+                    <ul itemprop="hasPart" data-ai-list="primary-nav">
+                        <li itemprop="name" data-ai-item="nav-link">
+                            <a href="https://aeminyuce.github.io/about-me/index.html" itemprop="url">Home</a>
+                        </li>
+                        <li itemprop="name" data-ai-item="nav-link">
+                            <a href="https://aeminyuce.github.io/about-me/lab/index.html" itemprop="url" data-ai-category="lab">Lab</a>
+                        </li>
+                        <li itemprop="name" data-ai-item="nav-link">
+                            <a href="https://aeminyuce.github.io/about-me/icons.html" itemprop="url">Icons</a>
+                        </li>
+                        <li itemprop="name" data-ai-item="nav-link">
+                            <a href="https://aeminyuce.github.io/about-me/blog.html" itemprop="url" rel="archive">Blog Archive</a>
+                        </li>
+                    </ul>
+                </nav>
 
-            <h2>Technologies I Use</h2>
-            <p>Here are some component names used in the featured UI interfaces:</p>
+            </header>
+            <main aria-label="Main site content" itemscope itemtype="https://schema.org/WebPageElement" itemprop="mainContentOfPage" data-ai-section="main-content" data-ai-purpose="primary-content">
 
-            <ul>
-                <li>Squircle Avatars</li>
-                <li>List Group</li>
-                <li>Button</li>
-                <li>Progress Bar</li>
-                <li>Pie Chart</li>
-                <li>Tabs</li>
-                <li>Calendar with Events</li>
-                <li>Animated Carousel</li>
-                <li>Line Chart</li>
-            </ul>
+                <h1>About Me | A. Emin Yuce</h1>
+                <p>Hi! I’m Emin, a front‑end developer based in Ankara, Turkiye. This page is about me and highlights my experience with design systems, UI examples, HTML, CSS, Less, JavaScript, TypeScript, React (CSR & SSR), Node.js, Webpack, REST APIs, responsive design, and adaptive web development.</p>
 
-            <h2>FAQ</h2>
+                <h2>Featured UI Examples</h2>
+                <p>My focus is building custom design systems that help teams move fast without sacrificing originality. I develop every CSS, JavaScript, and React component myself, giving you a unique, scalable interface built just for your product.</p>
 
-            <h3>Who is Ahmet Emin Yuce?</h3>
-            <p>He is a front end developer highly skilled in creating reusable, custom user interfaces. He lives in Ankara, Turkiye.</p>
+                <h2>Technologies I Use</h2>
+                <p>Here are some component names used in the featured UI interfaces:</p>
 
-            <h3>Which technologies does he use when creating design systems?</h3>
-            <p>HTML, CSS, Less, JavaScript, TypeScript, React (CSR & SSR), Node.js, Webpack, REST APIs, responsive design, and adaptive web development.</p>
+                <ul>
+                    <li>Squircle Avatars</li>
+                    <li>List Group</li>
+                    <li>Button</li>
+                    <li>Progress Bar</li>
+                    <li>Pie Chart</li>
+                    <li>Tabs</li>
+                    <li>Calendar with Events</li>
+                    <li>Animated Carousel</li>
+                    <li>Line Chart</li>
+                </ul>
 
-            <h3>How can you get in touch with him?</h3>
-            <p>Go to https://aeminyuce.github.io/about-me/ and click the “Get in Touch” button. Then scan the QR code to connect instantly.</p>
+                <h2>FAQ</h2>
 
-            <p>
-                <a href="https://aeminyuce.github.io/about-me/">Return to the main app</a>
-            </p>
+                <h3>Who is Ahmet Emin Yuce?</h3>
+                <p>He is a front end developer highly skilled in creating reusable, custom user interfaces. He lives in Ankara, Turkiye.</p>
+
+                <h3>Which technologies does he use when creating design systems?</h3>
+                <p>HTML, CSS, Less, JavaScript, TypeScript, React (CSR & SSR), Node.js, Webpack, REST APIs, responsive design, and adaptive web development.</p>
+
+                <h3>How can you get in touch with him?</h3>
+                <p>Go to https://aeminyuce.github.io/about-me/ and click the “Get in Touch” button. Then scan the QR code to connect instantly.</p>
+
+                <p>
+                    <a href="https://aeminyuce.github.io/about-me/">Return to the main app</a>
+                </p>
+
+            </main>
+            <footer aria-label="Main site footer" itemscope itemtype="https://schema.org/WPFooter" data-ai-section="footer" data-ai-purpose="site-metadata">
+                Copyright &copy;
+            </footer>
         </div>
     </div>
 </body>
