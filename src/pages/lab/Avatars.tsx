@@ -1,10 +1,5 @@
 import React from 'react';
-import Avatar from 'uilab/react/Avatar';
-import Heading from 'uilab/react/Heading';
-import Image from 'uilab/react/Image';
-import Spacer from 'uilab/react/Spacer';
-import SvgIcon from 'uilab/react/SvgIcon';
-import Tooltip from 'uilab/react/Tooltip';
+import { Avatar, Heading, Image, Spacer, SvgIcon, Tooltip } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

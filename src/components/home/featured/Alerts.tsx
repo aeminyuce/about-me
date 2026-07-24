@@ -1,7 +1,5 @@
 import React from 'react';
-import Card from 'uilab/react/Card';
-import Grid from 'uilab/react/Grid';
-import SvgIcon from 'uilab/react/SvgIcon';
+import { Card, Grid, SvgIcon } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../../stores/StoreContext';

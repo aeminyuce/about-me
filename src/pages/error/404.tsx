@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Heading from 'uilab/react/Heading';
+import { Button, Heading } from 'uilab';
+
 
 export default function () {
     return (

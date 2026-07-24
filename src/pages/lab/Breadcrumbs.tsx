@@ -1,10 +1,5 @@
 import React from 'react';
-import Breadcrumbs from 'uilab/react/Breadcrumbs';
-import Button from 'uilab/react/Button';
-import Dropdown from 'uilab/react/Dropdown';
-import Heading from 'uilab/react/Heading';
-import Spacer from 'uilab/react/Spacer';
-import SvgIcon from 'uilab/react/SvgIcon';
+import { Breadcrumbs, Button, Dropdown, Heading, Spacer, SvgIcon } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

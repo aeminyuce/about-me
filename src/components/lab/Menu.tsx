@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link, useLocation } from 'react-router';
-import Card from 'uilab/react/Card';
-import Listing from 'uilab/react/Listing';
+import { Card, Listing } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

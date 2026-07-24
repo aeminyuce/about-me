@@ -1,5 +1,5 @@
 import React from 'react';
-import Heading from 'uilab/react/Heading';
+import { Heading } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from 'uilab/react/Grid';
+import { Grid } from 'uilab';
 
 export default function () {
     return (

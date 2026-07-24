@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import SvgIcon from 'uilab/react/SvgIcon';
+import { Button, SvgIcon } from 'uilab';
 
 // assets
 import { IconSun } from 'uilab-icons/react/weather/sun';

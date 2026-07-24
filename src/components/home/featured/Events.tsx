@@ -1,11 +1,5 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Calendar from 'uilab/react/Calendar';
-import Card from 'uilab/react/Card';
-import Dropdown from 'uilab/react/Dropdown';
-import Heading from 'uilab/react/Heading';
-import SvgIcon from 'uilab/react/SvgIcon';
-import Tooltip from 'uilab/react/Tooltip';
+import { Button, Calendar, Card, Dropdown, Heading, SvgIcon, Tooltip } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../../stores/StoreContext';

@@ -1,4 +1,4 @@
-import Alerts from 'uilab/react/Alerts';
+import { Alerts } from 'uilab';
 
 // size changer
 export const changeIconsSize = (size: string) => {

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Fragment, memo, useState, useCallback } from 'react';
-import Button from 'uilab/react/Button';
-import Heading from 'uilab/react/Heading';
-import SvgIcon from 'uilab/react/SvgIcon';
+import { Button, Heading, SvgIcon } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

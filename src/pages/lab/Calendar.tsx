@@ -1,9 +1,5 @@
 import React from 'react';
-import Calendar from 'uilab/react/Calendar';
-import CalendarPicker from 'uilab/react/CalendarPicker';
-import Grid from 'uilab/react/Grid';
-import Heading from 'uilab/react/Heading';
-import Spacer from 'uilab/react/Spacer';
+import { Calendar, CalendarPicker, Grid, Heading, Spacer } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

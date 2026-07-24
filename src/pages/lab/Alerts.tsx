@@ -1,7 +1,5 @@
 import React from 'react';
-import Alerts from 'uilab/react/Alerts';
-import Heading from 'uilab/react/Heading';
-import SvgIcon from 'uilab/react/SvgIcon';
+import { Alerts, Heading, SvgIcon } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

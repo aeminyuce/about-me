@@ -1,8 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router';
-import Button from 'uilab/react/Button';
-import Carousel from 'uilab/react/Carousel';
-import Grid from 'uilab/react/Grid';
+import { Button, Carousel, Grid } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

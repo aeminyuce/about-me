@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Dropdown from 'uilab/react/Dropdown';
+import { Button, Dropdown } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

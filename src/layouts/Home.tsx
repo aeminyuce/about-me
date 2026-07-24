@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import Grid from 'uilab/react/Grid';
+import { Grid } from 'uilab';
 
 // misc
 import { useStoreContext } from '../stores/StoreContext';

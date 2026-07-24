@@ -1,6 +1,5 @@
 import React from 'react';
-import Grid from 'uilab/react/Grid';
-import Image from 'uilab/react/Image';
+import { Grid, Image } from 'uilab';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

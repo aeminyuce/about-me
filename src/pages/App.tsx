@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router';
-import TopButton from 'uilab/react/TopButton';
-import SquircleMask from 'uilab/react/SquircleMask';
+import { TopButton, SquircleMask } from 'uilab';
 
 // misc
 import { storedData } from '../stores/Storages';
