@@ -18,8 +18,8 @@ const config = {
         },
     },
     performance: {
-        maxEntrypointSize: 600 * 1024,
-        maxAssetSize: 600 * 1024,
+        maxEntrypointSize: 1024 * 1024,
+        maxAssetSize: 1024 * 1024,
     },
     resolve: {
         extensions: ['.js', '.ts', '.tsx', '.less'],
@@ -47,7 +47,10 @@ const config = {
             },
             {
                 test: /\.svg$/,
-                use: 'svg-url-loader',
+                type: 'asset/resource',
+                generator: {
+                    filename: 'icons/[name].[contenthash][ext]'
+                }
             },
         ]
     }
