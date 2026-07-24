@@ -22,13 +22,12 @@ const config = {
         maxAssetSize: 1024 * 1024,
     },
     resolve: {
-        extensions: ['.js', '.ts', '.tsx', '.less'],
+        extensions: ['.js', '.ts', '.tsx', '.less', '.svg'],
     },
     module: {
         rules: [
             {
-            test: /\.(js|ts|tsx)?$/,
-                exclude: [/node_modules\/(?!(uilab|uilab-icons)\/).*/],
+                test: /\.(js|ts|tsx)?$/,
                 use: {
                     loader: 'esbuild-loader',
                     options: {
