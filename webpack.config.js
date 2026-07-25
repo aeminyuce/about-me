@@ -48,7 +48,7 @@ const config = {
                 test: /\.svg$/, // split only svg files and svg sprites only
                 type: 'asset/resource',
                 generator: {
-                    filename: 'icons/[name].[contenthash][ext]'
+                    filename: 'svg/[name].[contenthash][ext]'
                 }
             },
         ]
