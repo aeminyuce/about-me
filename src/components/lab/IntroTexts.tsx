@@ -1,5 +1,5 @@
 import React from 'react';
-import { SvgIcon } from 'uilab';
+import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

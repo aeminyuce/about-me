@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grid, Skeleton } from 'uilab';
-
+import Grid from 'uilab/react/Grid';
+import Skeleton from 'uilab/react/Skeleton';
 
 export default function () {
     return (

@@ -1,5 +1,13 @@
 import React, { memo, useState } from 'react';
-import { Button, DonutChart, Dropdown, Grid, Heading, LineChart, PieChart, SvgIcon, Tab } from 'uilab';
+import Button from 'uilab/react/Button';
+import DonutChart from 'uilab/react/DonutChart';
+import Dropdown from 'uilab/react/Dropdown';
+import Grid from 'uilab/react/Grid';
+import Heading from 'uilab/react/Heading';
+import LineChart from 'uilab/react/LineChart';
+import PieChart from 'uilab/react/PieChart';
+import SvgIcon from 'uilab/react/SvgIcon';
+import Tab from 'uilab/react/Tab';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

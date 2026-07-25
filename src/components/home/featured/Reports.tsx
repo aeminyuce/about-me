@@ -1,5 +1,11 @@
 import React, { memo, useState } from 'react';
-import { Button, Card, DonutChart, Grid, ListGroup, ProgressBar, Tab } from 'uilab';
+import Button from 'uilab/react/Button';
+import Card from 'uilab/react/Card';
+import DonutChart from 'uilab/react/DonutChart';
+import Grid from 'uilab/react/Grid';
+import ListGroup from 'uilab/react/ListGroup';
+import ProgressBar from 'uilab/react/ProgressBar';
+import Tab from 'uilab/react/Tab';
 
 // misc
 import { useStoreContext } from '../../../stores/StoreContext';

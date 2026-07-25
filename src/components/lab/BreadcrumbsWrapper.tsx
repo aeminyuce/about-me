@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumbs } from 'uilab';
+import Breadcrumbs from 'uilab/react/Breadcrumbs';
 
 // misc
 import type { BreadcrumbsWrapperProps } from '../../models/Lab';

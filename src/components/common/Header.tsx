@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router';
-import { Grid, HeaderSticky } from 'uilab';
+import Grid from 'uilab/react/Grid';
+import HeaderSticky from 'uilab/react/HeaderSticky';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

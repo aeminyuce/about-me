@@ -1,5 +1,9 @@
 import React from 'react';
-import { Button, Grid, Heading, Modal, modalOpen, SvgIcon } from 'uilab';
+import Button from 'uilab/react/Button';
+import Grid from 'uilab/react/Grid';
+import Heading from 'uilab/react/Heading';
+import Modal, { modalOpen } from 'uilab/react/Modal';
+import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import type { IconDetailsProps } from '../../models/Icons';

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouteError } from 'react-router';
-import { Button, Heading } from 'uilab';
+import Button from 'uilab/react/Button';
+import Heading from 'uilab/react/Heading';
 
 export default function () {
     // throwing errors only inside react router components, not services

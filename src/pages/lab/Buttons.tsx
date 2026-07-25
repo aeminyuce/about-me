@@ -1,5 +1,10 @@
 import React from 'react';
-import { Button, Dropdown, Grid, Heading, Spacer, SvgIcon } from 'uilab';
+import Button from 'uilab/react/Button';
+import Dropdown from 'uilab/react/Dropdown';
+import Grid from 'uilab/react/Grid';
+import Heading from 'uilab/react/Heading';
+import Spacer from 'uilab/react/Spacer';
+import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

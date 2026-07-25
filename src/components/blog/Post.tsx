@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSearchParams } from 'react-router';
-import { Heading, Grid, Image } from 'uilab';
+import Heading from 'uilab/react/Heading';
+import Grid from 'uilab/react/Grid';
+import Image from 'uilab/react/Image';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

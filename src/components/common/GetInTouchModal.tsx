@@ -1,5 +1,8 @@
 import React from 'react';
-import { Button, Grid, Image, Modal, modalOpen } from 'uilab';
+import Button from 'uilab/react/Button';
+import Grid from 'uilab/react/Grid';
+import Image from 'uilab/react/Image';
+import Modal, { modalOpen } from 'uilab/react/Modal';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

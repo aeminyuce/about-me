@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import { Grid } from 'uilab';
+import Grid from 'uilab/react/Grid';
 
 // misc
 import Header from '../components/common/Header';

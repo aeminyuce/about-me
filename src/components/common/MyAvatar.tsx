@@ -1,5 +1,6 @@
 import React from 'react';
-import { Avatar, Image } from 'uilab';
+import Avatar from 'uilab/react/Avatar';
+import Image from 'uilab/react/Image';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';

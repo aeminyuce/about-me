@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, SvgIcon } from 'uilab';
+import Button from 'uilab/react/Button';
+import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import type { PreviewProps } from '../../models/Page';
