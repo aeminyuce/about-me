@@ -3,10 +3,6 @@ import { createBrowserRouter } from 'react-router';
 
 // misc
 import App from './App';
-import PageApiError from './error/ApiError';
-import Page500 from './error/500';
-import Page404 from './error/404';
-import ErrorBoundary from './error/ErrorBoundary';
 import PageTitle from '../components/common/PageTitle';
 
 // layouts
@@ -31,6 +27,11 @@ const LabCharts = lazy(() => import( /* webpackChunkName: 'lab/Charts' */ './lab
 
 const Icons= lazy(() => import( /* webpackChunkName: 'Icons' */ './Icons' ));
 const Blog= lazy(() => import( /* webpackChunkName: 'Blog' */ './Blog' ));
+
+const PageApiError= lazy(() => import( /* webpackChunkName: 'error/PageApiError' */ './error/ApiError' ));
+const Page500= lazy(() => import( /* webpackChunkName: 'error/Page500' */ './error/500' ));
+const Page404= lazy(() => import( /* webpackChunkName: 'error/Page404' */ './error/404' ));
+const ErrorBoundary= lazy(() => import( /* webpackChunkName: 'error/ErrorBoundary' */ './error/ErrorBoundary' ));
 
 export const router = createBrowserRouter([
     // app
