@@ -45,7 +45,7 @@ const config = {
                 use: ['style-loader', 'css-loader'],
             },
             {
-                test: /\.svg$/,
+                test: /\.svg$/, // split only svg files and svg sprites only
                 type: 'asset/resource',
                 generator: {
                     filename: 'icons/[name].[contenthash][ext]'
