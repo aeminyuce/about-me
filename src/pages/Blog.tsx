@@ -8,7 +8,7 @@ import Archives from '../components/blog/Archives';
 import Post from '../components/blog/Post';
 
 // styles
-import '../../src/assets/blog.less';
+import '../../src/assets/blog';
 
 export default function () {
     const { api } = useStoreContext();

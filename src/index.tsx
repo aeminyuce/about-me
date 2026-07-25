@@ -3,11 +3,11 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 
 // shared assets
-import 'uilab/less/ui.less';
-import 'uilab/js/ui.js';
+import 'uilab/less/ui';
+import 'uilab/js/ui';
 
 // styles
-import './assets/styles.less';
+import './assets/styles';
 
 // misc
 import { router } from './pages/Router';

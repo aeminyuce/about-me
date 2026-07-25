@@ -15,7 +15,7 @@ import Alerts from '../../components/home/featured/Alerts';
 import SalesProfits from '../../components/home/featured/SalesProfits';
 
 // styles
-import '../../assets/home/featured.less';
+import '../../assets/home/featured';
 
 export default function () {
     const { api } = useStoreContext();

@@ -12,7 +12,7 @@ import HomeProfile from '../components/home/HomeProfile';
 import HomeNav from '../components/home/HomeNav';
 
 // styles
-import '../assets/home.less';
+import '../assets/home';
 
 export default function () {
     const { api } = useStoreContext();

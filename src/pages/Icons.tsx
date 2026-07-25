@@ -15,7 +15,7 @@ import List from '../components/icons/List';
 const iconsList = require('uilab-icons/icons-list.json') as IconsListProps[];
 
 // styles
-import '../../src/assets/icons.less';
+import '../../src/assets/icons';
 
 export default function () {
     const { api } = useStoreContext();

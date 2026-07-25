@@ -9,7 +9,7 @@ import Footer from '../components/common/Footer';
 import LabMenu from '../components/lab/Menu';
 
 // styles
-import '../assets/lab.less';
+import '../assets/lab';
 
 export default function () {
     const { api } = useStoreContext();

@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from 'uilab/react/Grid';
 
 // styles
-import '../../assets/home/dashboard.less';
+import '../../assets/home/dashboard';
 
 export default function () {
     return (
