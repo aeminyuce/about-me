@@ -18,8 +18,8 @@ const config = {
         },
     },
     performance: {
-        maxEntrypointSize: 1024 * 1024,
-        maxAssetSize: 1024 * 1024,
+        maxEntrypointSize: 600 * 1024,
+        maxAssetSize: 600 * 1024,
     },
     resolve: {
         extensions: ['.js', '.ts', '.tsx', '.less'],
