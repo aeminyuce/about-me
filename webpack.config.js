@@ -22,7 +22,7 @@ const config = {
         maxAssetSize: 1024 * 1024,
     },
     resolve: {
-        extensions: ['.js', '.ts', '.tsx', '.less', '.svg'],
+        extensions: ['.js', '.ts', '.tsx', '.less'],
     },
     module: {
         rules: [
