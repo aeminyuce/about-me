@@ -5,7 +5,7 @@ import SvgIcon from 'uilab/react/SvgIcon';
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
 import type { HeaderLinksProps } from '../../models/Page';
-import { ShowGetInTouch } from './GetInTouchModal';
+import { showGetInTouch } from '../../helpers/General'
 
 // assets
 import { IconHeart } from 'uilab-icons/react/general/heart';
@@ -18,7 +18,7 @@ export default function () {
             <Button.Wrapper as='span' ease='1st' className='ui-sidebar-add-l ui-md-align-l ui-round-1st'>
 
                 {api?.header?.headerLinks?.map((item: HeaderLinksProps) => {
-                    const isModal = item.modal ? () => ShowGetInTouch() : undefined;
+                    const isModal = item.modal ? () => showGetInTouch() : undefined;
 
                     return (
                         <Button key={item.name} ghost noease block='md' to={item.to} data={{ 'close': item.modal }} onClick={isModal} className='ui-m-2-r'>

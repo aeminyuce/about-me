@@ -2,52 +2,12 @@ import React from 'react';
 import Button from 'uilab/react/Button';
 import Grid from 'uilab/react/Grid';
 import Heading from 'uilab/react/Heading';
-import Modal, { modalOpen } from 'uilab/react/Modal';
+import Modal from 'uilab/react/Modal';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import type { IconDetailsProps } from '../../models/Icons';
-import { addCirclesToPaths, togglePoints, getSvgPathSize, copyIconPath } from '../../helpers/Icons';
-
-export const showIconDetail = () => {
-    modalOpen({
-        source: '#iconDetailModal',
-        size: 'md',
-        callbackBefore: () => {
-
-            // clear previously created circles first
-            const modal = document.getElementById('iconDetailModal');
-            const icon = modal?.querySelector('.icon-detail');
-
-            const circles = icon?.querySelectorAll('circle');
-            circles?.forEach(el => el.remove());
-
-            // clear hide points selection
-            icon?.classList.remove('hide-points');
-
-            const btn = modal?.querySelector('.toggle-points');
-            btn?.removeAttribute('name');
-
-            // add new circles and returns paths count
-            const pathsCount = addCirclesToPaths('.icon-detail');
-
-            const count = modal?.querySelector('.paths-count');
-            if (count) count.textContent = String(pathsCount) ?? null;
-
-            // get svg path size in kb
-            const size = modal?.querySelector('.icon-size');
-            if (size) size.textContent = getSvgPathSize(icon) ?? null;
-
-            // get svg canvas size
-            const viewBoxParts = icon?.getAttribute('viewBox')?.split(' ');
-            const viewBox = viewBoxParts ? viewBoxParts[viewBoxParts.length - 1] : undefined;
-
-            const canvas = modal?.querySelector('.icon-canvas');
-            if (canvas && viewBox) canvas.textContent = `${viewBox}x${viewBox}`;
-
-        }
-    });
-}
+import { togglePoints, copyIconPath } from '../../helpers/Icons';
 
 export default function (props: IconDetailsProps) {
     const { name, category, list } = props;

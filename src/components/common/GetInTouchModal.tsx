@@ -1,34 +1,10 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
 import Grid from 'uilab/react/Grid';
 import Image from 'uilab/react/Image';
-import Modal, { modalOpen } from 'uilab/react/Modal';
+import Modal from 'uilab/react/Modal';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
-
-export const ShowGetInTouch = () => {
-    modalOpen({
-        source: '#getInTouchModal',
-        size: 'sm',
-    });
-}
-
-export const GetInTouchButtons = () => {
-    const { api } = useStoreContext();
-    const getInTouchText = api?.home?.aboutMe?.getInTouchText;
-
-    return (
-        <Button.Wrapper as='div' largeButtons ease='1st' className='ui-circle-1st'>
-            <Button noease className='ui-bg-black ui-visible-light' title={getInTouchText} onClick={ShowGetInTouch}>
-                {getInTouchText}
-            </Button>
-            <Button noease className='ui-bg-white ui-visible-dark' title={getInTouchText} onClick={ShowGetInTouch}>
-                {getInTouchText}
-            </Button>
-        </Button.Wrapper>
-    )
-}
 
 export default function () {
     const { api } = useStoreContext();

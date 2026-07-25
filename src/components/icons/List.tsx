@@ -1,5 +1,4 @@
-import React from 'react';
-import { Fragment, memo, useState, useCallback } from 'react';
+import React, { Fragment, memo, useState, useCallback } from 'react';
 import Button from 'uilab/react/Button';
 import Heading from 'uilab/react/Heading';
 import SvgIcon from 'uilab/react/SvgIcon';
@@ -7,7 +6,8 @@ import SvgIcon from 'uilab/react/SvgIcon';
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
 import type { IconsListProps, IconDetailsProps } from '../../models/Icons';
-import IconDetailModal, { showIconDetail } from './IconDetailModal';
+import { showIconDetail } from '../../helpers/Icons';
+import IconDetailModal from './IconDetailModal';
 
 // assets
 const SpriteGeneral = require('uilab-icons/sprite/general.svg') as string;
@@ -87,7 +87,6 @@ export default function (props: any) {
             ))}
 
             <IconDetailModal {...details} />
-
         </div>
     )
 }

@@ -5,8 +5,8 @@ import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
 import { useStoreContext } from '../../stores/StoreContext';
-import { GetInTouchButtons } from '../common/GetInTouchModal';
 import MyAvatar from '../common/MyAvatar';
+import GetInTouchButton from '../common/GetInTouchButton';
 import PersonalSkills from './PersonalSkills';
 
 // assets
@@ -34,7 +34,7 @@ export default function () {
                 <span className='ui-font-16 ui-inline-block'>{api?.home?.aboutMe?.location}</span>
 
                 <PersonalSkills />
-                <GetInTouchButtons />
+                <GetInTouchButton />
             </Grid.Col>
         </Grid.Row>
     )
