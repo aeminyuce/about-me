@@ -1,15 +1,15 @@
 import React, { memo, useState } from 'react';
-import Button from 'uilab/react/Button';
-import Card from 'uilab/react/Card';
-import DonutChart from 'uilab/react/DonutChart';
-import Grid from 'uilab/react/Grid';
-import ListGroup from 'uilab/react/ListGroup';
-import ProgressBar from 'uilab/react/ProgressBar';
-import Tab from 'uilab/react/Tab';
+import Button from '@ui/Button';
+import Card from '@ui/Card';
+import DonutChart from '@ui/DonutChart';
+import Grid from '@ui/Grid';
+import ListGroup from '@ui/ListGroup';
+import ProgressBar from '@ui/ProgressBar';
+import Tab from '@ui/Tab';
 
 // misc
-import { useStoreContext } from '../../../stores/StoreContext';
-import type { ReportsListProps, ReportsListGroupProps } from '../../../models/Home_Featured';
+import { useStoreContext } from '@stores/StoreContext';
+import type { ReportsListProps, ReportsListGroupProps } from '@models/Home_Featured';
 
 const Report = (props: any) => {
     const { themeA, themeB, api } = useStoreContext();

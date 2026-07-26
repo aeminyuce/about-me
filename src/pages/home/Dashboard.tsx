@@ -1,8 +1,8 @@
 import React from 'react';
-import Grid from 'uilab/react/Grid';
+import Grid from '@ui/Grid';
 
 // styles
-import '../../assets/home/dashboard';
+import '@assets/home/dashboard';
 
 export default function () {
     return (

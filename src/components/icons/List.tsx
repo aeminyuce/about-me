@@ -1,28 +1,28 @@
 import React, { lazy, Suspense, Fragment, memo, useState, useCallback } from 'react';
-import Button from 'uilab/react/Button';
-import Heading from 'uilab/react/Heading';
-import Modal from 'uilab/react/Modal';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import Heading from '@ui/Heading';
+import Modal from '@ui/Modal';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
 const IconDetailModal = lazy(() => import( /* webpackChunkName: 'misc/IconDetailModal' */ './IconDetailModal' ));
 
-import { useStoreContext } from '../../stores/StoreContext';
-import type { IconsListProps, IconDetailsProps } from '../../models/Icons';
-import { showIconDetail } from '../../helpers/Icons';
-import IconDetailSkeleton from '../../skeleton/IconDetail';
+import { useStoreContext } from '@stores/StoreContext';
+import type { IconsListProps, IconDetailsProps } from '@models/Icons';
+import { showIconDetail } from '@helpers/Icons';
+import IconDetailSkeleton from '@skeleton/IconDetail';
 
 // assets
-const SpriteGeneral = require('uilab-icons/sprite/general.svg') as string;
-const SpriteTouch = require('uilab-icons/sprite/touch.svg') as string;
-const SpriteMedia = require('uilab-icons/sprite/media.svg') as string;
-const SpriteKitchen = require('uilab-icons/sprite/kitchen.svg') as string;
-const SpriteRealEstate = require('uilab-icons/sprite/real-estate.svg') as string;
-const SpriteWeather = require('uilab-icons/sprite/weather.svg') as string;
-const SpriteCommerce = require('uilab-icons/sprite/commerce.svg') as string;
-const SpriteFiles = require('uilab-icons/sprite/files.svg') as string;
-const SpriteSocial = require('uilab-icons/sprite/social.svg') as string;
-const SpriteBrands = require('uilab-icons/sprite/brands.svg') as string;
+const SpriteGeneral = require('@sprite/general.svg') as string;
+const SpriteTouch = require('@sprite/touch.svg') as string;
+const SpriteMedia = require('@sprite/media.svg') as string;
+const SpriteKitchen = require('@sprite/kitchen.svg') as string;
+const SpriteRealEstate = require('@sprite/real-estate.svg') as string;
+const SpriteWeather = require('@sprite/weather.svg') as string;
+const SpriteCommerce = require('@sprite/commerce.svg') as string;
+const SpriteFiles = require('@sprite/files.svg') as string;
+const SpriteSocial = require('@sprite/social.svg') as string;
+const SpriteBrands = require('@sprite/brands.svg') as string;
 
 export default function (props: any) {
     const { api } = useStoreContext();

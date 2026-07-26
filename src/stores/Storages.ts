@@ -1,6 +1,6 @@
 // misc
 import { CURRENT_THEME_A, CURRENT_THEME_B } from './Actions';
-import type { SetStorageProps, GetStorageProps } from '../models/Page';
+import type { SetStorageProps, GetStorageProps } from '@models/Page';
 
 export const setStorage = (props: SetStorageProps) => {
 	const { name, value, jsonData } = props;

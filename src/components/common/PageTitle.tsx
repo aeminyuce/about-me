@@ -1,5 +1,5 @@
 // misc
-import type { PageTitleProps } from '../../models/Page';
+import type { PageTitleProps } from '@models/Page';
 
 export default function (props: PageTitleProps) {
     const { title, children } = props;

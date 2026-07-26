@@ -1,12 +1,12 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Grid from 'uilab/react/Grid';
-import Heading from 'uilab/react/Heading';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import Grid from '@ui/Grid';
+import Heading from '@ui/Heading';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import type { IconDetailsProps } from '../../models/Icons';
-import { togglePoints, copyIconPath } from '../../helpers/Icons';
+import type { IconDetailsProps } from '@models/Icons';
+import { togglePoints, copyIconPath } from '@helpers/Icons';
 
 export default function (props: IconDetailsProps) {
     const { name, category, list } = props;
@@ -56,7 +56,7 @@ export default function (props: IconDetailsProps) {
                         Toggle points
                     </Button>
                     <Button noease onClick={() => copyIconPath(name, category)} className='ui-fill-dark-100'>
-                        Copy source
+                        Copy path
                     </Button>
                 </Button.Wrapper>
 

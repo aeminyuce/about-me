@@ -23,6 +23,24 @@ const config = {
     },
     resolve: {
         extensions: ['.js', '.ts', '.tsx', '.less'],
+        alias: {
+            '@ui': path.resolve(__dirname, 'node_modules/uilab/react/'),
+            '@less': path.resolve(__dirname, 'node_modules/uilab/less/'),
+            '@js': path.resolve(__dirname, 'node_modules/uilab/js/'),
+
+            '@icon': path.resolve(__dirname, 'node_modules/uilab-icons/react/'),
+            '@sprite': path.resolve(__dirname, 'node_modules/uilab-icons/sprite/'),
+
+            '@assets': path.resolve(__dirname, 'src/assets/'),
+            '@components': path.resolve(__dirname, 'src/components/'),
+            '@helpers': path.resolve(__dirname, 'src/helpers/'),
+            '@layouts': path.resolve(__dirname, 'src/layouts/'),
+            '@models': path.resolve(__dirname, 'src/models/'),
+            '@pages': path.resolve(__dirname, 'src/pages/'),
+            '@services': path.resolve(__dirname, 'src/services/'),
+            '@skeleton': path.resolve(__dirname, 'src/skeleton/'),
+            '@stores': path.resolve(__dirname, 'src/stores/')
+        },
     },
     module: {
         rules: [

@@ -2,13 +2,13 @@ import React from 'react';
 import { useSearchParams } from 'react-router';
 
 // misc
-import { useStoreContext } from '../stores/StoreContext';
-import PageTitle from '../components/common/PageTitle';
-import Archives from '../components/blog/Archives';
-import Post from '../components/blog/Post';
+import { useStoreContext } from '@stores/StoreContext';
+import PageTitle from '@components/common/PageTitle';
+import Archives from '@components/blog/Archives';
+import Post from '@components/blog/Post';
 
 // styles
-import '../../src/assets/blog';
+import '@assets/blog';
 
 export default function () {
     const { api } = useStoreContext();

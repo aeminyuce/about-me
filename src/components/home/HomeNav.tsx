@@ -1,13 +1,13 @@
 import React from 'react';
 import { useLocation } from 'react-router';
-import Button from 'uilab/react/Button';
-import Carousel from 'uilab/react/Carousel';
-import Grid from 'uilab/react/Grid';
+import Button from '@ui/Button';
+import Carousel from '@ui/Carousel';
+import Grid from '@ui/Grid';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import type { HomeNavLinksProps } from '../../models/Home';
-import { mobileNavPosition } from '../../helpers/Home';
+import { useStoreContext } from '@stores/StoreContext';
+import type { HomeNavLinksProps } from '@models/Home';
+import { mobileNavPosition } from '@helpers/Home';
 import ThemeChanger from './ThemeChanger';
 
 export default function () {

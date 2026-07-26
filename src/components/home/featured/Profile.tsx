@@ -1,14 +1,14 @@
 import React from 'react';
-import Avatar from 'uilab/react/Avatar';
-import Button from 'uilab/react/Button';
-import Card from 'uilab/react/Card';
-import Image from 'uilab/react/Image';
-import ListGroup from 'uilab/react/ListGroup';
-import Notifier from 'uilab/react/Notifier';
+import Avatar from '@ui/Avatar';
+import Button from '@ui/Button';
+import Card from '@ui/Card';
+import Image from '@ui/Image';
+import ListGroup from '@ui/ListGroup';
+import Notifier from '@ui/Notifier';
 
 // misc
-import { useStoreContext } from '../../../stores/StoreContext';
-import type { UserActivityProps } from '../../../models/Home_Featured';
+import { useStoreContext } from '@stores/StoreContext';
+import type { UserActivityProps } from '@models/Home_Featured';
 
 export default function () {
     const { themeA, api } = useStoreContext();

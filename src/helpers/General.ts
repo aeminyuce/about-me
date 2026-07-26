@@ -1,4 +1,4 @@
-import { modalOpen } from 'uilab/react/Modal';
+import { modalOpen } from '@ui/Modal';
 
 // scroll to top of page
 export const scrollToTop = () => {

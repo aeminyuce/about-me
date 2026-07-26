@@ -1,15 +1,15 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import Grid from 'uilab/react/Grid';
+import Grid from '@ui/Grid';
 
 // misc
-import { useStoreContext } from '../stores/StoreContext';
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
-import LabMenu from '../components/lab/Menu';
+import { useStoreContext } from '@stores/StoreContext';
+import Header from '@components/common/Header';
+import Footer from '@components/common/Footer';
+import LabMenu from '@components/lab/Menu';
 
 // styles
-import '../assets/lab';
+import '@assets/lab';
 
 export default function () {
     const { api } = useStoreContext();

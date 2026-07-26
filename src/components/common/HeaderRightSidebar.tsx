@@ -1,14 +1,14 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Heading from 'uilab/react/Heading';
-import Sidebar from 'uilab/react/Sidebar';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import Heading from '@ui/Heading';
+import Sidebar from '@ui/Sidebar';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 
 // assets
-import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
+import { IconAngleRight } from '@icon/general/angle-right';
 
 export default function () {
     const { api } = useStoreContext();

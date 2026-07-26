@@ -1,8 +1,8 @@
 import React from 'react';
-import Breadcrumbs from 'uilab/react/Breadcrumbs';
+import Breadcrumbs from '@ui/Breadcrumbs';
 
 // misc
-import type { BreadcrumbsWrapperProps } from '../../models/Lab';
+import type { BreadcrumbsWrapperProps } from '@models/Lab';
 
 export default function (props: BreadcrumbsWrapperProps) {
     const { children } = props;

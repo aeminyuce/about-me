@@ -1,8 +1,8 @@
 import React from 'react';
-import Grid from 'uilab/react/Grid';
+import Grid from '@ui/Grid';
 
 // misc
-import type { DescriptionProps } from '../../models/Page';
+import type { DescriptionProps } from '@models/Page';
 
 export default function (props: DescriptionProps) {
     const { children } = props;

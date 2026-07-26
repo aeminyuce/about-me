@@ -1,5 +1,5 @@
-import Alerts from 'uilab/react/Alerts';
-import { modalOpen } from 'uilab/react/Modal';
+import Alerts from '@ui/Alerts';
+import { modalOpen } from '@ui/Modal';
 
 // size changer
 export const changeIconsSize = (size: string) => {
@@ -48,7 +48,7 @@ export const copyToClipboard = async (text: string): Promise<void> => {
 }
 
 
-// copy icon name
+// copy icon path
 export const copyIconPath = (text: string | undefined, category: string | undefined) => {
     if (!text || !category) return;
 
@@ -58,12 +58,12 @@ export const copyIconPath = (text: string | undefined, category: string | undefi
         .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
         .join('');
 
-    const getText = `import { Icon${capitalizeText} } from 'uilab-icons/react/${getCategory}/${text}';`;
+    const getText = `import { Icon${capitalizeText} } from '@icon/${getCategory}/${text}';`;
 
     copyToClipboard(getText)
         .then(() => {
             Alerts.Message({
-                msg: `<b>Icon source copied!</b><br>${getText}`,
+                msg: `<b>Icon path copied!</b><br>${getText}`,
                 theme: 'success',
             });
         })
@@ -338,6 +338,12 @@ export const showIconDetail = () => {
 
             const btn = modal?.querySelector('.toggle-points');
             btn?.removeAttribute('name');
+
+        },
+        callback: () => {
+
+            const modal = document.getElementById('iconDetailModal');
+            const icon = modal?.querySelector('.icon-detail');
 
             // add new circles and returns paths count
             const pathsCount = addCirclesToPaths('.icon-detail');

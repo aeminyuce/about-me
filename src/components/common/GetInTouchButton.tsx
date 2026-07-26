@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
+import Button from '@ui/Button';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import { showGetInTouch } from '../../helpers/General'
+import { useStoreContext } from '@stores/StoreContext';
+import { showGetInTouch } from '@helpers/General'
 
 export default function () {
     const { api } = useStoreContext();

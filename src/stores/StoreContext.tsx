@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useReducer } from 'react';
 import { useMatches } from 'react-router';
-import { getPageData, getHomeData, getHomeFeaturedData, getLabData, getIconsData, getBlogData } from '../services/Repository';
-import Service from '../services/Service';
+import { getPageData, getHomeData, getHomeFeaturedData, getLabData, getIconsData, getBlogData } from '@services/Repository';
+import Service from '@services/Service';
 
 // misc
-import type { StoreContextProps, StoreProviderProps } from '../models/Page';
-import { scrollToTop } from '../helpers/General';
+import type { StoreContextProps, StoreProviderProps } from '@models/Page';
+import { scrollToTop } from '@helpers/General';
 import reducer from './StoreReducer';
 import {
 

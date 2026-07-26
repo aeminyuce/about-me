@@ -1,22 +1,22 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Carousel from 'uilab/react/Carousel';
-import Grid from 'uilab/react/Grid';
-import Heading from 'uilab/react/Heading';
-import Image from 'uilab/react/Image';
-import Spacer from 'uilab/react/Spacer';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import Carousel from '@ui/Carousel';
+import Grid from '@ui/Grid';
+import Heading from '@ui/Heading';
+import Image from '@ui/Image';
+import Spacer from '@ui/Spacer';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import { headings } from '../../helpers/Lab';
-import Description from '../../components/common/Description';
-import Preview from '../../components/common/Preview';
-import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
+import { useStoreContext } from '@stores/StoreContext';
+import { headings } from '@helpers/Lab';
+import Description from '@components/common/Description';
+import Preview from '@components/common/Preview';
+import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 
 // assets
-import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
-import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
+import { IconAngleLeft } from '@icon/general/angle-left';
+import { IconAngleRight } from '@icon/general/angle-right';
 
 export default function () {
     const { api } = useStoreContext();

@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import { Link, useLocation } from 'react-router';
-import Card from 'uilab/react/Card';
-import Listing from 'uilab/react/Listing';
+import Card from '@ui/Card';
+import Listing from '@ui/Listing';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import type { LabMenuProps } from '../../models/Lab';
-import { scrollToHash, clearSpaces } from '../../helpers/Lab';
+import { useStoreContext } from '@stores/StoreContext';
+import type { LabMenuProps } from '@models/Lab';
+import { scrollToHash, clearSpaces } from '@helpers/Lab';
 
 export default function () {
     const { pathname, hash } = useLocation();

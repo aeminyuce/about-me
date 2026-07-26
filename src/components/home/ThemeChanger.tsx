@@ -1,10 +1,10 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Dropdown from 'uilab/react/Dropdown';
+import Button from '@ui/Button';
+import Dropdown from '@ui/Dropdown';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import type { ThemeListProps } from '../../models/Home';
+import { useStoreContext } from '@stores/StoreContext';
+import type { ThemeListProps } from '@models/Home';
 
 export default function (props: any) {
     const { themeA, setThemeA, themeB, setThemeB, api } = useStoreContext();

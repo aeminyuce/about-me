@@ -1,8 +1,8 @@
 import React from 'react';
-import Heading from 'uilab/react/Heading';
+import Heading from '@ui/Heading';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 
 export default function () {
     const { api } = useStoreContext();

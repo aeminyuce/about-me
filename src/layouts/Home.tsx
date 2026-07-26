@@ -1,18 +1,18 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import Grid from 'uilab/react/Grid';
+import Grid from '@ui/Grid';
 
 // misc
-import { useStoreContext } from '../stores/StoreContext';
-import HomeSkeleton from '../skeleton/Home';
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
-import MyFocus from '../components/home/MyFocus';
-import HomeProfile from '../components/home/HomeProfile';
-import HomeNav from '../components/home/HomeNav';
+import { useStoreContext } from '@stores/StoreContext';
+import HomeSkeleton from '@skeleton/Home';
+import Header from '@components/common/Header';
+import Footer from '@components/common/Footer';
+import MyFocus from '@components/home/MyFocus';
+import HomeProfile from '@components/home/HomeProfile';
+import HomeNav from '@components/home/HomeNav';
 
 // styles
-import '../assets/home';
+import '@assets/home';
 
 export default function () {
     const { api } = useStoreContext();

@@ -1,9 +1,9 @@
 import React from 'react';
-import Avatar from 'uilab/react/Avatar';
-import Image from 'uilab/react/Image';
+import Avatar from '@ui/Avatar';
+import Image from '@ui/Image';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 
 export default function () {
     const { api } = useStoreContext();

@@ -3,13 +3,13 @@ import { createBrowserRouter } from 'react-router';
 
 // misc
 import App from './App';
-import PageTitle from '../components/common/PageTitle';
+import PageTitle from '@components/common/PageTitle';
 
 // layouts
-const Default = lazy(() => import( /* webpackChunkName: 'Default' */ '../layouts/Default' ));
-const Error = lazy(() => import( /* webpackChunkName: 'Error' */ '../layouts/Error' ));
-const Home = lazy(() => import( /* webpackChunkName: 'Home' */ '../layouts/Home' ));
-const Lab = lazy(() => import( /* webpackChunkName: 'Lab' */ '../layouts/Lab' ));
+const Default = lazy(() => import( /* webpackChunkName: 'Default' */ '@layouts/Default' ));
+const Error = lazy(() => import( /* webpackChunkName: 'Error' */ '@layouts/Error' ));
+const Home = lazy(() => import( /* webpackChunkName: 'Home' */ '@layouts/Home' ));
+const Lab = lazy(() => import( /* webpackChunkName: 'Lab' */ '@layouts/Lab' ));
 
 // routes
 const Featured = lazy(() => import( /* webpackChunkName: 'Featured' */ './home/Featured' ));

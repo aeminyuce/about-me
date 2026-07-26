@@ -1,18 +1,18 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Card from 'uilab/react/Card';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import Card from '@ui/Card';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 
 // assets
-import { IconChef } from 'uilab-icons/react/kitchen/chef';
-import { IconPlate } from 'uilab-icons/react/kitchen/plate';
-import { IconCup } from 'uilab-icons/react/kitchen/cup';
-import { IconCoffee } from 'uilab-icons/react/kitchen/coffee';
-import { IconForkKnife } from 'uilab-icons/react/kitchen/fork-knife';
-import { IconMitten } from 'uilab-icons/react/kitchen/mitten';
+import { IconChef } from '@icon/kitchen/chef';
+import { IconPlate } from '@icon/kitchen/plate';
+import { IconCup } from '@icon/kitchen/cup';
+import { IconCoffee } from '@icon/kitchen/coffee';
+import { IconForkKnife } from '@icon/kitchen/fork-knife';
+import { IconMitten } from '@icon/kitchen/mitten';
 
 export default function () {
     const { themeA, api } = useStoreContext();

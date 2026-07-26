@@ -1,20 +1,20 @@
 import React from 'react';
-import Avatar from 'uilab/react/Avatar';
-import Button from 'uilab/react/Button';
-import Card from 'uilab/react/Card';
-import Heading from 'uilab/react/Heading';
-import Image from 'uilab/react/Image';
-import ListGroup from 'uilab/react/ListGroup';
-import SvgIcon from 'uilab/react/SvgIcon';
-import Tooltip from 'uilab/react/Tooltip';
+import Avatar from '@ui/Avatar';
+import Button from '@ui/Button';
+import Card from '@ui/Card';
+import Heading from '@ui/Heading';
+import Image from '@ui/Image';
+import ListGroup from '@ui/ListGroup';
+import SvgIcon from '@ui/SvgIcon';
+import Tooltip from '@ui/Tooltip';
 
 // misc
-import { useStoreContext } from '../../../stores/StoreContext';
-import type { PeopleListProps, PeopleMoreListProps } from '../../../models/Home_Featured';
+import { useStoreContext } from '@stores/StoreContext';
+import type { PeopleListProps, PeopleMoreListProps } from '@models/Home_Featured';
 
 // assets
-import { IconUserPlus } from 'uilab-icons/react/general/user-plus';
-import { IconAngleRight} from 'uilab-icons/react/general/angle-right';
+import { IconUserPlus } from '@icon/general/user-plus';
+import { IconAngleRight} from '@icon/general/angle-right';
 
 export const People = () => {
     const { themeA, api } = useStoreContext();

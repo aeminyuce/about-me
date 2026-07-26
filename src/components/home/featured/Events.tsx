@@ -1,17 +1,17 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Calendar from 'uilab/react/Calendar';
-import Card from 'uilab/react/Card';
-import Dropdown from 'uilab/react/Dropdown';
-import Heading from 'uilab/react/Heading';
-import SvgIcon from 'uilab/react/SvgIcon';
-import Tooltip from 'uilab/react/Tooltip';
+import Button from '@ui/Button';
+import Calendar from '@ui/Calendar';
+import Card from '@ui/Card';
+import Dropdown from '@ui/Dropdown';
+import Heading from '@ui/Heading';
+import SvgIcon from '@ui/SvgIcon';
+import Tooltip from '@ui/Tooltip';
 
 // misc
-import { useStoreContext } from '../../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 
 // assets
-import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
+import { IconEllipsisH } from '@icon/general/ellipsis-h';
 
 export default function () {
     const { themeB, api } = useStoreContext();

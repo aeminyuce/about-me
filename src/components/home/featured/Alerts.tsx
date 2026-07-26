@@ -1,14 +1,14 @@
 import React from 'react';
-import Card from 'uilab/react/Card';
-import Grid from 'uilab/react/Grid';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Card from '@ui/Card';
+import Grid from '@ui/Grid';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 
 // assets
-import { IconAlertShield } from 'uilab-icons/react/general/alert-shield';
-import { IconCheckBadge } from 'uilab-icons/react/general/check-badge';
+import { IconAlertShield } from '@icon/general/alert-shield';
+import { IconCheckBadge } from '@icon/general/check-badge';
 
 export default function () {
     const { themeA, themeB, api } = useStoreContext();

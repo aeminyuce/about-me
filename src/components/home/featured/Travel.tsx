@@ -1,18 +1,18 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Card from 'uilab/react/Card';
-import Carousel from 'uilab/react/Carousel';
-import Grid from 'uilab/react/Grid';
-import Heading from 'uilab/react/Heading';
-import Image from 'uilab/react/Image';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import Card from '@ui/Card';
+import Carousel from '@ui/Carousel';
+import Grid from '@ui/Grid';
+import Heading from '@ui/Heading';
+import Image from '@ui/Image';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 
 // assets
-import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
-import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
+import { IconAngleLeft } from '@icon/general/angle-left';
+import { IconAngleRight } from '@icon/general/angle-right';
 
 export default function () {
     const { themeA, api } = useStoreContext();

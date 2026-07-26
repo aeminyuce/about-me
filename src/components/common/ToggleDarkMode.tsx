@@ -1,10 +1,10 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import SvgIcon from '@ui/SvgIcon';
 
 // assets
-import { IconSun } from 'uilab-icons/react/weather/sun';
-import { IconMoon } from 'uilab-icons/react/weather/moon';;
+import { IconSun } from '@icon/weather/sun';
+import { IconMoon } from '@icon/weather/moon';;
 
 export default function () {
     return (

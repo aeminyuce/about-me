@@ -1,15 +1,15 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Card from 'uilab/react/Card';
-import Image from 'uilab/react/Image';
-import ListGroup from 'uilab/react/ListGroup';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import Card from '@ui/Card';
+import Image from '@ui/Image';
+import ListGroup from '@ui/ListGroup';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 
 // assets
-import { IconTrophyStar } from 'uilab-icons/react/general/trophy-star';
+import { IconTrophyStar } from '@icon/general/trophy-star';
 
 export default function () {
     const { themeB, api } = useStoreContext();

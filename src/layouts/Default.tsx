@@ -1,10 +1,10 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import Grid from 'uilab/react/Grid';
+import Grid from '@ui/Grid';
 
 // misc
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
+import Header from '@components/common/Header';
+import Footer from '@components/common/Footer';
 
 export default function () {
     return (

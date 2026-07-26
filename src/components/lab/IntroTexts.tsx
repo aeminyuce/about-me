@@ -1,11 +1,11 @@
 import React from 'react';
-import SvgIcon from 'uilab/react/SvgIcon';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 
 // assets
-import { IconSoundwave } from 'uilab-icons/react/media/soundwave';
+import { IconSoundwave } from '@icon/media/soundwave';
 
 export const LeadText = () => {
     const { api } = useStoreContext();

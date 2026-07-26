@@ -1,11 +1,11 @@
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router';
-import TopButton from 'uilab/react/TopButton';
-import SquircleMask from 'uilab/react/SquircleMask';
+import TopButton from '@ui/TopButton';
+import SquircleMask from '@ui/SquircleMask';
 
 // misc
-import { storedData } from '../stores/Storages';
-import StoreProvider from '../stores/StoreContext';
+import { storedData } from '@stores/Storages';
+import StoreProvider from '@stores/StoreContext';
 
 export default function () {
     return (

@@ -1,12 +1,12 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import type { PreviewProps } from '../../models/Page';
+import type { PreviewProps } from '@models/Page';
 
 // assets
-import { IconPlay } from 'uilab-icons/react/media/play';
+import { IconPlay } from '@icon/media/play';
 
 export default function (props: PreviewProps) {
     const { children, play, playPos, className } = props;

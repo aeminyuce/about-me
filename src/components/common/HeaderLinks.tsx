@@ -1,14 +1,14 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import type { HeaderLinksProps } from '../../models/Page';
-import { showGetInTouch } from '../../helpers/General'
+import { useStoreContext } from '@stores/StoreContext';
+import type { HeaderLinksProps } from '@models/Page';
+import { showGetInTouch } from '@helpers/General'
 
 // assets
-import { IconHeart } from 'uilab-icons/react/general/heart';
+import { IconHeart } from '@icon/general/heart';
 
 export default function () {
     const { api } = useStoreContext();

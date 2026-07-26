@@ -1,8 +1,8 @@
 import React from 'react';
-import Grid from 'uilab/react/Grid';
+import Grid from '@ui/Grid';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 
 export default function () {
     const { api } = useStoreContext();

@@ -1,29 +1,29 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Dropdown from 'uilab/react/Dropdown';
-import Grid from 'uilab/react/Grid';
-import Heading from 'uilab/react/Heading';
-import Spacer from 'uilab/react/Spacer';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import Dropdown from '@ui/Dropdown';
+import Grid from '@ui/Grid';
+import Heading from '@ui/Heading';
+import Spacer from '@ui/Spacer';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import { headings } from '../../helpers/Lab';
-import Description from '../../components/common/Description';
-import Preview from '../../components/common/Preview';
-import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
+import { useStoreContext } from '@stores/StoreContext';
+import { headings } from '@helpers/Lab';
+import Description from '@components/common/Description';
+import Preview from '@components/common/Preview';
+import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 
 // assets
-import { IconAi } from 'uilab-icons/react/general/ai';
-import { IconFolder } from 'uilab-icons/react/general/folder';
-import { IconTrash } from 'uilab-icons/react/general/trash';
-import { IconShield } from 'uilab-icons/react/general/shield';
-import { IconClock } from 'uilab-icons/react/general/clock';
-import { IconSettings } from 'uilab-icons/react/general/settings';
-import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
-import { IconArrowLeft } from 'uilab-icons/react/general/arrow-left';
-import { IconArrowRight } from 'uilab-icons/react/general/arrow-right';
-import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
+import { IconAi } from '@icon/general/ai';
+import { IconFolder } from '@icon/general/folder';
+import { IconTrash } from '@icon/general/trash';
+import { IconShield } from '@icon/general/shield';
+import { IconClock } from '@icon/general/clock';
+import { IconSettings } from '@icon/general/settings';
+import { IconAngleDown } from '@icon/general/angle-down';
+import { IconArrowLeft } from '@icon/general/arrow-left';
+import { IconArrowRight } from '@icon/general/arrow-right';
+import { IconEllipsisH } from '@icon/general/ellipsis-h';
 
 export default function () {
     const { api } = useStoreContext();

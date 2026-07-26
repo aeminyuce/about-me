@@ -1,17 +1,17 @@
 import React from 'react';
-import Alerts from 'uilab/react/Alerts';
-import Heading from 'uilab/react/Heading';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Alerts from '@ui/Alerts';
+import Heading from '@ui/Heading';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import { headings, themeRandomizer } from '../../helpers/Lab';
-import Description from '../../components/common/Description';
-import Preview from '../../components/common/Preview';
-import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
+import { useStoreContext } from '@stores/StoreContext';
+import { headings, themeRandomizer } from '@helpers/Lab';
+import Description from '@components/common/Description';
+import Preview from '@components/common/Preview';
+import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 
 // assets
-import { IconRemove } from 'uilab-icons/react/general/remove';
+import { IconRemove } from '@icon/general/remove';
 
 export default function () {
     const { api } = useStoreContext();

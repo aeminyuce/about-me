@@ -1,10 +1,28 @@
 {
-  "compilerOptions": {
-    "jsx": "react",
-    "allowSyntheticDefaultImports": true,
-    "lib": ["dom", "esnext"],
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "types": ["node"]
-  }
+    "compilerOptions": {
+        "paths": {
+            "@ui/*": ["./node_modules/uilab/react/*"],
+            "@less/*": ["./node_modules/uilab/less/*"],
+            "@js/*": ["./node_modules/uilab/js/*"],
+
+            "@icon/*": ["./node_modules/uilab-icons/react/*"],
+            "@sprite/*": ["./node_modules/uilab-icons/sprite/*"],
+
+            "@assets/*": ["./src/assets/*"],
+            "@components/*": ["./src/components/*"],
+            "@helpers/*": ["./src/helpers/*"],
+            "@layouts/*": ["./src/layouts/*"],
+            "@models/*": ["./src/models/*"],
+            "@pages/*": ["./src/pages/*"],
+            "@services/*": ["./src/services/*"],
+            "@skeleton/*": ["./src/skeleton/*"],
+            "@stores/*": ["./src/stores/*"]
+        },
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true,
+        "lib": ["dom", "esnext"],
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "types": ["node"]
+    }
 }

@@ -1,24 +1,24 @@
 import React, { lazy, Suspense } from 'react';
 import { useLocation } from 'react-router';
-import Button from 'uilab/react/Button';
-import Grid from 'uilab/react/Grid';
-import HeaderSticky from 'uilab/react/HeaderSticky';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import Grid from '@ui/Grid';
+import HeaderSticky from '@ui/HeaderSticky';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
 const HeaderRightSidebar = lazy(() => import( /* webpackChunkName: 'misc/HeaderRightSidebar' */ './HeaderRightSidebar' ));
 
-import { useStoreContext } from '../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 import HeaderLeftSidebar from './HeaderLeftSidebar';
-import HeaderSkeleton from '../../skeleton/Header';
+import HeaderSkeleton from '@skeleton/Header';
 import GetInTouchModal from './GetInTouchModal';
 import HeaderLinks from './HeaderLinks';
 import SocialLinks from './SocialLinks';
 import ToggleDarkMode from './ToggleDarkMode';
 
 // assets
-import { IconBarsLeft } from 'uilab-icons/react/general/bars-left';
-import { IconBarsRight } from 'uilab-icons/react/general/bars-right';
+import { IconBarsLeft } from '@icon/general/bars-left';
+import { IconBarsRight } from '@icon/general/bars-right';
 
 export default function () {
     const { pathname } = useLocation();

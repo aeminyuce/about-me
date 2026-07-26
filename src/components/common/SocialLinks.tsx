@@ -1,16 +1,16 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import type { SocialLinksProps } from '../../models/Page';
+import { useStoreContext } from '@stores/StoreContext';
+import type { SocialLinksProps } from '@models/Page';
 
 // assets
-import { IconDribbble } from 'uilab-icons/react/social/dribbble';
-import { IconGithub } from 'uilab-icons/react/social/github';
-import { IconLinkedin } from 'uilab-icons/react/social/linkedin';
-import { IconX } from 'uilab-icons/react/social/x';
+import { IconDribbble } from '@icon/social/dribbble';
+import { IconGithub } from '@icon/social/github';
+import { IconLinkedin } from '@icon/social/linkedin';
+import { IconX } from '@icon/social/x';
 
 export default function () {
     const { api } = useStoreContext();

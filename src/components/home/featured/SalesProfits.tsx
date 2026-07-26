@@ -1,19 +1,19 @@
 import React, { memo, useState } from 'react';
-import Button from 'uilab/react/Button';
-import Card from 'uilab/react/Card';
-import Dropdown from 'uilab/react/Dropdown';
-import Grid from 'uilab/react/Grid';
-import Heading from 'uilab/react/Heading';
-import LineChart from 'uilab/react/LineChart';
-import SvgIcon from 'uilab/react/SvgIcon';
-import Tab from 'uilab/react/Tab';
+import Button from '@ui/Button';
+import Card from '@ui/Card';
+import Dropdown from '@ui/Dropdown';
+import Grid from '@ui/Grid';
+import Heading from '@ui/Heading';
+import LineChart from '@ui/LineChart';
+import SvgIcon from '@ui/SvgIcon';
+import Tab from '@ui/Tab';
 
 // misc
-import { useStoreContext } from '../../../stores/StoreContext';
-import type { MonthlyChartsProps } from '../../../models/Home_Featured';
+import { useStoreContext } from '@stores/StoreContext';
+import type { MonthlyChartsProps } from '@models/Home_Featured';
 
 // assets
-import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
+import { IconAngleDown } from '@icon/general/angle-down';
 
 export default function () {
     const { api } = useStoreContext();

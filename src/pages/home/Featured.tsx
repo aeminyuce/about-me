@@ -1,21 +1,21 @@
 import React from 'react';
-import Grid from 'uilab/react/Grid';
+import Grid from '@ui/Grid';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import { Reports, ReportsList } from '../../components/home/featured/Reports';
-import { People, PeopleMore } from '../../components/home/featured/People';
-import HomeFeaturedSkeleton from '../../skeleton/Home_Featured';
-import Profile from '../../components/home/featured/Profile';
-import Events from '../../components/home/featured/Events';
-import Foods from '../../components/home/featured/Foods';
-import Race from '../../components/home/featured/Race';
-import Travel from '../../components/home/featured/Travel';
-import Alerts from '../../components/home/featured/Alerts';
-import SalesProfits from '../../components/home/featured/SalesProfits';
+import { useStoreContext } from '@stores/StoreContext';
+import { Reports, ReportsList } from '@components/home/featured/Reports';
+import { People, PeopleMore } from '@components/home/featured/People';
+import HomeFeaturedSkeleton from '@skeleton/Home_Featured';
+import Profile from '@components/home/featured/Profile';
+import Events from '@components/home/featured/Events';
+import Foods from '@components/home/featured/Foods';
+import Race from '@components/home/featured/Race';
+import Travel from '@components/home/featured/Travel';
+import Alerts from '@components/home/featured/Alerts';
+import SalesProfits from '@components/home/featured/SalesProfits';
 
 // styles
-import '../../assets/home/featured';
+import '@assets/home/featured';
 
 export default function () {
     const { api } = useStoreContext();

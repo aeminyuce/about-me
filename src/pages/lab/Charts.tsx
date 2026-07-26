@@ -1,23 +1,23 @@
 import React, { memo, useState } from 'react';
-import Button from 'uilab/react/Button';
-import DonutChart from 'uilab/react/DonutChart';
-import Dropdown from 'uilab/react/Dropdown';
-import Grid from 'uilab/react/Grid';
-import Heading from 'uilab/react/Heading';
-import LineChart from 'uilab/react/LineChart';
-import PieChart from 'uilab/react/PieChart';
-import SvgIcon from 'uilab/react/SvgIcon';
-import Tab from 'uilab/react/Tab';
+import Button from '@ui/Button';
+import DonutChart from '@ui/DonutChart';
+import Dropdown from '@ui/Dropdown';
+import Grid from '@ui/Grid';
+import Heading from '@ui/Heading';
+import LineChart from '@ui/LineChart';
+import PieChart from '@ui/PieChart';
+import SvgIcon from '@ui/SvgIcon';
+import Tab from '@ui/Tab';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import { headings } from '../../helpers/Lab';
-import Description from '../../components/common/Description';
-import Preview from '../../components/common/Preview';
-import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
+import { useStoreContext } from '@stores/StoreContext';
+import { headings } from '@helpers/Lab';
+import Description from '@components/common/Description';
+import Preview from '@components/common/Preview';
+import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 
 // assets
-import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
+import { IconAngleDown } from '@icon/general/angle-down';
 
 export default function () {
     const [tabs, setTabs] = useState<number[]>([]);

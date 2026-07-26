@@ -1,23 +1,23 @@
 import React from 'react';
-import Avatar from 'uilab/react/Avatar';
-import Heading from 'uilab/react/Heading';
-import Image from 'uilab/react/Image';
-import Spacer from 'uilab/react/Spacer';
-import SvgIcon from 'uilab/react/SvgIcon';
-import Tooltip from 'uilab/react/Tooltip';
+import Avatar from '@ui/Avatar';
+import Heading from '@ui/Heading';
+import Image from '@ui/Image';
+import Spacer from '@ui/Spacer';
+import SvgIcon from '@ui/SvgIcon';
+import Tooltip from '@ui/Tooltip';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import { headings } from '../../helpers/Lab';
-import Description from '../../components/common/Description';
-import Preview from '../../components/common/Preview';
-import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
+import { useStoreContext } from '@stores/StoreContext';
+import { headings } from '@helpers/Lab';
+import Description from '@components/common/Description';
+import Preview from '@components/common/Preview';
+import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 
 // assets
-import { IconUser } from 'uilab-icons/react/general/user';
-import { IconTrees } from 'uilab-icons/react/general/trees';
-import { IconFire } from 'uilab-icons/react/general/fire';
-import { IconStore } from 'uilab-icons/react/commerce/store';
+import { IconUser } from '@icon/general/user';
+import { IconTrees } from '@icon/general/trees';
+import { IconFire } from '@icon/general/fire';
+import { IconStore } from '@icon/commerce/store';
 
 export default function () {
     const { api } = useStoreContext();

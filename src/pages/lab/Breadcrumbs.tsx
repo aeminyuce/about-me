@@ -1,23 +1,23 @@
 import React from 'react';
-import Breadcrumbs from 'uilab/react/Breadcrumbs';
-import Button from 'uilab/react/Button';
-import Dropdown from 'uilab/react/Dropdown';
-import Heading from 'uilab/react/Heading';
-import Spacer from 'uilab/react/Spacer';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Breadcrumbs from '@ui/Breadcrumbs';
+import Button from '@ui/Button';
+import Dropdown from '@ui/Dropdown';
+import Heading from '@ui/Heading';
+import Spacer from '@ui/Spacer';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import { headings } from '../../helpers/Lab';
-import Description from '../../components/common/Description';
-import Preview from '../../components/common/Preview';
-import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
+import { useStoreContext } from '@stores/StoreContext';
+import { headings } from '@helpers/Lab';
+import Description from '@components/common/Description';
+import Preview from '@components/common/Preview';
+import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 
 // assets
-import { IconHome } from 'uilab-icons/react/general/home';
-import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
-import { IconLongArrowLeft } from 'uilab-icons/react/general/long-arrow-left';
-import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
+import { IconHome } from '@icon/general/home';
+import { IconAngleLeft } from '@icon/general/angle-left';
+import { IconLongArrowLeft } from '@icon/general/long-arrow-left';
+import { IconEllipsisH } from '@icon/general/ellipsis-h';
 
 export default function () {
     const { api } = useStoreContext();

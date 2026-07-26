@@ -1,35 +1,35 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Card from 'uilab/react/Card';
-import Grid from 'uilab/react/Grid';
-import Heading from 'uilab/react/Heading';
-import Image from 'uilab/react/Image';
-import ListGroup from 'uilab/react/ListGroup';
-import Spacer from 'uilab/react/Spacer';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Button from '@ui/Button';
+import Card from '@ui/Card';
+import Grid from '@ui/Grid';
+import Heading from '@ui/Heading';
+import Image from '@ui/Image';
+import ListGroup from '@ui/ListGroup';
+import Spacer from '@ui/Spacer';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import { headings } from '../../helpers/Lab';
-import Description from '../../components/common/Description';
-import Preview from '../../components/common/Preview';
-import BreadcrumbsWrapper from '../../components/lab/BreadcrumbsWrapper';
+import { useStoreContext } from '@stores/StoreContext';
+import { headings } from '@helpers/Lab';
+import Description from '@components/common/Description';
+import Preview from '@components/common/Preview';
+import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 
 // assets
-import { IconTrees } from 'uilab-icons/react/general/trees';
-import { IconTrophyStar } from 'uilab-icons/react/general/trophy-star';
-import { IconChef } from 'uilab-icons/react/kitchen/chef';
-import { IconPlate } from 'uilab-icons/react/kitchen/plate';
-import { IconCup } from 'uilab-icons/react/kitchen/cup';
-import { IconCoffee } from 'uilab-icons/react/kitchen/coffee';
-import { IconForkKnife } from 'uilab-icons/react/kitchen/fork-knife';
-import { IconMitten } from 'uilab-icons/react/kitchen/mitten';
-import { IconTicket } from 'uilab-icons/react/commerce/ticket';
-import { IconStore } from 'uilab-icons/react/commerce/store';
-import { IconAlertCircle } from 'uilab-icons/react/general/alert-circle';
-import { IconAlertShield } from 'uilab-icons/react/general/alert-shield';
-import { IconRemoveShield } from 'uilab-icons/react/general/remove-shield';
-import { IconCheckBadge } from 'uilab-icons/react/general/check-badge';
+import { IconTrees } from '@icon/general/trees';
+import { IconTrophyStar } from '@icon/general/trophy-star';
+import { IconChef } from '@icon/kitchen/chef';
+import { IconPlate } from '@icon/kitchen/plate';
+import { IconCup } from '@icon/kitchen/cup';
+import { IconCoffee } from '@icon/kitchen/coffee';
+import { IconForkKnife } from '@icon/kitchen/fork-knife';
+import { IconMitten } from '@icon/kitchen/mitten';
+import { IconTicket } from '@icon/commerce/ticket';
+import { IconStore } from '@icon/commerce/store';
+import { IconAlertCircle } from '@icon/general/alert-circle';
+import { IconAlertShield } from '@icon/general/alert-shield';
+import { IconRemoveShield } from '@icon/general/remove-shield';
+import { IconCheckBadge } from '@icon/general/check-badge';
 
 export default function () {
     const { api } = useStoreContext();

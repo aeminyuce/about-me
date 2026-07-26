@@ -1,11 +1,11 @@
 import React from 'react';
-import Button from 'uilab/react/Button';
-import Grid from 'uilab/react/Grid';
+import Button from '@ui/Button';
+import Grid from '@ui/Grid';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import type { SizeListProps } from '../../models/Icons';
-import { changeIconsSize } from '../../helpers/Icons';
+import { useStoreContext } from '@stores/StoreContext';
+import type { SizeListProps } from '@models/Icons';
+import { changeIconsSize } from '@helpers/Icons';
 
 export default function () {
     const { api } = useStoreContext();

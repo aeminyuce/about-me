@@ -1,16 +1,16 @@
 import React from 'react';
-import Grid from 'uilab/react/Grid';
-import Heading from 'uilab/react/Heading';
-import SvgIcon from 'uilab/react/SvgIcon';
+import Grid from '@ui/Grid';
+import Heading from '@ui/Heading';
+import SvgIcon from '@ui/SvgIcon';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
+import { useStoreContext } from '@stores/StoreContext';
 import MyAvatar from '../common/MyAvatar';
 import GetInTouchButton from '../common/GetInTouchButton';
 import PersonalSkills from './PersonalSkills';
 
 // assets
-import { IconMarker } from 'uilab-icons/react/general/marker';
+import { IconMarker } from '@icon/general/marker';
 
 export default function () {
     const { api } = useStoreContext();

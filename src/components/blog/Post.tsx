@@ -1,12 +1,12 @@
 import React from 'react';
 import { useSearchParams } from 'react-router';
-import Heading from 'uilab/react/Heading';
-import Grid from 'uilab/react/Grid';
-import Image from 'uilab/react/Image';
+import Heading from '@ui/Heading';
+import Grid from '@ui/Grid';
+import Image from '@ui/Image';
 
 // misc
-import { useStoreContext } from '../../stores/StoreContext';
-import PageTitle from '../../components/common/PageTitle';
+import { useStoreContext } from '@stores/StoreContext';
+import PageTitle from '@components/common/PageTitle';
 
 export default function () {
     const { api } = useStoreContext();
