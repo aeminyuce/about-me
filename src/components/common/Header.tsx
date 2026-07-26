@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useLocation } from 'react-router';
+import Button from 'uilab/react/Button';
 import Grid from 'uilab/react/Grid';
 import HeaderSticky from 'uilab/react/HeaderSticky';
+import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
+const HeaderRightSidebar = lazy(() => import( /* webpackChunkName: 'misc/HeaderRightSidebar' */ './HeaderRightSidebar' ));
+
 import { useStoreContext } from '../../stores/StoreContext';
-import { HeaderLeftSidebar, ToggleHeaderLeftSidebar, HeaderRightSidebar, ToggleHeaderRightSidebar } from './HeaderSidebars';
+import HeaderLeftSidebar from './HeaderLeftSidebar';
 import HeaderSkeleton from '../../skeleton/Header';
 import GetInTouchModal from './GetInTouchModal';
 import HeaderLinks from './HeaderLinks';
 import SocialLinks from './SocialLinks';
 import ToggleDarkMode from './ToggleDarkMode';
+
+// assets
+import { IconBarsLeft } from 'uilab-icons/react/general/bars-left';
+import { IconBarsRight } from 'uilab-icons/react/general/bars-right';
 
 export default function () {
     const { pathname } = useLocation();
@@ -25,7 +33,9 @@ export default function () {
             <Grid.Row fluid='no'>
                 <Grid.Col size={9} md={3} sm={3} xs={3}>
 
-                    <ToggleHeaderLeftSidebar />
+                    <Button square ghost title='Toggle Nav' className='ui-sidebar-show-l ui-round ui-visible-md'>
+                        <SvgIcon as='js' src={IconBarsLeft} opacity='no' />
+                    </Button>
                     <HeaderLinks />
 
                 </Grid.Col>
@@ -33,14 +43,24 @@ export default function () {
 
                     <SocialLinks />
                     <ToggleDarkMode />
-                    {showRightSidebar && <ToggleHeaderRightSidebar />}
+
+                    {showRightSidebar &&
+                        <Button square ghost title='Toggle Menu' className='ui-sidebar-show-r ui-round ui-visible-md'>
+                            <SvgIcon as='js' src={IconBarsRight} opacity='no' />
+                        </Button>
+                    }
 
                 </Grid.Col>
             </Grid.Row>
             <GetInTouchModal />
         </HeaderSticky>
+
         <HeaderLeftSidebar />
-        {showRightSidebar && <HeaderRightSidebar />}
+        {showRightSidebar &&
+            <Suspense>
+                <HeaderRightSidebar />
+            </Suspense>
+        }
         </>
     )
 }
