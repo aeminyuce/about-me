@@ -1,13 +1,16 @@
-import React, { Fragment, memo, useState, useCallback } from 'react';
+import React, { lazy, Suspense, Fragment, memo, useState, useCallback } from 'react';
 import Button from 'uilab/react/Button';
 import Heading from 'uilab/react/Heading';
+import Modal from 'uilab/react/Modal';
 import SvgIcon from 'uilab/react/SvgIcon';
 
 // misc
+const IconDetailModal = lazy(() => import( /* webpackChunkName: 'misc/IconDetailModal' */ './IconDetailModal' ));
+
 import { useStoreContext } from '../../stores/StoreContext';
 import type { IconsListProps, IconDetailsProps } from '../../models/Icons';
 import { showIconDetail } from '../../helpers/Icons';
-import IconDetailModal from './IconDetailModal';
+import IconDetailSkeleton from '../../skeleton/IconDetail';
 
 // assets
 const SpriteGeneral = require('uilab-icons/sprite/general.svg') as string;
@@ -86,7 +89,17 @@ export default function (props: any) {
                 </Fragment>
             ))}
 
-            <IconDetailModal {...details} />
+            <Modal as='div' id='iconDetailModal'>
+                <Modal.Container className='ui-p-30'>
+
+                    {details?.name &&
+                        <Suspense fallback={<IconDetailSkeleton />}>
+                            <IconDetailModal {...details} />
+                        </Suspense>
+                    }
+
+                </Modal.Container>
+            </Modal>
         </div>
     )
 }
