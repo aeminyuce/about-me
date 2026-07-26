@@ -8,7 +8,7 @@ import { useStoreContext } from '../../stores/StoreContext';
 import type { LabMenuProps } from '../../models/Lab';
 import { scrollToHash, clearSpaces } from '../../helpers/Lab';
 
-export default function() {
+export default function () {
     const { pathname, hash } = useLocation();
 
     const { api } = useStoreContext();

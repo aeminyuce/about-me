@@ -10,7 +10,7 @@ import { useStoreContext } from '../../../stores/StoreContext';
 import { IconAlertShield } from 'uilab-icons/react/general/alert-shield';
 import { IconCheckBadge } from 'uilab-icons/react/general/check-badge';
 
-export default function() {
+export default function () {
     const { themeA, themeB, api } = useStoreContext();
     const alerts = api?.home_featured?.alerts;
 

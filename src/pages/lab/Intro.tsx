@@ -8,7 +8,7 @@ import { LeadText, Paragraphs } from '../../components/lab/IntroTexts';
 import MyAvatar from '../../components/common/MyAvatar';
 import IntroImages from '../../components/lab/IntroImages';
 
-export default function() {
+export default function () {
     const { api } = useStoreContext();
     const intro = api?.lab?.intro;
 

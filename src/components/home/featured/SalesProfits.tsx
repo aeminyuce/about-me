@@ -15,7 +15,7 @@ import type { MonthlyChartsProps } from '../../../models/Home_Featured';
 // assets
 import { IconAngleDown } from 'uilab-icons/react/general/angle-down';
 
-export default function() {
+export default function () {
     const { api } = useStoreContext();
     const [tabs, setTabs] = useState<number[]>([]);
 

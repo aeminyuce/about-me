@@ -10,7 +10,7 @@ import Notifier from 'uilab/react/Notifier';
 import { useStoreContext } from '../../../stores/StoreContext';
 import type { UserActivityProps } from '../../../models/Home_Featured';
 
-export default function() {
+export default function () {
     const { themeA, api } = useStoreContext();
 
     const profile = api?.home_featured?.profile;

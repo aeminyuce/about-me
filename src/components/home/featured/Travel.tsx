@@ -14,7 +14,7 @@ import { useStoreContext } from '../../../stores/StoreContext';
 import { IconAngleLeft } from 'uilab-icons/react/general/angle-left';
 import { IconAngleRight } from 'uilab-icons/react/general/angle-right';
 
-export default function() {
+export default function () {
     const { themeA, api } = useStoreContext();
     const travel = api?.home_featured?.travel;
 

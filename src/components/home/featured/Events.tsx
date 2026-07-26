@@ -13,7 +13,7 @@ import { useStoreContext } from '../../../stores/StoreContext';
 // assets
 import { IconEllipsisH } from 'uilab-icons/react/general/ellipsis-h';
 
-export default function() {
+export default function () {
     const { themeB, api } = useStoreContext();
     const calendar = api?.home_featured?.calendar;
 

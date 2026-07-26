@@ -14,7 +14,7 @@ import { IconCoffee } from 'uilab-icons/react/kitchen/coffee';
 import { IconForkKnife } from 'uilab-icons/react/kitchen/fork-knife';
 import { IconMitten } from 'uilab-icons/react/kitchen/mitten';
 
-export default function() {
+export default function () {
     const { themeA, api } = useStoreContext();
     const foods = api?.home_featured?.foods;
 

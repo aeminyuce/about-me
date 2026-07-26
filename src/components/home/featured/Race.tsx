@@ -11,7 +11,7 @@ import { useStoreContext } from '../../../stores/StoreContext';
 // assets
 import { IconTrophyStar } from 'uilab-icons/react/general/trophy-star';
 
-export default function() {
+export default function () {
     const { themeB, api } = useStoreContext();
     const race = api?.home_featured?.race;
 
