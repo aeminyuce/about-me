@@ -52,6 +52,7 @@ export default function() {
                     <MonthlyCharts y1={salesProfits?.y1} y2={salesProfits?.y2} index1={5} index2={7} data={salesProfits} />
                 </Tab.Content>
                 <Tab.Content className='ui-m-10-t'>
+                    {/* use lazy when use different component */}
                     {tabs.includes(1) &&
                         <MonthlyCharts y1={salesProfits?.y3} y2={salesProfits?.y4} index1={8} index2={10} data={salesProfits} />
                     }

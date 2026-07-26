@@ -116,6 +116,7 @@ export const ReportsList = () => {
                     <ReportsListGroup themeA={themeA} themeB={themeB} list={reportsList?.delayed} />
                 </Tab.Content>
                 <Tab.Content>
+                    {/* use lazy when use different component */}
                     {tabs.includes(1) && <ReportsListGroup themeA={themeA} themeB={themeB} list={reportsList?.paused} />}
                 </Tab.Content>
             </Tab.Holder>

@@ -412,6 +412,7 @@ export default function () {
                     <LineMulti x={value?.linexMonths} y1={value?.lineyMonth1} y2={value?.lineyMonth2} name1={text?.lineSales} name2={text?.lineProfit} />
                 </Tab.Content>
                 <Tab.Content>
+                    {/* use lazy when use different component */}
                     {tabs.includes(1) &&
                         <LineMulti x={value?.linexMonths} y1={value?.lineyMonth3} y2={value?.lineyMonth4} name1={text?.lineSales} name2={text?.lineProfit} />
                     }
