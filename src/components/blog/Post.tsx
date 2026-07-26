@@ -18,9 +18,13 @@ export default function () {
     // page title
     let pageTitle = 'Blog';
 
-    {post && blog[post]?.find((item: any) => {
-        if (item?.type === 'postTitle') pageTitle = item?.data?.text;
-    })}
+    if (post) {
+        const titleItem = blog[post]?.find((item: any) => item?.type === 'postTitle');
+
+        if (titleItem?.data?.text) {
+            pageTitle = titleItem.data.text;
+        }
+    }
 
     return (
         <PageTitle title={`${pageTitle} | Blog`}>
