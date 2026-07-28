@@ -4,6 +4,7 @@ import Grid from '@ui/Grid';
 // misc
 import { useStoreContext } from '@stores/StoreContext';
 import type { IconsListProps } from '@models/Icons';
+import IconsSkeleton from '@skeleton/Icons';
 import MyAvatar from '@components/common/MyAvatar';
 import Title from '@components/icons/Title';
 import Images from '@components/icons/Images';
@@ -19,7 +20,11 @@ import '@assets/icons';
 
 export default function () {
     const { api } = useStoreContext();
-    const info = api?.icons?.info;
+
+    const icons = api?.icons;
+    const info = icons?.info;
+
+    if (!icons) return <IconsSkeleton />
 
     return (
         <Grid.Row className='ui-sm-no-p ui-align-c ui-p-30-v'>
@@ -34,7 +39,7 @@ export default function () {
                 {(info?.text || info?.sizeChangerSuffix || info?.sizeChangerPrefix) &&
                     <Texts iconsList={iconsList} />
                 }
-                {api?.icons?.sizes && <SizeChanger />}
+                {icons?.sizes && <SizeChanger />}
                 {(info?.iconsSuffix) && <List iconsList={iconsList} />}
             </Grid.Col>
         </Grid.Row>
