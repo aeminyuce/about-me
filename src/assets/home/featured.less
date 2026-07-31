@@ -16,7 +16,7 @@
         & > div {
             overflow: hidden; position: absolute; top: 0; left: 0;
 
-            img { width: 100%; }
+            &,img { width: 100%; }
         }
 
         .ui-notifier { margin-top: (@home-profile-cover-size / 2); }
@@ -50,7 +50,7 @@
 }
 @media (@default-finish) and (@md-start) {
     .home-travel {
-        .ui-col-st { width: @home-travel-images-width-md !important; }
+        .ui-col-st { width: @home-travel-images-width-md; }
     }
 }
 
@@ -58,7 +58,7 @@
 @home-race-height:                        169px;
 
 .home-race {
-    img { height: @home-race-height !important; }
+    img { height: @home-race-height; }
 }
 
 /* sales profits */
