@@ -11,10 +11,10 @@ export default function () {
 
     return (
         <Button.Wrapper as='div' largeButtons ease='1st' className='ui-circle-1st'>
-            <Button noease className='ui-bg-black ui-visible-light' title={getInTouchText} onClick={showGetInTouch}>
+            <Button noease className='ui-bg-black ui-shown-light' title={getInTouchText} onClick={showGetInTouch}>
                 {getInTouchText}
             </Button>
-            <Button noease className='ui-bg-white ui-visible-dark' title={getInTouchText} onClick={showGetInTouch}>
+            <Button noease className='ui-bg-white ui-shown-dark' title={getInTouchText} onClick={showGetInTouch}>
                 {getInTouchText}
             </Button>
         </Button.Wrapper>

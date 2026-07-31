@@ -19,8 +19,8 @@ export default function () {
                     <Grid.Row fluid='sm' className='ui-m-15-b ui-m-10-t'>
 
                         <Grid.Col xl={8} lg={8} size={10} className='ui-round-1st'>
-                            <Skeleton index={4} w='100%' h='18px' className='ui-m-5-v ui-hidden-md' />
-                            <div className='ui-round-1st ui-visible-md'>
+                            <Skeleton index={4} w='100%' h='18px' className='ui-m-5-v ui-hide-md' />
+                            <div className='ui-round-1st ui-shown-md'>
                                 <Skeleton index={5} repeat={2} w='100%' h='18px' vGap={5} className='ui-m-5-t' />
                             </div>
                             <Skeleton index={7} w='60%' h='18px' className='ui-m-10-t ui-m-5-b' />
@@ -35,11 +35,11 @@ export default function () {
             <Grid.Row>
 
                 <Grid.Col size={8} push={2} className='ui-m-30-v ui-align-c ui-round-2nd'>
-                    <div className='ui-p-1-t ui-hidden-md'>
+                    <div className='ui-p-1-t ui-hide-md'>
                         <Skeleton index={9} w='100%' h='22px' className='ui-m-5-v' />
                         <Skeleton index={10} w='86%' h='22px' className='ui-m-5-t ui-m-20-b' />
                     </div>
-                    <div className='ui-visible-md'>
+                    <div className='ui-shown-md'>
                         <Skeleton index={9} repeat={5} w='100%' h='20px' vGap={5} className='ui-m-5-t' />
                         <Skeleton index={14} w='86%' h='20px' className='ui-m-10-t ui-m-20-b' />
                     </div>
@@ -52,15 +52,15 @@ export default function () {
             <Grid.Static fluid='no'>
                 <Grid.Row >
 
-                    <Grid.Col size={12} className='ui-hidden-sm ui-round-1st'>
+                    <Grid.Col size={12} className='ui-hide-sm ui-round-1st'>
                         <Skeleton repeat={5} w='103px' h='42px' hGap={2} />
                     </Grid.Col>
 
-                    <Grid.Col size={12} className='ui-visible-sm ui-round-2nd'>
-                        <div className='ui-hidden-xs'>
+                    <Grid.Col size={12} className='ui-shown-sm ui-round-2nd'>
+                        <div className='ui-hide-xs'>
                             <Skeleton repeat={3} w='calc(33% - 3px)' h='42px' hGap={3} />
                         </div>
-                        <div className='ui-visible-xs'>
+                        <div className='ui-shown-xs'>
                             <Skeleton repeat={2} w='calc(50% - 3px)' h='42px' hGap={3} />
                         </div>
                     </Grid.Col>

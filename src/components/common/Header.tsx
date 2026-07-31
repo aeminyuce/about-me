@@ -33,7 +33,7 @@ export default function () {
             <Grid.Row fluid='no'>
                 <Grid.Col size={9} md={3} sm={3} xs={3}>
 
-                    <Button square ghost title='Toggle Nav' className='ui-sidebar-show-l ui-round ui-visible-md'>
+                    <Button square ghost title='Toggle Nav' className='ui-sidebar-show-l ui-round ui-shown-md'>
                         <SvgIcon as='js' src={IconBarsLeft} opacity='no' />
                     </Button>
                     <HeaderLinks />
@@ -45,7 +45,7 @@ export default function () {
                     <ToggleDarkMode />
 
                     {showRightSidebar &&
-                        <Button square ghost title='Toggle Menu' className='ui-sidebar-show-r ui-round ui-visible-md'>
+                        <Button square ghost title='Toggle Menu' className='ui-sidebar-show-r ui-round ui-shown-md'>
                             <SvgIcon as='js' src={IconBarsRight} opacity='no' />
                         </Button>
                     }

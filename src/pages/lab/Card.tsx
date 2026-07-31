@@ -266,8 +266,8 @@ export default function () {
                         <Card.Side>
                             <Grid.Static fluid='sm'>
                                 <Grid.Col size={190} className='ui-no-p'>
-                                    <Image lazy fluid='all' src={img[2]} aspect='portrait' className='ui-hidden-sm ui-round-l ui-no-round-tl' />
-                                    <Image lazy fluid='all' src={img[2]} aspect='landscape' className='ui-visible-sm' />
+                                    <Image lazy fluid='all' src={img[2]} aspect='portrait' className='ui-hide-sm ui-round-l ui-no-round-tl' />
+                                    <Image lazy fluid='all' src={img[2]} aspect='landscape' className='ui-shown-sm' />
                                 </Grid.Col>
                                 <Grid.Row gap='lg'>
                                     <Grid.Col size={12}>

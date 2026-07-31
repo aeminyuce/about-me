@@ -14,7 +14,7 @@ export default function () {
     const { api } = useStoreContext();
 
     return (
-        <nav aria-label='Main site navigation' className='ui-hidden-md'>
+        <nav aria-label='Main site navigation' className='ui-hide-md'>
             <Button.Wrapper as='span' ease='1st' className='ui-sidebar-add-l ui-md-align-l ui-round-1st'>
 
                 {api?.header?.headerLinks?.map((item: HeaderLinksProps) => {

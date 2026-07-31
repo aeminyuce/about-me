@@ -105,7 +105,7 @@ export default function () {
             <Grid.Row>
                 <Grid.Col size={12} className='ui-round-1st'>
                     <CalendarPicker inline='always' className='ui-m-20-r ui-sm-no-m' />
-                    <Spacer size={10} className='ui-visible-sm' />
+                    <Spacer size={10} className='ui-shown-sm' />
                     <CalendarPicker inline='always' defaultValue={dates?.picker} />
                 </Grid.Col>
             </Grid.Row>

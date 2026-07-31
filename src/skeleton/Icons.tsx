@@ -9,8 +9,8 @@ export default function () {
 
                 <Skeleton clear h='92px' aspect='square' className='ui-squircle' />
 
-                <Skeleton index={1} w='80%' h='48px' className='ui-m-30-v ui-round ui-hidden-sm' />
-                <div className='ui-p-1-b ui-m-30-v ui-round-1st ui-visible-sm'>
+                <Skeleton index={1} w='80%' h='48px' className='ui-m-30-v ui-round ui-hide-sm' />
+                <div className='ui-p-1-b ui-m-30-v ui-round-1st ui-shown-sm'>
                     <Skeleton index={1} repeat={3} w='96%' h='45px' vGap={5} />
                 </div>
 
@@ -24,17 +24,17 @@ export default function () {
                     </Grid.Col>
                 </Grid.Row>
 
-                <div className='ui-m-25-b ui-round-1st ui-hidden-md'>
+                <div className='ui-m-25-b ui-round-1st ui-hide-md'>
                     <Skeleton index={6} w='96%' h='29px' className='ui-m-15-b' />
                     <Skeleton index={7} w='60%' h='29px' />
                 </div>
-                <div className='ui-p-3-b ui-m-25-b ui-visible-md ui-round-1st'>
+                <div className='ui-p-3-b ui-m-25-b ui-shown-md ui-round-1st'>
                     <Skeleton index={6} repeat={5} w='96%' h='24px' vGap={15} />
                 </div>
 
                 <div className='ui-m-20-b ui-round-1st'>
-                    <Skeleton index={11} w='40%' h='27px' className='ui-hidden-md' />
-                    <Skeleton index={11} w='80%' h='27px' className='ui-visible-md' />
+                    <Skeleton index={11} w='40%' h='27px' className='ui-hide-md' />
+                    <Skeleton index={11} w='80%' h='27px' className='ui-shown-md' />
                 </div>
 
                 <Grid.Row className='ui-m-30-b'>
@@ -44,24 +44,24 @@ export default function () {
                 </Grid.Row>
 
                 <div className='ui-p-30-t ui-m-20-b ui-round-1st'>
-                    <Skeleton index={12} w='30%' h='27px' className='ui-hidden-md' />
-                    <Skeleton index={12} w='80%' h='27px' className='ui-visible-md' />
+                    <Skeleton index={12} w='30%' h='27px' className='ui-hide-md' />
+                    <Skeleton index={12} w='80%' h='27px' className='ui-shown-md' />
                 </div>
                 <div className='ui-p-30-b ui-round-1st'>
                     <Skeleton index={13} repeat={5} w='172px' h='81px' gap={1} />
                 </div>
 
                 <div className='ui-p-30-t ui-m-20-b ui-round-1st'>
-                    <Skeleton index={17} w='30%' h='27px' className='ui-hidden-md' />
-                    <Skeleton index={17} w='80%' h='27px' className='ui-visible-md' />
+                    <Skeleton index={17} w='30%' h='27px' className='ui-hide-md' />
+                    <Skeleton index={17} w='80%' h='27px' className='ui-shown-md' />
                 </div>
                 <div className='ui-p-30-b ui-round-1st'>
                     <Skeleton index={18} repeat={19} w='172px' h='81px' gap={1} />
                 </div>
 
                 <div className='ui-p-30-t ui-m-20-b ui-round-1st'>
-                    <Skeleton index={38} w='30%' h='27px' className='ui-hidden-md' />
-                    <Skeleton index={38} w='80%' h='27px' className='ui-visible-md' />
+                    <Skeleton index={38} w='30%' h='27px' className='ui-hide-md' />
+                    <Skeleton index={38} w='80%' h='27px' className='ui-shown-md' />
                 </div>
                 <div className='ui-p-30-b ui-round-1st'>
                     <Skeleton index={39} repeat={27} w='172px' h='81px' gap={1} />

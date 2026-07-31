@@ -15,14 +15,14 @@ export default function () {
         <Grid.Row className='home-nav ui-p-15-h ui-no-m-h ui-m-15-b ui-border-b ui-border-light ui-set-sticky'>
             <Grid.Static fluid='no' className='ui-set-relative'>
                 <Grid.Row>
-                    <Grid.Col size={12} className='ui-hidden-sm'>
+                    <Grid.Col size={12} className='ui-hide-sm'>
 
                         <nav aria-label='Home page desktop navigation' className='ui-ease-1st-btn ui-round-1st'>
                             <NavDesktopLinks />
                         </nav>
 
                     </Grid.Col>
-                    <Grid.Col size={12} className='ui-ease-1st-btn ui-visible-sm'>
+                    <Grid.Col size={12} className='ui-ease-1st-btn ui-shown-sm'>
 
                         <nav aria-label='Home page mobile navigation'>
                             <NavMobileLinks />
@@ -82,7 +82,7 @@ const NavMobileLinks = () => {
                 })}
 
             </Carousel.Slider>
-            <Carousel.Nav className='ui-hidden'>
+            <Carousel.Nav className='ui-hide'>
                 <Carousel.Dots />
             </Carousel.Nav>
         </Carousel>

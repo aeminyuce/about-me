@@ -1,5 +1,6 @@
 import React from 'react';
 import Avatar from '@ui/Avatar';
+import Code from '@ui/Code';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
 import Spacer from '@ui/Spacer';
@@ -36,6 +37,15 @@ export default function () {
         <Heading as='h3' id={title?.hash[0]}>
             {title?.h3[0]}
         </Heading>
+
+        <Code className='ui-round-t'>
+            <Code.Lines>
+{`<Avatar noease size='xs' className=''>
+    <Image lazy src={} aspect='' />
+</Avatar>`}
+            </Code.Lines>
+        </Code>
+        <Code.Panel info='tsx' className='ui-highlight ui-m-1-t ui-round-b' />
 
         <Description>{desc?.circle}</Description>
         <Preview>
