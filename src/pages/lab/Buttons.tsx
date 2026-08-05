@@ -725,6 +725,28 @@ export default function () {
                         </Button>
                     </Button.Wrapper>
                 </Grid.Col>
+                <Grid.Col size={2} offset={5}>
+                    <Button.Wrapper paging type='holder' as='div' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+                        <Button noease ghost pagingPrev>
+                            <SvgIcon as='js' src={IconArrowLeft} />
+                        </Button>
+                        <Button noease ghost active className='ui-fill-dark-100'>{text?.num1}</Button>
+                        <Dropdown className='ui-round-1st'>
+                            <Button ghost>
+                                <SvgIcon as='js' src={IconEllipsisH} />
+                            </Button>
+                            <Dropdown.Menu className='ui-shadow-lg'>
+                                <Dropdown.Item>{text?.num3}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num2}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num4}</Dropdown.Item>
+                                <Dropdown.Item>{text?.num5}</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                        <Button noease ghost pagingNext>
+                            <SvgIcon as='js' src={IconArrowRight} />
+                        </Button>
+                    </Button.Wrapper>
+                </Grid.Col>
             </Grid.Row>
         </Preview>
         </>
