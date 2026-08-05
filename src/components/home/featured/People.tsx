@@ -73,7 +73,7 @@ export const PeopleMore = () => {
 
     return (
         <Card className={`ui-align-c ui-p-15 ui-round ui-shadow ${themeB}`}>
-            <Avatar.Holder className='ui-m-auto ui-squircle-1st ui-ease-1st-layout ui-hover-scale-more-1st'>
+            <Avatar.Holder className='ui-m-auto ui-hover-scale-more-2nd ui-squircle-hover-shadow-1st ui-ease-1st-filter ui-ease-2nd-layout ui-squircle-2nd'>
 
                 {peopleMore?.list.map((item: PeopleMoreListProps) => {
                     const avatarText = item.avatarText;
@@ -81,18 +81,22 @@ export const PeopleMore = () => {
                     const classes = avatarText ? 'ui-fill-dark-100' : undefined;
 
                     return (
-                        <Avatar key={item.jobTitle} noease size='sm' className={classes}>
-                            {avatar && <Image lazy src={avatar} aspect='square' />}
-                            {avatarText && <span>{avatarText}</span>}
-                        </Avatar>
+                        <span key={item.jobTitle}>
+                            <Avatar noease size='sm' className={classes}>
+                                {avatar && <Image lazy src={avatar} aspect='square' />}
+                                {avatarText && <span>{avatarText}</span>}
+                            </Avatar>
+                        </span>
                     )
                 })}
 
-                <Avatar noease size='sm'>
-                    <a href={peopleMore?.moreUrl}>
-                        <span>+{peopleMore?.moreCount}</span>
-                    </a>
-                </Avatar>
+                <span>
+                    <Avatar noease size='sm'>
+                        <a href={peopleMore?.moreUrl}>
+                            <span>+{peopleMore?.moreCount}</span>
+                        </a>
+                    </Avatar>
+                </span>
             </Avatar.Holder>
         </Card>
     )
