@@ -46,14 +46,12 @@ export default function () {
 
                     {profile?.userActivity?.map((item: UserActivityProps, index: number) => (
                         <ListGroup.Item key={`uac-${index}`}>
-                            <a href={item.url}>
-                                <Avatar size='xs' className='ui-round ui-fill-light-300'>
-                                    <span>{item.time}</span>
-                                </Avatar>
-                                <span className='ui-color-black-50 ui-font-13 ui-font-condensed ui-p-5-t ui-block'>
-                                    {item.activity}
-                                </span>
-                            </a>
+                            <Avatar size='xs' className='ui-round ui-fill-light-300'>
+                                <span>{item.time}</span>
+                            </Avatar>
+                            <span className='ui-color-black-50 ui-font-13 ui-font-condensed ui-p-5-t ui-block'>
+                                {item.activity}
+                            </span>
                         </ListGroup.Item>
                     ))}
 
