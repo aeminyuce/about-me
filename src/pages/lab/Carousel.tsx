@@ -162,7 +162,7 @@ export default function () {
                                         <Image lazy fluid='all' src={img[8]} aspect='landscape' className='ui-no-round ui-bring-b' />
                                     </Grid.Col>
                                     <Grid.Col size={4}>
-                                        <Image lazy fluid='all' src={img[6]} aspect='landscape' className='ui-round-l ui-no-round-tr ui-bring-r' />
+                                        <Image lazy fluid='all' src={img[6]} aspect='landscape' className='ui-round-r ui-no-round-tr ui-bring-r' />
                                     </Grid.Col>
                                 </Grid.Row>
 
