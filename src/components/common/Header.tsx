@@ -45,7 +45,7 @@ export default function () {
                     <ToggleDarkMode />
 
                     {showRightSidebar &&
-                        <Button square ghost title='Toggle Menu' className='ui-sidebar-show-r ui-round ui-shown-md'>
+                        <Button square ghost title='Toggle Menu' className='ui-sidebar-show-r ui-align-c ui-round ui-shown-md'>
                             <SvgIcon as='js' src={IconBarsRight} opacity='no' />
                         </Button>
                     }
