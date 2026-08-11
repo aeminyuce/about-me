@@ -4,6 +4,7 @@ import Button from '@ui/Button';
 import Card from '@ui/Card';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
+import Item from '@ui/Item';
 import ListGroup from '@ui/ListGroup';
 import SvgIcon from '@ui/SvgIcon';
 import Tooltip from '@ui/Tooltip';
@@ -47,16 +48,16 @@ export const People = () => {
 
                         return (
                             <ListGroup.Item key={jobTitle}>
-                                <a href={item.url}>
+                                <Button nostyle href={item.url}>
                                     <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
                                     <Avatar size='xs' className={classes}>
                                         {avatar && <Image lazy src={avatar} aspect='square' />}
-                                        {avatarText && <span>{avatarText}</span>}
+                                        {avatarText && <Item as='span'>{avatarText}</Item>}
                                     </Avatar>
 
-                                    <span className='ui-font-ellipsis ui-block'>{jobTitle}</span>
-                                    <span className='ui-color-black-25'>{item.description}</span>
-                                </a>
+                                    <Item as='span' className='ui-font-ellipsis ui-block'>{jobTitle}</Item>
+                                    <Item as='span' className='ui-color-black-25'>{item.description}</Item>
+                                </Button>
                             </ListGroup.Item>
                         )
                     })}
@@ -81,22 +82,22 @@ export const PeopleMore = () => {
                     const classes = avatarText ? 'ui-fill-dark-100' : undefined;
 
                     return (
-                        <span key={item.jobTitle}>
+                        <Item as='span' key={item.jobTitle}>
                             <Avatar noease size='sm' className={classes}>
                                 {avatar && <Image lazy src={avatar} aspect='square' />}
-                                {avatarText && <span>{avatarText}</span>}
+                                {avatarText && <Item as='span'>{avatarText}</Item>}
                             </Avatar>
-                        </span>
+                        </Item>
                     )
                 })}
 
-                <span>
+                <Item as='span'>
                     <Avatar noease size='sm'>
-                        <a href={peopleMore?.moreUrl}>
-                            <span>+{peopleMore?.moreCount}</span>
-                        </a>
+                        <Button nostyle href={peopleMore?.moreUrl}>
+                            <Item as='span'>+{peopleMore?.moreCount}</Item>
+                        </Button>
                     </Avatar>
-                </span>
+                </Item>
             </Avatar.Holder>
         </Card>
     )

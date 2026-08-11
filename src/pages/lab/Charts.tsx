@@ -4,6 +4,7 @@ import DonutChart from '@ui/DonutChart';
 import Dropdown from '@ui/Dropdown';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
+import Item from '@ui/Item';
 import LineChart from '@ui/LineChart';
 import PieChart from '@ui/PieChart';
 import SvgIcon from '@ui/SvgIcon';
@@ -45,7 +46,7 @@ export default function () {
             <Grid.Row vGap='lg' hGap='no'>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineNoGridRoot}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineNoGridRoot}</Item>
                     <LineChart.Holder x={value?.linexDays}>
                         <LineChart.Line>
                             <LineChart.Items y={value?.liney1} />
@@ -55,7 +56,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineRoot}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineRoot}</Item>
                     <LineChart.Holder roots x={value?.linexDays}>
                         <LineChart.Line colorIndex={1}>
                             <LineChart.Items y={value?.liney1} />
@@ -65,7 +66,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineGrid}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineGrid}</Item>
                     <LineChart.Holder grids x={value?.linexDays}>
                         <LineChart.Line colorIndex={2}>
                             <LineChart.Items y={value?.liney1} />
@@ -75,7 +76,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineGridRoot}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineGridRoot}</Item>
                     <LineChart.Holder roots grids x={value?.linexDays}>
                         <LineChart.Line colorIndex={3}>
                             <LineChart.Items y={value?.liney1} />
@@ -91,7 +92,7 @@ export default function () {
             <Grid.Row vGap='lg' hGap='no'>
                 <Grid.Col lg={4} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineRows8x20}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineRows8x20}</Item>
                     <LineChart.Holder roots grids x={value?.linexDays} size={{ rows: 10, rowsHeight: 20 }}>
                         <LineChart.Line colorIndex={4}>
                             <LineChart.Items y={value?.liney1} />
@@ -101,7 +102,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={4} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineRows4x50}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineRows4x50}</Item>
                     <LineChart.Holder roots grids x={value?.linexDays} size={{ rows: 4, rowsHeight: 50 }}>
                         <LineChart.Line colorIndex={5}>
                             <LineChart.Items y={value?.liney1} />
@@ -111,7 +112,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={4} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineRows1x200}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineRows1x200}</Item>
                     <LineChart.Holder roots grids x={value?.linexDays} size={{ rows: 1, rowsHeight: 200 }}>
                         <LineChart.Line colorIndex={6}>
                             <LineChart.Items y={value?.liney1} />
@@ -127,7 +128,7 @@ export default function () {
             <Grid.Row vGap='lg' hGap='no'>
                 <Grid.Col lg={4} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.linePrefixSuffix}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.linePrefixSuffix}</Item>
                     <LineChart.Holder roots x={value?.linexDays} prefix='€' suffix='m' size={{ rows: 5, rowsHeight: 40 }}>
                         <LineChart.Line colorIndex={7}>
                             <LineChart.Items y={value?.liney1} />
@@ -137,7 +138,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={4} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineSepDot}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineSepDot}</Item>
                     <LineChart.Holder roots x={value?.linexDays} prefix='$' sep='.' size={{ rows: 5, rowsHeight: 40 }}>
                         <LineChart.Line colorIndex={8}>
                             <LineChart.Items y={value?.lineyDollars} />
@@ -147,7 +148,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={4} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineNeg}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineNeg}</Item>
                     <LineChart.Holder roots x={value?.linexDays} size={{ rows: 5, rowsHeight: 40 }}>
                         <LineChart.Line colorIndex={9}>
                             <LineChart.Items y={value?.lineyNeg} />
@@ -157,7 +158,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={4} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineNegPos}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineNegPos}</Item>
                     <LineChart.Holder roots x={value?.linexDays} size={{ rows: 5, rowsHeight: 40 }}>
                         <LineChart.Line colorIndex={10}>
                             <LineChart.Items y={value?.lineyNegPos} />
@@ -167,7 +168,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={4} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineZeroRep}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineZeroRep}</Item>
                     <LineChart.Holder roots x={value?.linexDays} size={{ rows: 5, rowsHeight: 40 }}>
                         <LineChart.Line>
                             <LineChart.Items y={value?.lineyZeroRep} />
@@ -177,7 +178,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={4} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineZeroAll}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineZeroAll}</Item>
                     <LineChart.Holder roots x={value?.linexDays} size={{ rows: 5, rowsHeight: 40 }}>
                         <LineChart.Line colorIndex={1}>
                             <LineChart.Items y={value?.lineyZeroAll} />
@@ -229,7 +230,7 @@ export default function () {
             <Grid.Row vGap='lg' hGap='no'>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineLines}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineLines}</Item>
                     <LineChart.Holder roots x={value?.linexDays}>
                         <LineChart.Line dotted colorIndex={3}>
                             <LineChart.Items y={value?.liney2} />
@@ -245,7 +246,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineCurved}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineCurved}</Item>
                     <LineChart.Holder roots x={value?.linexDays}>
                         <LineChart.Line dotted curved colorIndex={3}>
                             <LineChart.Items y={value?.lineyNeg} />
@@ -267,7 +268,7 @@ export default function () {
             <Grid.Row vGap='lg' hGap='no'>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineCircleNo}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineCircleNo}</Item>
                     <LineChart.Holder roots x={value?.linexDays}>
                         <LineChart.Line dashed filled curved noCircles>
                             <LineChart.Items y={value?.liney1} />
@@ -283,7 +284,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineNoRepeat}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineNoRepeat}</Item>
                     <LineChart.Holder roots x={value?.linexDays}>
                         <LineChart.Line dashed noRepeatedCircles>
                             <LineChart.Items y={value?.lineyRep1} />
@@ -302,7 +303,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineRepeatOnly}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineRepeatOnly}</Item>
                     <LineChart.Holder roots x={value?.linexDays}>
                         <LineChart.Line filled onlyRepeated>
                             <LineChart.Items y={value?.lineyRep5} />
@@ -327,7 +328,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineCircleUrl}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineCircleUrl}</Item>
                     <LineChart.Holder roots x={value?.linexDays}>
                         <LineChart.Line filled curved>
                             <LineChart.Items y={value?.liney2} url='#' />
@@ -346,7 +347,7 @@ export default function () {
             <Grid.Row vGap='lg' hGap='no'>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineToggle1}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineToggle1}</Item>
                     <LineChart.Holder roots grids infos x={value?.linexDays}>
                         <LineChart.Line filled name={text?.lineInfo1} colorIndex={5}>
                             <LineChart.Items y={value?.liney2} />
@@ -359,7 +360,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={6} size={12}>
 
-                    <b className='ui-m-5-b ui-nline-block'>{text?.lineToggle2}</b>
+                    <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineToggle2}</Item>
                     <LineChart.Holder roots grids infos x={value?.linexDays}>
                         <LineChart.Line filled noSelected name={text?.lineInfo1} colorIndex={5}>
                             <LineChart.Items y={value?.liney2} />
@@ -393,7 +394,7 @@ export default function () {
                     <Grid.Col size={4} className='ui-align-r'>
                         <Dropdown toggle align='l' className='ui-float-r ui-round-1st'>
                             <Button ghost>
-                                <span>{currentYear}</span>
+                                <Item as='span'>{currentYear}</Item>
                                 <SvgIcon toggle as='js' src={IconAngleDown} l={10} />
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>

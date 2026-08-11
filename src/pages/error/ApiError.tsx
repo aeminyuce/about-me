@@ -1,15 +1,16 @@
 import React from 'react';
 import Button from '@ui/Button';
 import Heading from '@ui/Heading';
+import Item from '@ui/Item';
 
 export default function () {
     return (
-        <div className='ui-align-c ui-set-absolute ui-set-c'>
+        <Item as='div' className='ui-align-c ui-set-absolute ui-set-c'>
             <Heading as='h1' className='ui-font-72'>
                 API Error
             </Heading>
-            <p className='ui-font-22 ui-m-30-b'>Whoops, the API paused or didn’t respond. We’ll be back soon.</p>
+            <Item as='p' className='ui-font-22 ui-m-30-b'>Whoops, the API paused or didn’t respond. We’ll be back soon.</Item>
             <Button className='ui-circle' onClick={() => window.history.back()}>Try Again</Button>
-        </div>
+        </Item>
     )
 }

@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, Fragment, memo, useState, useCallback } from 'react';
 import Button from '@ui/Button';
 import Heading from '@ui/Heading';
+import Item from '@ui/Item';
 import Modal from '@ui/Modal';
 import SvgIcon from '@ui/SvgIcon';
 
@@ -56,14 +57,14 @@ export default function (props: any) {
     }, [spritesList]);
 
     return (
-        <div className='iconslist-icons ui-icons-no-opacity ui-icons-xl'>
+        <Item as='div' className='iconslist-icons ui-icons-no-opacity ui-icons-xl'>
 
             {iconsList.map((item: IconsListProps) => (
                 <Fragment key={item.category}>
                     <Heading as='h2'>
-                        <span className='ui-inline-block'>
+                        <Item as='span' className='ui-inline-block'>
                             {item.category} {iconsSuffix}
-                        </span>
+                        </Item>
                         <Button as='span' size='xs' className='ui-m-10-l ui-p-10-h ui-circle'>
                             {item.length} {iconsSuffix}
                         </Button>
@@ -100,7 +101,7 @@ export default function (props: any) {
 
                 </Modal.Container>
             </Modal>
-        </div>
+        </Item>
     )
 }
 
@@ -111,7 +112,7 @@ const IconItem = memo((props: IconDetailsProps) => {
     return (
         <Button ghost multi noease onClick={onClick}>
             <SvgIcon as='sprite' src={list} symbolId={name} animate={spin} />
-            <span>{name}</span>
+            <Item as='span'>{name}</Item>
         </Button>
     )
 });

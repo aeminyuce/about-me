@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@ui/Button';
+import Item from '@ui/Item';
 import SvgIcon from '@ui/SvgIcon';
 
 // misc
@@ -29,14 +30,14 @@ export default function (props: PreviewProps) {
     }
 
     return (
-        <div className={classes}>
+        <Item as='div' className={classes}>
             {children}
             {play &&
                 <Button size='sm' className={buttonClasses} onClick={play}>
                     <SvgIcon as='js' src={IconPlay} size='xs' r={5} />
-                    <span className='ui-inline-block'>Play</span>
+                    <Item as='span' className='ui-inline-block'>Play</Item>
                 </Button>
             }
-        </div>
+        </Item>
     )
 }

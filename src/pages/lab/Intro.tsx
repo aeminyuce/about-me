@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from '@ui/Grid';
+import Item from '@ui/Item';
 
 // misc
 import { useStoreContext } from '@stores/StoreContext';
@@ -26,10 +27,10 @@ export default function () {
                 {intro?.subTitle && <SubTitle />}
                 {intro?.images && <IntroImages />}
 
-                <div className='ui-m-30-h ui-sm-no-m'>
+                <Item as='div' className='ui-m-30-h ui-sm-no-m'>
                     {intro?.leadText && <LeadText />}
                     {(intro?.textPart1 || intro?.textPart2 || intro?.textPart3) && <Paragraphs />}
-                </div>
+                </Item>
 
             </Grid.Col>
         </Grid.Row>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from '@ui/Grid';
+import Item from '@ui/Item';
 import Skeleton from '@ui/Skeleton';
 
 export default function () {
@@ -10,9 +11,9 @@ export default function () {
                 <Skeleton clear h='92px' aspect='square' className='ui-squircle' />
 
                 <Skeleton index={1} w='80%' h='48px' className='ui-m-30-v ui-round ui-hide-sm' />
-                <div className='ui-p-1-b ui-m-30-v ui-round-1st ui-shown-sm'>
+                <Item as='div' className='ui-p-1-b ui-m-30-v ui-round-1st ui-shown-sm'>
                     <Skeleton index={1} repeat={3} w='96%' h='45px' vGap={5} />
-                </div>
+                </Item>
 
                 <Grid.Row fluid='sm' className='iconslist-images ui-m-auto ui-m-20-b ui-squircle-2nd'>
                     <Grid.Col size={6}>
@@ -24,18 +25,18 @@ export default function () {
                     </Grid.Col>
                 </Grid.Row>
 
-                <div className='ui-m-25-b ui-round-1st ui-hide-md'>
+                <Item as='div' className='ui-m-25-b ui-round-1st ui-hide-md'>
                     <Skeleton index={6} w='96%' h='29px' className='ui-m-15-b' />
                     <Skeleton index={7} w='60%' h='29px' />
-                </div>
-                <div className='ui-p-3-b ui-m-25-b ui-shown-md ui-round-1st'>
+                </Item>
+                <Item as='div' className='ui-p-3-b ui-m-25-b ui-shown-md ui-round-1st'>
                     <Skeleton index={6} repeat={5} w='96%' h='24px' vGap={15} />
-                </div>
+                </Item>
 
-                <div className='ui-m-20-b ui-round-1st'>
+                <Item as='div' className='ui-m-20-b ui-round-1st'>
                     <Skeleton index={11} w='40%' h='27px' className='ui-hide-md' />
                     <Skeleton index={11} w='80%' h='27px' className='ui-shown-md' />
-                </div>
+                </Item>
 
                 <Grid.Row className='ui-m-30-b'>
                     <Grid.Col size={4} offset={4}>
@@ -43,29 +44,29 @@ export default function () {
                     </Grid.Col>
                 </Grid.Row>
 
-                <div className='ui-p-30-t ui-m-20-b ui-round-1st'>
+                <Item as='div' className='ui-p-30-t ui-m-20-b ui-round-1st'>
                     <Skeleton index={12} w='30%' h='27px' className='ui-hide-md' />
                     <Skeleton index={12} w='80%' h='27px' className='ui-shown-md' />
-                </div>
-                <div className='ui-p-30-b ui-round-1st'>
+                </Item>
+                <Item as='div' className='ui-p-30-b ui-round-1st'>
                     <Skeleton index={13} repeat={5} w='172px' h='81px' gap={1} />
-                </div>
+                </Item>
 
-                <div className='ui-p-30-t ui-m-20-b ui-round-1st'>
+                <Item as='div' className='ui-p-30-t ui-m-20-b ui-round-1st'>
                     <Skeleton index={17} w='30%' h='27px' className='ui-hide-md' />
                     <Skeleton index={17} w='80%' h='27px' className='ui-shown-md' />
-                </div>
-                <div className='ui-p-30-b ui-round-1st'>
+                </Item>
+                <Item as='div' className='ui-p-30-b ui-round-1st'>
                     <Skeleton index={18} repeat={19} w='172px' h='81px' gap={1} />
-                </div>
+                </Item>
 
-                <div className='ui-p-30-t ui-m-20-b ui-round-1st'>
+                <Item as='div' className='ui-p-30-t ui-m-20-b ui-round-1st'>
                     <Skeleton index={38} w='30%' h='27px' className='ui-hide-md' />
                     <Skeleton index={38} w='80%' h='27px' className='ui-shown-md' />
-                </div>
-                <div className='ui-p-30-b ui-round-1st'>
+                </Item>
+                <Item as='div' className='ui-p-30-b ui-round-1st'>
                     <Skeleton index={39} repeat={27} w='172px' h='81px' gap={1} />
-                </div>
+                </Item>
             </Grid.Col>
         </Grid.Row>
     )

@@ -5,6 +5,7 @@ import Carousel from '@ui/Carousel';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
+import Item from '@ui/Item';
 import SvgIcon from '@ui/SvgIcon';
 
 // misc
@@ -49,15 +50,15 @@ export default function () {
                             <Grid.Row fluid='xs'>
                                 <Grid.Col size={12}>
 
-                                    <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
-                                        <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                    <Item as='div' className='ui-bring-r ui-ease-layout ui-ease-slow'>
+                                        <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{travel?.titleA}</Heading>
-                                            <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-font-line-6 ui-m-30-b'>
+                                            <Item as='p' className='ui-color-black-50 ui-font-16 ui-font-readable ui-font-line-6 ui-m-30-b'>
                                                 {travel?.textA}
-                                            </p>
+                                            </Item>
                                             <Button fluid='xs' className='ui-circle ui-fill-dark-100'>{travel?.textMore}</Button>
-                                        </div>
-                                    </div>
+                                        </Item>
+                                    </Item>
 
                                 </Grid.Col>
                             </Grid.Row>
@@ -93,15 +94,15 @@ export default function () {
                             <Grid.Row fluid='xs'>
                                 <Grid.Col size={12}>
 
-                                    <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
-                                        <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                    <Item as='div' className='ui-bring-r ui-ease-layout ui-ease-slow'>
+                                        <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{travel?.titleB}</Heading>
-                                            <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-font-line-6 ui-m-30-b'>
+                                            <Item as='p' className='ui-color-black-50 ui-font-16 ui-font-readable ui-font-line-6 ui-m-30-b'>
                                                 {travel?.textB}
-                                            </p>
+                                            </Item>
                                             <Button fluid='xs' className='ui-circle ui-fill-dark-100'>{travel?.textMore}</Button>
-                                        </div>
-                                    </div>
+                                        </Item>
+                                    </Item>
 
                                 </Grid.Col>
                             </Grid.Row>

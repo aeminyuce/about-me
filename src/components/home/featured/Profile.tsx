@@ -3,6 +3,7 @@ import Avatar from '@ui/Avatar';
 import Button from '@ui/Button';
 import Card from '@ui/Card';
 import Image from '@ui/Image';
+import Item from '@ui/Item';
 import ListGroup from '@ui/ListGroup';
 import Notifier from '@ui/Notifier';
 
@@ -18,28 +19,28 @@ export default function () {
 
     return (
         <Card className={`home-profile ui-round ui-shadow ${themeA}`}>
-            <div className='ui-align-c ui-round-t ui-border-b'>
-                <div className='ui-round-t'>
+            <Item as='div' className='ui-align-c ui-round-t ui-border-b'>
+                <Item as='div' className='ui-round-t'>
                     <Image lazy src={info?.cover} aspect='photo' />
-                </div>
+                </Item>
                 <Notifier dataVal={'Idle'}>
                     <Avatar className='ui-squircle'>
                         <Image lazy src={info?.avatar} aspect='square' />
                     </Avatar>
                 </Notifier>
-            </div>
+            </Item>
 
-            <div className='ui-align-c'>
+            <Item as='div' className='ui-align-c'>
                 {info?.name}
-                <div className='ui-color-black-50 ui-font-11 ui-m-10-b'>
+                <Item as='div' className='ui-color-black-50 ui-font-11 ui-m-10-b'>
                     {info?.email}
-                </div>
-                <div className='ui-font-11 ui-m-10-b'>
+                </Item>
+                <Item as='div' className='ui-font-11 ui-m-10-b'>
                     <Button as='span' size='xs' className='ui-p-10-h ui-circle ui-fill-dark-100'>
                         {info?.type}
                     </Button>
-                </div>
-            </div>
+                </Item>
+            </Item>
 
             <ListGroup className={`ui-scroll-v ui-round-b ui-scrollbar-round ui-scrollbar-faded`}>
                 <ListGroup.List avatarSize='xs'>
@@ -47,11 +48,11 @@ export default function () {
                     {profile?.userActivity?.map((item: UserActivityProps, index: number) => (
                         <ListGroup.Item key={`uac-${index}`}>
                             <Avatar size='xs' className='ui-round ui-fill-light-300'>
-                                <span>{item.time}</span>
+                                <Item as='span'>{item.time}</Item>
                             </Avatar>
-                            <span className='ui-color-black-50 ui-font-13 ui-font-condensed ui-p-5-t ui-block'>
+                            <Item as='span' className='ui-color-black-50 ui-font-13 ui-font-condensed ui-p-5-t ui-block'>
                                 {item.activity}
-                            </span>
+                            </Item>
                         </ListGroup.Item>
                     ))}
 

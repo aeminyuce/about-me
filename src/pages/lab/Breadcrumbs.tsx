@@ -3,6 +3,7 @@ import Breadcrumbs from '@ui/Breadcrumbs';
 import Button from '@ui/Button';
 import Dropdown from '@ui/Dropdown';
 import Heading from '@ui/Heading';
+import Item from '@ui/Item';
 import Spacer from '@ui/Spacer';
 import SvgIcon from '@ui/SvgIcon';
 
@@ -42,7 +43,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <b>{text?.item3}</b>
+                    <Item as='b'>{text?.item3}</Item>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -54,7 +55,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <b>{text?.item3}</b>
+                    <Item as='b'>{text?.item3}</Item>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -66,7 +67,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <b>{text?.item3}</b>
+                    <Item as='b'>{text?.item3}</Item>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -80,7 +81,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <b>{text?.item3}</b>
+                    <Item as='b'>{text?.item3}</Item>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -92,7 +93,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <b>{text?.item3}</b>
+                    <Item as='b'>{text?.item3}</Item>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -104,7 +105,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <b>{text?.item3}</b>
+                    <Item as='b'>{text?.item3}</Item>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
         </Preview>
@@ -119,7 +120,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <b>{text?.item3}</b>
+                    <Item as='b'>{text?.item3}</Item>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -133,7 +134,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <b>{text?.item3}</b>
+                    <Item as='b'>{text?.item3}</Item>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
 
@@ -147,7 +148,7 @@ export default function () {
                     {text?.item2}
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <b>{text?.item3}</b>
+                    <Item as='b'>{text?.item3}</Item>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
         </Preview>

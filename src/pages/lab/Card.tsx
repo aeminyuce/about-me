@@ -4,6 +4,7 @@ import Card from '@ui/Card';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
+import Item from '@ui/Item';
 import ListGroup from '@ui/ListGroup';
 import Spacer from '@ui/Spacer';
 import SvgIcon from '@ui/SvgIcon';
@@ -57,20 +58,20 @@ export default function () {
                         <Card className='ui-round ui-shadow-lg'>
                             <Card.Side className='ui-p-30'>
                                 <Heading as='h2' className='ui-align-l'>{text?.forestTitle}</Heading>
-                                <p className='ui-font-18 ui-font-light ui-font-readable ui-align-l'>{text?.forest}</p>
+                                <Item as='p' className='ui-font-18 ui-font-light ui-font-readable ui-align-l'>{text?.forest}</Item>
                             </Card.Side>
                             <Card.Side className='ui-set-relative ui-theme-greenYellow'>
                                 <Image lazy fluid='all' src={img[0]} aspect='landscape' className='ui-round-b' />
-                                <div className='ui-p-20 ui-round-more ui-set-absolute ui-set-c ui-fill-light-100 ui-bg-blur'>
-                                    <p className='ui-color-white ui-font-18 ui-m-15-b'>
+                                <Item as='div' className='ui-p-20 ui-round-more ui-set-absolute ui-set-c ui-fill-light-100 ui-bg-blur'>
+                                    <Item as='p' className='ui-color-white ui-font-18 ui-m-15-b'>
                                         <SvgIcon as='js' src={IconTrees} size='xl' />
                                         <Spacer size={5} />
                                         {text?.forestImg}
-                                    </p>
+                                    </Item>
                                     <Button block='sm' className='ui-round ui-fill-dark-100'>
                                         {text?.forestMore}
                                     </Button>
-                                </div>
+                                </Item>
                             </Card.Side>
                         </Card>
                     </Grid.Col>
@@ -79,27 +80,27 @@ export default function () {
                 <Grid.Col size={420} className='ui-p-10 ui-round-1st ui-shadow-lg-1st ui-theme-orangeRed'>
                     <Card className='ui-align-l'>
                         <Card.Side className='ui-set-relative'>
-                            <span className='ui-color-white ui-p-10-v ui-p-20-h ui-m-30 ui-round ui-set-absolute ui-set-b ui-fill-light-200 ui-bg-blur'>
+                            <Item as='span' className='ui-color-white ui-p-10-v ui-p-20-h ui-m-30 ui-round ui-set-absolute ui-set-b ui-fill-light-200 ui-bg-blur'>
                                 <SvgIcon as='js' src={IconTrophyStar} size='lg' r={10} />
                                 {text?.raceWinner}
-                            </span>
+                            </Item>
                             <Image lazy fluid='all' src={img[1]} aspect='landscape' className='ui-round-t' />
                         </Card.Side>
                         <Card.Side className='ui-p-10-h ui-p-15-v'>
                             <Heading as='h4'>{text?.raceTitle}</Heading>
-                            <p className='ui-color-black-50'>{text?.race}</p>
+                            <Item as='p' className='ui-color-black-50'>{text?.race}</Item>
                         </Card.Side>
                         <Card.Side>
                             <ListGroup>
                                 <ListGroup.List>
                                     <ListGroup.Item>
-                                        <a href='#'>{text?.raceUrl1}</a>
+                                        <Button nostyle href='#'>{text?.raceUrl1}</Button>
                                     </ListGroup.Item>
                                     <ListGroup.Item>
-                                        <a href='#'>{text?.raceUrl2}</a>
+                                        <Button nostyle href='#'>{text?.raceUrl2}</Button>
                                     </ListGroup.Item>
                                     <ListGroup.Item>
-                                        <a href='#'>{text?.raceUrl3}</a>
+                                        <Button nostyle href='#'>{text?.raceUrl3}</Button>
                                     </ListGroup.Item>
                                 </ListGroup.List>
                             </ListGroup>
@@ -205,7 +206,7 @@ export default function () {
                             {text?.ticket2}
                         </Card.Side>
                         <Card.Side className='ui-p-15 ui-fill-light-100'>
-                            <a href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</a>
+                            <Button nostyle href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</Button>
                         </Card.Side>
                     </Card>
                 </Grid.Col>
@@ -224,7 +225,7 @@ export default function () {
                             {text?.ticket2}
                         </Card.Side>
                         <Card.Side className='ui-p-15'>
-                            <a href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</a>
+                            <Button nostyle href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</Button>
                         </Card.Side>
                     </Card>
                 </Grid.Col>
@@ -243,7 +244,7 @@ export default function () {
                             {text?.ticket2}
                         </Card.Side>
                         <Card.Side className='ui-p-15'>
-                            <a href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</a>
+                            <Button nostyle href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</Button>
                         </Card.Side>
                     </Card>
                 </Grid.Col>
@@ -272,7 +273,7 @@ export default function () {
                                 <Grid.Row gap='lg'>
                                     <Grid.Col size={12}>
                                         <Heading as='h3'>{text?.museumTitle}</Heading>
-                                        <p className='ui-font-readable ui-m-20-b'>{text?.museum}</p>
+                                        <Item as='p' className='ui-font-readable ui-m-20-b'>{text?.museum}</Item>
                                         <Button.Wrapper as='span' ease='1st' className='ui-circle-1st'>
                                             <Button noease as='span' size='xs' className='ui-p-10-h ui-m-5-r'>{text?.museumHash1}</Button>
                                             <Button noease as='span' size='xs' className='ui-p-10-h'>{text?.museumHash2}</Button>
@@ -318,9 +319,9 @@ export default function () {
             <Card closable className='ui-shadow'>
                 <Grid.Static fluid='no'>
                     <Grid.Col size={72} className='ui-set-relative'>
-                        <span className='ui-set-absolute ui-set-c'>
+                        <Item as='span' className='ui-set-absolute ui-set-c'>
                             <SvgIcon as='js' src={IconAlertCircle} size='lg' animate='wiggle' />
-                        </span>
+                        </Item>
                     </Grid.Col>
                     <Grid.Row gap='lg'>
                         <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.info}</Grid.Col>
@@ -331,9 +332,9 @@ export default function () {
             <Card closable className='ui-theme-greenYellow ui-fill-light-200'>
                 <Grid.Static fluid='no'>
                     <Grid.Col size={72} className='ui-set-relative'>
-                        <span className='ui-set-absolute ui-set-c'>
+                        <Item as='span' className='ui-set-absolute ui-set-c'>
                             <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' className='ui-text' />
-                        </span>
+                        </Item>
                     </Grid.Col>
                     <Grid.Row gap='lg'>
                         <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.success}</Grid.Col>
@@ -344,9 +345,9 @@ export default function () {
             <Card closable className='ui-theme-yellowOrange ui-fill-light-200'>
                 <Grid.Static fluid='no'>
                     <Grid.Col size={72} className='ui-set-relative'>
-                        <span className='ui-set-absolute ui-set-c'>
+                        <Item as='span' className='ui-set-absolute ui-set-c'>
                             <SvgIcon as='js' src={IconAlertShield} size='lg' animate='pop' className='ui-text' />
-                        </span>
+                        </Item>
                     </Grid.Col>
                     <Grid.Row gap='lg'>
                         <Grid.Col size={12} className='ui-p-15-v ui-no-p-l'>{text?.warning}</Grid.Col>
@@ -357,9 +358,9 @@ export default function () {
             <Card closable className='ui-theme-red ui-fill-light-200'>
                 <Grid.Static fluid='no'>
                     <Grid.Col size={72} className='ui-set-relative'>
-                        <span className='ui-set-absolute ui-set-c'>
+                        <Item as='span' className='ui-set-absolute ui-set-c'>
                             <SvgIcon as='js' src={IconRemoveShield} size='lg' animate='elastic' className='ui-text' />
-                        </span>
+                        </Item>
                     </Grid.Col>
                     <Grid.Row gap='lg'>
                         <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.danger}</Grid.Col>
@@ -380,17 +381,17 @@ export default function () {
 
                     <Card type='success' closable className='ui-p-15'>
                         <Heading as='h4'>{text?.successTitle}</Heading>
-                        <p className='ui-text-readable'>{text?.success}</p>
+                        <Item as='p' className='ui-text-readable'>{text?.success}</Item>
                     </Card>
 
                     <Card type='warning' closable className='ui-p-15'>
                         <Heading as='h4'>{text?.warningTitle}</Heading>
-                        <p className='ui-text-readable'>{text?.warning}</p>
+                        <Item as='p' className='ui-text-readable'>{text?.warning}</Item>
                     </Card>
 
                     <Card type='danger' closable className='ui-p-15'>
                         <Heading as='h4'>{text?.dangerTitle}</Heading>
-                        <p className='ui-text-readable'>{text?.danger}</p>
+                        <Item as='p' className='ui-text-readable'>{text?.danger}</Item>
                     </Card>
 
                 </Grid.Col>
@@ -398,17 +399,17 @@ export default function () {
 
                     <Card type='success' closable className='ui-p-15 ui-theme-green ui-fill-light-100'>
                         <Heading as='h4'>{text?.successTitle}</Heading>
-                        <p className='ui-text-readable'>{text?.success}</p>
+                        <Item as='p' className='ui-text-readable'>{text?.success}</Item>
                     </Card>
 
                     <Card type='warning' closable className='ui-p-15 ui-theme-yellow ui-fill-light-100'>
                         <Heading as='h4'>{text?.warningTitle}</Heading>
-                        <p className='ui-text-readable'>{text?.warning}</p>
+                        <Item as='p' className='ui-text-readable'>{text?.warning}</Item>
                     </Card>
 
                     <Card type='danger' closable className='ui-p-15 ui-theme-red ui-fill-light-100'>
                         <Heading as='h4'>{text?.dangerTitle}</Heading>
-                        <p className='ui-text-readable'>{text?.danger}</p>
+                        <Item as='p' className='ui-text-readable'>{text?.danger}</Item>
                     </Card>
 
                 </Grid.Col>

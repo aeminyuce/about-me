@@ -1,6 +1,7 @@
 import React from 'react';
 import Alerts from '@ui/Alerts';
 import Heading from '@ui/Heading';
+import Item from '@ui/Item';
 import SvgIcon from '@ui/SvgIcon';
 
 // misc
@@ -36,14 +37,14 @@ export default function () {
                 msg: text?.simple,
             });
         }}>
-            <div className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 300px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
-                <div className='ui-dialog-msg'>{text?.simple}</div>
-                <div className='ui-dialog-buttons ui-ease-1st-bg'>
-                    <div className='ui-ease-1st-bg'>
+            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 300px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
+                <Item as='div' className='ui-dialog-msg'>{text?.simple}</Item>
+                <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
+                    <Item as='div' className='ui-ease-1st-bg'>
                         <button className='ui-dialog-success' value='success'>{text?.ok}</button>
-                    </div>
-                </div>
-            </div>
+                    </Item>
+                </Item>
+            </Item>
         </Preview>
 
         <Description>{desc?.dlg_singleBtn}</Description>
@@ -53,14 +54,14 @@ export default function () {
                 success: text?.got,
             });
         }}>
-            <div className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 320px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
-                <div className='ui-dialog-msg'>{text?.beOk}</div>
-                <div className='ui-dialog-buttons ui-ease-1st-bg'>
-                    <div className='ui-ease-1st-bg'>
+            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 320px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
+                <Item as='div' className='ui-dialog-msg'>{text?.beOk}</Item>
+                <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
+                    <Item as='div' className='ui-ease-1st-bg'>
                         <button className='ui-dialog-success' value='success'>{text?.got}</button>
-                    </div>
-                </div>
-            </div>
+                    </Item>
+                </Item>
+            </Item>
         </Preview>
 
         <Description>{desc?.dlg_twoBtn}</Description>
@@ -71,18 +72,18 @@ export default function () {
                 error: text?.no,
             });
         }}>
-            <div className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 450px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 450px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
-                <div className='ui-dialog-msg'>{text?.remove}</div>
-                <div className='ui-dialog-buttons ui-ease-1st-bg'>
-                    <div className='ui-ease-1st-bg'>
+                <Item as='div' className='ui-dialog-msg'>{text?.remove}</Item>
+                <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
+                    <Item as='div' className='ui-ease-1st-bg'>
                         <button className='ui-dialog-success' value='success'>{text?.yes}</button>
                         <button className='ui-dialog-error' value='error'>{text?.no}</button>
-                    </div>
-                </div>
-            </div>
+                    </Item>
+                </Item>
+            </Item>
         </Preview>
 
         <Description>{desc?.dlg_threeBtn}</Description>
@@ -97,20 +98,20 @@ export default function () {
                 }
             });
         }}>
-            <div className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 492px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 492px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
-                <div className='ui-dialog-msg'>{text?.download}</div>
-                <div className='ui-dialog-buttons ui-ease-1st-bg'>
+                <Item as='div' className='ui-dialog-msg'>{text?.download}</Item>
+                <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
                     <button className='ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover' value='0'>{text?.maybe}</button>
                     <button className='ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover' value='1'>{text?.later}</button>
-                    <div className='ui-ease-1st-bg'>
+                    <Item as='div' className='ui-ease-1st-bg'>
                         <button className='ui-dialog-success' value='success'>{text?.yes}</button>
                         <button className='ui-dialog-error' value='error'>{text?.no}</button>
-                    </div>
-                </div>
-            </div>
+                    </Item>
+                </Item>
+            </Item>
         </Preview>
 
         <Description>{desc?.dlg_callback}</Description>
@@ -124,18 +125,18 @@ export default function () {
                 }
             });
         }}>
-            <div className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 280px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 280px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
-                <div className='ui-dialog-msg'>{text?.alert}</div>
-                <div className='ui-dialog-buttons ui-ease-1st-bg'>
-                    <div className='ui-ease-1st-bg'>
+                <Item as='div' className='ui-dialog-msg'>{text?.alert}</Item>
+                <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
+                    <Item as='div' className='ui-ease-1st-bg'>
                         <button className='ui-dialog-success' value='success'>{text?.yes}</button>
                         <button className='ui-dialog-error' value='error'>{text?.no}</button>
-                    </div>
-                </div>
-            </div>
+                    </Item>
+                </Item>
+            </Item>
         </Preview>
 
         <Heading as='h3' id={title?.hash[1]}>
@@ -150,15 +151,15 @@ export default function () {
                 theme: type,
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-ct' style={{ transform: 'translate(-50%, 52px) scale(0.95)', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-ct' style={{ transform: 'translate(-50%, 52px) scale(0.95)', zIndex: 'unset' }}>
                 {text?.danger}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-ct' style={{ transform: 'translate(-50%, 26px) scale(0.97)', zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-ct' style={{ transform: 'translate(-50%, 26px) scale(0.97)', zIndex: 'unset' }}>
                 {text?.warning}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-ct' style={{ transform: 'translateX(-50%)', zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-ct' style={{ transform: 'translateX(-50%)', zIndex: 'unset' }}>
                 {text?.success}
-            </div>
+            </Item>
         </Preview>
 
         <Description>{desc?.msg_bottom}</Description>
@@ -170,15 +171,15 @@ export default function () {
                 pos: 'cb',
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-cb' style={{ transform: 'translate(-50%, -52px) scale(0.95)', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-cb' style={{ transform: 'translate(-50%, -52px) scale(0.95)', zIndex: 'unset' }}>
                 {text?.success}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-cb' style={{ transform: 'translate(-50%, -26px) scale(0.97)', zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-cb' style={{ transform: 'translate(-50%, -26px) scale(0.97)', zIndex: 'unset' }}>
                 {text?.warning}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-cb' style={{ zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-cb' style={{ zIndex: 'unset' }}>
                 {text?.danger}
-            </div>
+            </Item>
         </Preview>
 
         <Description>{desc?.msg_tl}</Description>
@@ -190,15 +191,15 @@ export default function () {
                 pos: 'tl',
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-tl' style={{ transform: 'translateY(52px) scale(0.95)', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-tl' style={{ transform: 'translateY(52px) scale(0.95)', zIndex: 'unset' }}>
                 {text?.danger}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-tl' style={{ transform: 'translateY(26px) scale(0.97)', zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-tl' style={{ transform: 'translateY(26px) scale(0.97)', zIndex: 'unset' }}>
                 {text?.success}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-tl' style={{ zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-tl' style={{ zIndex: 'unset' }}>
                 {text?.warning}
-            </div>
+            </Item>
         </Preview>
 
         <Description>{desc?.msg_tr}</Description>
@@ -210,15 +211,15 @@ export default function () {
                 pos: 'tr',
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-tr' style={{ transform: 'translateY(52px) scale(0.95)', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-tr' style={{ transform: 'translateY(52px) scale(0.95)', zIndex: 'unset' }}>
                 {text?.danger}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-tr' style={{ transform: 'translateY(26px) scale(0.97)', zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-tr' style={{ transform: 'translateY(26px) scale(0.97)', zIndex: 'unset' }}>
                 {text?.warning}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-tr' style={{ zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-tr' style={{ zIndex: 'unset' }}>
                 {text?.success}
-            </div>
+            </Item>
         </Preview>
 
         <Description>{desc?.msg_br}</Description>
@@ -230,15 +231,15 @@ export default function () {
                 pos: 'br',
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-br' style={{ transform: 'translateY(-52px) scale(0.95)', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-br' style={{ transform: 'translateY(-52px) scale(0.95)', zIndex: 'unset' }}>
                 {text?.success}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-br' style={{ transform: 'translateY(-26px) scale(0.97)', zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-br' style={{ transform: 'translateY(-26px) scale(0.97)', zIndex: 'unset' }}>
                 {text?.warning}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-br' style={{ zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-br' style={{ zIndex: 'unset' }}>
                 {text?.danger}
-            </div>
+            </Item>
         </Preview>
 
         <Description>{desc?.msg_bl}</Description>
@@ -250,15 +251,15 @@ export default function () {
                 pos: 'bl',
             })
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-bl' style={{ transform: 'translateY(-52px) scale(0.95)', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-bl' style={{ transform: 'translateY(-52px) scale(0.95)', zIndex: 'unset' }}>
                 {text?.danger}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-bl' style={{ transform: 'translateY(-26px) scale(0.97)', zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-bl' style={{ transform: 'translateY(-26px) scale(0.97)', zIndex: 'unset' }}>
                 {text?.success}
-            </div>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-bl' style={{ zIndex: 'unset' }}>
+            </Item>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-bl' style={{ zIndex: 'unset' }}>
                 {text?.warning}
-            </div>
+            </Item>
         </Preview>
 
         <Description>{desc?.msg_action}</Description>
@@ -272,10 +273,10 @@ export default function () {
                 }
             })
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <div className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-theme-blue ui-fill-dark-100 ui-cb ui-has-action' style={{ zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-theme-blue ui-fill-dark-100 ui-cb ui-has-action' style={{ zIndex: 'unset' }}>
                 {text?.action}
                 <button className='ui-hover-l-more ui-ease-layout'>{text?.actionName}</button>
-            </div>
+            </Item>
         </Preview>
         </>
     )

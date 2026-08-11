@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router';
 import Heading from '@ui/Heading';
 import Grid from '@ui/Grid';
 import Image from '@ui/Image';
+import Item from '@ui/Item';
 
 // misc
 import { useStoreContext } from '@stores/StoreContext';
@@ -37,11 +38,11 @@ export default function () {
                             case 'postTitle':
                                 return <Heading key={name} as='h1'>{item?.data?.text}</Heading>;
                             case 'postDate':
-                                return <div key={name}>{item?.data?.text}</div>;
+                                return <Item key={name} as='div'>{item?.data?.text}</Item>;
                             case 'postImage':
                                 return <Image key={name} lazy fluid='all' src={item?.data?.url} alt={item?.data?.alt} aspect='photo' className='blog-post-image ui-round ui-shadow-lg' />;
                             case 'text':
-                                return <p key={name} className='ui-font-readable'>{item?.data?.text}</p>;
+                                return <Item as='p' key={name} className='ui-font-readable'>{item?.data?.text}</Item>;
                             default:
                                 break;
                         }

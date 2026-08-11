@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@ui/Button';
 import Card from '@ui/Card';
 import Image from '@ui/Image';
+import Item from '@ui/Item';
 import ListGroup from '@ui/ListGroup';
 import SvgIcon from '@ui/SvgIcon';
 
@@ -18,23 +19,23 @@ export default function () {
     return (
         <Card className={`home-race ui-round ui-shadow ${themeB}`}>
             <Card.Side className='ui-set-relative'>
-                <span className='ui-color-white ui-p-10-v ui-p-15-h ui-m-20 ui-round ui-set-absolute ui-set-b ui-fill-light-200 ui-bg-blur'>
+                <Item as='span' className='ui-color-white ui-p-10-v ui-p-15-h ui-m-20 ui-round ui-set-absolute ui-set-b ui-fill-light-200 ui-bg-blur'>
                     <SvgIcon as='js' src={IconTrophyStar} size='md' r={10} />
                     {race?.winner}
-                </span>
+                </Item>
                 <Image lazy fluid='all' src={race?.img} aspect='landscape' className='ui-round-t' />
             </Card.Side>
             <Card.Side className='ui-color-black-50 ui-p-15'>
-                <p className='ui-font-line-2'>{race?.text}</p>
+                <Item as='p' className='ui-font-line-2'>{race?.text}</Item>
             </Card.Side>
             <Card.Side>
                 <ListGroup>
                     <ListGroup.List>
                         <ListGroup.Item className='ui-p-15-h'>
-                            <a href='#'>{race?.url1}</a>
+                            <Button nostyle href='#'>{race?.url1}</Button>
                         </ListGroup.Item>
                         <ListGroup.Item className='ui-p-15-h'>
-                            <a href='#'>{race?.url2}</a>
+                            <Button nostyle href='#'>{race?.url2}</Button>
                         </ListGroup.Item>
                     </ListGroup.List>
                 </ListGroup>

@@ -262,10 +262,10 @@ export default function () {
                     <Button noease active>{text?.active2}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <input type='text' className='ui-btn ui-btn-active' defaultValue={text?.active3} />
+                    <Button active as='input' type='button' defaultValue={text?.active3} />
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <input type='submit' className='ui-btn ui-btn-active' defaultValue={text?.active4} />
+                    <Button active as='input' type='submit' defaultValue={text?.active4} />
                 </Grid.Col>
 
                 <Grid.Col xl={3} lg={3} size={6}>
@@ -275,10 +275,10 @@ export default function () {
                     <Button noease passive>{text?.passive2}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <input type='button' className='ui-btn ui-btn-passive' defaultValue={text?.passive3} />
+                    <Button passive as='input' type='button' defaultValue={text?.passive3} />
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <input type='submit' className='ui-btn ui-btn-passive' defaultValue={text?.passive4} />
+                    <Button passive as='input' type='submit' defaultValue={text?.passive4} />
                 </Grid.Col>
             </Grid.Row>
         </Preview>

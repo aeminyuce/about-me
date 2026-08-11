@@ -4,6 +4,7 @@ import Card from '@ui/Card';
 import Dropdown from '@ui/Dropdown';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
+import Item from '@ui/Item';
 import LineChart from '@ui/LineChart';
 import SvgIcon from '@ui/SvgIcon';
 import Tab from '@ui/Tab';
@@ -33,7 +34,7 @@ export default function () {
                     <Grid.Col size={4} className='ui-align-r'>
                         <Dropdown toggle align='l' className='ui-float-r ui-round-1st'>
                             <Button ghost className='ui-fill-dark-100'>
-                                <span>{currentYear}</span>
+                                <Item as='span'>{currentYear}</Item>
                                 <SvgIcon toggle as='js' src={IconAngleDown} l={10} />
                             </Button>
                             <Dropdown.Menu className='ui-shadow-lg'>

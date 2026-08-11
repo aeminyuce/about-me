@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from '@ui/Grid';
+import Item from '@ui/Item';
 import Skeleton from '@ui/Skeleton';
 
 export default function () {
@@ -20,9 +21,9 @@ export default function () {
 
                         <Grid.Col xl={8} lg={8} size={10} className='ui-round-1st'>
                             <Skeleton index={4} w='100%' h='18px' className='ui-m-5-v ui-hide-md' />
-                            <div className='ui-round-1st ui-shown-md'>
+                            <Item as='div' className='ui-round-1st ui-shown-md'>
                                 <Skeleton index={5} repeat={2} w='100%' h='18px' vGap={5} className='ui-m-5-t' />
-                            </div>
+                            </Item>
                             <Skeleton index={7} w='60%' h='18px' className='ui-m-10-t ui-m-5-b' />
                         </Grid.Col>
 
@@ -35,14 +36,14 @@ export default function () {
             <Grid.Row>
 
                 <Grid.Col size={8} push={2} className='ui-m-30-v ui-align-c ui-round-2nd'>
-                    <div className='ui-p-1-t ui-hide-md'>
+                    <Item as='div' className='ui-p-1-t ui-hide-md'>
                         <Skeleton index={9} w='100%' h='22px' className='ui-m-5-v' />
                         <Skeleton index={10} w='86%' h='22px' className='ui-m-5-t ui-m-20-b' />
-                    </div>
-                    <div className='ui-shown-md'>
+                    </Item>
+                    <Item as='div' className='ui-shown-md'>
                         <Skeleton index={9} repeat={5} w='100%' h='20px' vGap={5} className='ui-m-5-t' />
                         <Skeleton index={14} w='86%' h='20px' className='ui-m-10-t ui-m-20-b' />
-                    </div>
+                    </Item>
                 </Grid.Col>
 
             </Grid.Row>
@@ -57,12 +58,12 @@ export default function () {
                     </Grid.Col>
 
                     <Grid.Col size={12} className='ui-shown-sm ui-round-2nd'>
-                        <div className='ui-hide-xs'>
+                        <Item as='div' className='ui-hide-xs'>
                             <Skeleton repeat={3} w='calc(33% - 3px)' h='42px' hGap={3} />
-                        </div>
-                        <div className='ui-shown-xs'>
+                        </Item>
+                        <Item as='div' className='ui-shown-xs'>
                             <Skeleton repeat={2} w='calc(50% - 3px)' h='42px' hGap={3} />
-                        </div>
+                        </Item>
                     </Grid.Col>
 
                 </Grid.Row>

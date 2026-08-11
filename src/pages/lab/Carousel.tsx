@@ -4,6 +4,7 @@ import Carousel from '@ui/Carousel';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
+import Item from '@ui/Item';
 import Spacer from '@ui/Spacer';
 import SvgIcon from '@ui/SvgIcon';
 
@@ -67,15 +68,15 @@ export default function () {
                             <Grid.Row fluid='sm'>
                                 <Grid.Col size={12}>
 
-                                    <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                    <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                         <Heading as='h3'>{text?.travelTitle}</Heading>
-                                        <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
+                                        <Item as='p' className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
                                             {text?.travelText1}
                                             <Spacer size={10} />
                                             {text?.travelText1}
-                                        </p>
+                                        </Item>
                                         <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
-                                    </div>
+                                    </Item>
 
                                 </Grid.Col>
                             </Grid.Row>
@@ -111,15 +112,15 @@ export default function () {
                             <Grid.Row fluid='sm'>
                                 <Grid.Col size={12}>
 
-                                    <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                    <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                         <Heading as='h3'>{text?.friendsTitle}</Heading>
-                                        <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
+                                        <Item as='p' className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
                                             {text?.friendsText1}
                                             <Spacer size={10} />
                                             {text?.friendsText2}
-                                        </p>
+                                        </Item>
                                         <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
-                                    </div>
+                                    </Item>
 
                                 </Grid.Col>
                             </Grid.Row>
@@ -170,17 +171,17 @@ export default function () {
                             <Grid.Row fluid='sm'>
                                 <Grid.Col size={12}>
 
-                                    <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
-                                        <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                    <Item as='div' className='ui-bring-r ui-ease-layout ui-ease-slow'>
+                                        <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.travelTitle}</Heading>
-                                            <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
+                                            <Item as='p' className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
                                                 {text?.travelText1}
                                                 <Spacer size={10} />
                                                 {text?.travelText1}
-                                            </p>
+                                            </Item>
                                             <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
-                                        </div>
-                                    </div>
+                                        </Item>
+                                    </Item>
 
                                 </Grid.Col>
                             </Grid.Row>
@@ -216,17 +217,17 @@ export default function () {
                             <Grid.Row fluid='sm'>
                                 <Grid.Col size={12}>
 
-                                    <div className='ui-bring-r ui-ease-layout ui-ease-slow'>
-                                        <div className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                    <Item as='div' className='ui-bring-r ui-ease-layout ui-ease-slow'>
+                                        <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.friendsTitle}</Heading>
-                                            <p className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
+                                            <Item as='div' className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
                                                 {text?.friendsText1}
                                                 <Spacer size={10} />
                                                 {text?.friendsText2}
-                                            </p>
+                                            </Item>
                                             <Button fluid='xs' className='ui-circle'>{text?.more}</Button>
-                                        </div>
-                                    </div>
+                                        </Item>
+                                    </Item>
 
                                 </Grid.Col>
                             </Grid.Row>

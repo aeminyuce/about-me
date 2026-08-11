@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
+import Item from '@ui/Item';
 import SvgIcon from '@ui/SvgIcon';
 
 // misc
@@ -31,7 +32,7 @@ export default function () {
                 </Heading>
 
                 <SvgIcon as='js' src={IconMarker} size='sm' r={5} />
-                <span className='ui-font-16 ui-inline-block'>{api?.home?.aboutMe?.location}</span>
+                <Item as='span' className='ui-font-16 ui-inline-block'>{api?.home?.aboutMe?.location}</Item>
 
                 <PersonalSkills />
                 <GetInTouchButton />

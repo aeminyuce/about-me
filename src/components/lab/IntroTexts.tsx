@@ -1,4 +1,5 @@
 import React from 'react';
+import Item from '@ui/Item';
 import SvgIcon from '@ui/SvgIcon';
 
 // misc
@@ -11,12 +12,12 @@ export const LeadText = () => {
     const { api } = useStoreContext();
 
     return (
-        <div className='ui-p-30 ui-sm-no-p ui-theme-yellowOrange ui-text'>
-            <p className='ui-font-22 ui-font-readable ui-m-25-b'>
+        <Item as='div' className='ui-p-30 ui-sm-no-p ui-theme-yellowOrange ui-text'>
+            <Item as='p' className='ui-font-22 ui-font-readable ui-m-25-b'>
                 {api?.lab?.intro?.leadText}
-            </p>
+            </Item>
             <SvgIcon as='js' src={IconSoundwave} size='xxl' v={30} />
-        </div>
+        </Item>
     )
 }
 
@@ -25,12 +26,12 @@ export const Paragraphs = () => {
     const intro = api?.lab?.intro;
 
     return (
-        <p className='ui-font-18 ui-font-readable ui-p-30-h ui-sm-no-p-h ui-m-30-h'>
+        <Item as='p' className='ui-font-18 ui-font-readable ui-p-30-h ui-sm-no-p-h ui-m-30-h'>
             {intro?.textPart1}
             <br /><br />
             {intro?.textPart2}
             <br /><br />
             {intro?.textPart3}
-        </p>
+        </Item>
     )
 }

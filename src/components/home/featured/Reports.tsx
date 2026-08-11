@@ -3,6 +3,7 @@ import Button from '@ui/Button';
 import Card from '@ui/Card';
 import DonutChart from '@ui/DonutChart';
 import Grid from '@ui/Grid';
+import Item from '@ui/Item';
 import ListGroup from '@ui/ListGroup';
 import ProgressBar from '@ui/ProgressBar';
 import Tab from '@ui/Tab';
@@ -33,9 +34,9 @@ const Report = (props: any) => {
                 </Grid.Col>
             </Grid.Static>
 
-            <div className='ui-color-black-25 ui-m-10-b'>
+            <Item as='div' className='ui-color-black-25 ui-m-10-b'>
                 {getData?.percent}
-            </div>
+            </Item>
 
             <ProgressBar className={`ui-round ${theme}`}>
                 <ProgressBar.Item percent={getData?.progressPercent} className='ui-fill-dark-100'/>
@@ -76,8 +77,8 @@ const ReportsListGroup = memo((props: ReportsListGroupProps) => {
                                 <DonutChart.Item percent={item.chartPercent} className={`ui-stroke ${theme}`} />
                             </DonutChart.Holder>
 
-                            <span className='ui-m-5-t ui-block'>{item.name}</span>
-                            <span className='ui-color-black-50 ui-font-12'>{item.reports}</span>
+                            <Item as='span' className='ui-m-5-t ui-block'>{item.name}</Item>
+                            <Item as='span' className='ui-color-black-50 ui-font-12'>{item.reports}</Item>
                         </ListGroup.Item>
                     )
                 })}

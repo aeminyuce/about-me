@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@ui/Button';
 import Grid from '@ui/Grid';
+import Item from '@ui/Item';
 import Heading from '@ui/Heading';
 import SvgIcon from '@ui/SvgIcon';
 
@@ -31,17 +32,17 @@ export default function (props: IconDetailsProps) {
 
                     <Grid.Col as='dt' size={6} className='ui-color-black-50'>Points count</Grid.Col>
                     <Grid.Col as='dd' size={6}>
-                        <span className='paths-count'></span> points
+                        <Item as='span' className='paths-count'></Item> points
                     </Grid.Col>
 
                     <Grid.Col as='dt' size={6} className='ui-color-black-50'>File size</Grid.Col>
                     <Grid.Col as='dd' size={6}>
-                        <span className='icon-size'></span>kb
+                        <Item as='span' className='icon-size'></Item>kb
                     </Grid.Col>
 
                     <Grid.Col as='dt' size={6} className='ui-color-black-50'>Canvas size</Grid.Col>
                     <Grid.Col as='dd' size={6}>
-                        <span className='icon-canvas'></span>px
+                        <Item as='span' className='icon-canvas'></Item>px
                     </Grid.Col>
 
                     <Grid.Col as='dt' size={6} className='ui-color-black-50'>Designed with</Grid.Col>

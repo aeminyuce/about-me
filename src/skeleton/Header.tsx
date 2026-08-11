@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 import Grid from '@ui/Grid';
+import Item from '@ui/Item';
 import Skeleton from '@ui/Skeleton';
 
 export default function () {
@@ -12,9 +13,9 @@ export default function () {
             <Grid.Row fluid='no'>
 
                 <Grid.Col size={9} md={3} sm={3} xs={3}>
-                    <div className='ui-round-1st ui-hide-md'>
+                    <Item as='div' className='ui-round-1st ui-hide-md'>
                         <Skeleton repeat={5} w='92px' h='42px' hGap={2} />
-                    </div>
+                    </Item>
                     <Skeleton h='42px' aspect='square' className='ui-round ui-shown-md' />
                 </Grid.Col>
 

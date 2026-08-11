@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from '@ui/Grid';
+import Item from '@ui/Item';
 
 // misc
 import type { DescriptionProps } from '@models/Page';
@@ -10,9 +11,9 @@ export default function (props: DescriptionProps) {
     return (
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
-                <p className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
+                <Item as='p' className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
                     {children}
-                </p>
+                </Item>
             </Grid.Col>
         </Grid.Row>
     )

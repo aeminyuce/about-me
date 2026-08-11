@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@ui/Grid';
 import Image from '@ui/Image';
+import Item from '@ui/Item';
 import Modal from '@ui/Modal';
 
 // misc
@@ -19,12 +20,12 @@ export default function () {
                     </Grid.Col>
                     <Grid.Row>
                         <Grid.Col size={12}>
-                            <b className='ui-font-24'>{getInTouch?.title}</b>
-                            <p className='ui-font-16 ui-font-condensed ui-m-10-t'>
+                            <Item as='b' className='ui-font-24'>{getInTouch?.title}</Item>
+                            <Item as='p' className='ui-font-16 ui-font-condensed ui-m-10-t'>
                                 {getInTouch?.messageStart}
-                                <b>{getInTouch?.messageHighlight}</b>
+                                <Item as='b'>{getInTouch?.messageHighlight}</Item>
                                 {getInTouch?.messageEnd}
-                            </p>
+                            </Item>
                         </Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
