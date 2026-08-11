@@ -56,7 +56,7 @@ export default function () {
 
         <Description>{desc?.details}</Description>
         <Preview>
-            <Grid.Row className='ui-align-l ui-round-2nd'>
+            <Grid.Row className='ui-round-2nd'>
                 <Grid.Col lg={{ size: 5, offset: 1 }} size={12}>
                     <Item as='b' className='ui-m-5-b ui-inline-block'>
                         {`${text?.prev}'${dates?.defined1}'`}

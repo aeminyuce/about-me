@@ -178,7 +178,7 @@ export default function () {
                         <Card.Side className='ui-p-15'>
                             {text?.ticket2}
                         </Card.Side>
-                        <Card.Side className='ui-p-15 ui-border-t ui-border-light'>
+                        <Card.Side className='ui-align-c ui-p-15 ui-border-t ui-border-light'>
                             <Button block='all' className='ui-round ui-fill-dark-100'>
                                 {text?.ticketUrl}
                             </Button>
@@ -205,7 +205,7 @@ export default function () {
                         <Card.Side className='ui-p-15'>
                             {text?.ticket2}
                         </Card.Side>
-                        <Card.Side className='ui-p-15 ui-fill-light-100'>
+                        <Card.Side className='ui-align-c ui-p-15 ui-fill-light-100'>
                             <Button nostyle href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</Button>
                         </Card.Side>
                     </Card>
@@ -224,7 +224,7 @@ export default function () {
                         <Card.Side className='ui-p-15 ui-fill-light-100'>
                             {text?.ticket2}
                         </Card.Side>
-                        <Card.Side className='ui-p-15'>
+                        <Card.Side className='ui-align-c ui-p-15'>
                             <Button nostyle href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</Button>
                         </Card.Side>
                     </Card>
@@ -243,7 +243,7 @@ export default function () {
                         <Card.Side className='ui-p-15-h'>
                             {text?.ticket2}
                         </Card.Side>
-                        <Card.Side className='ui-p-15'>
+                        <Card.Side className='ui-align-c ui-p-15'>
                             <Button nostyle href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</Button>
                         </Card.Side>
                     </Card>

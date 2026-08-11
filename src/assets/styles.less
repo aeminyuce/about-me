@@ -21,7 +21,11 @@
 ._mode-vars(._page-vars(), ._page-vars-dark());
 
 .color-dribbble { color: @dribbble-color; }
-.preview { text-align: @preview-text-align; ._bg-var(preview-bg); }
+.preview {
+    ._bg-var(preview-bg);
+
+    &:not([class*="ui-align-"]) { text-align: @preview-text-align; }
+}
 
 @media (@md-start) {
     .preview { padding: @preview-padding; }
