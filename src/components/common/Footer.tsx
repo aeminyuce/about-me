@@ -3,7 +3,7 @@ import Grid from '@ui/Grid';
 
 export default function () {
     return (
-        <Grid.Container as='footer' ariaLabel='Main site footer' className='ui-border-t ui-border-light'>
+        <Grid.Container as='footer' aria-label='Main site footer' className='ui-border-t ui-border-light'>
             <Grid.Row fluid='no'>
 
                 <Grid.Col size={12} className='ui-align-c'>

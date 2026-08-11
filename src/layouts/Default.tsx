@@ -13,7 +13,7 @@ export default function () {
         <Header />
 
         {/* main */}
-        <Grid.Container as='main' ariaLabel='Main site content' noGutter='all'>
+        <Grid.Container as='main' aria-label='Main site content' noGutter='all'>
             <Grid.Container fixed='xl' as='div'>
 
                 {/* contents */}
