@@ -29,8 +29,8 @@ export interface StoreProviderProps {
 
 // Page Title
 export interface PageTitleProps {
-    title: string;
     children: ReactNode;
+    title: string;
 }
 
 // Header
