@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@ui/Button';
+import Item from '@ui/Item';
 import SvgIcon from '@ui/SvgIcon';
 
 // misc
@@ -14,7 +15,7 @@ export default function () {
     const { api } = useStoreContext();
 
     return (
-        <nav aria-label='Main site navigation' className='ui-hide-md'>
+        <Item as='nav' aria-label='Main site navigation' className='ui-hide-md'>
             <Button.Wrapper as='span' ease='1st' className='ui-sidebar-add-l ui-md-align-l ui-round-1st'>
 
                 {api?.header?.headerLinks?.map((item: HeaderLinksProps) => {
@@ -33,6 +34,6 @@ export default function () {
                 })}
 
             </Button.Wrapper>
-        </nav>
+        </Item>
     )
 }

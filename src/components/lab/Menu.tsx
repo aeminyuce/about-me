@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link, useLocation } from 'react-router';
 import Card from '@ui/Card';
+import Item from '@ui/Item';
 import Listing from '@ui/Listing';
 
 // misc
@@ -16,7 +17,7 @@ export default function () {
 
     return (
         <Card className='ui-color-black-50 ui-p-15 ui-round ui-shadow ui-set-sticky ui-hide-md'>
-            <nav aria-label='Lab page navigation'>
+            <Item as='nav' aria-label='Lab page navigation'>
                 <Listing type='unstyled' space={15} className='lab-menu ui-font-hoverline-2nd ui-theme-yellowOrange ui-sidebar-add-r'>
 
                     {menu.map((item: LabMenuProps) => {
@@ -52,7 +53,7 @@ export default function () {
                     })}
 
                 </Listing>
-            </nav>
+            </Item>
         </Card>
     )
 }

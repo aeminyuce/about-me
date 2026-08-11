@@ -3,6 +3,7 @@ import { useLocation } from 'react-router';
 import Button from '@ui/Button';
 import Carousel from '@ui/Carousel';
 import Grid from '@ui/Grid';
+import Item from '@ui/Item';
 
 // misc
 import { useStoreContext } from '@stores/StoreContext';
@@ -17,16 +18,16 @@ export default function () {
                 <Grid.Row>
                     <Grid.Col size={12} className='ui-hide-sm'>
 
-                        <nav aria-label='Home page desktop navigation' className='ui-ease-1st-btn ui-round-1st'>
+                        <Item as='nav' aria-label='Home page desktop navigation' className='ui-ease-1st-btn ui-round-1st'>
                             <NavDesktopLinks />
-                        </nav>
+                        </Item>
 
                     </Grid.Col>
                     <Grid.Col size={12} className='ui-ease-1st-btn ui-shown-sm'>
 
-                        <nav aria-label='Home page mobile navigation'>
+                        <Item as='nav' aria-label='Home page mobile navigation'>
                             <NavMobileLinks />
-                        </nav>
+                        </Item>
 
                     </Grid.Col>
                 </Grid.Row>
