@@ -19,9 +19,9 @@ export default function () {
             <Grid.Col xl={{ size: 8, push: 2 }} lg={{ size: 8, push: 2 }} size={12} className='ui-p-30-v'>
                 <Button.Wrapper as='section' ease='2nd' block='2nd' className='blog-archive ui-align-l ui-round-2nd'>
 
-                    {archives && Object.keys(archives).sort((a, b) => Number(b) - Number(a))
-                        .map((name: string, index: number) => {
-                            const item = archives[name][0];
+                    {archives && Object.entries(archives).sort((a, b) => Number(b[0]) - Number(a[0]))
+                        .map(([name, value]: [string, any], index: number) => {
+                            const item = value[0];
                             if (!item) return;
 
                             const image = item?.postImage;
