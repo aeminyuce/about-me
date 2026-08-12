@@ -32,21 +32,38 @@ export default function () {
             <Grid.Row>
                 <Grid.Col xl={{ size: 8, push: 2 }} lg={{ size: 8, push: 2 }} size={12} className='blog-post ui-p-30-v'>
 
-                    {post && blog[post]?.map((item: any) => {
-                        const name = item?.type;
-                        switch (name) {
-                            case 'postTitle':
-                                return <Heading key={name} as='h1'>{item?.data?.text}</Heading>;
-                            case 'postDate':
-                                return <Item key={name} as='div'>{item?.data?.text}</Item>;
-                            case 'postImage':
-                                return <Image key={name} lazy fluid='all' src={item?.data?.url} alt={item?.data?.alt} aspect='photo' className='blog-post-image ui-round ui-shadow-lg' />;
-                            case 'text':
-                                return <Item as='p' key={name} className='ui-font-readable'>{item?.data?.text}</Item>;
-                            default:
-                                break;
-                        }
-                    })}
+                    <Item as='article'>
+                        {post && blog[post]?.map((item: any) => {
+                            const name = item?.type;
+                            switch (name) {
+                                case 'postTitle':
+                                    return (
+                                        <Item as='header' className='ui-m-15-b'>
+                                            <Heading key={name} as='h1'>{item?.data?.text}</Heading>
+                                        </Item>
+                                    );
+
+                                case 'postDate':
+                                    return <Item key={name} as='time' className='ui-font-16 ui-block'>{item?.data?.text}</Item>;
+
+                                case 'postImage':
+                                    return (
+                                        <Image.Group className='blog-post-image'>
+                                            <Image key={name} lazy fluid='all' src={item?.data?.url} alt={item?.data?.alt} aspect='photo' className='ui-round ui-shadow-lg' />
+                                            <Image.Caption className="ui-color-black-50 ui-font-italic">
+                                                {pageTitle}
+                                            </Image.Caption>
+                                        </Image.Group>
+                                    );
+
+                                case 'text':
+                                    return <Item as='p' key={name} className='ui-font-readable'>{item?.data?.text}</Item>;
+
+                                default:
+                                    break;
+                            }
+                        })}
+                    </Item>
 
                 </Grid.Col>
             </Grid.Row>
