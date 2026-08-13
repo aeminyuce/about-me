@@ -28,9 +28,9 @@ const LabCharts = lazy(() => import( /* webpackChunkName: 'lab/Charts' */ './lab
 const Icons= lazy(() => import( /* webpackChunkName: 'Icons' */ './Icons' ));
 const Blog= lazy(() => import( /* webpackChunkName: 'Blog' */ './Blog' ));
 
-const PageApiError= lazy(() => import( /* webpackChunkName: 'error/PageApiError' */ './error/ApiError' ));
-const Page500= lazy(() => import( /* webpackChunkName: 'error/Page500' */ './error/500' ));
-const Page404= lazy(() => import( /* webpackChunkName: 'error/Page404' */ './error/404' ));
+const ApiError= lazy(() => import( /* webpackChunkName: 'error/PageApiError' */ './error/ApiError' ));
+const ServerError= lazy(() => import( /* webpackChunkName: 'error/Page500' */ './error/ServerError' ));
+const NotFound= lazy(() => import( /* webpackChunkName: 'error/Page404' */ './error/NotFound' ));
 const ErrorBoundary= lazy(() => import( /* webpackChunkName: 'error/ErrorBoundary' */ './error/ErrorBoundary' ));
 
 export const router = createBrowserRouter([
@@ -142,20 +142,20 @@ export const router = createBrowserRouter([
                 element: <Error />,
                 children: [
                     {
-                        path: 'api-error',
-                        element: (<PageTitle title="API Error"><PageApiError /></PageTitle>),
+                        path: 'ApiError',
+                        element: (<PageTitle title="API Error"><ApiError /></PageTitle>),
                     },
                     {
-                        path: '500',
-                        element: (<PageTitle title="Server Error"><Page500 /></PageTitle>),
+                        path: 'ServerError',
+                        element: (<PageTitle title="Server Error"><ServerError /></PageTitle>),
                     },
                     {
-                        path: '404',
-                        element: (<PageTitle title="Not Found"><Page404 /></PageTitle>),
+                        path: 'NotFound',
+                        element: (<PageTitle title="Not Found"><NotFound /></PageTitle>),
                     },
                     {
                         path: '*',
-                        element: (<PageTitle title="Not Found"><Page404 /></PageTitle>),
+                        element: (<PageTitle title="Not Found"><NotFound /></PageTitle>),
                     },
                 ],
             },
