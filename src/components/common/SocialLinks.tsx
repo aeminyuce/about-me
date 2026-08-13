@@ -15,12 +15,12 @@ import { IconX } from '@icon/social/x';
 export default function () {
     const { api } = useStoreContext();
 
-    const socialIcons: any = {
+    const socialIcons: any = Object.freeze({
         github: IconGithub,
         dribbble: IconDribbble,
         linkedin: IconLinkedin,
         x: IconX,
-    }
+    });
 
     return (
         <Button.Wrapper as='span' ease='1st' className='ui-align-c ui-round-1st'>

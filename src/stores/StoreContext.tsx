@@ -105,7 +105,7 @@ export default function (props: StoreProviderProps) {
     // loaders
     const routes = matches.map((m: any) => m.loaderData?.load).filter(Boolean);
 
-    const loaders: Record<string, () => void> = {
+    const loaders: Record<string, () => void> = Object.freeze({
         page: loadPageData,
 
         home: loadHomeData,
@@ -132,7 +132,7 @@ export default function (props: StoreProviderProps) {
                 loadBlogData(post);
             }
         }
-    }
+    });
 
     const excludeFromCache = ['post']; // write your never cached routes
 

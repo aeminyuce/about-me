@@ -1,7 +1,7 @@
-const serviceHeaders = {
+const serviceHeaders = Object.freeze({
     'apikey': process.env.API_KEY ?? '',
     'Content-Type': 'application/json',
-}
+});
 
 const errorHandler = (status: any) => {
     const code = String(status);

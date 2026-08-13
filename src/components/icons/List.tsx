@@ -33,7 +33,7 @@ export default function (props: any) {
     const iconsSuffix = api?.icons?.info?.iconsSuffix;
 
     // sprites
-    const spritesList: Record<string, string> = {
+    const spritesList: Record<string, string> = Object.freeze({
         'General': SpriteGeneral,
         'Touch': SpriteTouch,
         'Media': SpriteMedia,
@@ -44,7 +44,7 @@ export default function (props: any) {
         'Files': SpriteFiles,
         'Social': SpriteSocial,
         'Brands': SpriteBrands,
-    }
+    });
 
     const handleClick = useCallback((props: IconDetailsProps) => {
 

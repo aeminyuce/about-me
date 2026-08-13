@@ -12,12 +12,12 @@ import { IconPlay } from '@icon/media/play';
 export default function (props: PreviewProps) {
     const { children, play, playPos, className } = props;
 
-    const positions = {
+    const positions = Object.freeze({
         'tl': 'ui-set-t ui-set-l',
         'tr': 'ui-set-t ui-set-r',
         'br': 'ui-set-b ui-set-r',
         'bl': 'ui-set-b ui-set-l',
-    }
+    });
 
     // classes
     const setClassName = className ? ` ${className}` : '';
