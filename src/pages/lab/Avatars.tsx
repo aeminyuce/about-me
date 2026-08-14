@@ -40,20 +40,16 @@ export default function () {
             {title?.h3[0]}
         </Heading>
 
-        <Code className='ui-round-t'>
-            <Code.Comment>/* with image */</Code.Comment>
-            <Code.Lines>
-{`<Avatar size='sm'>
+        <Code lines type='react' className='ui-round-t'>
+{`// with image
+<Avatar size='sm'>
     <Image lazy src='avatar.jpg' aspect='square' />
 </Avatar>
-`}
-            </Code.Lines>
-            <Code.Comment>/* with text */</Code.Comment>
-            <Code.Lines>
-{`<Avatar size='lg'>
+
+// with text
+<Avatar size='lg'>
     <Item as='span'>ABC</Item>
 </Avatar>`}
-            </Code.Lines>
         </Code>
         <Code.Panel info='tsx' className='ui-highlight ui-m-1-t ui-round-b' />
 
@@ -252,8 +248,7 @@ export default function () {
             {title?.h3[1]}
         </Heading>
 
-        <Code className='ui-round-t'>
-            <Code.Lines>
+        <Code lines type='react' className='ui-round-t'>
 {`<Avatar.Holder size='sm'>
     <Avatar>
         <Image lazy src='avatar.jpg' aspect='square' />
@@ -262,7 +257,6 @@ export default function () {
         <Item as='span'>ABC</Item>
     </Avatar>
 </Avatar.Holder>`}
-            </Code.Lines>
         </Code>
         <Code.Panel info='tsx' className='ui-highlight ui-m-1-t ui-round-b' />
 
