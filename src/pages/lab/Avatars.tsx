@@ -41,12 +41,12 @@ export default function () {
         </Heading>
 
         <Code lines type='react' className='ui-round-t'>
-{`// with image
+{`/* with image */
 <Avatar size='sm' className='ui-round'>
     <Image lazy src='avatar.jpg' aspect='square' />
 </Avatar>
 
-// with placeholder text
+/* with placeholder text */
 <Avatar size='lg' className='ui-squircle'>
     <Item as='span'>ABC</Item>
 </Avatar>`}
@@ -250,12 +250,17 @@ export default function () {
 
         <Code lines type='react' className='ui-round-t'>
 {`<Avatar.Holder as='span' ease='1st' size='sm' classname='ui-circle-1st'>
+    /* with image */
     <Avatar noease>
         <Image lazy src='avatar.jpg' aspect='square' />
     </Avatar>
+
+    /* with placeholder text */
     <Avatar noease>
         <Item as='span'>ABC</Item>
     </Avatar>
+
+    /* with show more url */
     <Avatar noease>
         <Button nostyle href='#show-more'>
             <Item as='span'>+113</Item>
