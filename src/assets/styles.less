@@ -22,7 +22,7 @@
 
 .color-dribbble { color: @dribbble-color; }
 .preview {
-    ._bg-var(preview-bg);
+    ._bg-var(preview-bg); contain: layout;
 
     &:not([class*="ui-align-"]) { text-align: @preview-text-align; }
 }
