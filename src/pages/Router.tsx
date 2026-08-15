@@ -49,12 +49,12 @@ export const router = createBrowserRouter([
                 children: [
                     {
                         index: true,
-                        element: (<PageTitle title="About Me"><Featured /></PageTitle>),
+                        element: (<PageTitle title='About Me'><Featured /></PageTitle>),
                         loader: () => ({ load: 'home_featured' }),
                     },
                     {
                         path: 'dashboard',
-                        element: (<PageTitle title="Dashboard"><Dashboard /></PageTitle>),
+                        element: (<PageTitle title='Dashboard'><Dashboard /></PageTitle>),
                     },
                 ],
             },
@@ -65,7 +65,7 @@ export const router = createBrowserRouter([
                 children: [
                     {
                         path: 'icons',
-                        element: (<PageTitle title="I Love Icons"><Icons /></PageTitle>),
+                        element: (<PageTitle title='I Love Icons'><Icons /></PageTitle>),
                         loader: () => ({ load: 'icons' }),
                     },
                     {
@@ -92,46 +92,46 @@ export const router = createBrowserRouter([
                 children: [
                     {
                         index: true,
-                        element: (<PageTitle title="Lab"><LabIntro /></PageTitle>),
+                        element: (<PageTitle title='Lab'><LabIntro /></PageTitle>),
                     },
                     {
                         path: 'alerts',
-                        element: (<PageTitle title="Alerts | Lab"><LabAlerts /></PageTitle>),
+                        element: (<PageTitle title='Alerts | Lab'><LabAlerts /></PageTitle>),
                         loader: () => ({ load: 'lab_alerts' }),
                     },
                     {
                         path: 'avatars',
-                        element: (<PageTitle title="Avatars | Lab"><LabAvatars /></PageTitle>),
+                        element: (<PageTitle title='Avatars | Lab'><LabAvatars /></PageTitle>),
                         loader: () => ({ load: 'lab_avatars' }),
                     },
                     {
                         path: 'breadcrumbs',
-                        element: (<PageTitle title="Breadcrumbs | Lab"><LabBreadcrumbs /></PageTitle>),
+                        element: (<PageTitle title='Breadcrumbs | Lab'><LabBreadcrumbs /></PageTitle>),
                         loader: () => ({ load: 'lab_breadcrumbs' }),
                     },
                     {
                         path: 'buttons',
-                        element: (<PageTitle title="Buttons | Lab"><LabButtons /></PageTitle>),
+                        element: (<PageTitle title='Buttons | Lab'><LabButtons /></PageTitle>),
                         loader: () => ({ load: 'lab_buttons' }),
                     },
                     {
                         path: 'calendar',
-                        element: (<PageTitle title="Calendar | Lab"><LabCalendar /></PageTitle>),
+                        element: (<PageTitle title='Calendar | Lab'><LabCalendar /></PageTitle>),
                         loader: () => ({ load: 'lab_calendar' }),
                     },
                     {
                         path: 'card',
-                        element: (<PageTitle title="Card | Lab"><LabCard /></PageTitle>),
+                        element: (<PageTitle title='Card | Lab'><LabCard /></PageTitle>),
                         loader: () => ({ load: 'lab_card' }),
                     },
                     {
                         path: 'carousel',
-                        element: (<PageTitle title="Carousel | Lab"><LabCarousel /></PageTitle>),
+                        element: (<PageTitle title='Carousel | Lab'><LabCarousel /></PageTitle>),
                         loader: () => ({ load: 'lab_carousel' }),
                     },
                     {
                         path: 'charts',
-                        element: (<PageTitle title="Charts | Lab"><LabCharts /></PageTitle>),
+                        element: (<PageTitle title='Charts | Lab'><LabCharts /></PageTitle>),
                         loader: () => ({ load: 'lab_charts' }),
                     },
                 ],
@@ -143,19 +143,19 @@ export const router = createBrowserRouter([
                 children: [
                     {
                         path: 'ApiError',
-                        element: (<PageTitle title="API Error"><ApiError /></PageTitle>),
+                        element: (<PageTitle title='API Error'><ApiError /></PageTitle>),
                     },
                     {
                         path: 'ServerError',
-                        element: (<PageTitle title="Server Error"><ServerError /></PageTitle>),
+                        element: (<PageTitle title='Server Error'><ServerError /></PageTitle>),
                     },
                     {
                         path: 'NotFound',
-                        element: (<PageTitle title="Not Found"><NotFound /></PageTitle>),
+                        element: (<PageTitle title='Not Found'><NotFound /></PageTitle>),
                     },
                     {
                         path: '*',
-                        element: (<PageTitle title="Not Found"><NotFound /></PageTitle>),
+                        element: (<PageTitle title='Not Found'><NotFound /></PageTitle>),
                     },
                 ],
             },

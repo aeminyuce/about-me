@@ -50,7 +50,7 @@ export default function () {
                                     return (
                                         <Image.Group className='blog-post-image'>
                                             <Image key={name} lazy fluid='all' src={item?.data?.url} alt={item?.data?.alt} aspect='photo' className='ui-round ui-shadow-lg' />
-                                            <Image.Caption className="ui-color-black-50 ui-font-italic">
+                                            <Image.Caption className='ui-color-black-50 ui-font-italic'>
                                                 {pageTitle}
                                             </Image.Caption>
                                         </Image.Group>
