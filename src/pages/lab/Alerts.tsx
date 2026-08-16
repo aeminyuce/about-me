@@ -1,5 +1,6 @@
 import React from 'react';
 import Alerts from '@ui/Alerts';
+import Code from '@ui/Code';
 import Heading from '@ui/Heading';
 import Item from '@ui/Item';
 import SvgIcon from '@ui/SvgIcon';
@@ -32,6 +33,25 @@ export default function () {
         </Heading>
 
         <Description>{desc?.dlg_simple}</Description>
+        <Code lines type='js' className='ui-round-t'>
+{`Alerts.Dialog({
+    msg: 'Your dialog text',            // required
+    success: 'Yes',                     // Okay (predefined)
+    error: 'No',
+    custom: {
+        // custom options support up to three
+        first: 'Maybe',
+        second: 'Later',
+        third: 'Not now',
+    },
+    callback: (value) => {
+        // value returns which option you selected
+        alert(value);
+    }
+);`}
+        </Code>
+        <Code.Panel info='js' className='ui-highlight ui-m-1-t ui-round-b' />
+
         <Preview playPos={'tr'} play={() => {
             Alerts.Dialog({
                 msg: text?.simple,
@@ -144,6 +164,21 @@ export default function () {
         </Heading>
 
         <Description>{desc?.msg_default}</Description>
+        <Code lines type='js' className='ui-round-t'>
+{`Alerts.Message({
+    msg: 'Your message text',           // required
+    theme: 'success',                   // success (predefined) | warning | danger
+    pos: 'tr',                          // ct (predefined) | cb | tr | tl | br | bl
+    action: {
+        // you can optionally add a single action to your messages
+        name: 'Undo',
+        callback: () => {
+            alert('Your undo message');
+        }
+    }
+});`}
+        </Code>
+        <Code.Panel info='js' className='ui-highlight ui-m-1-t ui-round-b' />
         <Preview playPos={'br'} play={() => {
             const type = themeRandomizer();
             Alerts.Message({
