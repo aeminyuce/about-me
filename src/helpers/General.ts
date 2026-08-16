@@ -7,6 +7,14 @@ export const scrollToTop = () => {
     });
 }
 
+// scroll to hash
+export const scrollToHash = (id: string) => {
+    window.requestAnimationFrame(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView(true);
+    });
+}
+
 // open get in touch modal
 export const showGetInTouch = () => {
     modalOpen({

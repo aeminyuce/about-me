@@ -15,6 +15,7 @@ import { headings } from '@helpers/Lab';
 import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
+import ShowCode from '@components/lab/ShowCode';
 
 // assets
 import { IconUser } from '@icon/general/user';
@@ -36,26 +37,12 @@ export default function () {
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>
 
+        <ShowCode id='variants' />
         <Heading as='h3' id={title?.hash[0]}>
             {title?.h3[0]}
         </Heading>
 
         <Description>{desc?.circle}</Description>
-        <Code lines type='react' className='ui-round-t'>
-{`// with image
-<Avatar size='sm' className='ui-round'>
-    <Image lazy src='avatar.jpg' aspect='square' />
-</Avatar>
-
-// with placeholder text
-<Avatar size='lg' className='ui-squircle'>
-    <Item as='span'>ABC</Item>
-</Avatar>
-
-// size     : lg | sm | xs`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-highlight ui-m-1-t ui-round-b' />
-
         <Preview>
             <Avatar.Holder ease='1st' className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-circle-1st'>
                 <Avatar noease size='xs' className='ui-m-5-h'>
@@ -246,37 +233,34 @@ export default function () {
             </Avatar.Holder>
         </Preview>
 
+        <Code lines type='react' id='variants' className='ui-round-t'>
+{`// with image
+<Avatar size='xs' className='ui-round'>
+    <Image lazy src='avatar.jpg' aspect='square' />
+</Avatar>
+
+// with icon
+<Avatar size='sm' className='ui-circle'>
+    <SvgIcon as='js' src={IconUser} />
+</Avatar>
+
+// with placeholder text
+<Avatar size='lg' className='ui-squircle'>
+    <Item as='span'>ABC</Item>
+</Avatar>
+
+// size     : lg | sm | xs`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
+
+        <ShowCode id='groups' />
         <Heading as='h3' id={title?.hash[1]}>
             {title?.h3[1]}
         </Heading>
 
         <Description>{desc?.group}</Description>
-        <Code lines type='react' className='ui-round-t'>
-{`<Avatar.Holder as='span' ease='1st' size='sm' classname='ui-circle-1st'>
-    // with image
-    <Avatar noease>
-        <Image lazy src='avatar.jpg' aspect='square' />
-    </Avatar>
-
-    // with placeholder text
-    <Avatar noease>
-        <Item as='span'>ABC</Item>
-    </Avatar>
-
-    // with show more url
-    <Avatar noease>
-        <Button nostyle href='#show-more'>
-            <Item as='span'>+113</Item>
-        </Button>
-    </Avatar>
-</Avatar.Holder>
-
-// as       : div | span
-// ease     : 1st | 2nd
-// noease   : used when holder has ease`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-highlight ui-m-1-t ui-round-b' />
-
         <Preview>
             <Avatar.Holder ease='2nd' size='sm' className='ui-hover-scale-more-2nd ui-squircle-hover-shadow-1st ui-ease-1st-filter ui-squircle-2nd'>
                 <Item as='span'>
@@ -477,6 +461,37 @@ export default function () {
                 <Item as='span'  className='ui-text ui-theme-green'>{text?.ref3}</Item>
             </Item>
         </Preview>
+
+        <Code lines type='react' id='groups' className='ui-round-t'>
+{`<Avatar.Holder as='span' ease='1st' size='sm' classname='ui-circle-1st'>
+    // with image
+    <Avatar noease>
+        <Image lazy src='avatar.jpg' aspect='square' />
+    </Avatar>
+
+    // with placeholder text
+    <Avatar noease>
+        <Item as='span'>ABC</Item>
+    </Avatar>
+
+    // with icon
+    <Avatar noease>
+        <SvgIcon as='js' src={IconUser} />
+    </Avatar>
+
+    // with show more url
+    <Avatar noease>
+        <Button nostyle href='#show-more'>
+            <Item as='span'>+27</Item>
+        </Button>
+    </Avatar>
+</Avatar.Holder>
+
+// as       : div | span
+// ease     : 1st | 2nd
+// noease   : used when holder has ease`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
         </>
     )
 }

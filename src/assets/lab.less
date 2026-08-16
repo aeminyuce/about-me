@@ -8,6 +8,8 @@
 @lab-content-height:                    1350px;
 @lab-content-images-max-width:          860px;
 
+@lab-show-code-margin-top:              -10px;
+
 .lab- {
     &menu {
         top: @lab-menu-top;
@@ -26,6 +28,8 @@
             .ui-link { overflow: clip; }
         }
     }
+
+    &show-code { margin-top: @lab-show-code-margin-top; }
 }
 
 @media (@default-start) {

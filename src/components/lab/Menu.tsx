@@ -7,7 +7,8 @@ import Listing from '@ui/Listing';
 // misc
 import { useStoreContext } from '@stores/StoreContext';
 import type { LabMenuProps } from '@models/Lab';
-import { scrollToHash, clearSpaces } from '@helpers/Lab';
+import { scrollToHash } from '@helpers/General';
+import { clearSpaces } from '@helpers/Lab';
 
 export default function () {
     const { pathname, hash } = useLocation();

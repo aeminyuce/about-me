@@ -14,3 +14,7 @@ export interface LabMenuProps {
     to: string;
     titles?: string[];
 }
+
+export interface ShowCodeProps {
+    id: string;
+}

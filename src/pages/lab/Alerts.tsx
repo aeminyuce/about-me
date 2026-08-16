@@ -3,6 +3,7 @@ import Alerts from '@ui/Alerts';
 import Code from '@ui/Code';
 import Heading from '@ui/Heading';
 import Item from '@ui/Item';
+import Spacer from '@ui/Spacer';
 import SvgIcon from '@ui/SvgIcon';
 
 // misc
@@ -11,6 +12,7 @@ import { headings, themeRandomizer } from '@helpers/Lab';
 import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
+import ShowCode from '@components/lab/ShowCode';
 
 // assets
 import { IconRemove } from '@icon/general/remove';
@@ -28,30 +30,12 @@ export default function () {
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>
 
+        <ShowCode id='dialogs' />
         <Heading as='h3' id={title?.hash[0]}>
             {title?.h3[0]}
         </Heading>
 
         <Description>{desc?.dlg_simple}</Description>
-        <Code lines type='js' className='ui-round-t'>
-{`Alerts.Dialog({
-    msg: 'Your dialog text',            // required
-    success: 'Yes',                     // Okay (predefined)
-    error: 'No',
-    custom: {
-        // custom options support up to three
-        first: 'Maybe',
-        second: 'Later',
-        third: 'Not now',
-    },
-    callback: (value) => {
-        // value returns which option you selected
-        alert(value);
-    }
-);`}
-        </Code>
-        <Code.Panel info='js' className='ui-highlight ui-m-1-t ui-round-b' />
-
         <Preview playPos={'tr'} play={() => {
             Alerts.Dialog({
                 msg: text?.simple,
@@ -159,26 +143,33 @@ export default function () {
             </Item>
         </Preview>
 
+        <Code lines type='js' id='dialogs' className='ui-round-t'>
+{`Alerts.Dialog({
+    msg: 'Your dialog text',            // required
+    success: 'Yes',                     // Okay (predefined)
+    error: 'No',
+    custom: {
+        // custom options support up to three
+        first: 'Maybe',
+        second: 'Later',
+        third: 'Not now',
+    },
+    callback: (value) => {
+        // value returns which option you selected
+        alert(value);
+    }
+);`}
+        </Code>
+        <Code.Panel info='js' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
+
+        <ShowCode id='messages' />
         <Heading as='h3' id={title?.hash[1]}>
             {title?.h3[1]}
         </Heading>
 
         <Description>{desc?.msg_default}</Description>
-        <Code lines type='js' className='ui-round-t'>
-{`Alerts.Message({
-    msg: 'Your message text',           // required
-    theme: 'success',                   // success (predefined) | warning | danger
-    pos: 'tr',                          // ct (predefined) | cb | tr | tl | br | bl
-    action: {
-        // you can optionally add a single action to your messages
-        name: 'Undo',
-        callback: () => {
-            alert('Your undo message');
-        }
-    }
-});`}
-        </Code>
-        <Code.Panel info='js' className='ui-highlight ui-m-1-t ui-round-b' />
         <Preview playPos={'br'} play={() => {
             const type = themeRandomizer();
             Alerts.Message({
@@ -313,6 +304,22 @@ export default function () {
                 <button className='ui-hover-l-more ui-ease-layout'>{text?.actionName}</button>
             </Item>
         </Preview>
+
+        <Code lines type='js' id='messages' className='ui-round-t'>
+{`Alerts.Message({
+    msg: 'Your message text',           // required
+    theme: 'success',                   // success (predefined) | warning | danger
+    pos: 'tr',                          // ct (predefined) | cb | tr | tl | br | bl
+    action: {
+        // you can optionally add a single action to your messages
+        name: 'Undo',
+        callback: () => {
+            alert('Your undo message');
+        }
+    }
+});`}
+        </Code>
+        <Code.Panel info='js' className='ui-m-1-t ui-round-b' />
         </>
     )
 }
