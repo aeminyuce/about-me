@@ -1,6 +1,5 @@
 import React from 'react';
 import Alerts from '@ui/Alerts';
-import Code from '@ui/Code';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Item from '@ui/Item';
@@ -14,6 +13,7 @@ import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 import ShowCode from '@components/lab/ShowCode';
+import CodePanel from '@components/common/CodePanel';
 
 // assets
 import { IconRemove } from '@icon/general/remove';
@@ -47,7 +47,7 @@ export default function () {
         </Grid.Row>
 
         <Description>{desc?.dlg_simple}</Description>
-        <Preview playPos={'tr'} play={() => {
+        <Preview playPos='tr' play={() => {
             Alerts.Dialog({
                 msg: text?.simple,
             });
@@ -63,7 +63,7 @@ export default function () {
         </Preview>
 
         <Description>{desc?.dlg_singleBtn}</Description>
-        <Preview playPos={'tr'} play={() => {
+        <Preview playPos='tr' play={() => {
             Alerts.Dialog({
                 msg: text?.beOk,
                 success: text?.got,
@@ -80,7 +80,7 @@ export default function () {
         </Preview>
 
         <Description>{desc?.dlg_twoBtn}</Description>
-        <Preview playPos={'tr'} play={() => {
+        <Preview playPos='tr' play={() => {
             Alerts.Dialog({
                 msg: text?.remove,
                 success: text?.yes,
@@ -102,7 +102,7 @@ export default function () {
         </Preview>
 
         <Description>{desc?.dlg_threeBtn}</Description>
-        <Preview playPos={'tr'} play={() => {
+        <Preview playPos='tr' play={() => {
             Alerts.Dialog({
                 msg: text?.download,
                 success: text?.yes,
@@ -130,7 +130,7 @@ export default function () {
         </Preview>
 
         <Description>{desc?.dlg_callback}</Description>
-        <Preview playPos={'tr'} play={() => {
+        <Preview playPos='tr' play={() => {
             Alerts.Dialog({
                 msg: text?.alert,
                 success: text?.yes,
@@ -154,7 +154,7 @@ export default function () {
             </Item>
         </Preview>
 
-        <Code lines type='js' id='dialogs' className='ui-round-t'>
+        <CodePanel type='js' id='dialogs'>
 {`Alerts.Dialog({
     msg: 'Your dialog text',            // required
     success: 'Yes',                     // Okay (predefined)
@@ -170,8 +170,7 @@ export default function () {
         alert(value);
     }
 );`}
-        </Code>
-        <Code.Panel info='js' className='ui-m-1-t ui-round-b' />
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -191,7 +190,7 @@ export default function () {
         </Grid.Row>
 
         <Description>{desc?.msg_default}</Description>
-        <Preview playPos={'br'} play={() => {
+        <Preview playPos='br' play={() => {
             const type = themeRandomizer();
             Alerts.Message({
                 msg: text[type],
@@ -210,7 +209,7 @@ export default function () {
         </Preview>
 
         <Description>{desc?.msg_bottom}</Description>
-        <Preview playPos={'br'} play={() => {
+        <Preview playPos='br' play={() => {
             const type = themeRandomizer();
             Alerts.Message({
                 msg: text[type],
@@ -230,7 +229,7 @@ export default function () {
         </Preview>
 
         <Description>{desc?.msg_tl}</Description>
-        <Preview playPos={'br'} play={() => {
+        <Preview playPos='br' play={() => {
             const type = themeRandomizer();
             Alerts.Message({
                 msg: text[type],
@@ -250,7 +249,7 @@ export default function () {
         </Preview>
 
         <Description>{desc?.msg_tr}</Description>
-        <Preview playPos={'br'} play={() => {
+        <Preview playPos='br' play={() => {
             const type = themeRandomizer();
             Alerts.Message({
                 msg: text[type],
@@ -270,7 +269,7 @@ export default function () {
         </Preview>
 
         <Description>{desc?.msg_br}</Description>
-        <Preview playPos={'tr'} play={() => {
+        <Preview playPos='tr' play={() => {
             const type = themeRandomizer();
             Alerts.Message({
                 msg: text[type],
@@ -290,7 +289,7 @@ export default function () {
         </Preview>
 
         <Description>{desc?.msg_bl}</Description>
-        <Preview playPos={'tr'} play={() => {
+        <Preview playPos='tr' play={() => {
             const type = themeRandomizer();
             Alerts.Message({
                 msg: text[type],
@@ -310,7 +309,7 @@ export default function () {
         </Preview>
 
         <Description>{desc?.msg_action}</Description>
-        <Preview playPos={'tr'} play={() => {
+        <Preview playPos='tr' play={() => {
             Alerts.Message({
                 msg: text?.action,
                 pos: 'cb',
@@ -326,7 +325,7 @@ export default function () {
             </Item>
         </Preview>
 
-        <Code lines type='js' id='messages' className='ui-round-t'>
+        <CodePanel type='js' id='messages'>
 {`Alerts.Message({
     msg: 'Your message text',           // required
     theme: 'success',                   // success (predefined) | warning | danger
@@ -339,8 +338,7 @@ export default function () {
         }
     }
 });`}
-        </Code>
-        <Code.Panel info='js' className='ui-m-1-t ui-round-b' />
+        </CodePanel>
         </>
     )
 }

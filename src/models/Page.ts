@@ -58,3 +58,10 @@ export interface PreviewProps {
     play?: ReactEventHandler;
     className?: string;
 }
+
+// Code Panel
+export interface CodePanelProps {
+    children: ReactNode;
+    id?: string;
+    type: 'js' | 'react' | 'css';
+}

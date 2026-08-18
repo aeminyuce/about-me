@@ -1,7 +1,6 @@
 import React from 'react';
 import Breadcrumbs from '@ui/Breadcrumbs';
 import Button from '@ui/Button';
-import Code from '@ui/Code';
 import Dropdown from '@ui/Dropdown';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
@@ -16,6 +15,7 @@ import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 import ShowCode from '@components/lab/ShowCode';
+import CodePanel from '@components/common/CodePanel';
 
 // assets
 import { IconHome } from '@icon/general/home';
@@ -353,10 +353,27 @@ export default function () {
             </Breadcrumbs>
         </Preview>
 
-        <Code lines type='js' id='variants' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        <CodePanel type='react' id='variants'>
+{`<Breadcrumbs microdata sep='arrow'>
+    // with icon
+    <Breadcrumbs.Item microdata pos='1' to='#'>
+        <SvgIcon as='js' src={IconHome} />
+    </Breadcrumbs.Item>
+
+    // with texts
+    <Breadcrumbs.Item microdata pos='2' to='#'>
+        Search Results
+    </Breadcrumbs.Item>
+    <Breadcrumbs.Item microdata pos='3'>
+        <Item as='b'>Detail</Item>
+    </Breadcrumbs.Item>
+</Breadcrumbs>
+
+// sep          : no | arrow | bull | pipe
+// microdata    : adds semantic attributes
+// pos          : adds positional offset when microdata is set
+// to           : converts the item into a clickable URL`}
+        </CodePanel>
         </>
     )
 }

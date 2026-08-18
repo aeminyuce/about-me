@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@ui/Button';
 import SvgIcon from '@ui/SvgIcon';
+import Tooltip from '@ui/Tooltip';
 
 // misc
 import type { ShowCodeProps } from '@models/Lab';
@@ -16,9 +17,17 @@ export default function (props: ShowCodeProps) {
     const setClassName = className ? ` ${className}` : '';
     const classes = `ui-round${setClassName}`;
 
+    // values
+    const randomNum = String(Math.floor(1000 + Math.random() * 9000)); // 4 digits
+    const randomId = `code-${randomNum}-tooltip`;
+
     return (
-        <Button square ghost title='Show Code' className={classes} onClick={() => scrollToHash(id)}>
+        <>
+        <Tooltip id={randomId}>Show Code Examples</Tooltip>
+        <Button square ghost className={classes}
+            data={{ 'tooltip': 'l', 'id': randomId, 'only': 'desktop' }} onClick={() => scrollToHash(id)}>
             <SvgIcon as='js' src={IconCode} />
         </Button>
+        </>
     )
 }

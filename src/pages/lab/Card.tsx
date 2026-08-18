@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '@ui/Button';
 import Card from '@ui/Card';
-import Code from '@ui/Code';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
@@ -17,6 +16,7 @@ import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 import ShowCode from '@components/lab/ShowCode';
+import CodePanel from '@components/common/CodePanel';
 
 // assets
 import { IconTrees } from '@icon/general/trees';
@@ -164,10 +164,9 @@ export default function () {
             </Grid.Static>
         </Preview>
 
-        <Code lines type='js' id='examples' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        <CodePanel type='react' id='examples'>
+{`code example`}
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -282,10 +281,9 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Code lines type='js' id='sides' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        <CodePanel type='react' id='sides'>
+{`code example`}
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -358,10 +356,9 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Code lines type='js' id='grids' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        <CodePanel type='react' id='grids'>
+{`code example`}
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -437,10 +434,9 @@ export default function () {
 
         </Preview>
 
-        <Code lines type='js' id='alerts' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        <CodePanel type='react' id='alerts'>
+{`code example`}
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -501,12 +497,9 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Code lines type='js' id='messages' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
-
-        <Spacer size={30} className='ui-m-30-v' />
+        <CodePanel type='react' id='messages'>
+{`code example`}
+        </CodePanel>
         </>
     )
 }

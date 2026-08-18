@@ -1,7 +1,6 @@
 import React from 'react';
 import Avatar from '@ui/Avatar';
 import Button from '@ui/Button';
-import Code from '@ui/Code';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
@@ -17,6 +16,7 @@ import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 import ShowCode from '@components/lab/ShowCode';
+import CodePanel from '@components/common/CodePanel';
 
 // assets
 import { IconUser } from '@icon/general/user';
@@ -244,7 +244,7 @@ export default function () {
             </Avatar.Holder>
         </Preview>
 
-        <Code lines type='react' id='variants' className='ui-round-t'>
+        <CodePanel type='react' id='variants'>
 {`// with image
 <Avatar size='xs' className='ui-round'>
     <Image lazy src='avatar.jpg' aspect='square' />
@@ -260,9 +260,8 @@ export default function () {
     <Item as='span'>ABC</Item>
 </Avatar>
 
-// size     : lg | sm | xs`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+// size         : lg | sm | xs`}
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -483,7 +482,7 @@ export default function () {
             </Item>
         </Preview>
 
-        <Code lines type='react' id='groups' className='ui-round-t'>
+        <CodePanel type='react' id='groups'>
 {`<Avatar.Holder as='span' ease='1st' size='sm' classname='ui-circle-1st'>
     // with image
     <Avatar noease>
@@ -502,17 +501,16 @@ export default function () {
 
     // with show more url
     <Avatar noease>
-        <Button nostyle href='#show-more'>
+        <Button nostyle href='#'>
             <Item as='span'>+27</Item>
         </Button>
     </Avatar>
 </Avatar.Holder>
 
-// as       : div | span
-// ease     : 1st | 2nd
-// noease   : used when holder has ease`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+// as           : div | span
+// ease         : 1st | 2nd
+// noease       : used when holder has ease`}
+        </CodePanel>
         </>
     )
 }

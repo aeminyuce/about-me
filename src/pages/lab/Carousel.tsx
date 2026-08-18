@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '@ui/Button';
 import Carousel from '@ui/Carousel';
-import Code from '@ui/Code';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
@@ -16,6 +15,7 @@ import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 import ShowCode from '@components/lab/ShowCode';
+import CodePanel from '@components/common/CodePanel';
 
 // assets
 import { IconAngleLeft } from '@icon/general/angle-left';
@@ -260,10 +260,9 @@ export default function () {
             </Carousel>
         </Preview>
 
-        <Code lines type='js' id='html' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        <CodePanel type='react' id='html'>
+{`code example`}
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -386,12 +385,9 @@ export default function () {
             </Carousel>
         </Preview>
 
-        <Code lines type='js' id='image' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
-
-        <Spacer size={30} className='ui-m-30-v' />
+        <CodePanel type='react' id='image'>
+{`code example`}
+        </CodePanel>
         </>
     )
 }

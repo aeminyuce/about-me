@@ -1,6 +1,5 @@
 import React, { memo, useState } from 'react';
 import Button from '@ui/Button';
-import Code from '@ui/Code';
 import DonutChart from '@ui/DonutChart';
 import Dropdown from '@ui/Dropdown';
 import Grid from '@ui/Grid';
@@ -19,6 +18,7 @@ import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 import ShowCode from '@components/lab/ShowCode';
+import CodePanel from '@components/common/CodePanel';
 
 // assets
 import { IconAngleDown } from '@icon/general/angle-down';
@@ -435,12 +435,9 @@ export default function () {
             </Tab.Holder>
         </Preview>
 
-        <Code lines type='js' id='line' className='ui-round-t'>
-            {`code example`}
-            </Code>
-            <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
-
-            <Spacer size={30} className='ui-m-30-v' />
+        <CodePanel type='react' id='line'>
+{`code example`}
+        </CodePanel>
         </>
     )
 }

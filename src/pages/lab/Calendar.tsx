@@ -1,7 +1,6 @@
 import React from 'react';
 import Calendar from '@ui/Calendar';
 import CalendarPicker from '@ui/CalendarPicker';
-import Code from '@ui/Code';
 import Grid from '@ui/Grid';
 import Item from '@ui/Item';
 import Heading from '@ui/Heading';
@@ -14,6 +13,7 @@ import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 import ShowCode from '@components/lab/ShowCode';
+import CodePanel from '@components/common/CodePanel';
 
 export default function () {
     const { api } = useStoreContext();
@@ -63,10 +63,9 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Code lines type='js' id='styles' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        <CodePanel type='react' id='styles'>
+{`code example`}
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -115,10 +114,9 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Code lines type='js' id='predefined' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        <CodePanel type='react' id='predefined'>
+{`code example`}
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -146,10 +144,9 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Code lines type='js' id='details' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        <CodePanel type='react' id='details'>
+{`code example`}
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -187,12 +184,9 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Code lines type='js' id='pickers' className='ui-round-t'>
-        {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
-
-        <Spacer size={30} className='ui-m-30-v' />
+        <CodePanel type='react' id='pickers'>
+{`code example`}
+        </CodePanel>
         </>
     )
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '@ui/Button';
-import Code from '@ui/Code';
 import Dropdown from '@ui/Dropdown';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
@@ -14,6 +13,7 @@ import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
 import ShowCode from '@components/lab/ShowCode';
+import CodePanel from '@components/common/CodePanel';
 
 // assets
 import { IconAi } from '@icon/general/ai';
@@ -332,10 +332,9 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Code lines type='js' id='variants' className='ui-round-t'>
+        <CodePanel type='react' id='variants'>
 {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -462,10 +461,9 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Code lines type='js' id='list' className='ui-round-t'>
+        <CodePanel type='react' id='list'>
 {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -658,10 +656,9 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Code lines type='js' id='holder' className='ui-round-t'>
+        <CodePanel type='react' id='holder'>
         {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
 
@@ -821,10 +818,9 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Code lines type='js' id='pagination' className='ui-round-t'>
+        <CodePanel type='react' id='pagination'>
 {`code example`}
-        </Code>
-        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+        </CodePanel>
         </>
     )
 }
