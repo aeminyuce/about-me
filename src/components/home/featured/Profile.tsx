@@ -23,7 +23,7 @@ export default function () {
                 <Item as='div' className='ui-round-t'>
                     <Image lazy src={info?.cover} aspect='photo' />
                 </Item>
-                <Notifier dataVal={'Idle'}>
+                <Notifier dataVal='Idle'>
                     <Avatar className='ui-squircle'>
                         <Image lazy src={info?.avatar} aspect='square' />
                     </Avatar>
