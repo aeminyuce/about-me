@@ -1,6 +1,7 @@
 import React from 'react';
 import Alerts from '@ui/Alerts';
 import Code from '@ui/Code';
+import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Item from '@ui/Item';
 import Spacer from '@ui/Spacer';
@@ -30,10 +31,20 @@ export default function () {
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>
 
-        <ShowCode id='dialogs' />
-        <Heading as='h3' id={title?.hash[0]}>
-            {title?.h3[0]}
-        </Heading>
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[0]} className='ui-align-l'>
+                            {title?.h3[0]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='dialogs' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.dlg_simple}</Description>
         <Preview playPos={'tr'} play={() => {
@@ -164,10 +175,20 @@ export default function () {
 
         <Spacer size={30} className='ui-m-30-v' />
 
-        <ShowCode id='messages' />
-        <Heading as='h3' id={title?.hash[1]}>
-            {title?.h3[1]}
-        </Heading>
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[1]} className='ui-align-l'>
+                            {title?.h3[1]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='messages' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.msg_default}</Description>
         <Preview playPos={'br'} play={() => {

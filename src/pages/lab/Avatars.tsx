@@ -2,6 +2,7 @@ import React from 'react';
 import Avatar from '@ui/Avatar';
 import Button from '@ui/Button';
 import Code from '@ui/Code';
+import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
 import Item from '@ui/Item';
@@ -37,10 +38,20 @@ export default function () {
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>
 
-        <ShowCode id='variants' />
-        <Heading as='h3' id={title?.hash[0]}>
-            {title?.h3[0]}
-        </Heading>
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[0]} className='ui-align-l'>
+                            {title?.h3[0]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='variants' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.circle}</Description>
         <Preview>
@@ -255,10 +266,20 @@ export default function () {
 
         <Spacer size={30} className='ui-m-30-v' />
 
-        <ShowCode id='groups' />
-        <Heading as='h3' id={title?.hash[1]}>
-            {title?.h3[1]}
-        </Heading>
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[1]} className='ui-align-l'>
+                            {title?.h3[1]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='groups' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.group}</Description>
         <Preview>

@@ -1,5 +1,6 @@
 import React, { memo, useState } from 'react';
 import Button from '@ui/Button';
+import Code from '@ui/Code';
 import DonutChart from '@ui/DonutChart';
 import Dropdown from '@ui/Dropdown';
 import Grid from '@ui/Grid';
@@ -7,6 +8,7 @@ import Heading from '@ui/Heading';
 import Item from '@ui/Item';
 import LineChart from '@ui/LineChart';
 import PieChart from '@ui/PieChart';
+import Spacer from '@ui/Spacer';
 import SvgIcon from '@ui/SvgIcon';
 import Tab from '@ui/Tab';
 
@@ -16,6 +18,7 @@ import { headings } from '@helpers/Lab';
 import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
+import ShowCode from '@components/lab/ShowCode';
 
 // assets
 import { IconAngleDown } from '@icon/general/angle-down';
@@ -37,9 +40,20 @@ export default function () {
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>
 
-        <Heading as='h3' id={title?.hash[0]}>
-            {title?.h3[0]}
-        </Heading>
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[0]} className='ui-align-l'>
+                            {title?.h3[0]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='line' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.lineGrids}</Description>
         <Preview>
@@ -410,21 +424,28 @@ export default function () {
                 </Grid.Row>
 
                 <Tab.Content open>
-                    <LineMulti x={value?.linexMonths} y1={value?.lineyMonth1} y2={value?.lineyMonth2} name1={text?.lineSales} name2={text?.lineProfit} />
+                    <LineMultiTab x={value?.linexMonths} y1={value?.lineyMonth1} y2={value?.lineyMonth2} name1={text?.lineSales} name2={text?.lineProfit} />
                 </Tab.Content>
                 <Tab.Content>
                     {/* use lazy when use different component */}
                     {tabs.includes(1) &&
-                        <LineMulti x={value?.linexMonths} y1={value?.lineyMonth3} y2={value?.lineyMonth4} name1={text?.lineSales} name2={text?.lineProfit} />
+                        <LineMultiTab x={value?.linexMonths} y1={value?.lineyMonth3} y2={value?.lineyMonth4} name1={text?.lineSales} name2={text?.lineProfit} />
                     }
                 </Tab.Content>
             </Tab.Holder>
         </Preview>
+
+        <Code lines type='js' id='line' className='ui-round-t'>
+            {`code example`}
+            </Code>
+            <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+            <Spacer size={30} className='ui-m-30-v' />
         </>
     )
 }
 
-const LineMulti = memo((props: any) => {
+const LineMultiTab = memo((props: any) => {
     // when parent tabs toggled, prevent re-rendering of the line charts
     const { x, y1, y2, name1, name2 } = props;
 

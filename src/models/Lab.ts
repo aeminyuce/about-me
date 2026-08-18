@@ -17,4 +17,5 @@ export interface LabMenuProps {
 
 export interface ShowCodeProps {
     id: string;
+    className?: string;
 }

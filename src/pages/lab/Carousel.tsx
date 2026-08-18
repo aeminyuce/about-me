@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@ui/Button';
 import Carousel from '@ui/Carousel';
+import Code from '@ui/Code';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
@@ -14,6 +15,7 @@ import { headings } from '@helpers/Lab';
 import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
+import ShowCode from '@components/lab/ShowCode';
 
 // assets
 import { IconAngleLeft } from '@icon/general/angle-left';
@@ -33,9 +35,20 @@ export default function () {
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>
 
-        <Heading as='h3' id={title?.hash[0]}>
-            {title?.h3[0]}
-        </Heading>
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[0]} className='ui-align-l'>
+                            {title?.h3[0]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='html' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.html}</Description>
         <Preview>
@@ -247,9 +260,27 @@ export default function () {
             </Carousel>
         </Preview>
 
-        <Heading as='h3' id={title?.hash[1]}>
-            {title?.h3[1]}
-        </Heading>
+        <Code lines type='js' id='html' className='ui-round-t'>
+        {`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
+
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[1]} className='ui-align-l'>
+                            {title?.h3[1]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='image' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.img}</Description>
         <Preview>
@@ -354,6 +385,13 @@ export default function () {
                 </Carousel.Nav>
             </Carousel>
         </Preview>
+
+        <Code lines type='js' id='image' className='ui-round-t'>
+        {`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
         </>
     )
 }

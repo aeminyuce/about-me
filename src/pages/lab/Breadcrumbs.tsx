@@ -1,7 +1,9 @@
 import React from 'react';
 import Breadcrumbs from '@ui/Breadcrumbs';
 import Button from '@ui/Button';
+import Code from '@ui/Code';
 import Dropdown from '@ui/Dropdown';
+import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Item from '@ui/Item';
 import Spacer from '@ui/Spacer';
@@ -13,6 +15,7 @@ import { headings } from '@helpers/Lab';
 import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
+import ShowCode from '@components/lab/ShowCode';
 
 // assets
 import { IconHome } from '@icon/general/home';
@@ -31,7 +34,19 @@ export default function () {
     if (breadcrumbs) return (
         <>
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
-        <Heading as='h1'>{title?.h1}</Heading>
+
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h1' className='ui-align-l'>{title?.h1}</Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42} className='ui-p-2-v'>
+                    <ShowCode id='variants' className='ui-m-5-t' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.simple}</Description>
         <Preview>
@@ -337,6 +352,11 @@ export default function () {
                 </Breadcrumbs.Item>
             </Breadcrumbs>
         </Preview>
+
+        <Code lines type='js' id='variants' className='ui-round-t'>
+        {`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
         </>
     )
 }

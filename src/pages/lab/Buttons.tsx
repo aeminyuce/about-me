@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@ui/Button';
+import Code from '@ui/Code';
 import Dropdown from '@ui/Dropdown';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
@@ -12,6 +13,7 @@ import { headings } from '@helpers/Lab';
 import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
+import ShowCode from '@components/lab/ShowCode';
 
 // assets
 import { IconAi } from '@icon/general/ai';
@@ -38,9 +40,20 @@ export default function () {
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>
 
-        <Heading as='h3' id={title?.hash[0]}>
-            {title?.h3[0]}
-        </Heading>
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[0]} className='ui-align-l'>
+                            {title?.h3[0]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='variants' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.noStyle}</Description>
         <Preview>
@@ -319,9 +332,27 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Heading as='h3' id={title?.hash[2]}>
-            {title?.h3[2]}
-        </Heading>
+        <Code lines type='js' id='variants' className='ui-round-t'>
+{`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
+
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[1]} className='ui-align-l'>
+                            {title?.h3[1]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='list' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.list}</Description>
         <Preview>
@@ -430,6 +461,28 @@ export default function () {
                 </Grid.Col>
             </Grid.Row>
         </Preview>
+
+        <Code lines type='js' id='list' className='ui-round-t'>
+{`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
+
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[2]} className='ui-align-l'>
+                            {title?.h3[2]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='holder' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.holder}</Description>
         <Preview>
@@ -605,9 +658,27 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-         <Heading as='h3' id={title?.hash[3]}>
-            {title?.h3[3]}
-        </Heading>
+        <Code lines type='js' id='holder' className='ui-round-t'>
+        {`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
+
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[3]} className='ui-align-l'>
+                            {title?.h3[3]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='pagination' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.paging}</Description>
         <Preview>
@@ -749,6 +820,11 @@ export default function () {
                 </Grid.Col>
             </Grid.Row>
         </Preview>
+
+        <Code lines type='js' id='pagination' className='ui-round-t'>
+{`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
         </>
     )
 }

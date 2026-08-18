@@ -11,7 +11,15 @@ export const scrollToTop = () => {
 export const scrollToHash = (id: string) => {
     window.requestAnimationFrame(() => {
         const el = document.getElementById(id);
-        if (el) el.scrollIntoView(true);
+
+        if (el) {
+            const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+
+            const header = document.querySelector('.ui-header-sticky') as HTMLElement | null;
+            const headerHeight = header ? header.offsetHeight : 0;
+
+            window.scrollTo(0, elementPosition - headerHeight);
+        }
     });
 }
 

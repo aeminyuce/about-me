@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@ui/Button';
 import Card from '@ui/Card';
+import Code from '@ui/Code';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
@@ -15,6 +16,7 @@ import { headings } from '@helpers/Lab';
 import Description from '@components/common/Description';
 import Preview from '@components/common/Preview';
 import BreadcrumbsWrapper from '@components/lab/BreadcrumbsWrapper';
+import ShowCode from '@components/lab/ShowCode';
 
 // assets
 import { IconTrees } from '@icon/general/trees';
@@ -46,9 +48,20 @@ export default function () {
         <BreadcrumbsWrapper>{title?.h1}</BreadcrumbsWrapper>
         <Heading as='h1'>{title?.h1}</Heading>
 
-        <Heading as='h3' id={title?.hash[0]}>
-            {title?.h3[0]}
-        </Heading>
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[0]} className='ui-align-l'>
+                            {title?.h3[0]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='examples' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.examples}</Description>
         <Preview>
@@ -151,9 +164,27 @@ export default function () {
             </Grid.Static>
         </Preview>
 
-        <Heading as='h3' id={title?.hash[1]}>
-            {title?.h3[1]}
-        </Heading>
+        <Code lines type='js' id='examples' className='ui-round-t'>
+        {`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
+
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[1]} className='ui-align-l'>
+                            {title?.h3[1]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='sides' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.sides}</Description>
         <Preview>
@@ -251,9 +282,27 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Heading as='h3' id={title?.hash[2]}>
-            {title?.h3[2]}
-        </Heading>
+        <Code lines type='js' id='sides' className='ui-round-t'>
+        {`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
+
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[2]} className='ui-align-l'>
+                            {title?.h3[2]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='grids' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.grids}</Description>
         <Preview>
@@ -309,9 +358,27 @@ export default function () {
             </Grid.Row>
         </Preview>
 
-        <Heading as='h3' id={title?.hash[3]}>
-            {title?.h3[3]}
-        </Heading>
+        <Code lines type='js' id='grids' className='ui-round-t'>
+        {`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
+
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[3]} className='ui-align-l'>
+                            {title?.h3[3]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='alerts' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.alerts}</Description>
         <Preview className='ui-align-l ui-round-1st'>
@@ -370,9 +437,27 @@ export default function () {
 
         </Preview>
 
-        <Heading as='h3' id={title?.hash[4]}>
-            {title?.h3[4]}
-        </Heading>
+        <Code lines type='js' id='alerts' className='ui-round-t'>
+        {`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
+
+        <Grid.Row>
+            <Grid.Static fluid='no'>
+                <Grid.Row>
+                    <Grid.Col size={12}>
+                        <Heading as='h3' id={title?.hash[4]} className='ui-align-l'>
+                            {title?.h3[4]}
+                        </Heading>
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Col size={42}>
+                    <ShowCode id='messages' />
+                </Grid.Col>
+            </Grid.Static>
+        </Grid.Row>
 
         <Description>{desc?.messages}</Description>
         <Preview>
@@ -415,6 +500,13 @@ export default function () {
                 </Grid.Col>
             </Grid.Row>
         </Preview>
+
+        <Code lines type='js' id='messages' className='ui-round-t'>
+        {`code example`}
+        </Code>
+        <Code.Panel info='tsx' className='ui-m-1-t ui-round-b' />
+
+        <Spacer size={30} className='ui-m-30-v' />
         </>
     )
 }
