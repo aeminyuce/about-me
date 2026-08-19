@@ -260,7 +260,7 @@ export default function () {
                     <Button noease fluid='xs' className='ui-theme-yellow ui-fill-dark-100'>{text?.resSm}</Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease block='all' className='ui-theme-yellowOrange ui-fill-dark-100'>{text?.block}</Button>
+                    <Button noease block className='ui-theme-yellowOrange ui-fill-dark-100'>{text?.block}</Button>
                 </Grid.Col>
             </Grid.Row>
         </Preview>
@@ -275,10 +275,10 @@ export default function () {
                     <Button noease active>{text?.active2}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button active as='input' type='button' defaultValue={text?.active3} />
+                    <Button active as='input' type='button' value={text?.active3} />
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button active as='input' type='submit' defaultValue={text?.active4} />
+                    <Button active as='input' type='submit' value={text?.active4} />
                 </Grid.Col>
 
                 <Grid.Col xl={3} lg={3} size={6}>
@@ -288,10 +288,10 @@ export default function () {
                     <Button noease passive>{text?.passive2}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button passive as='input' type='button' defaultValue={text?.passive3} />
+                    <Button passive as='input' type='button' value={text?.passive3} />
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button passive as='input' type='submit' defaultValue={text?.passive4} />
+                    <Button passive as='input' type='submit' value={text?.passive4} />
                 </Grid.Col>
             </Grid.Row>
         </Preview>
@@ -333,7 +333,27 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='variants'>
-{`code example`}
+{`<Button nostyle href='#'>
+    Link
+</Button>
+
+<Button ghost block passive size='lg' fluid='sm'>
+    Ghost Button
+</Button>
+
+<Button active as='input' type='submit' value='Button Value' />
+
+// nostyle          : non-styled button
+// href             : converts button to a tag
+// ghost            : removes the button background (except on hover)
+// block            : makes button full‑width and block‑level
+// active           : makes button active
+// passive          : makes button passive
+// size             : lg | sm | xs
+// fluid            : md | sm | xs
+// as               : div | span | input
+// type             : submit | button | reset
+// value            : sets value when as input or button`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
