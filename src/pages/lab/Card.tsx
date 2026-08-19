@@ -81,7 +81,7 @@ export default function () {
                                         <Spacer size={5} />
                                         {text?.forestImg}
                                     </Item>
-                                    <Button block='sm' className='ui-round ui-fill-dark-100'>
+                                    <Button fluid='sm' className='ui-round ui-fill-dark-100'>
                                         {text?.forestMore}
                                     </Button>
                                 </Item>
@@ -119,7 +119,7 @@ export default function () {
                             </ListGroup>
                         </Card.Side>
                         <Card.Side className='ui-p-10'>
-                            <Button block='all' className='ui-round ui-fill-dark-100'>
+                            <Button block className='ui-round ui-fill-dark-100'>
                                 {text?.raceMore}
                             </Button>
                         </Card.Side>
@@ -209,7 +209,7 @@ export default function () {
                             {text?.ticket2}
                         </Card.Side>
                         <Card.Side className='ui-align-c ui-p-15 ui-border-t ui-border-light'>
-                            <Button block='all' className='ui-round ui-fill-dark-100'>
+                            <Button block className='ui-round ui-fill-dark-100'>
                                 {text?.ticketUrl}
                             </Button>
                         </Card.Side>

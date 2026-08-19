@@ -41,7 +41,7 @@ export default function () {
                 </ListGroup>
             </Card.Side>
             <Card.Side className='ui-p-15'>
-                <Button block='all' className='ui-round ui-fill-dark-100'>
+                <Button block className='ui-round ui-fill-dark-100'>
                     {race?.more}
                 </Button>
             </Card.Side>

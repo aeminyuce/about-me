@@ -75,7 +75,7 @@ const NavMobileLinks = () => {
 
                     return (
                         <Carousel.Content key={item.name} className='ui-p-3-r'>
-                            <Button noease ghost={!selected} block='all' to={item.to} className='ui-border ui-border-light'>
+                            <Button noease block ghost={!selected} to={item.to} className='ui-border ui-border-light'>
                                 {item.name}
                             </Button>
                         </Carousel.Content>

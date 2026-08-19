@@ -22,7 +22,7 @@ export default function () {
                     const isModal = item.modal ? () => showGetInTouch() : undefined;
 
                     return (
-                        <Button key={item.name} ghost noease block='md' to={item.to} data={{ 'close': item.modal }} onClick={isModal} className='ui-m-2-r'>
+                        <Button key={item.name} ghost noease to={item.to} data={{ 'close': item.modal }} onClick={isModal} className='ui-m-2-r ui-md-no-m'>
                             {item.to === '/icons' &&
                                 <>
                                 I<SvgIcon as='js' src={IconHeart} size='xs' opacity='no' v={4} h={5} className='color-dribbble ui-text' />
