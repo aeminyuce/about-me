@@ -333,27 +333,43 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='variants'>
-{`<Button nostyle href='#'>
-    Link
-</Button>
-
-<Button ghost block passive size='lg' fluid='sm'>
+{`<Button ghost fluid='sm'>
     Ghost Button
 </Button>
 
-<Button active as='input' type='submit' value='Button Value' />
+<Button multi block size='lg'>
+    Multi Line Button
+</Button>
 
-// nostyle          : non-styled button
-// href             : converts button to a tag
+<Button active type='submit' value='Value' />
+<Button passive type='reset' as='input' />
+
+// use as non-styled <a> tag
+<Button nostyle href='#'>
+    Link
+</Button>
+
+// with icon only
+<Button square size='xs'>
+    <SvgIcon as='js' src={IconHome} />
+</Button>
+
+// with icon and text
+<Button noease ghost size='sm'>
+    <SvgIcon as='js' src={IconAi} />
+    Ask AI
+</Button>
+
 // ghost            : removes the button background (except on hover)
 // block            : makes button full‑width and block‑level
-// active           : makes button active
-// passive          : makes button passive
+// active/passive   : makes button active/passive
+// square           : makes button square
+// multi            : makes button multi line
+// value            : sets value when as input or button
 // size             : lg | sm | xs
 // fluid            : md | sm | xs
 // as               : div | span | input
-// type             : submit | button | reset
-// value            : sets value when as input or button`}
+// type             : submit | button | reset`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
