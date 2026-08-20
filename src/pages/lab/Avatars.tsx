@@ -260,7 +260,7 @@ export default function () {
     <Item as='span'>ABC</Item>
 </Avatar>
 
-// size         : lg | sm | xs`}
+// size             : lg | sm | xs`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -507,9 +507,9 @@ export default function () {
     </Avatar>
 </Avatar.Holder>
 
-// as           : div | span
-// ease         : 1st | 2nd
-// noease       : used when holder has ease`}
+// as               : div | span
+// ease             : 1st | 2nd
+// noease           : used when holder has ease`}
         </CodePanel>
         </>
     )

@@ -369,7 +369,20 @@ export default function () {
 // size             : lg | sm | xs
 // fluid            : md | sm | xs
 // as               : div | span | input
-// type             : submit | button | reset`}
+// type             : submit | button | reset
+
+// wrapper without type
+<Button.Wrapper largeButtons as='span' block='1st' ease='1st'>
+    <Button noease>First</Button>
+    <Button noease>Second</Button>
+</Button.Wrapper>
+
+// as               : section | div | span
+// block            : 1st | 2nd
+// ease             : 1st | 2nd
+// noease           : used when wrapper has ease
+// largeButtons     : makes buttons large
+`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -498,7 +511,21 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='list'>
-{`code example`}
+{`// type='list' means it’s a button list
+<Button.Wrapper largeButtons type='list' as='div' ease='1st' className='ui-round-1st'>
+    <Button noease>
+        Home
+    </Button>
+    <Button noease>
+        Lists
+    </Button>
+
+    // with icon and text
+    <Button noease>
+        <SvgIcon as='js' src={IconSettings} />
+        Settings
+    </Button>
+</Button.Wrapper>`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -693,7 +720,12 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='holder'>
-        {`code example`}
+{`// type='holder' means it’s a button holder
+<Button.Wrapper largeButtons type='holder' as='div' ease='1st' className='ui-round-1st'>
+    <Button noease>One</Button>
+    <Button noease>Two</Button>
+    <Button noease>Three</Button>
+</Button.Wrapper>`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -855,7 +887,33 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='pagination'>
-{`code example`}
+{`// paging means it’s a pagination holder
+<Button.Wrapper paging as='div' ease='1st' className='ui-round-1st'>
+    // with icon
+    <Button noease pagingPrev>
+        <SvgIcon as='js' src={IconArrowLeft} />
+    </Button>
+
+    <Button noease active>1</Button>
+    <Button noease>2</Button>
+
+    // with icon
+    <Button noease passive>
+        <SvgIcon as='js' src={IconEllipsisH} />
+    </Button>
+
+    <Button noease>10</Button>
+    <Button noease>20</Button>
+
+    // with icon
+    <Button noease pagingNext>
+        <SvgIcon as='js' src={IconArrowRight} />
+    </Button>
+</Button.Wrapper>
+
+// active           : using for active page
+// pagingPrev       : for previous button
+// pagingNext       : for next button`}
         </CodePanel>
         </>
     )

@@ -369,10 +369,10 @@ export default function () {
     </Breadcrumbs.Item>
 </Breadcrumbs>
 
-// sep          : no | arrow | bull | pipe
-// microdata    : adds semantic attributes
-// pos          : adds positional offset when microdata is set
-// to           : converts the item into a clickable URL`}
+// sep              : no | arrow | bull | pipe
+// microdata        : adds semantic attributes
+// pos              : adds positional offset when microdata is set
+// to               : converts the item into a clickable URL`}
         </CodePanel>
         </>
     )
