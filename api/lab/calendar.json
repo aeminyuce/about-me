@@ -8,18 +8,18 @@
                 "predefined": "Calendars with defined dates are..."
             },
             "text": {
-                "next": "Next Month: data-ui-date=",
-                "prev": "Previous Month: data-ui-date=",
-                "month": "Show Defined Month: data-ui-date=",
-                "yearMonth": "Show Defined Year and Month: data-ui-date="
+                "next": "Next Month: date:",
+                "prev": "Previous Month: date:",
+                "month": "Show Defined Month: date:",
+                "yearMonth": "Show Defined Year and Month: date:"
             },
             "dates": {
-                "picker": "02/05/2025",
+                "picker": "02/05/2026",
                 "details": "2025,6",
                 "defined1": "prev",
                 "defined2": "next",
                 "defined3": "10",
-                "defined4": "2012,1"
+                "defined4": "2016,1"
             },
             "details": [
                 {

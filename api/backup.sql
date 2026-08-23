@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict Uil0czzvdHqA03RV6unEDUxilHziiibvUMGzqSkKNUuFcqZ6C4tSjwkQ7bLdIfB
+\restrict V6GzZHA62ZlRQ65BCSscEFWw7JuHp0PaTDDnEZ4pDK5N9hJtfL4GLq0HUQaxipf
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1 (Postgres.app)
@@ -317,7 +317,7 @@ CREATE TYPE auth.one_time_token_type AS ENUM (
 ALTER TYPE auth.one_time_token_type OWNER TO supabase_auth_admin;
 
 --
--- Name: action; Type: TYPE; Schema: realtime; Owner: supabase_admin
+-- Name: action; Type: TYPE; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE TYPE realtime.action AS ENUM (
@@ -329,10 +329,10 @@ CREATE TYPE realtime.action AS ENUM (
 );
 
 
-ALTER TYPE realtime.action OWNER TO supabase_admin;
+ALTER TYPE realtime.action OWNER TO supabase_realtime_admin;
 
 --
--- Name: equality_op; Type: TYPE; Schema: realtime; Owner: supabase_admin
+-- Name: equality_op; Type: TYPE; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE TYPE realtime.equality_op AS ENUM (
@@ -352,10 +352,10 @@ CREATE TYPE realtime.equality_op AS ENUM (
 );
 
 
-ALTER TYPE realtime.equality_op OWNER TO supabase_admin;
+ALTER TYPE realtime.equality_op OWNER TO supabase_realtime_admin;
 
 --
--- Name: user_defined_filter; Type: TYPE; Schema: realtime; Owner: supabase_admin
+-- Name: user_defined_filter; Type: TYPE; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE TYPE realtime.user_defined_filter AS (
@@ -366,10 +366,10 @@ CREATE TYPE realtime.user_defined_filter AS (
 );
 
 
-ALTER TYPE realtime.user_defined_filter OWNER TO supabase_admin;
+ALTER TYPE realtime.user_defined_filter OWNER TO supabase_realtime_admin;
 
 --
--- Name: wal_column; Type: TYPE; Schema: realtime; Owner: supabase_admin
+-- Name: wal_column; Type: TYPE; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE TYPE realtime.wal_column AS (
@@ -382,10 +382,10 @@ CREATE TYPE realtime.wal_column AS (
 );
 
 
-ALTER TYPE realtime.wal_column OWNER TO supabase_admin;
+ALTER TYPE realtime.wal_column OWNER TO supabase_realtime_admin;
 
 --
--- Name: wal_rls; Type: TYPE; Schema: realtime; Owner: supabase_admin
+-- Name: wal_rls; Type: TYPE; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE TYPE realtime.wal_rls AS (
@@ -396,7 +396,7 @@ CREATE TYPE realtime.wal_rls AS (
 );
 
 
-ALTER TYPE realtime.wal_rls OWNER TO supabase_admin;
+ALTER TYPE realtime.wal_rls OWNER TO supabase_realtime_admin;
 
 --
 -- Name: buckettype; Type: TYPE; Schema: storage; Owner: supabase_storage_admin
@@ -1520,7 +1520,7 @@ $$;
 ALTER FUNCTION public.get_page() OWNER TO postgres;
 
 --
--- Name: apply_rls(jsonb, integer); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: apply_rls(jsonb, integer); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.apply_rls(wal jsonb, max_record_bytes integer DEFAULT (1024 * 1024)) RETURNS SETOF realtime.wal_rls
@@ -1745,6 +1745,18 @@ begin
 
                     execute 'execute walrus_rls_stmt' into subscription_has_access;
 
+                    -- Reset the role on every FOR..LOOP batch execution.
+                    -- The first batch of 10 rows is pre-fetched using the current connection role (PG internal behaviour)
+                    -- then we have to reset it again otherwise it would use the role defined in the `set_config` above
+                    -- to fetch the remaining rows when rows>10, which could be a user-defined role that lacks execution grants.
+                    -- The flow is:
+                    --   1. run batch with conn role
+                    --   2. set_config working_role
+                    --   3. execute walrus
+                    --   4. reset role (revert)
+                    --   5. repeat
+                    perform set_config('role', null, true);
+
                     if subscription_has_access then
                         visible_role_sub_ids = visible_role_sub_ids || subscription_id;
                     end if;
@@ -1882,10 +1894,10 @@ end;
 $$;
 
 
-ALTER FUNCTION realtime.apply_rls(wal jsonb, max_record_bytes integer) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.apply_rls(wal jsonb, max_record_bytes integer) OWNER TO supabase_realtime_admin;
 
 --
--- Name: broadcast_changes(text, text, text, text, text, record, record, text); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: broadcast_changes(text, text, text, text, text, record, record, text); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.broadcast_changes(topic_name text, event_name text, operation text, table_name text, table_schema text, new record, old record, level text DEFAULT 'ROW'::text) RETURNS void
@@ -1913,10 +1925,10 @@ END;
 $$;
 
 
-ALTER FUNCTION realtime.broadcast_changes(topic_name text, event_name text, operation text, table_name text, table_schema text, new record, old record, level text) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.broadcast_changes(topic_name text, event_name text, operation text, table_name text, table_schema text, new record, old record, level text) OWNER TO supabase_realtime_admin;
 
 --
--- Name: build_prepared_statement_sql(text, regclass, realtime.wal_column[]); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: build_prepared_statement_sql(text, regclass, realtime.wal_column[]); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.build_prepared_statement_sql(prepared_statement_name text, entity regclass, columns realtime.wal_column[]) RETURNS text
@@ -1948,10 +1960,10 @@ CREATE FUNCTION realtime.build_prepared_statement_sql(prepared_statement_name te
       $$;
 
 
-ALTER FUNCTION realtime.build_prepared_statement_sql(prepared_statement_name text, entity regclass, columns realtime.wal_column[]) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.build_prepared_statement_sql(prepared_statement_name text, entity regclass, columns realtime.wal_column[]) OWNER TO supabase_realtime_admin;
 
 --
--- Name: cast(text, regtype); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: cast(text, regtype); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime."cast"(val text, type_ regtype) RETURNS jsonb
@@ -1969,10 +1981,10 @@ end
 $$;
 
 
-ALTER FUNCTION realtime."cast"(val text, type_ regtype) OWNER TO supabase_admin;
+ALTER FUNCTION realtime."cast"(val text, type_ regtype) OWNER TO supabase_realtime_admin;
 
 --
--- Name: check_equality_op(realtime.equality_op, regtype, text, text); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: check_equality_op(realtime.equality_op, regtype, text, text); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text) RETURNS boolean
@@ -2010,10 +2022,10 @@ end;
 $$;
 
 
-ALTER FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text) OWNER TO supabase_realtime_admin;
 
 --
--- Name: check_equality_op(realtime.equality_op, regtype, text, text, boolean); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: check_equality_op(realtime.equality_op, regtype, text, text, boolean); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text, negate boolean) RETURNS boolean
@@ -2084,10 +2096,10 @@ end;
 $$;
 
 
-ALTER FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text, negate boolean) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text, negate boolean) OWNER TO supabase_realtime_admin;
 
 --
--- Name: is_visible_through_filters(realtime.wal_column[], realtime.user_defined_filter[]); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: is_visible_through_filters(realtime.wal_column[], realtime.user_defined_filter[]); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.is_visible_through_filters(columns realtime.wal_column[], filters realtime.user_defined_filter[]) RETURNS boolean
@@ -2116,10 +2128,10 @@ CREATE FUNCTION realtime.is_visible_through_filters(columns realtime.wal_column[
 $$;
 
 
-ALTER FUNCTION realtime.is_visible_through_filters(columns realtime.wal_column[], filters realtime.user_defined_filter[]) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.is_visible_through_filters(columns realtime.wal_column[], filters realtime.user_defined_filter[]) OWNER TO supabase_realtime_admin;
 
 --
--- Name: list_changes(name, name, integer, integer); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: list_changes(name, name, integer, integer); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.list_changes(publication name, slot_name name, max_changes integer, max_record_bytes integer) RETURNS TABLE(wal jsonb, is_rls_enabled boolean, subscription_ids uuid[], errors text[], slot_changes_count bigint)
@@ -2188,10 +2200,10 @@ CREATE FUNCTION realtime.list_changes(publication name, slot_name name, max_chan
 $$;
 
 
-ALTER FUNCTION realtime.list_changes(publication name, slot_name name, max_changes integer, max_record_bytes integer) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.list_changes(publication name, slot_name name, max_changes integer, max_record_bytes integer) OWNER TO supabase_realtime_admin;
 
 --
--- Name: quote_wal2json(regclass); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: quote_wal2json(regclass); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.quote_wal2json(entity regclass) RETURNS text
@@ -2207,10 +2219,10 @@ CREATE FUNCTION realtime.quote_wal2json(entity regclass) RETURNS text
 $$;
 
 
-ALTER FUNCTION realtime.quote_wal2json(entity regclass) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.quote_wal2json(entity regclass) OWNER TO supabase_realtime_admin;
 
 --
--- Name: send(jsonb, text, text, boolean); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: send(jsonb, text, text, boolean); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.send(payload jsonb, event text, topic text, private boolean DEFAULT true) RETURNS void
@@ -2243,10 +2255,10 @@ END;
 $$;
 
 
-ALTER FUNCTION realtime.send(payload jsonb, event text, topic text, private boolean) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.send(payload jsonb, event text, topic text, private boolean) OWNER TO supabase_realtime_admin;
 
 --
--- Name: send_binary(bytea, text, text, boolean); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: send_binary(bytea, text, text, boolean); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.send_binary(payload bytea, event text, topic text, private boolean DEFAULT true) RETURNS void
@@ -2270,10 +2282,10 @@ END;
 $$;
 
 
-ALTER FUNCTION realtime.send_binary(payload bytea, event text, topic text, private boolean) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.send_binary(payload bytea, event text, topic text, private boolean) OWNER TO supabase_realtime_admin;
 
 --
--- Name: subscription_check_filters(); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: subscription_check_filters(); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.subscription_check_filters() RETURNS trigger
@@ -2392,10 +2404,10 @@ end;
 $$;
 
 
-ALTER FUNCTION realtime.subscription_check_filters() OWNER TO supabase_admin;
+ALTER FUNCTION realtime.subscription_check_filters() OWNER TO supabase_realtime_admin;
 
 --
--- Name: to_regrole(text); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: to_regrole(text); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.to_regrole(role_name text) RETURNS regrole
@@ -2403,7 +2415,7 @@ CREATE FUNCTION realtime.to_regrole(role_name text) RETURNS regrole
     AS $$ select role_name::regrole $$;
 
 
-ALTER FUNCTION realtime.to_regrole(role_name text) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.to_regrole(role_name text) OWNER TO supabase_realtime_admin;
 
 --
 -- Name: topic(); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
@@ -2419,7 +2431,7 @@ $$;
 ALTER FUNCTION realtime.topic() OWNER TO supabase_realtime_admin;
 
 --
--- Name: wal2json_escape_identifier(text); Type: FUNCTION; Schema: realtime; Owner: supabase_admin
+-- Name: wal2json_escape_identifier(text); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE FUNCTION realtime.wal2json_escape_identifier(name text) RETURNS text
@@ -2430,7 +2442,7 @@ CREATE FUNCTION realtime.wal2json_escape_identifier(name text) RETURNS text
 $$;
 
 
-ALTER FUNCTION realtime.wal2json_escape_identifier(name text) OWNER TO supabase_admin;
+ALTER FUNCTION realtime.wal2json_escape_identifier(name text) OWNER TO supabase_realtime_admin;
 
 --
 -- Name: allow_any_operation(text[]); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
@@ -5639,7 +5651,7 @@ CREATE TABLE realtime.schema_migrations (
 ALTER TABLE realtime.schema_migrations OWNER TO supabase_admin;
 
 --
--- Name: subscription; Type: TABLE; Schema: realtime; Owner: supabase_admin
+-- Name: subscription; Type: TABLE; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE TABLE realtime.subscription (
@@ -5656,10 +5668,10 @@ CREATE TABLE realtime.subscription (
 );
 
 
-ALTER TABLE realtime.subscription OWNER TO supabase_admin;
+ALTER TABLE realtime.subscription OWNER TO supabase_realtime_admin;
 
 --
--- Name: subscription_id_seq; Type: SEQUENCE; Schema: realtime; Owner: supabase_admin
+-- Name: subscription_id_seq; Type: SEQUENCE; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 ALTER TABLE realtime.subscription ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -6564,9 +6576,9 @@ COPY lab.calendar_dates (id, name, date) FROM stdin;
 2	defined1	prev
 4	defined3	10
 3	defined2	next
-5	defined4	2012,1
 1	details	2025,6
-6	picker	02/05/2025
+5	defined4	2016,1
+6	picker	02/05/2026
 \.
 
 
@@ -6601,10 +6613,10 @@ COPY lab.calendar_details (id, year, month, day, "dayName", details) FROM stdin;
 --
 
 COPY lab.calendar_text (id, type, text) FROM stdin;
-1	prev	Previous Month: data-ui-date=
-2	next	Next Month: data-ui-date=
-4	yearMonth	Show Defined Year and Month: data-ui-date=
-3	month	Show Defined Month: data-ui-date=
+1	prev	Previous Month: date:
+2	next	Next Month: date:
+3	month	Show Defined Month: date:
+4	yearMonth	Show Defined Year and Month: date:
 \.
 
 
@@ -7040,11 +7052,13 @@ COPY realtime.schema_migrations (version, inserted_at) FROM stdin;
 20260624120000	2026-07-05 08:15:02
 20260626120000	2026-07-05 08:15:04
 20260706120000	2026-07-13 19:56:52
+20260707120000	2026-07-18 17:33:11
+20260709120000	2026-07-18 17:33:12
 \.
 
 
 --
--- Data for Name: subscription; Type: TABLE DATA; Schema: realtime; Owner: supabase_admin
+-- Data for Name: subscription; Type: TABLE DATA; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 COPY realtime.subscription (id, subscription_id, entity, filters, claims, created_at, action_filter, selected_columns) FROM stdin;
@@ -7426,7 +7440,7 @@ SELECT pg_catalog.setval('lab.buttons_desc_id_seq', 18, true);
 -- Name: buttons_text_id_seq; Type: SEQUENCE SET; Schema: lab; Owner: postgres
 --
 
-SELECT pg_catalog.setval('lab.buttons_text_id_seq', 34, true);
+SELECT pg_catalog.setval('lab.buttons_text_id_seq', 34, false);
 
 
 --
@@ -7570,7 +7584,7 @@ SELECT pg_catalog.setval('page.page_header_sociallinks_id_seq', 4, true);
 
 
 --
--- Name: subscription_id_seq; Type: SEQUENCE SET; Schema: realtime; Owner: supabase_admin
+-- Name: subscription_id_seq; Type: SEQUENCE SET; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 SELECT pg_catalog.setval('realtime.subscription_id_seq', 1, false);
@@ -8289,7 +8303,7 @@ ALTER TABLE ONLY realtime.messages
 
 
 --
--- Name: subscription pk_subscription; Type: CONSTRAINT; Schema: realtime; Owner: supabase_admin
+-- Name: subscription pk_subscription; Type: CONSTRAINT; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 ALTER TABLE ONLY realtime.subscription
@@ -8769,7 +8783,7 @@ CREATE INDEX webauthn_credentials_user_id_idx ON auth.webauthn_credentials USING
 
 
 --
--- Name: ix_realtime_subscription_entity; Type: INDEX; Schema: realtime; Owner: supabase_admin
+-- Name: ix_realtime_subscription_entity; Type: INDEX; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE INDEX ix_realtime_subscription_entity ON realtime.subscription USING btree (entity);
@@ -8783,7 +8797,7 @@ CREATE INDEX messages_inserted_at_topic_index ON ONLY realtime.messages USING bt
 
 
 --
--- Name: subscription_subscription_id_entity_filters_action_filter_selec; Type: INDEX; Schema: realtime; Owner: supabase_admin
+-- Name: subscription_subscription_id_entity_filters_action_filter_selec; Type: INDEX; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE UNIQUE INDEX subscription_subscription_id_entity_filters_action_filter_selec ON realtime.subscription USING btree (subscription_id, entity, filters, action_filter, COALESCE(selected_columns, '{}'::text[]));
@@ -8846,7 +8860,7 @@ CREATE UNIQUE INDEX vector_indexes_name_bucket_id_idx ON storage.vector_indexes 
 
 
 --
--- Name: subscription tr_check_filters; Type: TRIGGER; Schema: realtime; Owner: supabase_admin
+-- Name: subscription tr_check_filters; Type: TRIGGER; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 CREATE TRIGGER tr_check_filters BEFORE INSERT OR UPDATE ON realtime.subscription FOR EACH ROW EXECUTE FUNCTION realtime.subscription_check_filters();
@@ -9590,7 +9604,7 @@ GRANT USAGE ON SCHEMA public TO service_role;
 -- Name: SCHEMA realtime; Type: ACL; Schema: -; Owner: supabase_admin
 --
 
-GRANT USAGE ON SCHEMA realtime TO postgres;
+GRANT USAGE ON SCHEMA realtime TO postgres WITH GRANT OPTION;
 GRANT USAGE ON SCHEMA realtime TO anon;
 GRANT USAGE ON SCHEMA realtime TO authenticated;
 GRANT USAGE ON SCHEMA realtime TO service_role;
@@ -10294,7 +10308,7 @@ GRANT ALL ON FUNCTION public.get_page() TO service_role;
 
 
 --
--- Name: FUNCTION apply_rls(wal jsonb, max_record_bytes integer); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION apply_rls(wal jsonb, max_record_bytes integer); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.apply_rls(wal jsonb, max_record_bytes integer) TO postgres;
@@ -10302,11 +10316,10 @@ GRANT ALL ON FUNCTION realtime.apply_rls(wal jsonb, max_record_bytes integer) TO
 GRANT ALL ON FUNCTION realtime.apply_rls(wal jsonb, max_record_bytes integer) TO anon;
 GRANT ALL ON FUNCTION realtime.apply_rls(wal jsonb, max_record_bytes integer) TO authenticated;
 GRANT ALL ON FUNCTION realtime.apply_rls(wal jsonb, max_record_bytes integer) TO service_role;
-GRANT ALL ON FUNCTION realtime.apply_rls(wal jsonb, max_record_bytes integer) TO supabase_realtime_admin;
 
 
 --
--- Name: FUNCTION broadcast_changes(topic_name text, event_name text, operation text, table_name text, table_schema text, new record, old record, level text); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION broadcast_changes(topic_name text, event_name text, operation text, table_name text, table_schema text, new record, old record, level text); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.broadcast_changes(topic_name text, event_name text, operation text, table_name text, table_schema text, new record, old record, level text) TO postgres;
@@ -10314,7 +10327,7 @@ GRANT ALL ON FUNCTION realtime.broadcast_changes(topic_name text, event_name tex
 
 
 --
--- Name: FUNCTION build_prepared_statement_sql(prepared_statement_name text, entity regclass, columns realtime.wal_column[]); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION build_prepared_statement_sql(prepared_statement_name text, entity regclass, columns realtime.wal_column[]); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.build_prepared_statement_sql(prepared_statement_name text, entity regclass, columns realtime.wal_column[]) TO postgres;
@@ -10322,11 +10335,10 @@ GRANT ALL ON FUNCTION realtime.build_prepared_statement_sql(prepared_statement_n
 GRANT ALL ON FUNCTION realtime.build_prepared_statement_sql(prepared_statement_name text, entity regclass, columns realtime.wal_column[]) TO anon;
 GRANT ALL ON FUNCTION realtime.build_prepared_statement_sql(prepared_statement_name text, entity regclass, columns realtime.wal_column[]) TO authenticated;
 GRANT ALL ON FUNCTION realtime.build_prepared_statement_sql(prepared_statement_name text, entity regclass, columns realtime.wal_column[]) TO service_role;
-GRANT ALL ON FUNCTION realtime.build_prepared_statement_sql(prepared_statement_name text, entity regclass, columns realtime.wal_column[]) TO supabase_realtime_admin;
 
 
 --
--- Name: FUNCTION "cast"(val text, type_ regtype); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION "cast"(val text, type_ regtype); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime."cast"(val text, type_ regtype) TO postgres;
@@ -10334,11 +10346,10 @@ GRANT ALL ON FUNCTION realtime."cast"(val text, type_ regtype) TO dashboard_user
 GRANT ALL ON FUNCTION realtime."cast"(val text, type_ regtype) TO anon;
 GRANT ALL ON FUNCTION realtime."cast"(val text, type_ regtype) TO authenticated;
 GRANT ALL ON FUNCTION realtime."cast"(val text, type_ regtype) TO service_role;
-GRANT ALL ON FUNCTION realtime."cast"(val text, type_ regtype) TO supabase_realtime_admin;
 
 
 --
--- Name: FUNCTION check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text) TO postgres;
@@ -10346,11 +10357,10 @@ GRANT ALL ON FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ 
 GRANT ALL ON FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text) TO anon;
 GRANT ALL ON FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text) TO authenticated;
 GRANT ALL ON FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text) TO service_role;
-GRANT ALL ON FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text) TO supabase_realtime_admin;
 
 
 --
--- Name: FUNCTION check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text, negate boolean); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text, negate boolean); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text, negate boolean) TO postgres;
@@ -10361,7 +10371,7 @@ GRANT ALL ON FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ 
 
 
 --
--- Name: FUNCTION is_visible_through_filters(columns realtime.wal_column[], filters realtime.user_defined_filter[]); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION is_visible_through_filters(columns realtime.wal_column[], filters realtime.user_defined_filter[]); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.is_visible_through_filters(columns realtime.wal_column[], filters realtime.user_defined_filter[]) TO postgres;
@@ -10369,11 +10379,10 @@ GRANT ALL ON FUNCTION realtime.is_visible_through_filters(columns realtime.wal_c
 GRANT ALL ON FUNCTION realtime.is_visible_through_filters(columns realtime.wal_column[], filters realtime.user_defined_filter[]) TO anon;
 GRANT ALL ON FUNCTION realtime.is_visible_through_filters(columns realtime.wal_column[], filters realtime.user_defined_filter[]) TO authenticated;
 GRANT ALL ON FUNCTION realtime.is_visible_through_filters(columns realtime.wal_column[], filters realtime.user_defined_filter[]) TO service_role;
-GRANT ALL ON FUNCTION realtime.is_visible_through_filters(columns realtime.wal_column[], filters realtime.user_defined_filter[]) TO supabase_realtime_admin;
 
 
 --
--- Name: FUNCTION list_changes(publication name, slot_name name, max_changes integer, max_record_bytes integer); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION list_changes(publication name, slot_name name, max_changes integer, max_record_bytes integer); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.list_changes(publication name, slot_name name, max_changes integer, max_record_bytes integer) TO postgres;
@@ -10381,7 +10390,7 @@ GRANT ALL ON FUNCTION realtime.list_changes(publication name, slot_name name, ma
 
 
 --
--- Name: FUNCTION quote_wal2json(entity regclass); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION quote_wal2json(entity regclass); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.quote_wal2json(entity regclass) TO postgres;
@@ -10389,11 +10398,10 @@ GRANT ALL ON FUNCTION realtime.quote_wal2json(entity regclass) TO dashboard_user
 GRANT ALL ON FUNCTION realtime.quote_wal2json(entity regclass) TO anon;
 GRANT ALL ON FUNCTION realtime.quote_wal2json(entity regclass) TO authenticated;
 GRANT ALL ON FUNCTION realtime.quote_wal2json(entity regclass) TO service_role;
-GRANT ALL ON FUNCTION realtime.quote_wal2json(entity regclass) TO supabase_realtime_admin;
 
 
 --
--- Name: FUNCTION send(payload jsonb, event text, topic text, private boolean); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION send(payload jsonb, event text, topic text, private boolean); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.send(payload jsonb, event text, topic text, private boolean) TO postgres;
@@ -10401,7 +10409,7 @@ GRANT ALL ON FUNCTION realtime.send(payload jsonb, event text, topic text, priva
 
 
 --
--- Name: FUNCTION send_binary(payload bytea, event text, topic text, private boolean); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION send_binary(payload bytea, event text, topic text, private boolean); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.send_binary(payload bytea, event text, topic text, private boolean) TO postgres;
@@ -10409,7 +10417,7 @@ GRANT ALL ON FUNCTION realtime.send_binary(payload bytea, event text, topic text
 
 
 --
--- Name: FUNCTION subscription_check_filters(); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION subscription_check_filters(); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.subscription_check_filters() TO postgres;
@@ -10417,11 +10425,10 @@ GRANT ALL ON FUNCTION realtime.subscription_check_filters() TO dashboard_user;
 GRANT ALL ON FUNCTION realtime.subscription_check_filters() TO anon;
 GRANT ALL ON FUNCTION realtime.subscription_check_filters() TO authenticated;
 GRANT ALL ON FUNCTION realtime.subscription_check_filters() TO service_role;
-GRANT ALL ON FUNCTION realtime.subscription_check_filters() TO supabase_realtime_admin;
 
 
 --
--- Name: FUNCTION to_regrole(role_name text); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION to_regrole(role_name text); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.to_regrole(role_name text) TO postgres;
@@ -10429,7 +10436,6 @@ GRANT ALL ON FUNCTION realtime.to_regrole(role_name text) TO dashboard_user;
 GRANT ALL ON FUNCTION realtime.to_regrole(role_name text) TO anon;
 GRANT ALL ON FUNCTION realtime.to_regrole(role_name text) TO authenticated;
 GRANT ALL ON FUNCTION realtime.to_regrole(role_name text) TO service_role;
-GRANT ALL ON FUNCTION realtime.to_regrole(role_name text) TO supabase_realtime_admin;
 
 
 --
@@ -10441,7 +10447,7 @@ GRANT ALL ON FUNCTION realtime.topic() TO dashboard_user;
 
 
 --
--- Name: FUNCTION wal2json_escape_identifier(name text); Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: FUNCTION wal2json_escape_identifier(name text); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON FUNCTION realtime.wal2json_escape_identifier(name text) TO postgres;
@@ -10762,19 +10768,7 @@ GRANT SELECT,INSERT,UPDATE ON TABLE realtime.messages TO service_role;
 
 
 --
--- Name: TABLE schema_migrations; Type: ACL; Schema: realtime; Owner: supabase_admin
---
-
-GRANT ALL ON TABLE realtime.schema_migrations TO postgres;
-GRANT ALL ON TABLE realtime.schema_migrations TO dashboard_user;
-GRANT SELECT ON TABLE realtime.schema_migrations TO anon;
-GRANT SELECT ON TABLE realtime.schema_migrations TO authenticated;
-GRANT SELECT ON TABLE realtime.schema_migrations TO service_role;
-GRANT ALL ON TABLE realtime.schema_migrations TO supabase_realtime_admin;
-
-
---
--- Name: TABLE subscription; Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: TABLE subscription; Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON TABLE realtime.subscription TO postgres;
@@ -10782,11 +10776,10 @@ GRANT ALL ON TABLE realtime.subscription TO dashboard_user;
 GRANT SELECT ON TABLE realtime.subscription TO anon;
 GRANT SELECT ON TABLE realtime.subscription TO authenticated;
 GRANT SELECT ON TABLE realtime.subscription TO service_role;
-GRANT ALL ON TABLE realtime.subscription TO supabase_realtime_admin;
 
 
 --
--- Name: SEQUENCE subscription_id_seq; Type: ACL; Schema: realtime; Owner: supabase_admin
+-- Name: SEQUENCE subscription_id_seq; Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
 GRANT ALL ON SEQUENCE realtime.subscription_id_seq TO postgres;
@@ -10794,7 +10787,6 @@ GRANT ALL ON SEQUENCE realtime.subscription_id_seq TO dashboard_user;
 GRANT USAGE ON SEQUENCE realtime.subscription_id_seq TO anon;
 GRANT USAGE ON SEQUENCE realtime.subscription_id_seq TO authenticated;
 GRANT USAGE ON SEQUENCE realtime.subscription_id_seq TO service_role;
-GRANT ALL ON SEQUENCE realtime.subscription_id_seq TO supabase_realtime_admin;
 
 
 --
@@ -11169,5 +11161,5 @@ ALTER EVENT TRIGGER pgrst_drop_watch OWNER TO supabase_admin;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict Uil0czzvdHqA03RV6unEDUxilHziiibvUMGzqSkKNUuFcqZ6C4tSjwkQ7bLdIfB
+\unrestrict V6GzZHA62ZlRQ65BCSscEFWw7JuHp0PaTDDnEZ4pDK5N9hJtfL4GLq0HUQaxipf
 
