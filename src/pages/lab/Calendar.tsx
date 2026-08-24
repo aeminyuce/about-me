@@ -64,7 +64,8 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='styles'>
-{`code example`}
+{`// show the calendar as today
+<Calendar />`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -115,7 +116,17 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='predefined'>
-{`code example`}
+{`// previous month
+<Calendar data={{ date: 'prev' }} />
+
+// next month
+<Calendar data={{ date: 'next' }} />
+
+// defined month
+<Calendar data={{ date: '10' }} />
+
+// defined year and month
+<Calendar data={{ date: '2026,1' }} />`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -145,7 +156,23 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='details'>
-{`code example`}
+{`// json for defined year and month
+const json = [
+    {
+        "day": 12,
+        "year": 2025,
+        "month": 6,
+        "dayName": "Wednesday",
+        "details": {
+            "11:00": "<a href=\"#\" target=\"_blank\">Team Strategy Meeting</a>",
+            "14:00": "<a href=\"#\" target=\"_blank\">Product Launch Briefing</a>",
+            "15:00": "<a href=\"#\" target=\"_blank\">Client Call: Project X</a>",
+        }
+    }
+]
+
+// calendar with JSON displays the same defined date and month
+<Calendar data={{ date: '2025,6' }} json={json} />`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -185,7 +212,14 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='pickers'>
-{`code example`}
+{`// picker with an empty input
+<CalendarPicker inline='always' />
+
+// picker with a filled input
+<CalendarPicker defaultValue='02/05/2026' />
+
+// inline               : inline | xs
+// defaultValue         : show picker with defined date`}
         </CodePanel>
         </>
     )
