@@ -23,7 +23,7 @@ export default function (props: ShowCodeProps) {
 
     return (
         <>
-        <Tooltip id={randomId}>Show Code Examples</Tooltip>
+        <Tooltip id={randomId}>Show Code Usage</Tooltip>
         <Button square ghost className={classes}
             data={{ 'tooltip': 'l', 'id': randomId, 'only': 'desktop' }} onClick={() => scrollToHash(id)}>
             <SvgIcon as='js' src={IconCode} />
