@@ -142,13 +142,13 @@ export default function () {
 
                 </Carousel.Slider>
                 <Carousel.Nav>
-                    <Button ghost square className='ui-carousel-prev ui-circle'>
+                    <Carousel.Prev ghost square className='ui-circle'>
                         <SvgIcon as='js' src={IconAngleLeft} />
-                    </Button>
+                    </Carousel.Prev>
                     <Carousel.Dots />
-                    <Button ghost square className='ui-carousel-next ui-circle'>
+                    <Carousel.Next ghost square className='ui-circle'>
                         <SvgIcon as='js' src={IconAngleRight} />
-                    </Button>
+                    </Carousel.Next>
                 </Carousel.Nav>
             </Carousel>
         </Preview>
@@ -184,7 +184,7 @@ export default function () {
                             <Grid.Row fluid='sm'>
                                 <Grid.Col size={12}>
 
-                                    <Item as='div' className='ui-bring-r ui-ease-layout ui-ease-slow'>
+                                    <Item as='div' className='ui-bring-r ui-ease-slow'>
                                         <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.travelTitle}</Heading>
                                             <Item as='p' className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
@@ -230,7 +230,7 @@ export default function () {
                             <Grid.Row fluid='sm'>
                                 <Grid.Col size={12}>
 
-                                    <Item as='div' className='ui-bring-r ui-ease-layout ui-ease-slow'>
+                                    <Item as='div' className='ui-bring-r ui-ease-slow'>
                                         <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.friendsTitle}</Heading>
                                             <Item as='div' className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
@@ -249,19 +249,47 @@ export default function () {
 
                 </Carousel.Slider>
                 <Carousel.Nav>
-                    <Button ghost square className='ui-carousel-prev ui-circle'>
+                    <Carousel.Prev ghost square className='ui-circle'>
                         <SvgIcon as='js' src={IconAngleLeft} />
-                    </Button>
+                    </Carousel.Prev>
                     <Carousel.Dots />
-                    <Button ghost square className='ui-carousel-next ui-circle'>
+                    <Carousel.Next ghost square className='ui-circle'>
                         <SvgIcon as='js' src={IconAngleRight} />
-                    </Button>
+                    </Carousel.Next>
                 </Carousel.Nav>
             </Carousel>
         </Preview>
 
         <CodePanel type='react' id='html'>
-{`code example`}
+{`<Carousel xl={2} lg={2} col={1} md={3} sm={2} xs={1} slide={5000} start={2}>
+    <Carousel.Slider>
+
+        <Carousel.Content animate={150}>
+            <Image src='1.jpg' className='ui-bring-back' />
+            <Image src='2.jpg' className='ui-bring-front' />
+            <Item as='span' className='ui-bring-r'>
+                Content
+            </Item>
+        </Carousel.Content>
+
+    </Carousel.Slider>
+    <Carousel.Nav>
+        <Carousel.Prev square>
+            <SvgIcon as='js' src={IconAngleLeft} />
+        </Carousel.Prev>
+        <Carousel.Dots />
+        <Carousel.Next square>
+            <SvgIcon as='js' src={IconAngleRight} />
+        </Carousel.Next>
+    </Carousel.Nav>
+</Carousel>
+
+// col                  : 1 - 12 default column size
+// xl, lg, md, sm, xs   : responsive colum sizes
+// slide                : starts the slide animation in milliseconds
+// start                : shows the slide at the specified
+// animate              : sets the animation duration for the contents
+// ui-bring-*           : front | back | t | r | b | l animates the contents`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -334,13 +362,13 @@ export default function () {
 
                 </Carousel.Slider>
                 <Carousel.Nav>
-                    <Button ghost square className='ui-carousel-prev ui-circle'>
+                    <Carousel.Prev ghost square className='ui-circle'>
                         <SvgIcon as='js' src={IconAngleLeft} />
-                    </Button>
+                    </Carousel.Prev>
                     <Carousel.Dots />
-                    <Button ghost square className='ui-carousel-next ui-circle'>
+                    <Carousel.Next ghost square className='ui-circle'>
                         <SvgIcon as='js' src={IconAngleRight} />
-                    </Button>
+                    </Carousel.Next>
                 </Carousel.Nav>
             </Carousel>
         </Preview>
@@ -374,19 +402,44 @@ export default function () {
 
                 </Carousel.Slider>
                 <Carousel.Nav>
-                    <Button ghost square className='ui-carousel-prev ui-circle'>
+                    <Carousel.Prev ghost square className='ui-circle'>
                         <SvgIcon as='js' src={IconAngleLeft} />
-                    </Button>
+                    </Carousel.Prev>
                     <Carousel.Dots />
-                    <Button ghost square className='ui-carousel-next ui-circle'>
+                    <Carousel.Next ghost square className='ui-circle'>
                         <SvgIcon as='js' src={IconAngleRight} />
-                    </Button>
+                    </Carousel.Next>
                 </Carousel.Nav>
             </Carousel>
         </Preview>
 
         <CodePanel type='react' id='image'>
-{`code example`}
+{`<Carousel half col={8} md={4} sm={3} xs={1} slide={2000}>
+    <Carousel.Slider>
+
+        <Carousel.Content>
+            <Image src='1.jpg' />
+        </Carousel.Content>
+        <Carousel.Content>
+            <Image src='2.jpg' />
+        </Carousel.Content>
+        <Carousel.Content>
+            <Image src='3.jpg' />
+        </Carousel.Content>
+
+    </Carousel.Slider>
+    <Carousel.Nav>
+        <Carousel.Prev square>
+            <SvgIcon as='js' src={IconAngleLeft} />
+        </Carousel.Prev>
+        <Carousel.Dots />
+        <Carousel.Next square>
+            <SvgIcon as='js' src={IconAngleRight} />
+        </Carousel.Next>
+    </Carousel.Nav>
+</Carousel>
+
+// half                 : shows half of the last content`}
         </CodePanel>
         </>
     )
