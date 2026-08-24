@@ -165,7 +165,7 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='examples'>
-{`code example`}
+{`<Card>Content</Card>`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -282,7 +282,13 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='sides'>
-{`code example`}
+{`<Card as='span'>
+    <Card.Side as='span'>Header</Card.Side>
+    <Card.Side as='span'>Content</Card.Side>
+    <Card.Side as='span'>Footer</Card.Side>
+</Card>
+
+// as               : div | span`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -357,7 +363,17 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='grids'>
-{`code example`}
+{`<Card>
+    <Card.Side>
+        <Heading as='h4'>Card Title</Heading>
+    </Card.Side>
+    <Card.Side>
+        <Grid.Row>
+            <Grid.Col size={4}>Content</Grid.Col>
+            <Grid.Col size={8}>Content</Grid.Col>
+        </Grid.Row>
+    </Card.Side>
+</Card>`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -414,7 +430,7 @@ export default function () {
                         </Item>
                     </Grid.Col>
                     <Grid.Row gap='lg'>
-                        <Grid.Col size={12} className='ui-p-15-v ui-no-p-l'>{text?.warning}</Grid.Col>
+                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.warning}</Grid.Col>
                     </Grid.Row>
                 </Grid.Static>
             </Card>
@@ -435,7 +451,18 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='alerts'>
-{`code example`}
+{`<Card closable>
+    <Grid.Row>
+        <Grid.Col size={2}>
+            <SvgIcon as='js' src={IconAlert} />
+        </Grid.Col>
+        <Grid.Col size={10}>
+            Alert Message
+        </Grid.Col>
+    </Grid.Row>
+</Card>
+
+// closable         : adds close button`}
         </CodePanel>
 
         <Spacer size={30} className='ui-m-30-v' />
@@ -460,17 +487,17 @@ export default function () {
             <Grid.Row className='ui-align-l ui-round-2nd'>
                 <Grid.Col size={6} className='ui-shadow-1st'>
 
-                    <Card type='success' closable className='ui-p-15'>
+                    <Card closable type='success' className='ui-p-15'>
                         <Heading as='h4'>{text?.successTitle}</Heading>
                         <Item as='p' className='ui-text-readable'>{text?.success}</Item>
                     </Card>
 
-                    <Card type='warning' closable className='ui-p-15'>
+                    <Card closable type='warning' className='ui-p-15'>
                         <Heading as='h4'>{text?.warningTitle}</Heading>
                         <Item as='p' className='ui-text-readable'>{text?.warning}</Item>
                     </Card>
 
-                    <Card type='danger' closable className='ui-p-15'>
+                    <Card closable type='danger' className='ui-p-15'>
                         <Heading as='h4'>{text?.dangerTitle}</Heading>
                         <Item as='p' className='ui-text-readable'>{text?.danger}</Item>
                     </Card>
@@ -478,17 +505,17 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col size={6}>
 
-                    <Card type='success' closable className='ui-p-15 ui-theme-green ui-fill-light-100'>
+                    <Card closable type='success' className='ui-p-15 ui-theme-green ui-fill-light-100'>
                         <Heading as='h4'>{text?.successTitle}</Heading>
                         <Item as='p' className='ui-text-readable'>{text?.success}</Item>
                     </Card>
 
-                    <Card type='warning' closable className='ui-p-15 ui-theme-yellow ui-fill-light-100'>
+                    <Card closable type='warning' className='ui-p-15 ui-theme-yellow ui-fill-light-100'>
                         <Heading as='h4'>{text?.warningTitle}</Heading>
                         <Item as='p' className='ui-text-readable'>{text?.warning}</Item>
                     </Card>
 
-                    <Card type='danger' closable className='ui-p-15 ui-theme-red ui-fill-light-100'>
+                    <Card closable type='danger' className='ui-p-15 ui-theme-red ui-fill-light-100'>
                         <Heading as='h4'>{text?.dangerTitle}</Heading>
                         <Item as='p' className='ui-text-readable'>{text?.danger}</Item>
                     </Card>
@@ -498,7 +525,12 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='messages'>
-{`code example`}
+{`<Card closable type='success'>
+    <Heading as='h4'>Card Title</Heading>
+    <Item as='p'>Message</Item>
+</Card>
+
+// type             : success | warning | danger`}
         </CodePanel>
         </>
     )
