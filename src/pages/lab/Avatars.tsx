@@ -247,7 +247,7 @@ export default function () {
         <CodePanel type='react' id='variants'>
 {`// with image
 <Avatar size='xs' className='ui-round'>
-    <Image lazy src='avatar.jpg' aspect='square' />
+    <Image src='avatar.jpg' aspect='square' />
 </Avatar>
 
 // with icon
@@ -486,7 +486,7 @@ export default function () {
 {`<Avatar.Holder as='span' ease='1st' size='sm' classname='ui-circle-1st'>
     // with image
     <Avatar noease>
-        <Image lazy src='avatar.jpg' aspect='square' />
+        <Image src='avatar.jpg' aspect='square' />
     </Avatar>
 
     // with placeholder text

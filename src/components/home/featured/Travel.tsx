@@ -50,7 +50,7 @@ export default function () {
                             <Grid.Row fluid='xs'>
                                 <Grid.Col size={12}>
 
-                                    <Item as='div' className='ui-bring-r ui-ease-layout ui-ease-slow'>
+                                    <Item as='div' className='ui-bring-r ui-ease-slow'>
                                         <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{travel?.titleA}</Heading>
                                             <Item as='p' className='ui-color-black-50 ui-font-16 ui-font-readable ui-font-line-6 ui-m-30-b'>
@@ -94,7 +94,7 @@ export default function () {
                             <Grid.Row fluid='xs'>
                                 <Grid.Col size={12}>
 
-                                    <Item as='div' className='ui-bring-r ui-ease-layout ui-ease-slow'>
+                                    <Item as='div' className='ui-bring-r ui-ease-slow'>
                                         <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{travel?.titleB}</Heading>
                                             <Item as='p' className='ui-color-black-50 ui-font-16 ui-font-readable ui-font-line-6 ui-m-30-b'>
@@ -111,13 +111,13 @@ export default function () {
 
                 </Carousel.Slider>
                 <Carousel.Nav className='ui-m-10-b'>
-                    <Button ghost square className='ui-carousel-prev ui-circle'>
+                    <Carousel.Prev ghost square className='ui-circle'>
                         <SvgIcon as='js' src={IconAngleLeft} />
-                    </Button>
+                    </Carousel.Prev>
                     <Carousel.Dots />
-                    <Button ghost square className='ui-carousel-next ui-circle'>
+                    <Carousel.Next ghost square className='ui-circle'>
                         <SvgIcon as='js' src={IconAngleRight} />
-                    </Button>
+                    </Carousel.Next>
                 </Carousel.Nav>
             </Carousel>
         </Card>
