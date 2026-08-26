@@ -376,7 +376,7 @@ export default function () {
 
                     <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineToggle2}</Item>
                     <LineChart.Holder roots grids infos x={value?.linexDays}>
-                        <LineChart.Line filled noSelected name={text?.lineInfo1} colorIndex={5}>
+                        <LineChart.Line filled hidden name={text?.lineInfo1} colorIndex={5}>
                             <LineChart.Items y={value?.liney2} />
                         </LineChart.Line>
                         <LineChart.Line filled name={text?.lineInfo2} colorIndex={7}>
@@ -436,7 +436,43 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='line'>
-{`code example`}
+{`const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+const values1 = [84, 56, 112, 140, 28, 0, 28];
+const values2 = [65, 42, 92, 55, 89, 98, 116];
+const values3 = [55, 33, 112, 112, 112, 112, 73];
+
+const size = { rows: 10, rowsHeight: 20 };
+
+<LineChart.Holder roots grids infos step='6' prefix='€' suffix='m' sep='.' size={size} x={days}>
+    <LineChart.Line filled dotted>
+        <LineChart.Items y={values1} />
+    </LineChart.Line>
+    <LineChart.Line dashed hidden>
+        <LineChart.Items y={values2} />
+    </LineChart.Line>
+    <LineChart.Line noCircled curved curvePercent={40} colorIndex='4'>
+        <LineChart.Items y={values3} />
+    </LineChart.Line>
+    <LineChart.Line noRepeatedCircles colorIndex='9' name='Sales'>
+        <LineChart.Items y={values4} url='#' />
+    </LineChart.Line>
+    <LineChart.Line onlyRepeated name='Profit'>
+        <LineChart.Items y={values5} url='#' />
+    </LineChart.Line>
+</LineChart.Holder>
+
+// x, y                                         : coordiante values
+// step                                         : display only the x‑axis labels that repeat at the defined interval
+// roots, grids                                 : toggle root and grid lines
+// size                                         : set the row length and row height
+// prefix, suffix, sep                          : add a prefix, suffix, and number separator for the vertical axis
+// filled, dotted, dashed                       : set line types
+// curved, curvePercent                         : set the lines to be curved and adjust the curve percentage
+// noCircled, noRepeatedCircles, onlyRepeated   : set how the line circles are displayed
+// infos, name, hidden                          : add toggle buttons for the lines, allowing any line to be individually hidden
+// url                                          : adds url for circles
+// colorIndex                                   : if no colors are set, they are added automatically; if defined, the predefined colors are used`}
         </CodePanel>
         </>
     )
