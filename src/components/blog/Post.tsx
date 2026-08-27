@@ -38,8 +38,8 @@ export default function () {
                             switch (name) {
                                 case 'postTitle':
                                     return (
-                                        <Item as='header' className='ui-m-15-b'>
-                                            <Heading key={name} as='h1'>{item?.data?.text}</Heading>
+                                        <Item key={name} as='header' className='ui-m-15-b'>
+                                            <Heading as='h1'>{item?.data?.text}</Heading>
                                         </Item>
                                     );
 
@@ -48,8 +48,8 @@ export default function () {
 
                                 case 'postImage':
                                     return (
-                                        <Image.Group className='blog-post-image'>
-                                            <Image key={name} lazy fluid='all' src={item?.data?.url} alt={item?.data?.alt} aspect='photo' className='ui-round ui-shadow-lg' />
+                                        <Image.Group key={name} className='blog-post-image'>
+                                            <Image lazy fluid='all' src={item?.data?.url} alt={item?.data?.alt} aspect='photo' className='ui-round ui-shadow-lg' />
                                             <Image.Caption className='ui-color-black-50 ui-font-italic'>
                                                 {pageTitle}
                                             </Image.Caption>
