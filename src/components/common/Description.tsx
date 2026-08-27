@@ -11,7 +11,7 @@ export default function (props: DescriptionProps) {
     return (
         <Grid.Row>
             <Grid.Col xl={10} lg={10} size={12}>
-                <Item as='p' className='ui-font-16 ui-color-black-50 ui-font-readable ui-sm-align-c'>
+                <Item as='p' className='ui-color-black-50 ui-font-18 ui-font-readable ui-sm-align-c ui-m-10-b'>
                     {children}
                 </Item>
             </Grid.Col>

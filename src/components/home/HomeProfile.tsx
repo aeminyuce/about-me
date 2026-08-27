@@ -27,12 +27,12 @@ export default function () {
                     {general?.fullName}
                 </Heading>
 
-                <Heading as='h2' className='ui-font-16 ui-font-regular ui-m-5-b ui-block'>
+                <Heading as='h2' className='ui-font-regular ui-m-5-b ui-block'>
                     {general?.jobTitle}
                 </Heading>
 
                 <SvgIcon as='js' src={IconMarker} size='sm' r={5} />
-                <Item as='span' className='ui-font-16 ui-inline-block'>{api?.home?.aboutMe?.location}</Item>
+                <Item as='span' className='ui-inline-block'>{api?.home?.aboutMe?.location}</Item>
 
                 <PersonalSkills />
                 <GetInTouchButton />

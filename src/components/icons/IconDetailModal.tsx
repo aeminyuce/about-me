@@ -23,7 +23,7 @@ export default function (props: IconDetailsProps) {
 
                 <Heading as='h2'>SVG Icon Details</Heading>
 
-                <Grid.Row as='dl' fluid='no' hGap='no' vGap='md' className='ui-font-16 ui-m-30-v'>
+                <Grid.Row as='dl' fluid='no' hGap='no' vGap='md' className='ui-m-30-v'>
                     <Grid.Col as='dt' size={6} className='ui-color-black-50'>Icon name</Grid.Col>
                     <Grid.Col as='dd' size={6}>{name}</Grid.Col>
 

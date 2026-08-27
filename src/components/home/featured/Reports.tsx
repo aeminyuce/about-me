@@ -25,7 +25,7 @@ const Report = (props: any) => {
         <Card className={`ui-p-15 ui-shadow ui-round-${type}`}>
             <Grid.Static fluid='no' className='ui-font-condensed'>
                 <Grid.Row hGap='no' vGap='md'>
-                    <Grid.Col size={12} className='ui-font-16 ui-m-10-b'>
+                    <Grid.Col size={12} className='ui-m-10-b'>
                         {getData?.name}
                     </Grid.Col>
                 </Grid.Row>

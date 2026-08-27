@@ -83,7 +83,7 @@ export default function () {
 
                                     <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                         <Heading as='h3'>{text?.travelTitle}</Heading>
-                                        <Item as='p' className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
+                                        <Item as='p' className='ui-color-black-50 ui-font-readable ui-m-25-b'>
                                             {text?.travelText1}
                                             <Spacer size={10} />
                                             {text?.travelText1}
@@ -127,7 +127,7 @@ export default function () {
 
                                     <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                         <Heading as='h3'>{text?.friendsTitle}</Heading>
-                                        <Item as='p' className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
+                                        <Item as='p' className='ui-color-black-50 ui-font-readable ui-m-25-b'>
                                             {text?.friendsText1}
                                             <Spacer size={10} />
                                             {text?.friendsText2}
@@ -187,7 +187,7 @@ export default function () {
                                     <Item as='div' className='ui-bring-r ui-ease-slow'>
                                         <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.travelTitle}</Heading>
-                                            <Item as='p' className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
+                                            <Item as='p' className='ui-color-black-50 ui-font-readable ui-m-25-b'>
                                                 {text?.travelText1}
                                                 <Spacer size={10} />
                                                 {text?.travelText1}
@@ -233,7 +233,7 @@ export default function () {
                                     <Item as='div' className='ui-bring-r ui-ease-slow'>
                                         <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.friendsTitle}</Heading>
-                                            <Item as='div' className='ui-color-black-50 ui-font-16 ui-font-readable ui-m-25-b'>
+                                            <Item as='div' className='ui-color-black-50 ui-font-readable ui-m-25-b'>
                                                 {text?.friendsText1}
                                                 <Spacer size={10} />
                                                 {text?.friendsText2}

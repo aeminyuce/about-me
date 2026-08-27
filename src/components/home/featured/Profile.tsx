@@ -50,7 +50,7 @@ export default function () {
                             <Avatar size='xs' className='ui-round ui-fill-light-300'>
                                 <Item as='span'>{item.time}</Item>
                             </Avatar>
-                            <Item as='span' className='ui-color-black-50 ui-font-13 ui-font-condensed ui-p-5-t ui-block'>
+                            <Item as='span' className='ui-color-black-50 ui-font-14 ui-font-condensed ui-p-5-t ui-block'>
                                 {item.activity}
                             </Item>
                         </ListGroup.Item>

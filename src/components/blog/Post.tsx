@@ -44,7 +44,7 @@ export default function () {
                                     );
 
                                 case 'postDate':
-                                    return <Item key={name} as='time' className='ui-font-16 ui-block'>{item?.data?.text}</Item>;
+                                    return <Item key={name} as='time' className='ui-block'>{item?.data?.text}</Item>;
 
                                 case 'postImage':
                                     return (
