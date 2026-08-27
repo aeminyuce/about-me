@@ -21,10 +21,7 @@ const errorHandler = (status: any) => {
 
 export default class Service {
     get = async (url: string, params?: Record<string, string>) => {
-        if (params) {
-            const query = new URLSearchParams(params).toString();
-            url += query;
-        }
+        if (params) url += params;
 
         try {
             const response = await fetch(url, {
