@@ -17,7 +17,7 @@ export default function () {
     const menu = api?.lab?.menu;
 
     return (
-        <Card className='ui-color-black-50 ui-p-15 ui-round ui-shadow ui-set-sticky ui-hide-md'>
+        <Card className='ui-color-black-50 ui-font-14 ui-p-15 ui-round ui-shadow ui-set-sticky ui-hide-md'>
             <Item as='nav' aria-label='Lab page navigation'>
                 <Listing type='unstyled' space={15} className='lab-menu ui-font-hoverline-2nd ui-theme-yellowOrange ui-sidebar-add-r'>
 
