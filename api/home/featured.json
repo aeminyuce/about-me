@@ -112,13 +112,13 @@
             "l": {
                 "name": "Active Reports",
                 "percent": "58% efficiency",
-                "reports": 106,
+                "reports": 209,
                 "progressPercent": 58
             },
             "r": {
                 "name": "Finished Reports",
                 "percent": "74% efficiency",
-                "reports": 19,
+                "reports": 37,
                 "progressPercent": 74
             }
         },
