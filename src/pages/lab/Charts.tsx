@@ -319,22 +319,22 @@ export default function () {
 
                     <Item as='b' className='ui-m-5-b ui-nline-block'>{text?.lineRepeatOnly}</Item>
                     <LineChart.Holder roots x={value?.linexDays}>
-                        <LineChart.Line filled onlyRepeated>
+                        <LineChart.Line filled onlyRepeatedLines>
                             <LineChart.Items y={value?.lineyRep5} />
                         </LineChart.Line>
-                        <LineChart.Line filled onlyRepeated>
+                        <LineChart.Line filled onlyRepeatedLines>
                             <LineChart.Items y={value?.lineyRep6} />
                         </LineChart.Line>
-                        <LineChart.Line filled onlyRepeated>
+                        <LineChart.Line filled onlyRepeatedLines>
                             <LineChart.Items y={value?.lineyRep7} />
                         </LineChart.Line>
-                        <LineChart.Line filled onlyRepeated>
+                        <LineChart.Line filled onlyRepeatedLines>
                             <LineChart.Items y={value?.lineyRep8} />
                         </LineChart.Line>
-                        <LineChart.Line filled onlyRepeated>
+                        <LineChart.Line filled onlyRepeatedLines>
                             <LineChart.Items y={value?.lineyRep9} />
                         </LineChart.Line>
-                        <LineChart.Line filled onlyRepeated>
+                        <LineChart.Line filled onlyRepeatedLines>
                             <LineChart.Items y={value?.lineyRep10} />
                         </LineChart.Line>
                     </LineChart.Holder>
@@ -451,28 +451,28 @@ const size = { rows: 10, rowsHeight: 20 };
     <LineChart.Line dashed hidden>
         <LineChart.Items y={values2} />
     </LineChart.Line>
-    <LineChart.Line noCircled curved curvePercent={40} colorIndex='4'>
+    <LineChart.Line noCircles curved curvePercent={40} colorIndex='4'>
         <LineChart.Items y={values3} />
     </LineChart.Line>
     <LineChart.Line noRepeatedCircles colorIndex='9' name='Sales'>
         <LineChart.Items y={values4} url='#' />
     </LineChart.Line>
-    <LineChart.Line onlyRepeated name='Profit'>
+    <LineChart.Line onlyRepeatedLines name='Profit'>
         <LineChart.Items y={values5} url='#' />
     </LineChart.Line>
 </LineChart.Holder>
 
-// x, y                                         : coordiante values
-// step                                         : display only the x‑axis labels that repeat at the defined interval
-// roots, grids                                 : toggle root and grid lines
-// size                                         : set the row length and row height
-// prefix, suffix, sep                          : add a prefix, suffix, and number separator for the vertical axis
-// filled, dotted, dashed                       : set line types
-// curved, curvePercent                         : set the lines to be curved and adjust the curve percentage
-// noCircled, noRepeatedCircles, onlyRepeated   : set how the line circles are displayed
-// infos, name, hidden                          : add toggle buttons for the lines, allowing any line to be individually hidden
-// url                                          : adds url for circles
-// colorIndex                                   : if no colors are set, they are added automatically; if defined, the predefined colors are used`}
+// x, y                                             : coordiante values
+// step                                             : display only the x‑axis labels that repeat at the defined interval
+// roots, grids                                     : toggle root and grid lines
+// size                                             : set the row length and row height
+// prefix, suffix, sep                              : add a prefix, suffix, and number separator for the vertical axis
+// filled, dotted, dashed                           : set line types
+// curved, curvePercent                             : set the lines to be curved and adjust the curve percentage
+// noCircles, noRepeatedCircles, onlyRepeatedLines  : set how the line circles are displayed
+// infos, name, hidden                              : add toggle buttons for the lines, allowing any line to be individually hidden
+// url                                              : adds url for circles
+// colorIndex                                       : if no colors are set, they are added automatically; if defined, the predefined colors are used`}
         </CodePanel>
         </>
     )
