@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import { Link, useLocation } from 'react-router';
 import Card from '@ui/Card';
 import Item from '@ui/Item';

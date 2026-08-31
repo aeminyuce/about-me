@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, Fragment, memo, useState, useCallback } from 'react';
+import { lazy, Suspense, Fragment, memo, useState, useCallback } from 'react';
 import Button from '@ui/Button';
 import Heading from '@ui/Heading';
 import Item from '@ui/Item';
@@ -6,7 +6,7 @@ import Modal from '@ui/Modal';
 import SvgIcon from '@ui/SvgIcon';
 
 // misc
-const IconDetailModal = lazy(() => import( /* webpackChunkName: 'misc/IconDetailModal' */ './IconDetailModal' ));
+const IconDetailModal = lazy(() => import('./IconDetailModal'));
 
 import { useStoreContext } from '@stores/StoreContext';
 import type { IconsListProps, IconDetailsProps } from '@models/Icons';
@@ -14,16 +14,16 @@ import { showIconDetail } from '@helpers/Icons';
 import IconDetailSkeleton from '@skeleton/IconDetail';
 
 // assets
-const SpriteGeneral = require('@sprite/general.svg') as string;
-const SpriteTouch = require('@sprite/touch.svg') as string;
-const SpriteMedia = require('@sprite/media.svg') as string;
-const SpriteKitchen = require('@sprite/kitchen.svg') as string;
-const SpriteRealEstate = require('@sprite/real-estate.svg') as string;
-const SpriteWeather = require('@sprite/weather.svg') as string;
-const SpriteCommerce = require('@sprite/commerce.svg') as string;
-const SpriteFiles = require('@sprite/files.svg') as string;
-const SpriteSocial = require('@sprite/social.svg') as string;
-const SpriteBrands = require('@sprite/brands.svg') as string;
+import SpriteGeneral from '@sprite/general.svg?inline';
+import SpriteTouch from '@sprite/touch.svg?inline';
+import SpriteMedia from '@sprite/media.svg?inline';
+import SpriteKitchen from '@sprite/kitchen.svg?inline';
+import SpriteRealEstate from '@sprite/real-estate.svg?inline';
+import SpriteWeather from '@sprite/weather.svg?inline';
+import SpriteCommerce from '@sprite/commerce.svg?inline';
+import SpriteFiles from '@sprite/files.svg?inline';
+import SpriteSocial from '@sprite/social.svg?inline';
+import SpriteBrands from '@sprite/brands.svg?inline';
 
 export default function (props: any) {
     const { api } = useStoreContext();

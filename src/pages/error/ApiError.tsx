@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from '@ui/Button';
 import Heading from '@ui/Heading';
 import Item from '@ui/Item';

@@ -1,9 +1,7 @@
-import React from 'react';
 import Grid from '@ui/Grid';
 
 // misc
 import { useStoreContext } from '@stores/StoreContext';
-import type { IconsListProps } from '@models/Icons';
 import IconsSkeleton from '@skeleton/Icons';
 import MyAvatar from '@components/common/MyAvatar';
 import Title from '@components/icons/Title';
@@ -13,7 +11,7 @@ import SizeChanger from '@components/icons/SizeChanger';
 import List from '@components/icons/List';
 
 // assets
-const iconsList = require('uilab-icons/icons-list.json') as IconsListProps[];
+import iconsList from 'uilab-icons/icons-list.json';
 
 // styles
 import '@assets/icons';

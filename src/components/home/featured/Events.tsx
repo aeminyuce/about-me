@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from '@ui/Button';
 import Calendar from '@ui/Calendar';
 import Card from '@ui/Card';

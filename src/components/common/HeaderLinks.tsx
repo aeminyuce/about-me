@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from '@ui/Button';
 import Item from '@ui/Item';
 import SvgIcon from '@ui/SvgIcon';

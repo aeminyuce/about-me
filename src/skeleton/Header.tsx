@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLocation } from 'react-router';
 import Grid from '@ui/Grid';
 import Item from '@ui/Item';

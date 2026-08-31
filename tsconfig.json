@@ -18,7 +18,7 @@
             "@skeleton/*": ["./src/skeleton/*"],
             "@stores/*": ["./src/stores/*"]
         },
-        "jsx": "react",
+        "jsx": "react-jsx",
         "allowSyntheticDefaultImports": true,
         "lib": ["dom", "esnext"],
         "module": "esnext",

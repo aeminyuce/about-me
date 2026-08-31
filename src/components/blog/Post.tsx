@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSearchParams } from 'react-router';
 import Heading from '@ui/Heading';
 import Grid from '@ui/Grid';

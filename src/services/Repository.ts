@@ -2,25 +2,25 @@ import Service from './Service';
 
 // get
 export const getPageData = async (service: Service) => {
-    return service.get(`${process.env.API_URL}/get_page`);
+    return service.get(`${import.meta.env.VITE_API_URL}/get_page`);
 }
 
 export const getHomeData = async (service: Service) => {
-    return service.get(`${process.env.API_URL}/get_home`);
+    return service.get(`${import.meta.env.VITE_API_URL}/get_home`);
 }
 export const getHomeFeaturedData = async (service: Service) => {
-    return service.get(`${process.env.API_URL}/get_home_featured`);
+    return service.get(`${import.meta.env.VITE_API_URL}/get_home_featured`);
 }
 
 export const getLabData = async (service: Service, page?: any) => {
     const getPage = page ? `_${page}` : '';
-    return service.get(`${process.env.API_URL}/get_lab${getPage}`);
+    return service.get(`${import.meta.env.VITE_API_URL}/get_lab${getPage}`);
 }
 
 export const getIconsData = async (service: Service) => {
-    return service.get(`${process.env.API_URL}/get_icons`);
+    return service.get(`${import.meta.env.VITE_API_URL}/get_icons`);
 }
 
 export const getBlogData = async (service: Service, params?: any) => {
-    return service.get(`${process.env.API_URL}/get_blog`, params);
+    return service.get(`${import.meta.env.VITE_API_URL}/get_blog`, params);
 }

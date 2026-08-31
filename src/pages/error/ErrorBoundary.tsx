@@ -1,4 +1,3 @@
-import React from 'react';
 import { useRouteError } from 'react-router';
 import Button from '@ui/Button';
 import Heading from '@ui/Heading';

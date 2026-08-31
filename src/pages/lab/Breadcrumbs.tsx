@@ -1,4 +1,3 @@
-import React from 'react';
 import Breadcrumbs from '@ui/Breadcrumbs';
 import Button from '@ui/Button';
 import Dropdown from '@ui/Dropdown';

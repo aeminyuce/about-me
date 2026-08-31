@@ -1,5 +1,5 @@
 const serviceHeaders = Object.freeze({
-    'apikey': process.env.API_KEY ?? '',
+    'apikey': import.meta.env.VITE_API_KEY ?? '',
     'Content-Type': 'application/json',
 });
 

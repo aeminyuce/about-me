@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useReducer } from 'react';
 import { useMatches } from 'react-router';
 import { getPageData, getHomeData, getHomeFeaturedData, getLabData, getIconsData, getBlogData } from '@services/Repository';
 import Service from '@services/Service';

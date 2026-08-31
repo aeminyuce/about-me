@@ -1,4 +1,3 @@
-import React from 'react';
 import Avatar from '@ui/Avatar';
 import Image from '@ui/Image';
 

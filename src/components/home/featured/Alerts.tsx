@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from '@ui/Card';
 import Grid from '@ui/Grid';
 import Item from '@ui/Item';

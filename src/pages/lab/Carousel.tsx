@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from '@ui/Button';
 import Carousel from '@ui/Carousel';
 import Grid from '@ui/Grid';

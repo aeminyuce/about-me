@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from '@ui/Button';
 import SvgIcon from '@ui/SvgIcon';
 import Tooltip from '@ui/Tooltip';

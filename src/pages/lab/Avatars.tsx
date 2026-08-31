@@ -1,4 +1,3 @@
-import React from 'react';
 import Avatar from '@ui/Avatar';
 import Button from '@ui/Button';
 import Grid from '@ui/Grid';

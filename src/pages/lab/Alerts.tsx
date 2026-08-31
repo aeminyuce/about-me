@@ -1,4 +1,3 @@
-import React from 'react';
 import Alerts from '@ui/Alerts';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';

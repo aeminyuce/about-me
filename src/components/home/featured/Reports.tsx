@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import { memo, useState } from 'react';
 import Button from '@ui/Button';
 import Card from '@ui/Card';
 import DonutChart from '@ui/DonutChart';

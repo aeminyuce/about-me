@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router';
 
 // misc
@@ -6,32 +6,32 @@ import App from './App';
 import PageTitle from '@components/common/PageTitle';
 
 // layouts
-const Default = lazy(() => import( /* webpackChunkName: 'Default' */ '@layouts/Default' ));
-const Error = lazy(() => import( /* webpackChunkName: 'Error' */ '@layouts/Error' ));
-const Home = lazy(() => import( /* webpackChunkName: 'Home' */ '@layouts/Home' ));
-const Lab = lazy(() => import( /* webpackChunkName: 'Lab' */ '@layouts/Lab' ));
+const Default = lazy(() => import('@layouts/Default'));
+const Error = lazy(() => import('@layouts/Error'));
+const Home = lazy(() => import('@layouts/Home'));
+const Lab = lazy(() => import('@layouts/Lab'));
 
 // routes
-const Featured = lazy(() => import( /* webpackChunkName: 'Featured' */ './home/Featured' ));
-const Dashboard = lazy(() => import( /* webpackChunkName: 'Dashboard' */ './home/Dashboard' ));
+const Featured = lazy(() => import('./home/Featured'));
+const Dashboard = lazy(() => import('./home/Dashboard'));
 
-const LabIntro = lazy(() => import( /* webpackChunkName: 'lab/Intro' */ './lab/Intro' ));
-const LabAlerts = lazy(() => import( /* webpackChunkName: 'lab/Alerts' */ './lab/Alerts' ));
-const LabAvatars = lazy(() => import( /* webpackChunkName: 'lab/Avatars' */ './lab/Avatars' ));
-const LabBreadcrumbs = lazy(() => import( /* webpackChunkName: 'lab/Breadcrumbs' */ './lab/Breadcrumbs' ));
-const LabButtons = lazy(() => import( /* webpackChunkName: 'lab/Buttons' */ './lab/Buttons' ));
-const LabCalendar = lazy(() => import( /* webpackChunkName: 'lab/Calendar' */ './lab/Calendar' ));
-const LabCard = lazy(() => import( /* webpackChunkName: 'lab/Card' */ './lab/Card' ));
-const LabCarousel = lazy(() => import( /* webpackChunkName: 'lab/Carousel' */ './lab/Carousel' ));
-const LabCharts = lazy(() => import( /* webpackChunkName: 'lab/Charts' */ './lab/Charts' ));
+const LabIntro = lazy(() => import('./lab/Intro'));
+const LabAlerts = lazy(() => import('./lab/Alerts'));
+const LabAvatars = lazy(() => import('./lab/Avatars'));
+const LabBreadcrumbs = lazy(() => import('./lab/Breadcrumbs'));
+const LabButtons = lazy(() => import('./lab/Buttons'));
+const LabCalendar = lazy(() => import('./lab/Calendar'));
+const LabCard = lazy(() => import('./lab/Card'));
+const LabCarousel = lazy(() => import('./lab/Carousel'));
+const LabCharts = lazy(() => import('./lab/Charts'));
 
-const Icons= lazy(() => import( /* webpackChunkName: 'Icons' */ './Icons' ));
-const Blog= lazy(() => import( /* webpackChunkName: 'Blog' */ './Blog' ));
+const Icons= lazy(() => import('./Icons'));
+const Blog= lazy(() => import('./Blog'));
 
-const ApiError= lazy(() => import( /* webpackChunkName: 'error/PageApiError' */ './error/ApiError' ));
-const ServerError= lazy(() => import( /* webpackChunkName: 'error/Page500' */ './error/ServerError' ));
-const NotFound= lazy(() => import( /* webpackChunkName: 'error/Page404' */ './error/NotFound' ));
-const ErrorBoundary= lazy(() => import( /* webpackChunkName: 'error/ErrorBoundary' */ './error/ErrorBoundary' ));
+const ApiError= lazy(() => import('./error/ApiError'));
+const ServerError= lazy(() => import('./error/ServerError'));
+const NotFound= lazy(() => import('./error/NotFound'));
+const ErrorBoundary= lazy(() => import('./error/ErrorBoundary'));
 
 export const router = createBrowserRouter([
     // app

@@ -1,4 +1,3 @@
-import React from 'react';
 import Calendar from '@ui/Calendar';
 import CalendarPicker from '@ui/CalendarPicker';
 import Grid from '@ui/Grid';

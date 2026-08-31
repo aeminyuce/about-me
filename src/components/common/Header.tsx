@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { useLocation } from 'react-router';
 import Button from '@ui/Button';
 import Grid from '@ui/Grid';
@@ -6,7 +6,7 @@ import HeaderSticky from '@ui/HeaderSticky';
 import SvgIcon from '@ui/SvgIcon';
 
 // misc
-const HeaderRightSidebar = lazy(() => import( /* webpackChunkName: 'misc/HeaderRightSidebar' */ './HeaderRightSidebar' ));
+const HeaderRightSidebar = lazy(() => import('./HeaderRightSidebar'));
 
 import { useStoreContext } from '@stores/StoreContext';
 import HeaderLeftSidebar from './HeaderLeftSidebar';

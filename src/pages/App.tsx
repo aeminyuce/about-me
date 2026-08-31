@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router';
 import TopButton from '@ui/TopButton';
 import SquircleMask from '@ui/SquircleMask';
