@@ -47,11 +47,7 @@ export default defineConfig(({ mode }) => ({
         sourcemap: mode !== 'production',
 
         rollupOptions: {
-            input: {
-                main: path.resolve(import.meta.dirname, 'index.html'),
-                // runs only production build
-                // example: path.resolve(import.meta.dirname, 'templates/example.html'),
-            },
+            input: path.resolve(import.meta.dirname, 'index.html'),
             output: {
                 entryFileNames: 'js/[name].[hash].js',
                 chunkFileNames: 'js/[name].[hash].js',
