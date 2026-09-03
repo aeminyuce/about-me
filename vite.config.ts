@@ -42,7 +42,7 @@ export default defineConfig(({ mode }) => ({
         strictPort: true
     },
     build: {
-        outDir: mode === 'production' ? 'build' : 'dist',
+        outDir: 'build',
         emptyOutDir: true,
         sourcemap: mode !== 'production',
 
