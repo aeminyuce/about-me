@@ -7,8 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "build": "vite build && vite preview",
     "install-uilab": "npm config set ignore-scripts true && node ../uilab/inject-latest.js && npm i uilab",
     "install-uilab-icons": "npm config set ignore-scripts true && node ../uilab-icons/inject-latest.js && npm i uilab-icons",
     "api-backup": "bash ./api/supabase.sh --backup",
@@ -18,7 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uilab": "file:../uilab/uilab-1.0.785.tgz",
+    "uilab": "file:../uilab/uilab-1.0.642.tgz",
     "uilab-icons": "file:../uilab-icons/uilab-icons-1.0.985.tgz"
   }
 }
