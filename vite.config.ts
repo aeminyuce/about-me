@@ -32,6 +32,7 @@ export default defineConfig(({ mode }) => ({
         }
     },
     css: {
+        transformer: 'lightningcss',
         preprocessorOptions: {
             less: {}
         }
