@@ -70,7 +70,7 @@ export default function () {
                         <Card className='ui-round ui-shadow-lg'>
                             <Card.Side className='ui-p-30'>
                                 <Heading as='h2' className='ui-align-l'>{text?.forestTitle}</Heading>
-                                <Item as='p' className='ui-font-18 ui-font-light ui-font-readable ui-align-l'>{text?.forest}</Item>
+                                <Item as='p' className='ui-font-18 ui-font-light ui-font-relax ui-align-l'>{text?.forest}</Item>
                             </Card.Side>
                             <Card.Side className='ui-set-relative ui-theme-greenYellow'>
                                 <Image lazy fluid='all' src={img[0]} aspect='landscape' className='ui-round-b' />
@@ -325,7 +325,7 @@ export default function () {
                                 <Grid.Row gap='lg'>
                                     <Grid.Col size={12}>
                                         <Heading as='h3'>{text?.museumTitle}</Heading>
-                                        <Item as='p' className='ui-font-readable ui-m-20-b'>{text?.museum}</Item>
+                                        <Item as='p' className='ui-font-relax ui-m-20-b'>{text?.museum}</Item>
                                         <Button.Wrapper as='span' ease='1st' className='ui-circle-1st'>
                                             <Button noease as='span' size='xs' className='ui-p-10-h ui-m-5-r'>{text?.museumHash1}</Button>
                                             <Button noease as='span' size='xs' className='ui-p-10-h'>{text?.museumHash2}</Button>
@@ -351,7 +351,7 @@ export default function () {
                                 <Image lazy fluid='all' src={img[5]} aspect='square' className='ui-round-r ui-no-round-br' />
                             </Grid.Col>
                         </Grid.Row>
-                        <Grid.Row fluid='sm' gap='lg' className='ui-color-black-50 ui-font-readable ui-align-l'>
+                        <Grid.Row fluid='sm' gap='lg' className='ui-color-black-50 ui-font-relax ui-align-l'>
                             <Grid.Col size={6}>{text?.travel1}</Grid.Col>
                             <Grid.Col size={6} className='ui-sm-no-p-t'>{text?.travel2}</Grid.Col>
                         </Grid.Row>
@@ -488,17 +488,17 @@ export default function () {
 
                     <Card closable type='success' className='ui-p-15'>
                         <Heading as='h4'>{text?.successTitle}</Heading>
-                        <Item as='p' className='ui-text-readable'>{text?.success}</Item>
+                        <Item as='p' className='ui-font-relax'>{text?.success}</Item>
                     </Card>
 
                     <Card closable type='warning' className='ui-p-15'>
                         <Heading as='h4'>{text?.warningTitle}</Heading>
-                        <Item as='p' className='ui-text-readable'>{text?.warning}</Item>
+                        <Item as='p' className='ui-font-relax'>{text?.warning}</Item>
                     </Card>
 
                     <Card closable type='danger' className='ui-p-15'>
                         <Heading as='h4'>{text?.dangerTitle}</Heading>
-                        <Item as='p' className='ui-text-readable'>{text?.danger}</Item>
+                        <Item as='p' className='ui-font-relax'>{text?.danger}</Item>
                     </Card>
 
                 </Grid.Col>
@@ -506,17 +506,17 @@ export default function () {
 
                     <Card closable type='success' className='ui-p-15 ui-theme-green ui-fill-light-100'>
                         <Heading as='h4'>{text?.successTitle}</Heading>
-                        <Item as='p' className='ui-text-readable'>{text?.success}</Item>
+                        <Item as='p' className='ui-font-relax'>{text?.success}</Item>
                     </Card>
 
                     <Card closable type='warning' className='ui-p-15 ui-theme-yellow ui-fill-light-100'>
                         <Heading as='h4'>{text?.warningTitle}</Heading>
-                        <Item as='p' className='ui-text-readable'>{text?.warning}</Item>
+                        <Item as='p' className='ui-font-relax'>{text?.warning}</Item>
                     </Card>
 
                     <Card closable type='danger' className='ui-p-15 ui-theme-red ui-fill-light-100'>
                         <Heading as='h4'>{text?.dangerTitle}</Heading>
-                        <Item as='p' className='ui-text-readable'>{text?.danger}</Item>
+                        <Item as='p' className='ui-font-relax'>{text?.danger}</Item>
                     </Card>
 
                 </Grid.Col>

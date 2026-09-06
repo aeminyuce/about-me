@@ -56,7 +56,7 @@ export default function () {
                                     );
 
                                 case 'text':
-                                    return <Item as='p' key={name} className='ui-font-readable'>{item?.data?.text}</Item>;
+                                    return <Item as='p' key={name} className='ui-font-relax'>{item?.data?.text}</Item>;
 
                                 default:
                                     break;

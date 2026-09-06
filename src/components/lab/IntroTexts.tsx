@@ -12,7 +12,7 @@ export const LeadText = () => {
 
     return (
         <Item as='div' className='ui-p-30 ui-sm-no-p ui-theme-yellowOrange ui-text'>
-            <Item as='p' className='ui-font-22 ui-font-readable ui-m-25-b'>
+            <Item as='p' className='ui-font-22 ui-font-relax ui-m-25-b'>
                 {api?.lab?.intro?.leadText}
             </Item>
             <SvgIcon as='js' src={IconSoundwave} size='xxl' v={30} />
@@ -25,7 +25,7 @@ export const Paragraphs = () => {
     const intro = api?.lab?.intro;
 
     return (
-        <Item as='p' className='ui-font-18 ui-font-readable ui-p-30-h ui-sm-no-p-h ui-m-30-h'>
+        <Item as='p' className='ui-font-18 ui-font-relax ui-p-30-h ui-sm-no-p-h ui-m-30-h'>
             {intro?.textPart1}
             <br /><br />
             {intro?.textPart2}

@@ -52,7 +52,7 @@ export default function () {
                                     <Item as='div' className='ui-bring-r ui-ease-slow'>
                                         <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{travel?.titleA}</Heading>
-                                            <Item as='p' className='ui-color-black-50 ui-font-readable ui-font-line-6 ui-m-30-b'>
+                                            <Item as='p' className='ui-color-black-50 ui-font-relax ui-font-line-6 ui-m-30-b'>
                                                 {travel?.textA}
                                             </Item>
                                             <Button fluid='xs' className='ui-circle ui-fill-dark-100'>{travel?.textMore}</Button>
@@ -96,7 +96,7 @@ export default function () {
                                     <Item as='div' className='ui-bring-r ui-ease-slow'>
                                         <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
                                             <Heading as='h3'>{travel?.titleB}</Heading>
-                                            <Item as='p' className='ui-color-black-50 ui-font-readable ui-font-line-6 ui-m-30-b'>
+                                            <Item as='p' className='ui-color-black-50 ui-font-relax ui-font-line-6 ui-m-30-b'>
                                                 {travel?.textB}
                                             </Item>
                                             <Button fluid='xs' className='ui-circle ui-fill-dark-100'>{travel?.textMore}</Button>

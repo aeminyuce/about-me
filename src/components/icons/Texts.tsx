@@ -19,7 +19,7 @@ export default function (props: any) {
 
     return (
         <>
-        <Item as='p' className='ui-font-22 ui-font-readable ui-m-25-b ui-theme-greenYellow ui-text'>
+        <Item as='p' className='ui-font-22 ui-font-relax ui-m-25-b ui-theme-greenYellow ui-text'>
             {info?.text}
         </Item>
         <Item as='div' className='ui-font-18 ui-opacity-half ui-m-20-b'>
