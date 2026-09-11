@@ -27,9 +27,9 @@
     &:not([class*="ui-align-"]) { text-align: @preview-text-align; }
 }
 
-@media (@md-start) {
+@media (min-width: 768px) {
     .preview { padding: @preview-padding; }
 }
-@media (@sm-finish) {
+@media (max-width: 767px) {
     .preview { padding: @preview-padding-sm; }
 }
