@@ -80,8 +80,7 @@
             "getInTouchText": "Get in Touch",
             "personalSkills": [
                 "Html",
-                "CSS",
-                "Less",
+                "Modern CSS",
                 "Javascript",
                 "Typescript",
                 "React JS",
@@ -90,7 +89,10 @@
                 "Node JS",
                 "Rest API",
                 "Responsive Web",
-                "Adaptive Web"
+                "Adaptive Web",
+                "Building Design Systems",
+                "Creating UI Libraries",
+                "Creating SVG Icons"
             ]
         }
     }

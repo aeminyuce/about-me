@@ -9,7 +9,7 @@ export default function () {
 
     return (
         <Grid.Row fluid='sm' className='ui-m-15-b ui-m-10-t'>
-            <Grid.Col xl={8} lg={8} size={10} className='ui-round-1st'>
+            <Grid.Col xl={9} lg={9} size={10} className='ui-round-1st'>
 
                 {api?.home?.aboutMe?.personalSkills?.map((name: string) => (
                     <Button noease as='span' size='xs' key={name} className='ui-m-1'>

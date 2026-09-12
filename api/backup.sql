@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict daEbehsupg3c0BvYVUpj3N1tiVuuTYG59f4nPdiyJnNKGWZfPEARGotpwge963P
+\restrict DMHdJVnFNWfMiinNQUTYOnO4NGLNdAa5WqqJQqKkNEEi9mqMZVOM8IQ6A7pMmUD
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1 (Postgres.app)
@@ -575,7 +575,6 @@ begin
     )
         returns jsonb
         language sql
-        set search_path to ''
     as $$
         select graphql.resolve(
             query := query,
@@ -5651,7 +5650,8 @@ CREATE TABLE realtime.messages (
     updated_at timestamp without time zone DEFAULT now() NOT NULL,
     inserted_at timestamp without time zone DEFAULT now() NOT NULL,
     id uuid DEFAULT gen_random_uuid() NOT NULL,
-    binary_payload bytea
+    binary_payload bytea,
+    skip_broadcast boolean DEFAULT false NOT NULL
 )
 PARTITION BY RANGE (inserted_at);
 
@@ -6169,7 +6169,7 @@ COPY blog."20260206" (id, type, data) FROM stdin;
 --
 
 COPY home.aboutme (id, location, "getInTouchText", "personalSkills", "myFocus") FROM stdin;
-1	Ankara, Turkiye	Get in Touch	{Html,CSS,Less,Javascript,Typescript,"React JS",CSR,SSR,"Node JS","Rest API","Responsive Web","Adaptive Web"}	My focus is building custom design systems that help teams move fast without sacrificing originality. I develop every CSS, JavaScript, and React component myself, giving you a unique, scalable interface built just for your product.
+1	Ankara, Turkiye	Get in Touch	{Html,"Modern CSS",Javascript,Typescript,"React JS",CSR,SSR,"Node JS","Rest API","Responsive Web","Adaptive Web","Building Design Systems","Creating UI Libraries","Creating SVG Icons"}	My focus is building custom design systems that help teams move fast without sacrificing originality. I develop every CSS, JavaScript, and React component myself, giving you a unique, scalable interface built just for your product.
 \.
 
 
@@ -7081,6 +7081,7 @@ COPY realtime.schema_migrations (version, inserted_at) FROM stdin;
 20260706120000	2026-07-13 19:56:52
 20260707120000	2026-07-18 17:33:11
 20260709120000	2026-07-18 17:33:12
+20260714120000	2026-09-04 04:00:09
 \.
 
 
@@ -7186,6 +7187,9 @@ COPY storage.migrations (id, name, hash, executed_at) FROM stdin;
 62	object-versioning-core	0b855f00ff3be0bfca91efee02a9858912491a9a	2026-08-29 08:28:08.275112
 63	fix-search-name-relative-to-prefix	c7485e417624f795ce8bb2da21927f48e088904d	2026-08-29 08:28:08.308105
 64	fix-search-by-timestamp-sqli	0af424ecd388a39bb1645184b222185a12149675	2026-08-29 08:28:08.323434
+65	objects-key-version-index	603c1c55658e982d35839001e2c2b59a50703904	2026-09-10 18:51:08.030598
+66	objects-current-version-index	191466c93aa2c46a00e36505577c5fcab8d7cb4b	2026-09-10 18:51:08.044364
+67	objects-null-version-index	15bfe8c35b66642b6c78ba60060fa8793bd2207a	2026-09-10 18:51:08.048587
 \.
 
 
@@ -8877,10 +8881,31 @@ CREATE INDEX idx_objects_bucket_id_name_lower ON storage.objects USING btree (bu
 
 
 --
+-- Name: idx_objects_current_version; Type: INDEX; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE UNIQUE INDEX idx_objects_current_version ON storage.objects USING btree (bucket_id, name COLLATE "C") WHERE (archived_at IS NULL);
+
+
+--
+-- Name: idx_objects_null_version; Type: INDEX; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE UNIQUE INDEX idx_objects_null_version ON storage.objects USING btree (bucket_id, name COLLATE "C") WHERE (NOT is_versioned);
+
+
+--
 -- Name: name_prefix_search; Type: INDEX; Schema: storage; Owner: supabase_storage_admin
 --
 
 CREATE INDEX name_prefix_search ON storage.objects USING btree (name text_pattern_ops);
+
+
+--
+-- Name: objects_bucket_id_name_version_key; Type: INDEX; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE UNIQUE INDEX objects_bucket_id_name_version_key ON storage.objects USING btree (bucket_id, name COLLATE "C", version) NULLS NOT DISTINCT;
 
 
 --
@@ -11192,5 +11217,5 @@ ALTER EVENT TRIGGER pgrst_drop_watch OWNER TO supabase_admin;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict daEbehsupg3c0BvYVUpj3N1tiVuuTYG59f4nPdiyJnNKGWZfPEARGotpwge963P
+\unrestrict DMHdJVnFNWfMiinNQUTYOnO4NGLNdAa5WqqJQqKkNEEi9mqMZVOM8IQ6A7pMmUD
 
