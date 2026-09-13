@@ -12,7 +12,7 @@ import ThemeChanger from './ThemeChanger';
 
 export default function () {
     return (
-        <Grid.Row className='home-nav ui-p-15-h ui-no-m-h ui-m-15-b ui-border-b ui-border-light ui-set-sticky'>
+        <Grid.Row className='home-nav ui-p-15-h ui-no-m-h ui-m-15-b ui-border-b ui-border-soft ui-set-sticky'>
             <Grid.Static fluid='no' className='ui-set-relative'>
                 <Grid.Row>
                     <Grid.Col size={12} className='ui-hide-sm'>
@@ -74,7 +74,7 @@ const NavMobileLinks = () => {
 
                     return (
                         <Carousel.Content key={item.name} className='ui-p-3-r'>
-                            <Button noease block ghost={!selected} to={item.to} className='ui-border ui-border-light'>
+                            <Button noease block ghost={!selected} to={item.to} className='ui-border ui-border-soft'>
                                 {item.name}
                             </Button>
                         </Carousel.Content>

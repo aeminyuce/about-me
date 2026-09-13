@@ -189,7 +189,7 @@ export default function () {
             <Grid.Row className='ui-align-l ui-round-2nd ui-shadow-2nd'>
                 <Grid.Col lg={3} size={6}>
                     <Card className='ui-theme-yellowOrange'>
-                        <Card.Side className='ui-p-15 ui-border-b ui-border-light'>
+                        <Card.Side className='ui-p-15 ui-border-b ui-border-soft'>
                             <Heading as='h4'>
                                 <SvgIcon as='js' src={IconTicket} className='ui-text' />
                                 {text?.ticketTitle1}
@@ -198,7 +198,7 @@ export default function () {
                         <Card.Side className='ui-p-15'>
                             {text?.ticket1}
                         </Card.Side>
-                        <Card.Side className='ui-p-15 ui-border-v ui-border-light'>
+                        <Card.Side className='ui-p-15 ui-border-v ui-border-soft'>
                             <Heading as='h4'>
                                 <SvgIcon as='js' src={IconStore} className='ui-text' />
                                 {text?.ticketTitle2}
@@ -207,7 +207,7 @@ export default function () {
                         <Card.Side className='ui-p-15'>
                             {text?.ticket2}
                         </Card.Side>
-                        <Card.Side className='ui-align-c ui-p-15 ui-border-t ui-border-light'>
+                        <Card.Side className='ui-align-c ui-p-15 ui-border-t ui-border-soft'>
                             <Button block className='ui-round ui-fill-dark-100'>
                                 {text?.ticketUrl}
                             </Button>
@@ -313,7 +313,7 @@ export default function () {
                 <Grid.Col lg={6} size={12}>
 
                     <Card className='ui-align-l'>
-                        <Card.Side className='ui-p-15 ui-border-b ui-border-light'>
+                        <Card.Side className='ui-p-15 ui-border-b ui-border-soft'>
                             <Heading as='h4'>{text?.week}</Heading>
                         </Card.Side>
                         <Card.Side>

@@ -14,7 +14,7 @@ export default function () {
 
     return (
         <Sidebar pos='l' className='ui-round'>
-            <Sidebar.Title className='ui-border-b ui-border-light'>
+            <Sidebar.Title className='ui-border-b ui-border-soft'>
                 <Button square ghost title='Close' className='ui-sidebar-close ui-round'>
                     <SvgIcon as='js' src={IconAngleLeft} />
                 </Button>
