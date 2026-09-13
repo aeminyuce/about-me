@@ -6,7 +6,10 @@
 @home-nav-sticky-z-index:                 89;
 
 .home-nav {
-    ._bg-var(body-bg); ._backdrop-blur(); z-index: @home-nav-sticky-z-index;
+    ._bg-var(body-bg);
+    background-color: var(--ui-bg-blur-switch);
+    backdrop-filter: blur(var(--ui-bg-blur-size));
+    z-index: @home-nav-sticky-z-index;
 
     .ui-dropdown {
         & > button,& li {
