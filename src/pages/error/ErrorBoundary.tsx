@@ -9,10 +9,10 @@ export default function () {
 
     return (
         <Item as='div' className='ui-align-c ui-set-absolute ui-set-c'>
-            <Heading as='h1' className='ui-font-72'>
+            <Heading as='h1' className='ui-font-8xl'>
                 Oops!
             </Heading>
-            <Item as='p' className='ui-font-22 ui-m-30-b'>{String(error)}</Item>
+            <Item as='p' className='ui-font-xl ui-m-30-b'>{String(error)}</Item>
             <Button className='ui-circle' onClick={() => window.location.reload()}>Refresh</Button>
         </Item>
     )

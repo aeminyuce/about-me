@@ -28,7 +28,7 @@ export default function () {
 
                             const classes = isFirst ? 'ui-align-c ui-block-1st' : 'ui-border ui-inline-block-1st';
                             const imgClasses = isFirst ? 'ui-round ui-shadow-lg' : 'ui-round-inner';
-                            const titleClasses = isFirst ? '' : 'ui-font-22';
+                            const titleClasses = isFirst ? '' : 'ui-font-xl';
 
                             return (
                                 <Item key={name} as='article'>

@@ -6,8 +6,8 @@
 @preview-padding:                         150px 75px;
 @preview-padding-sm:                      150px 10px;
 
-@preview-bg:                            hsla(220, 10%, 100%, 0.015);
-@preview-bg-dark:                       hsla(220, 4%, 36%, 0.1);
+@preview-bg:                            oklch(100% 0 0 / 1.5%);
+@preview-bg-dark:                       oklch(47% 0.009 240 / 10%);
 
 ._page-vars () {
     --ui-dribbble-color: @dribbble-color;
@@ -15,14 +15,14 @@
 }
 ._page-vars-dark () {
     --ui-preview-bg: @preview-bg-dark;
-    --ui-dribbble-color: @white;
+    --ui-dribbble-color: var(--ui-white);
 }
 
 ._mode-vars(._page-vars(), ._page-vars-dark());
 
 .color-dribbble { color: @dribbble-color; }
 .preview {
-    ._bg-var(preview-bg); display: flow-root;
+    background-color: var(--ui-body-bg); display: flow-root;
 
     &:not([class*="ui-align-"]) { text-align: @preview-text-align; }
 }

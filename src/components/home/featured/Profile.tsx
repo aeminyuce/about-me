@@ -31,10 +31,10 @@ export default function () {
 
             <Item as='div' className='ui-align-c'>
                 {info?.name}
-                <Item as='div' className='ui-color-black-50 ui-font-11 ui-m-10-b'>
+                <Item as='div' className='ui-color-black-50 ui-font-xs ui-m-10-b'>
                     {info?.email}
                 </Item>
-                <Item as='div' className='ui-font-11 ui-m-10-b'>
+                <Item as='div' className='ui-font-xs ui-m-10-b'>
                     <Button as='span' size='xs' className='ui-p-10-h ui-circle ui-fill-dark-100'>
                         {info?.type}
                     </Button>
@@ -49,7 +49,7 @@ export default function () {
                             <Avatar size='xs' className='ui-round ui-fill-light-300'>
                                 <Item as='span'>{item.time}</Item>
                             </Avatar>
-                            <Item as='span' className='ui-color-black-50 ui-font-14 ui-font-tight ui-p-5-t ui-block'>
+                            <Item as='span' className='ui-color-black-50 ui-font-md ui-font-tight ui-p-5-t ui-block'>
                                 {item.activity}
                             </Item>
                         </ListGroup.Item>

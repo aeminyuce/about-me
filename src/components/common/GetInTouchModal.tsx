@@ -19,7 +19,7 @@ export default function () {
                     </Grid.Col>
                     <Grid.Row>
                         <Grid.Col size={12}>
-                            <Item as='b' className='ui-font-24'>{getInTouch?.title}</Item>
+                            <Item as='b' className='ui-font-xl'>{getInTouch?.title}</Item>
                             <Item as='p' className='ui-font-tight ui-m-10-t'>
                                 {getInTouch?.messageStart}
                                 <Item as='b'>{getInTouch?.messageHighlight}</Item>

@@ -29,7 +29,7 @@ const Report = (props: any) => {
                         {getData?.name}
                     </Grid.Col>
                 </Grid.Row>
-                <Grid.Col size={100} className='ui-font-38 ui-align-r ui-p-15-t'>
+                <Grid.Col size={100} className='ui-font-3xl ui-align-r ui-p-15-t'>
                     {getData?.reports}
                 </Grid.Col>
             </Grid.Static>
@@ -78,7 +78,7 @@ const ReportsListGroup = memo((props: ReportsListGroupProps) => {
                             </DonutChart.Holder>
 
                             <Item as='span' className='ui-m-5-t ui-block'>{item.name}</Item>
-                            <Item as='span' className='ui-color-black-50 ui-font-12'>{item.reports}</Item>
+                            <Item as='span' className='ui-color-black-50 ui-font-sm'>{item.reports}</Item>
                         </ListGroup.Item>
                     )
                 })}

@@ -70,12 +70,12 @@ export default function () {
                         <Card className='ui-round ui-shadow-lg'>
                             <Card.Side className='ui-p-30'>
                                 <Heading as='h2' className='ui-align-l'>{text?.forestTitle}</Heading>
-                                <Item as='p' className='ui-font-18 ui-font-light ui-font-relax ui-align-l'>{text?.forest}</Item>
+                                <Item as='p' className='ui-font-lg ui-font-light ui-font-relax ui-align-l'>{text?.forest}</Item>
                             </Card.Side>
                             <Card.Side className='ui-set-relative ui-theme-greenYellow'>
                                 <Image lazy fluid='all' src={img[0]} aspect='landscape' className='ui-round-b' />
                                 <Item as='div' className='ui-p-20 ui-round-more ui-set-absolute ui-set-c ui-fill-light-100 ui-bg-blur'>
-                                    <Item as='p' className='ui-color-white ui-font-18 ui-m-15-b'>
+                                    <Item as='p' className='ui-color-white ui-font-lg ui-m-15-b'>
                                         <SvgIcon as='js' src={IconTrees} size='xl' />
                                         <Spacer size={5} />
                                         {text?.forestImg}

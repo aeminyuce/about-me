@@ -22,7 +22,7 @@ export default function () {
                 <MyAvatar />
             </Grid.Col>
             <Grid.Col size={7} md={10} className='ui-sm-align-c'>
-                <Heading as='h1' className='ui-font-30 ui-font-bold'>
+                <Heading as='h1' className='ui-font-2xl ui-font-bold'>
                     {general?.fullName}
                 </Heading>
 
