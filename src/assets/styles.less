@@ -9,8 +9,11 @@
 @preview-bg:                            oklch(100% 0 0 / 1.5%);
 @preview-bg-dark:                       oklch(47% 0.009 240 / 10%);
 
+/* config */
+@import '@lessconfig';
+
 ._page-vars () {
-    --ui-dribbble-color: @dribbble-color;
+    --ui-dribbble-color: oklch(0.652 0.281 345);
     --ui-preview-bg: @preview-bg;
 }
 ._page-vars-dark () {
@@ -20,7 +23,7 @@
 
 ._mode-vars(._page-vars(), ._page-vars-dark());
 
-.color-dribbble { color: @dribbble-color; }
+.color-dribbble { color: var(--ui-dribbble-color); }
 .preview {
     background-color: var(--ui-body-bg); display: flow-root;
 
