@@ -13,12 +13,12 @@
 @import '@lessconfig';
 
 ._page-vars () {
-    --ui-dribbble-color: oklch(0.652 0.281 345);
+    --ui-dribbble-mode: var(--ui-dribbble-color);
     --ui-preview-bg: @preview-bg;
 }
 ._page-vars-dark () {
     --ui-preview-bg: @preview-bg-dark;
-    --ui-dribbble-color: var(--ui-white);
+    --ui-dribbble-mode: var(--ui-white);
 }
 
 ._mode-vars(._page-vars(), ._page-vars-dark());
