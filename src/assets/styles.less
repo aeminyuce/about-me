@@ -30,9 +30,9 @@
     &:not([class*="ui-align-"]) { text-align: @preview-text-align; }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
     .preview { padding: @preview-padding; }
 }
-@media (max-width: 767px) {
+@media (width < 768px) {
     .preview { padding: @preview-padding-sm; }
 }
