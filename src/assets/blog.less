@@ -2,24 +2,40 @@
 @import (reference) '@less/core/mixins.less';
 
 @blog-archive-space:                      15px;
-@blog-archive-img-width:                  160px;
 
 @blog-post-p-font-size:                   18px;
 @blog-post-image-space:                   45px;
 
+.blog-archive {
+    --blog-archive-img-w: 160px;
+}
+
 .blog {
     &-archive {
         article {
-            &:not(:first-child) {
-                .ui-btn { padding: @blog-archive-space; margin-bottom: @blog-archive-space; }
-            }
             &:first-child {
-                .ui-btn { padding: (@blog-archive-space * 2); margin-bottom: (@blog-archive-space * 2); }
+                .ui-btn {
+                    padding: (@blog-archive-space * 2);
+                    margin-bottom: (@blog-archive-space * 2);
+                }
+            }
+            &:not(:first-child) {
+                .ui-btn {
+                    padding: @blog-archive-space;
+                    margin-bottom: @blog-archive-space;
+                    display: flex;
+                }
             }
 
             img {
-                &:not(.ui-img-fluid) { width: @blog-archive-img-width; margin-inline-end: @blog-archive-space; }
-                &.ui-img-fluid { max-width: (@blog-archive-img-width * 4.5); margin: 0 auto @blog-archive-space auto; }
+                &:not(.ui-img-fluid) {
+                    width: var(--blog-archive-img-w);
+                    margin-inline-end: @blog-archive-space;
+                }
+                &.ui-img-fluid {
+                    max-width: calc(var(--blog-archive-img-w) * 4.5);
+                    margin: 0 auto @blog-archive-space auto;
+                }
             }
         }
     }
@@ -28,8 +44,34 @@
 
         p { font-size: @blog-post-p-font-size; text-align: inline-start; }
         &-image {
-            img { max-width: (@blog-archive-img-width * 4.5); margin: @blog-post-image-space auto (@blog-post-image-space / 2) auto; }
+            img {
+                max-width: calc(var(--blog-archive-img-w) * 4.5);
+                margin: @blog-post-image-space auto (@blog-post-image-space / 2) auto;
+            }
             figcaption { margin-bottom: @blog-post-image-space; }
+        }
+    }
+}
+
+@media (width >= 768px) {
+    .blog-archive {
+        article {
+            &:not(:first-child) {
+                .ui-btn { align-items: center; }
+            }
+        }
+    }
+}
+@media (width < 768px) {
+    .blog-archive {
+        --blog-archive-img-w: 100px;
+    }
+
+    .blog-archive {
+        article {
+            &:not(:first-child) {
+                .ui-btn { align-items: start; }
+            }
         }
     }
 }

@@ -26,7 +26,7 @@ export default function () {
                             const image = item?.postImage;
                             const isFirst = index === 0;
 
-                            const classes = isFirst ? 'ui-align-c ui-block-1st' : 'ui-border ui-inline-block-1st';
+                            const classes = isFirst ? 'ui-align-c ui-block-1st' : 'ui-border';
                             const imgClasses = isFirst ? 'ui-round ui-shadow-lg' : 'ui-round-inner';
                             const titleClasses = isFirst ? '' : 'ui-font-xl';
 
