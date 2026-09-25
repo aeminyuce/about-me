@@ -14,7 +14,13 @@
 
         li {
             a {
-                &:not(:first-child) { padding: (@lab-menu-titles-padding / 2) 0 0 @lab-menu-titles-padding; display: inline-block; }
+                &:not(:first-child) {
+                    padding-top: (@lab-menu-titles-padding / 2);
+                    padding-inline-end: 0;
+                    padding-bottom: 0;
+                    padding-inline-start: @lab-menu-titles-padding;
+                    display: inline-block;
+                }
             }
         }
     }
