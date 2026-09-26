@@ -299,16 +299,16 @@ export default function () {
         <Preview>
             <Grid.Row fluid='xs' className='ui-block-2nd ui-round-2nd ui-ease-2nd-btn ui-theme-green'>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease multi size='lg' className='ui-fill-dark-100'>{text?.lipsum}</Button>
+                    <Button noease multi size='lg' className='ui-font-tight ui-fill-dark-100'>{text?.lipsum}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease multi className='ui-fill-dark-100'>{text?.lipsum}</Button>
+                    <Button noease multi className='ui-font-tight ui-fill-dark-100'>{text?.lipsum}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease multi size='sm' className='ui-fill-dark-100'>{text?.lipsum}</Button>
+                    <Button noease multi size='sm' className='ui-font-tight ui-fill-dark-100'>{text?.lipsum}</Button>
                 </Grid.Col>
                 <Grid.Col xl={3} lg={3} size={6}>
-                    <Button noease multi size='xs' className='ui-fill-dark-100'>{text?.lipsum}</Button>
+                    <Button noease multi size='xs' className='ui-font-tight ui-fill-dark-100'>{text?.lipsum}</Button>
                 </Grid.Col>
             </Grid.Row>
         </Preview>
