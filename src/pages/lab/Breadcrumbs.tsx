@@ -269,8 +269,9 @@ export default function () {
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
                     <Button className='ui-fill-dark-100 ui-theme-blueGreen'>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} v={4} />
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} b={2} className='ui-hide-rtl' />
                         {text?.item2}
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' l={10} b={2} className='ui-shown-rtl' />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -290,9 +291,10 @@ export default function () {
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
-                    <Button className='ui-fill-dark-100 ui-theme-purpleBlue'>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} v={4} />
+                    <Button className='ui-p-20-h ui-fill-dark-100 ui-theme-purpleBlue'>
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} b={2} className='ui-hide-rtl' />
                         {text?.item2}
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' l={10} b={2} className='ui-shown-rtl' />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -312,8 +314,9 @@ export default function () {
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
                     <Button className='ui-fill-dark-100 ui-theme-blueGreen'>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} v={4} />
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} b={2} className='ui-hide-rtl' />
                         {text?.item2}
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' l={10} b={2} className='ui-shown-rtl' />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
