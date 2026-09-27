@@ -483,7 +483,7 @@ const LineMultiTab = memo((props: any) => {
     const { x, y1, y2, name1, name2 } = props;
 
     return (
-        <LineChart.Holder roots grids infos x={x}>
+        <LineChart.Holder roots grids infos x={x} prefix='€'>
             <LineChart.Line filled dotted name={name1}>
                 <LineChart.Items y={y1} />
             </LineChart.Line>
