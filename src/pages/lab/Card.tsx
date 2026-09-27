@@ -90,7 +90,7 @@ export default function () {
                 </Grid.Row>
 
                 <Grid.Col size={420} className='ui-p-10 ui-round-1st ui-shadow-lg-1st ui-theme-orangeRed'>
-                    <Card className='ui-align-l'>
+                    <Card>
                         <Card.Side className='ui-set-relative'>
                             <Item as='span' className='ui-color-white ui-p-10-v ui-p-20-h ui-m-30 ui-round ui-set-absolute ui-set-b ui-fill-light-200 ui-bg-blur'>
                                 <SvgIcon as='js' src={IconTrophyStar} size='lg' r={10} />
@@ -98,11 +98,11 @@ export default function () {
                             </Item>
                             <Image lazy fluid='all' src={img[1]} aspect='landscape' className='ui-round-t' />
                         </Card.Side>
-                        <Card.Side className='ui-p-10-h ui-p-15-v'>
+                        <Card.Side className='ui-align-l ui-p-10-h ui-p-15-v'>
                             <Heading as='h4'>{text?.raceTitle}</Heading>
                             <Item as='p' className='ui-color-black-50'>{text?.race}</Item>
                         </Card.Side>
-                        <Card.Side>
+                        <Card.Side className='ui-align-l'>
                             <ListGroup>
                                 <ListGroup.List>
                                     <ListGroup.Item>
@@ -261,13 +261,13 @@ export default function () {
                 <Grid.Col lg={3} size={6}>
                     <Card>
                         <Card.Side className='ui-p-15'>
-                            <Heading as='h4'>{text?.ticketTitle1}</Heading>
+                            <Heading as='h4' className='ui-theme-yellowOrange ui-text'>{text?.ticketTitle1}</Heading>
                         </Card.Side>
                         <Card.Side className='ui-p-15-h'>
                             {text?.ticket1}
                         </Card.Side>
                         <Card.Side className='ui-p-15'>
-                            <Heading as='h4'>{text?.ticketTitle2}</Heading>
+                            <Heading as='h4' className='ui-theme-yellowOrange ui-text'>{text?.ticketTitle2}</Heading>
                         </Card.Side>
                         <Card.Side className='ui-p-15-h'>
                             {text?.ticket2}
@@ -318,7 +318,7 @@ export default function () {
                         </Card.Side>
                         <Card.Side>
                             <Grid.Static fluid='sm'>
-                                <Grid.Col size={190} className='ui-no-p'>
+                                <Grid.Col size={196} className='ui-no-p'>
                                     <Image lazy fluid='all' src={img[2]} aspect='portrait' className='ui-hide-sm ui-round-l ui-no-round-tl' />
                                     <Image lazy fluid='all' src={img[2]} aspect='landscape' className='ui-shown-sm' />
                                 </Grid.Col>
