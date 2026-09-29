@@ -1,0 +1,32 @@
+/* layers */
+/* @layer reset, core, layout, modules, modifiers, darkmode, utilities, typography, themes, overrides; */
+
+/* colors */
+@layer core {
+    :root {
+        --ui-dribbble-color: oklch(66% .28 345);
+
+        --ui-gray: oklch(50% 0 0);
+        --ui-yellowOrange: oklch(64% .14 75);
+        --ui-orangeRed: oklch(57% .19 38);
+        --ui-redPurple: oklch(49% .22 352);
+        --ui-purple: oklch(40% .14 325);
+        --ui-purpleBlue: oklch(41% .13 285);
+        --ui-blue: oklch(41% .11 260);
+        --ui-blueGreen: oklch(48% .11 194);
+        --ui-greenYellow: oklch(63% .15 109);
+    }
+}
+
+/* themes */
+@layer themes {
+    .ui-theme-gray { --ui-theme: var(--ui-gray); }
+    .ui-theme-yellowOrange { --ui-theme: var(--ui-yellowOrange); }
+    .ui-theme-orangeRed { --ui-theme: var(--ui-orangeRed); }
+    .ui-theme-redPurple { --ui-theme: var(--ui-redPurple); }
+    .ui-theme-purple { --ui-theme: var(--ui-purple); }
+    .ui-theme-purpleBlue { --ui-theme: var(--ui-purpleBlue); }
+    .ui-theme-blue { --ui-theme: var(--ui-blue); }
+    .ui-theme-blueGreen { --ui-theme: var(--ui-blueGreen); }
+    .ui-theme-greenYellow { --ui-theme: var(--ui-greenYellow); }
+}
