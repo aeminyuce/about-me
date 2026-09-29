@@ -9,10 +9,10 @@ export default defineConfig(({ mode }) => ({
         svgLoader()
     ],
     resolve: {
-        extensions: ['.js', '.ts', '.tsx', '.less'],
+        extensions: ['.js', '.ts', '.tsx', 'css', '.less'],
         alias: {
             '@jsconfig': path.resolve(import.meta.dirname, 'jsconfig.json'),
-            '@lessconfig': path.resolve(import.meta.dirname, 'lessconfig.less'),
+            '@cssconfig': path.resolve(import.meta.dirname, 'cssconfig.css'),
 
             '@ui': path.resolve(import.meta.dirname, 'node_modules/uilab/react/'),
             '@less': path.resolve(import.meta.dirname, 'node_modules/uilab/less/'),
