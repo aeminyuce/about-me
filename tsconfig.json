@@ -1,6 +1,9 @@
 {
     "compilerOptions": {
         "paths": {
+            "@jsconfig": ["./jsconfig.json"],
+            "@cssconfig": ["./cssconfig.css"],
+
             "@ui/*": ["./node_modules/uilab/react/*"],
             "@less/*": ["./node_modules/uilab/less/*"],
             "@js/*": ["./node_modules/uilab/js/*"],
