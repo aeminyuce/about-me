@@ -10,18 +10,18 @@ export default function () {
             </Grid.Col>
 
             <Grid.Col lg={3} size={4} md={6}>
-                <Skeleton index={1} w='50%' h='129px' className='ui-round-l ui-m-20-b' />
-                <Skeleton index={2} w='calc(50% - 1px)' h='129px' className='ui-m-1-l ui-m-20-b ui-round-r' />
-                <Skeleton index={3} w='100%' h='261px' />
+                <Skeleton index={1} w='50%' h='133px' className='ui-round-l ui-m-20-b' />
+                <Skeleton index={2} w='calc(50% - 1px)' h='133px' className='ui-m-1-l ui-m-20-b ui-round-r' />
+                <Skeleton index={3} w='100%' h='254px' />
             </Grid.Col>
 
             <Grid.Col lg={3} size={5} md={6}>
-                <Skeleton index={4} w='100%' h='304px' className='ui-m-20-b' />
+                <Skeleton index={4} w='100%' h='300px' className='ui-m-20-b' />
                 <Skeleton index={5} w='100%' h='86px' />
             </Grid.Col>
 
             <Grid.Col size={4} md={6}>
-                <Skeleton index={6} w='100%' h='410px' />
+                <Skeleton index={6} w='100%' h='407px' />
             </Grid.Col>
 
             <Grid.Col lg={8} size={8} md={12}>
@@ -33,8 +33,8 @@ export default function () {
             </Grid.Col>
 
             <Grid.Col size={4} md={6}>
-                <Skeleton index={9} repeat={2} vGap={20} w='100%' h='71px' />
-                <Skeleton index={11} w='100%' h='213px' className='ui-m-20-t' />
+                <Skeleton index={9} repeat={2} vGap={20} w='100%' h='70px' />
+                <Skeleton index={11} w='100%' h='217px' className='ui-m-20-t' />
             </Grid.Col>
 
             <Grid.Col lg={5} size={4} md={6}>
