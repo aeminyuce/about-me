@@ -1,0 +1,32 @@
+@layer modules {
+    /* list */
+    .iconslist-images { max-width: 800px; }
+
+    .iconslist-icons {
+        .ui-h2 { margin-top: 60px; margin-bottom: 20px; }
+        .ui-btn-multi {
+            min-width: 172px; padding: 10px 0; margin: 1px;
+
+            &,&:hover { color: var(--ui-dribbble-mode); }
+            span {
+                color: var(--ui-black-50-mode);
+                font-size: 13px;
+                margin-top: 5px;
+                display: block;
+            }
+        }
+    }
+
+    /* detail */
+    .icon-detail {
+        color: var(--ui-dribbble-mode); overflow: visible;
+
+        circle {
+            fill: oklch(100% 0 0);
+            stroke: oklch(61% .2 259);
+            stroke-width: .45%;
+            r: .85%;
+        }
+        &.hide-points circle { display: none; }
+    }
+}

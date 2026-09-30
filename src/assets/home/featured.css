@@ -1,0 +1,59 @@
+@layer modules {
+    /* variables */
+    .home-profile {
+        --home-profile-cover-size: 78px;
+        --home-profile-cover-m-b: 5px;
+    }
+
+    /* profile */
+    .home-profile {
+        & > div:first-child {
+            margin-bottom: calc((var(--home-profile-cover-size) / 2) + var(--home-profile-cover-m-b));
+            position: relative;
+
+            &,& > div { height: var(--home-profile-cover-size); }
+            & > div {
+                overflow: hidden; position: absolute; top: 0; left: 0;
+
+                &,img { width: 100%; }
+            }
+
+            .ui-notifier { margin-top: calc(var(--home-profile-cover-size) / 2); }
+        }
+
+        .ui-listgroup { max-height: 206px; }
+    }
+
+    /* reports */
+    .home-reports-list {
+        .ui-listgroup { max-height: 182px; }
+        .ui-donut-chart { width: 48px; height: 48px; }
+    }
+
+    /* people */
+    .home-people-list {
+        .ui-listgroup { max-height: 231px; }
+    }
+
+    /* travel */
+    @media (960px <= width < 1400px) {
+        .home-travel { height: 410px; }
+    }
+    @media (768px <= width < 1400px) {
+        .home-travel {
+            .ui-col-st { width: 377px; }
+        }
+    }
+
+    /* race */
+    .home-race {
+        img { height: 169px; }
+    }
+
+    /* sales profits */
+    .sales-profits {
+        height: 395px;
+
+        .ui-line-chart-info { margin-top: 10px; }
+    }
+}

@@ -8,7 +8,7 @@ import Footer from '@components/common/Footer';
 import LabMenu from '@components/lab/Menu';
 
 // styles
-import '@assets/lab';
+import '@assets/lab.css';
 
 export default function () {
     const { api } = useStoreContext();

@@ -1,0 +1,18 @@
+@layer modules {
+    /* home nav */
+    .home-nav {
+        background-color: var(--ui-backdrop-bg);
+        backdrop-filter: blur(var(--ui-backdrop-blur));
+        z-index: 89;
+    }
+}
+
+@layer overrides {
+    .home-nav {
+        .ui-dropdown {
+            & > button,& li {
+                & > span { width: 17px; height: 17px; }
+            }
+        }
+    }
+}

@@ -7,7 +7,7 @@ import Archives from '@components/blog/Archives';
 import Post from '@components/blog/Post';
 
 // styles
-import '@assets/blog';
+import '@assets/blog.css';
 
 export default function () {
     const { api } = useStoreContext();

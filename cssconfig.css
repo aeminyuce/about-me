@@ -4,8 +4,6 @@
 /* colors */
 @layer core {
     :root {
-        --ui-dribbble-color: oklch(66% .28 345);
-
         --ui-gray: oklch(50% 0 0);
         --ui-yellowOrange: oklch(64% .14 75);
         --ui-orangeRed: oklch(57% .19 38);

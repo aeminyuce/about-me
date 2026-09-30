@@ -1,7 +1,7 @@
 import Grid from '@ui/Grid';
 
 // styles
-import '@assets/home/dashboard';
+import '@assets/home/dashboard.css';
 
 export default function () {
     return (

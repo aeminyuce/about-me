@@ -6,7 +6,7 @@ import '@less/ui.less';
 import '@js/ui.js';
 
 // styles
-import '@assets/styles.less';
+import '@assets/styles.css';
 
 // misc
 import { router } from '@pages/Router';

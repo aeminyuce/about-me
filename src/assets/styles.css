@@ -1,0 +1,47 @@
+@layer modules {
+    /* variables */
+    :root {
+        --ui-dribbble-color: oklch(66% .28 345);
+        --ui-dribbble-mode: var(--ui-dribbble-color);
+    }
+    .preview {
+        --ui-preview-bg-dark: oklch(47% .01 240 / .05);
+        --ui-preview-bg-mode: oklch(0 0 0 / .015);
+    }
+
+    /* custom colors */
+    .color-dribbble {
+        color: var(--ui-dribbble-color);
+    }
+
+    /* preview */
+    .preview {
+        background-color: var(--ui-preview-bg-mode);
+        display: flow-root;
+
+        &:not([class*="ui-align-"]) { text-align: center; }
+    }
+
+    @media (width >= 768px) {
+        .preview { padding: 150px 75px; }
+    }
+    @media (width < 768px) {
+        .preview { padding: 150px 10px; }
+    }
+}
+
+@layer darkmode {
+    @media (prefers-color-scheme: dark) {
+        html:not([data-ui-mode]) {
+            --ui-dribbble-mode: var(--ui-white);
+
+            .preview { --ui-preview-bg-mode: var(--ui-preview-bg-dark); }
+        }
+    }
+
+    [data-ui-mode="dark"] {
+       --ui-dribbble-mode: var(--ui-white);
+
+        .preview { --ui-preview-bg-mode: var(--ui-preview-bg-dark); }
+    }
+}

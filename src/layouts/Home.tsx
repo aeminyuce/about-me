@@ -11,7 +11,7 @@ import HomeProfile from '@components/home/HomeProfile';
 import HomeNav from '@components/home/HomeNav';
 
 // styles
-import '@assets/home';
+import '@assets/home.css';
 
 export default function () {
     const { api } = useStoreContext();

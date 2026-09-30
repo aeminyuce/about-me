@@ -14,7 +14,7 @@ import List from '@components/icons/List';
 import iconsList from 'uilab-icons/icons-list.json';
 
 // styles
-import '@assets/icons';
+import '@assets/icons.css';
 
 export default function () {
     const { api } = useStoreContext();

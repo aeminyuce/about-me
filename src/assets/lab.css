@@ -1,0 +1,32 @@
+@layer modules {
+    /* content */
+    .lab-content {
+        .images {
+            max-width: 860px;
+
+            .ui-link { overflow: clip; }
+        }
+    }
+
+    /* menu */
+    .lab-menu {
+        top: 92px;
+
+        li {
+            a {
+                &:not(:first-child) {
+                    padding-top: 8px;
+                    padding-inline-end: 0;
+                    padding-bottom: 0;
+                    padding-inline-start: 16px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    @media (width >= 960px) {
+        /* content */
+        .lab-content { min-height: 1350px; }
+    }
+}
