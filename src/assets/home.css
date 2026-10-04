@@ -1,8 +1,7 @@
 @layer modules {
     /* home nav */
     .home-nav {
-        background-color: var(--ui-backdrop-bg);
-        backdrop-filter: blur(var(--ui-backdrop-blur));
+        background-color: var(--ui-body-bg-mode);
         z-index: 89;
     }
 }
