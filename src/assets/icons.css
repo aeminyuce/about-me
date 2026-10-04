@@ -5,9 +5,8 @@
     .iconslist-icons {
         .ui-h2 { margin-top: 60px; margin-bottom: 20px; }
         .ui-btn-multi {
-            min-width: 172px; padding: 10px 0; margin: 1px;
+            color: var(--ui-dribbble-mode); min-width: 172px; padding: 10px 0; margin: 1px;
 
-            &,&:hover { color: var(--ui-dribbble-mode); }
             span {
                 color: var(--ui-black-50-mode);
                 font-size: 13px;
