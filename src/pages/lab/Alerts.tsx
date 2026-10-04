@@ -52,7 +52,7 @@ export default function () {
             });
         }}>
             <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 300px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
-                <Item as='div' className='ui-dialog-msg'>{text?.simple}</Item>
+                <Item as='div' className='ui-dialog-txt'>{text?.simple}</Item>
                 <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
                     <Item as='div' className='ui-ease-1st-bg'>
                         <button className='ui-dialog-success' value='success'>{text?.ok}</button>
@@ -69,7 +69,7 @@ export default function () {
             });
         }}>
             <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 320px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
-                <Item as='div' className='ui-dialog-msg'>{text?.beOk}</Item>
+                <Item as='div' className='ui-dialog-txt'>{text?.beOk}</Item>
                 <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
                     <Item as='div' className='ui-ease-1st-bg'>
                         <button className='ui-dialog-success' value='success'>{text?.got}</button>
@@ -90,7 +90,7 @@ export default function () {
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
-                <Item as='div' className='ui-dialog-msg'>{text?.remove}</Item>
+                <Item as='div' className='ui-dialog-txt'>{text?.remove}</Item>
                 <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
                     <Item as='div' className='ui-ease-1st-bg'>
                         <button className='ui-dialog-success' value='success'>{text?.yes}</button>
@@ -116,7 +116,7 @@ export default function () {
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
-                <Item as='div' className='ui-dialog-msg'>{text?.download}</Item>
+                <Item as='div' className='ui-dialog-txt'>{text?.download}</Item>
                 <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
                     <button className='ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover' value='0'>{text?.maybe}</button>
                     <button className='ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover' value='1'>{text?.later}</button>
@@ -143,7 +143,7 @@ export default function () {
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
-                <Item as='div' className='ui-dialog-msg'>{text?.alert}</Item>
+                <Item as='div' className='ui-dialog-txt'>{text?.alert}</Item>
                 <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
                     <Item as='div' className='ui-ease-1st-bg'>
                         <button className='ui-dialog-success' value='success'>{text?.yes}</button>
