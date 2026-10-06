@@ -46,13 +46,14 @@ export default defineConfig(({ mode }) => ({
         outDir: 'build',
         emptyOutDir: true,
         sourcemap: mode !== 'production',
+        cssMinify: 'lightningcss',
 
         rollupOptions: {
             input: path.resolve(import.meta.dirname, 'index.html'),
             output: {
-                entryFileNames: 'js/[name].[hash].js',
-                chunkFileNames: 'js/[name].[hash].js',
-                assetFileNames: 'css/[name].[hash].[ext]'
+                entryFileNames: 'js/[hash].js',
+                chunkFileNames: 'js/[hash].js',
+                assetFileNames: 'css/[hash].[ext]'
             }
         }
     }
