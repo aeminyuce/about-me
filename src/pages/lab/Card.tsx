@@ -129,7 +129,7 @@ export default function () {
                             {text?.food}
                         </Card.Side>
                         <Card.Side className='ui-icons-no-opacity'>
-                            <Button.Wrapper type='holder' as='div' ease='1st' className='ui-m-1-b ui-round-t-1st ui-block-2nd'>
+                            <Button.Wrapper type='holder' as='div' ease='1st' className='ui-m-2-b ui-round-t-1st ui-block-2nd'>
                                 <Button noease multi className='ui-p-10'>
                                     <SvgIcon as='js' src={IconChef} b={5} className='ui-m-auto ui-text' />
                                     {text?.foodBtn1}
