@@ -54,7 +54,7 @@ export const People = () => {
                                         {avatarText && <Item as='span'>{avatarText}</Item>}
                                     </Avatar>
 
-                                    <Item as='span' className='ui-font-ellipsis ui-block'>{jobTitle}</Item>
+                                    <Item as='span' className='ui-font-ellipsis ui-m-5-b ui-block'>{jobTitle}</Item>
                                     <Item as='span' className='ui-color-black-25'>{item.description}</Item>
                                 </Button>
                             </ListGroup.Item>

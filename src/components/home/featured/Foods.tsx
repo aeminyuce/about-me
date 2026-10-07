@@ -21,10 +21,10 @@ export default function () {
     return (
         <Card className={`ui-p-15 ui-round ui-shadow-sm ${themeA}`}>
             <Card.Side className='ui-align-c ui-m-15-b'>
-                <Item as='p' className='ui-font-ellipsis ui-p-2-t ui-p-3-b'>{foods?.food}</Item>
+                <Item as='p' className='ui-font-ellipsis ui-p-2-t ui-p-2-b'>{foods?.food}</Item>
             </Card.Side>
             <Card.Side className='ui-icons-no-opacity ui-icons-lg'>
-                <Button.Wrapper type='holder' as='div' ease='1st' className='ui-m-1-b ui-round-t-1st ui-block-2nd'>
+                <Button.Wrapper type='holder' as='div' ease='1st' className='ui-m-2-b ui-round-t-1st ui-block-2nd'>
                     <Button noease multi className='ui-font-ellipsis ui-p-10'>
                         <SvgIcon as='js' src={IconChef} b={5} className='ui-m-auto ui-text' />
                         {foods?.foodBtn1}

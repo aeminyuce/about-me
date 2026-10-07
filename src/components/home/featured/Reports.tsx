@@ -77,7 +77,7 @@ const ReportsListGroup = memo((props: ReportsListGroupProps) => {
                                 <DonutChart.Item percent={item.chartPercent} className={`ui-stroke ${theme}`} />
                             </DonutChart.Holder>
 
-                            <Item as='span' className='ui-m-5-t ui-block'>{item.name}</Item>
+                            <Item as='span' className='ui-m-5-v ui-block'>{item.name}</Item>
                             <Item as='span' className='ui-color-black-50 ui-font-sm'>{item.reports}</Item>
                         </ListGroup.Item>
                     )
