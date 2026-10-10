@@ -44,7 +44,7 @@ export default function () {
             <Grid.Static fluid='no'>
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h3' id={title?.hash[0]} className='ui-align-l'>
+                        <Heading as='h3' id={title?.hash[0]}>
                             {title?.h3[0]}
                         </Heading>
                     </Grid.Col>
@@ -403,7 +403,7 @@ export default function () {
 
                 <Grid.Row fluid='no'>
                     <Grid.Col size={8}>
-                        <Heading as='h4' className='ui-align-l ui-m-10-v'>{text?.lineMonthly}</Heading>
+                        <Heading as='h4' className='ui-m-10-v'>{text?.lineMonthly}</Heading>
                     </Grid.Col>
                     <Grid.Col size={4} className='ui-align-r'>
                         <Dropdown toggle align='l' className='ui-float-r ui-round-1st'>

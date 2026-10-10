@@ -38,7 +38,7 @@ export default function () {
             <Grid.Static fluid='no'>
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h1' className='ui-align-l'>{title?.h1}</Heading>
+                        <Heading as='h1'>{title?.h1}</Heading>
                     </Grid.Col>
                 </Grid.Row>
                 <Grid.Col size={42} className='ui-p-2-v'>

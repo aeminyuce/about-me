@@ -51,7 +51,7 @@ export default function () {
             <Grid.Static fluid='no'>
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h3' id={title?.hash[0]} className='ui-align-l'>
+                        <Heading as='h3' id={title?.hash[0]}>
                             {title?.h3[0]}
                         </Heading>
                     </Grid.Col>
@@ -69,7 +69,7 @@ export default function () {
                     <Grid.Col size={12}>
                         <Card className='ui-round ui-shadow-lg'>
                             <Card.Side className='ui-p-30'>
-                                <Heading as='h2' className='ui-align-l'>{text?.forestTitle}</Heading>
+                                <Heading as='h2'>{text?.forestTitle}</Heading>
                                 <Item as='p' className='ui-font-lg ui-font-light ui-font-relax ui-align-l'>{text?.forest}</Item>
                             </Card.Side>
                             <Card.Side className='ui-set-relative ui-theme-greenYellow'>
@@ -173,7 +173,7 @@ export default function () {
             <Grid.Static fluid='no'>
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h3' id={title?.hash[1]} className='ui-align-l'>
+                        <Heading as='h3' id={title?.hash[1]}>
                             {title?.h3[1]}
                         </Heading>
                     </Grid.Col>
@@ -296,7 +296,7 @@ export default function () {
             <Grid.Static fluid='no'>
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h3' id={title?.hash[2]} className='ui-align-l'>
+                        <Heading as='h3' id={title?.hash[2]}>
                             {title?.h3[2]}
                         </Heading>
                     </Grid.Col>
@@ -381,7 +381,7 @@ export default function () {
             <Grid.Static fluid='no'>
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h3' id={title?.hash[3]} className='ui-align-l'>
+                        <Heading as='h3' id={title?.hash[3]}>
                             {title?.h3[3]}
                         </Heading>
                     </Grid.Col>
@@ -470,7 +470,7 @@ export default function () {
             <Grid.Static fluid='no'>
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h3' id={title?.hash[4]} className='ui-align-l'>
+                        <Heading as='h3' id={title?.hash[4]}>
                             {title?.h3[4]}
                         </Heading>
                     </Grid.Col>

@@ -33,7 +33,7 @@ export default function () {
                 </Dropdown.Menu>
             </Dropdown>
 
-            <Heading as='h3' className='ui-align-l ui-m-10-t'>
+            <Heading as='h3' className='ui-m-10-t'>
                 {calendar?.cardTitle}
             </Heading>
 

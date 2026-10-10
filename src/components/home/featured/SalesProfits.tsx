@@ -29,7 +29,7 @@ export default function () {
 
                 <Grid.Row fluid='no' vGap='no'>
                     <Grid.Col size={8}>
-                        <Heading as='h3' className='ui-align-l ui-m-10-t'>{salesProfits?.title}</Heading>
+                        <Heading as='h3' className='ui-m-10-t'>{salesProfits?.title}</Heading>
                     </Grid.Col>
                     <Grid.Col size={4} className='ui-align-r'>
                         <Dropdown toggle align='l' className='ui-float-r ui-round-1st'>

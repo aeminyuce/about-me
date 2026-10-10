@@ -33,7 +33,7 @@ export default function () {
             <Grid.Static fluid='no'>
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h3' id={title?.hash[0]} className='ui-align-l'>
+                        <Heading as='h3' id={title?.hash[0]}>
                             {title?.h3[0]}
                         </Heading>
                     </Grid.Col>
@@ -73,7 +73,7 @@ export default function () {
             <Grid.Static fluid='no'>
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h3' id={title?.hash[1]} className='ui-align-l'>
+                        <Heading as='h3' id={title?.hash[1]}>
                             {title?.h3[1]}
                         </Heading>
                     </Grid.Col>
@@ -134,7 +134,7 @@ export default function () {
             <Grid.Static fluid='no'>
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h3' id={title?.hash[2]} className='ui-align-l'>
+                        <Heading as='h3' id={title?.hash[2]}>
                             {title?.h3[2]}
                         </Heading>
                     </Grid.Col>
@@ -180,7 +180,7 @@ const json = [
             <Grid.Static fluid='no'>
                 <Grid.Row>
                     <Grid.Col size={12}>
-                        <Heading as='h3' id={title?.hash[3]} className='ui-align-l'>
+                        <Heading as='h3' id={title?.hash[3]}>
                             {title?.h3[3]}
                         </Heading>
                     </Grid.Col>

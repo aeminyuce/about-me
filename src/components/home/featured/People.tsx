@@ -30,7 +30,7 @@ export const People = () => {
                 <SvgIcon as='js' src={IconUserPlus} />
             </Button>
 
-            <Heading as='h3' className='ui-align-l ui-m-10-t'>
+            <Heading as='h3' className='ui-m-10-t'>
                 {people?.cardTitle}
             </Heading>
 

@@ -18,7 +18,7 @@ export default function () {
                 <Button square ghost title='Close' className='ui-sidebar-close ui-round'>
                     <SvgIcon as='js' src={IconAngleLeft} />
                 </Button>
-                <Heading as='h3' className='ui-font-bold ui-align-l ui-m-10-t'>
+                <Heading as='h3' className='ui-font-bold ui-m-10-t'>
                     {api?.general?.fullName}
                 </Heading>
             </Sidebar.Title>
