@@ -1,4 +1,5 @@
 import Button from '@ui/Button';
+import Box from '@ui/Box';
 import Calendar from '@ui/Calendar';
 import Card from '@ui/Card';
 import Dropdown from '@ui/Dropdown';
@@ -18,24 +19,25 @@ export default function () {
 
     return (
         <Card className='ui-p-15 ui-round ui-shadow'>
-            <Dropdown align='l' className='ui-float-r ui-round-1st'>
+            <Box as='div' className='ui-p-10-b'>
+                <Heading as='h3' className='ui-no-m-b'>
+                    {calendar?.cardTitle}
+                </Heading>
+
                 <Tooltip id='eventsTooltip'>{calendar?.title}</Tooltip>
-                <Button square ghost data={{ 'tooltip': 'l', 'id': 'eventsTooltip', 'only': 'desktop' }}>
-                    <SvgIcon as='js' src={IconEllipsisH} />
-                </Button>
+                <Dropdown align='l' className='ui-item-r ui-round-1st'>
+                    <Button square ghost data={{ 'tooltip': 'l', 'id': 'eventsTooltip', 'only': 'desktop' }}>
+                        <SvgIcon as='js' src={IconEllipsisH} />
+                    </Button>
+                    <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-shadow-lg ui-cursor-pointer'>
 
-                <Dropdown.Menu className='ui-color-black ui-inline-block-2nd ui-shadow-lg ui-cursor-pointer'>
+                        {calendar?.settings?.map((name: string, index: number) => (
+                            <Dropdown.Item key={name + index}>{name}</Dropdown.Item>
+                        ))}
 
-                    {calendar?.settings?.map((name: string, index: number) => (
-                        <Dropdown.Item key={name + index}>{name}</Dropdown.Item>
-                    ))}
-
-                </Dropdown.Menu>
-            </Dropdown>
-
-            <Heading as='h3' className='ui-m-10-t'>
-                {calendar?.cardTitle}
-            </Heading>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Box>
 
             <Calendar className={`ui-no-p ui-round ${themeB}`} data={{ date: calendar?.eventsDate }} json={calendar?.events} />
         </Card>

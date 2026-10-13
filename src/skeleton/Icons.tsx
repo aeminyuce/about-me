@@ -14,7 +14,7 @@ export default function () {
                     <Skeleton index={1} repeat={3} w='96%' h='45px' vGap={5} />
                 </Item>
 
-                <Grid.Row fluid='sm' className='iconslist-images ui-m-auto ui-m-20-b ui-squircle-2nd'>
+                <Grid.Row fluid='sm' className='iconslist-images ui-item-c ui-m-20-b ui-squircle-2nd'>
                     <Grid.Col size={6}>
                         <Skeleton index={4} aspect='square' />
                     </Grid.Col>

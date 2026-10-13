@@ -51,7 +51,7 @@ export default function () {
                 msg: text?.simple,
             });
         }}>
-            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 300px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-item-c ui-set-relative' style={{ width: 'clamp(280px, 50%, 300px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <Item as='div' className='ui-dialog-txt'>{text?.simple}</Item>
                 <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
                     <Item as='div' className='ui-ease-1st-bg'>
@@ -68,7 +68,7 @@ export default function () {
                 success: text?.got,
             });
         }}>
-            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 320px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-item-c ui-set-relative' style={{ width: 'clamp(280px, 50%, 320px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <Item as='div' className='ui-dialog-txt'>{text?.beOk}</Item>
                 <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
                     <Item as='div' className='ui-ease-1st-bg'>
@@ -86,7 +86,7 @@ export default function () {
                 error: text?.no,
             });
         }}>
-            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 450px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-item-c ui-set-relative' style={{ width: 'clamp(280px, 50%, 450px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
@@ -112,7 +112,7 @@ export default function () {
                 }
             });
         }}>
-            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 492px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-item-c ui-set-relative' style={{ width: 'clamp(280px, 50%, 492px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>
@@ -139,7 +139,7 @@ export default function () {
                 }
             });
         }}>
-            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-m-auto ui-set-relative' style={{ width: 'clamp(280px, 50%, 280px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-item-c ui-set-relative' style={{ width: 'clamp(280px, 50%, 280px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
                 <button className='ui-dialog-close ui-ease-layout'>
                     <SvgIcon as='js' src={IconRemove} />
                 </button>

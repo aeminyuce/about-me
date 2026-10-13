@@ -21,18 +21,18 @@
             .ui-notifier { margin-top: calc(var(--home-profile-cover-size) / 2); }
         }
 
-        .ui-listgroup { max-height: 206px; }
+        .ui-listgroup { height: 205px; }
     }
 
     /* reports */
     .home-reports-list {
-        .ui-listgroup { max-height: 182px; }
+        .ui-listgroup { height: 181px; }
         .ui-donut-chart { width: 48px; height: 48px; }
     }
 
     /* people */
     .home-people-list {
-        .ui-listgroup { max-height: 231px; }
+        .ui-listgroup { height: 232px; }
     }
 
     /* travel */

@@ -131,29 +131,29 @@ export default function () {
                         <Card.Side className='ui-icons-no-opacity'>
                             <Button.Wrapper type='holder' as='div' ease='1st' className='ui-m-2-b ui-round-t-1st ui-block-2nd'>
                                 <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconChef} b={5} className='ui-m-auto ui-text' />
+                                    <SvgIcon as='js' src={IconChef} b={5} className='ui-item-c ui-text' />
                                     {text?.foodBtn1}
                                 </Button>
                                 <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconPlate} b={5} className='ui-m-auto ui-text' />
+                                    <SvgIcon as='js' src={IconPlate} b={5} className='ui-item-c ui-text' />
                                     {text?.foodBtn2}
                                 </Button>
                                 <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconCup} b={5} className='ui-m-auto ui-text' />
+                                    <SvgIcon as='js' src={IconCup} b={5} className='ui-item-c ui-text' />
                                     {text?.foodBtn3}
                                 </Button>
                             </Button.Wrapper>
                             <Button.Wrapper type='holder' as='div' ease='1st' className='ui-round-b-1st ui-block-2nd'>
                                 <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconCoffee} b={5} className='ui-m-auto ui-text' />
+                                    <SvgIcon as='js' src={IconCoffee} b={5} className='ui-item-c ui-text' />
                                     {text?.foodBtn4}
                                 </Button>
                                 <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconForkKnife} b={5} className='ui-m-auto ui-text' />
+                                    <SvgIcon as='js' src={IconForkKnife} b={5} className='ui-item-c ui-text' />
                                     {text?.foodBtn5}
                                 </Button>
                                 <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconMitten} b={5} className='ui-m-auto ui-text' />
+                                    <SvgIcon as='js' src={IconMitten} b={5} className='ui-item-c ui-text' />
                                     {text?.foodBtn6}
                                 </Button>
                             </Button.Wrapper>

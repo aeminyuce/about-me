@@ -1,5 +1,6 @@
 import { memo, useState } from 'react';
 import Button from '@ui/Button';
+import Box from '@ui/Box';
 import Card from '@ui/Card';
 import DonutChart from '@ui/DonutChart';
 import Grid from '@ui/Grid';
@@ -73,12 +74,14 @@ const ReportsListGroup = memo((props: ReportsListGroupProps) => {
 
                     return (
                         <ListGroup.Item key={item.name}>
-                            <DonutChart.Holder as='span' msg={item.percent} className='ui-float-r'>
+                            <Box vDir as='span' gap={5} align='l' className='ui-p-5-t ui-m-2-t'>
+                                {item.name}
+                                <Item as='span' className='ui-color-black-50 ui-font-sm'>{item.reports}</Item>
+                            </Box>
+
+                            <DonutChart.Holder as='span' msg={item.percent} className='ui-item-r'>
                                 <DonutChart.Item percent={item.chartPercent} className={`ui-stroke ${theme}`} />
                             </DonutChart.Holder>
-
-                            <Item as='span' className='ui-m-5-v ui-block'>{item.name}</Item>
-                            <Item as='span' className='ui-color-black-50 ui-font-sm'>{item.reports}</Item>
                         </ListGroup.Item>
                     )
                 })}

@@ -6,22 +6,22 @@ export default function () {
         <Grid.Row className='ui-round-2nd'>
 
             <Grid.Col lg={2} size={3} md={6}>
-                <Skeleton w='100%' h='410px' />
+                <Skeleton w='100%' h='405px' />
             </Grid.Col>
 
             <Grid.Col lg={3} size={4} md={6}>
                 <Skeleton index={1} w='50%' h='133px' className='ui-round-l ui-m-20-b' />
                 <Skeleton index={2} w='calc(50% - 1px)' h='133px' className='ui-m-1-l ui-m-20-b ui-round-r' />
-                <Skeleton index={3} w='100%' h='254px' />
+                <Skeleton index={3} w='100%' h='253px' />
             </Grid.Col>
 
             <Grid.Col lg={3} size={5} md={6}>
-                <Skeleton index={4} w='100%' h='300px' className='ui-m-20-b' />
+                <Skeleton index={4} w='100%' h='299px' className='ui-m-20-b' />
                 <Skeleton index={5} w='100%' h='86px' />
             </Grid.Col>
 
             <Grid.Col size={4} md={6}>
-                <Skeleton index={6} w='100%' h='407px' />
+                <Skeleton index={6} w='100%' h='405px' />
             </Grid.Col>
 
             <Grid.Col lg={8} size={8} md={12}>

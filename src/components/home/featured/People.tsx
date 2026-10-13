@@ -1,5 +1,6 @@
 import Avatar from '@ui/Avatar';
 import Button from '@ui/Button';
+import Box from '@ui/Box';
 import Card from '@ui/Card';
 import Heading from '@ui/Heading';
 import Image from '@ui/Image';
@@ -25,14 +26,16 @@ export const People = () => {
 
     return (
         <Card className='home-people-list ui-p-15-t ui-p-15-h ui-round ui-shadow'>
-            <Tooltip id='peopleTooltip'>{people?.addPeople?.title}</Tooltip>
-            <Button ghost square className='ui-round ui-float-r' data={{ 'tooltip': 'l', 'id': 'peopleTooltip', 'only': 'desktop' }}>
-                <SvgIcon as='js' src={IconUserPlus} />
-            </Button>
+            <Box as='div' className='ui-p-10-b'>
+                <Heading as='h3' className='ui-no-m-b'>
+                    {people?.cardTitle}
+                </Heading>
 
-            <Heading as='h3' className='ui-m-10-t'>
-                {people?.cardTitle}
-            </Heading>
+                <Tooltip id='peopleTooltip'>{people?.addPeople?.title}</Tooltip>
+                <Button ghost square className='ui-round ui-item-r' data={{ 'tooltip': 'l', 'id': 'peopleTooltip', 'only': 'desktop' }}>
+                    <SvgIcon as='js' src={IconUserPlus} />
+                </Button>
+            </Box>
 
             <ListGroup className={`ui-round-t ui-scroll-v ui-scrollbar-round ui-scrollbar-faded${setScrollOuter} ${themeA}`}>
                 <ListGroup.List iconSize='sm' avatarSize='xs'>
@@ -73,7 +76,7 @@ export const PeopleMore = () => {
 
     return (
         <Card className={`ui-align-c ui-p-15 ui-round ui-shadow ${themeB}`}>
-            <Avatar.Holder ease='2nd' easeFilter='1st' className='ui-m-auto ui-hover-scale-more-2nd ui-squircle-2nd ui-squircle-hover-shadow-1st'>
+            <Avatar.Holder ease='2nd' easeFilter='1st' className='ui-item-c ui-hover-scale-more-2nd ui-squircle-2nd ui-squircle-hover-shadow-1st'>
 
                 {peopleMore?.list.map((item: PeopleMoreListProps) => {
                     const avatarText = item.avatarText;

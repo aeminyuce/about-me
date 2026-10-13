@@ -1,5 +1,6 @@
 import { memo, useState } from 'react';
 import Button from '@ui/Button';
+import Box from '@ui/Box';
 import Card from '@ui/Card';
 import Dropdown from '@ui/Dropdown';
 import Grid from '@ui/Grid';
@@ -27,27 +28,24 @@ export default function () {
         <Card className='sales-profits ui-p-15 ui-round ui-shadow'>
             <Tab.Holder dataClasses='ui-font-bold'>
 
-                <Grid.Row fluid='no' vGap='no'>
-                    <Grid.Col size={8}>
-                        <Heading as='h3' className='ui-m-10-t'>{salesProfits?.title}</Heading>
-                    </Grid.Col>
-                    <Grid.Col size={4} className='ui-align-r'>
-                        <Dropdown toggle align='l' className='ui-float-r ui-round-1st'>
-                            <Button ghost className='ui-fill-dark-100'>
-                                <Item as='span'>{currentYear}</Item>
-                                <SvgIcon toggle as='js' src={IconAngleDown} l={10} />
-                            </Button>
-                            <Dropdown.Menu className='ui-shadow-lg'>
-                                <Dropdown.Item active selected className='ui-tab'>
-                                    {currentYear}
-                                </Dropdown.Item>
-                                <Dropdown.Item className='ui-tab' onClick={() => setTabs(values => [...values, 1])}>
-                                    {currentYear - 1}
-                                </Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </Grid.Col>
-                </Grid.Row>
+                <Box as='div' className='ui-p-10-b'>
+                    <Heading as='h3' className='ui-no-m-b'>{salesProfits?.title}</Heading>
+
+                    <Dropdown toggle align='l' className='ui-item-r ui-round-1st'>
+                        <Button ghost className='ui-fill-dark-100'>
+                            <Item as='span'>{currentYear}</Item>
+                            <SvgIcon toggle as='js' src={IconAngleDown} l={10} />
+                        </Button>
+                        <Dropdown.Menu className='ui-shadow-lg'>
+                            <Dropdown.Item active selected className='ui-tab'>
+                                {currentYear}
+                            </Dropdown.Item>
+                            <Dropdown.Item className='ui-tab' onClick={() => setTabs(values => [...values, 1])}>
+                                {currentYear - 1}
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </Box>
 
                 <Tab.Content open className='ui-m-10-t'>
                     <MonthlyCharts y1={salesProfits?.y1} y2={salesProfits?.y2} index1={5} index2={7} data={salesProfits} />
