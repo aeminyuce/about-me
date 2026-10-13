@@ -24,16 +24,12 @@ const Report = (props: any) => {
 
     return (
         <Card className={`ui-p-15 ui-shadow ui-round-${type}`}>
-            <Grid.Static fluid='no' className='ui-font-tight'>
-                <Grid.Row hGap='no' vGap='md'>
-                    <Grid.Col size={12} className='ui-m-10-b'>
-                        {getData?.name}
-                    </Grid.Col>
-                </Grid.Row>
-                <Grid.Col size={100} className='ui-font-3xl ui-align-r ui-p-15-t'>
+            <Box as='div' className='ui-font-tight ui-m-10-v'>
+                {getData?.name}
+                <Item as='span' className='ui-font-3xl ui-item-r'>
                     {getData?.reports}
-                </Grid.Col>
-            </Grid.Static>
+                </Item>
+            </Box>
 
             <Item as='div' className='ui-color-black-25 ui-m-10-b'>
                 {getData?.percent}
