@@ -23,7 +23,7 @@ export default function () {
             <Carousel col={1} slide={5000}>
                 <Carousel.Slider className='ui-ease-slow'>
 
-                    <Carousel.Content animate={150}>
+                    <Carousel.Content>
                         <Grid.Static fluid='sm'>
                             <Grid.Col size={455} className='ui-p-10'>
 
@@ -64,7 +64,7 @@ export default function () {
                         </Grid.Static>
                     </Carousel.Content>
 
-                    <Carousel.Content animate={150}>
+                    <Carousel.Content>
                         <Grid.Static fluid='sm'>
                             <Grid.Col size={455} className='ui-p-10'>
 

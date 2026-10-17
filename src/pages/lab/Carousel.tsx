@@ -157,7 +157,7 @@ export default function () {
             <Carousel col={1} slide={5000}>
                 <Carousel.Slider className='ui-ease-slow'>
 
-                    <Carousel.Content animate={150}>
+                    <Carousel.Content animate={200}>
                         <Grid.Static fluid='lg'>
                             <Grid.Col size={425} className='ui-p-10'>
 
@@ -200,7 +200,7 @@ export default function () {
                         </Grid.Static>
                     </Carousel.Content>
 
-                    <Carousel.Content animate={150}>
+                    <Carousel.Content animate={200}>
                         <Grid.Static fluid='lg'>
                             <Grid.Col size={425} className='ui-p-10'>
 
@@ -263,7 +263,7 @@ export default function () {
 {`<Carousel xl={2} lg={2} col={1} md={3} sm={2} xs={1} slide={5000} start={2}>
     <Carousel.Slider>
 
-        <Carousel.Content animate={150}>
+        <Carousel.Content animate={200}>
             <Image src='1.jpg' className='ui-bring-back' />
             <Image src='2.jpg' className='ui-bring-front' />
             <Item as='span' className='ui-bring-r'>
