@@ -51,7 +51,6 @@ export const People = () => {
                         return (
                             <ListGroup.Item key={jobTitle}>
                                 <Button nostyle href={item.url}>
-                                    <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
                                     <Avatar size='xs' className={classes}>
                                         {avatar && <Image lazy src={avatar} aspect='square' />}
                                         {avatarText && <Item as='span'>{avatarText}</Item>}
@@ -59,6 +58,8 @@ export const People = () => {
 
                                     <Item as='span' className='ui-font-ellipsis ui-m-3-v ui-block'>{jobTitle}</Item>
                                     <Item as='span' className='ui-color-black-25'>{item.description}</Item>
+
+                                    <SvgIcon as='js' src={IconAngleRight} className='ui-listgroup-icon' />
                                 </Button>
                             </ListGroup.Item>
                         )
