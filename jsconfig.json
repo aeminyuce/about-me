@@ -7,7 +7,7 @@
     "effects": {
         "preload": true,
         "pauseAll": false,
-        "pauseOnScroll": true,
+        "pauseOnScroll": false,
         "pauseOnResize": true
     },
     "alerts": {
