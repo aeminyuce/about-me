@@ -1,4 +1,5 @@
 import Button from '@ui/Button';
+import Box from '@ui/Box';
 import Card from '@ui/Card';
 import Grid from '@ui/Grid';
 import Heading from '@ui/Heading';
@@ -396,55 +397,31 @@ export default function () {
         <Preview className='ui-align-l ui-round-1st'>
 
             <Card closable className='ui-shadow'>
-                <Grid.Static fluid='no'>
-                    <Grid.Col size={72} className='ui-set-relative'>
-                        <Item as='span' className='ui-set-absolute ui-set-c'>
-                            <SvgIcon as='js' src={IconAlertCircle} size='lg' animate='wiggle' />
-                        </Item>
-                    </Grid.Col>
-                    <Grid.Row gap='lg'>
-                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.info}</Grid.Col>
-                    </Grid.Row>
-                </Grid.Static>
+                <Box as='span' align='l' className='ui-p-25'>
+                    <SvgIcon as='js' src={IconAlertCircle} size='lg' animate='wiggle' className='ui-text ui-m-25-r' />
+                    {text?.info}
+                </Box>
             </Card>
 
             <Card closable className='ui-theme-greenYellow ui-fill-light-200'>
-                <Grid.Static fluid='no'>
-                    <Grid.Col size={72} className='ui-set-relative'>
-                        <Item as='span' className='ui-set-absolute ui-set-c'>
-                            <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' className='ui-text' />
-                        </Item>
-                    </Grid.Col>
-                    <Grid.Row gap='lg'>
-                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.success}</Grid.Col>
-                    </Grid.Row>
-                </Grid.Static>
+                <Box as='span' align='l' className='ui-p-25'>
+                    <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' className='ui-text ui-m-25-r' />
+                    {text?.success}
+                </Box>
             </Card>
 
             <Card closable className='ui-theme-yellowOrange ui-fill-light-200'>
-                <Grid.Static fluid='no'>
-                    <Grid.Col size={72} className='ui-set-relative'>
-                        <Item as='span' className='ui-set-absolute ui-set-c'>
-                            <SvgIcon as='js' src={IconAlertShield} size='lg' animate='pop' className='ui-text' />
-                        </Item>
-                    </Grid.Col>
-                    <Grid.Row gap='lg'>
-                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.warning}</Grid.Col>
-                    </Grid.Row>
-                </Grid.Static>
+                <Box as='span' align='l' className='ui-p-25'>
+                    <SvgIcon as='js' src={IconAlertShield} size='lg' animate='pop' className='ui-text ui-m-25-r' />
+                    {text?.success}
+                </Box>
             </Card>
 
             <Card closable className='ui-theme-red ui-fill-light-200'>
-                <Grid.Static fluid='no'>
-                    <Grid.Col size={72} className='ui-set-relative'>
-                        <Item as='span' className='ui-set-absolute ui-set-c'>
-                            <SvgIcon as='js' src={IconRemoveShield} size='lg' animate='elastic' className='ui-text' />
-                        </Item>
-                    </Grid.Col>
-                    <Grid.Row gap='lg'>
-                        <Grid.Col size={12} className='ui-p-25-v ui-no-p-l'>{text?.danger}</Grid.Col>
-                    </Grid.Row>
-                </Grid.Static>
+                <Box as='span' align='l' className='ui-p-25'>
+                    <SvgIcon as='js' src={IconRemoveShield} size='lg' animate='elastic' className='ui-text ui-m-25-r' />
+                    {text?.danger}
+                </Box>
             </Card>
 
         </Preview>
@@ -488,35 +465,35 @@ export default function () {
 
                     <Card closable type='success' className='ui-p-15'>
                         <Heading as='h4'>{text?.successTitle}</Heading>
-                        <Item as='p' className='ui-font-relax'>{text?.success}</Item>
+                        <Item as='p' className='ui-color-white-50 ui-font-relax'>{text?.success}</Item>
                     </Card>
 
                     <Card closable type='warning' className='ui-p-15'>
                         <Heading as='h4'>{text?.warningTitle}</Heading>
-                        <Item as='p' className='ui-font-relax'>{text?.warning}</Item>
+                        <Item as='p' className='ui-color-white-50 ui-font-relax'>{text?.warning}</Item>
                     </Card>
 
                     <Card closable type='danger' className='ui-p-15'>
                         <Heading as='h4'>{text?.dangerTitle}</Heading>
-                        <Item as='p' className='ui-font-relax'>{text?.danger}</Item>
+                        <Item as='p' className='ui-color-white-50 ui-font-relax'>{text?.danger}</Item>
                     </Card>
 
                 </Grid.Col>
                 <Grid.Col size={6}>
 
                     <Card closable type='success' className='ui-p-15 ui-theme-green ui-fill-light-100'>
-                        <Heading as='h4'>{text?.successTitle}</Heading>
-                        <Item as='p' className='ui-font-relax'>{text?.success}</Item>
+                        <Heading as='h4' className='ui-m-10-b'>{text?.successTitle}</Heading>
+                        <Item as='p' className='ui-color-white-50 ui-font-relax'>{text?.success}</Item>
                     </Card>
 
                     <Card closable type='warning' className='ui-p-15 ui-theme-yellow ui-fill-light-100'>
-                        <Heading as='h4'>{text?.warningTitle}</Heading>
-                        <Item as='p' className='ui-font-relax'>{text?.warning}</Item>
+                        <Heading as='h4' className='ui-m-10-b'>{text?.warningTitle}</Heading>
+                        <Item as='p' className='ui-color-white-50 ui-font-relax'>{text?.warning}</Item>
                     </Card>
 
                     <Card closable type='danger' className='ui-p-15 ui-theme-red ui-fill-light-100'>
-                        <Heading as='h4'>{text?.dangerTitle}</Heading>
-                        <Item as='p' className='ui-font-relax'>{text?.danger}</Item>
+                        <Heading as='h4' className='ui-m-10-b'>{text?.dangerTitle}</Heading>
+                        <Item as='p' className='ui-color-white-50 ui-font-relax'>{text?.danger}</Item>
                     </Card>
 
                 </Grid.Col>
