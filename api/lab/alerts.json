@@ -16,10 +16,8 @@
                 "dlg_singleBtn": "This dialog includes single button along with custom text."
             },
             "text": {
-                "no": "No",
                 "ok": "Okay",
                 "got": "Got it!",
-                "yes": "Yes",
                 "beOk": "Everything will be OK.",
                 "alert": "Can you alert my response?",
                 "later": "Remind me later!",
@@ -30,8 +28,14 @@
                 "simple": "I am simple.",
                 "success": "Here is the first default message.",
                 "warning": "Hey, we have a message again.",
+                "alertNow": "Alert",
                 "download": "Are you sure you want to donwload your backup files?",
+                "notAlert": "Don't Alert",
+                "notRemove": "Don't Remove",
+                "removeNow": "Remove",
                 "actionName": "Undo",
+                "downloadNow": "Download",
+                "notDownload": "Don't Download",
                 "actionCallback": "Your removed item has been restored."
             }
         }

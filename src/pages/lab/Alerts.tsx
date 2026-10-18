@@ -82,8 +82,8 @@ export default function () {
         <Preview playPos='tr' play={() => {
             Alerts.Dialog({
                 msg: text?.remove,
-                success: text?.yes,
-                error: text?.no,
+                success: text?.removeNow,
+                error: text?.notRemove,
             });
         }}>
             <Item as='div' className='ui-alerts-dialog ui-demo ui-round ui-shadow-lg ui-show ui-show-ease ui-item-c ui-set-relative' style={{ width: 'clamp(280px, 50%, 450px)', top: '0', left: '0', transform: 'none', zIndex: 'unset' }}>
@@ -93,8 +93,8 @@ export default function () {
                 <Item as='div' className='ui-dialog-txt'>{text?.remove}</Item>
                 <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
                     <Item as='div' className='ui-ease-1st-bg'>
-                        <button className='ui-dialog-success' value='success'>{text?.yes}</button>
-                        <button className='ui-dialog-error' value='error'>{text?.no}</button>
+                        <button className='ui-dialog-success' value='success'>{text?.removeNow}</button>
+                        <button className='ui-dialog-error' value='error'>{text?.notRemove}</button>
                     </Item>
                 </Item>
             </Item>
@@ -104,8 +104,8 @@ export default function () {
         <Preview playPos='tr' play={() => {
             Alerts.Dialog({
                 msg: text?.download,
-                success: text?.yes,
-                error: text?.no,
+                success: text?.downloadNow,
+                error: text?.notDownload,
                 custom: {
                     first: text?.maybe,
                     second: text?.later,
@@ -121,8 +121,8 @@ export default function () {
                     <button className='ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover' value='0'>{text?.maybe}</button>
                     <button className='ui-dialog-custom ui-theme-purpleBlue ui-fill-light-100 ui-hover' value='1'>{text?.later}</button>
                     <Item as='div' className='ui-ease-1st-bg'>
-                        <button className='ui-dialog-success' value='success'>{text?.yes}</button>
-                        <button className='ui-dialog-error' value='error'>{text?.no}</button>
+                        <button className='ui-dialog-success' value='success'>{text?.downloadNow}</button>
+                        <button className='ui-dialog-error' value='error'>{text?.notDownload}</button>
                     </Item>
                 </Item>
             </Item>
@@ -132,8 +132,8 @@ export default function () {
         <Preview playPos='tr' play={() => {
             Alerts.Dialog({
                 msg: text?.alert,
-                success: text?.yes,
-                error: text?.no,
+                success: text?.alertNow,
+                error: text?.notAlert,
                 callback: (value) => {
                     alert(value);
                 }
@@ -146,8 +146,8 @@ export default function () {
                 <Item as='div' className='ui-dialog-txt'>{text?.alert}</Item>
                 <Item as='div' className='ui-dialog-buttons ui-ease-1st-bg'>
                     <Item as='div' className='ui-ease-1st-bg'>
-                        <button className='ui-dialog-success' value='success'>{text?.yes}</button>
-                        <button className='ui-dialog-error' value='error'>{text?.no}</button>
+                        <button className='ui-dialog-success' value='success'>{text?.alertNow}</button>
+                        <button className='ui-dialog-error' value='error'>{text?.notAlert}</button>
                     </Item>
                 </Item>
             </Item>
