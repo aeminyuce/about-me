@@ -69,7 +69,7 @@ export default function () {
                 <Grid.Row>
                     <Grid.Col size={12}>
                         <Card className='ui-round ui-shadow-lg'>
-                            <Card.Side className='ui-p-30'>
+                            <Card.Side className='ui-align-l ui-p-30'>
                                 <Heading as='h2'>{text?.forestTitle}</Heading>
                                 <Item as='p' className='ui-font-lg ui-font-light ui-font-relax ui-align-l'>{text?.forest}</Item>
                             </Card.Side>
@@ -129,7 +129,7 @@ export default function () {
                         <Card.Side className='ui-m-10-b'>
                             {text?.food}
                         </Card.Side>
-                        <Card.Side className='ui-icons-no-opacity'>
+                        <Card.Side className='ui-icons-no-opacity'>""
                             <Button.Wrapper type='holder' as='div' ease='1st' className='ui-m-2-b ui-round-t-1st ui-block-2nd'>
                                 <Button noease multi className='ui-p-10'>
                                     <SvgIcon as='js' src={IconChef} b={5} className='ui-item-c ui-text' />
@@ -190,21 +190,17 @@ export default function () {
             <Grid.Row className='ui-align-l ui-round-2nd ui-shadow-2nd'>
                 <Grid.Col lg={3} size={6}>
                     <Card className='ui-theme-yellowOrange'>
-                        <Card.Side className='ui-p-15 ui-border-b ui-border-soft'>
-                            <Heading as='h4'>
-                                <SvgIcon as='js' src={IconTicket} className='ui-text' />
-                                {text?.ticketTitle1}
-                            </Heading>
-                        </Card.Side>
+                        <Box as='div' align='l' className='ui-p-15 ui-border-b ui-border-soft'>
+                            <SvgIcon as='js' src={IconTicket} r={10} className='ui-text' />
+                            <Heading as='h4'>{text?.ticketTitle1}</Heading>
+                        </Box>
                         <Card.Side className='ui-p-15'>
                             {text?.ticket1}
                         </Card.Side>
-                        <Card.Side className='ui-p-15 ui-border-v ui-border-soft'>
-                            <Heading as='h4'>
-                                <SvgIcon as='js' src={IconStore} className='ui-text' />
-                                {text?.ticketTitle2}
-                            </Heading>
-                        </Card.Side>
+                        <Box as='div' align='l' className='ui-p-15 ui-border-v ui-border-soft'>
+                            <SvgIcon as='js' src={IconStore} r={10} className='ui-text' />
+                            <Heading as='h4'>{text?.ticketTitle2}</Heading>
+                        </Box>
                         <Card.Side className='ui-p-15'>
                             {text?.ticket2}
                         </Card.Side>
@@ -216,26 +212,22 @@ export default function () {
                     </Card>
                 </Grid.Col>
                 <Grid.Col lg={3} size={6}>
-                    <Card className='ui-theme-gray'>
-                        <Card.Side className='ui-p-15 ui-fill-light-100'>
-                            <Heading as='h4' className='ui-theme-yellowOrange ui-text'>
-                                <SvgIcon as='js' src={IconTicket} />
-                                {text?.ticketTitle1}
-                            </Heading>
-                        </Card.Side>
+                    <Card>
+                        <Box as='div' align='l' className='ui-p-15 ui-round-t ui-theme-yellowOrange ui-fill-light-100 ui-text'>
+                            <SvgIcon as='js' src={IconTicket} r={10} />
+                            <Heading as='h4'>{text?.ticketTitle1}</Heading>
+                        </Box>
                         <Card.Side className='ui-p-15'>
                             {text?.ticket1}
                         </Card.Side>
-                        <Card.Side className='ui-p-15 ui-fill-light-100'>
-                            <Heading as='h4' className='ui-theme-yellowOrange ui-text'>
-                                <SvgIcon as='js' src={IconStore} />
-                                {text?.ticketTitle2}
-                            </Heading>
-                        </Card.Side>
+                        <Box as='div' align='l' className='ui-p-15 ui-theme-yellowOrange ui-fill-light-100 ui-text'>
+                            <SvgIcon as='js' src={IconStore} r={10} />
+                            <Heading as='h4'>{text?.ticketTitle2}</Heading>
+                        </Box>
                         <Card.Side className='ui-p-15'>
                             {text?.ticket2}
                         </Card.Side>
-                        <Card.Side className='ui-align-c ui-p-15 ui-fill-light-100'>
+                        <Card.Side className='ui-align-c ui-p-15 ui-theme-gray ui-fill-light-100'>
                             <Button nostyle href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</Button>
                         </Card.Side>
                     </Card>
@@ -398,28 +390,28 @@ export default function () {
 
             <Card closable className='ui-shadow'>
                 <Box as='span' align='l' className='ui-p-25'>
-                    <SvgIcon as='js' src={IconAlertCircle} size='lg' animate='wiggle' className='ui-text ui-m-25-r' />
+                    <SvgIcon as='js' src={IconAlertCircle} size='lg' animate='wiggle' r={25} className='ui-text' />
                     {text?.info}
                 </Box>
             </Card>
 
             <Card closable className='ui-theme-greenYellow ui-fill-light-200'>
                 <Box as='span' align='l' className='ui-p-25'>
-                    <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' className='ui-text ui-m-25-r' />
+                    <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' r={25} className='ui-text' />
                     {text?.success}
                 </Box>
             </Card>
 
             <Card closable className='ui-theme-yellowOrange ui-fill-light-200'>
                 <Box as='span' align='l' className='ui-p-25'>
-                    <SvgIcon as='js' src={IconAlertShield} size='lg' animate='pop' className='ui-text ui-m-25-r' />
+                    <SvgIcon as='js' src={IconAlertShield} size='lg' animate='pop' r={25} className='ui-text' />
                     {text?.success}
                 </Box>
             </Card>
 
             <Card closable className='ui-theme-red ui-fill-light-200'>
                 <Box as='span' align='l' className='ui-p-25'>
-                    <SvgIcon as='js' src={IconRemoveShield} size='lg' animate='elastic' className='ui-text ui-m-25-r' />
+                    <SvgIcon as='js' src={IconRemoveShield} size='lg' animate='elastic' r={25} className='ui-text' />
                     {text?.danger}
                 </Box>
             </Card>

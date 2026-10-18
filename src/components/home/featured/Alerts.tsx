@@ -19,14 +19,14 @@ export default function () {
         <>
             <Card closable className={`ui-round ${themeB} ui-fill-light-200`}>
                 <Box as='span' align='l' className='ui-p-20'>
-                    <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' className='ui-text ui-m-2-v ui-m-20-r' />
+                    <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' v={2} r={20} className='ui-text' />
                     <Item as='p' className='ui-font-ellipsis'>{alerts?.alertSuccess}</Item>
                 </Box>
             </Card>
 
             <Card closable className={`ui-round ${themeA} ui-fill-light-200`}>
                 <Box as='span' align='l' className='ui-p-2 ui-p-20'>
-                    <SvgIcon as='js' src={IconAlertShield} size='lg' animate='elastic' className='ui-text ui-m-2-v ui-m-20-r' />
+                    <SvgIcon as='js' src={IconAlertShield} size='lg' animate='elastic' v={2} r={20} className='ui-text' />
                     <Item as='p' className='ui-font-ellipsis'>{alerts?.alertWarning}</Item>
                 </Box>
             </Card>
