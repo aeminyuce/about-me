@@ -12,7 +12,7 @@ export default function () {
     return (
         <Grid.Row>
             <Grid.Col size={4} offset={4}>
-                <Button.Wrapper as='div' type='holder' largeButtons ease='1st' className='iconslist-tabs ui-round-1st ui-theme-purpleBlue'>
+                <Button.Wrapper as='div' type='holder' ease='1st' className='iconslist-tabs ui-round-1st ui-theme-purpleBlue'>
 
                     {api?.icons?.sizes?.map((item: SizeListProps) => {
                         const classes = item.size === 'xl' ? ' ui-fill-dark-100' : undefined;

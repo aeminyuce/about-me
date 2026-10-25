@@ -18,7 +18,7 @@ export default function (props: any) {
     const setTheme = (set: string) => typeA ? setThemeA(set) : setThemeB(set);
 
     return (
-        <Dropdown align='l'>
+        <Dropdown alignMenu='l'>
             <Button noease className={`ui-p-10-h ${round}`}>
                 <Item as='span' className={`ui-block ui-circle ${theme} ui-fill-dark-100`} />
             </Button>

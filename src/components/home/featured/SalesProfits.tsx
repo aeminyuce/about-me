@@ -31,10 +31,10 @@ export default function () {
                 <Box as='div' className='ui-p-10-b'>
                     <Heading as='h3' className='ui-no-m-b'>{salesProfits?.title}</Heading>
 
-                    <Dropdown toggle align='l' className='ui-item-r ui-round-1st'>
+                    <Dropdown toggle alignMenu='l' className='ui-item-r ui-round-1st'>
                         <Button ghost className='ui-fill-dark-100'>
                             <Item as='span'>{currentYear}</Item>
-                            <SvgIcon toggle as='js' src={IconAngleDown} l={10} />
+                            <SvgIcon toggle as='js' src={IconAngleDown} align='r' />
                         </Button>
                         <Dropdown.Menu className='ui-shadow-lg'>
                             <Dropdown.Item active selected className='ui-tab'>

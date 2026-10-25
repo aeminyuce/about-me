@@ -8,7 +8,7 @@ export default function () {
     const error = useRouteError();
 
     return (
-        <Item as='div' className='ui-align-c ui-set-absolute ui-set-c'>
+        <Item as='div' className='ui-items-c ui-set-absolute ui-set-c'>
             <Heading as='h1' className='ui-font-8xl'>
                 Oops!
             </Heading>

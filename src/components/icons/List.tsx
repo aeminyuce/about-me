@@ -1,5 +1,6 @@
 import { lazy, Suspense, Fragment, memo, useState, useCallback } from 'react';
 import Button from '@ui/Button';
+import Box from '@ui/Box';
 import Heading from '@ui/Heading';
 import Item from '@ui/Item';
 import Modal from '@ui/Modal';
@@ -61,15 +62,13 @@ export default function (props: any) {
 
             {iconsList.map((item: IconsListProps) => (
                 <Fragment key={item.category}>
-                    <Heading as='h2'>
-                        <Item as='span' className='ui-inline-block'>
-                            {item.category} {iconsSuffix}
-                        </Item>
+                    <Box as='div' align='c' className='title'>
+                        <Heading as='h2'>{item.category} {iconsSuffix}</Heading>
                         <Button as='span' size='xs' className='ui-m-10-l ui-p-10-h ui-circle'>
                             {item.length} {iconsSuffix}
                         </Button>
-                    </Heading>
-                    <Button.Wrapper as='div' ease='1st' className='ui-highlight ui-round-1st'>
+                    </Box>
+                    <Button.Wrapper balance as='div' ease='1st' align='c' className='ui-highlight ui-round-1st'>
 
                         {item.icons.map((name: string) => {
                             const spin = name.includes('loader-') ? 'spin' : undefined;
@@ -110,7 +109,7 @@ const IconItem = memo((props: IconDetailsProps) => {
     const { name, list, spin, onClick } = props;
 
     return (
-        <Button ghost multi noease onClick={onClick}>
+        <Button ghost multi noease vertical onClick={onClick}>
             <SvgIcon as='sprite' src={list} symbolId={name} animate={spin} />
             <Item as='span'>{name}</Item>
         </Button>

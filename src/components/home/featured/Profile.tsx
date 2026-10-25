@@ -18,7 +18,7 @@ export default function () {
 
     return (
         <Card className={`home-profile ui-round ui-shadow ${themeA}`}>
-            <Item as='div' className='ui-align-c ui-round-t ui-border-b'>
+            <Item as='div' className='ui-items-c ui-round-t ui-border-b'>
                 <Item as='div' className='ui-round-t'>
                     <Image lazy src={info?.cover} aspect='photo' />
                 </Item>
@@ -29,7 +29,7 @@ export default function () {
                 </Notifier>
             </Item>
 
-            <Item as='div' className='ui-align-c'>
+            <Item as='div' className='ui-items-c'>
                 {info?.name}
                 <Item as='div' className='ui-color-black-50 ui-font-xs ui-m-10-b'>
                     {info?.email}

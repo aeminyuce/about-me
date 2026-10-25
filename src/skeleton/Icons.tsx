@@ -4,12 +4,12 @@ import Skeleton from '@ui/Skeleton';
 
 export default function () {
     return (
-        <Grid.Row className='ui-sm-no-p ui-align-c ui-p-30-v'>
+        <Grid.Row className='ui-sm-no-p ui-items-c ui-p-30-v'>
             <Grid.Col size={12}>
 
                 <Skeleton clear h='92px' aspect='square' className='ui-squircle' />
 
-                <Skeleton index={1} w='80%' h='48px' className='ui-m-30-v ui-round ui-hide-sm' />
+                <Skeleton index={1} w='80%' h='42px' className='ui-m-30-v ui-round ui-hide-sm' />
                 <Item as='div' className='ui-p-1-b ui-m-30-v ui-round-1st ui-shown-sm'>
                     <Skeleton index={1} repeat={3} w='96%' h='45px' vGap={5} />
                 </Item>

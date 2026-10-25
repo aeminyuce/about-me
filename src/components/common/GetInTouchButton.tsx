@@ -9,7 +9,7 @@ export default function () {
     const getInTouchText = api?.home?.aboutMe?.getInTouchText;
 
     return (
-        <Button.Wrapper as='div' largeButtons ease='1st' className='ui-circle-1st'>
+        <Button.Wrapper as='div' largeButtons ease='1st' className='ui-sm-items-c ui-circle-1st'>
             <Button noease className='ui-bg-black ui-shown-light' title={getInTouchText} onClick={showGetInTouch}>
                 {getInTouchText}
             </Button>

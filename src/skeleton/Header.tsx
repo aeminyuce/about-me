@@ -18,7 +18,7 @@ export default function () {
                     <Skeleton h='42px' aspect='square' className='ui-round ui-shown-md' />
                 </Grid.Col>
 
-                <Grid.Col size={3} md={9} sm={9} xs={9} className='ui-align-r ui-round-1st'>
+                <Grid.Col size={3} md={9} sm={9} xs={9} className='ui-items-r ui-round-1st'>
                     <Skeleton repeat={5} h='42px' hGap={1} aspect='square' />
                     {showRightSidebar &&
                         <Skeleton index={4} h='42px' aspect='square' className='ui-m-1-l ui-shown-md' />

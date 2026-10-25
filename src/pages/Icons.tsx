@@ -25,7 +25,7 @@ export default function () {
     if (!icons) return <IconsSkeleton />
 
     return (
-        <Grid.Row className='ui-sm-no-p ui-align-c ui-p-30-v'>
+        <Grid.Row className='ui-sm-no-p ui-items-c ui-p-30-v'>
             <Grid.Col size={12}>
                 {info?.title &&
                     <>

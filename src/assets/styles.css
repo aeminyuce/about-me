@@ -9,17 +9,17 @@
         --ui-preview-bg-mode: oklch(0 0 0 / .015);
     }
 
-    /* custom colors */
-    .color-dribbble {
-        color: var(--ui-dribbble-color);
-    }
+    /* header links */
+    .love-icons { color: var(--ui-dribbble-color); }
 
     /* preview */
     .preview {
         background-color: var(--ui-preview-bg-mode);
         display: flow-root;
 
-        &:not([class*="ui-align-"]) { text-align: center; }
+        &:not([class*="ui-items-"]) {
+            text-align: center; justify-content: center;
+        }
     }
 
     @media (width >= 768px) {

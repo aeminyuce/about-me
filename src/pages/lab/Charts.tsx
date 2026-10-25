@@ -405,10 +405,10 @@ export default function () {
                 <Box as='div' className='ui-p-10-b'>
                     <Heading as='h4' className='ui-no-m-b'>{text?.lineMonthly}</Heading>
 
-                    <Dropdown toggle align='l' className='ui-item-r ui-round-1st'>
-                        <Button ghost>
+                    <Dropdown toggle alignMenu='l' className='ui-item-r ui-round-1st'>
+                        <Button ghost gap={10}>
                             <Item as='span'>{currentYear}</Item>
-                            <SvgIcon toggle as='js' src={IconAngleDown} l={10} />
+                            <SvgIcon toggle as='js' src={IconAngleDown} />
                         </Button>
                         <Dropdown.Menu className='ui-shadow-lg'>
                             <Dropdown.Item active selected className='ui-tab'>

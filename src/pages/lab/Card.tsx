@@ -69,9 +69,9 @@ export default function () {
                 <Grid.Row>
                     <Grid.Col size={12}>
                         <Card className='ui-round ui-shadow-lg'>
-                            <Card.Side className='ui-align-l ui-p-30'>
+                            <Card.Side className='ui-p-30'>
                                 <Heading as='h2'>{text?.forestTitle}</Heading>
-                                <Item as='p' className='ui-font-lg ui-font-light ui-font-relax ui-align-l'>{text?.forest}</Item>
+                                <Item as='p' className='ui-font-lg ui-font-light ui-font-relax'>{text?.forest}</Item>
                             </Card.Side>
                             <Card.Side className='ui-set-relative ui-theme-greenYellow'>
                                 <Image lazy fluid='all' src={img[0]} aspect='landscape' className='ui-round-b' />
@@ -91,7 +91,7 @@ export default function () {
                 </Grid.Row>
 
                 <Grid.Col size={420} className='ui-p-10 ui-round-1st ui-shadow-lg-1st ui-theme-orangeRed'>
-                    <Card>
+                    <Card className='ui-items-l'>
                         <Card.Side className='ui-set-relative'>
                             <Item as='span' className='ui-color-white ui-p-10-v ui-p-20-h ui-m-30 ui-round ui-set-absolute ui-set-b ui-fill-light-200 ui-bg-blur'>
                                 <SvgIcon as='js' src={IconTrophyStar} size='lg' r={10} />
@@ -99,11 +99,11 @@ export default function () {
                             </Item>
                             <Image lazy fluid='all' src={img[1]} aspect='landscape' className='ui-round-t' />
                         </Card.Side>
-                        <Card.Side className='ui-align-l ui-p-10-h ui-p-15-v'>
+                        <Card.Side className='ui-p-10-h ui-p-15-v'>
                             <Heading as='h4'>{text?.raceTitle}</Heading>
                             <Item as='p' className='ui-color-black-50'>{text?.race}</Item>
                         </Card.Side>
-                        <Card.Side className='ui-align-l'>
+                        <Card.Side>
                             <ListGroup>
                                 <ListGroup.List>
                                     <ListGroup.Item>
@@ -119,42 +119,42 @@ export default function () {
                             </ListGroup>
                         </Card.Side>
                         <Card.Side className='ui-p-10'>
-                            <Button block className='ui-round ui-fill-dark-100'>
+                            <Button fullWidth className='ui-round ui-fill-dark-100'>
                                 {text?.raceMore}
                             </Button>
                         </Card.Side>
                     </Card>
 
                     <Card className='ui-p-10'>
-                        <Card.Side className='ui-m-10-b'>
+                        <Card.Side className='ui-items-c ui-m-10-b'>
                             {text?.food}
                         </Card.Side>
-                        <Card.Side className='ui-icons-no-opacity'>""
-                            <Button.Wrapper type='holder' as='div' ease='1st' className='ui-m-2-b ui-round-t-1st ui-block-2nd'>
-                                <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconChef} b={5} className='ui-item-c ui-text' />
+                        <Card.Side className='ui-icons-no-opacity'>
+                            <Button.Wrapper type='holder' as='div' ease='1st' className='ui-m-2-b ui-round-t-1st'>
+                                <Button noease multi vertical gap={5} className='ui-p-10'>
+                                    <SvgIcon as='js' src={IconChef} className='ui-text' />
                                     {text?.foodBtn1}
                                 </Button>
-                                <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconPlate} b={5} className='ui-item-c ui-text' />
+                                <Button noease multi vertical gap={5} className='ui-p-10'>
+                                    <SvgIcon as='js' src={IconPlate} className='ui-text' />
                                     {text?.foodBtn2}
                                 </Button>
-                                <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconCup} b={5} className='ui-item-c ui-text' />
+                                <Button noease multi vertical gap={5} className='ui-p-10'>
+                                    <SvgIcon as='js' src={IconCup} className='ui-text' />
                                     {text?.foodBtn3}
                                 </Button>
                             </Button.Wrapper>
-                            <Button.Wrapper type='holder' as='div' ease='1st' className='ui-round-b-1st ui-block-2nd'>
-                                <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconCoffee} b={5} className='ui-item-c ui-text' />
+                            <Button.Wrapper type='holder' as='div' ease='1st' className='ui-round-b-1st'>
+                                <Button noease multi vertical gap={5} className='ui-p-10'>
+                                    <SvgIcon as='js' src={IconCoffee} className='ui-text' />
                                     {text?.foodBtn4}
                                 </Button>
-                                <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconForkKnife} b={5} className='ui-item-c ui-text' />
+                                <Button noease multi vertical gap={5} className='ui-p-10'>
+                                    <SvgIcon as='js' src={IconForkKnife} className='ui-text' />
                                     {text?.foodBtn5}
                                 </Button>
-                                <Button noease multi className='ui-p-10'>
-                                    <SvgIcon as='js' src={IconMitten} b={5} className='ui-item-c ui-text' />
+                                <Button noease multi vertical gap={5} className='ui-p-10'>
+                                    <SvgIcon as='js' src={IconMitten} className='ui-text' />
                                     {text?.foodBtn6}
                                 </Button>
                             </Button.Wrapper>
@@ -187,25 +187,29 @@ export default function () {
 
         <Description>{desc?.sides}</Description>
         <Preview>
-            <Grid.Row className='ui-align-l ui-round-2nd ui-shadow-2nd'>
+            <Grid.Row className='ui-items-l ui-round-2nd ui-shadow-2nd'>
                 <Grid.Col lg={3} size={6}>
                     <Card className='ui-theme-yellowOrange'>
-                        <Box as='div' align='l' className='ui-p-15 ui-border-b ui-border-soft'>
-                            <SvgIcon as='js' src={IconTicket} r={10} className='ui-text' />
-                            <Heading as='h4'>{text?.ticketTitle1}</Heading>
-                        </Box>
+                        <Card.Side className='ui-p-15 ui-border-b ui-border-soft'>
+                            <Box as='span' align='l' gap={10}>
+                                <SvgIcon as='js' src={IconTicket} className='ui-text' />
+                                <Heading as='h4'>{text?.ticketTitle1}</Heading>
+                            </Box>
+                        </Card.Side>
                         <Card.Side className='ui-p-15'>
                             {text?.ticket1}
                         </Card.Side>
-                        <Box as='div' align='l' className='ui-p-15 ui-border-v ui-border-soft'>
-                            <SvgIcon as='js' src={IconStore} r={10} className='ui-text' />
-                            <Heading as='h4'>{text?.ticketTitle2}</Heading>
-                        </Box>
+                        <Card.Side className='ui-p-15 ui-border-v ui-border-soft'>
+                            <Box as='span' align='l' gap={10}>
+                                <SvgIcon as='js' src={IconStore} className='ui-text' />
+                                <Heading as='h4'>{text?.ticketTitle2}</Heading>
+                            </Box>
+                        </Card.Side>
                         <Card.Side className='ui-p-15'>
                             {text?.ticket2}
                         </Card.Side>
-                        <Card.Side className='ui-align-c ui-p-15 ui-border-t ui-border-soft'>
-                            <Button block className='ui-round ui-fill-dark-100'>
+                        <Card.Side className='ui-p-15 ui-border-t ui-border-soft'>
+                            <Button fullWidth className='ui-round ui-fill-dark-100'>
                                 {text?.ticketUrl}
                             </Button>
                         </Card.Side>
@@ -213,21 +217,25 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col lg={3} size={6}>
                     <Card>
-                        <Box as='div' align='l' className='ui-p-15 ui-round-t ui-theme-yellowOrange ui-fill-light-100 ui-text'>
-                            <SvgIcon as='js' src={IconTicket} r={10} />
-                            <Heading as='h4'>{text?.ticketTitle1}</Heading>
-                        </Box>
+                        <Card.Side className='ui-p-15 ui-round-t ui-theme-yellowOrange ui-fill-light-100 ui-text'>
+                            <Box as='span' align='l' gap={10}>
+                                <SvgIcon as='js' src={IconTicket} />
+                                <Heading as='h4'>{text?.ticketTitle1}</Heading>
+                            </Box>
+                        </Card.Side>
                         <Card.Side className='ui-p-15'>
                             {text?.ticket1}
                         </Card.Side>
-                        <Box as='div' align='l' className='ui-p-15 ui-theme-yellowOrange ui-fill-light-100 ui-text'>
-                            <SvgIcon as='js' src={IconStore} r={10} />
-                            <Heading as='h4'>{text?.ticketTitle2}</Heading>
-                        </Box>
+                        <Card.Side className='ui-p-15 ui-theme-yellowOrange ui-fill-light-100 ui-text'>
+                            <Box as='span' align='l' gap={10}>
+                                <SvgIcon as='js' src={IconStore} />
+                                <Heading as='h4'>{text?.ticketTitle2}</Heading>
+                            </Box>
+                        </Card.Side>
                         <Card.Side className='ui-p-15'>
                             {text?.ticket2}
                         </Card.Side>
-                        <Card.Side className='ui-align-c ui-p-15 ui-theme-gray ui-fill-light-100'>
+                        <Card.Side className='ui-items-c ui-p-15 ui-theme-gray ui-fill-light-100'>
                             <Button nostyle href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</Button>
                         </Card.Side>
                     </Card>
@@ -246,7 +254,7 @@ export default function () {
                         <Card.Side className='ui-p-15 ui-fill-light-100'>
                             {text?.ticket2}
                         </Card.Side>
-                        <Card.Side className='ui-align-c ui-p-15'>
+                        <Card.Side className='ui-items-c ui-p-15'>
                             <Button nostyle href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</Button>
                         </Card.Side>
                     </Card>
@@ -265,7 +273,7 @@ export default function () {
                         <Card.Side className='ui-p-15-h'>
                             {text?.ticket2}
                         </Card.Side>
-                        <Card.Side className='ui-align-c ui-p-15'>
+                        <Card.Side className='ui-items-c ui-p-15'>
                             <Button nostyle href='#' className='ui-link ui-font-underline'>{text?.ticketUrl}</Button>
                         </Card.Side>
                     </Card>
@@ -305,7 +313,7 @@ export default function () {
             <Grid.Row className='ui-round-2nd ui-shadow-lg-2nd'>
                 <Grid.Col lg={6} size={12}>
 
-                    <Card className='ui-align-l'>
+                    <Card className='ui-items-l'>
                         <Card.Side className='ui-p-15 ui-border-b ui-border-soft'>
                             <Heading as='h4'>{text?.week}</Heading>
                         </Card.Side>
@@ -319,7 +327,7 @@ export default function () {
                                     <Grid.Col size={12}>
                                         <Heading as='h3'>{text?.museumTitle}</Heading>
                                         <Item as='p' className='ui-font-relax ui-m-20-b'>{text?.museum}</Item>
-                                        <Button.Wrapper as='span' ease='1st' className='ui-circle-1st'>
+                                        <Button.Wrapper as='span' ease='1st' align='l' className='ui-circle-1st'>
                                             <Button noease as='span' size='xs' className='ui-p-10-h ui-m-5-r'>{text?.museumHash1}</Button>
                                             <Button noease as='span' size='xs' className='ui-p-10-h'>{text?.museumHash2}</Button>
                                         </Button.Wrapper>
@@ -344,7 +352,7 @@ export default function () {
                                 <Image lazy fluid='all' src={img[5]} aspect='square' className='ui-round-r ui-no-round-br' />
                             </Grid.Col>
                         </Grid.Row>
-                        <Grid.Row fluid='sm' gap='lg' className='ui-color-black-50 ui-font-relax ui-align-l'>
+                        <Grid.Row fluid='sm' gap='lg' className='ui-color-black-50 ui-font-relax'>
                             <Grid.Col size={6}>{text?.travel1}</Grid.Col>
                             <Grid.Col size={6} className='ui-sm-no-p-t'>{text?.travel2}</Grid.Col>
                         </Grid.Row>
@@ -386,32 +394,32 @@ export default function () {
         </Grid.Row>
 
         <Description>{desc?.alerts}</Description>
-        <Preview className='ui-align-l ui-round-1st'>
+        <Preview className='ui-items-l ui-round-1st'>
 
             <Card closable className='ui-shadow'>
-                <Box as='span' align='l' className='ui-p-25'>
-                    <SvgIcon as='js' src={IconAlertCircle} size='lg' animate='wiggle' r={25} className='ui-text' />
+                <Box as='span' align='l' gap={25} className='ui-p-25'>
+                    <SvgIcon as='js' src={IconAlertCircle} size='lg' animate='wiggle' className='ui-text' />
                     {text?.info}
                 </Box>
             </Card>
 
             <Card closable className='ui-theme-greenYellow ui-fill-light-200'>
-                <Box as='span' align='l' className='ui-p-25'>
-                    <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' r={25} className='ui-text' />
+                <Box as='span' align='l' gap={25} className='ui-p-25'>
+                    <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' className='ui-text' />
                     {text?.success}
                 </Box>
             </Card>
 
             <Card closable className='ui-theme-yellowOrange ui-fill-light-200'>
-                <Box as='span' align='l' className='ui-p-25'>
-                    <SvgIcon as='js' src={IconAlertShield} size='lg' animate='pop' r={25} className='ui-text' />
+                <Box as='span' align='l' gap={25} className='ui-p-25'>
+                    <SvgIcon as='js' src={IconAlertShield} size='lg' animate='pop' className='ui-text' />
                     {text?.success}
                 </Box>
             </Card>
 
             <Card closable className='ui-theme-red ui-fill-light-200'>
-                <Box as='span' align='l' className='ui-p-25'>
-                    <SvgIcon as='js' src={IconRemoveShield} size='lg' animate='elastic' r={25} className='ui-text' />
+                <Box as='span' align='l' gap={25} className='ui-p-25'>
+                    <SvgIcon as='js' src={IconRemoveShield} size='lg' animate='elastic' className='ui-text' />
                     {text?.danger}
                 </Box>
             </Card>
@@ -452,7 +460,7 @@ export default function () {
 
         <Description>{desc?.messages}</Description>
         <Preview>
-            <Grid.Row className='ui-align-l ui-round-2nd'>
+            <Grid.Row className='ui-items-l ui-round-2nd'>
                 <Grid.Col size={6} className='ui-shadow-1st'>
 
                     <Card closable type='success' className='ui-p-15'>

@@ -50,7 +50,7 @@ export default function () {
                                 <Grid.Col size={12}>
 
                                     <Item as='div' className='ui-bring-r ui-ease-slow'>
-                                        <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                        <Item as='div' className='ui-xs-items-c ui-p-10-t'>
                                             <Heading as='h3'>{travel?.titleA}</Heading>
                                             <Item as='p' className='ui-color-black-50 ui-font-relax ui-font-line-6 ui-m-30-b'>
                                                 {travel?.textA}
@@ -94,7 +94,7 @@ export default function () {
                                 <Grid.Col size={12}>
 
                                     <Item as='div' className='ui-bring-r ui-ease-slow'>
-                                        <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                        <Item as='div' className='ui-xs-items-c ui-p-10-t'>
                                             <Heading as='h3'>{travel?.titleB}</Heading>
                                             <Item as='p' className='ui-color-black-50 ui-font-relax ui-font-line-6 ui-m-30-b'>
                                                 {travel?.textB}

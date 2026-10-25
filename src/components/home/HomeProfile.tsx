@@ -18,10 +18,10 @@ export default function () {
 
     return (
         <Grid.Row fluid='sm' hGap='lg' className='ui-m-15-v'>
-            <Grid.Col size={5} md={2} className='ui-align-r ui-sm-align-c'>
+            <Grid.Col size={5} md={2} className='ui-items-r ui-sm-items-c'>
                 <MyAvatar />
             </Grid.Col>
-            <Grid.Col size={7} md={10} className='ui-sm-align-c'>
+            <Grid.Col size={7} md={10} className='ui-sm-items-c'>
                 <Heading as='h1' className='ui-font-2xl ui-font-bold'>
                     {general?.fullName}
                 </Heading>

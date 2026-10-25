@@ -3,15 +3,21 @@
     .iconslist-images { max-width: 800px; }
 
     .iconslist-icons {
-        .ui-h2 { margin-top: 60px; margin-bottom: 20px; }
+        .title {
+            margin-top: 60px; margin-bottom: 20px;
+        }
+
+        .ui-box { gap: 1px; }
+
         .ui-btn-multi {
-            color: var(--ui-dribbble-mode); min-width: 172px; padding: 10px 0; margin: 1px;
+            color: var(--ui-dribbble-mode);
+            min-width: 172px;
+            padding: 10px 0;
+            gap: 5px;
 
             span {
                 color: var(--ui-black-50-mode);
                 font-size: 13px;
-                margin-top: 5px;
-                display: block;
             }
         }
     }

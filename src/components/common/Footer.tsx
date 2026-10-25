@@ -5,7 +5,7 @@ export default function () {
         <Grid.Container as='footer' aria-label='Main site footer' className='ui-border-t ui-border-soft'>
             <Grid.Row fluid='no'>
 
-                <Grid.Col size={12} className='ui-align-c'>
+                <Grid.Col size={12} className='ui-items-c'>
                     Copyright &copy;
                 </Grid.Col>
 

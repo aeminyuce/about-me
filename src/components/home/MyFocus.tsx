@@ -9,7 +9,7 @@ export default function () {
 
     return (
         <Grid.Row>
-            <Grid.Col size={8} push={2} className='ui-m-30-v ui-align-c'>
+            <Grid.Col size={8} push={2} className='ui-m-30-v ui-items-c'>
                 <Item as='p' className='ui-font-lead ui-color-black-25 ui-font-relax'>
                     {api?.home?.aboutMe?.myFocus}
                 </Item>

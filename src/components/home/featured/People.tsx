@@ -32,7 +32,7 @@ export const People = () => {
                 </Heading>
 
                 <Tooltip id='peopleTooltip'>{people?.addPeople?.title}</Tooltip>
-                <Button ghost square className='ui-round ui-item-r' data={{ 'tooltip': 'l', 'id': 'peopleTooltip', 'only': 'desktop' }}>
+                <Button ghost square align='r' className='ui-round' data={{ 'tooltip': 'l', 'id': 'peopleTooltip', 'only': 'desktop' }}>
                     <SvgIcon as='js' src={IconUserPlus} />
                 </Button>
             </Box>
@@ -76,7 +76,7 @@ export const PeopleMore = () => {
     const peopleMore = api?.home_featured?.peopleMore;
 
     return (
-        <Card className={`ui-align-c ui-p-15 ui-round ui-shadow ${themeB}`}>
+        <Card className={`ui-items-c ui-p-15 ui-round ui-shadow ${themeB}`}>
             <Avatar.Holder ease='2nd' easeFilter='1st' className='ui-item-c ui-hover-scale-more-2nd ui-squircle-2nd ui-squircle-hover-shadow-1st'>
 
                 {peopleMore?.list.map((item: PeopleMoreListProps) => {

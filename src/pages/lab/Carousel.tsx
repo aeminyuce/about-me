@@ -80,7 +80,7 @@ export default function () {
                             <Grid.Row fluid='sm'>
                                 <Grid.Col size={12}>
 
-                                    <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                    <Item as='div' className='ui-items-l ui-xs-items-c ui-p-10-t'>
                                         <Heading as='h3'>{text?.travelTitle}</Heading>
                                         <Item as='p' className='ui-color-black-50 ui-font-relax ui-m-25-b'>
                                             {text?.travelText1}
@@ -124,7 +124,7 @@ export default function () {
                             <Grid.Row fluid='sm'>
                                 <Grid.Col size={12}>
 
-                                    <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                    <Item as='div' className='ui-items-l ui-xs-items-c ui-p-10-t'>
                                         <Heading as='h3'>{text?.friendsTitle}</Heading>
                                         <Item as='p' className='ui-color-black-50 ui-font-relax ui-m-25-b'>
                                             {text?.friendsText1}
@@ -184,7 +184,7 @@ export default function () {
                                 <Grid.Col size={12}>
 
                                     <Item as='div' className='ui-bring-r ui-ease-slow'>
-                                        <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                        <Item as='div' className='ui-items-l ui-xs-items-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.travelTitle}</Heading>
                                             <Item as='p' className='ui-color-black-50 ui-font-relax ui-m-25-b'>
                                                 {text?.travelText1}
@@ -230,7 +230,7 @@ export default function () {
                                 <Grid.Col size={12}>
 
                                     <Item as='div' className='ui-bring-r ui-ease-slow'>
-                                        <Item as='div' className='ui-align-l ui-xs-align-c ui-p-10-t'>
+                                        <Item as='div' className='ui-items-l ui-xs-items-c ui-p-10-t'>
                                             <Heading as='h3'>{text?.friendsTitle}</Heading>
                                             <Item as='div' className='ui-color-black-50 ui-font-relax ui-m-25-b'>
                                                 {text?.friendsText1}

@@ -8,11 +8,11 @@ export default function () {
         <Grid.Container fixed='xl' as='div'>
             <Grid.Row fluid='sm' hGap='lg' className='ui-m-15-v'>
 
-                <Grid.Col size={5} md={2} className='ui-align-r ui-sm-align-c'>
+                <Grid.Col size={5} md={2} className='ui-items-r ui-sm-items-c'>
                     <Skeleton h='92px' aspect='square' className='ui-squircle' />
                 </Grid.Col>
 
-                <Grid.Col size={7} md={10} className='ui-sm-align-c ui-round-1st'>
+                <Grid.Col size={7} md={10} className='ui-sm-items-c ui-round-1st'>
                     <Skeleton clear index={1} w='186px' h='31px' className='ui-m-20-b' />
                     <Skeleton clear index={2} repeat={2} w='150px' h='18px' vGap={5} />
 
@@ -34,7 +34,7 @@ export default function () {
             </Grid.Row>
             <Grid.Row>
 
-                <Grid.Col size={8} push={2} className='ui-m-30-v ui-align-c ui-round-2nd'>
+                <Grid.Col size={8} push={2} className='ui-m-30-v ui-items-c ui-round-2nd'>
                     <Item as='div' className='ui-p-1-t ui-hide-md'>
                         <Skeleton index={9} w='100%' h='22px' className='ui-m-5-v' />
                         <Skeleton index={10} w='86%' h='22px' className='ui-m-5-t ui-m-20-b' />

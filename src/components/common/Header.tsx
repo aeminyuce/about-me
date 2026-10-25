@@ -39,16 +39,18 @@ export default function () {
                     <HeaderLinks />
 
                 </Grid.Col>
-                <Grid.Col size={3} md={9} sm={9} xs={9} className='ui-align-r ui-icons-no-opacity'>
+                <Grid.Col size={3} md={9} sm={9} xs={9} className='ui-items-r ui-icons-no-opacity'>
 
-                    <SocialLinks />
-                    <ToggleDarkMode />
+                    <Button.Wrapper as='span' ease='1st' align='r' className='ui-round-1st'>
+                        <SocialLinks />
+                        <ToggleDarkMode />
 
-                    {showRightSidebar &&
-                        <Button square ghost title='Toggle Menu' className='ui-sidebar-show-r ui-align-c ui-round ui-shown-md ui-mirror-rtl'>
-                            <SvgIcon as='js' src={IconBarsRight} opacity='no' />
-                        </Button>
-                    }
+                        {showRightSidebar &&
+                            <Button square ghost title='Toggle Menu' className='ui-sidebar-show-r ui-items-c ui-round ui-shown-md ui-mirror-rtl'>
+                                <SvgIcon as='js' src={IconBarsRight} opacity='no' />
+                            </Button>
+                        }
+                    </Button.Wrapper>
 
                 </Grid.Col>
             </Grid.Row>

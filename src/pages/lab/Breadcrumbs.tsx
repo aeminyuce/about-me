@@ -269,9 +269,9 @@ export default function () {
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
                     <Button className='ui-fill-dark-100 ui-theme-blueGreen'>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} b={2} className='ui-hide-rtl' />
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-hide-rtl' />
                         {text?.item2}
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' l={10} b={2} className='ui-shown-rtl' />
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-shown-rtl' />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -292,9 +292,9 @@ export default function () {
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
                     <Button className='ui-p-20-h ui-fill-dark-100 ui-theme-purpleBlue'>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} b={2} className='ui-hide-rtl' />
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-hide-rtl' />
                         {text?.item2}
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' l={10} b={2} className='ui-shown-rtl' />
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-shown-rtl' />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -314,9 +314,9 @@ export default function () {
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
                     <Button className='ui-fill-dark-100 ui-theme-blueGreen'>
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' r={10} b={2} className='ui-hide-rtl' />
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-hide-rtl' />
                         {text?.item2}
-                        <SvgIcon as='js' src={IconAngleLeft} size='xs' l={10} b={2} className='ui-shown-rtl' />
+                        <SvgIcon as='js' src={IconAngleLeft} size='xs' className='ui-shown-rtl' />
                     </Button>
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
@@ -337,7 +337,7 @@ export default function () {
                 </Breadcrumbs.Item>
                 <Breadcrumbs.Item>
                     <Dropdown className='ui-round-1st'>
-                        <Button square>
+                        <Button square ghost>
                             <SvgIcon as='js' src={IconEllipsisH} />
                         </Button>
                         <Dropdown.Menu className='ui-shadow-lg'>

@@ -1,20 +1,21 @@
     @layer modules {
         /* variables */
         .blog-archive {
+            --blog-archive-cover-img-w: 720px;
             --blog-archive-img-w: 160px;
         }
 
         /* archive */
         .blog-archive {
             article {
+                width: 100%;
+
                 img {
                     &:not(.ui-img-fluid) {
                         width: var(--blog-archive-img-w);
-                        margin-inline-end: 15px;
                     }
                     &.ui-img-fluid {
-                        max-width: calc(var(--blog-archive-img-w) * 4.5);
-                        margin: 0 auto 15px auto;
+                        max-width: var(--blog-archive-cover-img-w);
                     }
                 }
             }
@@ -29,7 +30,7 @@
 
         .blog-post-image {
             img {
-                max-width: calc(var(--blog-archive-img-w) * 4.5);
+                max-width: var(--blog-archive-cover-img-w);
                 margin: 45px auto 43px auto;
             }
             figcaption { margin-bottom: 45px; }
@@ -52,29 +53,9 @@
                 }
                 &:not(:first-child) {
                     .ui-btn {
+                        width: 100%;
                         padding: 15px;
                         margin-bottom: 15px;
-                        display: flex;
-                    }
-                }
-            }
-        }
-
-        @media (width >= 768px) {
-            /* archive */
-            .blog-archive {
-                article {
-                    &:not(:first-child) {
-                        .ui-btn { align-items: center; }
-                    }
-                }
-            }
-        }
-        @media (width < 768px) {
-            .blog-archive {
-                article {
-                    &:not(:first-child) {
-                        .ui-btn { align-items: start; }
                     }
                 }
             }

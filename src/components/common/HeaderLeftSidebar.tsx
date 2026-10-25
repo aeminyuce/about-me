@@ -22,7 +22,7 @@ export default function () {
                     {api?.general?.fullName}
                 </Heading>
             </Sidebar.Title>
-            <Sidebar.Content className='ui-scroll-v ui-align-c ui-block-2nd' />
+            <Sidebar.Content className='ui-scroll-v ui-dir-v-1st ui-full-w-2nd' />
         </Sidebar>
     )
 }
