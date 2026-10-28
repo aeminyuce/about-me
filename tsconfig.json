@@ -5,7 +5,7 @@
             "@cssconfig": ["./cssconfig.css"],
 
             "@ui/*": ["./node_modules/uilab/react/*"],
-            "@less/*": ["./node_modules/uilab/less/*"],
+            "@css/*": ["./node_modules/uilab/css/*"],
             "@js/*": ["./node_modules/uilab/js/*"],
 
             "@icon/*": ["./node_modules/uilab-icons/react/*"],

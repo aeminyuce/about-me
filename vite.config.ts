@@ -9,13 +9,13 @@ export default defineConfig(({ mode }) => ({
         svgLoader()
     ],
     resolve: {
-        extensions: ['.js', '.ts', '.tsx', 'css', '.less'],
+        extensions: ['.js', '.ts', '.tsx', '.css'],
         alias: {
             '@jsconfig': path.resolve(import.meta.dirname, 'jsconfig.json'),
             '@cssconfig': path.resolve(import.meta.dirname, 'cssconfig.css'),
 
             '@ui': path.resolve(import.meta.dirname, 'node_modules/uilab/react/'),
-            '@less': path.resolve(import.meta.dirname, 'node_modules/uilab/less/'),
+            '@css': path.resolve(import.meta.dirname, 'node_modules/uilab/css/'),
             '@js': path.resolve(import.meta.dirname, 'node_modules/uilab/js/'),
             '@icon': path.resolve(import.meta.dirname, 'node_modules/uilab-icons/react/'),
             '@sprite': path.resolve(import.meta.dirname, 'node_modules/uilab-icons/sprite/'),
@@ -33,9 +33,6 @@ export default defineConfig(({ mode }) => ({
     },
     css: {
         transformer: 'lightningcss',
-        preprocessorOptions: {
-            less: {}
-        },
         minify: false
     },
     server: {

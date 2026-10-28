@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 
 // shared assets
-import '@less/ui.less';
+import '@css/ui.css';
 import '@js/ui.js';
 
 // styles
