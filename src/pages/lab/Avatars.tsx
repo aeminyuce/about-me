@@ -177,16 +177,16 @@ export default function () {
         <Preview>
             <Avatar.Holder size='xs' ease='1st' className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-circle-1st'>
                 <Avatar noease className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph4}</Item>
+                    {text?.ph4}
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph3}</Item>
+                    {text?.ph3}
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph2}</Item>
+                    {text?.ph2}
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph1}</Item>
+                    {text?.ph1}
                 </Avatar>
             </Avatar.Holder>
 
@@ -194,16 +194,16 @@ export default function () {
 
             <Avatar.Holder size='sm' ease='1st' className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-circle-1st'>
                 <Avatar noease className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph4}</Item>
+                    {text?.ph4}
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph3}</Item>
+                    {text?.ph3}
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph2}</Item>
+                    {text?.ph2}
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph1}</Item>
+                    {text?.ph1}
                 </Avatar>
             </Avatar.Holder>
 
@@ -211,16 +211,16 @@ export default function () {
 
             <Avatar.Holder ease='1st' className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-circle-1st'>
                 <Avatar noease size='xs' className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph4}</Item>
+                    {text?.ph4}
                 </Avatar>
                 <Avatar noease size='sm' className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph3}</Item>
+                    {text?.ph3}
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph2}</Item>
+                    {text?.ph2}
                 </Avatar>
                 <Avatar noease size='lg' className='ui-m-5-h'>
-                    <Item as='span'>{text?.ph1}</Item>
+                    {text?.ph1}
                 </Avatar>
             </Avatar.Holder>
 
@@ -229,23 +229,23 @@ export default function () {
             <Avatar.Holder ease='2nd' easeFilter='1st' className='ui-hover-scale-more-2nd ui-squircle-2nd ui-squircle-hover-shadow-1st'>
                 <Item as='span' className='ui-m-5-h'>
                     <Avatar noease size='xs'>
-                    <Item as='span'>{text?.ph4}</Item>
-                </Avatar>
+                        {text?.ph4}
+                    </Avatar>
                 </Item>
                 <Item as='span' className='ui-m-5-h'>
                     <Avatar noease size='sm'>
-                    <Item as='span'>{text?.ph3}</Item>
-                </Avatar>
+                        {text?.ph3}
+                    </Avatar>
                 </Item>
                 <Item as='span' className='ui-m-5-h'>
                     <Avatar noease>
-                    <Item as='span'>{text?.ph2}</Item>
-                </Avatar>
+                        {text?.ph2}
+                    </Avatar>
                 </Item>
                 <Item as='span' className='ui-m-5-h'>
                     <Avatar noease size='lg'>
-                    <Item as='span'>{text?.ph1}</Item>
-                </Avatar>
+                        {text?.ph1}
+                    </Avatar>
                 </Item>
             </Avatar.Holder>
         </Preview>
@@ -289,16 +289,16 @@ export default function () {
         <Preview>
             <Avatar.Holder ease='1st' className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-circle-1st'>
                 <Avatar noease size='xs' className='ui-m-5-h ui-fill-dark-100 ui-theme-yellow'>
-                    <Item as='span'>{text?.ph4}</Item>
+                    {text?.ph4}
                 </Avatar>
                 <Avatar noease size='sm' className='ui-m-5-h ui-fill-dark-100 ui-theme-yellow'>
-                    <Item as='span'>{text?.ph3}</Item>
+                    {text?.ph3}
                 </Avatar>
                 <Avatar noease className='ui-m-5-h ui-fill-dark-100 ui-theme-redPurple'>
-                    <Item as='span'>{text?.ph2}</Item>
+                    {text?.ph2}
                 </Avatar>
                 <Avatar noease size='lg' className='ui-m-5-h ui-fill-dark-100 ui-theme-redPurple'>
-                    <Item as='span'>{text?.ph1}</Item>
+                    {text?.ph1}
                 </Avatar>
             </Avatar.Holder>
 
@@ -333,7 +333,7 @@ export default function () {
             <Avatar.Holder ease='1st' className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-circle-1st'>
                 <Avatar noease className='ui-m-5-h'>
                     <Button nostyle href='#'>
-                        <Item as='span'>{text?.ph1}</Item>
+                        {text?.ph1}
                     </Button>
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
@@ -343,7 +343,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
                     <Button nostyle href='#'>
-                        <Item as='span'>{text?.ph3}</Item>
+                        {text?.ph3}
                     </Button>
                 </Avatar>
                 <Avatar noease className='ui-m-5-h'>
@@ -367,7 +367,7 @@ export default function () {
 
 // with placeholder text
 <Avatar size='lg' className='ui-squircle'>
-    <Item as='span'>ABC</Item>
+    ABC
 </Avatar>
 
 // size             : lg | sm | xs`}
@@ -400,7 +400,7 @@ export default function () {
                 </Item>
                 <Item as='span'>
                     <Avatar noease>
-                        <Item as='span'>{text?.ph1}</Item>
+                        {text?.ph1}
                     </Avatar>
                 </Item>
                 <Item as='span'>
@@ -415,7 +415,7 @@ export default function () {
                 </Item>
                 <Item as='span'>
                     <Avatar noease className='ui-fill-dark-100 ui-theme-purpleBlue'>
-                        <Item as='span'>{text?.ph4}</Item>
+                        {text?.ph4}
                     </Avatar>
                 </Item>
                 <Item as='span'>
@@ -435,7 +435,7 @@ export default function () {
                 </Item>
                 <Item as='span'>
                     <Avatar noease>
-                        <Item as='span'>{text?.ph1}</Item>
+                        {text?.ph1}
                     </Avatar>
                 </Item>
                 <Item as='span'>
@@ -450,7 +450,7 @@ export default function () {
                 </Item>
                 <Item as='span'>
                     <Avatar noease className='ui-fill-dark-100 ui-theme-purpleBlue'>
-                        <Item as='span'>{text?.ph4}</Item>
+                        {text?.ph4}
                     </Avatar>
                 </Item>
                 <Item as='span'>
@@ -471,7 +471,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <Button nostyle href='#'>
-                        <Item as='span'>{text?.ph1}</Item>
+                        {text?.ph1}
                     </Button>
                 </Avatar>
                 <Avatar noease>
@@ -481,7 +481,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <Button nostyle href='#' className='ui-fill-dark-100 ui-theme-purpleBlue'>
-                        <Item as='span'>{text?.ph4}</Item>
+                        {text?.ph4}
                     </Button>
                 </Avatar>
                 <Avatar noease>
@@ -491,7 +491,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <Button nostyle href='#'>
-                        <Item as='span'>{text?.count1}</Item>
+                        {text?.count1}
                     </Button>
                 </Avatar>
             </Avatar.Holder>
@@ -506,7 +506,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <Button nostyle href='#'>
-                        <Item as='span'>{text?.ph1}</Item>
+                        {text?.ph1}
                     </Button>
                 </Avatar>
                 <Avatar noease>
@@ -516,7 +516,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <Button nostyle href='#' className='ui-fill-dark-100 ui-theme-purpleBlue'>
-                        <Item as='span'>{text?.ph4}</Item>
+                        {text?.ph4}
                     </Button>
                 </Avatar>
                 <Avatar noease>
@@ -526,7 +526,7 @@ export default function () {
                 </Avatar>
                 <Avatar noease>
                     <Button nostyle href='#'>
-                        <Item as='span'>{text?.count1}</Item>
+                        {text?.count1}
                     </Button>
                 </Avatar>
             </Avatar.Holder>
@@ -536,7 +536,7 @@ export default function () {
         <Preview>
             <Avatar.Holder ease='1st' className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-p-5 ui-circle ui-circle-1st ui-border ui-fill-dark-100 ui-theme-purpleBlue'>
                 <Avatar noease>
-                    <Item as='span'>{text?.ph1}</Item>
+                    {text?.ph1}
                 </Avatar>
                 <Avatar noease>
                     <Image lazy src={img[1]} aspect='square' />
@@ -545,14 +545,14 @@ export default function () {
                     <Image lazy src={img[3]} aspect='square' />
                 </Avatar>
                 <Avatar noease className='ui-fill-dark-100 ui-theme-redPurple'>
-                    <Item as='span'>{text?.ph2}</Item>
+                    {text?.ph2}
                 </Avatar>
                 <Avatar noease>
                     <Image lazy src={img[4]} aspect='square' />
                 </Avatar>
                 <Avatar noease>
                     <Button nostyle href='#'>
-                        <Item as='span'>{text?.count2}</Item>
+                        {text?.count2}
                     </Button>
                 </Avatar>
             </Avatar.Holder>
@@ -586,9 +586,9 @@ export default function () {
             <Spacer size={20} />
 
             <Item as='p' className='ui-p-15-h'>
-                <Item as='span'  className='ui-text ui-theme-yellow'>{text?.ref1}</Item>{' '}
-                <Item as='span'  className='ui-text ui-theme-orangeRed'>{text?.ref2}</Item>{' '}
-                <Item as='span'  className='ui-text ui-theme-green'>{text?.ref3}</Item>
+                <Item as='span' className='ui-text ui-theme-yellow'>{text?.ref1}</Item>{' '}
+                <Item as='span' className='ui-text ui-theme-orangeRed'>{text?.ref2}</Item>{' '}
+                <Item as='span' className='ui-text ui-theme-green'>{text?.ref3}</Item>
             </Item>
         </Preview>
 
@@ -601,7 +601,7 @@ export default function () {
 
     // with placeholder text
     <Avatar noease>
-        <Item as='span'>ABC</Item>
+        ABC
     </Avatar>
 
     // with icon
@@ -612,7 +612,7 @@ export default function () {
     // with show more url
     <Avatar noease>
         <Button nostyle href='#'>
-            <Item as='span'>+27</Item>
+            +27
         </Button>
     </Avatar>
 </Avatar.Holder>

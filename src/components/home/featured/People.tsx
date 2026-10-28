@@ -53,7 +53,7 @@ export const People = () => {
                                 <Button nostyle href={item.url}>
                                     <Avatar size='xs' className={classes}>
                                         {avatar && <Image lazy src={avatar} aspect='square' />}
-                                        {avatarText && <Item as='span'>{avatarText}</Item>}
+                                        {avatarText}
                                     </Avatar>
 
                                     <Item as='span' className='ui-font-ellipsis ui-m-3-v ui-block'>{jobTitle}</Item>
@@ -88,7 +88,7 @@ export const PeopleMore = () => {
                         <Item as='span' key={item.jobTitle}>
                             <Avatar noease size='sm' className={classes}>
                                 {avatar && <Image lazy src={avatar} aspect='square' />}
-                                {avatarText && <Item as='span'>{avatarText}</Item>}
+                                {avatarText}
                             </Avatar>
                         </Item>
                     )
@@ -97,7 +97,7 @@ export const PeopleMore = () => {
                 <Item as='span'>
                     <Avatar noease size='sm'>
                         <Button nostyle href={peopleMore?.moreUrl}>
-                            <Item as='span'>+{peopleMore?.moreCount}</Item>
+                            +{peopleMore?.moreCount}
                         </Button>
                     </Avatar>
                 </Item>
