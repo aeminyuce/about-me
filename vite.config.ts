@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 import svgLoader from 'vite-svg-loader';
 
 export default defineConfig(({ mode }) => ({
+    envPrefix: 'APP_',
     plugins: [
         react(),
         svgLoader()
