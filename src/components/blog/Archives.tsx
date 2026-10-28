@@ -34,12 +34,12 @@ export default function () {
                                 return (
                                     <Item key={name} as='article'>
                                         <Button noease ghost multi
-                                        vertical={isFirst} fullWidth={isFirst} gap={isFirst ? 30 : 15} align={isFirst ? undefined : 'l'}
+                                        vertical={isFirst} fullWidth={isFirst} gap={isFirst ? 30 : 15} alignItems={isFirst ? undefined : 'l'}
                                         to={`/blog?post=${name}`} className={classes} data-discover='true'>
 
                                             <Image lazy fluid={isFirst ? 'all' : undefined} src={image?.url} alt={image?.alt} aspect='photo' className={imgClasses} />
 
-                                            <Box as='span' vertical gap={5} align={isFirst ? 'c' : 'l'}>
+                                            <Box as='span' vertical gap={5} alignItems={isFirst ? 'c' : 'l'}>
                                                 <Item as='time' className='ui-color-black-50'>{item?.postDate?.text}</Item>
                                                 <Item as='span' className={titleClasses}>{item?.postTitle?.text}</Item>
                                             </Box>
