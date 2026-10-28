@@ -41,7 +41,7 @@ export default function () {
                 </Grid.Col>
                 <Grid.Col size={3} md={9} sm={9} xs={9} className='ui-items-r ui-icons-no-opacity'>
 
-                    <Button.Wrapper as='span' ease='1st' align='r' className='ui-round-1st'>
+                    <Button.Wrapper as='span' ease='1st' alignItems='r' className='ui-round-1st'>
                         <SocialLinks />
                         <ToggleDarkMode />
 

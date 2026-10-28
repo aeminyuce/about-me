@@ -15,7 +15,7 @@ export default function () {
 
     return (
         <Item as='nav' aria-label='Main site navigation' className='ui-hide-md'>
-            <Button.Wrapper as='span' ease='1st' align='l' className='ui-sidebar-add-l ui-round-1st'>
+            <Button.Wrapper as='span' ease='1st' alignItems='l' className='ui-sidebar-add-l ui-round-1st'>
 
                 {api?.header?.headerLinks?.map((item: HeaderLinksProps) => {
                     const isModal = item.modal ? () => showGetInTouch() : undefined;

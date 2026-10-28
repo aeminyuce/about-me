@@ -34,7 +34,7 @@ export default function () {
                     <Dropdown toggle alignMenu='l' className='ui-item-r ui-round-1st'>
                         <Button ghost className='ui-fill-dark-100'>
                             <Item as='span'>{currentYear}</Item>
-                            <SvgIcon toggle as='js' src={IconAngleDown} align='r' />
+                            <SvgIcon toggle as='js' src={IconAngleDown} alignSelf='r' />
                         </Button>
                         <Dropdown.Menu className='ui-shadow-lg'>
                             <Dropdown.Item active selected className='ui-tab'>

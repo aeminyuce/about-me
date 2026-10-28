@@ -191,7 +191,7 @@ export default function () {
                 <Grid.Col lg={3} size={6}>
                     <Card className='ui-theme-yellowOrange'>
                         <Card.Side className='ui-p-15 ui-border-b ui-border-soft'>
-                            <Box as='span' align='l' gap={10}>
+                            <Box as='span' alignItems='l' gap={10}>
                                 <SvgIcon as='js' src={IconTicket} className='ui-text' />
                                 <Heading as='h4'>{text?.ticketTitle1}</Heading>
                             </Box>
@@ -200,7 +200,7 @@ export default function () {
                             {text?.ticket1}
                         </Card.Side>
                         <Card.Side className='ui-p-15 ui-border-v ui-border-soft'>
-                            <Box as='span' align='l' gap={10}>
+                            <Box as='span' alignItems='l' gap={10}>
                                 <SvgIcon as='js' src={IconStore} className='ui-text' />
                                 <Heading as='h4'>{text?.ticketTitle2}</Heading>
                             </Box>
@@ -218,7 +218,7 @@ export default function () {
                 <Grid.Col lg={3} size={6}>
                     <Card>
                         <Card.Side className='ui-p-15 ui-round-t ui-theme-yellowOrange ui-fill-light-100 ui-text'>
-                            <Box as='span' align='l' gap={10}>
+                            <Box as='span' alignItems='l' gap={10}>
                                 <SvgIcon as='js' src={IconTicket} />
                                 <Heading as='h4'>{text?.ticketTitle1}</Heading>
                             </Box>
@@ -227,7 +227,7 @@ export default function () {
                             {text?.ticket1}
                         </Card.Side>
                         <Card.Side className='ui-p-15 ui-theme-yellowOrange ui-fill-light-100 ui-text'>
-                            <Box as='span' align='l' gap={10}>
+                            <Box as='span' alignItems='l' gap={10}>
                                 <SvgIcon as='js' src={IconStore} />
                                 <Heading as='h4'>{text?.ticketTitle2}</Heading>
                             </Box>
@@ -327,7 +327,7 @@ export default function () {
                                     <Grid.Col size={12}>
                                         <Heading as='h3'>{text?.museumTitle}</Heading>
                                         <Item as='p' className='ui-font-relax ui-m-20-b'>{text?.museum}</Item>
-                                        <Button.Wrapper as='span' ease='1st' align='l' className='ui-circle-1st'>
+                                        <Button.Wrapper as='span' ease='1st' alignItems='l' className='ui-circle-1st'>
                                             <Button noease as='span' size='xs' className='ui-p-10-h ui-m-5-r'>{text?.museumHash1}</Button>
                                             <Button noease as='span' size='xs' className='ui-p-10-h'>{text?.museumHash2}</Button>
                                         </Button.Wrapper>
@@ -397,28 +397,28 @@ export default function () {
         <Preview className='ui-items-l ui-round-1st'>
 
             <Card closable className='ui-shadow'>
-                <Box as='span' align='l' gap={25} className='ui-p-25'>
+                <Box as='span' alignItems='l' gap={25} className='ui-p-25'>
                     <SvgIcon as='js' src={IconAlertCircle} size='lg' animate='wiggle' className='ui-text' />
                     {text?.info}
                 </Box>
             </Card>
 
             <Card closable className='ui-theme-greenYellow ui-fill-light-200'>
-                <Box as='span' align='l' gap={25} className='ui-p-25'>
+                <Box as='span' alignItems='l' gap={25} className='ui-p-25'>
                     <SvgIcon as='js' src={IconCheckBadge} size='lg' animate='pop' className='ui-text' />
                     {text?.success}
                 </Box>
             </Card>
 
             <Card closable className='ui-theme-yellowOrange ui-fill-light-200'>
-                <Box as='span' align='l' gap={25} className='ui-p-25'>
+                <Box as='span' alignItems='l' gap={25} className='ui-p-25'>
                     <SvgIcon as='js' src={IconAlertShield} size='lg' animate='pop' className='ui-text' />
                     {text?.success}
                 </Box>
             </Card>
 
             <Card closable className='ui-theme-red ui-fill-light-200'>
-                <Box as='span' align='l' gap={25} className='ui-p-25'>
+                <Box as='span' alignItems='l' gap={25} className='ui-p-25'>
                     <SvgIcon as='js' src={IconRemoveShield} size='lg' animate='elastic' className='ui-text' />
                     {text?.danger}
                 </Box>

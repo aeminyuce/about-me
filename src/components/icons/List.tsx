@@ -62,13 +62,13 @@ export default function (props: any) {
 
             {iconsList.map((item: IconsListProps) => (
                 <Fragment key={item.category}>
-                    <Box as='div' align='c' className='title'>
+                    <Box as='div' alignItems='c' className='title'>
                         <Heading as='h2'>{item.category} {iconsSuffix}</Heading>
                         <Button as='span' size='xs' className='ui-m-10-l ui-p-10-h ui-circle'>
                             {item.length} {iconsSuffix}
                         </Button>
                     </Box>
-                    <Button.Wrapper balance as='div' ease='1st' align='c' className='ui-highlight ui-round-1st'>
+                    <Button.Wrapper balance as='div' ease='1st' alignItems='c' className='ui-highlight ui-round-1st'>
 
                         {item.icons.map((name: string) => {
                             const spin = name.includes('loader-') ? 'spin' : undefined;

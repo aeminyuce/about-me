@@ -177,50 +177,50 @@ export default function () {
         <Preview>
             <Grid.Row fluid='xs' className='ui-full-w-2nd ui-ease-2nd-btn'>
                 <Grid.Col size={6}>
-                    <Button noease ghost size='lg' align='l' className='ui-circle ui-border'>
+                    <Button noease ghost size='lg' alignItems='l' className='ui-circle ui-border'>
                         <SvgIcon as='js' src={IconAi} />
                         {text?.lg}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease ghost align='l' className='ui-circle ui-border'>
+                    <Button noease ghost alignItems='l' className='ui-circle ui-border'>
                         <SvgIcon as='js' src={IconAi} />
                         {text?.default}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease ghost align='l' size='sm' className='ui-circle ui-border'>
+                    <Button noease ghost alignItems='l' size='sm' className='ui-circle ui-border'>
                         <SvgIcon as='js' src={IconAi} />
                         {text?.sm}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease ghost align='l' size='xs' className='ui-circle ui-border'>
+                    <Button noease ghost alignItems='l' size='xs' className='ui-circle ui-border'>
                         <SvgIcon as='js' src={IconAi} />
                         {text?.xs}
                     </Button>
                 </Grid.Col>
 
                 <Grid.Col size={6}>
-                    <Button noease size='lg' align='l' className='ui-round'>
+                    <Button noease size='lg' alignItems='l' className='ui-round'>
                         <SvgIcon as='js' src={IconFolder} />
                         {text?.lg}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease align='l' className='ui-round'>
+                    <Button noease alignItems='l' className='ui-round'>
                         <SvgIcon as='js' src={IconFolder} />
                         {text?.default}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease size='sm' align='l' className='ui-round'>
+                    <Button noease size='sm' alignItems='l' className='ui-round'>
                         <SvgIcon as='js' src={IconFolder} />
                         {text?.sm}
                     </Button>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button noease size='xs' align='l' className='ui-round'>
+                    <Button noease size='xs' alignItems='l' className='ui-round'>
                         <SvgIcon as='js' src={IconFolder} />
                         {text?.xs}
                     </Button>
@@ -332,7 +332,7 @@ export default function () {
         </Preview>
 
         <CodePanel type='react' id='variants'>
-{`<Button ghost vertical align='l' fluid='sm'>
+{`<Button ghost vertical alignSelf='r' alignItems='c' fluid='sm'>
     Ghost Button
 </Button>
 
@@ -368,7 +368,8 @@ export default function () {
 // value            : sets value when as input or button
 // size             : lg | sm | xs
 // fluid            : md | sm | xs
-// align            : l | r
+// alignSelf        : l | r
+// alignItems        : l | r
 // as               : div | span | input
 // type             : submit | button | reset
 
@@ -408,7 +409,7 @@ export default function () {
         <Preview>
             <Grid.Row fluid='xs'>
                 <Grid.Col size={6}>
-                    <Button.Wrapper type='list' as='div' align='l' ease='1st' className='ui-round-1st ui-icons-no-opacity ui-theme-greenYellow'>
+                    <Button.Wrapper type='list' as='div' alignItems='l' ease='1st' className='ui-round-1st ui-icons-no-opacity ui-theme-greenYellow'>
                         <Button noease>
                             <SvgIcon as='js' src={IconShield} className='ui-text' />
                             {text?.listA}
@@ -427,15 +428,15 @@ export default function () {
                     <Button.Wrapper type='list' as='div' ease='1st' className='ui-round-1st ui-icons-no-opacity ui-theme-purpleBlue'>
                         <Button noease className='ui-fill-dark-100'>
                             {text?.listA}
-                            <SvgIcon as='js' src={IconShield} align='r' />
+                            <SvgIcon as='js' src={IconShield} alignSelf='r' />
                         </Button>
                         <Button noease className='ui-fill-dark-100'>
                             {text?.listB}
-                            <SvgIcon as='js' src={IconClock} align='r' />
+                            <SvgIcon as='js' src={IconClock} alignSelf='r' />
                         </Button>
                         <Button noease className='ui-fill-dark-100'>
                             {text?.listC}
-                            <SvgIcon as='js' src={IconSettings} align='r' />
+                            <SvgIcon as='js' src={IconSettings} alignSelf='r' />
                         </Button>
                     </Button.Wrapper>
                 </Grid.Col>
@@ -446,7 +447,7 @@ export default function () {
         <Preview>
             <Grid.Row fluid='xs'>
                 <Grid.Col size={6}>
-                    <Button.Wrapper type='list' as='div' align='l' ease='1st' className='ui-round-1st ui-icons-no-opacity ui-theme-greenYellow'>
+                    <Button.Wrapper type='list' as='div' alignItems='l' ease='1st' className='ui-round-1st ui-icons-no-opacity ui-theme-greenYellow'>
                         <Button noease className='ui-border-b'>
                             <SvgIcon as='js' src={IconShield} className='ui-text' />
                             {text?.listA}
@@ -462,7 +463,7 @@ export default function () {
                     </Button.Wrapper>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button.Wrapper type='list' as='div' align='l' ease='1st' className='ui-round-1st ui-icons-no-opacity ui-theme-greenYellow'>
+                    <Button.Wrapper type='list' as='div' alignItems='l' ease='1st' className='ui-round-1st ui-icons-no-opacity ui-theme-greenYellow'>
                         <Button noease ghost className='ui-border'>
                             <SvgIcon as='js' src={IconShield} className='ui-text' />
                             {text?.listA}
@@ -478,18 +479,18 @@ export default function () {
                     </Button.Wrapper>
                 </Grid.Col>
                 <Grid.Col size={6}>
-                    <Button.Wrapper type='list' align='l' as='div' ease='1st' className='ui-round-1st ui-icons-no-opacity ui-theme-purpleBlue'>
+                    <Button.Wrapper type='list' alignItems='l' as='div' ease='1st' className='ui-round-1st ui-icons-no-opacity ui-theme-purpleBlue'>
                         <Button noease className='ui-border ui-border-2x ui-stroke ui-fill-light-100'>
                             {text?.listA}
-                            <SvgIcon as='js' src={IconShield} align='r' className='ui-text' />
+                            <SvgIcon as='js' src={IconShield} alignSelf='r' className='ui-text' />
                         </Button>
                         <Button noease className='ui-border ui-border-2x ui-stroke ui-fill-light-100'>
                             {text?.listB}
-                            <SvgIcon as='js' src={IconClock} align='r' className='ui-text' />
+                            <SvgIcon as='js' src={IconClock} alignSelf='r' className='ui-text' />
                         </Button>
                         <Button noease className='ui-border ui-border-2x ui-stroke ui-fill-light-100'>
                             {text?.listC}
-                            <SvgIcon as='js' src={IconSettings} align='r' className='ui-text' />
+                            <SvgIcon as='js' src={IconSettings} alignSelf='r' className='ui-text' />
                         </Button>
                     </Button.Wrapper>
                 </Grid.Col>
@@ -497,15 +498,15 @@ export default function () {
                     <Button.Wrapper type='list' as='div' ease='1st' className='ui-round-1st ui-icons-no-opacity ui-theme-purpleBlue'>
                         <Button noease ghost className='ui-border ui-border-2x ui-stroke ui-fill-light-100'>
                             {text?.listA}
-                            <SvgIcon as='js' src={IconShield} align='r' className='ui-text' />
+                            <SvgIcon as='js' src={IconShield} alignSelf='r' className='ui-text' />
                         </Button>
                         <Button noease ghost className='ui-border ui-border-2x ui-stroke ui-fill-light-100'>
                             {text?.listB}
-                            <SvgIcon as='js' src={IconClock} align='r' className='ui-text' />
+                            <SvgIcon as='js' src={IconClock} alignSelf='r' className='ui-text' />
                         </Button>
                         <Button noease ghost className='ui-border ui-border-2x ui-stroke ui-fill-light-100'>
                             {text?.listC}
-                            <SvgIcon as='js' src={IconSettings} align='r' className='ui-text' />
+                            <SvgIcon as='js' src={IconSettings} alignSelf='r' className='ui-text' />
                         </Button>
                     </Button.Wrapper>
                 </Grid.Col>
@@ -514,7 +515,7 @@ export default function () {
 
         <CodePanel type='react' id='list'>
 {`// type='list' means it’s a button list
-<Button.Wrapper largeButtons type='list' align='l' as='div' ease='1st' className='ui-round-1st'>
+<Button.Wrapper largeButtons type='list' alignItems='l' as='div' ease='1st' className='ui-round-1st'>
     <Button noease>
         Home
     </Button>
@@ -749,7 +750,7 @@ export default function () {
 
         <Description>{desc?.paging}</Description>
         <Preview>
-            <Button.Wrapper paging as='div' align='c' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+            <Button.Wrapper paging as='div' alignItems='c' ease='1st' className='ui-round-1st ui-theme-redPurple'>
                 <Button noease ghost size='xs' pagingPrev>
                     <SvgIcon as='js' src={IconArrowLeft} />
                 </Button>
@@ -767,7 +768,7 @@ export default function () {
                 </Button>
             </Button.Wrapper>
 
-            <Button.Wrapper paging as='div' align='c' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+            <Button.Wrapper paging as='div' alignItems='c' ease='1st' className='ui-round-1st ui-theme-redPurple'>
                 <Button noease ghost size='sm' pagingPrev className='ui-border'>
                     <SvgIcon as='js' src={IconArrowLeft} />
                 </Button>
@@ -785,7 +786,7 @@ export default function () {
                 </Button>
             </Button.Wrapper>
 
-            <Button.Wrapper paging as='div' align='c' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+            <Button.Wrapper paging as='div' alignItems='c' ease='1st' className='ui-round-1st ui-theme-redPurple'>
                 <Button noease pagingPrev className='ui-fill-light-100'>
                     <SvgIcon as='js' src={IconArrowLeft} />
                 </Button>
@@ -803,7 +804,7 @@ export default function () {
                 </Button>
             </Button.Wrapper>
 
-            <Button.Wrapper largeButtons paging as='div' align='c' ease='1st' className='ui-round-1st ui-theme-redPurple'>
+            <Button.Wrapper largeButtons paging as='div' alignItems='c' ease='1st' className='ui-round-1st ui-theme-redPurple'>
                 <Button noease pagingPrev>
                     <SvgIcon as='js' src={IconArrowLeft} />
                 </Button>

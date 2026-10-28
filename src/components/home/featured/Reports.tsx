@@ -26,7 +26,7 @@ const Report = (props: any) => {
         <Card className={`ui-p-15 ui-shadow ui-round-${type}`}>
             <Box as='div' className='ui-font-tight ui-m-10-v'>
                 {getData?.name}
-                <Item as='span' align='r' className='ui-font-3xl'>
+                <Item as='span' alignSelf='r' className='ui-font-3xl'>
                     {getData?.reports}
                 </Item>
             </Box>
@@ -70,7 +70,7 @@ const ReportsListGroup = memo((props: ReportsListGroupProps) => {
 
                     return (
                         <ListGroup.Item key={item.name}>
-                            <Box vertical as='span' gap={5} align='l' className='ui-p-5-t ui-m-2-t'>
+                            <Box vertical as='span' gap={5} alignItems='l' className='ui-p-5-t ui-m-2-t'>
                                 {item.name}
                                 <Item as='span' className='ui-color-black-50 ui-font-sm'>{item.reports}</Item>
                             </Box>

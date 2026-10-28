@@ -32,7 +32,7 @@ export const People = () => {
                 </Heading>
 
                 <Tooltip id='peopleTooltip'>{people?.addPeople?.title}</Tooltip>
-                <Button ghost square align='r' className='ui-round' data={{ 'tooltip': 'l', 'id': 'peopleTooltip', 'only': 'desktop' }}>
+                <Button ghost square alignSelf='r' className='ui-round' data={{ 'tooltip': 'l', 'id': 'peopleTooltip', 'only': 'desktop' }}>
                     <SvgIcon as='js' src={IconUserPlus} />
                 </Button>
             </Box>
