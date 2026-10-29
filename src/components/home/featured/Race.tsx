@@ -25,7 +25,9 @@ export default function () {
                 <Image lazy fluid='all' src={race?.img} aspect='landscape' className='ui-round-t' />
             </Card.Side>
             <Card.Side className='ui-color-black-50 ui-p-15 ui-m-3-b'>
-                <Item as='p' className='ui-font-md ui-font-line-2 ui-font-relax'>{race?.text}</Item>
+                <Item as='p' title={race?.text} className='ui-font-md ui-font-line-2 ui-font-relax'>
+                    {race?.text}
+                </Item>
             </Card.Side>
             <Card.Side>
                 <ListGroup>
