@@ -12,7 +12,7 @@ import ThemeChanger from './ThemeChanger';
 
 export default function () {
     return (
-        <Grid.Row className='home-nav ui-p-15-h ui-no-m-h ui-m-15-b ui-border-b ui-border-soft ui-set-sticky'>
+        <Grid.Row className='home-nav ui-no-m-h ui-m-15-b ui-border-b ui-border-soft ui-set-sticky'>
             <Grid.Static fluid='no' className='ui-set-relative'>
                 <Grid.Row>
                     <Grid.Col size={12} className='ui-hide-sm'>
