@@ -22,7 +22,7 @@ export default function () {
                     {api?.lab?.sidebarTitle}
                 </Heading>
             </Sidebar.Title>
-            <Sidebar.Content className='ui-scroll-v' />
+            <Sidebar.Content />
         </Sidebar>
     )
 }

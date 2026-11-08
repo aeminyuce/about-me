@@ -41,7 +41,7 @@ export default function () {
                 </Item>
             </Item>
 
-            <ListGroup className={`ui-scroll-v ui-round-b ui-scroll-round ui-scroll-no-bg`}>
+            <ListGroup roundScrollbar noBgScrollbar className='ui-round-b'>
                 <ListGroup.List avatarSize='xs'>
 
                     {profile?.userActivity?.map((item: UserActivityProps, index: number) => (
