@@ -15,7 +15,7 @@ export default function (props: CodePanelProps) {
     return (
         <>
         <Code.Panel copySource toggleScroll id={id} info='Code Usage' className='ui-m-1-b ui-round-t' />
-        <Code lines scroll type={type} className='ui-no-round'>
+        <Code lines scrollable type={type} className='ui-no-round'>
             {String(children)}
         </Code>
         <Code.Panel info={info[type]} className='ui-m-1-t ui-round-b' />
