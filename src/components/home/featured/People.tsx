@@ -22,7 +22,6 @@ export const People = () => {
 
     const people = api?.home_featured?.people;
     const peopleList = people?.list;
-    const setScrollOuter = peopleList?.length > 3;
 
     return (
         <Card className='home-people-list ui-p-15-t ui-p-15-h ui-round ui-shadow'>
@@ -37,7 +36,7 @@ export const People = () => {
                 </Button>
             </Box>
 
-            <ListGroup roundScrollbar noBgScrollbar outerScrollbar={setScrollOuter} className={`ui-round-t ${themeA}`}>
+            <ListGroup noScrollBg className={`ui-round-t ${themeA}`}>
                 <ListGroup.List iconSize='sm' avatarSize='xs'>
 
                     {peopleList.map((item: PeopleListProps) => {

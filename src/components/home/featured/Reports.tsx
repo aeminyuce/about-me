@@ -58,10 +58,9 @@ export const Reports = () => {
 const ReportsListGroup = memo((props: ReportsListGroupProps) => {
     // when parent tabs toggled, prevent re-rendering of the donut charts
     const { themeA, themeB, list } = props;
-    const setScrollOuter = list?.length > 3;
 
     return (
-        <ListGroup roundScrollbar noBgScrollbar outerScrollbar={setScrollOuter} className='ui-round-t'>
+        <ListGroup noScrollBg className='ui-round-t'>
             <ListGroup.List>
 
                 {list?.map((item: ReportsListProps, index: number) => {
