@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict MTlIfx6L8xeO4YAM8Qoiiln2C8xnvV19eqRgbUbSkoVaWUghZ5VWgoZNygHsuNP
+\restrict 8gRBmQOsF9nar83NtBsJtubMVDfAxlcdq0NrdLEK8q1LgQNgTXUYE1zaB75dqxc
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1 (Postgres.app)
@@ -1565,6 +1565,14 @@ declare
     -- previous identity values for update/delete
     old_columns realtime.wal_column[];
 
+    -- the same values as wal2json sent them, which is what filters compare against
+    raw_columns realtime.wal_column[] =
+        array_agg((x->>'name', x->>'type', x->>'typeoid', x->'value', null, null)::realtime.wal_column)
+        from jsonb_array_elements(wal -> 'columns') x;
+    raw_old_columns realtime.wal_column[] =
+        array_agg((x->>'name', x->>'type', x->>'typeoid', x->'value', null, null)::realtime.wal_column)
+        from jsonb_array_elements(wal -> 'identity') x;
+
     error_record_exceeds_max_size boolean = octet_length(wal::text) > max_record_bytes;
 
     -- Primary jsonb output for record
@@ -1723,10 +1731,10 @@ begin
                         subs.entity = entity_
                         and subs.claims_role = working_role
                         and (
-                            realtime.is_visible_through_filters(columns, subs.filters)
+                            realtime.is_visible_through_filters(raw_columns, subs.filters)
                             or (
                               action = 'DELETE'
-                              and realtime.is_visible_through_filters(old_columns, subs.filters)
+                              and realtime.is_visible_through_filters(raw_old_columns, subs.filters)
                             )
                         )
             ) loop
@@ -2166,6 +2174,20 @@ $$;
 
 
 ALTER FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ regtype, val_1 text, val_2 text, negate boolean) OWNER TO supabase_realtime_admin;
+
+--
+-- Name: filters_hash(realtime.user_defined_filter[]); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
+--
+
+CREATE FUNCTION realtime.filters_hash(filters realtime.user_defined_filter[]) RETURNS bytea
+    LANGUAGE sql IMMUTABLE STRICT PARALLEL SAFE
+    AS $$
+  select pg_catalog.int8send(pg_catalog.hash_array_extended(filters, 0))
+      || pg_catalog.int8send(pg_catalog.hash_array_extended(filters, 1))
+$$;
+
+
+ALTER FUNCTION realtime.filters_hash(filters realtime.user_defined_filter[]) OWNER TO supabase_realtime_admin;
 
 --
 -- Name: is_visible_through_filters(realtime.wal_column[], realtime.user_defined_filter[]); Type: FUNCTION; Schema: realtime; Owner: supabase_realtime_admin
@@ -2772,6 +2794,72 @@ $$;
 ALTER FUNCTION storage.can_insert_object(bucketid text, name text, owner uuid, metadata jsonb) OWNER TO supabase_storage_admin;
 
 --
+-- Name: delete_lifecycle_objects(uuid[]); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE FUNCTION storage.delete_lifecycle_objects(object_ids uuid[]) RETURNS TABLE(id uuid, is_delete_marker boolean, metadata jsonb)
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+    object_id uuid;
+    deleted_row storage.objects%ROWTYPE;
+    deleted_ids uuid[];
+    deleted_markers boolean[];
+    deleted_metadata jsonb[];
+    bulk_deleted boolean := false;
+BEGIN
+    -- Surface pre-existing deferred violations instead of treating them as blocked rows.
+    SET CONSTRAINTS ALL IMMEDIATE;
+    PERFORM set_config('storage.allow_delete_query', 'true', true);
+
+    -- One subxact keeps the subxid cache from overflowing; rows return only once it commits.
+    BEGIN
+        WITH deleted AS (
+            DELETE FROM storage.objects AS object_row
+              WHERE object_row.id = ANY(object_ids) AND object_row.archived_at IS NOT NULL
+              RETURNING object_row.id, object_row.is_delete_marker, object_row.metadata
+        )
+        SELECT array_agg(deleted.id), array_agg(deleted.is_delete_marker), array_agg(deleted.metadata)
+          INTO deleted_ids, deleted_markers, deleted_metadata
+          FROM deleted;
+        bulk_deleted := true;
+    EXCEPTION
+        WHEN OTHERS THEN
+            -- User triggers may use insufficient_privilege to block a row.
+            IF SQLSTATE <> '42501' AND left(SQLSTATE, 2) IN ('08', '40', '42', '53', '55', '57', '58', 'XX') THEN
+                RAISE;
+            END IF;
+    END;
+    IF bulk_deleted THEN
+        RETURN QUERY SELECT * FROM unnest(deleted_ids, deleted_markers, deleted_metadata);
+        RETURN;
+    END IF;
+
+    FOREACH object_id IN ARRAY object_ids LOOP
+        BEGIN
+            DELETE FROM storage.objects AS object_row
+              WHERE object_row.id = object_id AND object_row.archived_at IS NOT NULL
+              RETURNING object_row.* INTO deleted_row;
+            IF FOUND THEN
+                id := deleted_row.id;
+                is_delete_marker := deleted_row.is_delete_marker;
+                metadata := deleted_row.metadata;
+                RETURN NEXT;
+            END IF;
+        EXCEPTION
+            WHEN OTHERS THEN
+                IF SQLSTATE <> '42501' AND left(SQLSTATE, 2) IN ('08', '40', '42', '53', '55', '57', '58', 'XX') THEN
+                    RAISE;
+                END IF;
+        END;
+    END LOOP;
+END;
+$$;
+
+
+ALTER FUNCTION storage.delete_lifecycle_objects(object_ids uuid[]) OWNER TO supabase_storage_admin;
+
+--
 -- Name: enforce_bucket_lifecycle_service_role(); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
 --
 
@@ -2780,14 +2868,9 @@ CREATE FUNCTION storage.enforce_bucket_lifecycle_service_role() RETURNS trigger
     SET search_path TO 'pg_catalog'
     AS $$
 BEGIN
-  IF current_user::text IS DISTINCT FROM TG_ARGV[0]
-     AND (
-       OLD.lifecycle_configuration IS DISTINCT FROM NEW.lifecycle_configuration
-       OR OLD.lifecycle_configuration_generation IS DISTINCT FROM NEW.lifecycle_configuration_generation
-     ) THEN
-    -- AFTER runs only after caller RLS has accepted the proposed row. The API
-    -- recognizes this specific error after rolling back its permission probe;
-    -- direct non-service writes still fail and cannot persist the change.
+  IF current_user::text IS DISTINCT FROM TG_ARGV[0] THEN
+    -- Keep this check AFTER caller RLS accepts the proposed row. The API
+    -- recognizes this exact signal after rolling back its permission probe.
     RAISE EXCEPTION 'bucket control columns may only be changed by the configured storage service role'
       USING ERRCODE = 'PST01',
             SCHEMA = TG_TABLE_SCHEMA,
@@ -2819,6 +2902,31 @@ $$;
 
 
 ALTER FUNCTION storage.enforce_bucket_name_length() OWNER TO supabase_storage_admin;
+
+--
+-- Name: enforce_versioning_status_transition(); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE FUNCTION storage.enforce_versioning_status_transition() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+    IF NEW.versioning_status = OLD.versioning_status THEN
+        RETURN NEW;
+    END IF;
+
+    IF NEW.versioning_status = 'DISABLED' OR
+       (OLD.versioning_status = 'DISABLED' AND NEW.versioning_status = 'SUSPENDED') THEN
+        RAISE EXCEPTION 'Cannot transition bucket versioning status from % to %',
+            OLD.versioning_status, NEW.versioning_status;
+    END IF;
+
+    RETURN NEW;
+END;
+$$;
+
+
+ALTER FUNCTION storage.enforce_versioning_status_transition() OWNER TO supabase_storage_admin;
 
 --
 -- Name: extension(text); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
@@ -3651,6 +3759,37 @@ $$;
 ALTER FUNCTION storage.operation() OWNER TO supabase_storage_admin;
 
 --
+-- Name: protect_active_lifecycle_states(); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE FUNCTION storage.protect_active_lifecycle_states() RETURNS trigger
+    LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'pg_catalog'
+    AS $$
+BEGIN
+    IF EXISTS (
+        SELECT 1 FROM storage.bucket_lifecycle_states
+        WHERE bucket_id = OLD.id
+          AND NOT (
+              continuation IS NULL
+              OR (continuation @> '{"continuationVersion": 1}' AND continuation #> '{batch,inFlight}' IS NULL)
+          )
+    ) THEN
+        RAISE EXCEPTION 'update or delete on table "buckets" violates foreign key constraint "bucket_lifecycle_states_bucket_id_fkey" on table "bucket_lifecycle_states"'
+            USING ERRCODE = 'foreign_key_violation',
+                  DETAIL = format('Key (id)=(%s) is still referenced from table "bucket_lifecycle_states".', OLD.id),
+                  SCHEMA = 'storage',
+                  TABLE = 'bucket_lifecycle_states',
+                  CONSTRAINT = 'bucket_lifecycle_states_bucket_id_fkey';
+    END IF;
+    RETURN OLD;
+END;
+$$;
+
+
+ALTER FUNCTION storage.protect_active_lifecycle_states() OWNER TO supabase_storage_admin;
+
+--
 -- Name: protect_bucket_control_columns(); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
 --
 
@@ -3730,6 +3869,82 @@ $$;
 
 
 ALTER FUNCTION storage.protect_delete() OWNER TO supabase_storage_admin;
+
+--
+-- Name: reconcile_lifecycle_state(text, boolean); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE FUNCTION storage.reconcile_lifecycle_state(target_bucket_id text, policy_changed boolean) RETURNS void
+    LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'pg_catalog'
+    AS $$
+DECLARE
+    bucket storage.buckets%ROWTYPE;
+    active boolean;
+    idle boolean;
+    state_generation uuid;
+BEGIN
+    SELECT * INTO bucket FROM storage.buckets WHERE id = target_bucket_id FOR NO KEY UPDATE;
+    IF NOT FOUND THEN
+        RETURN;
+    END IF;
+
+    SELECT continuation IS NULL OR (
+               continuation @> '{"continuationVersion": 1}'
+               AND continuation #> '{batch,inFlight}' IS NULL
+           ), generation
+    INTO idle, state_generation
+    FROM storage.bucket_lifecycle_states
+    WHERE bucket_id = target_bucket_id
+    FOR UPDATE;
+
+    IF bucket.lifecycle_configuration IS NULL THEN
+        DELETE FROM storage.bucket_lifecycle_states
+        WHERE bucket_id = target_bucket_id
+          AND idle IS TRUE;
+
+        UPDATE storage.bucket_lifecycle_states
+        SET next_run_at = clock_timestamp(), updated_at = clock_timestamp()
+        WHERE bucket_id = target_bucket_id
+          AND idle IS NOT TRUE;
+        RETURN;
+    END IF;
+
+    active := bucket.versioning_status <> 'DISABLED'
+        AND bucket.lifecycle_configuration @> '{"rules":[{"status":"Enabled"}]}'::jsonb;
+
+    -- The state row records the generation it was reconciled with so callers need not detect
+    -- policy changes. Rows without a recorded generation keep their work.
+    policy_changed := policy_changed OR (
+        state_generation IS NOT NULL AND state_generation <> bucket.lifecycle_configuration_generation
+    );
+
+    INSERT INTO storage.bucket_lifecycle_states AS state (bucket_id, generation, next_run_at)
+    VALUES (bucket.id, bucket.lifecycle_configuration_generation, CASE WHEN active THEN clock_timestamp() END)
+    ON CONFLICT (bucket_id) DO UPDATE
+    SET next_run_at = CASE
+            WHEN policy_changed THEN
+                CASE WHEN active OR idle IS NOT TRUE THEN clock_timestamp() END
+            ELSE EXCLUDED.next_run_at
+        END,
+        generation = EXCLUDED.generation,
+        claim_id = CASE WHEN policy_changed AND idle IS TRUE
+                        THEN NULL ELSE state.claim_id END,
+        claim_until = CASE WHEN policy_changed AND idle IS TRUE
+                           THEN NULL ELSE state.claim_until END,
+        continuation = CASE WHEN policy_changed AND idle IS TRUE
+                            THEN NULL ELSE state.continuation END,
+        failure_count = CASE WHEN policy_changed AND idle IS TRUE
+                             THEN 0 ELSE state.failure_count END,
+        last_error = CASE WHEN policy_changed AND idle IS TRUE
+                          THEN NULL ELSE state.last_error END,
+        updated_at = clock_timestamp()
+    WHERE policy_changed OR (state.next_run_at IS NULL AND EXCLUDED.next_run_at IS NOT NULL);
+END;
+$$;
+
+
+ALTER FUNCTION storage.reconcile_lifecycle_state(target_bucket_id text, policy_changed boolean) OWNER TO supabase_storage_admin;
 
 --
 -- Name: search(text, text, integer, integer, integer, text, text, text, text, text); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
@@ -4549,6 +4764,27 @@ $$;
 
 
 ALTER FUNCTION storage.update_updated_at_column() OWNER TO supabase_storage_admin;
+
+--
+-- Name: wake_lifecycle_state(); Type: FUNCTION; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE FUNCTION storage.wake_lifecycle_state() RETURNS trigger
+    LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'pg_catalog'
+    AS $$
+BEGIN
+    IF TG_OP = 'INSERT' AND NEW.lifecycle_configuration IS NULL THEN
+        RETURN NEW;
+    END IF;
+
+    PERFORM storage.reconcile_lifecycle_state(NEW.id, false);
+    RETURN NEW;
+END;
+$$;
+
+
+ALTER FUNCTION storage.wake_lifecycle_state() OWNER TO supabase_storage_admin;
 
 SET default_tablespace = '';
 
@@ -6871,7 +7107,8 @@ CREATE TABLE realtime.messages (
     inserted_at timestamp without time zone DEFAULT timezone('utc'::text, clock_timestamp()) NOT NULL,
     id uuid DEFAULT gen_random_uuid() NOT NULL,
     binary_payload bytea,
-    skip_broadcast boolean DEFAULT false NOT NULL
+    skip_broadcast boolean DEFAULT false NOT NULL,
+    expires_at timestamp without time zone
 )
 PARTITION BY RANGE (inserted_at);
 
@@ -6925,6 +7162,33 @@ ALTER TABLE realtime.subscription ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTI
 
 
 --
+-- Name: bucket_lifecycle_states; Type: TABLE; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE TABLE storage.bucket_lifecycle_states (
+    bucket_id text NOT NULL,
+    generation uuid,
+    next_run_at timestamp with time zone,
+    claim_id uuid,
+    claim_until timestamp with time zone,
+    continuation jsonb,
+    last_started_at timestamp with time zone,
+    last_completed_at timestamp with time zone,
+    last_success_at timestamp with time zone,
+    last_result jsonb,
+    failure_count integer DEFAULT 0 NOT NULL,
+    last_error jsonb,
+    updated_at timestamp with time zone DEFAULT now() NOT NULL,
+    CONSTRAINT bucket_lifecycle_continuation_object_check CHECK (((continuation IS NULL) OR (jsonb_typeof(continuation) = 'object'::text))),
+    CONSTRAINT bucket_lifecycle_failure_count_check CHECK ((failure_count >= 0)),
+    CONSTRAINT bucket_lifecycle_last_result_object_check CHECK (((last_result IS NULL) OR (jsonb_typeof(last_result) = 'object'::text))),
+    CONSTRAINT bucket_lifecycle_recovery_due_check CHECK (((next_run_at IS NOT NULL) OR (NOT jsonb_path_exists(COALESCE(continuation, '{}'::jsonb), '$."batch"."inFlight"'::jsonpath))))
+);
+
+
+ALTER TABLE storage.bucket_lifecycle_states OWNER TO supabase_storage_admin;
+
+--
 -- Name: buckets; Type: TABLE; Schema: storage; Owner: supabase_storage_admin
 --
 
@@ -6950,7 +7214,6 @@ CASE
     ELSE false
 END))),
     CONSTRAINT buckets_lifecycle_configuration_standard_only_check CHECK (((type = 'STANDARD'::storage.buckettype) OR ((lifecycle_configuration IS NULL) AND (lifecycle_configuration_generation IS NULL)))),
-    CONSTRAINT buckets_versioning_dark_check CHECK ((versioning_status = 'DISABLED'::text)),
     CONSTRAINT buckets_versioning_standard_only_check CHECK (((type = 'STANDARD'::storage.buckettype) OR (versioning_status = 'DISABLED'::text))),
     CONSTRAINT buckets_versioning_status_check CHECK ((versioning_status = ANY (ARRAY['DISABLED'::text, 'ENABLED'::text, 'SUSPENDED'::text])))
 );
@@ -6995,6 +7258,21 @@ CREATE TABLE storage.buckets_vectors (
 
 
 ALTER TABLE storage.buckets_vectors OWNER TO supabase_storage_admin;
+
+--
+-- Name: lifecycle_abandoned_artifacts; Type: TABLE; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE TABLE storage.lifecycle_abandoned_artifacts (
+    bucket_id text NOT NULL,
+    key text NOT NULL,
+    name text NOT NULL,
+    version text,
+    attempted_at timestamp with time zone DEFAULT now() NOT NULL
+);
+
+
+ALTER TABLE storage.lifecycle_abandoned_artifacts OWNER TO supabase_storage_admin;
 
 --
 -- Name: migrations; Type: TABLE; Schema: storage; Owner: supabase_storage_admin
@@ -7762,14 +8040,13 @@ COPY lab.avatars_text (id, type, text) FROM stdin;
 5	count1	+27
 6	count2	+113
 7	refPrefix	Written by
-8	refSuffix	is shown below:
-9	name1	Claire
-10	name2	Matthew
-11	name3	Tom
-12	ref1	Claire said something wonderful.
-13	ref2	Matthew said something awesome.
-14	ref3	Tom said something great.
 3	ph3	EKY
+8	name1	Claire
+9	name2	Matthew
+10	name3	Tom
+11	ref1	Claire said something wonderful.
+12	ref2	Matthew said something awesome.
+13	ref3	Tom said something great.
 \.
 
 
@@ -8361,6 +8638,11 @@ COPY realtime.schema_migrations (version, inserted_at) FROM stdin;
 20261002120000	2026-10-09 07:34:12
 20261008120000	2026-10-23 00:14:07
 20261009120000	2026-10-23 00:14:08
+20261007120000	2026-11-15 14:17:52
+20261022120000	2026-11-15 14:17:52
+20261027120000	2026-11-15 14:17:54
+20261029120000	2026-11-15 14:17:54
+20261103130000	2026-11-15 14:17:55
 \.
 
 
@@ -8369,6 +8651,14 @@ COPY realtime.schema_migrations (version, inserted_at) FROM stdin;
 --
 
 COPY realtime.subscription (id, subscription_id, entity, filters, claims, created_at, action_filter, selected_columns) FROM stdin;
+\.
+
+
+--
+-- Data for Name: bucket_lifecycle_states; Type: TABLE DATA; Schema: storage; Owner: supabase_storage_admin
+--
+
+COPY storage.bucket_lifecycle_states (bucket_id, generation, next_run_at, claim_id, claim_until, continuation, last_started_at, last_completed_at, last_success_at, last_result, failure_count, last_error, updated_at) FROM stdin;
 \.
 
 
@@ -8393,6 +8683,14 @@ COPY storage.buckets_analytics (name, type, format, created_at, updated_at, id, 
 --
 
 COPY storage.buckets_vectors (id, type, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: lifecycle_abandoned_artifacts; Type: TABLE DATA; Schema: storage; Owner: supabase_storage_admin
+--
+
+COPY storage.lifecycle_abandoned_artifacts (bucket_id, key, name, version, attempted_at) FROM stdin;
 \.
 
 
@@ -8429,7 +8727,6 @@ COPY storage.migrations (id, name, hash, executed_at) FROM stdin;
 46	buckets-objects-grants	fedeb96d60fefd8e02ab3ded9fbde05632f84aed	2025-12-10 09:19:49.772027
 47	iceberg-table-metadata	649df56855c24d8b36dd4cc1aeb8251aa9ad42c2	2025-12-10 09:19:49.779
 49	buckets-objects-grants-postgres	072b1195d0d5a2f888af6b2302a1938dd94b8b3d	2025-12-23 13:40:32.869026
-2	storage-schema	f6a1fa2c93cbcd16d4e487b362e45fca157a8dbd	2025-12-10 09:19:48.766095
 6	change-column-name-in-get-size	ded78e2f1b5d7e616117897e6443a925965b30d2	2025-12-10 09:19:48.876269
 9	fix-search-function	af597a1b590c70519b464a4ab3be54490712796b	2025-12-10 09:19:48.894995
 10	search-files-search-function	b595f05e92f7e91211af1bbfe9c6a13bb3391e16	2025-12-10 09:19:48.90187
@@ -8463,7 +8760,6 @@ COPY storage.migrations (id, name, hash, executed_at) FROM stdin;
 59	drop-unused-functions	38456f13e39691c2bbb4b5151d0d1cdbabd4a8c4	2026-05-08 22:42:16.105517
 60	optimize-existing-functions-again	db35e1c91a9201e59f4fef8d972c2f277d68b157	2026-05-08 22:42:16.127131
 61	mark-filename-immutable	fe0096517ae9d60aaec1d110172ba9036dc66bb7	2026-08-29 08:28:08.250971
-62	object-versioning-core	0b855f00ff3be0bfca91efee02a9858912491a9a	2026-08-29 08:28:08.275112
 63	fix-search-name-relative-to-prefix	c7485e417624f795ce8bb2da21927f48e088904d	2026-08-29 08:28:08.308105
 64	fix-search-by-timestamp-sqli	0af424ecd388a39bb1645184b222185a12149675	2026-08-29 08:28:08.323434
 66	objects-current-version-index	191466c93aa2c46a00e36505577c5fcab8d7cb4b	2026-09-10 18:51:08.044364
@@ -8473,8 +8769,17 @@ COPY storage.migrations (id, name, hash, executed_at) FROM stdin;
 69	validate-bucket-lifecycle-constraints	4febacaaaa0e61e2b783bef081fe03a287e65eb3	2026-09-25 19:51:36.473541
 70	list-objects-with-versions	5c17c3777616cd8d7b18b82835525fa3205af57b	2026-09-25 19:51:36.477683
 71	objects-delete-marker-index	6d14858e66c66f8d6accf8a2630aefd1527fddba	2026-09-25 19:51:36.532518
+2	storage-schema	cdc19a79b298ce37cc730487821a1a7b06b98105	2025-12-10 09:19:48.766095
 72	drop-bucketid-objname-index	302beb09e1b469d7d4db19566f2389d280b64aa3	2026-09-25 19:51:36.643704
 73	revoke-grants-to-unused-operations	ba9244051be09f22f714fc0170a2539f8b5f0e68	2026-10-13 20:27:17.171404
+62	object-versioning-core	c6567e688f8c4a76887e7c1b117b2d58f4feccba	2026-08-29 08:28:08.275112
+74	unlock-object-versioning	dacb58ecb37678de855505b3e1c5aec0d5df7894	2026-11-03 15:17:58.944995
+75	enforce-bucket-lifecycle-update-role	8454a556116c985db857d3b99de94a31a68ad273	2026-11-04 18:19:50.677757
+76	noncurrent-lifecycle	052cbe11956fd14b85861fc19537c0303b73010e	2026-11-04 18:19:50.696047
+77	noncurrent-lifecycle-archived-order-index	d68b03438a987aa1324a0fca68f7078cb2ffb849	2026-11-04 18:19:50.766111
+78	noncurrent-lifecycle-archived-due-index	c82ba0e577ec5c3496b1077ff385ce4645497698	2026-11-04 18:19:50.770313
+79	lifecycle-writer-coordination	3b38458424d2099e6b2e3cb4233590060f527fe1	2026-11-04 18:19:50.771116
+80	revoke-extra-lifecycle-postgres-grants	18cfbf5c5b356469e1e95f3aa1b59ba111d82a06	2026-11-15 14:17:55.362542
 \.
 
 
@@ -8732,7 +9037,7 @@ SELECT pg_catalog.setval('lab.avatars_img_id_seq', 6, true);
 -- Name: avatars_text_id_seq; Type: SEQUENCE SET; Schema: lab; Owner: postgres
 --
 
-SELECT pg_catalog.setval('lab.avatars_text_id_seq', 14, true);
+SELECT pg_catalog.setval('lab.avatars_text_id_seq', 14, false);
 
 
 --
@@ -8865,7 +9170,7 @@ SELECT pg_catalog.setval('lab.intro_images_id_seq', 28, true);
 -- Name: menu_id_seq; Type: SEQUENCE SET; Schema: lab; Owner: postgres
 --
 
-SELECT pg_catalog.setval('lab.menu_id_seq', 35, false);
+SELECT pg_catalog.setval('lab.menu_id_seq', 14, false);
 
 
 --
@@ -9687,6 +9992,14 @@ ALTER TABLE ONLY realtime.schema_migrations
 
 
 --
+-- Name: bucket_lifecycle_states bucket_lifecycle_states_pkey; Type: CONSTRAINT; Schema: storage; Owner: supabase_storage_admin
+--
+
+ALTER TABLE ONLY storage.bucket_lifecycle_states
+    ADD CONSTRAINT bucket_lifecycle_states_pkey PRIMARY KEY (bucket_id);
+
+
+--
 -- Name: buckets_analytics buckets_analytics_pkey; Type: CONSTRAINT; Schema: storage; Owner: supabase_storage_admin
 --
 
@@ -9708,6 +10021,14 @@ ALTER TABLE ONLY storage.buckets
 
 ALTER TABLE ONLY storage.buckets_vectors
     ADD CONSTRAINT buckets_vectors_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: lifecycle_abandoned_artifacts lifecycle_abandoned_artifacts_pkey; Type: CONSTRAINT; Schema: storage; Owner: supabase_storage_admin
+--
+
+ALTER TABLE ONLY storage.lifecycle_abandoned_artifacts
+    ADD CONSTRAINT lifecycle_abandoned_artifacts_pkey PRIMARY KEY (bucket_id, key);
 
 
 --
@@ -10256,17 +10577,17 @@ CREATE INDEX ix_realtime_subscription_entity ON realtime.subscription USING btre
 
 
 --
--- Name: messages_inserted_at_topic_index; Type: INDEX; Schema: realtime; Owner: supabase_realtime_admin
+-- Name: messages_replay_index; Type: INDEX; Schema: realtime; Owner: supabase_realtime_admin
 --
 
-CREATE INDEX messages_inserted_at_topic_index ON ONLY realtime.messages USING btree (inserted_at DESC, topic) WHERE ((extension = 'broadcast'::text) AND (private IS TRUE));
+CREATE INDEX messages_replay_index ON ONLY realtime.messages USING btree (topic, inserted_at DESC, COALESCE(expires_at, 'infinity'::timestamp without time zone)) WHERE ((extension = 'broadcast'::text) AND (private = true));
 
 
 --
--- Name: subscription_subscription_id_entity_filters_action_filter_selec; Type: INDEX; Schema: realtime; Owner: supabase_realtime_admin
+-- Name: subscription_subscription_id_entity_filters_hash_key; Type: INDEX; Schema: realtime; Owner: supabase_realtime_admin
 --
 
-CREATE UNIQUE INDEX subscription_subscription_id_entity_filters_action_filter_selec ON realtime.subscription USING btree (subscription_id, entity, filters, action_filter, COALESCE(selected_columns, '{}'::text[]));
+CREATE UNIQUE INDEX subscription_subscription_id_entity_filters_hash_key ON realtime.subscription USING btree (subscription_id, entity, realtime.filters_hash(filters), action_filter, COALESCE(selected_columns, '{}'::text[]));
 
 
 --
@@ -10274,6 +10595,13 @@ CREATE UNIQUE INDEX subscription_subscription_id_entity_filters_action_filter_se
 --
 
 CREATE UNIQUE INDEX bname ON storage.buckets USING btree (name);
+
+
+--
+-- Name: bucket_lifecycle_states_due_idx; Type: INDEX; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE INDEX bucket_lifecycle_states_due_idx ON storage.bucket_lifecycle_states USING btree (next_run_at, bucket_id) WHERE (next_run_at IS NOT NULL);
 
 
 --
@@ -10326,10 +10654,31 @@ CREATE UNIQUE INDEX idx_objects_null_version ON storage.objects USING btree (buc
 
 
 --
+-- Name: lifecycle_abandoned_artifacts_attempted_at_idx; Type: INDEX; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE INDEX lifecycle_abandoned_artifacts_attempted_at_idx ON storage.lifecycle_abandoned_artifacts USING btree (attempted_at);
+
+
+--
 -- Name: name_prefix_search; Type: INDEX; Schema: storage; Owner: supabase_storage_admin
 --
 
 CREATE INDEX name_prefix_search ON storage.objects USING btree (name text_pattern_ops);
+
+
+--
+-- Name: objects_archived_due_idx; Type: INDEX; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE INDEX objects_archived_due_idx ON storage.objects USING btree (bucket_id, archived_at, name COLLATE "C") INCLUDE (id, version, is_delete_marker) WHERE (archived_at IS NOT NULL);
+
+
+--
+-- Name: objects_archived_order_uq; Type: INDEX; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE UNIQUE INDEX objects_archived_order_uq ON storage.objects USING btree (bucket_id, name COLLATE "C", archived_at) WHERE (archived_at IS NOT NULL);
 
 
 --
@@ -10358,6 +10707,20 @@ CREATE TRIGGER tr_check_filters BEFORE INSERT OR UPDATE ON realtime.subscription
 --
 
 CREATE TRIGGER enforce_bucket_name_length_trigger BEFORE INSERT OR UPDATE OF name ON storage.buckets FOR EACH ROW EXECUTE FUNCTION storage.enforce_bucket_name_length();
+
+
+--
+-- Name: buckets enforce_versioning_status_transition; Type: TRIGGER; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE TRIGGER enforce_versioning_status_transition BEFORE UPDATE OF versioning_status ON storage.buckets FOR EACH ROW EXECUTE FUNCTION storage.enforce_versioning_status_transition();
+
+
+--
+-- Name: buckets protect_active_lifecycle_states; Type: TRIGGER; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE TRIGGER protect_active_lifecycle_states BEFORE DELETE ON storage.buckets FOR EACH ROW EXECUTE FUNCTION storage.protect_active_lifecycle_states();
 
 
 --
@@ -10400,6 +10763,20 @@ CREATE TRIGGER protect_objects_delete BEFORE DELETE ON storage.objects FOR EACH 
 --
 
 CREATE TRIGGER update_objects_updated_at BEFORE UPDATE ON storage.objects FOR EACH ROW EXECUTE FUNCTION storage.update_updated_at_column();
+
+
+--
+-- Name: buckets wake_lifecycle_on_policy_write; Type: TRIGGER; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE TRIGGER wake_lifecycle_on_policy_write AFTER INSERT OR UPDATE OF lifecycle_configuration_generation ON storage.buckets FOR EACH ROW EXECUTE FUNCTION storage.wake_lifecycle_state();
+
+
+--
+-- Name: buckets wake_lifecycle_on_versioning_enable; Type: TRIGGER; Schema: storage; Owner: supabase_storage_admin
+--
+
+CREATE TRIGGER wake_lifecycle_on_versioning_enable AFTER UPDATE OF versioning_status ON storage.buckets FOR EACH ROW WHEN ((new.lifecycle_configuration IS NOT NULL)) EXECUTE FUNCTION storage.wake_lifecycle_state();
 
 
 --
@@ -10592,6 +10969,14 @@ ALTER TABLE ONLY auth.webauthn_challenges
 
 ALTER TABLE ONLY auth.webauthn_credentials
     ADD CONSTRAINT webauthn_credentials_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE;
+
+
+--
+-- Name: bucket_lifecycle_states bucket_lifecycle_states_bucket_id_fkey; Type: FK CONSTRAINT; Schema: storage; Owner: supabase_storage_admin
+--
+
+ALTER TABLE ONLY storage.bucket_lifecycle_states
+    ADD CONSTRAINT bucket_lifecycle_states_bucket_id_fkey FOREIGN KEY (bucket_id) REFERENCES storage.buckets(id) ON DELETE CASCADE;
 
 
 --
@@ -11061,6 +11446,12 @@ ALTER TABLE page.header_sociallinks ENABLE ROW LEVEL SECURITY;
 ALTER TABLE realtime.messages ENABLE ROW LEVEL SECURITY;
 
 --
+-- Name: bucket_lifecycle_states; Type: ROW SECURITY; Schema: storage; Owner: supabase_storage_admin
+--
+
+ALTER TABLE storage.bucket_lifecycle_states ENABLE ROW LEVEL SECURITY;
+
+--
 -- Name: buckets; Type: ROW SECURITY; Schema: storage; Owner: supabase_storage_admin
 --
 
@@ -11077,6 +11468,12 @@ ALTER TABLE storage.buckets_analytics ENABLE ROW LEVEL SECURITY;
 --
 
 ALTER TABLE storage.buckets_vectors ENABLE ROW LEVEL SECURITY;
+
+--
+-- Name: lifecycle_abandoned_artifacts; Type: ROW SECURITY; Schema: storage; Owner: supabase_storage_admin
+--
+
+ALTER TABLE storage.lifecycle_abandoned_artifacts ENABLE ROW LEVEL SECURITY;
 
 --
 -- Name: migrations; Type: ROW SECURITY; Schema: storage; Owner: supabase_storage_admin
@@ -11935,6 +12332,17 @@ GRANT ALL ON FUNCTION realtime.check_equality_op(op realtime.equality_op, type_ 
 
 
 --
+-- Name: FUNCTION filters_hash(filters realtime.user_defined_filter[]); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
+--
+
+GRANT ALL ON FUNCTION realtime.filters_hash(filters realtime.user_defined_filter[]) TO postgres;
+GRANT ALL ON FUNCTION realtime.filters_hash(filters realtime.user_defined_filter[]) TO dashboard_user;
+GRANT ALL ON FUNCTION realtime.filters_hash(filters realtime.user_defined_filter[]) TO anon;
+GRANT ALL ON FUNCTION realtime.filters_hash(filters realtime.user_defined_filter[]) TO authenticated;
+GRANT ALL ON FUNCTION realtime.filters_hash(filters realtime.user_defined_filter[]) TO service_role;
+
+
+--
 -- Name: FUNCTION is_visible_through_filters(columns realtime.wal_column[], filters realtime.user_defined_filter[]); Type: ACL; Schema: realtime; Owner: supabase_realtime_admin
 --
 
@@ -12032,6 +12440,36 @@ GRANT ALL ON FUNCTION realtime.topic() TO dashboard_user;
 
 GRANT ALL ON FUNCTION realtime.wal2json_escape_identifier(name text) TO postgres;
 GRANT ALL ON FUNCTION realtime.wal2json_escape_identifier(name text) TO dashboard_user;
+
+
+--
+-- Name: FUNCTION delete_lifecycle_objects(object_ids uuid[]); Type: ACL; Schema: storage; Owner: supabase_storage_admin
+--
+
+REVOKE ALL ON FUNCTION storage.delete_lifecycle_objects(object_ids uuid[]) FROM PUBLIC;
+GRANT ALL ON FUNCTION storage.delete_lifecycle_objects(object_ids uuid[]) TO service_role;
+
+
+--
+-- Name: FUNCTION protect_active_lifecycle_states(); Type: ACL; Schema: storage; Owner: supabase_storage_admin
+--
+
+REVOKE ALL ON FUNCTION storage.protect_active_lifecycle_states() FROM PUBLIC;
+
+
+--
+-- Name: FUNCTION reconcile_lifecycle_state(target_bucket_id text, policy_changed boolean); Type: ACL; Schema: storage; Owner: supabase_storage_admin
+--
+
+REVOKE ALL ON FUNCTION storage.reconcile_lifecycle_state(target_bucket_id text, policy_changed boolean) FROM PUBLIC;
+GRANT ALL ON FUNCTION storage.reconcile_lifecycle_state(target_bucket_id text, policy_changed boolean) TO service_role;
+
+
+--
+-- Name: FUNCTION wake_lifecycle_state(); Type: ACL; Schema: storage; Owner: supabase_storage_admin
+--
+
+REVOKE ALL ON FUNCTION storage.wake_lifecycle_state() FROM PUBLIC;
 
 
 --
@@ -12403,6 +12841,14 @@ GRANT USAGE ON SEQUENCE realtime.subscription_id_seq TO service_role;
 
 
 --
+-- Name: TABLE bucket_lifecycle_states; Type: ACL; Schema: storage; Owner: supabase_storage_admin
+--
+
+GRANT ALL ON TABLE storage.bucket_lifecycle_states TO service_role;
+GRANT SELECT ON TABLE storage.bucket_lifecycle_states TO postgres;
+
+
+--
 -- Name: TABLE buckets; Type: ACL; Schema: storage; Owner: supabase_storage_admin
 --
 
@@ -12430,6 +12876,14 @@ GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE storage.buckets_analytics TO anon;
 GRANT SELECT ON TABLE storage.buckets_vectors TO service_role;
 GRANT SELECT ON TABLE storage.buckets_vectors TO anon;
 GRANT SELECT ON TABLE storage.buckets_vectors TO authenticated;
+
+
+--
+-- Name: TABLE lifecycle_abandoned_artifacts; Type: ACL; Schema: storage; Owner: supabase_storage_admin
+--
+
+GRANT ALL ON TABLE storage.lifecycle_abandoned_artifacts TO service_role;
+GRANT SELECT ON TABLE storage.lifecycle_abandoned_artifacts TO postgres;
 
 
 --
@@ -12775,5 +13229,5 @@ ALTER EVENT TRIGGER pgrst_drop_watch OWNER TO supabase_admin;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict MTlIfx6L8xeO4YAM8Qoiiln2C8xnvV19eqRgbUbSkoVaWUghZ5VWgoZNygHsuNP
+\unrestrict 8gRBmQOsF9nar83NtBsJtubMVDfAxlcdq0NrdLEK8q1LgQNgTXUYE1zaB75dqxc
 

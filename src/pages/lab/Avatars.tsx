@@ -454,7 +454,7 @@ export default function () {
                     </Avatar>
                 </Item>
                 <Item as='span'>
-                    <Avatar noease>
+                    <Avatar noease className='ui-hide-xs'>
                         <Image lazy src={img[5]} aspect='square' />
                     </Avatar>
                 </Item>
@@ -524,7 +524,7 @@ export default function () {
                         <Image lazy src={img[5]} aspect='square' />
                     </Button>
                 </Avatar>
-                <Avatar noease>
+                <Avatar noease className='ui-hide-xs'>
                     <Button nostyle href='#'>
                         {text?.count1}
                     </Button>
@@ -547,7 +547,7 @@ export default function () {
                 <Avatar noease className='ui-fill-dark-100 ui-theme-redPurple'>
                     {text?.ph2}
                 </Avatar>
-                <Avatar noease>
+                <Avatar noease className='ui-hide-xs'>
                     <Image lazy src={img[4]} aspect='square' />
                 </Avatar>
                 <Avatar noease>
@@ -560,7 +560,7 @@ export default function () {
 
         <Description>{desc?.ref}</Description>
         <Preview>
-            <Item as='span'  className='ui-m-25-r ui-inline-block'>
+            <Item as='span' className='ui-m-25-r ui-inline-block'>
                 {text?.refPrefix}
             </Item>
             <Avatar.Holder as='span' ease='1st' className='ui-hover-scale-more-1st ui-hover-shadow-1st ui-p-5 ui-circle ui-circle-1st'>
@@ -579,9 +579,6 @@ export default function () {
                     <Image lazy src={img[0]} aspect='square' />
                 </Avatar>
             </Avatar.Holder>
-            <Item as='span'  className='ui-m-10-l ui-inline-block'>
-                {text?.refSuffix}
-            </Item>
 
             <Spacer size={20} />
 
