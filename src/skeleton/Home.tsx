@@ -48,7 +48,7 @@ export default function () {
             </Grid.Row>
         </Grid.Container>
 
-        <Grid.Row className='ui-p-15-h ui-no-m-h ui-m-15-b'>
+        <Grid.Row className='ui-no-m-h ui-m-15-b'>
             <Grid.Static fluid='no'>
                 <Grid.Row >
 
