@@ -10,7 +10,7 @@
     .home-nav {
         .ui-dropdown {
             & > button,& li {
-                & > span { width: 17px; height: 17px; }
+                & > span { width: 17px; height: 17px; display: inline-block; border-radius: 17px; }
             }
         }
     }

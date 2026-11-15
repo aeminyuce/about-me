@@ -22,7 +22,7 @@ export default function (props: any) {
             <Button noease className={`ui-p-10-h ${round}`}>
                 <Item as='span' className={`ui-block ui-circle ${theme} ui-fill-dark-100`} />
             </Button>
-            <Dropdown.Menu className='ui-inline-block-2nd ui-round ui-circle-2nd ui-shadow-lg ui-cursor-pointer'>
+            <Dropdown.Menu className='ui-round ui-shadow-lg ui-cursor-pointer'>
 
                 {api?.home?.nav?.themeList?.map((item: ThemeListProps) => (
                     <Dropdown.Item key={item.name} onClick={() => setTheme(item.theme)}>
