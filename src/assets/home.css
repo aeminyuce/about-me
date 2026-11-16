@@ -1,4 +1,4 @@
-@layer modules {
+@layer ui-modules {
     /* home nav */
     .home-nav {
         background-color: var(--ui-body-bg-mode);
@@ -6,7 +6,7 @@
     }
 }
 
-@layer overrides {
+@layer ui-overrides {
     .home-nav {
         .ui-dropdown {
             & > button,& li {

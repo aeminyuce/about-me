@@ -1,4 +1,4 @@
-@layer modules {
+@layer ui-modules {
     /* variables */
     :root {
         --ui-dribbble-color: oklch(66% .28 345);
@@ -30,7 +30,7 @@
     }
 }
 
-@layer darkmode {
+@layer ui-darkmode {
     @media (prefers-color-scheme: dark) {
         html:not([data-ui-mode]) {
             --ui-dribbble-mode: var(--ui-white);

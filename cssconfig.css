@@ -1,8 +1,8 @@
 /* layers */
-/* @layer reset, core, layout, modules, modifiers, darkmode, utilities, typography, themes, overrides; */
+/* @layer ui-reset, ui-core, ui-layout, ui-modules, ui-modifiers, ui-darkmode, ui-utilities, ui-typography, ui-themes, ui-overrides; */
 
 /* colors */
-@layer core {
+@layer ui-core {
     :root {
         --ui-gray: oklch(50% 0 0);
         --ui-yellowOrange: oklch(64% .14 75);
@@ -17,7 +17,7 @@
 }
 
 /* themes */
-@layer themes {
+@layer ui-themes {
     .ui-theme-gray { --ui-theme: var(--ui-gray); }
     .ui-theme-yellowOrange { --ui-theme: var(--ui-yellowOrange); }
     .ui-theme-orangeRed { --ui-theme: var(--ui-orangeRed); }

@@ -1,4 +1,4 @@
-    @layer modules {
+    @layer ui-modules {
         /* variables */
         .blog-archive {
             --blog-archive-cover-img-w: 720px;
@@ -44,7 +44,7 @@
         }
     }
 
-    @layer overrides {
+    @layer ui-overrides {
         /* archive */
         .blog-archive {
             article {

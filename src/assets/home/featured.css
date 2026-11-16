@@ -1,4 +1,4 @@
-@layer modules {
+@layer ui-modules {
     /* variables */
     .home-profile {
         --home-profile-cover-size: 78px;
