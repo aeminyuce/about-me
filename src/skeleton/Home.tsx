@@ -13,22 +13,22 @@ export default function () {
                 </Grid.Col>
 
                 <Grid.Col size={7} md={10} className='ui-sm-items-c ui-round-1st'>
-                    <Skeleton clear index={1} w='186px' h='31px' className='ui-m-20-b' />
-                    <Skeleton clear index={2} repeat={2} w='150px' h='18px' vGap={5} />
+                    <Skeleton clear w='186px' h='31px' className='ui-m-20-b' />
+                    <Skeleton clear repeat={2} w='150px' h='18px' vGap={5} />
 
                     <Grid.Row fluid='sm' className='ui-m-15-b ui-m-10-t'>
 
                         <Grid.Col xl={8} lg={8} size={10} className='ui-round-1st'>
-                            <Skeleton index={4} w='100%' h='18px' className='ui-m-5-v ui-hide-md' />
+                            <Skeleton w='100%' h='18px' className='ui-m-5-v ui-hide-md' />
                             <Item as='div' className='ui-round-1st ui-shown-md'>
-                                <Skeleton index={5} repeat={2} w='100%' h='18px' vGap={5} className='ui-m-5-t' />
+                                <Skeleton repeat={2} w='100%' h='18px' vGap={5} className='ui-m-5-t' />
                             </Item>
-                            <Skeleton index={7} w='60%' h='18px' className='ui-m-10-t ui-m-5-b' />
+                            <Skeleton w='60%' h='18px' className='ui-m-10-t ui-m-5-b' />
                         </Grid.Col>
 
                     </Grid.Row>
 
-                    <Skeleton index={8} w='172px' h='48px' className='ui-circle' />
+                    <Skeleton w='172px' h='48px' className='ui-circle' />
                 </Grid.Col>
 
             </Grid.Row>
@@ -36,12 +36,12 @@ export default function () {
 
                 <Grid.Col size={8} push={2} className='ui-m-30-v ui-items-c ui-round-2nd'>
                     <Item as='div' className='ui-p-1-t ui-hide-md'>
-                        <Skeleton index={9} w='100%' h='22px' className='ui-m-5-v' />
-                        <Skeleton index={10} w='86%' h='22px' className='ui-m-5-t ui-m-20-b' />
+                        <Skeleton w='100%' h='22px' className='ui-m-5-v' />
+                        <Skeleton w='86%' h='22px' className='ui-m-5-t ui-m-20-b' />
                     </Item>
                     <Item as='div' className='ui-shown-md'>
-                        <Skeleton index={9} repeat={5} w='100%' h='20px' vGap={5} className='ui-m-5-t' />
-                        <Skeleton index={14} w='86%' h='20px' className='ui-m-10-t ui-m-20-b' />
+                        <Skeleton repeat={5} w='100%' h='20px' vGap={5} className='ui-m-5-t' />
+                        <Skeleton w='86%' h='20px' className='ui-m-10-t ui-m-20-b' />
                     </Item>
                 </Grid.Col>
 
@@ -69,7 +69,7 @@ export default function () {
 
                 <Grid.Col size={85} className='ui-p-10-v'>
                     <Skeleton w='37px' h='42px' className='ui-round-l' />
-                    <Skeleton index={1} w='37px' h='42px' className='ui-m-1-l ui-round-r' />
+                    <Skeleton w='37px' h='42px' className='ui-m-1-l ui-round-r' />
                 </Grid.Col>
 
             </Grid.Static>
