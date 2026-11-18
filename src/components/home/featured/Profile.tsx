@@ -23,8 +23,8 @@ export default function () {
                     <Image lazy src={info?.cover} aspect='photo' />
                 </Item>
                 <Notifier dataVal='Idle'>
-                    <Avatar className='ui-squircle'>
-                        <Image lazy src={info?.avatar} aspect='square' />
+                    <Avatar>
+                        <Image lazy src={info?.avatar} aspect='square' className='ui-squircle' />
                     </Avatar>
                 </Notifier>
             </Item>
@@ -35,7 +35,7 @@ export default function () {
                     {info?.email}
                 </Item>
                 <Item as='div' className='ui-font-xs ui-m-10-b'>
-                    <Button as='span' size='xs' className='ui-p-10-h ui-circle ui-fill-dark-100'>
+                    <Button as='span' size='xs' className='ui-p-10-h ui-squircle ui-fill-dark-100'>
                         {info?.type}
                     </Button>
                 </Item>
@@ -46,7 +46,7 @@ export default function () {
 
                     {profile?.userActivity?.map((item: UserActivityProps, index: number) => (
                         <ListGroup.Item key={`uac-${index}`}>
-                            <Avatar size='xs' className='ui-round ui-fill-light-300'>
+                            <Avatar size='xs' className='ui-circle ui-fill-light-300'>
                                 <Item as='span'>{item.time}</Item>
                             </Avatar>
                             <Item as='span' className='ui-color-black-50 ui-p-5-t ui-block'>

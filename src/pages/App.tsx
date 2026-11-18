@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router';
 import TopButton from '@ui/TopButton';
-import SquircleMask from '@ui/SquircleMask';
 
 // misc
 import { storedData } from '@stores/Storages';
@@ -16,7 +15,6 @@ export default function () {
             </Suspense>
 
             <TopButton />
-            <SquircleMask />
 
         </StoreProvider>
     )

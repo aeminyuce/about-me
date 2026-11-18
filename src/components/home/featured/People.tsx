@@ -44,16 +44,20 @@ export const People = () => {
                         const avatar = item.avatar;
                         const jobTitle = item.jobTitle;
 
-                        let classes = 'ui-squircle ui-hover-scale-more';
-                        classes += avatarText ? ' ui-fill-light-300' : '';
-
                         return (
                             <ListGroup.Item key={jobTitle}>
                                 <Button nostyle href={item.url}>
-                                    <Avatar size='xs' className={classes}>
-                                        {avatar && <Image lazy src={avatar} aspect='square' />}
-                                        {avatarText}
-                                    </Avatar>
+                                    {avatar &&
+                                        <Avatar size='xs' className='ui-hover-scale-more'>
+                                            <Image lazy src={avatar} aspect='square' className='ui-squircle' />
+                                        </Avatar>
+                                    }
+
+                                    {avatarText &&
+                                        <Avatar size='xs' className='ui-hover-scale-more ui-squircle ui-fill-light-300'>
+                                            {avatarText}
+                                        </Avatar>
+                                    }
 
                                     <Item as='span' className='ui-font-ellipsis ui-m-3-v ui-block'>{jobTitle}</Item>
                                     <Item as='span' className='ui-color-black-25'>{item.description}</Item>
@@ -76,17 +80,21 @@ export const PeopleMore = () => {
 
     return (
         <Card className={`ui-items-c ui-p-15 ui-round ui-shadow ${themeB}`}>
-            <Avatar.Holder ease='2nd' easeFilter='1st' className='ui-item-c ui-hover-scale-more-2nd ui-squircle-2nd ui-squircle-hover-shadow-1st'>
+            <Avatar.Holder ease='2nd' className='ui-item-c ui-hover-scale-more-2nd ui-squircle-2nd ui-hover-shadow-2nd'>
 
                 {peopleMore?.list.map((item: PeopleMoreListProps) => {
                     const avatarText = item.avatarText;
                     const avatar = item.avatar;
-                    const classes = avatarText ? 'ui-fill-dark-100' : undefined;
 
-                    return (
-                        <Item as='span' key={item.jobTitle}>
-                            <Avatar noease size='sm' className={classes}>
-                                {avatar && <Image lazy src={avatar} aspect='square' />}
+                    if (avatar) return (
+                        <Avatar key={item.jobTitle} noease size='sm' >
+                            <Image lazy src={avatar} aspect='square' />
+                        </Avatar>
+                    )
+
+                    if (avatarText) return (
+                         <Item as='span' key={item.jobTitle}>
+                            <Avatar noease size='sm' className='ui-fill-dark-100'>
                                 {avatarText}
                             </Avatar>
                         </Item>
