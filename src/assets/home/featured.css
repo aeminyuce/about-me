@@ -51,6 +51,9 @@
         /* travel */
         .home-travel { height: 410px; }
     }
+}
+
+@layer overrides {
     @media (768px <= width < 1400px) {
         /* travel */
         .home-travel {
