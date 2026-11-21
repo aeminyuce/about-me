@@ -68,7 +68,7 @@ export default function (props: any) {
                             {item.length} {iconsSuffix}
                         </Button>
                     </Box>
-                    <Button.Wrapper balance as='div' ease='1st' alignItems='c' className='ui-highlight ui-round-1st'>
+                    <Button.Wrapper wrap as='div' ease='1st' alignItems='c' className='ui-highlight ui-round-1st'>
 
                         {item.icons.map((name: string) => {
                             const spin = name.includes('loader-') ? 'spin' : undefined;

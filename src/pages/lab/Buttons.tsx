@@ -369,12 +369,12 @@ export default function () {
 // size             : lg | sm | xs
 // fluid            : md | sm | xs
 // alignSelf        : l | r
-// alignItems        : l | r
+// alignItems       : l | r
 // as               : div | span | input
 // type             : submit | button | reset
 
 // wrapper without type
-<Button.Wrapper largeButtons balance as='span' fullWidth='1st' ease='1st'>
+<Button.Wrapper largeButtons wrap as='span' fullWidth='1st' ease='1st'>
     <Button noease>First</Button>
     <Button noease>Second</Button>
 </Button.Wrapper>
@@ -384,7 +384,7 @@ export default function () {
 // ease             : 1st | 2nd
 // noease           : used when wrapper has ease
 // largeButtons     : makes buttons large
-// balance          : makes buttons balance wrapped
+// wrap             : makes buttons wrapped
 `}
         </CodePanel>
 
