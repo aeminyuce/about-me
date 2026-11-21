@@ -5,6 +5,7 @@ import Grid from '@ui/Grid';
 import { useStoreContext } from '@stores/StoreContext';
 import HomeSkeleton from '@skeleton/Home';
 import Header from '@components/common/Header';
+import BgBubbles from '@components/common/BgBubbles';
 import Footer from '@components/common/Footer';
 import MyFocus from '@components/home/MyFocus';
 import HomeProfile from '@components/home/HomeProfile';
@@ -52,6 +53,9 @@ export default function () {
 
             </Grid.Container>
         </Grid.Container>
+
+        {/* bg */}
+        <BgBubbles />
 
         {/* footer */}
         <Footer />

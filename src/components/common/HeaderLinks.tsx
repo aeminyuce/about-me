@@ -25,7 +25,7 @@ export default function () {
                         <Button key={item.name} ghost noease gap={5} to={item.to} data={{ 'close': item.modal }} onClick={isModal} className={classes}>
                             {item.to === '/icons' &&
                                 <>
-                                I<SvgIcon as='js' src={IconHeart} size='xs' opacity='no' className='love-icons' />
+                                I<SvgIcon as='js' src={IconHeart} size='xs' opacity='no' className='love-icon' />
                                 </>
                             }
                             {item.name}
