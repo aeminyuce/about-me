@@ -1,24 +1,15 @@
 @layer ui-modules {
     /* home nav */
-    @property --ui-hns {
-        syntax: "<color>";
-        inherits: false;
-        initial-value: transparent;
-    }
-
-    @container scroll-state(stuck: top) {
-        .home-nav {
-            & > div { --ui-hns: var(--ui-body-bg-mode); }
-        }
-    }
-
     .home-nav {
-        container-type: scroll-state; z-index: 88;
+        z-index: 88;
 
-        & > div {
-            transition-property: --ui-hns;
-            transition-duration: var(--ui-ease);
-            background-color: var(--ui-hns);
+        &::after {
+            content: "";
+            background-color: var(--ui-backdrop-bg);
+            backdrop-filter: blur(var(--ui-backdrop-blur));
+            position: absolute;
+            inset: 0;
+            z-index: -1;
         }
     }
 }
