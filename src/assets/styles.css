@@ -15,16 +15,21 @@
 
     /* bg */
     .bg-bubbles {
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+
         span {
             aspect-ratio: 1 / 1;
+            display: block;
+            position: absolute;
             transform: translateZ(0);
             filter: blur(220px);
             z-index: -1;
             pointer-events: none;
 
-            &:nth-child(1) { width: 40vw; }
-            &:nth-child(2) { width: 60vw; }
-            &:nth-child(3) { width: 50vw; }
+            &:nth-child(1) { width: 40vw; left: -10%; }
+            &:nth-child(2) { width: 60vw; right: -40%; }
         }
     }
 
@@ -41,7 +46,7 @@
     @media (width >= 960px) {
         /* bg */
         .bg-bubbles {
-            span {opacity: .125; }
+            span {opacity: .145; }
         }
     }
     @media (768 < width < 960px) {
@@ -51,12 +56,17 @@
         }
     }
     @media (width >= 768px) {
+        /* bg */
+        .bg-bubbles { inset: -50% 0 0 0; }
+
         /* preview */
         .preview { padding: 150px 75px; }
     }
     @media (width < 768px) {
         /* bg */
         .bg-bubbles {
+            inset: 0;
+
             span {opacity: .725; }
         }
 

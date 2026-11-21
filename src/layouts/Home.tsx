@@ -52,10 +52,11 @@ export default function () {
                 <Outlet />
 
             </Grid.Container>
-        </Grid.Container>
 
-        {/* bg */}
-        <BgBubbles />
+            {/* bg */}
+            <BgBubbles />
+
+        </Grid.Container>
 
         {/* footer */}
         <Footer />
