@@ -31,7 +31,7 @@ export default function () {
                     </Button>
                     <Button noease multi vertical gap={5} className='ui-p-10'>
                         <SvgIcon as='js' src={IconPlate} className='ui-text' />
-                        <Item as='span' className='ui-font-ellipsis'>{foods?.foodBtn2}</Item>
+                        <Item as='span'>{foods?.foodBtn2}</Item>
                     </Button>
                     <Button noease multi vertical gap={5} className='ui-p-10'>
                         <SvgIcon as='js' src={IconCup} className='ui-text' />
