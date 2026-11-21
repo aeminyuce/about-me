@@ -5,19 +5,9 @@
         --ui-dribbble-mode: var(--ui-dribbble-color);
     }
     .preview {
+        --ui-preview-bg-light: oklch(0 0 0 / .015);
         --ui-preview-bg-dark: oklch(47% .01 240 / .05);
-        --ui-preview-bg-mode: oklch(0 0 0 / .015);
-    }
-    .bg-bubbles {
-        --ui-bg-bubbles-blur: 220px;
-
-        --ui-bg-bubbles-opacity: .125;
-        --ui-bg-bubbles-opacity-md: .325;
-        --ui-bg-bubbles-opacity-xs: .725;
-
-        --ui-bg-bubbles-1st-w: 40vw;
-        --ui-bg-bubbles-2nd-w: 60vw;
-        --ui-bg-bubbles-3rd-w: 50vw;
+        --ui-preview-bg-mode: light-dark(var(--ui-preview-bg-light), var(--ui-preview-bg-dark));
     }
 
     /* header links */
@@ -28,13 +18,13 @@
         span {
             aspect-ratio: 1 / 1;
             transform: translateZ(0);
-            filter: blur(var(--ui-bg-bubbles-blur));
+            filter: blur(220px);
             z-index: -1;
             pointer-events: none;
 
-            &:nth-child(1) { width: var(--ui-bg-bubbles-1st-w); }
-            &:nth-child(2) { width: var(--ui-bg-bubbles-2nd-w); }
-            &:nth-child(3) { width: var(--ui-bg-bubbles-3rd-w); }
+            &:nth-child(1) { width: 40vw; }
+            &:nth-child(2) { width: 60vw; }
+            &:nth-child(3) { width: 50vw; }
         }
     }
 
@@ -51,13 +41,13 @@
     @media (width >= 960px) {
         /* bg */
         .bg-bubbles {
-            span {opacity: var(--ui-bg-bubbles-opacity); }
+            span {opacity: .125; }
         }
     }
     @media (768 < width < 960px) {
         /* bg */
         .bg-bubbles {
-            span {opacity: var(--ui-bg-bubbles-opacity-md); }
+            span {opacity: .325; }
         }
     }
     @media (width >= 768px) {
@@ -67,26 +57,10 @@
     @media (width < 768px) {
         /* bg */
         .bg-bubbles {
-            span {opacity: var(--ui-bg-bubbles-opacity-xs); }
+            span {opacity: .725; }
         }
 
         /* preview */
         .preview { padding: 150px 10px; }
-    }
-}
-
-@layer ui-darkmode {
-    @media (prefers-color-scheme: dark) {
-        html:not([data-ui-mode]) {
-            --ui-dribbble-mode: var(--ui-white);
-
-            .preview { --ui-preview-bg-mode: var(--ui-preview-bg-dark); }
-        }
-    }
-
-    [data-ui-mode="dark"] {
-       --ui-dribbble-mode: var(--ui-white);
-
-        .preview { --ui-preview-bg-mode: var(--ui-preview-bg-dark); }
     }
 }

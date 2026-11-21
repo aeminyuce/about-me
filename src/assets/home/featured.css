@@ -35,16 +35,6 @@
         .ui-listgroup { height: 232px; }
     }
 
-    /* travel */
-    @media (960px <= width < 1400px) {
-        .home-travel { height: 410px; }
-    }
-    @media (768px <= width < 1400px) {
-        .home-travel {
-            .ui-col-st { width: 377px; }
-        }
-    }
-
     /* race */
     .home-race {
         img { height: 169px; }
@@ -55,5 +45,16 @@
         height: 395px;
 
         .ui-line-chart-info { margin-top: 10px; }
+    }
+
+    @media (960px <= width < 1400px) {
+        /* travel */
+        .home-travel { height: 410px; }
+    }
+    @media (768px <= width < 1400px) {
+        /* travel */
+        .home-travel {
+            .ui-col-st { width: 377px; }
+        }
     }
 }
