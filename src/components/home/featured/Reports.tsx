@@ -26,7 +26,7 @@ const Report = (props: any) => {
         <Card className={`ui-p-15 ui-shadow ui-round-${type}`}>
             <Box as='div' className='ui-font-tight ui-m-10-v'>
                 {getData?.name}
-                <Item as='span' alignSelf='r' className='ui-font-3xl'>
+                <Item as='span' alignSelf='r' className='ui-font-3xl ui-m-10-l'>
                     {getData?.reports}
                 </Item>
             </Box>
