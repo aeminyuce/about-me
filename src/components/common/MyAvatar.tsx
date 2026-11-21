@@ -12,7 +12,7 @@ export default function () {
 
     if (profileImage) return (
         <Avatar size='lg'>
-            <Image fetchPriority='high' src={profileImage} alt={`${general?.fullName} | ${general?.jobTitle}`} aspect='square' className='ui-squircle' />
+            <Image fetchPriority='high' src={profileImage} alt={`${general?.fullName} | ${general?.jobTitle}`} aspect='square' className='ui-squircle ui-shadow' />
         </Avatar>
     )
 }

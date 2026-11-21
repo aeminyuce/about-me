@@ -1,9 +1,6 @@
 @layer ui-modules {
     /* home nav */
-    .home-nav {
-        background-color: var(--ui-body-bg-mode);
-        z-index: 89;
-    }
+    .home-nav { z-index: 88; }
 }
 
 @layer ui-overrides {
