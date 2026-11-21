@@ -29,7 +29,7 @@ export default function () {
 
     return (
         <>
-        <HeaderSticky aria-label='Main site header' className='ui-p-10-h' dataClasses='ui-shadow'>
+        <HeaderSticky hideOnScroll aria-label='Main site header' className='ui-p-10-h' dataClasses='ui-shadow'>
             <Grid.Row fluid='no'>
                 <Grid.Col size={9} md={3} sm={3} xs={3}>
 

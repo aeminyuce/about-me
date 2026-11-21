@@ -10,8 +10,6 @@
 
     /* menu */
     .lab-menu {
-        top: 92px;
-
         li {
             a {
                 &:not(:first-child) {
@@ -28,5 +26,12 @@
     @media (width >= 960px) {
         /* content */
         .lab-content { min-height: 1350px; }
+    }
+}
+
+@layer overrides {
+    /* menu */
+    .ui-set-sticky:has(.lab-menu) {
+        top: 20px;
     }
 }
