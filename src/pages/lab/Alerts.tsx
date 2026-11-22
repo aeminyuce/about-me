@@ -196,13 +196,13 @@ export default function () {
                 theme: type,
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-ct' style={{ transform: 'translate(-50%, 52px) scale(0.95)', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-ct' style={{ transform: 'translateY(52px) scale(0.95)', zIndex: 'unset' }}>
                 {text?.danger}
             </Item>
-            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-ct' style={{ transform: 'translate(-50%, 26px) scale(0.97)', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-ct' style={{ transform: 'translateY(26px) scale(0.97)', zIndex: 'unset' }}>
                 {text?.warning}
             </Item>
-            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-ct' style={{ transform: 'translateX(-50%)', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-ct' style={{ zIndex: 'unset' }}>
                 {text?.success}
             </Item>
         </Preview>
@@ -216,10 +216,10 @@ export default function () {
                 pos: 'cb',
             });
         }} className='ui-round-1st ui-shadow-lg-1st ui-ease-1st-layout ui-set-absolute-1st'>
-            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-cb' style={{ transform: 'translate(-50%, -52px) scale(0.95)', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-success ui-cb' style={{ transform: 'translateY(-52px) scale(0.95)', zIndex: 'unset' }}>
                 {text?.success}
             </Item>
-            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-cb' style={{ transform: 'translate(-50%, -26px) scale(0.97)', zIndex: 'unset' }}>
+            <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-warning ui-cb' style={{ transform: 'translateY(-26px) scale(0.97)', zIndex: 'unset' }}>
                 {text?.warning}
             </Item>
             <Item as='div' className='ui-alerts-msg ui-demo ui-show ui-show-ease ui-msg-danger ui-cb' style={{ zIndex: 'unset' }}>
